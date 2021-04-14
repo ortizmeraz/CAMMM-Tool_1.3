@@ -1,0 +1,566 @@
+{
+        "features": [
+{
+"type": "Feature",
+"properties": {"StopCode":0,"weigth": 2, "Routes": "40,428"},
+"geometry": {
+"coordinates": [-77.56191979602065,45.625879505544],
+"type": "Point"
+        },
+        "id": "1000000000000000"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":1,"weigth": 2, "Routes": "40,428"},
+"geometry": {
+"coordinates": [-77.55976663297302,45.6273811710716],
+"type": "Point"
+        },
+        "id": "1000000000000001"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":2,"weigth": 2, "Routes": "40,428"},
+"geometry": {
+"coordinates": [-77.55855025940069,45.62820409187424],
+"type": "Point"
+        },
+        "id": "1000000000000002"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":3,"weigth": 4, "Routes": "186,187,186,187"},
+"geometry": {
+"coordinates": [-77.52430699672115,45.60702330674841],
+"type": "Point"
+        },
+        "id": "1000000000000003"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":4,"weigth": 3, "Routes": "40,86,428"},
+"geometry": {
+"coordinates": [-77.55501269030535,45.63023628005457],
+"type": "Point"
+        },
+        "id": "1000000000000004"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":5,"weigth": 4, "Routes": "86,40,86,428"},
+"geometry": {
+"coordinates": [-77.54935488958664,45.633061711587935],
+"type": "Point"
+        },
+        "id": "1000000000000005"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":6,"weigth": 2, "Routes": "86,86"},
+"geometry": {
+"coordinates": [-77.53848006436876,45.62850978010789],
+"type": "Point"
+        },
+        "id": "1000000000000006"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":7,"weigth": 2, "Routes": "186,186"},
+"geometry": {
+"coordinates": [-77.52613585355827,45.603242535523044],
+"type": "Point"
+        },
+        "id": "1000000000000007"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":8,"weigth": 2, "Routes": "186,186"},
+"geometry": {
+"coordinates": [-77.52347994805154,45.609517218813735],
+"type": "Point"
+        },
+        "id": "1000000000000008"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":9,"weigth": 2, "Routes": "186,186"},
+"geometry": {
+"coordinates": [-77.52206607230607,45.61364401095849],
+"type": "Point"
+        },
+        "id": "1000000000000009"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":10,"weigth": 6, "Routes": "187,186,486,186,486,187"},
+"geometry": {
+"coordinates": [-77.52071424940722,45.61566003221065],
+"type": "Point"
+        },
+        "id": "1000000000000010"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":11,"weigth": 3, "Routes": "186,486,86"},
+"geometry": {
+"coordinates": [-77.52068623282207,45.621756320883215],
+"type": "Point"
+        },
+        "id": "1000000000000011"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":12,"weigth": 3, "Routes": "186,486,86"},
+"geometry": {
+"coordinates": [-77.52055046216172,45.62141368967951],
+"type": "Point"
+        },
+        "id": "1000000000000012"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":13,"weigth": 4, "Routes": "186,430,486,86"},
+"geometry": {
+"coordinates": [-77.51967053711229,45.61947436862477],
+"type": "Point"
+        },
+        "id": "1000000000000013"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":14,"weigth": 2, "Routes": "189,362"},
+"geometry": {
+"coordinates": [-77.51654653742571,45.5979775493208],
+"type": "Point"
+        },
+        "id": "1000000000000014"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":15,"weigth": 2, "Routes": "86,86"},
+"geometry": {
+"coordinates": [-77.51570794207807,45.618793028220296],
+"type": "Point"
+        },
+        "id": "1000000000000015"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":16,"weigth": 6, "Routes": "189,362,430,189,362,22"},
+"geometry": {
+"coordinates": [-77.5141610266617,45.59758737379342],
+"type": "Point"
+        },
+        "id": "1000000000000016"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":17,"weigth": 2, "Routes": "86,86"},
+"geometry": {
+"coordinates": [-77.51317237587783,45.61843600331564],
+"type": "Point"
+        },
+        "id": "1000000000000017"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":18,"weigth": 4, "Routes": "189,362,189,362"},
+"geometry": {
+"coordinates": [-77.51241000657056,45.599949832496925],
+"type": "Point"
+        },
+        "id": "1000000000000018"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":19,"weigth": 4, "Routes": "189,362,189,362"},
+"geometry": {
+"coordinates": [-77.51106470416428,45.60352995719952],
+"type": "Point"
+        },
+        "id": "1000000000000019"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":20,"weigth": 2, "Routes": "187,187"},
+"geometry": {
+"coordinates": [-77.51219289772682,45.61453023222531],
+"type": "Point"
+        },
+        "id": "1000000000000020"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":21,"weigth": 2, "Routes": "187,187"},
+"geometry": {
+"coordinates": [-77.51092740847471,45.61662114142397],
+"type": "Point"
+        },
+        "id": "1000000000000021"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":22,"weigth": 4, "Routes": "86,187,86,187"},
+"geometry": {
+"coordinates": [-77.51045558129864,45.618096706629494],
+"type": "Point"
+        },
+        "id": "1000000000000022"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":23,"weigth": 2, "Routes": "187,187"},
+"geometry": {
+"coordinates": [-77.50992114316507,45.61994026277916],
+"type": "Point"
+        },
+        "id": "1000000000000023"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":24,"weigth": 4, "Routes": "189,362,189,362"},
+"geometry": {
+"coordinates": [-77.5089635650801,45.60764232357715],
+"type": "Point"
+        },
+        "id": "1000000000000024"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":25,"weigth": 4, "Routes": "189,362,189,362"},
+"geometry": {
+"coordinates": [-77.50689488958234,45.610719653785495],
+"type": "Point"
+        },
+        "id": "1000000000000025"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":26,"weigth": 2, "Routes": "86,86"},
+"geometry": {
+"coordinates": [-77.50784098179291,45.61768314503944],
+"type": "Point"
+        },
+        "id": "1000000000000026"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":27,"weigth": 4, "Routes": "362,187,362,187"},
+"geometry": {
+"coordinates": [-77.50737384501959,45.619903932171226],
+"type": "Point"
+        },
+        "id": "1000000000000027"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":28,"weigth": 4, "Routes": "189,362,189,362"},
+"geometry": {
+"coordinates": [-77.50501008857431,45.61253555295627],
+"type": "Point"
+        },
+        "id": "1000000000000028"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":29,"weigth": 2, "Routes": "86,86"},
+"geometry": {
+"coordinates": [-77.50423141879973,45.61717111388801],
+"type": "Point"
+        },
+        "id": "1000000000000029"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":30,"weigth": 2, "Routes": "362,362"},
+"geometry": {
+"coordinates": [-77.5041502817704,45.6193801031528],
+"type": "Point"
+        },
+        "id": "1000000000000030"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":31,"weigth": 4, "Routes": "189,362,189,362"},
+"geometry": {
+"coordinates": [-77.50298360867963,45.61447109926746],
+"type": "Point"
+        },
+        "id": "1000000000000031"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":32,"weigth": 2, "Routes": "362,362"},
+"geometry": {
+"coordinates": [-77.50174206949674,45.61905379562671],
+"type": "Point"
+        },
+        "id": "1000000000000032"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":33,"weigth": 4, "Routes": "189,362,189,362"},
+"geometry": {
+"coordinates": [-77.50192978405177,45.61548752896546],
+"type": "Point"
+        },
+        "id": "1000000000000033"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":34,"weigth": 7, "Routes": "86,189,362,410,189,362,410"},
+"geometry": {
+"coordinates": [-77.5007455568104,45.616629858929784],
+"type": "Point"
+        },
+        "id": "1000000000000034"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":35,"weigth": 6, "Routes": "86,189,362,86,189,362"},
+"geometry": {
+"coordinates": [-77.49891299856398,45.61863043140848],
+"type": "Point"
+        },
+        "id": "1000000000000035"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":36,"weigth": 2, "Routes": "186,186"},
+"geometry": {
+"coordinates": [-77.52538985347076,45.60478286898302],
+"type": "Point"
+        },
+        "id": "1000000000000036"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":37,"weigth": 2, "Routes": "187,187"},
+"geometry": {
+"coordinates": [-77.51737979979943,45.615171726876056],
+"type": "Point"
+        },
+        "id": "1000000000000037"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":38,"weigth": 2, "Routes": "40,428"},
+"geometry": {
+"coordinates": [-77.56551914187682,45.623370831149586],
+"type": "Point"
+        },
+        "id": "1000000000000038"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":39,"weigth": 4, "Routes": "26,430,26,430"},
+"geometry": {
+"coordinates": [-77.52148187154968,45.59865259845169],
+"type": "Point"
+        },
+        "id": "1000000000000039"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":40,"weigth": 4, "Routes": "189,362,189,362"},
+"geometry": {
+"coordinates": [-77.51292104056901,45.59832011467527],
+"type": "Point"
+        },
+        "id": "1000000000000040"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":41,"weigth": 3, "Routes": "186,430,486"},
+"geometry": {
+"coordinates": [-77.51967926119343,45.61859239805102],
+"type": "Point"
+        },
+        "id": "1000000000000041"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":42,"weigth": 1, "Routes": "86"},
+"geometry": {
+"coordinates": [-77.54842211587143,45.63099203290213],
+"type": "Point"
+        },
+        "id": "1000000000000042"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":43,"weigth": 1, "Routes": "86"},
+"geometry": {
+"coordinates": [-77.54923889949276,45.63024589369426],
+"type": "Point"
+        },
+        "id": "1000000000000043"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":44,"weigth": 2, "Routes": "86,86"},
+"geometry": {
+"coordinates": [-77.54717325592833,45.62890928046058],
+"type": "Point"
+        },
+        "id": "1000000000000044"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":45,"weigth": 2, "Routes": "86,86"},
+"geometry": {
+"coordinates": [-77.54332781274552,45.62728710365199],
+"type": "Point"
+        },
+        "id": "1000000000000045"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":46,"weigth": 1, "Routes": "86"},
+"geometry": {
+"coordinates": [-77.5451374830993,45.62799614022143],
+"type": "Point"
+        },
+        "id": "1000000000000046"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":47,"weigth": 2, "Routes": "86,86"},
+"geometry": {
+"coordinates": [-77.54765701847205,45.631989116101025],
+"type": "Point"
+        },
+        "id": "1000000000000047"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":48,"weigth": 2, "Routes": "86,86"},
+"geometry": {
+"coordinates": [-77.5413070852118,45.62884389326801],
+"type": "Point"
+        },
+        "id": "1000000000000048"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":49,"weigth": 2, "Routes": "40,428"},
+"geometry": {
+"coordinates": [-77.5707680665274,45.619706652507304],
+"type": "Point"
+        },
+        "id": "1000000000000049"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":50,"weigth": 2, "Routes": "40,428"},
+"geometry": {
+"coordinates": [-77.5691843353764,45.620813705405375],
+"type": "Point"
+        },
+        "id": "1000000000000050"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":51,"weigth": 2, "Routes": "86,86"},
+"geometry": {
+"coordinates": [-77.50214009363116,45.61687536645681],
+"type": "Point"
+        },
+        "id": "1000000000000051"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":52,"weigth": 1, "Routes": "86"},
+"geometry": {
+"coordinates": [-77.51861123885062,45.619918232761556],
+"type": "Point"
+        },
+        "id": "1000000000000052"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":53,"weigth": 1, "Routes": "86"},
+"geometry": {
+"coordinates": [-77.52005317579872,45.62040877445307],
+"type": "Point"
+        },
+        "id": "1000000000000053"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":54,"weigth": 2, "Routes": "86,86"},
+"geometry": {
+"coordinates": [-77.53539066349579,45.62723612771624],
+"type": "Point"
+        },
+        "id": "1000000000000054"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":55,"weigth": 1, "Routes": "26"},
+"geometry": {
+"coordinates": [-77.51786436368475,45.59806169431354],
+"type": "Point"
+        },
+        "id": "1000000000000055"
+
+}
+
+ ],
+"type": "FeatureCollection"
+}

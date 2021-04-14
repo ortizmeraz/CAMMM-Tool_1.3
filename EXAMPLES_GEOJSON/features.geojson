@@ -1,0 +1,50 @@
+{
+  "name": "BusStops_32631",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::32631"
+    }
+  },
+  "features": [
+    {
+"type": "Feature",
+"properties": {'Line': 'D20_1', 'Start_Code': '1788', 'Start_Name': 'Trelawny - Av Litoral', 'End_Code': '1284', 'End_Name': 'Hospital del Mar'
+},
+"geometry": {
+  "coordinates": [
+    [
+      432660.593,
+      4581884.65
+    ],
+    [
+      432658.86,
+      4581606.77
+    ]
+  ],
+  "type": "LineString"
+},
+"id": "1000000000000000001"
+    },
+    {
+"type": "Feature",
+"properties": {'Line': 'D20_1', 'Start_Code': '1284', 'Start_Name': 'Hospital del Mar', 'End_Code': '1282', 'End_Name': 'Platja de la Barceloneta'
+},
+"geometry": {
+  "coordinates": [
+    [
+      432658.86,
+      4581606.77
+    ],
+    [
+      432508.081,
+      4581290.526
+    ]
+  ],
+  "type": "LineString"
+},
+"id": "1000000000000000002"
+    }
+  ],
+  "type": "FeatureCollection"
+}
