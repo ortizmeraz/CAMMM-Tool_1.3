@@ -209,22 +209,34 @@
 #         G.add_node(node,location=(x,y),pos=(float(DataStops[node]['stop_lat']),float(DataStops[node]['stop_lon'])),stop_id =stop_id,stop_name =stop_name,stop_code =stop_code,stop_desc=stop_desc,stop_lat=stop_lat,stop_lon=stop_lon,zone_id=zone_id,stop_url=stop_url,location_type=location_type,parent_station=parent_station,stop_timezone=stop_timezone,wheelchair_boarding=wheelchair_boarding,level_id=level_id,platform_code=platform_code)
 #         NodePrintProp['Pos'][node]=(x,y)
 
-import zipfile
+# import zipfile
 
 
-Path=r"SampleData\GTFS\gtfs_stm.zip"
-archive = zipfile.ZipFile(Path, 'r')
-with archive as zip: 
-    ZipList=zip.namelist()
-archive = zipfile.ZipFile(Path, 'r')
-for zipfile in ZipList:
-    fw=open(r"Operational\\"+zipfile,"w", encoding="utf-8")
-    FilePointer=archive.open(zipfile)
-    for line in FilePointer.readlines():
-        # print(line,type(line))
-        text=line.decode("utf-8")
-        # print(text,type(text))
-        fw.write(text)
-    # b=input('Press Enter ...')
-    fw.close()
+# Path=r"SampleData\GTFS\gtfs_stm.zip"
+# archive = zipfile.ZipFile(Path, 'r')
+# with archive as zip: 
+#     ZipList=zip.namelist()
+# archive = zipfile.ZipFile(Path, 'r')
+# for zipfile in ZipList:
+#     fw=open(r"Operational\\"+zipfile,"w", encoding="utf-8")
+#     FilePointer=archive.open(zipfile)
+#     for line in FilePointer.readlines():
+#         # print(line,type(line))
+#         text=line.decode("utf-8")
+#         # print(text,type(text))
+#         fw.write(text)
+#     # b=input('Press Enter ...')
+#     fw.close()
 
+
+
+######################################################
+
+def HiFN(Text):
+    OutPut=" ZzzzzZzzzzz"+Text
+    return OutPut
+
+if __name__ == "__main__":
+    D="one"
+    print(D)
+    print(HiFN(Text="Omar "))
