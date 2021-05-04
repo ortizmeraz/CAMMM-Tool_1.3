@@ -1,5 +1,15 @@
 import openpyxl
 from openpyxl import load_workbook
+from tkinter import *
+from tkinter import ttk
+from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import asksaveasfile
+from tkinter import filedialog
+from tkinter.filedialog import askdirectory
+from tkinter import messagebox
+from shutil import copyfile
+import tkinter
+from functools import partial
 
 
 def Example():
@@ -58,7 +68,12 @@ def GetColumns():
     return Columns
 
 
-def WriteFile(DataSet):
+def WriteFile(DataSet,ExitPath):
+    print(DataSet,ExitPath)
+    fw=open(file=ExitPath,mode="w")
+    print("Yeah",fw)
+
+
     
 
 def ReadExcelTable(NumRecords,WorkSheet):
@@ -94,6 +109,7 @@ def ReadExcelTable(NumRecords,WorkSheet):
                 DataSet["City"][WorkSheet["A"+str(row)].value][column]=WorkSheet[Cell].value
         print()
     # PrintCheck(DataSet=DataSet)
+    WriteFile(DataSet=DataSet,ExitPath="sssssssssssss")
 
 def PrintCheck(DataSet):
     print(DataSet)
@@ -113,8 +129,8 @@ def PrintCheck(DataSet):
             print("Data",CityKey,DataSet["City"][key][CityKey],type(DataSet["City"][key][CityKey]))
             print()
 
-def OpenFile(Data):
-    PathExcel=r"E:\GitHub\CAMMM-Web-Tool-1\DatabaseCitys.xlsx"
+def OpenFile(PathExcel):
+    
     wb = load_workbook(filename = PathExcel)
     print (wb.sheetnames, type(wb.sheetnames))
     sheets=list(wb.sheetnames)
@@ -125,11 +141,100 @@ def OpenFile(Data):
     print("NumberOfRecordsInCode",NumberOfRecordsInCode)
     ReadExcelTable(NumRecords=NumberOfRecordsInCode,WorkSheet=DataSheet)
 
+def Run(SourceData,JSONData):
+    PathExcel=SourceData.GivePath()
+    PathExit=JSONData.GivePath()
+    print("VAriable PathExcel:",PathExcel)
+    print("VAriable PathExit:",PathExit)
+
+class PathFrame():
+    def __init__(self,Frame,Path,CoordX,CoordY,Title,FileType):
+        self.Frame=Frame
+        self.Path=Path
+        self.CoordX=CoordX
+        self.CoordY=CoordY
+        self.Title=Title
+        self.FileType=FileType
+        
+    def getPathRead(self):
+        Path = askopenfilename(initialdir=r"E:\GitHub\CAMMM-Web-Tool-1",
+                    filetypes =(self.FileType,("All Files","*.*")),
+                    title = "Choose a file."
+                    )
+        self.Path=Path        
+        print(self.Path,type(self.Path))
+        self.EntryElement.insert(0,self.Path)
+        
+    def getPathWrite(self):
+        Path = asksaveasfile(initialdir=r"E:\GitHub\CAMMM-Web-Tool-1",
+                    filetypes =(self.FileType,("All Files","*.*")),
+                    title = "Choose a file."
+                    )
+        self.Path=Path.name  
+        # print(dir(self.Path))   
+        # for i in list(dir(self.Path)):
+        #      print(self.Path.i)
+        # print(self.Path,type(self.Path))
+        self.EntryElement.insert(0,self.Path)
+
+    def MakeGuiElementsRead(self):
+        self.FrameElement=ttk.LabelFrame(self.Frame,height = 55, width = 700,text =self.Title)
+        self.FrameElement.place(x=self.CoordX, y=self.CoordY, anchor=W)
+
+        self.EntryElement= ttk.Entry(self.FrameElement,width=100)
+        self.EntryElement.place(x=5, y=9, anchor=W)
+        self.EntryElement.delete(0, END)
+        self.EntryElement.insert(0,"")
+
+        self.button=ttk.Button(self.FrameElement,text="Open")
+        self.button.config(command=self.getPathRead)
+        self.button.place(x=615, y=10, anchor=W)
+
+
+    def MakeGuiElementsWrite(self):
+        self.FrameElement=ttk.LabelFrame(self.Frame,height = 55, width = 700,text =self.Title)
+        self.FrameElement.place(x=self.CoordX, y=self.CoordY, anchor=W)
+
+        self.EntryElement= ttk.Entry(self.FrameElement,width=100)
+        self.EntryElement.place(x=5, y=9, anchor=W)
+        self.EntryElement.delete(0, END)
+        self.EntryElement.insert(0,"")
+
+        self.button=ttk.Button(self.FrameElement,text="Open")
+        self.button.config(command=self.getPathWrite)
+        self.button.place(x=615, y=10, anchor=W)
+
+
+
+    def GivePath(self):
+        return self.Path
+
+
+
+def GUI(root,PathExcel):
+    root.title("Concordia Research Chair in Integrated Design, Ecology And Sustainability for the Built Environment")
+    FrameMaster =ttk.Frame(root)   
+    FrameMaster =ttk.Frame(root)
+    FrameMaster.config(height=300,width=750) # Configura altura y ancho
+    FrameMaster.config(relief= RIDGE)        # Tipod de frame
+    FrameMaster.config(padding=(30, 15))     # Acolchonado de frame
+    FrameMaster.pack()                       # ANade frame
+
+    SourceData=PathFrame(Frame=FrameMaster,Path="",CoordX=1,CoordY=55,Title= "Excel File",FileType=("Excel 365 Files", "*.xlsx"))
+    JSONData=PathFrame(Frame=FrameMaster,Path="",CoordX=1,CoordY=155,Title= "JSON File",FileType=("JSON", "*.json"))
+
+    SourceData.MakeGuiElementsRead()
+    JSONData.MakeGuiElementsWrite()
+    
+    buttonRun=ttk.Button(FrameMaster,text="Open")
+    buttonRun.config(command=partial(Run,SourceData,JSONData))
+    buttonRun.place(x=10, y=255, anchor=W)
+
+    root.mainloop()
 
 if __name__ == "__main__":
-    Data={"Agency":"Agency A10",
-    "Number_of_transport_systems":20,
-    "Number_of_train_stations":340,
-    "Number_of_metro_stations":2354,
-    "Number_of_bus_stops":22486}
-    OpenFile(Data=Data)
+
+    # OpenFile(PathExcel=r"E:\GitHub\CAMMM-Web-Tool-1\DatabaseCitys.xlsx")
+    root=Tk()
+    PathExcel =""
+    GUI(root,PathExcel)
