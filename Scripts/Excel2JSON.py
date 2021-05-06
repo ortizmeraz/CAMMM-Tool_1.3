@@ -1,5 +1,6 @@
 import openpyxl
 from openpyxl import load_workbook
+import json
 from tkinter import *
 from tkinter import ttk
 from tkinter.filedialog import askopenfilename
@@ -70,11 +71,10 @@ def GetColumns():
 
 def WriteFile(DataSet,ExitPath):
     print(DataSet,ExitPath)
-    fw=open(file=ExitPath,mode="w")
-    print("Yeah",fw)
-
-
-    
+    with open(ExitPath, 'w') as fp:
+        json.dump(DataSet, fp)
+    return True
+   
 
 def ReadExcelTable(NumRecords,WorkSheet):
     DataSet={"City":{}}
@@ -100,16 +100,18 @@ def ReadExcelTable(NumRecords,WorkSheet):
                 DataSet["City"][WorkSheet["A"+str(row)].value][column]=ListLayers
                 # b=input()
                 # print(b)
+            elif DictColumns[column] == "A":
+                pass
             elif DictColumns[column] == "P":
-                Coords=[WorkSheet[Cell].value]
+                Coords=[float(WorkSheet[Cell].value)]
             elif DictColumns[column]=="Q":
-                Coords.append(WorkSheet[Cell].value)
+                Coords.append(float(WorkSheet[Cell].value))
                 DataSet["City"][WorkSheet["A"+str(row)].value]["Coords"]=Coords
             else:
                 DataSet["City"][WorkSheet["A"+str(row)].value][column]=WorkSheet[Cell].value
         print()
     # PrintCheck(DataSet=DataSet)
-    WriteFile(DataSet=DataSet,ExitPath="sssssssssssss")
+    return DataSet
 
 def PrintCheck(DataSet):
     print(DataSet)
@@ -139,13 +141,23 @@ def OpenFile(PathExcel):
     print(DataSheet)
     NumberOfRecordsInCode=ReadHowManyRecordsWeHave(WorkSheet=DataSheet)
     print("NumberOfRecordsInCode",NumberOfRecordsInCode)
-    ReadExcelTable(NumRecords=NumberOfRecordsInCode,WorkSheet=DataSheet)
+    DataSet=ReadExcelTable(NumRecords=NumberOfRecordsInCode,WorkSheet=DataSheet)
+    return DataSet
+    
 
 def Run(SourceData,JSONData):
     PathExcel=SourceData.GivePath()
     PathExit=JSONData.GivePath()
     print("VAriable PathExcel:",PathExcel)
     print("VAriable PathExit:",PathExit)
+    DataSet=OpenFile(PathExcel=PathExcel)
+    Check=WriteFile(DataSet=DataSet,ExitPath=PathExit)
+    if Check:
+        messagebox.showinfo("Message", "Process Complete")   
+
+        
+    # PrintCheck(DataSet)
+
 
 class PathFrame():
     def __init__(self,Frame,Path,CoordX,CoordY,Title,FileType):
