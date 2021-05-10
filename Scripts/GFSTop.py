@@ -572,7 +572,7 @@ def GTFS(Path,RequestedData):
         print("Error")
     ["Data_Buses","Data_Train","Data_Metro","Data_Tram","Data_Other"]
     print("RequestedData",RequestedData)
-    b=input()
+    # b=input()
     if RequestedData["BusNetworkAnalysis"]==True:
         print("Start Bus network")
         for idx,a in enumerate(ListofStops):
@@ -581,7 +581,7 @@ def GTFS(Path,RequestedData):
             # CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeData,DataStops=DataStops)
             print(idx,a)
             print("FIN DE LA RED.......................................")
-            b=input()
+            # b=input()
         print("End Bus network")
 
     # if RequestedData["NodeNetworkAnalysis"]==True:

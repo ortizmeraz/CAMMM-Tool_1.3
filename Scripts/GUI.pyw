@@ -61,7 +61,6 @@ def ActionSelect(Config,Entry):
     DataBucket["Centroid"][Config["City"]]['Path']=name
     return name
 
-
 def PathEntry(Frame,Geom,Config):
     FrameElemento=ttk.LabelFrame(Frame,height = Geom['Sizes']['Hei'], width =Geom['Sizes']['Wid'],text =Config['TitleFrame'])
     FrameElemento.place(x=int(Geom['Coords']['X']), y=Geom['Coords']['Y'], anchor=W)
@@ -77,7 +76,6 @@ def PathEntry(Frame,Geom,Config):
     button=ttk.Button(FrameElemento,text="Open")
     button.config(command=partial(ActionSelect,Config,EntryElement))
     button.place(x=10, y=25, anchor=W)
-
 
 def PathSHP(Frame,Geom,Config):
     # Geom={'Coords':{'X':30,'Y':(Yval)},'Sizes':{'Hei':90,'Wid':650}}
@@ -110,8 +108,6 @@ def PathSHP(Frame,Geom,Config):
     Button.place(x=10, y=25, anchor=W)
     print("Internal 2",Path)
     # return Path
-
-
 
 def PathEntryName(Frame,Geom,Config):
     global DataBucket
@@ -536,8 +532,9 @@ def GTFSOperation(frame):
 
     Path = ''
     def RunSingleZip():
-        print("name:",RearPaths(Key='PathSingleGTFS'))
 
+        print("name:",RearPaths(Key='PathSingleGTFS'))
+        Button["state"]=DISABLED
         SimpleNetwork=False
         if CheckVar1.get()==1:
             SimpleNetwork=True
@@ -550,6 +547,8 @@ def GTFSOperation(frame):
 
         print("CheckVar1:",CheckVar1.get(),SimpleNetwork)
         print("CheckVar2:",CheckVar2.get(),NodeNetwork)
+        Button["state"]=NORMAL
+
 
     def PathZip():
         name = askopenfilename(initialdir=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData",
