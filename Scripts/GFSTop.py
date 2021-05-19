@@ -398,9 +398,6 @@ def GetOrder(Data):
     return LegData
 
 
-
-
-
 def ListGTFStoObjectBusStop(EdgeData,DataStops,Data_Buses):
     List_Nodes_Key=list(DataStops.keys())
     List_Nodes=[]
@@ -556,7 +553,8 @@ def GTFS(Path,RequestedData):
     print("Start - Step 3")
     EdgeList=[]
     for d in ListofStops:
-        EdgeList.append(GetOrder(Data=d))
+        if len(d)>0:
+            EdgeList.append(GetOrder(Data=d))
     print("End - Step 3")
     # print("Data_Buses")
     # print("Data_Train")
@@ -565,8 +563,11 @@ def GTFS(Path,RequestedData):
     # print("Data_Other")
     print("Len of ListofStops",len(ListofStops))
     print("Len of EdgeList",len(EdgeList))
+    print("ListofStops is ",type(ListofStops))
     # for DS in ListofStops:
-    #     print(type(DS),len(DS.keys()))
+    #     print(DS)
+    #     print("########################")
+    #     # print(type(DS),len(DS.keys()))
     if len(ListofStops)!=len(EdgeList):
         print("#"*30,"\n")
         print("Error")
@@ -576,12 +577,13 @@ def GTFS(Path,RequestedData):
     if RequestedData["BusNetworkAnalysis"]==True:
         print("Start Bus network")
         for idx,a in enumerate(ListofStops):
-            print(idx,a)
-            CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops)
-            # CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeData,DataStops=DataStops)
-            print(idx,a)
-            print("FIN DE LA RED.......................................")
-            # b=input()
+            if len(a)>0:
+                print(idx,"---------------------------------------------------------------------------------------------------------------------------------------------------------------")
+                CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx)
+                # CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeData,DataStops=DataStops)
+                print(idx,a)
+                print("FIN DE LA RED.......................................")
+                # b=input()
         print("End Bus network")
 
     # if RequestedData["NodeNetworkAnalysis"]==True:
@@ -605,13 +607,13 @@ if __name__ == "__main__":
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Melbourne_GTFS\gtfs (1).zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Oslo_GTFS\gtfs (3).zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Quebec_GTFS\gtfs.zip")
-    listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Montreal GTFS\gtfs.zip")
+    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Montreal GTFS\gtfs.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Torino_GTFS\gtfs (2).zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Toulouse_GTFS\tisseo_gtfs.zip")
 
-    for Path in listPath:
-        print(Path)
-        GTFS(Path,RequestedData)
+    # for Path in listPath:
+    #     print(Path)
+    #     GTFS(Path,RequestedData)
 
 
 

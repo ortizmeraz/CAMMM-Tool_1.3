@@ -145,387 +145,390 @@ def PathEntryName(Frame,Geom,Config):
     buttonName.config(command=partial(SeltName,buttonName))
     buttonName.place(x=10, y=15, anchor=W)
 
-def NodeRelevanceTab(frame):
+# def NodeRelevanceTab(frame):
 
-    ComboNodeImp1Fid= ttk.Combobox(frame)
-    ComboNodeImp1Routes= ttk.Combobox(frame)
-    NewList1=[]
+#     ComboNodeImp1Fid= ttk.Combobox(frame)
+#     ComboNodeImp1Routes= ttk.Combobox(frame)
+#     NewList1=[]
 
-    ComboNodeImp2Fid= ttk.Combobox(frame)
-    ComboNodeImp2Routes= ttk.Combobox(frame)
-    NewList2=[]
+#     ComboNodeImp2Fid= ttk.Combobox(frame)
+#     ComboNodeImp2Routes= ttk.Combobox(frame)
+#     NewList2=[]
 
-    def ReqFields1():
-        print("\n"*2)
-        print(".................we get into the Fields 1........................")
-        P1=RearPaths(Key='Importance1')
-        print(P1)
-        if P1=='':
-            return None
-        List1=ReadFieldNames(Shapefile=P1)
-        # print(List1)
-        print(P1)
-        for elment in List1:
-            print("----------------------------------------------------------------------------",elment)
-            NewList1.append(elment[0])
-        ComboNodeImp1Fid.config(width=17,values=NewList1)
-        ComboNodeImp1Fid.place(x=120,y=140)
-        labelImp1Fid = Label(frame, text="Field with Node ID", font='Helvetica 12')
-        labelImp1Fid.place(x=120, y=120, anchor=W)
-        ComboNodeImp1Routes.config(width=17,values=NewList1)
-        ComboNodeImp1Routes.place(x=280,y=140)
-        labelImp1Routes = Label(frame, text="Field with Routes/Lines", font='Helvetica 12')
-        labelImp1Routes.place(x=280, y=120, anchor=W)
+#     def ReqFields1():
+#         print("\n"*2)
+#         print(".................we get into the Fields 1........................")
+#         P1=RearPaths(Key='Importance1')
+#         print(P1)
+#         if P1=='':
+#             return None
+#         List1=ReadFieldNames(Shapefile=P1)
+#         # print(List1)
+#         print(P1)
+#         for elment in List1:
+#             print("----------------------------------------------------------------------------",elment)
+#             NewList1.append(elment[0])
+#         ComboNodeImp1Fid.config(width=17,values=NewList1)
+#         ComboNodeImp1Fid.place(x=120,y=140)
+#         labelImp1Fid = Label(frame, text="Field with Node ID", font='Helvetica 12')
+#         labelImp1Fid.place(x=120, y=120, anchor=W)
+#         ComboNodeImp1Routes.config(width=17,values=NewList1)
+#         ComboNodeImp1Routes.place(x=280,y=140)
+#         labelImp1Routes = Label(frame, text="Field with Routes/Lines", font='Helvetica 12')
+#         labelImp1Routes.place(x=280, y=120, anchor=W)
 
-    def ReqFields2():
-        print("\n"*2)
-        print(".................we get into the Fields 2........................")
-        P2=RearPaths(Key='Importance2')
-        print(P2)
-        if P2=='':
-            return None
-        List2=ReadFieldNames(Shapefile=P2)
-        # print(List2)
-        print(P2)
-        for elment in List2:
-            print("----------------------------------------------------------------------------",elment)
-            NewList2.append(elment[0])
-        ComboNodeImp2Fid.config(width=17,values=NewList2)
-        ComboNodeImp2Fid.place(x=120,y=340)
-        labelImp2Fid = Label(frame, text="Field with Node ID", font='Helvetica 12')
-        labelImp2Fid.place(x=120, y=320, anchor=W)
-        ComboNodeImp2Routes.config(width=17,values=NewList2)
-        ComboNodeImp2Routes.place(x=280,y=340)
-        labelImp2Routes = Label(frame, text="Field with Routes/Lines", font='Helvetica 12')
-        labelImp2Routes.place(x=280, y=320, anchor=W)
+#     def ReqFields2():
+#         print("\n"*2)
+#         print(".................we get into the Fields 2........................")
+#         P2=RearPaths(Key='Importance2')
+#         print(P2)
+#         if P2=='':
+#             return None
+#         List2=ReadFieldNames(Shapefile=P2)
+#         # print(List2)
+#         print(P2)
+#         for elment in List2:
+#             print("----------------------------------------------------------------------------",elment)
+#             NewList2.append(elment[0])
+#         ComboNodeImp2Fid.config(width=17,values=NewList2)
+#         ComboNodeImp2Fid.place(x=120,y=340)
+#         labelImp2Fid = Label(frame, text="Field with Node ID", font='Helvetica 12')
+#         labelImp2Fid.place(x=120, y=320, anchor=W)
+#         ComboNodeImp2Routes.config(width=17,values=NewList2)
+#         ComboNodeImp2Routes.place(x=280,y=340)
+#         labelImp2Routes = Label(frame, text="Field with Routes/Lines", font='Helvetica 12')
+#         labelImp2Routes.place(x=280, y=320, anchor=W)
 
-    def RunAnalaysis():
-        print(RearPaths(Key='Importance1'))
-        InputValFid1=int(ComboNodeImp1Fid.current())-1
-        InputValFLi1=int(ComboNodeImp1Routes.current())-1
-        print("ComboNodeImp1Fid   ",ComboNodeImp1Fid.current(),InputValFid1)
-        print("ComboNodeImp1Routes",ComboNodeImp1Routes.current(),InputValFLi1)
-        print(NewList1,"\n",NewList1[int(ComboNodeImp1Fid.current())],"\n",NewList1[int(ComboNodeImp1Routes.current())])
-        P1=RearPaths(Key='Importance1')
-        print(P1)
-        print(ReadFieldNames(Shapefile=P1))
-        print(".................................................................................................")
+#     def RunAnalaysis():
+#         print(RearPaths(Key='Importance1'))
+#         InputValFid1=int(ComboNodeImp1Fid.current())-1
+#         InputValFLi1=int(ComboNodeImp1Routes.current())-1
+#         print("ComboNodeImp1Fid   ",ComboNodeImp1Fid.current(),InputValFid1)
+#         print("ComboNodeImp1Routes",ComboNodeImp1Routes.current(),InputValFLi1)
+#         print(NewList1,"\n",NewList1[int(ComboNodeImp1Fid.current())],"\n",NewList1[int(ComboNodeImp1Routes.current())])
+#         P1=RearPaths(Key='Importance1')
+#         print(P1)
+#         print(ReadFieldNames(Shapefile=P1))
+#         print(".................................................................................................")
 
-        print("\n"*3)
-        print(RearPaths(Key='Importance2'))
-        InputValFid2=int(ComboNodeImp2Fid.current())-1
-        InputValFLi2=int(ComboNodeImp2Routes.current())-1
-        print("ComboNodeImp2Fid   ",ComboNodeImp2Fid.current(),InputValFid2)
-        print("ComboNodeImp2Routes",ComboNodeImp2Routes.current(),InputValFLi2)
-        print(NewList2,"\n",NewList2[int(ComboNodeImp2Fid.current())],"\n",NewList2[int(ComboNodeImp2Routes.current())])
-        P2=RearPaths(Key='Importance2')
-        print(P2)
-        print(ReadFieldNames(Shapefile=P2))
-        print(".................................................................................................")
-        print("Shapefile",P1)
-        print("FieldId",[NewList2[int(ComboNodeImp1Fid.current())],InputValFid1] )
-        print("Routes", [NewList2[int(ComboNodeImp1Routes.current())],InputValFLi1])
-        LBS1=CalculateVecinityBusStops(Shapefile=P1,FieldId=[NewList1[int(ComboNodeImp1Fid.current())],InputValFid1] ,Routes= [NewList1[int(ComboNodeImp1Routes.current())],InputValFLi1])
-        Data1=ReadTransitNetwork(ListBusStops=LBS1,Range=75)
+#         print("\n"*3)
+#         print(RearPaths(Key='Importance2'))
+#         InputValFid2=int(ComboNodeImp2Fid.current())-1
+#         InputValFLi2=int(ComboNodeImp2Routes.current())-1
+#         print("ComboNodeImp2Fid   ",ComboNodeImp2Fid.current(),InputValFid2)
+#         print("ComboNodeImp2Routes",ComboNodeImp2Routes.current(),InputValFLi2)
+#         print(NewList2,"\n",NewList2[int(ComboNodeImp2Fid.current())],"\n",NewList2[int(ComboNodeImp2Routes.current())])
+#         P2=RearPaths(Key='Importance2')
+#         print(P2)
+#         print(ReadFieldNames(Shapefile=P2))
+#         print(".................................................................................................")
+#         print("Shapefile",P1)
+#         print("FieldId",[NewList2[int(ComboNodeImp1Fid.current())],InputValFid1] )
+#         print("Routes", [NewList2[int(ComboNodeImp1Routes.current())],InputValFLi1])
+#         LBS1=CalculateVecinityBusStops(Shapefile=P1,FieldId=[NewList1[int(ComboNodeImp1Fid.current())],InputValFid1] ,Routes= [NewList1[int(ComboNodeImp1Routes.current())],InputValFLi1])
+#         Data1=ReadTransitNetwork(ListBusStops=LBS1,Range=75)
         
-        LBS2=CalculateVecinityBusStops(Shapefile=P2,FieldId=[NewList2[int(ComboNodeImp2Fid.current())],InputValFid2] ,Routes= [NewList2[int(ComboNodeImp2Routes.current())],InputValFLi2])
-        Data2=ReadTransitNetwork(ListBusStops=LBS2,Range=75)
-        # PlottingImportance(Data1=Data1,Data2=Data2)
-        print("\n\n############################################################ Data 1 ############################################################")
-        ListToGeoJson(ListBusStops=Data1)
-        # for data in Data1:
-        #     print(data)
-        print(type(Data1))
-        print("\n\n############################################################ Data 2############################################################")
-        ListToGeoJson(ListBusStops=Data2)
-        # for data in Data2:
-        #     print(data)
-        print(type(Data2))
-        # b=input()
-        UpdatePath(Key='Importance1',NewPath="")
-        UpdatePath(Key='Importance2',NewPath="")
+#         LBS2=CalculateVecinityBusStops(Shapefile=P2,FieldId=[NewList2[int(ComboNodeImp2Fid.current())],InputValFid2] ,Routes= [NewList2[int(ComboNodeImp2Routes.current())],InputValFLi2])
+#         Data2=ReadTransitNetwork(ListBusStops=LBS2,Range=75)
+#         # PlottingImportance(Data1=Data1,Data2=Data2)
+#         print("\n\n############################################################ Data 1 ############################################################")
+#         ListToGeoJson(ListBusStops=Data1)
+#         # for data in Data1:
+#         #     print(data)
+#         print(type(Data1))
+#         print("\n\n############################################################ Data 2############################################################")
+#         ListToGeoJson(ListBusStops=Data2)
+#         # for data in Data2:
+#         #     print(data)
+#         print(type(Data2))
+#         # b=input()
+#         UpdatePath(Key='Importance1',NewPath="")
+#         UpdatePath(Key='Importance2',NewPath="")
 
-    ###############################################################################################
-    #First City
-    Geom1={'Coords':{'X':30,'Y':60},'Sizes':{'Hei':60,'Wid':650}}
-    Config1={"System":1,'TitleFrame':'Nodes','Command':'GetShpPath','Key':'Importance1'}
-    PathSHP(Frame=frame,Geom=Geom1,Config=Config1,)
-    print("#################################################")
-    print("#################################################")
+#     ###############################################################################################
+#     #First City
+#     Geom1={'Coords':{'X':30,'Y':60},'Sizes':{'Hei':60,'Wid':650}}
+#     Config1={"System":1,'TitleFrame':'Nodes','Command':'GetShpPath','Key':'Importance1'}
+#     PathSHP(Frame=frame,Geom=Geom1,Config=Config1,)
+#     print("#################################################")
+#     print("#################################################")
 
-    Button=ttk.Button(frame,text="Get Fields")
-    Button.config(command=(ReqFields1))
-    Button.place(x=30, y=150, anchor=W)
+#     Button=ttk.Button(frame,text="Get Fields")
+#     Button.config(command=(ReqFields1))
+#     Button.place(x=30, y=150, anchor=W)
 
-    ###############################################################################################
-    #Second City
-    Geom2={'Coords':{'X':30,'Y':280},'Sizes':{'Hei':60,'Wid':650}}
-    Config2={"System":2,'TitleFrame':'Nodes','Command':'GetShpPath','Key':'Importance2'}
-    PathSHP(Frame=frame,Geom=Geom2,Config=Config2)
-    print("#################################################")
-    print("#################################################")
+#     ###############################################################################################
+#     #Second City
+#     Geom2={'Coords':{'X':30,'Y':280},'Sizes':{'Hei':60,'Wid':650}}
+#     Config2={"System":2,'TitleFrame':'Nodes','Command':'GetShpPath','Key':'Importance2'}
+#     PathSHP(Frame=frame,Geom=Geom2,Config=Config2)
+#     print("#################################################")
+#     print("#################################################")
 
-    Button=ttk.Button(frame,text="Get Fields")
-    Button.config(command=(ReqFields2))
-    Button.place(x=30, y=380, anchor=W)
+#     Button=ttk.Button(frame,text="Get Fields")
+#     Button.config(command=(ReqFields2))
+#     Button.place(x=30, y=380, anchor=W)
 
-    ###############################################################################################
-    ###############################################################################################
-    Button=ttk.Button(frame,text="RUN")
-    Button.config(command=(RunAnalaysis))
-    Button.place(x=350, y=450, anchor=W)
-
-def NetworkAnalysis(frame):
-
-
-    ComboShp1Routes= ttk.Combobox(frame)
-    ComboShp1StartCode= ttk.Combobox(frame)
-    ComboShp1StartName= ttk.Combobox(frame)
-    ComboShp1EndCode= ttk.Combobox(frame)
-    ComboShp1EndName= ttk.Combobox(frame)
-
-    ComboShp2Routes = ttk.Combobox(frame)
-    ComboShp2StartCode = ttk.Combobox(frame)
-    ComboShp2StartName = ttk.Combobox(frame)
-    ComboShp2EndCode = ttk.Combobox(frame)
-    ComboShp2EndName = ttk.Combobox(frame)
-
-
-    NewList1=[]
-    NewList2 = []
+#     ###############################################################################################
+#     ###############################################################################################
+#     Button=ttk.Button(frame,text="RUN")
+#     Button.config(command=(RunAnalaysis))
+#     Button.place(x=350, y=450, anchor=W)
 
 
 
 
-    def RunAnalaysis():
-        ########################################
-        # Get Variables for the first Shapefile
+# def NetworkAnalysis(frame):
 
-        # Read the Path of the Shapefile
-        # print(RearPaths(Key='NetworkSimple1'))
-        P1=RearPaths(Key='NetworkSimple1')
 
-        # Get the Values from the ComboBoxes for the Field Index
-        InputIndexShp1Routes=int(ComboShp1Routes.current())-1
-        InputIndexShp1StartCode=int(ComboShp1StartCode.current())-1
-        InputIndexShp1StartName=int(ComboShp1StartName.current())-1
-        InputIndexShp1EndCode=int(ComboShp1EndCode.current())-1
-        InputIndexShp1EndName=int(ComboShp1EndName.current())-1
+#     ComboShp1Routes= ttk.Combobox(frame)
+#     ComboShp1StartCode= ttk.Combobox(frame)
+#     ComboShp1StartName= ttk.Combobox(frame)
+#     ComboShp1EndCode= ttk.Combobox(frame)
+#     ComboShp1EndName= ttk.Combobox(frame)
+
+#     ComboShp2Routes = ttk.Combobox(frame)
+#     ComboShp2StartCode = ttk.Combobox(frame)
+#     ComboShp2StartName = ttk.Combobox(frame)
+#     ComboShp2EndCode = ttk.Combobox(frame)
+#     ComboShp2EndName = ttk.Combobox(frame)
+
+
+#     NewList1=[]
+#     NewList2 = []
+
+
+
+
+#     def RunAnalaysis():
+#         ########################################
+#         # Get Variables for the first Shapefile
+
+#         # Read the Path of the Shapefile
+#         # print(RearPaths(Key='NetworkSimple1'))
+#         P1=RearPaths(Key='NetworkSimple1')
+
+#         # Get the Values from the ComboBoxes for the Field Index
+#         InputIndexShp1Routes=int(ComboShp1Routes.current())-1
+#         InputIndexShp1StartCode=int(ComboShp1StartCode.current())-1
+#         InputIndexShp1StartName=int(ComboShp1StartName.current())-1
+#         InputIndexShp1EndCode=int(ComboShp1EndCode.current())-1
+#         InputIndexShp1EndName=int(ComboShp1EndName.current())-1
         
-        # Get the Values from the ComboBoxes for the Field Name
-        InputFieldNameShp1Routes=NewList1[int(ComboShp1Routes.current())]
-        InputFieldNameShp1StartCode=NewList1[int(ComboShp1StartCode.current())]
-        InputFieldNameShp1StartName=NewList1[int(ComboShp1StartName.current())]
-        InputFieldNameShp1EndCode=NewList1[int(ComboShp1EndCode.current())]
-        InputFieldNameShp1EndName=NewList1[int(ComboShp1EndName.current())]
+#         # Get the Values from the ComboBoxes for the Field Name
+#         InputFieldNameShp1Routes=NewList1[int(ComboShp1Routes.current())]
+#         InputFieldNameShp1StartCode=NewList1[int(ComboShp1StartCode.current())]
+#         InputFieldNameShp1StartName=NewList1[int(ComboShp1StartName.current())]
+#         InputFieldNameShp1EndCode=NewList1[int(ComboShp1EndCode.current())]
+#         InputFieldNameShp1EndName=NewList1[int(ComboShp1EndName.current())]
         
-        # Show the values of each field
-        print("ComboShp1Routes  ",InputFieldNameShp1Routes,InputIndexShp1Routes)
-        print("ComboShp1StartCode  ",InputFieldNameShp1StartCode,InputIndexShp1StartCode)
-        print("ComboShp1StartName  ",InputFieldNameShp1StartName,InputIndexShp1StartName)
-        print("ComboShp1EndCode  ",InputFieldNameShp1EndCode,InputIndexShp1EndCode)
-        print("ComboShp1EndName  ",InputFieldNameShp1EndName,InputIndexShp1EndName)
-        # b=input()
-        # The Dictionary with the fields is created
-        FieldsShp1={'Line':[InputFieldNameShp1Routes,InputIndexShp1Routes],
-        'StartCode':[InputFieldNameShp1StartCode,InputIndexShp1StartCode],
-        'StartName':[InputFieldNameShp1StartName,InputIndexShp1StartName],
-        'EndCode':[InputFieldNameShp1EndCode,InputIndexShp1EndCode],
-        'EndName':[InputFieldNameShp1EndName,InputIndexShp1EndName],
-        }
-        print("FieldsShp1",FieldsShp1)
-        # b=input()
-        print(ReadFieldNames(Shapefile=P1))
-        print(".................................................................................................")
+#         # Show the values of each field
+#         print("ComboShp1Routes  ",InputFieldNameShp1Routes,InputIndexShp1Routes)
+#         print("ComboShp1StartCode  ",InputFieldNameShp1StartCode,InputIndexShp1StartCode)
+#         print("ComboShp1StartName  ",InputFieldNameShp1StartName,InputIndexShp1StartName)
+#         print("ComboShp1EndCode  ",InputFieldNameShp1EndCode,InputIndexShp1EndCode)
+#         print("ComboShp1EndName  ",InputFieldNameShp1EndName,InputIndexShp1EndName)
+#         # b=input()
+#         # The Dictionary with the fields is created
+#         FieldsShp1={'Line':[InputFieldNameShp1Routes,InputIndexShp1Routes],
+#         'StartCode':[InputFieldNameShp1StartCode,InputIndexShp1StartCode],
+#         'StartName':[InputFieldNameShp1StartName,InputIndexShp1StartName],
+#         'EndCode':[InputFieldNameShp1EndCode,InputIndexShp1EndCode],
+#         'EndName':[InputFieldNameShp1EndName,InputIndexShp1EndName],
+#         }
+#         print("FieldsShp1",FieldsShp1)
+#         # b=input()
+#         print(ReadFieldNames(Shapefile=P1))
+#         print(".................................................................................................")
 
-        ########################################
-        # Get Variables for the Second Shapefile
-        # Read the Path of the Shapefile
-        # print(RearPaths(Key='NetworkSimple2'))
-        P2=RearPaths(Key='NetworkSimple2')
+#         ########################################
+#         # Get Variables for the Second Shapefile
+#         # Read the Path of the Shapefile
+#         # print(RearPaths(Key='NetworkSimple2'))
+#         P2=RearPaths(Key='NetworkSimple2')
 
-        # Get the Values from the ComboBoxes for the Field Index
-        InputIndexShp2Routes=int(ComboShp2Routes.current())-1
-        InputIndexShp2StartCode=int(ComboShp2StartCode.current())-1
-        InputIndexShp2StartName=int(ComboShp2StartName.current())-1
-        InputIndexShp2EndCode=int(ComboShp2EndCode.current())-1
-        InputIndexShp2EndName=int(ComboShp2EndName.current())-1
+#         # Get the Values from the ComboBoxes for the Field Index
+#         InputIndexShp2Routes=int(ComboShp2Routes.current())-1
+#         InputIndexShp2StartCode=int(ComboShp2StartCode.current())-1
+#         InputIndexShp2StartName=int(ComboShp2StartName.current())-1
+#         InputIndexShp2EndCode=int(ComboShp2EndCode.current())-1
+#         InputIndexShp2EndName=int(ComboShp2EndName.current())-1
         
-        # Get the Values from the ComboBoxes for the Field Name
-        InputFieldNameShp2Routes=NewList1[int(ComboShp2Routes.current())]
-        InputFieldNameShp2StartCode=NewList1[int(ComboShp2StartCode.current())]
-        InputFieldNameShp2StartName=NewList1[int(ComboShp2StartName.current())]
-        InputFieldNameShp2EndCode=NewList1[int(ComboShp2EndCode.current())]
-        InputFieldNameShp2EndName=NewList1[int(ComboShp2EndName.current())]
+#         # Get the Values from the ComboBoxes for the Field Name
+#         InputFieldNameShp2Routes=NewList1[int(ComboShp2Routes.current())]
+#         InputFieldNameShp2StartCode=NewList1[int(ComboShp2StartCode.current())]
+#         InputFieldNameShp2StartName=NewList1[int(ComboShp2StartName.current())]
+#         InputFieldNameShp2EndCode=NewList1[int(ComboShp2EndCode.current())]
+#         InputFieldNameShp2EndName=NewList1[int(ComboShp2EndName.current())]
         
-        # Show the values of each field
-        print("ComboShp2Routes  ",InputFieldNameShp2Routes,InputIndexShp2Routes)
-        print("ComboShp2StartCode  ",InputFieldNameShp2StartCode,InputIndexShp2StartCode)
-        print("ComboShp2StartName  ",InputFieldNameShp2StartName,InputIndexShp2StartName)
-        print("ComboShp2EndCode  ",InputFieldNameShp2EndCode,InputIndexShp2EndCode)
-        print("ComboShp2EndName  ",InputFieldNameShp2EndName,InputIndexShp2EndName)
+#         # Show the values of each field
+#         print("ComboShp2Routes  ",InputFieldNameShp2Routes,InputIndexShp2Routes)
+#         print("ComboShp2StartCode  ",InputFieldNameShp2StartCode,InputIndexShp2StartCode)
+#         print("ComboShp2StartName  ",InputFieldNameShp2StartName,InputIndexShp2StartName)
+#         print("ComboShp2EndCode  ",InputFieldNameShp2EndCode,InputIndexShp2EndCode)
+#         print("ComboShp2EndName  ",InputFieldNameShp2EndName,InputIndexShp2EndName)
 
-        # The Dictionary with the fields is created
-        FieldsShp2={'Line':[InputFieldNameShp2Routes,InputIndexShp2Routes],
-        'StartCode':[InputFieldNameShp2StartCode,InputIndexShp2StartCode],
-        'StartName':[InputFieldNameShp2StartName,InputIndexShp2StartName],
-        'EndCode':[InputFieldNameShp2EndCode,InputIndexShp2EndCode],
-        'EndName':[InputFieldNameShp2EndName,InputIndexShp2EndName],
-        }
-        print("FieldsShp2",FieldsShp2)
-        # b=input()
-        print(ReadFieldNames(Shapefile=P2))
-        print(".................................................................................................")
+#         # The Dictionary with the fields is created
+#         FieldsShp2={'Line':[InputFieldNameShp2Routes,InputIndexShp2Routes],
+#         'StartCode':[InputFieldNameShp2StartCode,InputIndexShp2StartCode],
+#         'StartName':[InputFieldNameShp2StartName,InputIndexShp2StartName],
+#         'EndCode':[InputFieldNameShp2EndCode,InputIndexShp2EndCode],
+#         'EndName':[InputFieldNameShp2EndName,InputIndexShp2EndName],
+#         }
+#         print("FieldsShp2",FieldsShp2)
+#         # b=input()
+#         print(ReadFieldNames(Shapefile=P2))
+#         print(".................................................................................................")
 
-        ########################################
-        # Call for the External functions 
+#         ########################################
+#         # Call for the External functions 
 
-        EdgeCollection,EdgeProperties,NodeCollection,NodeProperties=readShpNetWork(Shapefile=P1,Fileds=FieldsShp1)
-        G_Dict_1=CreateNetwork(List_Edges=EdgeCollection,Edge_Properties=EdgeProperties,List_Nodes=NodeCollection,Node_Properties=NodeProperties)
-        P2Prj=str(P1.split(".shp")[0])+".prj"
-        ident = EpsgIdent()
-        ident.read_prj_from_file(P2Prj)
-        Epsg1=ident.get_epsg()
-        print("Epsg1",Epsg1)
-        UpdatePath(Key='EPSGIN',NewPath=str(Epsg1))
-        SimpleNetworkToGeoJson(G=G_Dict_1)
-
-
-        EdgeCollection,EdgeProperties,NodeCollection,NodeProperties=readShpNetWork(Shapefile=P2,Fileds=FieldsShp2)
-        G_Dict_2=CreateNetwork(List_Edges=EdgeCollection,Edge_Properties=EdgeProperties,List_Nodes=NodeCollection,Node_Properties=NodeProperties)
-        P2Prj=str(P2.split(".shp")[0])+".prj"
-        ident = EpsgIdent()
-        ident.read_prj_from_file(P2Prj)
-        Epsg1=ident.get_epsg()
-        print("Epsg1",Epsg1)
-        UpdatePath(Key='EPSGIN',NewPath=str(Epsg1))
-        SimpleNetworkToGeoJson(G=G_Dict_2)
+#         EdgeCollection,EdgeProperties,NodeCollection,NodeProperties=readShpNetWork(Shapefile=P1,Fileds=FieldsShp1)
+#         G_Dict_1=CreateNetwork(List_Edges=EdgeCollection,Edge_Properties=EdgeProperties,List_Nodes=NodeCollection,Node_Properties=NodeProperties)
+#         P2Prj=str(P1.split(".shp")[0])+".prj"
+#         ident = EpsgIdent()
+#         ident.read_prj_from_file(P2Prj)
+#         Epsg1=ident.get_epsg()
+#         print("Epsg1",Epsg1)
+#         UpdatePath(Key='EPSGIN',NewPath=str(Epsg1))
+#         SimpleNetworkToGeoJson(G=G_Dict_1)
 
 
-        # G_List=[G_Dict_1,G_Dict_2]
-        # # PlotGraphs(G_List)
-        # for G_Dict in G_List:
-        #         SimpleNetworkToGeoJson(G=G_Dict)
-        #         b=input()
+#         EdgeCollection,EdgeProperties,NodeCollection,NodeProperties=readShpNetWork(Shapefile=P2,Fileds=FieldsShp2)
+#         G_Dict_2=CreateNetwork(List_Edges=EdgeCollection,Edge_Properties=EdgeProperties,List_Nodes=NodeCollection,Node_Properties=NodeProperties)
+#         P2Prj=str(P2.split(".shp")[0])+".prj"
+#         ident = EpsgIdent()
+#         ident.read_prj_from_file(P2Prj)
+#         Epsg1=ident.get_epsg()
+#         print("Epsg1",Epsg1)
+#         UpdatePath(Key='EPSGIN',NewPath=str(Epsg1))
+#         SimpleNetworkToGeoJson(G=G_Dict_2)
 
-        UpdatePath(Key='EPSGIN',NewPath="")
 
-        UpdatePath(Key='NetworkSimple1',NewPath="")
-        UpdatePath(Key='NetworkSimple2',NewPath="")
+#         # G_List=[G_Dict_1,G_Dict_2]
+#         # # PlotGraphs(G_List)
+#         # for G_Dict in G_List:
+#         #         SimpleNetworkToGeoJson(G=G_Dict)
+#         #         b=input()
+
+#         UpdatePath(Key='EPSGIN',NewPath="")
+
+#         UpdatePath(Key='NetworkSimple1',NewPath="")
+#         UpdatePath(Key='NetworkSimple2',NewPath="")
 
 
-    def ReqFields1():
-        print("\n"*2)
-        print(".................we get into the Fields 1........................")
-        P1=RearPaths(Key='NetworkSimple1')
-        print(P1)
-        if P1=='':
-            return None
-        List1=ReadFieldNames(Shapefile=P1)
-        print(List1)
-        # print(P1)
-        for elment in List1:
-            print("----------------------------------------------------------------------------",elment)
-            NewList1.append(elment[0])
-        ###################################################################################
-        ComboShp1Routes.config(width=17,values=NewList1)
-        ComboShp1Routes.place(x=120,y=140)
-        labelShp1Routes = Label(frame, text="Field with Routes/Line", font='Helvetica 12')
-        labelShp1Routes.place(x=120, y=120, anchor=W)
-        ###########################
-        ComboShp1StartCode.config(width=17,values=NewList1)
-        ComboShp1StartCode.place(x=280,y=140)
-        labelShp1StartCode = Label(frame, text="Field with Start Code", font='Helvetica 12')
-        labelShp1StartCode.place(x=280, y=120, anchor=W)
-        ###########################
-        ComboShp1StartName.config(width=17,values=NewList1)
-        ComboShp1StartName.place(x=440,y=140)
-        labelShp1StartName = Label(frame, text="Field with Start Name", font='Helvetica 12')
-        labelShp1StartName.place(x=440, y=120, anchor=W)
-        ###########################
-        ComboShp1EndCode.config(width=17,values=NewList1)
-        ComboShp1EndCode.place(x=280,y=200)
-        labelShp1EndCode = Label(frame, text="Field with End Code", font='Helvetica 12')
-        labelShp1EndCode.place(x=280, y=180, anchor=W)
-        ###########################
-        ComboShp1EndName.config(width=17,values=NewList1)
-        ComboShp1EndName.place(x=440,y=200)
-        labelShp1EndName = Label(frame, text="Field with End Name", font='Helvetica 12')
-        labelShp1EndName.place(x=440, y=180, anchor=W)
+#     def ReqFields1():
+#         print("\n"*2)
+#         print(".................we get into the Fields 1........................")
+#         P1=RearPaths(Key='NetworkSimple1')
+#         print(P1)
+#         if P1=='':
+#             return None
+#         List1=ReadFieldNames(Shapefile=P1)
+#         print(List1)
+#         # print(P1)
+#         for elment in List1:
+#             print("----------------------------------------------------------------------------",elment)
+#             NewList1.append(elment[0])
+#         ###################################################################################
+#         ComboShp1Routes.config(width=17,values=NewList1)
+#         ComboShp1Routes.place(x=120,y=140)
+#         labelShp1Routes = Label(frame, text="Field with Routes/Line", font='Helvetica 12')
+#         labelShp1Routes.place(x=120, y=120, anchor=W)
+#         ###########################
+#         ComboShp1StartCode.config(width=17,values=NewList1)
+#         ComboShp1StartCode.place(x=280,y=140)
+#         labelShp1StartCode = Label(frame, text="Field with Start Code", font='Helvetica 12')
+#         labelShp1StartCode.place(x=280, y=120, anchor=W)
+#         ###########################
+#         ComboShp1StartName.config(width=17,values=NewList1)
+#         ComboShp1StartName.place(x=440,y=140)
+#         labelShp1StartName = Label(frame, text="Field with Start Name", font='Helvetica 12')
+#         labelShp1StartName.place(x=440, y=120, anchor=W)
+#         ###########################
+#         ComboShp1EndCode.config(width=17,values=NewList1)
+#         ComboShp1EndCode.place(x=280,y=200)
+#         labelShp1EndCode = Label(frame, text="Field with End Code", font='Helvetica 12')
+#         labelShp1EndCode.place(x=280, y=180, anchor=W)
+#         ###########################
+#         ComboShp1EndName.config(width=17,values=NewList1)
+#         ComboShp1EndName.place(x=440,y=200)
+#         labelShp1EndName = Label(frame, text="Field with End Name", font='Helvetica 12')
+#         labelShp1EndName.place(x=440, y=180, anchor=W)
 
     
-    def ReqFields2():
-        print("\n"*2)
-        print(".................we get into the Fields 2........................")
-        P2=RearPaths(Key='NetworkSimple2')
-        print(P2)
-        if P2=='':
-            return None
+#     def ReqFields2():
+#         print("\n"*2)
+#         print(".................we get into the Fields 2........................")
+#         P2=RearPaths(Key='NetworkSimple2')
+#         print(P2)
+#         if P2=='':
+#             return None
 
-        List2=ReadFieldNames(Shapefile=P2)
-        print(List2)
-        # print(P2)
-        for elment in List2:
-            print("----------------------------------------------------------------------------",elment)
-            NewList2.append(elment[0])
-        ###################################################################################
-        ComboShp2Routes.config(width=17,values=NewList2)
-        ComboShp2Routes.place(x=120,y=340)
-        labelShp2Routes = Label(frame, text="Field with Routes/Line", font='Helvetica 12')
-        labelShp2Routes.place(x=120, y=320, anchor=W)
-        ###########################
-        ComboShp2StartCode.config(width=17,values=NewList2)
-        ComboShp2StartCode.place(x=280,y=340)
-        labelShp2StartCode = Label(frame, text="Field with Start Code", font='Helvetica 12')
-        labelShp2StartCode.place(x=280, y=320, anchor=W)
-        ###########################
-        ComboShp2StartName.config(width=17,values=NewList2)
-        ComboShp2StartName.place(x=440,y=340)
-        labelShp2StartName = Label(frame, text="Field with Start Name", font='Helvetica 12')
-        labelShp2StartName.place(x=440, y=320, anchor=W)
-        ###########################
-        ComboShp2EndCode.config(width=17,values=NewList2)
-        ComboShp2EndCode.place(x=280,y=400)
-        labelShp2EndCode = Label(frame, text="Field with End Code", font='Helvetica 12')
-        labelShp2EndCode.place(x=280, y=380, anchor=W)
-        ###########################
-        ComboShp2EndName.config(width=17,values=NewList2)
-        ComboShp2EndName.place(x=440,y=400)
-        labelShp2EndName = Label(frame, text="Field with End Name", font='Helvetica 12')
-        labelShp2EndName.place(x=440, y=380, anchor=W)
-
-
-    ###############################################################################################
-    #First City
-    Geom1={'Coords':{'X':30,'Y':60},'Sizes':{'Hei':60,'Wid':650}}
-    Config1={"System":1,'TitleFrame':'Nodes','Command':'GetShpPath','Key':'NetworkSimple1'}
-    PathSHP(Frame=frame,Geom=Geom1,Config=Config1,)
-    print("#################################################")
-    print("#################################################")
-
-    Button=ttk.Button(frame,text="Get Fields")
-    Button.config(command=(ReqFields1))
-    Button.place(x=30, y=150, anchor=W)
+#         List2=ReadFieldNames(Shapefile=P2)
+#         print(List2)
+#         # print(P2)
+#         for elment in List2:
+#             print("----------------------------------------------------------------------------",elment)
+#             NewList2.append(elment[0])
+#         ###################################################################################
+#         ComboShp2Routes.config(width=17,values=NewList2)
+#         ComboShp2Routes.place(x=120,y=340)
+#         labelShp2Routes = Label(frame, text="Field with Routes/Line", font='Helvetica 12')
+#         labelShp2Routes.place(x=120, y=320, anchor=W)
+#         ###########################
+#         ComboShp2StartCode.config(width=17,values=NewList2)
+#         ComboShp2StartCode.place(x=280,y=340)
+#         labelShp2StartCode = Label(frame, text="Field with Start Code", font='Helvetica 12')
+#         labelShp2StartCode.place(x=280, y=320, anchor=W)
+#         ###########################
+#         ComboShp2StartName.config(width=17,values=NewList2)
+#         ComboShp2StartName.place(x=440,y=340)
+#         labelShp2StartName = Label(frame, text="Field with Start Name", font='Helvetica 12')
+#         labelShp2StartName.place(x=440, y=320, anchor=W)
+#         ###########################
+#         ComboShp2EndCode.config(width=17,values=NewList2)
+#         ComboShp2EndCode.place(x=280,y=400)
+#         labelShp2EndCode = Label(frame, text="Field with End Code", font='Helvetica 12')
+#         labelShp2EndCode.place(x=280, y=380, anchor=W)
+#         ###########################
+#         ComboShp2EndName.config(width=17,values=NewList2)
+#         ComboShp2EndName.place(x=440,y=400)
+#         labelShp2EndName = Label(frame, text="Field with End Name", font='Helvetica 12')
+#         labelShp2EndName.place(x=440, y=380, anchor=W)
 
 
-    ###############################################################################################
-    #Second City
-    Geom2={'Coords':{'X':30,'Y':280},'Sizes':{'Hei':60,'Wid':650}}
-    Config2={"System":2,'TitleFrame':'Nodes','Command':'GetShpPath','Key':'NetworkSimple2'}
-    PathSHP(Frame=frame,Geom=Geom2,Config=Config2)
-    print("#################################################")
-    print("#################################################")
+#     ###############################################################################################
+#     #First City
+#     Geom1={'Coords':{'X':30,'Y':60},'Sizes':{'Hei':60,'Wid':650}}
+#     Config1={"System":1,'TitleFrame':'Nodes','Command':'GetShpPath','Key':'NetworkSimple1'}
+#     PathSHP(Frame=frame,Geom=Geom1,Config=Config1,)
+#     print("#################################################")
+#     print("#################################################")
 
-    Button=ttk.Button(frame,text="Get Fields")
-    Button.config(command=(ReqFields2))
-    Button.place(x=30, y=380, anchor=W)
+#     Button=ttk.Button(frame,text="Get Fields")
+#     Button.config(command=(ReqFields1))
+#     Button.place(x=30, y=150, anchor=W)
 
 
-    ###############################################################################################
-    ###############################################################################################
-    Button=ttk.Button(frame,text="RUN")
-    Button.config(command=(RunAnalaysis))
-    Button.place(x=350, y=450, anchor=W)
+#     ###############################################################################################
+#     #Second City
+#     Geom2={'Coords':{'X':30,'Y':280},'Sizes':{'Hei':60,'Wid':650}}
+#     Config2={"System":2,'TitleFrame':'Nodes','Command':'GetShpPath','Key':'NetworkSimple2'}
+#     PathSHP(Frame=frame,Geom=Geom2,Config=Config2)
+#     print("#################################################")
+#     print("#################################################")
+
+#     Button=ttk.Button(frame,text="Get Fields")
+#     Button.config(command=(ReqFields2))
+#     Button.place(x=30, y=380, anchor=W)
+
+
+#     ###############################################################################################
+#     ###############################################################################################
+#     Button=ttk.Button(frame,text="RUN")
+#     Button.config(command=(RunAnalaysis))
+#     Button.place(x=350, y=450, anchor=W)
 
 
 def GTFSOperation(frame):
@@ -595,415 +598,418 @@ def GTFSOperation(frame):
 
 
 
-def NodeNetworkAnalysis(frame):
+# def NodeNetworkAnalysis(frame):
 
-    ###############################################################################################
-    # Frame that holds the tabs
-    FrameElemento=ttk.LabelFrame(frame,height = 550, width =650,text ='City Selection')
-    FrameElemento.place(x=30, y=30, anchor=NW)
+#     ###############################################################################################
+#     # Frame that holds the tabs
+#     FrameElemento=ttk.LabelFrame(frame,height = 550, width =650,text ='City Selection')
+#     FrameElemento.place(x=30, y=30, anchor=NW)
 
-    nbCities = ttk.Notebook(frame)
-    nbCities.place(x=5,y=5)
+#     nbCities = ttk.Notebook(frame)
+#     nbCities.place(x=5,y=5)
 
-    T1 = tkinter.Frame(nbCities)
-    T2 = tkinter.Frame(nbCities)
+#     T1 = tkinter.Frame(nbCities)
+#     T2 = tkinter.Frame(nbCities)
 
-        #Add the tab
-    nbCities.add(T1, text="First City")
-    T1.config(height=540,width=640)
-    T1.config(relief= RIDGE)
+#         #Add the tab
+#     nbCities.add(T1, text="First City")
+#     T1.config(height=540,width=640)
+#     T1.config(relief= RIDGE)
 
-    #Add the tab
-    nbCities.add(T2, text="SecondCity")
-    T2.config(height=540,width=640)
-    T2.config(relief= RIDGE)
-
-
-    ComboShpA1Routes= ttk.Combobox(T1)
-    ComboShpA1StartCode= ttk.Combobox(T1)
-    ComboShpA1StartName= ttk.Combobox(T1)
-    ComboShpA1EndCode= ttk.Combobox(T1)
-    ComboShpA1EndName= ttk.Combobox(T1)
-
-    ComboShpA2Fid= ttk.Combobox(T1)
-    ComboShpA2Route= ttk.Combobox(T1)
-
-    ComboShpB1Routes = ttk.Combobox(T2)
-    ComboShpB1StartCode = ttk.Combobox(T2)
-    ComboShpB1StartName = ttk.Combobox(T2)
-    ComboShpB1EndCode = ttk.Combobox(T2)
-    ComboShpB1EndName = ttk.Combobox(T2)
-
-    ComboShpB2Fid= ttk.Combobox(T2)
-    ComboShpB2Route= ttk.Combobox(T2)
+#     #Add the tab
+#     nbCities.add(T2, text="SecondCity")
+#     T2.config(height=540,width=640)
+#     T2.config(relief= RIDGE)
 
 
-    NewListA1=[]
-    NewListA2 = []
-    NewListB1=[]
-    NewListB2 = []
+#     ComboShpA1Routes= ttk.Combobox(T1)
+#     ComboShpA1StartCode= ttk.Combobox(T1)
+#     ComboShpA1StartName= ttk.Combobox(T1)
+#     ComboShpA1EndCode= ttk.Combobox(T1)
+#     ComboShpA1EndName= ttk.Combobox(T1)
 
-    def RunAnalaysis():
-        ########################################
-        # Get Variables for the first Shapefile
+#     ComboShpA2Fid= ttk.Combobox(T1)
+#     ComboShpA2Route= ttk.Combobox(T1)
 
-        # Read the Path of the Shapefile
-        # print(RearPaths(Key='NetworkSimple1'))
-        P1=RearPaths(Key='NetworkNodeLine1')
+#     ComboShpB1Routes = ttk.Combobox(T2)
+#     ComboShpB1StartCode = ttk.Combobox(T2)
+#     ComboShpB1StartName = ttk.Combobox(T2)
+#     ComboShpB1EndCode = ttk.Combobox(T2)
+#     ComboShpB1EndName = ttk.Combobox(T2)
 
-        # Get the Values from the ComboBoxes for the Field Index
-        InputIndexShpA1Routes=int(ComboShpA1Routes.current())-1
-        InputIndexShpA1StartCode=int(ComboShpA1StartCode.current())-1
-        InputIndexShpA1StartName=int(ComboShpA1StartName.current())-1
-        InputIndexShpA1EndCode=int(ComboShpA1EndCode.current())-1
-        InputIndexShpA1EndName=int(ComboShpA1EndName.current())-1
+#     ComboShpB2Fid= ttk.Combobox(T2)
+#     ComboShpB2Route= ttk.Combobox(T2)
+
+
+#     NewListA1=[]
+#     NewListA2 = []
+#     NewListB1=[]
+#     NewListB2 = []
+
+#     def RunAnalaysis():
+#         ########################################
+#         # Get Variables for the first Shapefile
+
+#         # Read the Path of the Shapefile
+#         # print(RearPaths(Key='NetworkSimple1'))
+#         P1=RearPaths(Key='NetworkNodeLine1')
+
+#         # Get the Values from the ComboBoxes for the Field Index
+#         InputIndexShpA1Routes=int(ComboShpA1Routes.current())-1
+#         InputIndexShpA1StartCode=int(ComboShpA1StartCode.current())-1
+#         InputIndexShpA1StartName=int(ComboShpA1StartName.current())-1
+#         InputIndexShpA1EndCode=int(ComboShpA1EndCode.current())-1
+#         InputIndexShpA1EndName=int(ComboShpA1EndName.current())-1
         
-        # Get the Values from the ComboBoxes for the Field Name
-        InputFieldNameShpA1Routes=NewListA1[int(ComboShpA1Routes.current())]
-        InputFieldNameShpA1StartCode=NewListA1[int(ComboShpA1StartCode.current())]
-        InputFieldNameShpA1StartName=NewListA1[int(ComboShpA1StartName.current())]
-        InputFieldNameShpA1EndCode=NewListA1[int(ComboShpA1EndCode.current())]
-        InputFieldNameShpA1EndName=NewListA1[int(ComboShpA1EndName.current())]
+#         # Get the Values from the ComboBoxes for the Field Name
+#         InputFieldNameShpA1Routes=NewListA1[int(ComboShpA1Routes.current())]
+#         InputFieldNameShpA1StartCode=NewListA1[int(ComboShpA1StartCode.current())]
+#         InputFieldNameShpA1StartName=NewListA1[int(ComboShpA1StartName.current())]
+#         InputFieldNameShpA1EndCode=NewListA1[int(ComboShpA1EndCode.current())]
+#         InputFieldNameShpA1EndName=NewListA1[int(ComboShpA1EndName.current())]
         
-        # Show the values of each field
-        print("ComboShpA1Routes  ",InputFieldNameShpA1Routes,InputIndexShpA1Routes)
-        print("ComboShpA1StartName  ",InputFieldNameShpA1StartName,InputIndexShpA1StartName)
-        print("ComboShpA1StartCode  ",InputFieldNameShpA1StartCode,InputIndexShpA1StartCode)
-        print("ComboShpA1EndName  ",InputFieldNameShpA1EndName,InputIndexShpA1EndName)
-        print("ComboShpA1EndCode  ",InputFieldNameShpA1EndCode,InputIndexShpA1EndCode)
-        print("\n\n",P1)
-        # b=input()
-        # The Dictionary with the fields is created
-        FieldsShpA1={'Line':[InputFieldNameShpA1Routes,InputIndexShpA1Routes],
-        'StartCode':[InputFieldNameShpA1StartCode,InputIndexShpA1StartCode],
-        'StartName':[InputFieldNameShpA1StartName,InputIndexShpA1StartName],
-        'EndCode':[InputFieldNameShpA1EndCode,InputIndexShpA1EndCode],
-        'EndName':[InputFieldNameShpA1EndName,InputIndexShpA1EndName],
-        }
-        print(FieldsShpA1)
-        print(ReadFieldNames(Shapefile=P1))
-        print(".................................................................................................")
-        # b=input()
+#         # Show the values of each field
+#         print("ComboShpA1Routes  ",InputFieldNameShpA1Routes,InputIndexShpA1Routes)
+#         print("ComboShpA1StartName  ",InputFieldNameShpA1StartName,InputIndexShpA1StartName)
+#         print("ComboShpA1StartCode  ",InputFieldNameShpA1StartCode,InputIndexShpA1StartCode)
+#         print("ComboShpA1EndName  ",InputFieldNameShpA1EndName,InputIndexShpA1EndName)
+#         print("ComboShpA1EndCode  ",InputFieldNameShpA1EndCode,InputIndexShpA1EndCode)
+#         print("\n\n",P1)
+#         # b=input()
+#         # The Dictionary with the fields is created
+#         FieldsShpA1={'Line':[InputFieldNameShpA1Routes,InputIndexShpA1Routes],
+#         'StartCode':[InputFieldNameShpA1StartCode,InputIndexShpA1StartCode],
+#         'StartName':[InputFieldNameShpA1StartName,InputIndexShpA1StartName],
+#         'EndCode':[InputFieldNameShpA1EndCode,InputIndexShpA1EndCode],
+#         'EndName':[InputFieldNameShpA1EndName,InputIndexShpA1EndName],
+#         }
+#         print(FieldsShpA1)
+#         print(ReadFieldNames(Shapefile=P1))
+#         print(".................................................................................................")
+#         # b=input()
 
-        print(RearPaths(Key='NetworkBusStops1'))
-        InputIndexShpA2Fid=int(ComboShpA2Fid.current())-1
-        InputIndexShpA2FLine=int(ComboShpA2Route.current())-1
-        # InputIndexShpA2Fid=int(ComboShpA2Fid.current())
-        # InputIndexShpA2FLine=int(ComboShpA2Route.current())
+#         print(RearPaths(Key='NetworkBusStops1'))
+#         InputIndexShpA2Fid=int(ComboShpA2Fid.current())-1
+#         InputIndexShpA2FLine=int(ComboShpA2Route.current())-1
+#         # InputIndexShpA2Fid=int(ComboShpA2Fid.current())
+#         # InputIndexShpA2FLine=int(ComboShpA2Route.current())
 
-        InputFieldNameShpA2Fid=NewListA2[int(ComboShpA2Fid.current())]
-        InputFieldNameShpA2Routes=NewListA2[int(ComboShpA2Route.current())]
+#         InputFieldNameShpA2Fid=NewListA2[int(ComboShpA2Fid.current())]
+#         InputFieldNameShpA2Routes=NewListA2[int(ComboShpA2Route.current())]
 
-        print("ComboShpA2Fid   ",InputIndexShpA2Fid,InputFieldNameShpA2Fid)
-        print("ComboShpA2Route",InputIndexShpA2FLine,InputFieldNameShpA2Routes)
-        # b=input()
-        # print(NewListA2,"\n",NewListA2[int(ComboShpA2Fid.current())],"\n",NewListA2[int(ComboShpA2Route.current())])
-        P2=RearPaths(Key='NetworkBusStops1')
-        print(P2)
-        print(ReadFieldNames(Shapefile=P2))
-        print(".................................................................................................")
-        # b=input()
-        #################################################################################################
-        #################################################################################################
-        #################################################################################################
+#         print("ComboShpA2Fid   ",InputIndexShpA2Fid,InputFieldNameShpA2Fid)
+#         print("ComboShpA2Route",InputIndexShpA2FLine,InputFieldNameShpA2Routes)
+#         # b=input()
+#         # print(NewListA2,"\n",NewListA2[int(ComboShpA2Fid.current())],"\n",NewListA2[int(ComboShpA2Route.current())])
+#         P2=RearPaths(Key='NetworkBusStops1')
+#         print(P2)
+#         print(ReadFieldNames(Shapefile=P2))
+#         print(".................................................................................................")
+#         # b=input()
+#         #################################################################################################
+#         #################################################################################################
+#         #################################################################################################
 
-        ########################################
-        # Get Variables for the Second Shapefile
-        # Read the Path of the Shapefile
-        # print(RearPaths(Key='NetworkSimple2'))
-        P3=RearPaths(Key='NetworkNodeLine2')
+#         ########################################
+#         # Get Variables for the Second Shapefile
+#         # Read the Path of the Shapefile
+#         # print(RearPaths(Key='NetworkSimple2'))
+#         P3=RearPaths(Key='NetworkNodeLine2')
 
-        # Get the Values from the ComboBoxes for the Field Index
-        InputIndexShpB1Routes=int(ComboShpB1Routes.current())-1
-        InputIndexShpB1StartCode=int(ComboShpB1StartCode.current())-1
-        InputIndexShpB1StartName=int(ComboShpB1StartName.current())-1
-        InputIndexShpB1EndCode=int(ComboShpB1EndCode.current())-1
-        InputIndexShpB1EndName=int(ComboShpB1EndName.current())-1
+#         # Get the Values from the ComboBoxes for the Field Index
+#         InputIndexShpB1Routes=int(ComboShpB1Routes.current())-1
+#         InputIndexShpB1StartCode=int(ComboShpB1StartCode.current())-1
+#         InputIndexShpB1StartName=int(ComboShpB1StartName.current())-1
+#         InputIndexShpB1EndCode=int(ComboShpB1EndCode.current())-1
+#         InputIndexShpB1EndName=int(ComboShpB1EndName.current())-1
         
-        # Get the Values from the ComboBoxes for the Field Name
-        InputFieldNameShpB1Routes=NewListB1[int(ComboShpB1Routes.current())]
-        InputFieldNameShpB1StartCode=NewListB1[int(ComboShpB1StartCode.current())]
-        InputFieldNameShpB1StartName=NewListB1[int(ComboShpB1StartName.current())]
-        InputFieldNameShpB1EndCode=NewListB1[int(ComboShpB1EndCode.current())]
-        InputFieldNameShpB1EndName=NewListB1[int(ComboShpB1EndName.current())]
+#         # Get the Values from the ComboBoxes for the Field Name
+#         InputFieldNameShpB1Routes=NewListB1[int(ComboShpB1Routes.current())]
+#         InputFieldNameShpB1StartCode=NewListB1[int(ComboShpB1StartCode.current())]
+#         InputFieldNameShpB1StartName=NewListB1[int(ComboShpB1StartName.current())]
+#         InputFieldNameShpB1EndCode=NewListB1[int(ComboShpB1EndCode.current())]
+#         InputFieldNameShpB1EndName=NewListB1[int(ComboShpB1EndName.current())]
         
-        # Show the values of each field
-        print("ComboShpB1Routes  ",InputFieldNameShpB1Routes,InputIndexShpB1Routes)
-        print("ComboShpB1StartCode  ",InputFieldNameShpB1StartCode,InputIndexShpB1StartCode)
-        print("ComboShpB1StartName  ",InputFieldNameShpB1StartName,InputIndexShpB1StartName)
-        print("ComboShpB1EndCode  ",InputFieldNameShpB1EndCode,InputIndexShpB1EndCode)
-        print("ComboShpB1EndName  ",InputFieldNameShpB1EndName,InputIndexShpB1EndName)
-        # b=input()
-        # The Dictionary with the fields is created
-        FieldsShpB1={'Line':[InputFieldNameShpB1Routes,InputIndexShpB1Routes],
-        'StartCode':[InputFieldNameShpB1StartCode,InputIndexShpB1StartCode],
-        'StartName':[InputFieldNameShpB1StartName,InputIndexShpB1StartName],
-        'EndCode':[InputFieldNameShpB1EndCode,InputIndexShpB1EndCode],
-        'EndName':[InputFieldNameShpB1EndName,InputIndexShpB1EndName],
-        }
-        print(FieldsShpB1)
-        # print(ReadFieldNames(Shapefile=P3))
-        print(".................................................................................................")
+#         # Show the values of each field
+#         print("ComboShpB1Routes  ",InputFieldNameShpB1Routes,InputIndexShpB1Routes)
+#         print("ComboShpB1StartCode  ",InputFieldNameShpB1StartCode,InputIndexShpB1StartCode)
+#         print("ComboShpB1StartName  ",InputFieldNameShpB1StartName,InputIndexShpB1StartName)
+#         print("ComboShpB1EndCode  ",InputFieldNameShpB1EndCode,InputIndexShpB1EndCode)
+#         print("ComboShpB1EndName  ",InputFieldNameShpB1EndName,InputIndexShpB1EndName)
+#         # b=input()
+#         # The Dictionary with the fields is created
+#         FieldsShpB1={'Line':[InputFieldNameShpB1Routes,InputIndexShpB1Routes],
+#         'StartCode':[InputFieldNameShpB1StartCode,InputIndexShpB1StartCode],
+#         'StartName':[InputFieldNameShpB1StartName,InputIndexShpB1StartName],
+#         'EndCode':[InputFieldNameShpB1EndCode,InputIndexShpB1EndCode],
+#         'EndName':[InputFieldNameShpB1EndName,InputIndexShpB1EndName],
+#         }
+#         print(FieldsShpB1)
+#         # print(ReadFieldNames(Shapefile=P3))
+#         print(".................................................................................................")
 
-        print(RearPaths(Key='NetworkBusStops2'))
-        InputIndexShpB2Fid=int(ComboShpB2Fid.current())-1
-        InputIndexShpB2FLine=int(ComboShpB2Route.current())-1
-        # InputIndexShpB4Fid=int(ComboShpB2Fid.current())
-        # InputIndexShpB4FLine=int(ComboShpB2Route.current())
+#         print(RearPaths(Key='NetworkBusStops2'))
+#         InputIndexShpB2Fid=int(ComboShpB2Fid.current())-1
+#         InputIndexShpB2FLine=int(ComboShpB2Route.current())-1
+#         # InputIndexShpB4Fid=int(ComboShpB2Fid.current())
+#         # InputIndexShpB4FLine=int(ComboShpB2Route.current())
 
-        InputFieldNameShpB2Fid=NewListB2[int(ComboShpB2Fid.current())]
-        InputFieldNameShpB2Routes=NewListB2[int(ComboShpB2Route.current())]
+#         InputFieldNameShpB2Fid=NewListB2[int(ComboShpB2Fid.current())]
+#         InputFieldNameShpB2Routes=NewListB2[int(ComboShpB2Route.current())]
 
-        print("ComboShpB2Fid   ",InputIndexShpB2Fid,InputFieldNameShpB2Fid)
-        print("ComboShpB2Route",InputIndexShpB2FLine,InputFieldNameShpB2Routes)
-        # b=input()
-        # print(NewListB2,"\n",NewListB2[int(ComboShpB2Fid.current())],"\n",NewListB2[int(ComboShpB2Route.current())])
-        P4=RearPaths(Key='NetworkBusStops2')
-        print(P4)
-        print(ReadFieldNames(Shapefile=P4))
-        print(".................................................................................................")
+#         print("ComboShpB2Fid   ",InputIndexShpB2Fid,InputFieldNameShpB2Fid)
+#         print("ComboShpB2Route",InputIndexShpB2FLine,InputFieldNameShpB2Routes)
+#         # b=input()
+#         # print(NewListB2,"\n",NewListB2[int(ComboShpB2Fid.current())],"\n",NewListB2[int(ComboShpB2Route.current())])
+#         P4=RearPaths(Key='NetworkBusStops2')
+#         print(P4)
+#         print(ReadFieldNames(Shapefile=P4))
+#         print(".................................................................................................")
 
-        # b=input()
-        ########################################
-        # Call for the External functions 
-        # from NetworkAnalisys import AgregateTransitNetwork
+#         # b=input()
+#         ########################################
+#         # Call for the External functions 
+#         # from NetworkAnalisys import AgregateTransitNetwork
 
-        EdgeCollection,EdgeProperties=readShpNetWorkForSimplification(Shapefile=P1,Fileds=FieldsShpA1)
-        LBS1=CalculateVecinityBusStops(Shapefile=P2,FieldId=[InputFieldNameShpA2Fid,InputIndexShpA2Fid] ,Routes= [InputFieldNameShpA2Routes,InputIndexShpA2FLine])
-        Nodes= AgregateTransitNetwork(ListBusStops=LBS1,Range=75)
-        G_Dict_1=AgregatedStopsToNetwork(AgregatedNodes=Nodes,Edge_List=EdgeCollection,Edge_Properties=EdgeProperties)
-        P2Prj=str(P2.split(".shp")[0])+".prj"
-        ident = EpsgIdent()
-        ident.read_prj_from_file(P2Prj)
-        Epsg1=ident.get_epsg()
-        print("Epsg1",Epsg1)
-        UpdatePath(Key='EPSGIN',NewPath=str(Epsg1))
-        NetWorkToGeoJson(G=G_Dict_1['G'])
+#         EdgeCollection,EdgeProperties=readShpNetWorkForSimplification(Shapefile=P1,Fileds=FieldsShpA1)
+#         LBS1=CalculateVecinityBusStops(Shapefile=P2,FieldId=[InputFieldNameShpA2Fid,InputIndexShpA2Fid] ,Routes= [InputFieldNameShpA2Routes,InputIndexShpA2FLine])
+#         Nodes= AgregateTransitNetwork(ListBusStops=LBS1,Range=75)
+#         G_Dict_1=AgregatedStopsToNetwork(AgregatedNodes=Nodes,Edge_List=EdgeCollection,Edge_Properties=EdgeProperties)
+#         P2Prj=str(P2.split(".shp")[0])+".prj"
+#         ident = EpsgIdent()
+#         ident.read_prj_from_file(P2Prj)
+#         Epsg1=ident.get_epsg()
+#         print("Epsg1",Epsg1)
+#         UpdatePath(Key='EPSGIN',NewPath=str(Epsg1))
+#         NetWorkToGeoJson(G=G_Dict_1['G'])
 
-        EdgeCollection,EdgeProperties=readShpNetWorkForSimplification(Shapefile=P3,Fileds=FieldsShpB1)
-        LBS1=CalculateVecinityBusStops(Shapefile=P4,FieldId=[InputFieldNameShpB2Fid,InputIndexShpB2Fid] ,Routes= [InputFieldNameShpB2Routes,InputIndexShpB2FLine])
-        Nodes= AgregateTransitNetwork(ListBusStops=LBS1,Range=75)
-        G_Dict_2=AgregatedStopsToNetwork(AgregatedNodes=Nodes,Edge_List=EdgeCollection,Edge_Properties=EdgeProperties)
-        P2Prj=str(P4.split(".shp")[0])+".prj"
-        ident = EpsgIdent()
-        ident.read_prj_from_file(P2Prj)
-        Epsg1=ident.get_epsg()
-        print("Epsg1",Epsg1)
-        UpdatePath(Key='EPSGIN',NewPath=str(Epsg1))
-        NetWorkToGeoJson(G=G_Dict_2['G'])
+#         EdgeCollection,EdgeProperties=readShpNetWorkForSimplification(Shapefile=P3,Fileds=FieldsShpB1)
+#         LBS1=CalculateVecinityBusStops(Shapefile=P4,FieldId=[InputFieldNameShpB2Fid,InputIndexShpB2Fid] ,Routes= [InputFieldNameShpB2Routes,InputIndexShpB2FLine])
+#         Nodes= AgregateTransitNetwork(ListBusStops=LBS1,Range=75)
+#         G_Dict_2=AgregatedStopsToNetwork(AgregatedNodes=Nodes,Edge_List=EdgeCollection,Edge_Properties=EdgeProperties)
+#         P2Prj=str(P4.split(".shp")[0])+".prj"
+#         ident = EpsgIdent()
+#         ident.read_prj_from_file(P2Prj)
+#         Epsg1=ident.get_epsg()
+#         print("Epsg1",Epsg1)
+#         UpdatePath(Key='EPSGIN',NewPath=str(Epsg1))
+#         NetWorkToGeoJson(G=G_Dict_2['G'])
 
-        # G_List=[G_Dict_1,G_Dict_2]
+#         # G_List=[G_Dict_1,G_Dict_2]
 
         
 
-        # for G_Dict in G_List:
-        #     NetWorkToGeoJson(G=G_Dict['G'])
+#         # for G_Dict in G_List:
+#         #     NetWorkToGeoJson(G=G_Dict['G'])
 
 
 
-        UpdatePath(Key='EPSGIN',NewPath="")
-        UpdatePath(Key='NetworkNodeLine1',NewPath="")
-        UpdatePath(Key='NetworkBusStops1',NewPath="")
-        UpdatePath(Key='NetworkNodeLine2',NewPath="")
-        UpdatePath(Key='NetworkBusStops2',NewPath="")
+#         UpdatePath(Key='EPSGIN',NewPath="")
+#         UpdatePath(Key='NetworkNodeLine1',NewPath="")
+#         UpdatePath(Key='NetworkBusStops1',NewPath="")
+#         UpdatePath(Key='NetworkNodeLine2',NewPath="")
+#         UpdatePath(Key='NetworkBusStops2',NewPath="")
 
 
-    def ReqFieldsA1():
-        print("\n"*2)
-        print(".................we get into the Fields 1........................")
-        P1=RearPaths(Key='NetworkNodeLine1')
-        print(P1)
-        if P1=='':
-            return None
-        List1=ReadFieldNames(Shapefile=P1)
-        print(List1)
-        # print(P1)
-        for elment in List1:
-            print("----------------------------------------------------------------------------",elment)
-            NewListA1.append(elment[0])
-        ###################################################################################
-        ComboShpA1Routes.config(width=17,values=NewListA1)
-        ComboShpA1Routes.place(x=120,y=140)
-        labelShpA1Routes = Label(T1, text="Field with Routes/Line", font='Helvetica 12')
-        labelShpA1Routes.place(x=120, y=120, anchor=W)
-        ###########################
-        ComboShpA1StartCode.config(width=17,values=NewListA1)
-        ComboShpA1StartCode.place(x=280,y=140)
-        labelShpA1StartCode = Label(T1, text="Field with Start Code", font='Helvetica 12')
-        labelShpA1StartCode.place(x=280, y=120, anchor=W)
-        ###########################
-        ComboShpA1StartName.config(width=17,values=NewListA1)
-        ComboShpA1StartName.place(x=440,y=140)
-        labelShpA1StartName = Label(T1, text="Field with Start Name", font='Helvetica 12')
-        labelShpA1StartName.place(x=440, y=120, anchor=W)
-        ###########################
-        ComboShpA1EndCode.config(width=17,values=NewListA1)
-        ComboShpA1EndCode.place(x=280,y=200)
-        labelShpA1EndCode = Label(T1, text="Field with End Code", font='Helvetica 12')
-        labelShpA1EndCode.place(x=280, y=180, anchor=W)
-        ###########################
-        ComboShpA1EndName.config(width=17,values=NewListA1)
-        ComboShpA1EndName.place(x=440,y=200)
-        labelShpA1EndName = Label(T1, text="Field with End Name", font='Helvetica 12')
-        labelShpA1EndName.place(x=440, y=180, anchor=W)
+#     def ReqFieldsA1():
+#         print("\n"*2)
+#         print(".................we get into the Fields 1........................")
+#         P1=RearPaths(Key='NetworkNodeLine1')
+#         print(P1)
+#         if P1=='':
+#             return None
+#         List1=ReadFieldNames(Shapefile=P1)
+#         print(List1)
+#         # print(P1)
+#         for elment in List1:
+#             print("----------------------------------------------------------------------------",elment)
+#             NewListA1.append(elment[0])
+#         ###################################################################################
+#         ComboShpA1Routes.config(width=17,values=NewListA1)
+#         ComboShpA1Routes.place(x=120,y=140)
+#         labelShpA1Routes = Label(T1, text="Field with Routes/Line", font='Helvetica 12')
+#         labelShpA1Routes.place(x=120, y=120, anchor=W)
+#         ###########################
+#         ComboShpA1StartCode.config(width=17,values=NewListA1)
+#         ComboShpA1StartCode.place(x=280,y=140)
+#         labelShpA1StartCode = Label(T1, text="Field with Start Code", font='Helvetica 12')
+#         labelShpA1StartCode.place(x=280, y=120, anchor=W)
+#         ###########################
+#         ComboShpA1StartName.config(width=17,values=NewListA1)
+#         ComboShpA1StartName.place(x=440,y=140)
+#         labelShpA1StartName = Label(T1, text="Field with Start Name", font='Helvetica 12')
+#         labelShpA1StartName.place(x=440, y=120, anchor=W)
+#         ###########################
+#         ComboShpA1EndCode.config(width=17,values=NewListA1)
+#         ComboShpA1EndCode.place(x=280,y=200)
+#         labelShpA1EndCode = Label(T1, text="Field with End Code", font='Helvetica 12')
+#         labelShpA1EndCode.place(x=280, y=180, anchor=W)
+#         ###########################
+#         ComboShpA1EndName.config(width=17,values=NewListA1)
+#         ComboShpA1EndName.place(x=440,y=200)
+#         labelShpA1EndName = Label(T1, text="Field with End Name", font='Helvetica 12')
+#         labelShpA1EndName.place(x=440, y=180, anchor=W)
 
 
-    def ReqFieldsA2():
+#     def ReqFieldsA2():
 
-        print("\n"*2)
-        print(".................we get into the Fields 2........................")
-        P2=RearPaths(Key='NetworkBusStops1')
-        print(P2)
-        if P2=='':
-            return None
-        List2=ReadFieldNames(Shapefile=P2)
-        # print(List2)
-        print(P2)
-        for elment in List2:
-            print("----------------------------------------------------------------------------",elment)
-            NewListA2.append(elment[0])
-        ComboShpA2Fid.config(width=17,values=NewListA2)
-        ComboShpA2Fid.place(x=130,y=360)
-        labelImp2Fid = Label(T1, text="Field with Node ID", font='Helvetica 12')
-        labelImp2Fid.place(x=130, y=320, anchor=W)
+#         print("\n"*2)
+#         print(".................we get into the Fields 2........................")
+#         P2=RearPaths(Key='NetworkBusStops1')
+#         print(P2)
+#         if P2=='':
+#             return None
+#         List2=ReadFieldNames(Shapefile=P2)
+#         # print(List2)
+#         print(P2)
+#         for elment in List2:
+#             print("----------------------------------------------------------------------------",elment)
+#             NewListA2.append(elment[0])
+#         ComboShpA2Fid.config(width=17,values=NewListA2)
+#         ComboShpA2Fid.place(x=130,y=360)
+#         labelImp2Fid = Label(T1, text="Field with Node ID", font='Helvetica 12')
+#         labelImp2Fid.place(x=130, y=320, anchor=W)
 
-        ComboShpA2Route.config(width=17,values=NewListA2)
-        ComboShpA2Route.place(x=300,y=360)
-        labelImp2Routes = Label(T1, text="Field with Routes/Lines", font='Helvetica 12')
-        labelImp2Routes.place(x=300, y=320, anchor=W)
-
-
-    def ReqFieldsB1():
-        print("\n"*2)
-        print(".................we get into the Fields 3........................")
-        P3=RearPaths(Key='NetworkNodeLine2')
-        print(P3)
-        if P3=='':
-            return None
-        List1=ReadFieldNames(Shapefile=P3)
-        print(List1)
-        # print(P3)
-        for elment in List1:
-            print("----------------------------------------------------------------------------",elment)
-            NewListB1.append(elment[0])
-        ###################################################################################
-        ComboShpB1Routes.config(width=17,values=NewListB1)
-        ComboShpB1Routes.place(x=120,y=140)
-        labelShpB1Routes = Label(T2, text="Field with Routes/Line", font='Helvetica 12')
-        labelShpB1Routes.place(x=120, y=120, anchor=W)
-        ###########################
-        ComboShpB1StartCode.config(width=17,values=NewListB1)
-        ComboShpB1StartCode.place(x=280,y=140)
-        labelShpB1StartCode = Label(T2, text="Field with Start Code", font='Helvetica 12')
-        labelShpB1StartCode.place(x=280, y=120, anchor=W)
-        ###########################
-        ComboShpB1StartName.config(width=17,values=NewListB1)
-        ComboShpB1StartName.place(x=440,y=140)
-        labelShpB1StartName = Label(T2, text="Field with Start Name", font='Helvetica 12')
-        labelShpB1StartName.place(x=440, y=120, anchor=W)
-        ###########################
-        ComboShpB1EndCode.config(width=17,values=NewListB1)
-        ComboShpB1EndCode.place(x=280,y=200)
-        labelShpB1EndCode = Label(T2, text="Field with End Code", font='Helvetica 12')
-        labelShpB1EndCode.place(x=280, y=180, anchor=W)
-        ###########################
-        ComboShpB1EndName.config(width=17,values=NewListB1)
-        ComboShpB1EndName.place(x=440,y=200)
-        labelShpB1EndName = Label(T2, text="Field with End Name", font='Helvetica 12')
-        labelShpB1EndName.place(x=440, y=180, anchor=W)
-
-    def ReqFieldsB2():
-
-        print("\n"*2)
-        print(".................we get into the Fields 4........................")
-        P4=RearPaths(Key='NetworkBusStops2')
-        print(P4)
-        if P4=='':
-            return None
-        List2=ReadFieldNames(Shapefile=P4)
-        # print(List2)
-        print(P4)
-        for elment in List2:
-            print("----------------------------------------------------------------------------",elment)
-            NewListB2.append(elment[0])
-        ComboShpB2Fid.config(width=17,values=NewListB2)
-        ComboShpB2Fid.place(x=130,y=360)
-        labelImpB2Fid = Label(T2, text="Field with Node ID", font='Helvetica 12')
-        labelImpB2Fid.place(x=130, y=320, anchor=W)
-
-        ComboShpB2Route.config(width=17,values=NewListB2)
-        ComboShpB2Route.place(x=300,y=360)
-        labelImpB2Routes = Label(T2, text="Field with Routes/Lines", font='Helvetica 12')
-        labelImpB2Routes.place(x=300, y=320, anchor=W)
+#         ComboShpA2Route.config(width=17,values=NewListA2)
+#         ComboShpA2Route.place(x=300,y=360)
+#         labelImp2Routes = Label(T1, text="Field with Routes/Lines", font='Helvetica 12')
+#         labelImp2Routes.place(x=300, y=320, anchor=W)
 
 
+#     def ReqFieldsB1():
+#         print("\n"*2)
+#         print(".................we get into the Fields 3........................")
+#         P3=RearPaths(Key='NetworkNodeLine2')
+#         print(P3)
+#         if P3=='':
+#             return None
+#         List1=ReadFieldNames(Shapefile=P3)
+#         print(List1)
+#         # print(P3)
+#         for elment in List1:
+#             print("----------------------------------------------------------------------------",elment)
+#             NewListB1.append(elment[0])
+#         ###################################################################################
+#         ComboShpB1Routes.config(width=17,values=NewListB1)
+#         ComboShpB1Routes.place(x=120,y=140)
+#         labelShpB1Routes = Label(T2, text="Field with Routes/Line", font='Helvetica 12')
+#         labelShpB1Routes.place(x=120, y=120, anchor=W)
+#         ###########################
+#         ComboShpB1StartCode.config(width=17,values=NewListB1)
+#         ComboShpB1StartCode.place(x=280,y=140)
+#         labelShpB1StartCode = Label(T2, text="Field with Start Code", font='Helvetica 12')
+#         labelShpB1StartCode.place(x=280, y=120, anchor=W)
+#         ###########################
+#         ComboShpB1StartName.config(width=17,values=NewListB1)
+#         ComboShpB1StartName.place(x=440,y=140)
+#         labelShpB1StartName = Label(T2, text="Field with Start Name", font='Helvetica 12')
+#         labelShpB1StartName.place(x=440, y=120, anchor=W)
+#         ###########################
+#         ComboShpB1EndCode.config(width=17,values=NewListB1)
+#         ComboShpB1EndCode.place(x=280,y=200)
+#         labelShpB1EndCode = Label(T2, text="Field with End Code", font='Helvetica 12')
+#         labelShpB1EndCode.place(x=280, y=180, anchor=W)
+#         ###########################
+#         ComboShpB1EndName.config(width=17,values=NewListB1)
+#         ComboShpB1EndName.place(x=440,y=200)
+#         labelShpB1EndName = Label(T2, text="Field with End Name", font='Helvetica 12')
+#         labelShpB1EndName.place(x=440, y=180, anchor=W)
 
+#     def ReqFieldsB2():
+
+#         print("\n"*2)
+#         print(".................we get into the Fields 4........................")
+#         P4=RearPaths(Key='NetworkBusStops2')
+#         print(P4)
+#         if P4=='':
+#             return None
+#         List2=ReadFieldNames(Shapefile=P4)
+#         # print(List2)
+#         print(P4)
+#         for elment in List2:
+#             print("----------------------------------------------------------------------------",elment)
+#             NewListB2.append(elment[0])
+#         ComboShpB2Fid.config(width=17,values=NewListB2)
+#         ComboShpB2Fid.place(x=130,y=360)
+#         labelImpB2Fid = Label(T2, text="Field with Node ID", font='Helvetica 12')
+#         labelImpB2Fid.place(x=130, y=320, anchor=W)
+
+#         ComboShpB2Route.config(width=17,values=NewListB2)
+#         ComboShpB2Route.place(x=300,y=360)
+#         labelImpB2Routes = Label(T2, text="Field with Routes/Lines", font='Helvetica 12')
+#         labelImpB2Routes.place(x=300, y=320, anchor=W)
 
 
 
 
-    ###############################################################################################
-    ###########################        First City               ###################################
-    ###############################################################################################
-
-    Geom1={'Coords':{'X':30,'Y':60},'Sizes':{'Hei':60,'Wid':650}}
-    Config1={"System":1,'TitleFrame':'Lines [First City]','Command':'GetShpPath','Key':'NetworkNodeLine1'}
-    PathSHP(Frame=T1,Geom=Geom1,Config=Config1,)
-    print("#################################################")
-    print("#################################################")
-
-    Button=ttk.Button(T1,text="Get Fields")
-    Button.config(command=(ReqFieldsA1))
-    Button.place(x=30, y=150, anchor=W)
-
-    ###############################################################################################
-    #Second City
-    Geom2={'Coords':{'X':30,'Y':280},'Sizes':{'Hei':60,'Wid':650}}
-    Config2={"System":2,'TitleFrame':'Nodes  [First City]','Command':'GetShpPath','Key':'NetworkBusStops1'}
-    PathSHP(Frame=T1,Geom=Geom2,Config=Config2)
-    print("#################################################")
-    print("#################################################")
-
-    Button=ttk.Button(T1,text="Get Fields")
-    Button.config(command=(ReqFieldsA2))
-    Button.place(x=30, y=380, anchor=W)
-
-    ###############################################################################################
-    Button=ttk.Button(T1,text="RUN")
-    Button.config(command=(RunAnalaysis))
-    Button.place(x=350, y=450, anchor=W)
 
 
-    ###############################################################################################
-    ###########################        Second City              ###################################
-    ###############################################################################################
 
-    Geom1={'Coords':{'X':30,'Y':60},'Sizes':{'Hei':60,'Wid':650}}
-    Config1={"System":1,'TitleFrame':'Lines [Second City]','Command':'GetShpPath','Key':'NetworkNodeLine2'}
-    PathSHP(Frame=T2,Geom=Geom1,Config=Config1,)
-    print("#################################################")
-    print("#################################################")
+#     ###############################################################################################
+#     ###########################        First City               ###################################
+#     ###############################################################################################
 
-    Button=ttk.Button(T2,text="Get Fields")
-    Button.config(command=(ReqFieldsB1))
-    Button.place(x=30, y=150, anchor=W)
+#     Geom1={'Coords':{'X':30,'Y':60},'Sizes':{'Hei':60,'Wid':650}}
+#     Config1={"System":1,'TitleFrame':'Lines [First City]','Command':'GetShpPath','Key':'NetworkNodeLine1'}
+#     PathSHP(Frame=T1,Geom=Geom1,Config=Config1,)
+#     print("#################################################")
+#     print("#################################################")
 
-    ###############################################################################################
-    #Second City
-    Geom2={'Coords':{'X':30,'Y':280},'Sizes':{'Hei':60,'Wid':650}}
-    Config2={"System":2,'TitleFrame':'Nodes [Second City]','Command':'GetShpPath','Key':'NetworkBusStops2'}
-    PathSHP(Frame=T2,Geom=Geom2,Config=Config2)
-    print("#################################################")
-    print("#################################################")
+#     Button=ttk.Button(T1,text="Get Fields")
+#     Button.config(command=(ReqFieldsA1))
+#     Button.place(x=30, y=150, anchor=W)
 
-    Button=ttk.Button(T2,text="Get Fields")
-    Button.config(command=(ReqFieldsB2))
-    Button.place(x=30, y=380, anchor=W)
+#     ###############################################################################################
+#     #Second City
+#     Geom2={'Coords':{'X':30,'Y':280},'Sizes':{'Hei':60,'Wid':650}}
+#     Config2={"System":2,'TitleFrame':'Nodes  [First City]','Command':'GetShpPath','Key':'NetworkBusStops1'}
+#     PathSHP(Frame=T1,Geom=Geom2,Config=Config2)
+#     print("#################################################")
+#     print("#################################################")
 
-    ###############################################################################################
-    Button=ttk.Button(T2,text="RUN")
-    Button.config(command=(RunAnalaysis))
-    Button.place(x=350, y=450, anchor=W)
+#     Button=ttk.Button(T1,text="Get Fields")
+#     Button.config(command=(ReqFieldsA2))
+#     Button.place(x=30, y=380, anchor=W)
+
+#     ###############################################################################################
+#     Button=ttk.Button(T1,text="RUN")
+#     Button.config(command=(RunAnalaysis))
+#     Button.place(x=350, y=450, anchor=W)
+
+
+#     ###############################################################################################
+#     ###########################        Second City              ###################################
+#     ###############################################################################################
+
+#     Geom1={'Coords':{'X':30,'Y':60},'Sizes':{'Hei':60,'Wid':650}}
+#     Config1={"System":1,'TitleFrame':'Lines [Second City]','Command':'GetShpPath','Key':'NetworkNodeLine2'}
+#     PathSHP(Frame=T2,Geom=Geom1,Config=Config1,)
+#     print("#################################################")
+#     print("#################################################")
+
+#     Button=ttk.Button(T2,text="Get Fields")
+#     Button.config(command=(ReqFieldsB1))
+#     Button.place(x=30, y=150, anchor=W)
+
+#     ###############################################################################################
+#     #Second City
+#     Geom2={'Coords':{'X':30,'Y':280},'Sizes':{'Hei':60,'Wid':650}}
+#     Config2={"System":2,'TitleFrame':'Nodes [Second City]','Command':'GetShpPath','Key':'NetworkBusStops2'}
+#     PathSHP(Frame=T2,Geom=Geom2,Config=Config2)
+#     print("#################################################")
+#     print("#################################################")
+
+#     Button=ttk.Button(T2,text="Get Fields")
+#     Button.config(command=(ReqFieldsB2))
+#     Button.place(x=30, y=380, anchor=W)
+
+#     ###############################################################################################
+#     Button=ttk.Button(T2,text="RUN")
+#     Button.config(command=(RunAnalaysis))
+#     Button.place(x=350, y=450, anchor=W)
+
+
+
 
 def Correr(root):
     global DataBucket
@@ -1108,9 +1114,9 @@ def Correr(root):
     comboNumCitiesI1 = ttk.Combobox(f2,width=5,values=["2","3","4","5"])
     comboNumCitiesI1.place(x=230,y=31)
     
-    NodeRelevanceTab(frame=f2)
-    NetworkAnalysis(frame=f3)
-    NodeNetworkAnalysis(frame=f4)
+    # NodeRelevanceTab(frame=f2)
+    # NetworkAnalysis(frame=f3)
+    # NodeNetworkAnalysis(frame=f4)
     GTFSOperation(frame=f5)
 
     

@@ -40,7 +40,7 @@ def ConvertToUTM(lat,lon):
 
 
 
-def GtfsToNetwork(EdgeData,DataStops):
+def GtfsToNetwork(EdgeData,DataStops,NetworkIndex):
     print("DataStops:",type(DataStops),len(DataStops))
     print("EdgeData:",type(EdgeData),len(EdgeData))
     # b=input()
@@ -161,7 +161,7 @@ def GtfsToNetwork(EdgeData,DataStops):
         NodePrintProp['Pos'][node]=(x,y)
     # print("List_Nodes_Key",len(List_Nodes_Key))
     # print("List_Nodes",len(List_Nodes))
-    NetWorkToGeoJson(G=G)
+    NetWorkToGeoJson(G=G,NetworkIndex=NetworkIndex)
     # b=input()
     # nx.draw_networkx_nodes(G,pos=NodePrintProp['Pos'],node_size=50)
     # nx.draw_networkx_edges(G,pos=NodePrintProp['Pos'])
@@ -878,10 +878,10 @@ def ExportGeoJsonLines(PathBase,ListOfLines):
 
 
 
-def ExportGeoJsonPoints(ListOfPoints,PChar):
+def ExportGeoJsonPoints(ListOfPoints,PChar,NetworkIndex):
     # print(PChar)
     # b=input()
-
+    print(NetworkIndex)
     def Container(ListSegments):
         Text='{\n        "features": [\n'
         for Segment in ListSegments:
@@ -992,8 +992,9 @@ def ExportGeoJsonPoints(ListOfPoints,PChar):
         # b=input()
     # print(Container(ListSegments=FormatedPoints))
     files = [('GeoJson', '*.geojson'), 
-    ('Text Document', '*.txt')] 
-    Path = asksaveasfile(filetypes = files, defaultextension = files) 
+    ('Text Document', '*.txt')]
+    Titles=["Bus Network","Rail Network","Metro Network","Light Rail Netwrok","Other Network"]
+    Path = asksaveasfile(filetypes = files, defaultextension = files,title = Titles[NetworkIndex]) 
 
     fw=open(Path.name,"w",encoding='utf-8')
     # print(Container(ListSegments=FormatedPoints))
@@ -1019,8 +1020,12 @@ def ListToGeoJson(ListBusStops):
 
 
 
-def NetWorkToGeoJson(G):
+def NetWorkToGeoJson(G,NetworkIndex):
     # USES TK to get path
+    print(G)
+    b=input()
+
+
     PointCharacteristics={}
     ListOfPoints=[]
     Cont=0
@@ -1216,7 +1221,7 @@ def NetWorkToGeoJson(G):
 
 
 
-    ExportGeoJsonPoints(ListOfPoints=ListOfPoints,PChar=PointCharacteristics)
+    ExportGeoJsonPoints(ListOfPoints=ListOfPoints,PChar=PointCharacteristics,NetworkIndex=NetworkIndex)
 
 
 def SimpleNetworkToGeoJson(G):
@@ -1239,23 +1244,23 @@ def SimpleNetworkToGeoJson(G):
 
 
 if __name__ == "__main__":
-    Sample=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\SampleLine.csv"
+    # Sample=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\SampleLine.csv"
     # Edges=readSample(Path=Sample)
     # CreateNetwork(List_Edges=Edges)
-    PathFull=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\FullData.csv"
-    Fewlines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\FewLines.csv"
+    # PathFull=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\FullData.csv"
+    # Fewlines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\FewLines.csv"
 
-    Fields={'Line':['Line',1],
-    'StartName':["StartName",8],
-    'StartCode':["StartCode",9],
-    'EndName':["EndName",10],
-    'EndCode':["EndCode",11],
-    }
+    # Fields={'Line':['Line',1],
+    # 'StartName':["StartName",8],
+    # 'StartCode':["StartCode",9],
+    # 'EndName':["EndName",10],
+    # 'EndCode':["EndCode",11],
+    # }
 
-    SPFewLines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\FewLines.shp"
-    SpOtherLines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\OtherFewLines.shp"
-    AllLines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\BusLineVertex.shp"
-    SampleShp=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\SampleLine.shp"
+    # SPFewLines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\FewLines.shp"
+    # SpOtherLines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\OtherFewLines.shp"
+    # AllLines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\BusLineVertex.shp"
+    # SampleShp=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\SampleLine.shp"
 
     ############################################################################################################################################
     # EdgeCollection,EdgeProperties,NodeCollection,NodeProperties=readSample(Path=Fewlines)
@@ -1299,23 +1304,23 @@ if __name__ == "__main__":
 
     # SampleNA_Line=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network Cleaner Data\Sample_Lines_10t15.shp"
     # # SampleNA_Line=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network Cleaner Data\Sample_Lines_24.shp"
-    Fields={'Line':['Line',1],
-    'StartName':["StartName",8],
-    'StartCode':["StartCode",9],
-    'EndName':["EndName",10],
-    'EndCode':["EndCode",11],
-    }
+    # Fields={'Line':['Line',1],
+    # 'StartName':["StartName",8],
+    # 'StartCode':["StartCode",9],
+    # 'EndName':["EndName",10],
+    # 'EndCode':["EndCode",11],
+    # }
     # EdgeCollection,EdgeProperties=readShpNetWorkForSimplification(Shapefile=SampleNA_Line,Fileds=Fields)
 
     # # SampleNA_Bus=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network Cleaner Data\Sample_BusStops_24.shp"
     # SampleNA_Bus=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network Cleaner Data\Sample_BusStops_10t15.shp"
 
     # LBS1=CalculateVecinityBusStops(Shapefile=SampleNA_Bus,FieldId=["StopCode",0] ,Routes= ["Lines",1])
-    print("Len LBS1",len(LBS1))
+    # print("Len LBS1",len(LBS1))
     # print("End of CalculateVecinityBusStops")
-    Nodes= AgregateTransitNetwork(ListBusStops=LBS1,Range=75)
+    # Nodes= AgregateTransitNetwork(ListBusStops=LBS1,Range=75)
 
-    Gr=AgregatedStopsToNetwork(AgregatedNodes=Nodes,Edge_List=EdgeCollection,Edge_Properties=EdgeProperties)
+    # Gr=AgregatedStopsToNetwork(AgregatedNodes=Nodes,Edge_List=EdgeCollection,Edge_Properties=EdgeProperties)
 
     # NetWorkToGeoJson(G=G_Dict_1['G'])
 
