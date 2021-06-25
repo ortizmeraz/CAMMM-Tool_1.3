@@ -2,6 +2,10 @@ import os
 import csv
 import pyproj
 import zipfile
+import math
+import decimal
+decimal.getcontext().prec = 10
+
 
 from FeatureOperations import ConvertToUTM
 from FeatureOperations import Agregate
@@ -14,6 +18,7 @@ from NetworkAnalisys import NetWorkToGeoJson
 
 from ClassCollection import BusStop
 
+import networkx
 
 
 def DataCleanerTrips(ListToClean):
@@ -49,6 +54,171 @@ def GetPosition(Field,Elements):
             return idx
 
 
+def Distance(P1,P2):
+    PX=math.pow(decimal.Decimal(P2[0])-decimal.Decimal(P1[0]),2)
+    PY=math.pow(decimal.Decimal(P2[1])-decimal.Decimal(P1[1]),2)
+    # print("X2:",P2[0],"X1:",P1[0],"D:",math.sqrt(PX+PY))
+    # print("Y2:",P2[1],"y1:",P1[1])
+    # print()
+    return math.sqrt(PX+PY)
+
+
+def ConstructSpatialNetworkSHP(DictStops,DataSequence,DataTrips,DataRoutes,DataStops):
+    print("#######################################################################\n"*5)
+    # print("DataStops",type(DataStops))
+    # print(list(DataStops.keys())[:10])
+
+    # b=input()
+    DistanceNode=75
+    print(type(DictStops))
+    KeysDS=list(DictStops.keys())
+    print(KeysDS[:10])
+    CollectionLines={}
+    for key in KeysDS[:11]:
+        print("Line:",key)
+        CollectionLines[key]=[[]]
+        StoredStops=[]
+        print("A total of ",len(DictStops[key]['0']),"  of bus stops ")
+        ListOutbound=DictStops[key]['0']
+        ListInbound =DictStops[key]['1']
+        ListInbound.reverse()
+        # print("ListOutbound:",ListOutbound)
+        # print("ListInbound: ",ListInbound)
+        SameStartEnd=False
+        if ListInbound[0]==ListOutbound[0] and ListInbound[-1]==ListOutbound[-1]:
+            SameStartEnd=True
+            # CollectionLines[key].append(ListOutbound[0])
+        else: 
+            # Comparing the ends of the Lines by distance
+            LatAstart=float(DataStops[ListOutbound[0]]['stop_lat'])
+            LonAstart=float(DataStops[ListOutbound[0]]['stop_lon'])
+            XA1,YA1,Val_EPSG1A=ConvertToUTM(lat=LatAstart,lon=LonAstart)
+
+            LatBstart=float(DataStops[ListInbound[0]]['stop_lat'])
+            LonBstart=float(DataStops[ListInbound[0]]['stop_lon'])
+            XB1,YB1,Val_EPSG1B=ConvertToUTM(lat=LatBstart,lon=LonBstart)
+
+            distStart=Distance(P1=(XA1,YA1),P2=(XB1,YB1))
+            if distStart <30:
+                SameStartEnd=True
+                # CollectionLines[key].append((ListOutbound[0],ListInbound[0]))
+
+        print("Status of the lines: Same start and end=",SameStartEnd)
+
+        if len(ListOutbound)>len(ListInbound):
+            print("List Outbound (",len(ListOutbound),") is larger than List Inbound (",len(ListInbound))
+            GuideListStops=ListOutbound
+            ComplementListStop=ListInbound
+        else:
+            print("List Outbound (",len(ListOutbound),") is shorter than List Inbound",len(ListInbound))
+            GuideListStops=ListInbound
+            ComplementListStop=ListOutbound
+
+        for idx,WorkStop in enumerate(GuideListStops):
+
+            if idx < len(ComplementListStop):
+                SecIdx=idx
+            else:
+                Num=len(ComplementListStop)-1-i
+                while abs(Num)>len(ComplementListStop):
+                    Num=Num+1
+                SecIdx=Num
+
+
+            LatA=float(DataStops[WorkStop]['stop_lat'])
+            LonA=float(DataStops[WorkStop]['stop_lon'])
+            XA1,YA1,Val_EPSG1A=ConvertToUTM(lat=LatA,lon=LonA)
+
+            LatB=float(DataStops[ComplementListStop[SecIdx]]['stop_lat'])
+            LonB=float(DataStops[ComplementListStop[SecIdx]]['stop_lon'])
+            XB1,YB1,Val_EPSG1B=ConvertToUTM(lat=LatB,lon=LonB)
+
+            dist=Distance(P1=(XA1,YA1),P2=(XB1,YB1))
+
+            if dist < DistanceNode:
+                if WorkStop==ComplementListStop[SecIdx]:
+                    CollectionLines[key][0].append(WorkStop)
+                    StoredStops.append(WorkStop)
+                else:
+                    CollectionLines[key][0].append((WorkStop,ComplementListStop[SecIdx]))
+                    StoredStops.append(WorkStop)
+                    StoredStops.append(ComplementListStop[SecIdx])
+
+            # print(CollectionLines[key][0])
+            # print("\t Out Bound Stop: (",idx,") ",WorkStop," |  In Bound Stop (",SecIdx,")",ComplementListStop[SecIdx],dist)
+            if dist > DistanceNode:
+                ConditionCheck=False
+                InferiorLimit=idx-3
+                SuperiorLimit=idx+4
+                if SuperiorLimit < len(ComplementListStop):
+                    RangeOfOperation=list(range(InferiorLimit,SuperiorLimit))
+                else:
+                    RangeOfOperation=[]
+                    for i in range(InferiorLimit,SuperiorLimit):
+                        # print("I calculaton",i)
+                        if i < len(ComplementListStop):
+                            RangeOfOperation.append(i)
+                        else:
+                            Num=len(ComplementListStop)-1-i
+                            while abs(Num)>len(ComplementListStop):
+                                Num=Num+1
+                            RangeOfOperation.append(Num)
+                        
+                    # print(RangeOfOperation)
+                # print(idx,"movingStop",RangeOfOperation,"Total in Guide:",len(GuideListStops)," Total in counterpart",len(ComplementListStop))
+                for MovingIndex in RangeOfOperation:
+                    # print("Work Stop",WorkStop,"MovingIndex",MovingIndex,ComplementListStop[MovingIndex])
+                    LatA=float(DataStops[WorkStop]['stop_lat'])
+                    LonA=float(DataStops[WorkStop]['stop_lon'])
+                    XA1,YA1,Val_EPSG1A=ConvertToUTM(lat=LatA,lon=LonA)
+
+                    LatB=float(DataStops[ComplementListStop[MovingIndex]]['stop_lat'])
+                    LonB=float(DataStops[ComplementListStop[MovingIndex]]['stop_lon'])
+                    XB1,YB1,Val_EPSG1B=ConvertToUTM(lat=LatB,lon=LonB)
+
+                    distMobile=Distance(P1=(XA1,YA1),P2=(XB1,YB1))
+                    # print("\t\t",distMobile)
+                    if distMobile<DistanceNode:
+                        # print("Heeeeeeeeeeey")
+                        ConditionCheck=True
+                        NewMatch=ComplementListStop[MovingIndex]
+                        break
+                if ConditionCheck==False:
+                    CollectionLines[key][0].append(WorkStop)
+                    StoredStops.append(WorkStop)
+                else:
+                    CollectionLines[key][0].append((WorkStop,NewMatch))
+                    StoredStops.append(WorkStop)
+                    StoredStops.append(NewMatch)
+
+        BackStored=False
+        for idx, CompStop in enumerate(ComplementListStop):
+            if CompStop not in StoredStops:
+                # print("CollectionLines[key][-1]",CollectionLines[key][-1])
+                if BackStored==True:
+                    # print("Storing Simple")
+                    CollectionLines[key][-1].append(CompStop)
+                    StoredStops.append(CompStop)
+                else:
+                    # print("Add list")
+                    BackStored=True
+                    CollectionLines[key].append([])
+                    CollectionLines[key][-1].append(ComplementListStop[idx-1])
+                    CollectionLines[key][-1].append(CompStop)
+                    StoredStops.append(CompStop)
+
+            else:
+                if BackStored==True: 
+                    CollectionLines[key][-1].append(CompStop)
+                BackStored=False
+                
+
+        print("CollectionLines",CollectionLines[key],"\n")
+        print("ListInbound: ",ListInbound,"\n")
+        print("ListOutbound:",ListOutbound,"\n")
+        # b=input("Hello!")
+
+
 
 def ConvertToUTM(lat,lon):
     import warnings
@@ -61,8 +231,8 @@ def ConvertToUTM(lat,lon):
     proj_wgs84 = pyproj.Proj(init="epsg:4326")
     proj_utm = pyproj.Proj(init=str(Val_EPSG))
     x, y = pyproj.transform(proj_wgs84, proj_utm, lon, lat)
-    print("lat",lat,"lon",lon)
-    print("x",x,"y",y)
+    # print("lat",lat,"lon",lon)
+    # print("x",x,"y",y)
     # b=input('Press Enter ...')
 
     return x,y,Val_EPSG
@@ -194,20 +364,37 @@ def ReadGTFS(PathRoutes,PathTrips,PathStopTimes,PathStops):
     return DataSequence,DataTrips,DataRoutes,DataStops
 
 def GetSystemData(Path):
-    with open(Path,encoding="utf-8") as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=',')
-        headers = next(csv_reader, None)
-        # print(headers)
-        # b=input()
-        print(csv_reader)
-        for idx,row in enumerate(csv_reader):
-            print(idx,row)
-            if idx==0:
-                Agency=row[1]
-        print("................................\n")
-        print("Agency",Agency)
-        print("................................\n")
-        # b=input('Press Enter ...')
+
+    if os.name=='nt':
+        with open(Path,encoding="utf-8") as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            headers = next(csv_reader, None)
+            # print(headers)
+            # b=input()
+            print(csv_reader)
+            for idx,row in enumerate(csv_reader):
+                print(idx,row)
+                if idx==0:
+                    Agency=row[1]
+            print("................................\n")
+            print("Agency",Agency)
+            print("................................\n")
+            # b=input('Press Enter ...')
+    if os.name=="posix":
+        with open(Path) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            headers = next(csv_reader, None)
+            # print(headers)
+            # b=input()
+            print(csv_reader)
+            for idx,row in enumerate(csv_reader):
+                print(idx,row)
+                if idx==0:
+                    Agency=row[1]
+            print("................................\n")
+            print("Agency",Agency)
+            print("................................\n")
+
 
 
 def GtfsRouteCleaning(DataSequence,DataTrips,DataRoutes,DataStops):
@@ -491,6 +678,45 @@ def Runnzip(Path):
                 pass
         fw.close()
 
+def RunZipUnix(Path):
+    print("Getting into Run Zip for unix")
+    import zipfile
+    import pathlib
+
+    Pa=pathlib.Path().absolute()
+    print("ffffffffffffffffffffffffffffffffffffffffffffffffff",Pa)
+
+    archive = zipfile.ZipFile(Path, 'r')
+    with archive as zip: 
+        ZipList=zip.namelist()
+    archive = zipfile.ZipFile(Path, 'r')
+    for zipfile in ZipList:
+        print("zipfil  e",zipfile)
+        fw=open(r"Operational/"+zipfile,"w", encoding="utf-8")
+        FilePointer=archive.open(zipfile)
+        for line in FilePointer.readlines():
+            # print(line,type(line))
+            try:
+                text=line.decode("utf-8-sig").rstrip()
+                if text[-1]=="\n":
+                    text=text.rstrip()
+                if text !="":
+                    text=text+"\n"
+                    fw.write(text)
+                # if zipfile=="stop_times.txt":
+                #     print("#",text,"#",type(text))
+                #     b=input('Press Enter ...')
+            # b=input('Press Enter ...')
+            except:
+                pass
+        fw.close()
+
+
+    b=input("Waiting")
+
+
+
+
 def CleanFiles():
     entries = os.listdir("Operational")	
     for entry in entries:
@@ -523,13 +749,21 @@ def GetTypesofTransport(InputDict):
 
 def GTFS(Path,RequestedData):
     print("Enters the function")
-    Runnzip(Path=Path)
     print("Finish unpacking")
-    O_PathAgencyData=r"Operational\agency.txt"
-    O_PathRoutes=r"Operational\routes.txt"
-    O_PathTrips=r"Operational\trips.txt"
-    O_PathStopTimes=r"Operational\stop_times.txt"
-    O_PathStops=r"Operational\stops.txt"
+    if os.name=='nt':
+        Runnzip(Path=Path)
+        O_PathAgencyData=r"Operational\agency.txt"
+        O_PathRoutes=r"Operational\routes.txt"
+        O_PathTrips=r"Operational\trips.txt"
+        O_PathStopTimes=r"Operational\stop_times.txt"
+        O_PathStops=r"Operational\stops.txt"
+    if os.name=='posix':
+        RunZipUnix(Path=Path)
+        O_PathAgencyData="Operational/agency.txt"
+        O_PathRoutes="Operational/routes.txt"
+        O_PathTrips="Operational/trips.txt"
+        O_PathStopTimes="Operational/stop_times.txt"
+        O_PathStops="Operational/stops.txt"
 
     print("Start - Step 1")
     GetSystemData(Path=O_PathAgencyData)
@@ -568,24 +802,41 @@ def GTFS(Path,RequestedData):
     #     print(DS)
     #     print("########################")
     #     # print(type(DS),len(DS.keys()))
-    if len(ListofStops)!=len(EdgeList):
-        print("#"*30,"\n")
-        print("Error")
-    ["Data_Buses","Data_Train","Data_Metro","Data_Tram","Data_Other"]
+    CleanFiles()    
+    NetworkNames=["Data_Buses","Data_Train","Data_Metro","Data_Tram","Data_Other"]
     print("RequestedData",RequestedData)
+    print("Checking the list of stops",len(ListofStops))
+    for Stops in ListofStops:
+        print(type(Stops),len(Stops))
+        if len(Stops)>0:
+            for stop in list(Stops.keys())[:10]:
+                print(stop,type(stop))
+    print("Checking the list of Edges",len(EdgeList))
+    for Edges in EdgeList:
+        print(type(Edges),len(Edges))
     # b=input()
+    ListOfNeworks=[]
+
     if RequestedData["BusNetworkAnalysis"]==True:
         print("Start Bus network")
+        print("LEN ListofStops:",len(ListofStops))
         for idx,a in enumerate(ListofStops):
-            if len(a)>0:
+            print(idx,"Type:",type(a),len(a.keys()))
+        for idx,a in enumerate(ListofStops):
+            if len(a.keys())>0:
                 print(idx,"---------------------------------------------------------------------------------------------------------------------------------------------------------------")
-                CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx)
+                AnalyzedNetwork=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx)
+                ListOfNeworks.append(AnalyzedNetwork)
                 # CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeData,DataStops=DataStops)
                 print(idx,a)
                 print("FIN DE LA RED.......................................")
                 # b=input()
+            elif len(a.keys())==0:
+                print("No",idx)
         print("End Bus network")
-
+    for net in ListOfNeworks:
+        print(type(net))
+        # networkx.readwrite.nx_shp.write_shp(net,r"D:\GitHub\CAMMM-Tool_1.3\Output")
     # if RequestedData["NodeNetworkAnalysis"]==True:
     #     EdgeList,EdgeLine=GetEdgeLists(EdgeData)
     #     ListObjStops=ListGTFStoObjectBusStop(EdgeData=EdgeData,DataStops=DataStops,Data_Buses=Data_Buses)
@@ -594,26 +845,48 @@ def GTFS(Path,RequestedData):
     #     NetWorkToGeoJson(G=G_Dict_1['G'])
     # print("City Stattistics:")
     # print(CityStat_NumberOfStops)
-    CleanFiles()    
+    if RequestedData["NetworkToShpLines"]==True:
+        ConstructSpatialNetworkSHP(DictStops=ListofStops[0],DataSequence=DataSequence,DataTrips=DataTrips,DataRoutes=DataRoutes,DataStops=DataStops)
+
+
+        
+        # print("DataSequence")
+        # KeysDS=list(DataSequence.keys())
+        # print(KeysDS[:10])
+        # print(type(DataSequence))
+        # b=input()
+        # print(type(DataTrips))
+        # print("DataTrips")
+        # b=input()
+        # print(type(DataRoutes))
+        # print("DataRoutes")
+        # b=input()
+        # print(type(DataStops))
+        # print("DataStops")
 
 
 
 
 if __name__ == "__main__":
-    RequestedData={"BusNetworkAnalysis":True,"NodeNetworkAnalysis":True}
+    RequestedData={"BusNetworkAnalysis":False,"NodeNetworkAnalysis":False,"NetworkToShpLines":True}
     listPath=[]
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Berlin_GTFS\BVG_VBB_bereichsscharf.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Boston_GTFS\MBTA_GTFS.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Melbourne_GTFS\gtfs (1).zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Oslo_GTFS\gtfs (3).zip")
-    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Quebec_GTFS\gtfs.zip")
-    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Montreal GTFS\gtfs.zip")
+    # if os.name=='nt':
+    #     print('WIN10')
+    #     listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Quebec_GTFS\gtfs.zip")
+    # if os.name=='posix':
+    #     print('UNIX')
+    #     listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Quebec_GTFS/gtfs.zip")
+    listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Montreal GTFS\gtfs.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Torino_GTFS\gtfs (2).zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Toulouse_GTFS\tisseo_gtfs.zip")
 
-    # for Path in listPath:
-    #     print(Path)
-    #     GTFS(Path,RequestedData)
+    for Path in listPath:
+        print(Path)
+        GTFS(Path,RequestedData)
 
 
 
