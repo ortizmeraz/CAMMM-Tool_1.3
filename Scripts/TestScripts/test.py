@@ -230,13 +230,98 @@
 
 
 
-######################################################
+# ######################################################
 
-def HiFN(Text):
-    OutPut=" ZzzzzZzzzzz"+Text
-    return OutPut
+# def HiFN(Text):
+#     OutPut=" ZzzzzZzzzzz"+Text
+#     return OutPut
 
-if __name__ == "__main__":
-    D="one"
-    print(D)
-    print(HiFN(Text="Omar "))
+# if __name__ == "__main__":
+#     D="one"
+#     print(D)
+#     print(HiFN(Text="Omar "))
+
+
+
+# a=[2,3,4,5,6]
+
+# for x in a[:-1]:
+#     print(x)
+
+
+
+# print(a)
+
+# if a[0]:
+#     print("0 esta en a")
+
+# if a[10]:
+#     print("0 esta en a")
+# else:
+#     print("10 NO esta en a")
+
+
+# SetOhNumber=list(range(0,100000000))
+
+# for x in SetOhNumber:
+#     res=x*(x+5467485)
+
+import decimal
+decimal.getcontext().prec = 10
+
+
+import math
+
+def Distance(P1,P2):
+    PX=math.pow(decimal.Decimal(P2[0])-decimal.Decimal(P1[0]),2)
+    PY=math.pow(decimal.Decimal(P2[1])-decimal.Decimal(P1[1]),2)
+    # print("X2:",P2[0],"X1:",P1[0],"D:",math.sqrt(PX+PY))
+    # print("Y2:",P2[1],"y1:",P1[1])
+    # print()
+    return math.sqrt(PX+PY)
+
+
+import numpy
+
+def NuDistance(P1,P2):
+    X2=decimal.Decimal(P2[0])
+    X1=-decimal.Decimal(P1[0])
+    PX=numpy.power(numpy.sum([X2-X1]),2)
+    Y2=decimal.Decimal(P2[1])
+    Y1=-decimal.Decimal(P1[1])
+    PY=numpy.power(numpy.sum([Y2,Y1]),2)
+    
+    return PX,PY
+
+# a=numpy.sum([1,2])
+# print(a)
+g=NuDistance(P1=[1,1],P2=[50,50])
+f=Distance(P1=[1,1],P2=[50,50])
+
+
+import time
+
+
+# start = time.time()
+# # print("Math",start)
+# for i in range(0,1000000):
+#     f=Distance(P1=[1,1],P2=[50,50])
+# end = time.time()
+# dif=end-start
+# print("Math",f,"\t\t",dif)
+
+
+
+start = time.time()
+print("Numpy",start)
+for i in range(0,1000000):
+    g=NuDistance(P1=[1,1],P2=[50,50])
+end = time.time()
+dif=end-start
+print("Numpy",g,"\t\t",dif)
+
+
+
+
+
+print(":::::fin...........")

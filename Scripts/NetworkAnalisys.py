@@ -175,7 +175,8 @@ def GtfsToNetwork(EdgeData,DataStops,NetworkIndex):
         else:
             print("#################################################################################################\n"*10)
     print("Number of Stops in the network ",len(list(G.nodes)))
-    return len(list(G.nodes))
+    # return len(list(G.nodes))
+    return G
 
 
 

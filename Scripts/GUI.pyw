@@ -1059,19 +1059,19 @@ def Correr(root):
     ####################################################################
     ####################################################################
 
-    def GenInputsNodeImportance():
-        print("···································",comboNumCitiesI1)
-        NumCities=comboNumCitiesI1.current()+1
-        print("NumCities",NumCities,type(NumCities))
-        YvalOringal=60
-        for i in range(1,(NumCities+2)):
-            Yval=YvalOringal+(200*i)
+    # def GenInputsNodeImportance():
+    #     print("···································",comboNumCitiesI1)
+    #     NumCities=comboNumCitiesI1.current()+1
+    #     print("NumCities",NumCities,type(NumCities))
+    #     YvalOringal=60
+    #     for i in range(1,(NumCities+2)):
+    #         Yval=YvalOringal+(200*i)
 
 
-            Geom2={'Coords':{'X':30,'Y':(Yval+20)},'Sizes':{'Hei':90,'Wid':650}}
-            Config2={'TitleFrame':'Area of the City'}
-            PathEntry(Frame=f2,Geom=Geom2,Config=Config2)
-            print("In tab, ",Pathshp)
+    #         Geom2={'Coords':{'X':30,'Y':(Yval+20)},'Sizes':{'Hei':90,'Wid':650}}
+    #         Config2={'TitleFrame':'Area of the City'}
+    #         PathEntry(Frame=f2,Geom=Geom2,Config=Config2)
+    #         print("In tab, ",Pathshp)
 
 
     #Make 1st tab
