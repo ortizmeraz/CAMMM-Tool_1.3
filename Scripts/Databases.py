@@ -139,6 +139,15 @@ def TransportNames():
 
 
 
+def TextSqLite(idx):
+    Text=[]
+    Text[0]="INSERT INTO CityData "
+    Text[1]="(Id,FirstAgency,name,AreaSqKm,PopulationMillion,DensityPersonSqKm,NumBoroughs,NumTransitSystems,Type0,NumStops0,NumLines0,AvgDisStops0,Type1,NumStops1,NumLines1,AvgDisStops1,Type2,NumStops2,NumLines2,AvgDisStops2,Type3,NumStops3,NumLines3,AvgDisStops3,Type4,NumStops4,NumLines4,AvgDisStops4)"
+    Text[2]=" VALUES "
+    return idx
+
+
+
 if __name__ == "__main__":
     # print("New ...............Text")
     # # New=input()

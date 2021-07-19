@@ -813,12 +813,6 @@ def DatabaseConnection():
         print(row)
     return conn
 
-def TextSqLite(idx):
-    Text=[]
-    Text[0]="INSERT INTO CityData "
-    Text[1]="(Id,FirstAgency,name,AreaSqKm,PopulationMillion,DensityPersonSqKm,NumBoroughs,NumTransitSystems,Type0,NumStops0,NumLines0,AvgDisStops0,Type1,NumStops1,NumLines1,AvgDisStops1,Type2,NumStops2,NumLines2,AvgDisStops2,Type3,NumStops3,NumLines3,AvgDisStops3,Type4,NumStops4,NumLines4,AvgDisStops4)"
-    Text[2]=" VALUES "
-    return idx
 
 
 def CleanFiles():
@@ -1003,11 +997,11 @@ if __name__ == "__main__":
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Oslo_GTFS\gtfs (3).zip")
     # if os.name=='nt':
     #     print('WIN10')
-    #     listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Quebec_GTFS\gtfs.zip")
+    listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Quebec_GTFS\gtfs.zip")
     # if os.name=='posix':
     #     print('UNIX')
-    #     listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Quebec_GTFS/gtfs.zip")
-    listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Montreal GTFS\gtfs.zip")
+    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Quebec_GTFS/gtfs.zip")
+    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Montreal GTFS\gtfs.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Torino_GTFS\gtfs (2).zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Toulouse_GTFS\tisseo_gtfs.zip")
 
