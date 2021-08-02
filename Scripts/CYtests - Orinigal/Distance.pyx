@@ -1,11 +1,57 @@
-#example_cython.pyx
-import math
+import csv 
+import jenkspy 
+import statistics
+import numpy as np
 
-cpdef float CalcDistance(float P1x, float P1y, float P2x, float P2y):
-    cdef float PX
-    cdef float PY
-    PX=(P2x-P1x)*(P2x-P1x)
-    PY=(P2y-P1y)*(P2y-P1y)
-	
-    return math.sqrt(PX+PY)
-   
+
+cpdef QuantilesBare(str Path, int Classess):
+    cdef count
+    count=0
+    cdef list Data=[]
+    cdef list breaks=[]
+
+    with open(Path) as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        # print("csv_reader",type(csv_reader),len(list(csv_reader)))
+        for line in csv_reader:
+            count+=1
+            # print(line[-1])
+            if count==1:
+                pass
+            else:
+                Data.append(int(line[-1]))
+            # if count==100:
+            #     break
+
+    breaks= statistics.quantiles(Data,n=Classess)
+    return breaks
+
+
+
+cpdef NaturalBreaksNumpy(str Path, int Classess):
+    cdef int count
+    cdef list Data=[]
+    cdef list breaks=[]
+
+    count=0
+    
+    with open(Path) as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        # print("csv_reader",type(csv_reader),len(list(csv_reader)))
+        # a = np.arange(len(list(csv_reader)))
+        # print(a)
+        for line in csv_reader:
+            count+=1
+            # print(line[-1])
+            if count==1:
+                pass
+            else:
+                Data.append(int(line[-1]))
+            # if count==100:
+            #     break
+        Array=np.array(Data)
+
+    breaks = jenkspy.jenks_breaks(Array, nb_class=Classess)
+    return breaks
+
+

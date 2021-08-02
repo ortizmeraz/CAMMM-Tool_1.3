@@ -1,3 +1,6 @@
+import Calculations
+
+import utm
 import os
 import csv
 import pyproj
@@ -66,16 +69,27 @@ def Distance(P1,P2):
 
 def ConstructSpatialNetworkSHP(DictStops,DataSequence,DataTrips,DataRoutes,DataStops):
     print("#######################################################################\n"*5)
+    # This function requieres the following element 
+    #   · DictStops | The list in sequence containing all the stops in the SELECTED system
+    #   · DataSequence | The dictionary containing all the sequence of stops 
+    #   · DataTrips | The dictionary containing all the trips in the routes in the system
+    #   · DataRoutes | The dictionary containing  all the trips
+    #   · DataStops | The dictionary containing all the stops in the system
+
     # print("DataStops",type(DataStops))
     # print(list(DataStops.keys())[:10])
 
     # b=input()
+    # Setting the distance for the evaluation
     DistanceNode=75
     # print(type(DictStops))
+    # obtaing the keys for the dictionary containing all the stops in the system
     KeysDS=list(DictStops.keys())
     # print("Length of Keys:",KeysDS)
     # print(KeysDS[:10])
+    # A dictionary to contain the lines 
     CollectionLines={}
+    # A cicle where all the 
     for key in KeysDS:
         # print("Line:",key)
         CollectionLines[key]=[[]]
@@ -108,13 +122,13 @@ def ConstructSpatialNetworkSHP(DictStops,DataSequence,DataTrips,DataRoutes,DataS
         #     LonBstart=float(DataStops[ListInbound[0]]['stop_lon'])
         #     XB1,YB1,Val_EPSG1B=ConvertToUTM(lat=LatBstart,lon=LonBstart)
 
-        #     distStart=Distance(P1=(XA1,YA1),P2=(XB1,YB1))
-        #     if distStart <30:
-        #         SameStartEnd=True
-                # CollectionLines[key].append((ListOutbound[0],ListInbound[0]))
+            # distStart=Distance(P1=(XA1,YA1),P2=(XB1,YB1))
+            # if distStart <30:
+            #     SameStartEnd=True
+            #     CollectionLines[key].append((ListOutbound[0],ListInbound[0]))
 
         # print("Status of the lines: Same start and end=",SameStartEnd)
-
+        # The longest trip direction is obtained
         if len(ListOutbound)>len(ListInbound):
             # print("List Outbound (",len(ListOutbound),") is larger than List Inbound (",len(ListInbound))
             GuideListStops=ListOutbound
@@ -124,6 +138,7 @@ def ConstructSpatialNetworkSHP(DictStops,DataSequence,DataTrips,DataRoutes,DataS
             GuideListStops=ListInbound
             ComplementListStop=ListOutbound
 
+        # The longest is used to loop
         for idx,WorkStop in enumerate(GuideListStops):
 
             if idx < len(ComplementListStop):
@@ -134,16 +149,29 @@ def ConstructSpatialNetworkSHP(DictStops,DataSequence,DataTrips,DataRoutes,DataS
                     Num=Num+1
                 SecIdx=Num
 
-
+            # It is converted to UTM for both points 
             LatA=float(DataStops[WorkStop]['stop_lat'])
             LonA=float(DataStops[WorkStop]['stop_lon'])
-            XA1,YA1,Val_EPSG1A=ConvertToUTM(lat=LatA,lon=LonA)
+            
+            CoordUtm=list(utm.from_latlon(LatA, LonA))
+            XA1=CoordUtm[0]
+            YA1=CoordUtm[1]
+            Val_EPSG1A=CoordUtm[2]
+            # XA1,YA1,Val_EPSG1A=ConvertToUTM(lat=LatA,lon=LonA)
 
             LatB=float(DataStops[ComplementListStop[SecIdx]]['stop_lat'])
             LonB=float(DataStops[ComplementListStop[SecIdx]]['stop_lon'])
-            XB1,YB1,Val_EPSG1B=ConvertToUTM(lat=LatB,lon=LonB)
 
-            dist=Distance(P1=(XA1,YA1),P2=(XB1,YB1))
+            CoordUtm=list(utm.from_latlon(LatB, LonB))
+            XB1=CoordUtm[0]
+            YB1=CoordUtm[1]
+            Val_EPSG1B=CoordUtm[2]
+
+
+            # XB1,YB1,Val_EPSG1B=ConvertToUTM(lat=LatB,lon=LonB)
+
+            # dist=Distance(P1=(XA1,YA1),P2=(XB1,YB1))
+            dist=Calculations.CalcDistance(XA1,YA1,XB1,YB1)
 
             if dist < DistanceNode:
                 if WorkStop==ComplementListStop[SecIdx]:
@@ -187,13 +215,21 @@ def ConstructSpatialNetworkSHP(DictStops,DataSequence,DataTrips,DataRoutes,DataS
                     # print("Work Stop",WorkStop,"MovingIndex",MovingIndex,ComplementListStop[MovingIndex])
                     LatA=float(DataStops[WorkStop]['stop_lat'])
                     LonA=float(DataStops[WorkStop]['stop_lon'])
-                    XA1,YA1,Val_EPSG1A=ConvertToUTM(lat=LatA,lon=LonA)
-                    print(MovingIndex)
+                    CoordUtm=list(utm.from_latlon(LatA, LonA))
+                    XA1=CoordUtm[0]
+                    YA1=CoordUtm[1]
+                    Val_EPSG1A=CoordUtm[2]
+
                     LatB=float(DataStops[ComplementListStop[MovingIndex]]['stop_lat'])
                     LonB=float(DataStops[ComplementListStop[MovingIndex]]['stop_lon'])
-                    XB1,YB1,Val_EPSG1B=ConvertToUTM(lat=LatB,lon=LonB)
+                    CoordUtm=list(utm.from_latlon(LatB, LonB))
+                    XB1=CoordUtm[0]
+                    YB1=CoordUtm[1]
+                    Val_EPSG1B=CoordUtm[2]
 
-                    distMobile=Distance(P1=(XA1,YA1),P2=(XB1,YB1))
+                    # distMobile=Distance(P1=(XA1,YA1),P2=(XB1,YB1))
+                    distMobile=Calculations.CalcDistance(XA1,YA1,XB1,YB1)
+
                     # print("\t\t",distMobile)
                     if distMobile<DistanceNode:
                         # print("Heeeeeeeeeeey")
@@ -248,7 +284,9 @@ def AverageDistanceBetweenStops(Data):
                 # print(idx,stop,nextStop)
                 P1=(stop[1],stop[2])
                 P2=(nextStop[1],nextStop[2])
-                Dist=Distance(P1=P1,P2=P2)
+                # Dist=Distance(P1=P1,P2=P2)
+                Dist=Calculations.CalcDistance(P1[0],P1[1],P2[0],P2[1])
+
                 ListDistance.append(Dist)
     return sum(ListDistance)/len(ListDistance),len(ListDistance)
 
@@ -305,8 +343,12 @@ def GetMiddlePoint(CollLines,DataStops):
                 # if type(tup)=='tuple':
                 # if type(tup)=='tuple':
                 if isinstance(tup, tuple):
-                    P1=ConvertToUTM(lat=float(DataStops[tup[0]]['stop_lat']),lon=float(DataStops[tup[0]]['stop_lon']))
-                    P2=ConvertToUTM(lat=float(DataStops[tup[1]]['stop_lat']),lon=float(DataStops[tup[1]]['stop_lon']))
+                    # P1=ConvertToUTM(lat=float(DataStops[tup[0]]['stop_lat']),lon=float(DataStops[tup[0]]['stop_lon']))
+                    # P2=ConvertToUTM(lat=float(DataStops[tup[1]]['stop_lat']),lon=float(DataStops[tup[1]]['stop_lon']))
+
+                    P1=list(utm.from_latlon(float(DataStops[tup[0]]['stop_lat']),float(DataStops[tup[0]]['stop_lon'])))
+
+                    P2=list(utm.from_latlon(float(DataStops[tup[1]]['stop_lat']),float(DataStops[tup[1]]['stop_lon'])))
                     P3x,P3y=GetMediumPoint(P1=P1,P2=P2)
                     # print(key,idy,P3x,P3y,"Calculated middle point",end="")
                 elif type(tup)  is str:
@@ -893,9 +935,9 @@ def GTFS(Path,RequestedData):
     # print("Data_Metro")
     # print("Data_Tram")
     # print("Data_Other")
-    print("Len of ListofStops",len(ListofStops))
-    print("Len of EdgeList",len(EdgeList))
-    print("ListofStops is ",type(ListofStops))
+    # print("Len of ListofStops",len(ListofStops))
+    # print("Len of EdgeList",len(EdgeList))
+    # print("ListofStops is ",type(ListofStops))
     # for DS in ListofStops:
     #     print(DS)
     #     print("########################")
@@ -943,27 +985,40 @@ def GTFS(Path,RequestedData):
     #     NetWorkToGeoJson(G=G_Dict_1['G'])
     # print("City Stattistics:")
     # print(CityStat_NumberOfStops)
+
+
+    ##########################################################
+    # Sequence to obtain the average distance between stops 
+    ##########################################################
+
     if RequestedData["NetworkToShpLines"]==True:
 
         ConnectiorDB=DatabaseConnection()
 
         TransitChar={}
         for idx,Sys in enumerate(ListofStops):
-            CollectionLines=ConstructSpatialNetworkSHP(DictStops=ListofStops[0],DataSequence=DataSequence,DataTrips=DataTrips,DataRoutes=DataRoutes,DataStops=DataStops)
-            CollMiddlePoints=GetMiddlePoint(CollLines=CollectionLines,DataStops=DataStops)
-            AvDist,NumStops=AverageDistanceBetweenStops(Data=CollMiddlePoints)
-            print("The average distance is: ",AvDist)
-            print("The number of stops  is: ",NumStops)
-            TransitChar[idx]={"AvDist":AvDist,"NumStops":NumStops}
-        
+            if len(ListofStops[idx])>0:
+                #############################################
+                # The network is translated into a Shapefile
+                CollectionLines=ConstructSpatialNetworkSHP(DictStops=ListofStops[idx],DataSequence=DataSequence,DataTrips=DataTrips,DataRoutes=DataRoutes,DataStops=DataStops)
+                #############################################
+                # The middle point is calculated
+                CollMiddlePoints=GetMiddlePoint(CollLines=CollectionLines,DataStops=DataStops)
+                #############################################
+                # The Average distance and Number of stops are calculated
+                AvDist,NumStops=AverageDistanceBetweenStops(Data=CollMiddlePoints)
+                print("The average distance is: ",AvDist)
+                print("The number of stops  is: ",NumStops)
+                TransitChar[idx]={"AvDist":AvDist,"NumStops":NumStops}
+            
 
         for Sys in TransitChar.keys():
             print("For ",Sys,"The average distance is: ",TransitChar[Sys]["AvDist"])
             print("For ",Sys,"The number of stops  is: ",TransitChar[Sys]["NumStops"])
 
-        Insert=TextSqLite(idx=0)
-        Variables=TextSqLite(idx=1)
-        Values=TextSqLite(idx=2)
+        # Insert=TextSqLite(idx=0)
+        # Variables=TextSqLite(idx=1)
+        # Values=TextSqLite(idx=2)
 
 
 
@@ -985,6 +1040,9 @@ def GTFS(Path,RequestedData):
 
 
 
+##############
+## Main cycle
+##############
 
 if __name__ == "__main__":
     # DatabaseOperations()
@@ -997,13 +1055,14 @@ if __name__ == "__main__":
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Oslo_GTFS\gtfs (3).zip")
     # if os.name=='nt':
     #     print('WIN10')
-    listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Quebec_GTFS\gtfs.zip")
+    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Quebec_GTFS\gtfs.zip")
     # if os.name=='posix':
     #     print('UNIX')
-    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Quebec_GTFS/gtfs.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Montreal GTFS\gtfs.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Torino_GTFS\gtfs (2).zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Toulouse_GTFS\tisseo_gtfs.zip")
+    listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Quebec_GTFS/gtfs.zip")
+    listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Montreal GTFS/gtfs.zip")
 
     for Path in listPath:
         print(Path)
