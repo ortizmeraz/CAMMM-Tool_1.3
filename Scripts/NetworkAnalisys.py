@@ -10,7 +10,6 @@ from epsg_ident import EpsgIdent
 import pyproj
 import zipfile
 
-
 from FeatureOperations import AgregateTransitNetwork
 from FeatureOperations import CalculateVecinityBusStops
 
@@ -26,7 +25,7 @@ from Databases import RearPaths
 
 import matplotlib.pyplot as plt
 
-
+import Calculations
 
 def ConvertToUTM(lat,lon):
     import warnings
@@ -1086,7 +1085,10 @@ def NetWorkToGeoJson(G,NetworkIndex):
     try:
         LI=list(PointCharacteristics['CenDeg'].values())
         arr = np.array(LI)
-        Ranges_DegCen=jenkspy.jenks_breaks(arr, nb_class=5)
+        Ranges_DegCen=Calculations.NaturalBreaksNumpyList(Data=LI, Classess=5)
+        # Ranges_DegCen=jenkspy.jenks_breaks(arr, nb_class=5)
+
+
         # print("Ranges_DegCen",Ranges_DegCen,len(Ranges_DegCen))
         # print("Min",min(LI))
         # print("Max",max(LI))
@@ -1130,7 +1132,13 @@ def NetWorkToGeoJson(G,NetworkIndex):
     try:
         LI=list(PointCharacteristics['Clossnes'].values())
         arr = np.array(LI)
-        Ranges_ClosCen=jenkspy.jenks_breaks(arr, nb_class=5)
+
+        Ranges_ClosCen=Calculations.NaturalBreaksNumpyList(Data=LI, Classess=5)
+
+        # Ranges_ClosCen=jenkspy.jenks_breaks(arr, nb_class=5)
+
+
+
         # print("Ranges_ClosCen",Ranges_ClosCen,len(Ranges_ClosCen))
         # print("Min",min(LI))
         # print("Max",max(LI))
@@ -1180,7 +1188,10 @@ def NetWorkToGeoJson(G,NetworkIndex):
         # b=input()
         LI=list(PointCharacteristics['Eigen'])
         arr = np.array(LI)
-        Ranges_EgiCen=jenkspy.jenks_breaks(arr, nb_class=5)
+        Ranges_EgiCen=Calculations.NaturalBreaksNumpyList(Data=LI, Classess=5)
+        # Ranges_EgiCen=jenkspy.jenks_breaks(arr, nb_class=5)
+
+
         # print("Ranges_EgiCen",Ranges_EgiCen)
 
         # print("Ranges_EgiCen",Ranges_EgiCen,len(Ranges_EgiCen))

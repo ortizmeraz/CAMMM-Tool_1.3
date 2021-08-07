@@ -842,7 +842,7 @@ def RunZipUnix(Path):
         fw.close()
 
 
-    b=input("Waiting")
+    # b=input("Waiting")
 
 def DatabaseConnection():
     print("Into the Op")
@@ -967,10 +967,10 @@ def GTFS(Path,RequestedData):
                 print(idx,"---------------------------------------------------------------------------------------------------------------------------------------------------------------")
                 AnalyzedNetwork=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx)
                 ListOfNeworks.append(AnalyzedNetwork)
-                # CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeData,DataStops=DataStops)
+                CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeData,DataStops=DataStops)
                 print(idx,a)
                 print("FIN DE LA RED.......................................")
-                # b=input()
+                b=input()
             elif len(a.keys())==0:
                 print("No",idx)
         print("End Bus network")
@@ -1047,7 +1047,7 @@ def GTFS(Path,RequestedData):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"BusNetworkAnalysis":False,"NodeNetworkAnalysis":False,"NetworkToShpLines":True}
+    RequestedData={"BusNetworkAnalysis":True,"NodeNetworkAnalysis":True,"NetworkToShpLines":False}
     listPath=[]
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Berlin_GTFS\BVG_VBB_bereichsscharf.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Boston_GTFS\MBTA_GTFS.zip")
@@ -1061,7 +1061,7 @@ if __name__ == "__main__":
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Montreal GTFS\gtfs.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Torino_GTFS\gtfs (2).zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Toulouse_GTFS\tisseo_gtfs.zip")
-    listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Quebec_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Quebec_GTFS/gtfs.zip")
     listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Montreal GTFS/gtfs.zip")
 
     for Path in listPath:

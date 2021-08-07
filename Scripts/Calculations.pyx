@@ -1,5 +1,6 @@
 #example_cython.pyx
 import math
+import jenkspy 
 
 cpdef float CalcDistance(float P1x, float P1y, float P2x, float P2y):
     cdef float PX
@@ -32,13 +33,15 @@ cpdef float MultTest(float A, float B):
     Sum = A * B
     return Sum
 
+cdef float MenFunc(list inList):
+   return sum(inList)/len(inList)
 
 
 cpdef float AveragCoords(list inListStops):
-    float Xav
-    float Yav
-    list XcoordList=[]
-    list YcoordList=[]
+    cdef float Xav
+    cdef float Yav
+    cdef list XcoordList=[]
+    cdef list YcoordList=[]
     for Stop in inListStops:
         XcoordList.append(Stop.CoordX)
         YcoordList.append(Stop.CoordY)
@@ -46,21 +49,10 @@ cpdef float AveragCoords(list inListStops):
     Yav=MenFunc(inList=YcoordList)
     return Xav,Yav
 
+cpdef NaturalBreaksNumpyList(list Data, int Classess):
+    cdef list breaks=[]
+    breaks = jenkspy.jenks_breaks(Data, nb_class=Classess)
+    return breaks
 
-def AverageDistanceBetweenStops(Data):
-    ListDistance=[]
-    for line in Data.keys():
-        # print( line )
-        for leg in Data[line]:
-            # print()
-            # print(leg)
-            for idx,stop in enumerate(leg[:-1]):
-                nextStop=leg[idx+1]
-                # print(idx,stop,nextStop)
-                P1=(stop[1],stop[2])
-                P2=(nextStop[1],nextStop[2])
-                # Dist=Distance(P1=P1,P2=P2)
-                Dist=Calculations.CalcDistance(P1[0],P1[1],P2[0],P2[1])
 
-                ListDistance.append(Dist)
-    return sum(ListDistance)/len(ListDistance),len(ListDistance)
+

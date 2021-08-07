@@ -4,7 +4,7 @@ import statistics
 import numpy as np
 
 
-cpdef QuantilesBare(str Path, int Classess):
+cpdef QuantilesBareFile(str Path, int Classess):
     cdef count
     count=0
     cdef list Data=[]
@@ -28,7 +28,7 @@ cpdef QuantilesBare(str Path, int Classess):
 
 
 
-cpdef NaturalBreaksNumpy(str Path, int Classess):
+cpdef NaturalBreaksNumpyFile(str Path, int Classess):
     cdef int count
     cdef list Data=[]
     cdef list breaks=[]
@@ -51,6 +51,18 @@ cpdef NaturalBreaksNumpy(str Path, int Classess):
             #     break
         Array=np.array(Data)
 
+    breaks = jenkspy.jenks_breaks(Array, nb_class=Classess)
+    return breaks
+
+
+
+
+cpdef NaturalBreaksNumpyList(list Data, int Classess):
+    cdef int count
+    cdef list Data=[]
+    cdef list breaks=[]
+
+    Array=np.array(Data)
     breaks = jenkspy.jenks_breaks(Array, nb_class=Classess)
     return breaks
 
