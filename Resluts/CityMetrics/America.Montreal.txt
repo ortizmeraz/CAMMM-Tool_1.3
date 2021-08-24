@@ -1,0 +1,6 @@
+###### Numer of Stops
+0,17368
+###### Avg Dist of stops
+0,338.319659606923
+###### Numer of lines
+3,318

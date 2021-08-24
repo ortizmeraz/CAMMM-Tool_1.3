@@ -886,6 +886,55 @@ def GetTypesofTransport(InputDict):
 # def GetNumberOfStops(InputDict):
     # for key in InputDict.keys():
     #     print(InputDict[key])
+def GetLineNums(Path):
+
+        FileRoute=open(Path)
+        Nums={}
+        for route in FileRoute.readlines()[1:]:
+            routparts=route.split(",")
+            print(routparts[5])
+            if routparts[5] not in Nums.keys():
+                Nums[routparts[5]]=1
+            else:
+                Nums[routparts[5]]+=1
+        print(Nums)
+        return Nums
+        b=input(".................")
+
+def StoreCityData(NameOfCity,TransitChar,NumberLines):
+    #Overwrites the file for the city
+    NameOfCity=NameOfCity.replace("/",".")
+    Path=r"Resluts/CityMetrics/"+NameOfCity+".txt"
+    fw=open(Path,"w")
+    Text=""
+    Text+="###### Numer of Stops\n"
+    for Sys in TransitChar.keys():
+        Text+=str(Sys)+","+str(TransitChar[Sys]["NumStops"])+"\n"
+    Text+="###### Avg Dist of stops\n"
+    for Sys in TransitChar.keys():
+        Text+=str(Sys)+","+str(TransitChar[Sys]["AvDist"])+"\n"
+    Text+="###### Numer of lines\n"
+    for Sys in NumberLines.keys():
+        Text+=str(Sys)+","+str(NumberLines[Sys])+"\n"
+    fw.write(Text)
+    fw.close()
+
+
+# def StoreCityDataTest(NameOfCity):
+#     #Overwrites the file for the city
+#     print("NameOfCity",NameOfCity)
+#     NameOfCity=NameOfCity.replace("/",".")
+#     Path=r"Resluts/CityMetrics/"+NameOfCity+".txt"
+#     fw=open(Path,"w")
+#     Text=""
+#     Text+="###### Numer of Stops\n"
+#     Text+="###### Avg Dist of stops\n"
+#     Text+="###### Numer of lines\n"
+#     fw.write(Text)
+#     fw.close()
+#     b=input("done")
+
+
 
 def GTFS(Path,RequestedData):
     print("Enters the function")
@@ -908,7 +957,20 @@ def GTFS(Path,RequestedData):
     print("Start - Step 1")
     GetSystemData(Path=O_PathAgencyData)
     # b=input(".................................")
-
+    CityName=[]
+    AgencyFile=open(O_PathAgencyData,'r')
+    for Agline in AgencyFile.readlines():
+        # print(Agline,type(Agline))
+        Elements=Agline.split(",")
+        # print(Elements[3])
+        if Elements[3]!='agency_timezone':
+            CityName.append(Elements[3])
+    # for cityname in CityName:
+    #     print(cityname)
+    ListNames=set(CityName)
+    NameOfCity = ' '.join([str(elem) for elem in ListNames])
+    NumberLines=GetLineNums(Path=O_PathRoutes)
+    # print(NameOfCity)
     DataSequence,DataTrips,DataRoutes,DataStops=ReadGTFS(PathRoutes=O_PathRoutes,PathTrips=O_PathTrips,PathStopTimes=O_PathStopTimes,PathStops=O_PathStops)
     print("End - Step 1")
     # #############################################################
@@ -967,10 +1029,10 @@ def GTFS(Path,RequestedData):
                 print(idx,"---------------------------------------------------------------------------------------------------------------------------------------------------------------")
                 AnalyzedNetwork=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx)
                 ListOfNeworks.append(AnalyzedNetwork)
-                CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeData,DataStops=DataStops)
+                CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops)
                 print(idx,a)
                 print("FIN DE LA RED.......................................")
-                b=input()
+                b=input("Press enter")
             elif len(a.keys())==0:
                 print("No",idx)
         print("End Bus network")
@@ -998,6 +1060,7 @@ def GTFS(Path,RequestedData):
         TransitChar={}
         for idx,Sys in enumerate(ListofStops):
             if len(ListofStops[idx])>0:
+                print("Sistem in the works ",Sys)
                 #############################################
                 # The network is translated into a Shapefile
                 CollectionLines=ConstructSpatialNetworkSHP(DictStops=ListofStops[idx],DataSequence=DataSequence,DataTrips=DataTrips,DataRoutes=DataRoutes,DataStops=DataStops)
@@ -1007,11 +1070,12 @@ def GTFS(Path,RequestedData):
                 #############################################
                 # The Average distance and Number of stops are calculated
                 AvDist,NumStops=AverageDistanceBetweenStops(Data=CollMiddlePoints)
-                print("The average distance is: ",AvDist)
-                print("The number of stops  is: ",NumStops)
+                # print(Sys,"The average distance is: ",AvDist)
+                # print(Sys,"The number of stops  is: ",NumStops)
                 TransitChar[idx]={"AvDist":AvDist,"NumStops":NumStops}
-            
-
+        print("End  NetworkToShpLines")
+        # The data is stored in 'Resluts\CityMetrics'
+        StoreCityData(NameOfCity=NameOfCity,TransitChar=TransitChar,NumberLines=NumberLines)
         for Sys in TransitChar.keys():
             print("For ",Sys,"The average distance is: ",TransitChar[Sys]["AvDist"])
             print("For ",Sys,"The number of stops  is: ",TransitChar[Sys]["NumStops"])
@@ -1047,7 +1111,7 @@ def GTFS(Path,RequestedData):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"BusNetworkAnalysis":True,"NodeNetworkAnalysis":True,"NetworkToShpLines":False}
+    RequestedData={"BusNetworkAnalysis":False,"NodeNetworkAnalysis":False,"NetworkToShpLines":True}
     listPath=[]
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Berlin_GTFS\BVG_VBB_bereichsscharf.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Boston_GTFS\MBTA_GTFS.zip")
@@ -1061,8 +1125,9 @@ if __name__ == "__main__":
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Montreal GTFS\gtfs.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Torino_GTFS\gtfs (2).zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Toulouse_GTFS\tisseo_gtfs.zip")
-    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Quebec_GTFS/gtfs.zip")
-    listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Montreal GTFS/gtfs.zip")
+    listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Quebec_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Montreal GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Oslo_GTFS/Oslo_gtfs.zip")
 
     for Path in listPath:
         print(Path)
