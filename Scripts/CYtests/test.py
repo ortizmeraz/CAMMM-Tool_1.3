@@ -1,3 +1,10 @@
+import csv
+Path=r"D:\GitHub\CAMMM-Tool_1.3\Operational\routes.txt"
+with open(Path, newline='', encoding='utf-8') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print(row)
+
 # import Calculations
 # import math
 # import decimal
@@ -54,27 +61,27 @@
 # print("Bare metal",G2)
 
 
-import pyproj
-import utm
-import datetime 
+# import pyproj
+# import utm
+# import datetime 
 
-def ConvertToUTM(lat,lon):
-    import warnings
-    warnings.filterwarnings("ignore")
-    Zone=int((float(lon)/6)+31)
-    if float(lat)>0:
-        Val_EPSG="epsg:326"+str(Zone)
-    elif float(lat)<0:
-        Val_EPSG="epsg:325"+str(Zone)
-    proj_wgs84 = pyproj.Proj(init="epsg:4326")
-    proj_utm = pyproj.Proj(init=str(Val_EPSG))
-    x, y = pyproj.transform(proj_wgs84, proj_utm, lon, lat)
-    # print("proj_wgs84",type(proj_wgs84))
-    # print("proj_utm",type(proj_utm))
-    # print("X",type(x))
-    # print("Y",type(y))
-    # print("Val_EPSG",type(Val_EPSG))
-    return x,y,Val_EPSG
+# def ConvertToUTM(lat,lon):
+#     import warnings
+#     warnings.filterwarnings("ignore")
+#     Zone=int((float(lon)/6)+31)
+#     if float(lat)>0:
+#         Val_EPSG="epsg:326"+str(Zone)
+#     elif float(lat)<0:
+#         Val_EPSG="epsg:325"+str(Zone)
+#     proj_wgs84 = pyproj.Proj(init="epsg:4326")
+#     proj_utm = pyproj.Proj(init=str(Val_EPSG))
+#     x, y = pyproj.transform(proj_wgs84, proj_utm, lon, lat)
+#     # print("proj_wgs84",type(proj_wgs84))
+#     # print("proj_utm",type(proj_utm))
+#     # print("X",type(x))
+#     # print("Y",type(y))
+#     # print("Val_EPSG",type(Val_EPSG))
+#     return x,y,Val_EPSG
 
 # print("************************************************"*3)
 # ct1 = datetime.datetime.now()
@@ -109,5 +116,5 @@ def ConvertToUTM(lat,lon):
 # print(utm.to_latlon(CoordUtm[0], CoordUtm[1], CoordUtm[2], CoordUtm[3]))
 
 
-CoordUtm=list(utm.from_latlon(51.2562, 37.5468))
-print(CoordUtm,type(CoordUtm))
+# CoordUtm=list(utm.from_latlon(51.2562, 37.5468))
+# print(CoordUtm,type(CoordUtm))

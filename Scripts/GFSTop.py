@@ -509,6 +509,7 @@ def GetSystemData(Path):
             print("................................\n")
             print("Agency",Agency)
             print("................................\n")
+            return Agency
             # b=input('Press Enter ...')
     if os.name=="posix":
         with open(Path) as csv_file:
@@ -524,6 +525,7 @@ def GetSystemData(Path):
             print("................................\n")
             print("Agency",Agency)
             print("................................\n")
+            return Agency
 
 
 
@@ -596,8 +598,8 @@ def GtfsRouteCleaning(DataSequence,DataTrips,DataRoutes,DataStops):
     BusType=['3','700','701','702','704','705','707','800']
     TrainType=['2','100','109','116']
     Metrotype=['1','400','401','402','403','404','405']
-    TramType= ['900','901','902','903','906']
-    OtherType=['1000','1400']
+    TramType= ['0','900','901','902','903','906']
+    OtherType=['4','5','1000','1400']
 
     for key in DataRoutes.keys():
         # print(DataRoutes[key]['route_type'],type(DataRoutes[key]['route_type']))
@@ -887,19 +889,44 @@ def GetTypesofTransport(InputDict):
     # for key in InputDict.keys():
     #     print(InputDict[key])
 def GetLineNums(Path):
-
-        FileRoute=open(Path)
+        print("#############################################")
+        print("################GetLineNums##################")
+        
         Nums={}
-        for route in FileRoute.readlines()[1:]:
-            routparts=route.split(",")
-            print(routparts[5])
-            if routparts[5] not in Nums.keys():
-                Nums[routparts[5]]=1
-            else:
-                Nums[routparts[5]]+=1
+        CountType=[0,1,2,3,4,5,6,7,11,12,
+        100,109,116,
+        400,401,402,403,404,405,
+        700,701,702,704,705,707,800,
+        900,901,902,903,906,
+        1000,
+        1400]
+        
+        cont=0
+        with open(Path, newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            print(dir(reader))
+            for row in reader:
+                cont+=1
+                if cont==1:
+                    print(row,type(row))
+                    for idx, head in enumerate(row):
+                        print(str(idx),str(head),end="\t")
+                        if str(head) =="route_type":
+                            IndexType=idx
+                    print("IndexType",IndexType,str(row[IndexType]))     
+                    b=input(".................")
+
+                else:
+                    if int(row[IndexType].replace("\"","")) in CountType:
+                        if row[IndexType] not in Nums.keys():
+                            Nums[row[IndexType]]=1
+                        else:
+                            Nums[row[IndexType]]+=1
+                    else:
+                        b=input(".................")
+
         print(Nums)
         return Nums
-        b=input(".................")
 
 def StoreCityData(NameOfCity,TransitChar,NumberLines):
     #Overwrites the file for the city
@@ -955,20 +982,41 @@ def GTFS(Path,RequestedData):
         O_PathStops="Operational/stops.txt"
 
     print("Start - Step 1")
-    GetSystemData(Path=O_PathAgencyData)
-    # b=input(".................................")
+    Agency=GetSystemData(Path=O_PathAgencyData)
     CityName=[]
     AgencyFile=open(O_PathAgencyData,'r')
-    for Agline in AgencyFile.readlines():
-        # print(Agline,type(Agline))
-        Elements=Agline.split(",")
-        # print(Elements[3])
-        if Elements[3]!='agency_timezone':
-            CityName.append(Elements[3])
-    # for cityname in CityName:
-    #     print(cityname)
-    ListNames=set(CityName)
-    NameOfCity = ' '.join([str(elem) for elem in ListNames])
+    HeaderLine=AgencyFile.readline()
+    IndxAG=999999
+    IndxNa=999999
+    IndxTi=999999
+    Header=HeaderLine.split(",")
+    for idx, head in enumerate(Header):
+        print(str(idx),str(head),end="\t") 
+        if str(head)=="agency_id":
+            IndxAG=idx
+        if str(head)=="agency_name":
+            IndxNa=idx
+        if str(head)=="agency_timezone":
+            IndxTi=idx
+    # b=input(".................................")
+    DataCityLine=AgencyFile.readline()
+    DataCity=DataCityLine.split(",")
+    if IndxAG!=999999 and IndxNa !=999999 and IndxTi!=999999:
+        NameOfCity=str(DataCity[IndxTi])+"_"+str(DataCity[IndxAG])+"_"+str(DataCity[IndxNa])
+    if IndxAG==999999 and IndxNa !=999999 and IndxTi!=999999:
+        NameOfCity=str(DataCity[IndxTi])+"_"+str(DataCity[IndxNa])
+    # for Agline in AgencyFile.readlines():
+    #     print(Agline,type(Agline))
+    #     Elements=Agline.split(",")
+    #     # print(Elements[3])
+    #     if Elements[3]!='agency_timezone':
+    #         CityName.append(Elements[3])
+    # # for cityname in CityName:
+    # #     print(cityname)
+    # ListNames=set(CityName)
+    # NameOfCity = ' '.join([str(elem) for elem in ListNames])
+    print(NameOfCity)
+    b=input(".................................")
     NumberLines=GetLineNums(Path=O_PathRoutes)
     # print(NameOfCity)
     DataSequence,DataTrips,DataRoutes,DataStops=ReadGTFS(PathRoutes=O_PathRoutes,PathTrips=O_PathTrips,PathStopTimes=O_PathStopTimes,PathStops=O_PathStops)
@@ -1032,7 +1080,7 @@ def GTFS(Path,RequestedData):
                 CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops)
                 print(idx,a)
                 print("FIN DE LA RED.......................................")
-                b=input("Press enter")
+                # b=input("Press enter")
             elif len(a.keys())==0:
                 print("No",idx)
         print("End Bus network")
@@ -1115,7 +1163,7 @@ if __name__ == "__main__":
     listPath=[]
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Berlin_GTFS\BVG_VBB_bereichsscharf.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Boston_GTFS\MBTA_GTFS.zip")
-    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Melbourne_GTFS\gtfs (1).zip")
+    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Melbourne_5GTFS\gtfs (1).zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Oslo_GTFS\gtfs (3).zip")
     # if os.name=='nt':
     #     print('WIN10')
@@ -1125,8 +1173,15 @@ if __name__ == "__main__":
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Montreal GTFS\gtfs.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Torino_GTFS\gtfs (2).zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Toulouse_GTFS\tisseo_gtfs.zip")
-    listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Quebec_GTFS/gtfs.zip")
-    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Montreal GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Quebec_GTFS/gtfs.zip")
+
+
+    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Berlin_GTFS/BVG_VBB_bereichsscharf.zip")
+    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
+    listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Oslo_GTFS/Oslo_gtfs.zip")
 
     for Path in listPath:
