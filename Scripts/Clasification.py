@@ -4,6 +4,10 @@ import statistics
 import numpy as np
 import math
 import datetime
+import utm
+
+import Calculations
+
 
 def NaturalBreaksBare(Path):
     count=0
@@ -87,10 +91,10 @@ def StandardDeviations(Path):
             #     break
 
     StDev=statistics.stdev(Data)
-    print("Min",min(Data))
-    print("1 D",StDev)
-    print("1 D",StDev*2)
-    print("Max",max(Data))
+    # print("Min",min(Data))
+    # print("1 D",StDev)
+    # print("1 D",StDev*2)
+    # print("Max",max(Data))
 
 
 
@@ -110,8 +114,8 @@ def chunkIt(Path, num):
             else:
                 Data.append(int(line[-1]))
     Data.sort()
-    print("max",max(Data))
-    print("Min",min(Data))
+    # print("max",max(Data))
+    # print("Min",min(Data))
 
     avg = len(Data) / float(num)
     out = []
@@ -227,8 +231,141 @@ def CreateGridObj(ListCoords):
     ExitText+=End
     return ExitText
 
+def CalcDistShapes(Data1,Data2):
+    # print(Data1,Data2)
+    # (latitude, longitude)
+    # print("Data1['shape_pt_lat']",type(Data1['shape_pt_lat']),Data1['shape_pt_lat'])
+    Lat=float(Data1['shape_pt_lat'])
+    Lon=float(Data1['shape_pt_lon'])
+    P1=utm.from_latlon(Lat, Lon)
+    P1x=P1[0]
+    P1y=P1[1]
+    # print("P1",P1x,P1y)
+    ######################
+    Lat=float(Data2['shape_pt_lat'])
+    Lon=float(Data2['shape_pt_lon'])
+    P2=utm.from_latlon(Lat, Lon)
+    P2x=P2[0]
+    P2y=P2[1]
+    # print("P2",P2x,P2y)
+    Dist=Calculations.CalcDistance(P1x,P1y,P2x,P2y)
+    # print("Dist",Dist)
+    return Dist,P1x,P1y,P2x,P2y
 
 
+
+
+def calculate_initial_compass_bearing(pointA, pointB):
+    """
+    Calculates the bearing between two points.
+    The formulae used is the following:
+        θ = atan2(sin(Δlong).cos(lat2),
+                  cos(lat1).sin(lat2) − sin(lat1).cos(lat2).cos(Δlong))
+    :Parameters:
+      - `pointA: The tuple representing the latitude/longitude for the
+        first point. Latitude and longitude must be in decimal degrees
+      - `pointB: The tuple representing the latitude/longitude for the
+        second point. Latitude and longitude must be in decimal degrees
+    :Returns:
+      The bearing in degrees
+    :Returns Type:
+      float
+    """
+    if (type(pointA) != tuple) or (type(pointB) != tuple):
+        raise TypeError("Only tuples are supported as arguments")
+
+    lat1 = math.radians(pointA[0])
+    lat2 = math.radians(pointB[0])
+
+    diffLong = math.radians(pointB[1] - pointA[1])
+
+    x = math.sin(diffLong) * math.cos(lat2)
+    y = math.cos(lat1) * math.sin(lat2) - (math.sin(lat1)
+            * math.cos(lat2) * math.cos(diffLong))
+
+    initial_bearing = math.atan2(x, y)
+
+    # Now we have the initial bearing but math.atan2 return values
+    # from -180° to + 180° which is not what we want for a compass bearing
+    # The solution is to normalize the initial bearing as shown below
+    initial_bearing = math.degrees(initial_bearing)
+    compass_bearing = (initial_bearing + 360) % 360
+
+    return compass_bearing
+
+
+def GetAngle(PathShapes,PathTrips,PathRoutes):
+    DataShapes={}
+    DataTrips={}
+    DataRoutes=[]
+    TripId={}
+    VectorList=[]
+    print("hi")
+    with open(PathRoutes, 'r',encoding='utf8') as file:
+        reader = csv.reader(file)
+        Header=next(reader)
+        # print("PathShapes",Header)
+        for line in reader:
+            # print(line,type(line))
+            # b=input("Delete")
+            DataRoutes.append(line[0])
+            TripId[line[0]]={}
+    # print(DataRoutes)
+    with open(PathShapes, 'r',encoding='utf8') as file:
+        reader = csv.reader(file)
+        Header=next(reader)
+        # print("PathShapes",Header)
+        for line in reader:
+            if line[0] in DataShapes:
+                DataShapes[line[0]][line[3]]={'shape_pt_lat':line[1],'shape_pt_lon':line[2]}
+            # 'shape_pt_sequence':
+            else:
+                DataShapes[line[0]]={}
+                DataShapes[line[0]][line[3]]={'shape_pt_lat':line[1],'shape_pt_lon':line[2]}
+        #     print(line)
+        # print(DataShapes)
+    with open(PathTrips, 'r',encoding='utf8') as file:
+        reader = csv.reader(file)
+        Header=next(reader)
+        for line in reader:
+            # print(line,type(line))
+            # print(line[0],line[3],line[4],DataShapes[line[5]]['shape_pt_lat'],DataShapes[line[5]]['shape_pt_lon'],DataShapes[line[5]]['shape_pt_sequence'])
+            TripId[line[0]][line[4]]=[line[3],line[5]]
+        # print("PathTrips",Header)
+
+    for Ro in DataRoutes:
+        # print(Ro,TripId[Ro],"············································")
+        # print("\n"*10)
+        for Tri in TripId[Ro]:
+            # print("\t",Tri,"-",TripId[Ro][Tri][1],DataShapes[TripId[Ro][Tri][1]])
+            # print("*****************",Tri, len(DataShapes[TripId[Ro][Tri][1]]))
+            # for key in DataShapes[TripId[Ro][Tri][1]].keys():
+            #     print(key,DataShapes[TripId[Ro][Tri][1]][key])
+            ShpIdList=list(DataShapes[TripId[Ro][Tri][1]].keys())
+            MiniData=DataShapes[TripId[Ro][Tri][1]]
+            # print(ShpIdList)
+            for aPoint in range(0,len(DataShapes[TripId[Ro][Tri][1]])-1):
+                bPoint=aPoint+1
+                # print(aPoint,"-",ShpIdList[aPoint],MiniData[ShpIdList[aPoint]],"·······",bPoint,"-",ShpIdList[bPoint],MiniData[ShpIdList[bPoint]])
+                Vect=CalcDistShapes(Data1=MiniData[ShpIdList[aPoint]],Data2=MiniData[ShpIdList[bPoint]])
+                if Vect[0]>10:
+                    VectorList.append(Vect)
+                    
+    print("VectorList",len(VectorList))
+    for vect in VectorList:
+        Angle=calculate_initial_compass_bearing(pointA=(vect[1],vect[2]), pointB=(vect[3],vect[4]))
+        if Angle>180:
+            Alfa=Angle-180
+        else:
+            Alfa=Angle
+        print("Angle",Alfa)
+
+    Here you have the angle, still need to get the heading
+
+
+# Work in the trips part
+# route_id	service_id	trip_id	trip_headsign	direction_id	shape_id	wheelchair_accessible	note_fr	note_en
+#   0           1           2           3           4               5           6                           7
 
 
 #    ______
@@ -242,11 +379,17 @@ def CreateGridObj(ListCoords):
 # print("chunkIt",Lists)
 
 # Break=QuantilesBare(Path)
-# print("QuantilesBare",Break)
-GridCoords=CalculateRotatedGrid(Angle=45,Distnace=1,StartX=0,StartY=0,NumCellX=20,NumCellY=20)
-print(type(GridCoords))
-TextJSON=CreateGridObj(ListCoords=GridCoords)
-print(TextJSON)
-WriteToJsonFile(Text=TextJSON,Path=r"E:\GitHub\Test.geojson")
+# # print("QuantilesBare",Break)
+# GridCoords=CalculateRotatedGrid(Angle=45,Distnace=1,StartX=0,StartY=0,NumCellX=20,NumCellY=20)
+# print(type(GridCoords))
+# TextJSON=CreateGridObj(ListCoords=GridCoords)
+# print(TextJSON)
+# WriteToJsonFile(Text=TextJSON,Path=r"E:\GitHub\Test.geojson")
+
+
+PathTrip="/mnt/d/GitHub/CAMMM-Tool_1.3/SampleData/MTL_gtfs_RAW/trips.txt"
+PathShape="/mnt/d/GitHub/CAMMM-Tool_1.3/SampleData/MTL_gtfs_RAW/shapes.txt"
+Pathroute="/mnt/d/GitHub/CAMMM-Tool_1.3/SampleData/MTL_gtfs_RAW/routes.txt"
+GetAngle(PathShapes=PathShape,PathTrips=PathTrip,PathRoutes=Pathroute)
 print("..........fin.............")
 

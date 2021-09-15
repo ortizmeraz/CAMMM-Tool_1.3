@@ -973,6 +973,7 @@ def GTFS(Path,RequestedData):
         O_PathTrips=r"Operational\trips.txt"
         O_PathStopTimes=r"Operational\stop_times.txt"
         O_PathStops=r"Operational\stops.txt"
+        O_PathShapes=r"Operational\shapes.txt"
     if os.name=='posix':
         RunZipUnix(Path=Path)
         O_PathAgencyData="Operational/agency.txt"
@@ -980,6 +981,7 @@ def GTFS(Path,RequestedData):
         O_PathTrips="Operational/trips.txt"
         O_PathStopTimes="Operational/stop_times.txt"
         O_PathStops="Operational/stops.txt"
+        O_PathShapes=r"Operational\stops.txt"
 
     print("Start - Step 1")
     Agency=GetSystemData(Path=O_PathAgencyData)
