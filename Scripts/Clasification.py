@@ -1,4 +1,5 @@
-import csv 
+import csv
+from sys import float_repr_style 
 import jenkspy 
 import statistics
 import numpy as np
@@ -197,9 +198,17 @@ def CalculateRotatedGrid(Angle,Distnace,StartX,StartY,NumCellX,NumCellY):
             GridList.append([[x1R,y1R],[x2R,y2R],[x3R,y3R],[x4R,y4R]])
     return GridList
     
+def MakeCRS(Letter,Number):
+    North=["N","P","Q","R","S","T","U","V","W","X"]
+    South=["C","D","E","F","G","H","J","K","L","M"]
+    if Letter in North:
+        Exit="326"+str(Number)
+    if Letter in South:
+        Exit="325"+str(Number)
+    return Exit
 
-def CreateGridObj(ListCoords):
-    Start="{    \"type\": \"FeatureCollection\",    \"features\": ["
+def CreateGridObj(ListCoords,EPSGname,Name):
+    Start="{    \"type\": \"FeatureCollection\",   \"name\": \""+Name+"\",  \"crs\": {     \"type\": \"name\",     \"properties\": {  \"name\": \"urn:ogc:def:crs:EPSG::"+EPSGname+"\"    }    }, \"features\": ["
     End="]}"
     Header="            ,\"geometry\": {                \"type\": \"Polygon\",                \"coordinates\": [                    [ "
     Footer="                ]            }        },"
@@ -299,7 +308,11 @@ def GetAngle(PathShapes,PathTrips,PathRoutes):
     DataTrips={}
     DataRoutes=[]
     TripId={}
+    LatCol=[]
+    LonCol=[]
     VectorList=[]
+    ShortAngles=[]
+    LonggAngles=[]
     print("hi")
     with open(PathRoutes, 'r',encoding='utf8') as file:
         reader = csv.reader(file)
@@ -318,10 +331,15 @@ def GetAngle(PathShapes,PathTrips,PathRoutes):
         for line in reader:
             if line[0] in DataShapes:
                 DataShapes[line[0]][line[3]]={'shape_pt_lat':line[1],'shape_pt_lon':line[2]}
+                LatCol.append(line[1])
+                LonCol.append(line[2])
+
             # 'shape_pt_sequence':
             else:
                 DataShapes[line[0]]={}
                 DataShapes[line[0]][line[3]]={'shape_pt_lat':line[1],'shape_pt_lon':line[2]}
+                LatCol.append(line[1])
+                LonCol.append(line[2])
         #     print(line)
         # print(DataShapes)
     with open(PathTrips, 'r',encoding='utf8') as file:
@@ -358,15 +376,67 @@ def GetAngle(PathShapes,PathTrips,PathRoutes):
             Alfa=Angle-180
         else:
             Alfa=Angle
-        print("Angle",Alfa)
+        if Alfa >=90:
+            # print("Larger than")
+            LonggAngles.append(Alfa)
+        else:
+            ShortAngles.append(Alfa)
+        # print("Angle",Alfa)
+    AvShort=sum(ShortAngles)/len(ShortAngles)
+    AvLongg=sum(LonggAngles)/len(LonggAngles)
 
-    Here you have the angle, still need to get the heading
+    # print("Short Average Angle is:  ",AvShort)
+    # print("Long  Average Angle is:  ",AvLongg, (AvLongg-90))
+    AvAngle=(AvShort+(AvLongg-90))/2
+    # print("Average Angle: ",AvAngle)
+    # Here you have the angle, still need to get the heading
+    return AvAngle,LatCol,LonCol
+
+def GetCoords(LatCol,LonCol):
+
+    MinLon=float(min(LonCol))
+    MinLat=float(min(LatCol))
+    MaxLon=float(max(LonCol))
+    MaxLat=float(max(LatCol))
+    if MaxLon > 0 and MaxLat > 0:
+        Coords=utm.from_latlon(MinLat,MinLon)
+        print(" Lon + | Lat + ")
+        CoCoords=utm.from_latlon(MaxLat,MaxLon)
+
+    if MaxLon > 0 and MaxLat < 0:
+        Coords=utm.from_latlon(MaxLat,MinLon)
+        print("Lon + | Lat - ")
+        CoCoords=utm.from_latlon(MinLat,MaxLon)
+
+    if MaxLon < 0 and MaxLat < 0:
+        Coords=utm.from_latlon(MaxLat,MaxLon)
+        print("Lon - | Lat - ")
+        CoCoords=utm.from_latlon(MinLat,MinLon)
+    
+    if MaxLon < 0 and MaxLat > 0:
+        Coords=utm.from_latlon(MinLat,MaxLon)
+        print("Lon - | Lat + ")
+        CoCoords=utm.from_latlon(MaxLat,MinLon)
+
+    print(Coords)
+    print(CoCoords)
+    return Coords,CoCoords
+
+
+def RoundNumb(number):
+    TextNumber=str(number)
+    ListNum=TextNumber.split(".")
+    if float(ListNum[1])>0.2:
+        sum=1
+    else:
+        sum=0
+    var = int(ListNum[0])+sum
+    return var
 
 
 # Work in the trips part
 # route_id	service_id	trip_id	trip_headsign	direction_id	shape_id	wheelchair_accessible	note_fr	note_en
 #   0           1           2           3           4               5           6                           7
-
 
 #    ______
 #   |Q4  Q3|
@@ -378,18 +448,40 @@ def GetAngle(PathShapes,PathTrips,PathRoutes):
 # QuantilesBare(Path)
 # print("chunkIt",Lists)
 
-# Break=QuantilesBare(Path)
-# # print("QuantilesBare",Break)
-# GridCoords=CalculateRotatedGrid(Angle=45,Distnace=1,StartX=0,StartY=0,NumCellX=20,NumCellY=20)
-# print(type(GridCoords))
-# TextJSON=CreateGridObj(ListCoords=GridCoords)
-# print(TextJSON)
-# WriteToJsonFile(Text=TextJSON,Path=r"E:\GitHub\Test.geojson")
-
 
 PathTrip="/mnt/d/GitHub/CAMMM-Tool_1.3/SampleData/MTL_gtfs_RAW/trips.txt"
 PathShape="/mnt/d/GitHub/CAMMM-Tool_1.3/SampleData/MTL_gtfs_RAW/shapes.txt"
 Pathroute="/mnt/d/GitHub/CAMMM-Tool_1.3/SampleData/MTL_gtfs_RAW/routes.txt"
-GetAngle(PathShapes=PathShape,PathTrips=PathTrip,PathRoutes=Pathroute)
+AvAngle,LatCol,LonCol=GetAngle(PathShapes=PathShape,PathTrips=PathTrip,PathRoutes=Pathroute)
+# print("Max Lat",max(LatCol))
+# print("Min Lat",min(LatCol))
+# print("Max Lon",max(LonCol))
+# print("Min Lon",min(LonCol))
+
+Coords,CoCoords=GetCoords(LatCol,LonCol)
+
+DifferenceX=int(abs(Coords[0]-CoCoords[0]))/1000
+DifferenceY=int(abs(Coords[1]-CoCoords[1]))/1000
+print("DifferenceX",DifferenceX)
+print("DifferenceY",DifferenceY)
+
+NumCellX=RoundNumb(number=DifferenceX)
+NumCellY=RoundNumb(number=DifferenceY)
+print("NumCellX",NumCellX)
+print("NumCellY",NumCellY)
+Letter=Coords[3]
+Number=Coords[2]
+print("Coords",Coords)
+Agency="STM"
+# Break=QuantilesBare(Path)
+# # print("QuantilesBare",Break)
+GridCoords=CalculateRotatedGrid(Angle=AvAngle,Distnace=1000,StartX=(Coords[0]-500),StartY=(Coords[1]-500),NumCellX=(NumCellX+10),NumCellY=NumCellY)
+# print(type(GridCoords))
+TextJSON=CreateGridObj(ListCoords=GridCoords,EPSGname=MakeCRS(Letter,Number),Name=Agency)
+print(MakeCRS(Letter,Number))
+# print(TextJSON)
+WriteToJsonFile(Text=TextJSON,Path=r"/mnt/d/GitHub/TESSSSt2.geojson")
+
+
 print("..........fin.............")
 
