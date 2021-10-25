@@ -3,14 +3,12 @@ import utm
 import Calculations
 
 from ClassCollection import Station
+from ClassCollection import BusStop
 
 
-def ListStation(ListBusStops,Range):
+def AgregateStops(ListBusStops,Range):
     # datetime object containing current date and time
-    now1 = datetime.now()
     # dd/mm/YY H:M:S
-    dt_string = now1.strftime("%d%m%Y-%H.%M.%S")
-    print("date and time =", dt_string)
     EvaluatedBusStops=[]
     for Bs1 in ListBusStops:
 
@@ -22,7 +20,8 @@ def ListStation(ListBusStops,Range):
             # elif Bs2 in EvaluatedBusStops:
             #     continue
             else:
-                D=Distance(P1=[Bs1.CoordX,Bs1.CoordY],P2=[Bs2.CoordX,Bs2.CoordY])
+                D=Calculations.CalcDistance(P1x=Bs1.CoordX, P1y=Bs1.CoordY,P2x=Bs2.CoordX, P2y=Bs2.CoordY)
+
                 # print("D",D," Point 1:",Bs1.CoordX,Bs1.CoordY,"  - Point 2:",Bs2.CoordX,Bs2.CoordY)
                 # b=input('Press Enter ...')
                 ListDist.append(D)
@@ -34,12 +33,7 @@ def ListStation(ListBusStops,Range):
             # ListDist[(Bs1.Id,Bs2)]
         EvaluatedBusStops.append(Bs1)
             # print(D)
-    # datetime object containing current date and time
-    now2 = datetime.now()
-    # dd/mm/YY H:M:S
-    dt_string = now2.strftime("%d%m%Y-%H.%M.%S")
-    print("date and time =", dt_string)
-    RevisedNodes=[]
+
 
     # ExitFile=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\Result"+str(dt_string)+".txt"
     # f = open(ExitFile, "a")
@@ -55,8 +49,8 @@ def ListStation(ListBusStops,Range):
             pass
             # print("next")
         else:
-            # print("Id",Bs1.Id,"Len",len(Bs1.Cluster),"X:",Bs1.CoordX,"\tY:",Bs1.CoordY,"          Routes",Bs1.Routes)
-            # print("Appends", end= " ")
+            print("Id",Bs1.Id,"Len",len(Bs1.Cluster),"X:",Bs1.CoordX,"\tY:",Bs1.CoordY,"          Routes",Bs1.Routes)
+            print("Appends", end= " ")
             SumCX=0
             SumCY=0
             SumRoutes=0
@@ -75,20 +69,26 @@ def ListStation(ListBusStops,Range):
                 SumRoutes=SumRoutes+len(BsC.Routes)
                 RouteCol=RouteCol+BsC.Routes
                 print("..",BsC.Id,"..", end="\t")
-            
-            ACoordX=(Bs1.CoordX+SumCX)/(len(Bs1.Cluster)+1)
-            ACoordY=(Bs1.CoordY+SumCY)/(len(Bs1.Cluster)+1)
-            print("ListX",ListX)
-            print("ListY",ListY)
-            BCoordX=sum(ListX)/len(ListX)
-            BCoordY=sum(ListY)/len(ListX)
+            ACoordXutm=(Bs1.CoordX+SumCX)/(len(Bs1.Cluster)+1)
+            ACoordYutm=(Bs1.CoordY+SumCY)/(len(Bs1.Cluster)+1)
+            # print("ListX",ListX)
+            # print("ListY",ListY)
+            # BCoordX=sum(ListX)/len(ListX)
+            # BCoordY=sum(ListY)/len(ListX)
             Aroutes=SumRoutes+len(Bs1.Routes)
-            print("X1:",ACoordX,"\tY2:",ACoordY,"             # Routes",Aroutes)
-            print("X2:",)
+            # print("X1:",ACoordX,"\tY2:",ACoordY,"             # Routes",Aroutes)
+            # print("X2:",)
+            Letter=Bs1.Epsg[-1]
+            Num=int(str(Bs1.Epsg[-3])+str(Bs1.Epsg[-2]))
+            # print("Bs1.Epsg[-2]",Bs1.Epsg[-2],type(Bs1.Epsg[-2]))
+            # print("Bs1.Epsg[-3]",Bs1.Epsg[-3],type(Bs1.Epsg[-3]))
+            # print("Num",Num,type(Num))
+            Coords=utm.to_latlon(ACoordXutm, ACoordYutm, Num, Letter )
 
             # b=input('Press Enter ...')
-            Var=str(ACoordX)+","+str(ACoordY)+","+str(Aroutes)+","+str(RouteCol)+"\n"
-            ExitValues.append([ACoordX,ACoordY,Aroutes,RouteCol,StopCode])
+            # Var=str(ACoordX)+","+str(ACoordY)+","+str(Aroutes)+","+str(RouteCol)+"\n"
+            ExitValues.append([Coords[0],Coords[1],Aroutes,RouteCol,StopCode,"N"])  
+
             # RouteCol=[]
             print()
             # print("===========================================")
@@ -100,7 +100,8 @@ def ListStation(ListBusStops,Range):
     return ExitValues
 
 
-def AgregateTransit(ListBusStops,Range):
+def AgregateHeavyTransit(ListBusStops,Range):
+    # b=input("AgregateHeavyTransit")
     for Bs1 in ListBusStops:
         ListDist=[]
         KeyListDist={}
@@ -123,8 +124,10 @@ def AgregateTransit(ListBusStops,Range):
             pass
             # print("next")
         else:
-            # print("Id",Bs1.Id,"Len",len(Bs1.Cluster),"X:",Bs1.CoordX,"\tY:",Bs1.CoordY,"          Routes",Bs1.Routes)
-            # print("Appends", end= " ")
+            print("Id",Bs1.Id,"Len",len(Bs1.Cluster),"X:",Bs1.CoordX,"\tY:",Bs1.CoordY,"          Routes",Bs1.Routes)
+            print("Appends", end= " ")
+            print("EPSG:",Bs1.Epsg)
+            # b=input()
             SumCX=0
             SumCY=0
             SumRoutes=0
@@ -144,8 +147,8 @@ def AgregateTransit(ListBusStops,Range):
                 RouteCol=RouteCol+BsC.Routes
                 # print("..",BsC.Id,"..", end="\t")
             
-            ACoordX=(Bs1.CoordX+SumCX)/(len(Bs1.Cluster)+1)
-            ACoordY=(Bs1.CoordY+SumCY)/(len(Bs1.Cluster)+1)
+            ACoordXutm=(Bs1.CoordX+SumCX)/(len(Bs1.Cluster)+1)
+            ACoordYutm=(Bs1.CoordY+SumCY)/(len(Bs1.Cluster)+1)
             # print("ListX",ListX)
             # print("ListY",ListY)
             # BCoordX=sum(ListX)/len(ListX)
@@ -153,157 +156,30 @@ def AgregateTransit(ListBusStops,Range):
             Aroutes=SumRoutes+len(Bs1.Routes)
             # print("X1:",ACoordX,"\tY2:",ACoordY,"             # Routes",Aroutes)
             # print("X2:",)
-
+            Letter=Bs1.Epsg[-1]
+            Num=int(str(Bs1.Epsg[-3])+str(Bs1.Epsg[-2]))
+            # print("Bs1.Epsg[-2]",Bs1.Epsg[-2],type(Bs1.Epsg[-2]))
+            # print("Bs1.Epsg[-3]",Bs1.Epsg[-3],type(Bs1.Epsg[-3]))
+            # print("Num",Num,type(Num))
+            Coords=utm.to_latlon(ACoordXutm, ACoordYutm, Num, Letter )
+            # print(Coords)
             # b=input('Press Enter ...')
             # Var=str(ACoordX)+","+str(ACoordY)+","+str(Aroutes)+","+str(RouteCol)+"\n"
-            ExitValues.append([ACoordX,ACoordY,Aroutes,RouteCol,StopCode])
+            ExitValues.append([Coords[0],Coords[1],Aroutes,RouteCol,StopCode,"S"])
 
     return ExitValues
 
 
 
-def SuperNodeTrainMetro(TrainStops,MetroStops,DataStops):
-    print("Creating Super Node for Metro and Train")
-    SuperNodes={}
-
-    TotalDict={}
-    for i in TrainStops:
-        TotalDict[i]=TrainStops[i]
-    for i in MetroStops:
-        TotalDict[i]=MetroStops[i]
-
-    print("Length Total Heavy rail",len(TotalDict))
-    print("Length Train ",len(TrainStops) )
-    print("Length Metro ",len(MetroStops) )
-
-    for route in TotalDict.keys():
-        print("route",route)
-        print(route,TotalDict[route])
-        if collections.Counter(set(TotalDict[route]['0'])) == collections.Counter(set(TotalDict[route]['1'])):
-            print("They same!!")
-            for station in TotalDict[route]['0']:
-                if station not in SuperNodes.keys():
-                    SuperNodes[station]={'id_stop':station,'route':route,'lat':DataStops[station]['stop_lat'],'lon':DataStops[station]['stop_lon']}
-
-            DoubleNode=[]
-            for node1 in SuperNodes.keys():
-                print("node",node1,utm.from_latlon(float(SuperNodes[node1]['lat']),float(SuperNodes[node1]['lon'])))
-                D1=utm.from_latlon(float(SuperNodes[node1]['lat']),float(SuperNodes[node1]['lon']))
-                for node2 in SuperNodes.keys():
-                    D2=utm.from_latlon(float(SuperNodes[node2]['lat']),float(SuperNodes[node2]['lon']))
-                    P1x=D1[0]
-                    P1y=D1[1]
-                    P2x=D2[0]
-                    P2y=D2[1]
-                    if node2 != node1 :
-                        if node1 not in DoubleNode:
-                            Dist = Calculations.CalcDistance(P1x,P1y,P2x,P2y)
-                            if Dist <100:
-                                DoubleNode.append(node2)
-                                print("······································· a small stuff  node 1",node1, " node 2 ",node2 )
-            print("DoubleNode,",DoubleNode)
-            for delnode in DoubleNode:
-                SuperNodes.pop(delnode)
-            return SuperNodes
-
-
-        else:
-            print("##########################################################")
-            # for heading in TotalDict[route]:
-            #     print("heading",heading)
-            #     for station in TotalDict[route][heading]:
-            #         print(station,DataStops[station]['stop_lat'],DataStops[station]['stop_lon'])
-            # print("\n"*3)
-            for route in TotalDict.keys():
-                for heading in TotalDict[route]:
-                    for station in TotalDict[route][heading]:
-                        SuperNodes[station]={'id_stop':station,'route':route,'lat':DataStops[station]['stop_lat'],'lon':DataStops[station]['stop_lon']}
-                # TotalDict[route]['0']
-                # TotalDict[route]['1']
-
-            DoubleNode=[]
-            for node1 in SuperNodes.keys():
-                # print("node",node1,utm.from_latlon(float(SuperNodes[node1]['lat']),float(SuperNodes[node1]['lon'])))
-                D1=utm.from_latlon(float(SuperNodes[node1]['lat']),float(SuperNodes[node1]['lon']))
-                for node2 in SuperNodes.keys():
-                    D2=utm.from_latlon(float(SuperNodes[node2]['lat']),float(SuperNodes[node2]['lon']))
-                    P1x=D1[0]
-                    P1y=D1[1]
-                    P2x=D2[0]
-                    P2y=D2[1]
-                    if node2 != node1 :
-                        if node1 not in DoubleNode:
-                            Dist = Calculations.CalcDistance(P1x,P1y,P2x,P2y)
-                            if Dist <100:
-                                DoubleNode.append(node2)
-                                print("······································· a small stuff  node 1",node1, " node 2 ",node2 )
-
-            print("DoubleNode,",DoubleNode)
-            for delnode in DoubleNode:
-                SuperNodes.pop(delnode)
-        return SuperNodes
-
-
-
-
-
-
-
-def SuperNode(MetroStops,DataStops):
-    print("Creating Super Node for Metro Only")
-    SuperNodeId=0
-    SuperNodes={}
-    print(MetroStops)
-    for route in MetroStops.keys():
-        print("route",route)
-        print(route,MetroStops[route])
-        if collections.Counter(set(MetroStops[route]['0'])) == collections.Counter(set(MetroStops[route]['1'])):
-            print("They same!!")
-            for station in MetroStops[route]['0']:
-                if station not in SuperNodes.keys():
-                    SuperNodes[station]={'id_stop':station,'lat':DataStops[station]['stop_lat'],'lon':DataStops[station]['stop_lon']}
-        else:
-            print("##########################################################")
-            for heading in MetroStops[route]:
-                print("heading",heading)
-                for station in MetroStops[route][heading]:
-                    print(station,DataStops[station]['stop_lat'],DataStops[station]['stop_lon'])
-            print("\n"*3)
-        # for key in route.keys():
-    DoubleNode=[]
-    for node1 in SuperNodes.keys():
-        print("node",node1,utm.from_latlon(float(SuperNodes[node1]['lat']),float(SuperNodes[node1]['lon'])))
-        D1=utm.from_latlon(float(SuperNodes[node1]['lat']),float(SuperNodes[node1]['lon']))
-        for node2 in SuperNodes.keys():
-            D2=utm.from_latlon(float(SuperNodes[node2]['lat']),float(SuperNodes[node2]['lon']))
-            P1x=D1[0]
-            P1y=D1[1]
-            P2x=D2[0]
-            P2y=D2[1]
-            if node2 != node1 :
-                if node1 not in DoubleNode:
-                    Dist = Calculations.CalcDistance(P1x,P1y,P2x,P2y)
-                    if Dist <100:
-                        DoubleNode.append(node2)
-                        # print("······································· a small stuff  node 1",node1, " node 2 ",node2 )
-    for delnode in DoubleNode:
-        SuperNodes.pop(delnode)
-    # print("DoubleNode,",DoubleNode)
-    return SuperNodes
-
-def AddBusTram(SuperNode,LigthTravel,SuperRange,NodeRange):
-
-    pass
-
 def GetEPSG(letter,zone):
     North=["N","O","P","Q","R","S","T","U","V"]
     South=["M","L","K","J","H","G","F","E"]
     if letter in North:
-        return "326"+str(zone)
+        return "326"+str(zone)+letter
     if letter in South:
-        return "325"+str(zone)
+        return "325"+str(zone)+letter
 
-def ConvertStations(ListDicts,DataStops,Systems):
+def ConvertStations(ListDicts,Route,DataStops,Systems):
 
     class Station:
         def __init__(self,Id="",CoordX=0,CoordY=0,Epsg="",Routes=[],Cluster=[],System=[]):
@@ -314,7 +190,6 @@ def ConvertStations(ListDicts,DataStops,Systems):
             self.Routes=[]
             self.Cluster=[]
             self.System=[]
-
 
     ListStation=[]
     for idx,Stations in enumerate(ListDicts):
@@ -331,7 +206,7 @@ def ConvertStations(ListDicts,DataStops,Systems):
             Sta.CoordY=float(UTM[1])
             # print(UTM)
             # print(Sta.Epsg)
-            # Sta.Routes=[]
+            Sta.Routes=[Route]
             # Sta.Cluster=[]
             Sta.System=[Systems[idx]]
             ListStation.append(Sta)
@@ -344,6 +219,65 @@ def ConvertStations(ListDicts,DataStops,Systems):
     # for st in ListStation:
     #     print("-",st.Id,st.CoordX)
     return ListStation
+def ConvertToStopObj(List,Route,DataStops):
+    OutList=[]
+    for stop in List:
+        Lat=DataStops[stop]['stop_lat']
+        Lon=DataStops[stop]['stop_lon']
+        # print(Lat,Lon)
+        UTM=utm.from_latlon(float(Lat),float(Lon))
+        BStop=BusStop()
+        BStop.Id=stop
+        BStop.CoordX=float(UTM[0])
+        BStop.CoordY=float(UTM[1])
+        BStop.Routes=[Route]
+        BStop.Epsg=GetEPSG(letter=UTM[3],zone=UTM[2])
+
+        print(stop,Route,DataStops[stop]['stop_lat'],DataStops[stop]['stop_lon'])
+        print(BStop.Id,BStop.Routes,BStop.CoordX,BStop.CoordY)
+        OutList.append(BStop)
+    return OutList
+
+
+def AddStopsSuperNode(SuperNodeList,ListStops,Range):
+    AssocStops={}
+    LinkStopSN={}
+    RoutesStops={}
+    IsolatedStops=[]
+    for stop in ListStops:
+        RoutesStops[stop.Id]=stop.Routes
+    for idx, node in enumerate(SuperNodeList):
+        Coords=utm.from_latlon(node[0],node[1])
+        
+        Xnode=float(Coords[0])
+        Ynode=float(Coords[1])
+        # print("-",node)
+        for stop in ListStops:
+            # print(stop)
+            Xstop=stop.CoordX
+            Ystop=stop.CoordY
+            D=Calculations.CalcDistance(P1x=Xnode, P1y=Ynode,P2x=Xstop, P2y=Ystop)
+            if D < Range:
+                # print(stop.Id)
+                if idx not in AssocStops.keys():
+                    AssocStops[idx]=[]
+                AssocStops[idx].append([stop.Id,D])
+
+                if stop.Id not in LinkStopSN.keys():
+                    LinkStopSN[stop.Id]=[idx,D]
+                else:
+                    if LinkStopSN[stop.Id][1]<D:
+                        LinkStopSN[stop.Id][1]=D
+    for key in LinkStopSN.keys():
+        SuperNodeList[LinkStopSN[key][0]][3].append(RoutesStops[key][0])
+        SuperNodeList[LinkStopSN[key][0]][4].append(key)
+        print()
+        print(key,LinkStopSN[key],"SuperNode",SuperNodeList[LinkStopSN[key][0]])
+    for stop in ListStops:
+        if  stop.Id not in LinkStopSN.keys():
+            IsolatedStops.append(stop)
+
+    return SuperNodeList,IsolatedStops
 
 def CreateNodes(SuperRange,NodeRange,ListofStops,DataStops):
 
@@ -387,7 +321,8 @@ def CreateNodes(SuperRange,NodeRange,ListofStops,DataStops):
         OtherCond=False
 
     ListSations=[]
-    if TrainCond and MetroCond:
+    ManStper=True
+    if TrainCond and MetroCond and ManStper:
         # SuNode=SuperNodeTrainMetro(TrainStops=TrainStops,MetroStops=MetroStops,DataStops=DataStops)
         # for key in SuNode.keys():
         #     print(key,DataStops[key]['stop_lat'],DataStops[key]['stop_lon'])
@@ -402,10 +337,10 @@ def CreateNodes(SuperRange,NodeRange,ListofStops,DataStops):
             # print("··························",DataStops[Outbound[0]])
             if Innbound == Outbound:
                 # print("They match")
-                LiSta=ConvertStations(ListDicts=[Innbound],DataStops=DataStops,Systems=["1"])
+                LiSta=ConvertStations(ListDicts=[Innbound],Route=MetroRoute,DataStops=DataStops,Systems=["1"])
                 ListSations=ListSations+LiSta
             else:
-                LiSta=ConvertStations(ListDicts=[Innbound,Outbound],DataStops=DataStops,Systems=["1","1"])
+                LiSta=ConvertStations(ListDicts=[Innbound,Outbound],Route=MetroRoute,DataStops=DataStops,Systems=["1","1"])
                 ListSations=ListSations+LiSta
 
         for MetroRoute in MetroStops.keys():
@@ -417,12 +352,12 @@ def CreateNodes(SuperRange,NodeRange,ListofStops,DataStops):
             # print("··························",DataStops[Outbound[0]])
             if Innbound == Outbound:
                 # print("They match")
-                LiSta=ConvertStations(ListDicts=[Innbound],DataStops=DataStops,Systems=["2"])
+                LiSta=ConvertStations(ListDicts=[Innbound],Route=MetroRoute,DataStops=DataStops,Systems=["2"])
                 ListSations=ListSations+LiSta
             else:
-                LiSta=ConvertStations(ListDicts=[Innbound,Outbound],DataStops=DataStops,Systems=["2","2"])
+                LiSta=ConvertStations(ListDicts=[Innbound,Outbound],Route=MetroRoute,DataStops=DataStops,Systems=["2","2"])
                 ListSations=ListSations+LiSta
-    elif MetroCond:
+    elif MetroCond and ManStper:
         # SuNode=SuperNodeMetro(MetroStops=MetroStops,DataStops=DataStops)
         # print("SuNode",SuNode)
         # for key in SuNode.keys():
@@ -437,16 +372,60 @@ def CreateNodes(SuperRange,NodeRange,ListofStops,DataStops):
             # print("··························",DataStops[Outbound[0]])
             if Innbound == Outbound:
                 # print("They match")
-                LiSta=ConvertStations(ListDicts=[Innbound],DataStops=DataStops,Systems=["2"])
+                LiSta=ConvertStations(ListDicts=[Innbound],Route=MetroRoute,DataStops=DataStops,Systems=["2"])
 
             else:
-                LiSta=ConvertStations(ListDicts=[Innbound,Outbound],DataStops=DataStops,Systems=["2","2"])
+                LiSta=ConvertStations(ListDicts=[Innbound,Outbound],Route=MetroRoute,DataStops=DataStops,Systems=["2","2"])
             ListSations=ListSations+LiSta
     # print("................................",ListSations)
     # for st in ListSations:
     #     print(st.Id,st.CoordX,st.CoordY,st.System)
-    SuperNodeList=AgregateTransit(ListBusStops=ListSations,Range=100)
-    print("Super NODES")
+    SuperNodeList=AgregateHeavyTransit(ListBusStops=ListSations,Range=100)
+    # print("Super NODES")
     for Sn in SuperNodeList:
         print(Sn)
+    ListStops=[]
+    if LightCond:
+        print(type(LightStops))
+        for key in LightStops.keys():
+            # print(key)
+            # print(LightStops[key]['0'])
+            # print(LightStops[key]['1'])
+            Innbound=LightStops[key]['0']
+            Outbound=LightStops[key]['1']
+            Outbound.reverse()
+            if Innbound == Outbound:
+                # print("Innbound == Outbound")
+                ListStops=ListStops+ConvertToStopObj(List=Innbound,Route=key,DataStops=DataStops)
+            else:
+                # print("NOT")
+                ListStops=ListStops+ConvertToStopObj(List=Innbound,Route=key,DataStops=DataStops)
+                ListStops=ListStops+ConvertToStopObj(List=Outbound,Route=key,DataStops=DataStops)
+    # for Sn in ListStops:
+    #     print(Sn.Id,Sn.Routes,Sn.CoordX,Sn.CoordY)
+    if BusesCond:
+        print(type(BusesStops))
+        for key in BusesStops.keys():
+            # print(key)
+            # print(BusesStops[key]['0'])
+            # print(BusesStops[key]['1'])
+            Innbound=BusesStops[key]['0']
+            Outbound=BusesStops[key]['1']
+            Outbound.reverse()
+            if Innbound == Outbound:
+                # print("Innbound == Outbound")
+                ListStops=ListStops+ConvertToStopObj(List=Innbound,Route=key,DataStops=DataStops)
+            else:
+                # print("NOT")
+                ListStops=ListStops+ConvertToStopObj(List=Innbound,Route=key,DataStops=DataStops)
+                ListStops=ListStops+ConvertToStopObj(List=Outbound,Route=key,DataStops=DataStops)
 
+    CompleteSuperNodeList,IsolatedStops=AddStopsSuperNode(SuperNodeList=SuperNodeList,ListStops=ListStops,Range=SuperRange)
+
+    
+    CompleteSuperNodeList+=AgregateStops(ListBusStops=IsolatedStops,Range=NodeRange)
+
+    for i in CompleteSuperNodeList[:10]:
+        print(i)
+    return CompleteSuperNodeList
+    # print(len(CompleteSuperNodeList))

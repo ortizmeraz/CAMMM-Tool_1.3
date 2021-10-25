@@ -14,9 +14,8 @@ decimal.getcontext().prec = 10
 from FeatureOperations import ConvertToUTM
 from FeatureOperations import Agregate
 
-from Databases import TransportNames
-
 from NetworkAnalisys import GtfsToNetwork
+from Databases import TransportNames
 from NetworkAnalisys import AgregatedGTFSStopsToNetwork
 from NetworkAnalisys import NetWorkToGeoJson
 from AggregationTools import CreateNodes
@@ -1042,6 +1041,8 @@ def GTFS(Path,RequestedData):
     for d in ListofStops:
         if len(d)>0:
             EdgeList.append(GetOrder(Data=d))
+        else:
+            EdgeList.append({})
     print("End - Step 3")
     # print("Data_Buses")
     # print("Data_Train")
@@ -1076,40 +1077,60 @@ def GTFS(Path,RequestedData):
     # Sequence to obtain the average distance between stops 
     ##########################################################
 
-    if RequestedData["BusNetworkAnalysis"]==True:
+    if RequestedData["NetworkAnalysis"]==True:
+        print("ListofStops len ",len(ListofStops))
+        print("EdgeList len",len(EdgeList))
         print("Enters into the agregation mode")
-        print(len(ListofStops))
-
-        CreateNodes(SuperRange=400,NodeRange=75,ListofStops=ListofStops,DataStops=DataStops)
-
+    #     print(len(ListofStops))
+    #     print(type(ListofStops))
+        for i in EdgeList:
+            print(type(i),len(i))
+        # b=input("####################################")
+        # b=input()
+        # print(EdgeList)
+        # b=input()
     #     print("Start Bus network")
     #     print("LEN ListofStops:",len(ListofStops))
-    #     for idx,a in enumerate(ListofStops):
-    #         print(idx,"Type:",type(a),len(a.keys()))
-    #     for idx,a in enumerate(ListofStops):
-    #         if len(a.keys())>0:
-    #             print(idx,"---------------------------------------------------------------------------------------------------------------------------------------------------------------")
-    #             AnalyzedNetwork=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx)
-    #             ListOfNeworks.append(AnalyzedNetwork)
-    #             CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops)
-    #             print(idx,a)
-    #             print("FIN DE LA RED.......................................")
-    #             # b=input("Press enter")
-    #         elif len(a.keys())==0:
-    #             print("No",idx)
-    #     print("End Bus network")
+        Titles=["Bus Network","Rail Network","Metro Network","Light Rail Netwrok","Other Network","Node Network"]
+        for idx,a in enumerate(ListofStops):
+            print(idx,"Type:",type(a),len(a.keys()))
+        for idx,a in enumerate(ListofStops):
+            print("Start of",Titles[idx],"network")
+            if len(a.keys())>0:
+                print(idx,"---------------------------------------------------------------------------------------------------------------------------------------------------------------")
+                print("Tpye EdgeList",len(EdgeList[idx]))
+                print("Tpye EdgeList",type(EdgeList[idx]))
+                print("NetworkIndex=idx",idx)
+                AnalyzedNetwork=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx)
+                # ListOfNeworks.append(AnalyzedNetwork)
+                # CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops)
+                print("Network:",Titles[idx])
+                NetWorkToGeoJson(G=AnalyzedNetwork,NetworkIndex=idx)
+                print("FIN DE LA RED.......................................")
+                # b=input("Press enter")
+            elif len(a.keys())==0:
+                print("No",idx)
+            print("End of",Titles[idx],"network")
     # for net in ListOfNeworks:
     #     print(type(net))
         # networkx.readwrite.nx_shp.write_shp(net,r"D:\GitHub\CAMMM-Tool_1.3\Output")
-    # if RequestedData["NodeNetworkAnalysis"]==True:
-    #     EdgeList,EdgeLine=GetEdgeLists(EdgeData)
-    #     ListObjStops=ListGTFStoObjectBusStop(EdgeData=EdgeData,DataStops=DataStops,Data_Buses=Data_Buses)
+    if RequestedData["NodeNetworkAnalysis"]==True:
+        Nodes=CreateNodes(SuperRange=400,NodeRange=75,ListofStops=ListofStops,DataStops=DataStops)
+
+        # EdgeList,EdgeLine=GetEdgeLists(EdgeData)
+        # ListObjStops=ListGTFStoObjectBusStop(EdgeData=EdgeData,DataStops=DataStops,Data_Buses=Data_Buses)
     #     Nodes=Agregate(ListStops=ListObjStops,Range=75)
-    #     G_Dict_1=AgregatedGTFSStopsToNetwork(AgregatedNodes=Nodes,Edge_List=EdgeList,Edge_Properties=EdgeLine)
-    #     NetWorkToGeoJson(G=G_Dict_1['G'])
+        # print("EdgeList",type(EdgeList))
+        # for edge in EdgeList[:10]:
+        #     print("edge",edge)
+        #     print("\n"*5)
+        Graph=AgregatedGTFSStopsToNetwork(AgregatedNodes=Nodes,EdgeList=EdgeList)
+        print(type(Graph))
+
+        NetWorkToGeoJson(G=Graph,NetworkIndex=5)
     # print("City Stattistics:")
     # print(CityStat_NumberOfStops)
-
+        # b=input()
 
     ##########################################################
     # Sequence to obtain the average distance between stops 
@@ -1173,7 +1194,7 @@ def GTFS(Path,RequestedData):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"BusNetworkAnalysis":True,"NodeNetworkAnalysis":False,"NetworkToShpLines":False}
+    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":True,"NetworkToShpLines":False}
     listPath=[]
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Berlin_GTFS\BVG_VBB_bereichsscharf.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Boston_GTFS\MBTA_GTFS.zip")
@@ -1191,13 +1212,14 @@ if __name__ == "__main__":
 
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Berlin_GTFS/BVG_VBB_bereichsscharf.zip")
-    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
+    listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
-    listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
+    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Oslo_GTFS/Oslo_gtfs.zip")
-
+    # print("RequestedData",RequestedData)
+    # b=input()
     for Path in listPath:
         print(Path)
         GTFS(Path,RequestedData)
