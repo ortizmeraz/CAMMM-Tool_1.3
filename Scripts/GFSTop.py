@@ -1186,6 +1186,9 @@ def GTFS(Path,RequestedData):
         # print("DataStops")
 
 
+    if RequestedData["AlignedGirdAnalysis"]:
+        pass
+
 
 ##############
 ## Main cycle
@@ -1194,7 +1197,7 @@ def GTFS(Path,RequestedData):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":True,"NetworkToShpLines":False}
+    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":True,"NetworkToShpLines":False,"AlignedGirdAnalysis":True}
     listPath=[]
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Berlin_GTFS\BVG_VBB_bereichsscharf.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Boston_GTFS\MBTA_GTFS.zip")

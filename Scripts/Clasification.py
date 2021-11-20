@@ -6,6 +6,10 @@ import numpy as np
 import math
 import datetime
 import utm
+import fiona
+import geopandas
+
+
 
 import Calculations
 
@@ -139,9 +143,9 @@ def WriteToJsonFile(Text,Path):
     fw.close()
 
 
-def RotatedCoords(XDistnace,YDistnace,RAngle):
-    xR=(XDistnace*math.cos(RAngle))+(YDistnace*math.sin(RAngle))
-    yR=((-1*XDistnace)*math.sin(RAngle))+(YDistnace*math.cos(RAngle))
+def RotatedCoords(Xval,Yval,RAngle):
+    xR=(Xval*math.cos(RAngle))+(Yval*math.sin(RAngle))
+    yR=((-1*Xval)*math.sin(RAngle))+(Yval*math.cos(RAngle))
     return xR,yR
 
 
@@ -149,54 +153,114 @@ def CalculateRotatedGrid(Angle,Distnace,StartX,StartY,NumCellX,NumCellY):
     RAngle=math.radians(Angle)
     GridList=[]
     # NumCellY+=1
+    # print("Angle",Angle)
+    # print("Distnace",Distnace)
+    # print("StartX",StartX)
+    # print("StartY",StartY)
+    # print("NumCellX",NumCellX)
+    # print("NumCellY",NumCellY)
+    # b=input("HALT")
     for iY in range(NumCellY):
-        # print("\n\n\nY:",iY)
-        DiY=iY+1
+        YCoordTop=((iY+1)*Distnace)
+        YCoordDow=((iY)*Distnace)
+        # print("\n\n iY:",iY)
+        # print("\n\tYCoordDow:",YCoordDow)
+        # print("\n\tYCoordTop:",YCoordTop)
         for iX in range(0,NumCellX):
-            DiX=iX+1
-            # print("||X:",iX)
-            # Q1 coords
-            X1Distnace=StartX+(iX*Distnace)
-            Y1Distnace=StartY+(iY*Distnace)
-            # print(end="\t"*1)
-            # print("Q1xD",X1Distnace,"Q1yD",Y1Distnace,end="\t")
-            # Q2 coords
-            X2Distnace=StartX+(DiX*Distnace)
-            Y2Distnace=StartY+(iY*Distnace)
-            # print("X:",iX,end="\t")
-            # print(end="\t"*1)
-            # print("Q2xD",X2Distnace,"Q2yD",Y2Distnace,end="\t")
-            # Q3 coords
-            X3Distnace=StartX+(DiX*Distnace)
-            Y3Distnace=StartY+(DiY*Distnace)
-            # print("X:",iX,end="\t")
-            # print(end="\t"*1)
-            # print("Q3xD",X3Distnace,"Q3yD",Y3Distnace,end="\t")
-            # Q4 coords
-            X4Distnace=StartX+(iX*Distnace)
-            Y4Distnace=StartY+(DiY*Distnace)
-            # print("X:",iX,end="\t")
-            # print(end="\t"*1)
-            # print("Q4xD",X4Distnace,"Q4yD",Y4Distnace,end="\t")
-            
-            X1Distnace=X1Distnace+StartX
-            Y1Distnace=Y1Distnace+StartY
-            X2Distnace=X2Distnace+StartX
-            Y2Distnace=Y2Distnace+StartY
-            X3Distnace=X3Distnace+StartX
-            Y3Distnace=Y3Distnace+StartY
-            X4Distnace=X4Distnace+StartX
-            Y4Distnace=Y4Distnace+StartY
+            XCoordRigth=((iX+1)*Distnace)
+            XCoordLeftt=((iX)*Distnace)
+            # print("\t\t iX:",iX)
+            # print("\t\t StartX",StartX,"XCoordLeftt:",XCoordLeftt)
+            # print("\t\t StartX",StartX,"XCoordRigth:",XCoordRigth)
+    
+            # Q1
+            x1R,y1R=RotatedCoords(Xval=XCoordLeftt,Yval=YCoordDow,RAngle=RAngle)
+            # print("Q1\n","\t x1R",x1R,x1R+StartX)
+            # print("\t y1R",y1R,y1R+StartY)
+            # Q2
+            x2R,y2R=RotatedCoords(Xval=XCoordRigth,Yval=YCoordDow,RAngle=RAngle)
+            # print("Q2\n","\t x2R",x2R,x2R+StartX)
+            # print("\t y2R",y2R,y2R+StartY)
+            # Q3
+            x3R,y3R=RotatedCoords(Xval=XCoordRigth,Yval=YCoordTop,RAngle=RAngle)
+            # print("Q3\n","\t x3R",x3R,x3R+StartX)
+            # print("\t y3R",y3R,y3R+StartY)
+            # Q4
+            x4R,y4R=RotatedCoords(Xval=XCoordLeftt,Yval=YCoordTop,RAngle=RAngle)
+            # print("Q4\n","\t x4R",x4R,x4R+StartX)
+            # print("\t y4R",y4R,y4R+StartY)
 
+            # b=input("HALT")
 
-            x1R,y1R=RotatedCoords(XDistnace=X1Distnace,YDistnace=Y1Distnace,RAngle=RAngle)
-            x2R,y2R=RotatedCoords(XDistnace=X2Distnace,YDistnace=Y2Distnace,RAngle=RAngle)
-            x3R,y3R=RotatedCoords(XDistnace=X3Distnace,YDistnace=Y3Distnace,RAngle=RAngle)
-            x4R,y4R=RotatedCoords(XDistnace=X4Distnace,YDistnace=Y4Distnace,RAngle=RAngle)
+            Cx1R=x1R+StartX
+            Cy1R=y1R+StartY
 
-            # print(x1R,y1R,x2R,y2R,x3R,y3R,x4R,y4R)
-            GridList.append([[x1R,y1R],[x2R,y2R],[x3R,y3R],[x4R,y4R]])
+            Cx2R=x2R+StartX
+            Cy2R=y2R+StartY
+
+            Cx3R=x3R+StartX
+            Cy3R=y3R+StartY
+
+            Cx4R=x4R+StartX
+            Cy4R=y4R+StartY
+
+            # print(Cx1R,Cy1R,Cx2R,Cy2R,Cx3R,Cy3R,Cx4R,Cy4R)
+            GridList.append([[Cx1R,Cy1R],[Cx2R,Cy2R],[Cx3R,Cy3R],[Cx4R,Cy4R]])
     return GridList
+    
+
+# def CalculateRotatedGrid(Angle,Distnace,StartX,StartY,NumCellX,NumCellY):
+#     RAngle=math.radians(Angle)
+#     GridList=[]
+#     # NumCellY+=1
+#     for iY in range(NumCellY):
+#         # print("\n\n\nY:",iY)
+#         DiY=iY+1
+#         for iX in range(0,NumCellX):
+#             DiX=iX+1
+#             # print("||X:",iX)
+#             # Q1 coords
+#             X1Distnace=StartX+(iX*Distnace)
+#             Y1Distnace=StartY+(iY*Distnace)
+#             # print(end="\t"*1)
+#             # print("Q1xD",X1Distnace,"Q1yD",Y1Distnace,end="\t")
+#             # Q2 coords
+#             X2Distnace=StartX+(DiX*Distnace)
+#             Y2Distnace=StartY+(iY*Distnace)
+#             # print("X:",iX,end="\t")
+#             # print(end="\t"*1)
+#             # print("Q2xD",X2Distnace,"Q2yD",Y2Distnace,end="\t")
+#             # Q3 coords
+#             X3Distnace=StartX+(DiX*Distnace)
+#             Y3Distnace=StartY+(DiY*Distnace)
+#             # print("X:",iX,end="\t")
+#             # print(end="\t"*1)
+#             # print("Q3xD",X3Distnace,"Q3yD",Y3Distnace,end="\t")
+#             # Q4 coords
+#             X4Distnace=StartX+(iX*Distnace)
+#             Y4Distnace=StartY+(DiY*Distnace)
+#             # print("X:",iX,end="\t")
+#             # print(end="\t"*1)
+#             # print("Q4xD",X4Distnace,"Q4yD",Y4Distnace,end="\t")
+            
+#             X1Distnace=X1Distnace+StartX
+#             Y1Distnace=Y1Distnace+StartY
+#             X2Distnace=X2Distnace+StartX
+#             Y2Distnace=Y2Distnace+StartY
+#             X3Distnace=X3Distnace+StartX
+#             Y3Distnace=Y3Distnace+StartY
+#             X4Distnace=X4Distnace+StartX
+#             Y4Distnace=Y4Distnace+StartY
+
+
+#             x1R,y1R=RotatedCoords(XDistnace=X1Distnace,YDistnace=Y1Distnace,RAngle=RAngle)
+#             x2R,y2R=RotatedCoords(XDistnace=X2Distnace,YDistnace=Y2Distnace,RAngle=RAngle)
+#             x3R,y3R=RotatedCoords(XDistnace=X3Distnace,YDistnace=Y3Distnace,RAngle=RAngle)
+#             x4R,y4R=RotatedCoords(XDistnace=X4Distnace,YDistnace=Y4Distnace,RAngle=RAngle)
+
+#             # print(x1R,y1R,x2R,y2R,x3R,y3R,x4R,y4R)
+#             GridList.append([[x1R,y1R],[x2R,y2R],[x3R,y3R],[x4R,y4R]])
+#     return GridList
     
 def MakeCRS(Letter,Number):
     North=["N","P","Q","R","S","T","U","V","W","X"]
@@ -400,26 +464,26 @@ def GetCoords(LatCol,LonCol):
     MaxLat=float(max(LatCol))
     if MaxLon > 0 and MaxLat > 0:
         Coords=utm.from_latlon(MinLat,MinLon)
-        print(" Lon + | Lat + ")
+        # print(" Lon + | Lat + ")
         CoCoords=utm.from_latlon(MaxLat,MaxLon)
 
     if MaxLon > 0 and MaxLat < 0:
         Coords=utm.from_latlon(MaxLat,MinLon)
-        print("Lon + | Lat - ")
+        # print("Lon + | Lat - ")
         CoCoords=utm.from_latlon(MinLat,MaxLon)
 
     if MaxLon < 0 and MaxLat < 0:
         Coords=utm.from_latlon(MaxLat,MaxLon)
-        print("Lon - | Lat - ")
+        # print("Lon - | Lat - ")
         CoCoords=utm.from_latlon(MinLat,MinLon)
     
     if MaxLon < 0 and MaxLat > 0:
         Coords=utm.from_latlon(MinLat,MaxLon)
-        print("Lon - | Lat + ")
+        # print("Lon - | Lat + ")
         CoCoords=utm.from_latlon(MaxLat,MinLon)
 
-    print(Coords)
-    print(CoCoords)
+    # print(Coords)
+    # print(CoCoords)
     return Coords,CoCoords
 
 
@@ -432,6 +496,58 @@ def RoundNumb(number):
         sum=0
     var = int(ListNum[0])+sum
     return var
+
+
+def GeoOperation(RetPath,StopPath):
+    # GeoGrid = geopandas.read_file(RetPath)
+    # print("GeoGrid: ",type(GeoGrid))
+    # print(GeoGrid)
+    # GeoStops= geopandas.read_file(StopPath)
+    # print("GeoStops: ",type(GeoStops))
+    # print(GeoStops)
+    # print(dir(GeoGrid))
+    # for i in dir(GeoGrid):
+    #     print(i)
+
+    #############################################################################
+    #############################################################################
+
+    # import geopandas
+
+    # Read the data.
+    polygons = geopandas.GeoDataFrame.from_file(RetPath)
+    points = geopandas.GeoDataFrame.from_file(StopPath)
+
+    # Make a copy because I'm going to drop points as I
+    # assign them to polys, to speed up subsequent search.
+    pts = points.copy() 
+
+    # We're going to keep a list of how many points we find.
+    pts_in_polys = []
+
+    # Loop over polygons with index i.
+    for i, poly in polygons.iterrows():
+
+        # Keep a list of points in this poly
+        pts_in_this_poly = []
+
+        # Now loop over all points with index j.
+        for j, pt in pts.iterrows():
+            if poly.geometry.contains(pt.geometry):
+                # Then it's a hit! Add it to the list,
+                # and drop it so we have less hunting.
+                pts_in_this_poly.append(pt.geometry)
+                pts = pts.drop([j])
+
+        # We could do all sorts, like grab a property of the
+        # points, but let's just append the number of them.
+        pts_in_polys.append(len(pts_in_this_poly))
+
+    # Add the number of points for each poly to the dataframe.
+    polygons['number of points'] = geopandas.GeoSeries(pts_in_polys)
+
+    #############################################################################
+    #############################################################################
 
 
 # Work in the trips part
@@ -457,7 +573,7 @@ AvAngle,LatCol,LonCol=GetAngle(PathShapes=PathShape,PathTrips=PathTrip,PathRoute
 # print("Min Lat",min(LatCol))
 # print("Max Lon",max(LonCol))
 # print("Min Lon",min(LonCol))
-
+# AvAngle=0
 Coords,CoCoords=GetCoords(LatCol,LonCol)
 
 DifferenceX=int(abs(Coords[0]-CoCoords[0]))/1000
@@ -475,13 +591,15 @@ print("Coords",Coords)
 Agency="STM"
 # Break=QuantilesBare(Path)
 # # print("QuantilesBare",Break)
-GridCoords=CalculateRotatedGrid(Angle=AvAngle,Distnace=1000,StartX=(Coords[0]-500),StartY=(Coords[1]-500),NumCellX=(NumCellX+10),NumCellY=NumCellY)
+GridCoords=CalculateRotatedGrid(Angle=AvAngle,Distnace=1000,StartX=(Coords[0]-10000),StartY=(Coords[1]),NumCellX=(NumCellX+10),NumCellY=(NumCellY+25))
 # print(type(GridCoords))
 TextJSON=CreateGridObj(ListCoords=GridCoords,EPSGname=MakeCRS(Letter,Number),Name=Agency)
 print(MakeCRS(Letter,Number))
 # print(TextJSON)
-WriteToJsonFile(Text=TextJSON,Path=r"/mnt/d/GitHub/TESSSSt2.geojson")
-
+PathFile=r"/mnt/d/GitHub/TESSSSt2.geojson"
+PathStops=r"/mnt/d/GitHub/CAMMM-Tool_1.3/EXAMPLES_GEOJSON/StopsMontreal.shp"
+WriteToJsonFile(Text=TextJSON,Path=PathFile)
+GeoOperation(RetPath=PathFile,StopPath=PathStops)
 
 print("..........fin.............")
 
