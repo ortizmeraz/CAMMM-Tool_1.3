@@ -17,6 +17,7 @@ def Update():
     os.system("pip3 install six")
     os.system("pip3 install pyshp")
     os.system("pip3 install matplotlib")
+    os.system("pip3 install Cython")
 
 
 if __name__ == "__main__":
