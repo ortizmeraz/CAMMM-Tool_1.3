@@ -13,6 +13,9 @@ import json
 
 import Calculations
 
+import tkinter 
+from tkinter import ttk 
+from tkinter.filedialog import asksaveasfile 
 
 def NaturalBreaksBare(Path):
     count=0
@@ -799,7 +802,15 @@ def GetStopDensity(PathFileGridUTM,PathStops,PathFileGridExit,PathTrip,PathShape
     # b=input("Halt")
     GeograpJSON=CreateGridObjProperties(DictCoords=ExitList,EPSGname="4326",Name=Agency,Table=Dict)
     # print(GeograpJSON)
-    WriteToJsonFile(Text=GeograpJSON,Path=PathFileGridExit)
+
+    files = [('GeoJson', '*.geojson'),('Text Document', '*.txt')]
+    Path = asksaveasfile(filetypes = files, defaultextension = files,title = "Grid Analysis file") 
+    print(dir(Path))
+    print("Path",Path,type(Path))
+    PathStr=str(Path.name)
+    print("PathStr",PathStr,type(PathStr))
+    b=input("Delete")
+    WriteToJsonFile(Text=GeograpJSON,Path=PathStr)
 
 
 if __name__ == "__main__":
