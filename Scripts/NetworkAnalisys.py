@@ -13,7 +13,7 @@ import zipfile
 from FeatureOperations import AgregateTransitNetwork
 from FeatureOperations import CalculateVecinityBusStops
 
-from tkinter import * 
+import tkinter
 from tkinter import ttk 
 from tkinter.filedialog import asksaveasfile 
 

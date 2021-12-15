@@ -739,15 +739,20 @@ def TransformStopsCsvToGeoJson(PathStopsCSV,PathStopsGeojson,Agency):
     with open(PathStopsCSV, 'r',encoding='utf8') as file:
         reader = csv.reader(file)
         Header=next(reader)
+        for idx,head in enumerate(Header):
+            if head =="stop_lat":
+                lat_id=idx
+            if head =="stop_lon":
+                lon_id=idx
         # print("PathShapes",Header)
         # b=input("Delete")
         ListStops=[]
         for line in reader:
             # print(line[3],type(line))
             Id=line[0]
-            Lat=float(line[3])
-            Lon=float(line[4])
-            # print("Id: ",Id,"\tLat: ",Lat,"\tLon: ",Lon)
+            Lat=float(line[lat_id])
+            Lon=float(line[lon_id])
+            print("Id: ",Id,"\tLat: ",Lat,"\tLon: ",Lon)
             Coords=utm.from_latlon(Lat,Lon)
             ListStops.append([Coords[0],Coords[1]])
         # print(Coords)
@@ -760,7 +765,7 @@ def TransformStopsCsvToGeoJson(PathStopsCSV,PathStopsGeojson,Agency):
 
 
 
-def GetStopDensity(PathFileGridUTM,PathStops,PathFileGridExit,PathTrip,PathShape,Pathroute,Agency):
+def GetStopDensity(PathFileGridUTM,PathStops,PathTrip,PathShape,Pathroute,Agency):
     AvAngle,LatCol,LonCol=GetAngle(PathShapes=PathShape,PathTrips=PathTrip,PathRoutes=Pathroute)
     # print("Max Lat",max(LatCol))
     # print("Min Lat",min(LatCol))
@@ -804,7 +809,8 @@ def GetStopDensity(PathFileGridUTM,PathStops,PathFileGridExit,PathTrip,PathShape
     # print(GeograpJSON)
 
     files = [('GeoJson', '*.geojson'),('Text Document', '*.txt')]
-    Path = asksaveasfile(filetypes = files, defaultextension = files,title = "Grid Analysis file") 
+    LabelTitle=Agency+"Grid Analysis file"
+    Path = asksaveasfile(filetypes = files, defaultextension = files,title = LabelTitle) 
     print(dir(Path))
     print("Path",Path,type(Path))
     PathStr=str(Path.name)
@@ -826,6 +832,6 @@ if __name__ == "__main__":
 
     TransformStopsCsvToGeoJson(PathStopsCSV,PathStopsGeojson,Agency="STM")
     
-    GetStopDensity(PathFileGridUTM=PathFileGridUTM,PathStops=PathStopsGeojson,PathFileGridExit=PathFileGridExit,PathTrip=PathTrip,PathShape=PathShape,Pathroute=Pathroute,Agency="STM")
+    GetStopDensity(PathFileGridUTM=PathFileGridUTM,PathStops=PathStopsGeojson,PathTrip=PathTrip,PathShape=PathShape,Pathroute=Pathroute,Agency="STM")
     print("..........fin.............")
 

@@ -20,6 +20,9 @@ from NetworkAnalisys import AgregatedGTFSStopsToNetwork
 from NetworkAnalisys import NetWorkToGeoJson
 from AggregationTools import CreateNodes
 
+from Clasification import TransformStopsCsvToGeoJson
+from Clasification import GetStopDensity
+
 from ClassCollection import BusStop
 
 import networkx
@@ -974,6 +977,8 @@ def GTFS(Path,RequestedData):
         O_PathStopTimes=r"Operational\stop_times.txt"
         O_PathStops=r"Operational\stops.txt"
         O_PathShapes=r"Operational\shapes.txt"
+        O_PathStopsGeoJson=r"Operational\Geostops.geojson"
+        O_GridStopDensity=r"Operational\Grid.geojson"
     if os.name=='posix':
         RunZipUnix(Path=Path)
         O_PathAgencyData="Operational/agency.txt"
@@ -981,7 +986,9 @@ def GTFS(Path,RequestedData):
         O_PathTrips="Operational/trips.txt"
         O_PathStopTimes="Operational/stop_times.txt"
         O_PathStops="Operational/stops.txt"
-        O_PathShapes=r"Operational\stops.txt"
+        O_PathShapes="Operational/stops.txt"
+        O_PathStopsGeoJson="Operational/Geostops.geojson"
+        O_GridStopDensity="Operational/Grid.geojson"
 
     print("Start - Step 1")
     Agency=GetSystemData(Path=O_PathAgencyData)
@@ -1056,7 +1063,7 @@ def GTFS(Path,RequestedData):
     #     print(DS)
     #     print("########################")
     #     # print(type(DS),len(DS.keys()))
-    CleanFiles()    
+   
 
 
     # NetworkNames=["Data_Buses","Data_Train","Data_Metro","Data_Tram","Data_Other"]
@@ -1187,8 +1194,15 @@ def GTFS(Path,RequestedData):
 
 
     if RequestedData["AlignedGirdAnalysis"]:
-        pass
-
+        TransformStopsCsvToGeoJson(PathStopsCSV=O_PathStops,PathStopsGeojson=O_PathStopsGeoJson,Agency=NameOfCity)
+        GetStopDensity(PathFileGridUTM=O_GridStopDensity,PathStops=O_PathStopsGeoJson,PathTrip=O_PathTrips,PathShape=O_PathShapes,Pathroute=O_PathRoutes,Agency=NameOfCity)
+        # TransformStopsCsvToGeoJson(PathStopsCSV,PathStopsGeojson,Agency="STM")
+        # GetStopDensity(PathFileGridUTM=PathFileGridUTM,PathStops=PathStopsGeojson,PathFileGridExit=PathFileGridExit,PathTrip=PathTrip,PathShape=PathShape,Pathroute=Pathroute,Agency="STM")
+    
+    ###################################################################
+    ##################### END OF MAIN #################################
+    ###################################################################
+    CleanFiles() 
 
 ##############
 ## Main cycle
@@ -1197,7 +1211,7 @@ def GTFS(Path,RequestedData):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":True,"NetworkToShpLines":False,"AlignedGirdAnalysis":True}
+    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":False,"NetworkToShpLines":False,"AlignedGirdAnalysis":True}
     listPath=[]
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Berlin_GTFS\BVG_VBB_bereichsscharf.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Boston_GTFS\MBTA_GTFS.zip")
@@ -1215,11 +1229,11 @@ if __name__ == "__main__":
 
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Berlin_GTFS/BVG_VBB_bereichsscharf.zip")
-    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
+    listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
-    listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Oslo_GTFS/Oslo_gtfs.zip")
     # print("RequestedData",RequestedData)
     # b=input()
