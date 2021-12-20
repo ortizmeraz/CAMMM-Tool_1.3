@@ -986,7 +986,7 @@ def GTFS(Path,RequestedData):
         O_PathTrips="Operational/trips.txt"
         O_PathStopTimes="Operational/stop_times.txt"
         O_PathStops="Operational/stops.txt"
-        O_PathShapes="Operational/stops.txt"
+        O_PathShapes="Operational/shapes.txt"
         O_PathStopsGeoJson="Operational/Geostops.geojson"
         O_GridStopDensity="Operational/Grid.geojson"
 
@@ -1024,6 +1024,8 @@ def GTFS(Path,RequestedData):
     # #     print(cityname)
     # ListNames=set(CityName)
     # NameOfCity = ' '.join([str(elem) for elem in ListNames])
+    NameOfCity = NameOfCity.replace('\"',"")
+
     print(NameOfCity)
     # b=input(".................................")
     NumberLines=GetLineNums(Path=O_PathRoutes)
@@ -1195,6 +1197,8 @@ def GTFS(Path,RequestedData):
 
     if RequestedData["AlignedGirdAnalysis"]:
         TransformStopsCsvToGeoJson(PathStopsCSV=O_PathStops,PathStopsGeojson=O_PathStopsGeoJson,Agency=NameOfCity)
+        # print("End of first FUnction")
+        # input("Delete")
         GetStopDensity(PathFileGridUTM=O_GridStopDensity,PathStops=O_PathStopsGeoJson,PathTrip=O_PathTrips,PathShape=O_PathShapes,Pathroute=O_PathRoutes,Agency=NameOfCity)
         # TransformStopsCsvToGeoJson(PathStopsCSV,PathStopsGeojson,Agency="STM")
         # GetStopDensity(PathFileGridUTM=PathFileGridUTM,PathStops=PathStopsGeojson,PathFileGridExit=PathFileGridExit,PathTrip=PathTrip,PathShape=PathShape,Pathroute=Pathroute,Agency="STM")
