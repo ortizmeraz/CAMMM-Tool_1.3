@@ -1,0 +1,26 @@
+{
+        "features": [
+{
+"type": "Feature",
+"properties": {"StopCode":"F04181","location": "(357122.06716747297, 5251119.35294666)", "stop_id": "F04181", "stop_name": "Csepel-Királyerdő", "stop_code": "", "stop_desc": "", "stop_lat": "47.397886", "stop_lon": "19.106529", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 2.000000000000, "Clossnes": 100.000000000000},
+"geometry": {
+"coordinates": [19.106529,47.397886],
+"type": "Point"
+        },
+        "id": "1000000000000000"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F04526","location": "(357286.019023609, 5251155.173352795)", "stop_id": "F04526", "stop_name": "Soroksár, Molnár-sziget", "stop_code": "", "stop_desc": "", "stop_lat": "47.398244", "stop_lon": "19.108689", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 2.000000000000, "Clossnes": 100.000000000000},
+"geometry": {
+"coordinates": [19.108689,47.398244],
+"type": "Point"
+        },
+        "id": "1000000000000001"
+
+}
+
+ ],
+"type": "FeatureCollection"
+}

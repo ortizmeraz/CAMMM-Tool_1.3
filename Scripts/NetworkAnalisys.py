@@ -10,11 +10,10 @@ from epsg_ident import EpsgIdent
 import pyproj
 import zipfile
 
-
 from FeatureOperations import AgregateTransitNetwork
 from FeatureOperations import CalculateVecinityBusStops
 
-from tkinter import * 
+import tkinter
 from tkinter import ttk 
 from tkinter.filedialog import asksaveasfile 
 
@@ -26,7 +25,7 @@ from Databases import RearPaths
 
 import matplotlib.pyplot as plt
 
-
+import Calculations
 
 def ConvertToUTM(lat,lon):
     import warnings
@@ -40,7 +39,7 @@ def ConvertToUTM(lat,lon):
 
 
 
-def GtfsToNetwork(EdgeData,DataStops):
+def GtfsToNetwork(EdgeData,DataStops,NetworkIndex):
     print("DataStops:",type(DataStops),len(DataStops))
     print("EdgeData:",type(EdgeData),len(EdgeData))
     # b=input()
@@ -161,21 +160,22 @@ def GtfsToNetwork(EdgeData,DataStops):
         NodePrintProp['Pos'][node]=(x,y)
     # print("List_Nodes_Key",len(List_Nodes_Key))
     # print("List_Nodes",len(List_Nodes))
-    NetWorkToGeoJson(G=G)
+    # NetWorkToGeoJson(G=G,NetworkIndex=NetworkIndex)
     # b=input()
     # nx.draw_networkx_nodes(G,pos=NodePrintProp['Pos'],node_size=50)
     # nx.draw_networkx_edges(G,pos=NodePrintProp['Pos'])
     # nx.draw(G)
     # plt.show()
     NodeList=[]
-    for i in list(G.nodes):
-        print(i)
-        if i not in NodeList:
-            NodeList.append(i)
-        else:
-            print("#################################################################################################\n"*10)
-    print("Number of Stops in the network ",len(list(G.nodes)))
-    return len(list(G.nodes))
+    # for i in list(G.nodes):
+    #     print(i)
+    #     if i not in NodeList:
+    #         NodeList.append(i)
+    #     else:
+    #         print("#################################################################################################\n"*10)
+    # print("Number of Stops in the network ",len(list(G.nodes)))
+    # return len(list(G.nodes))
+    return G
 
 
 
@@ -752,7 +752,13 @@ def AgregatedStopsToNetwork(AgregatedNodes,Edge_List,Edge_Properties):
     # print(list(G.nodes(data=True)))
     # print(G.edges(data=True))
 
-def AgregatedGTFSStopsToNetwork(AgregatedNodes,Edge_List,Edge_Properties):
+
+
+
+
+
+
+def AgregatedGTFSStopsToNetwork(AgregatedNodes,EdgeList):
     G = nx.DiGraph()
     StopToNode={}
     Node_Properties={'Pos':{}}
@@ -763,6 +769,7 @@ def AgregatedGTFSStopsToNetwork(AgregatedNodes,Edge_List,Edge_Properties):
         NumRouts=Node[2]
         Routes=Node[3]
         ContainedStops=Node[4]
+        Status=Node[5]
         # print("Node",Node,"\n")
         # print("ContainedStops",ContainedStops)
         # print("ContainedStops[0]",ContainedStops[0],type(ContainedStops[0]))
@@ -770,70 +777,80 @@ def AgregatedGTFSStopsToNetwork(AgregatedNodes,Edge_List,Edge_Properties):
         for Stop in ContainedStops:
             # print("Stop",Stop,type(Stop))
             StopToNode[Stop]=idx
-
-
-            # if idx not in StopToNode.keys():
-            #     print("StopToNode.keys(before)",StopToNode.keys())
-            #     StopToNode[Stop]=idx
-            #     print(idx,"Todo normal")
-            #     print("StopToNode.keys(after)",StopToNode.keys())
-            #     print()
-            #     # b1=input()
-            # else:
-
-            #     if idx in StopToNode.keys():
-            #         print("IDX IS ALREADY IN",idx,"StopToNode",StopToNode[idx])
-            #         if StopToNode[Stop]==idx:
-            #             print("ok resulta que StopToNode[Stop] y idx son iguales")
-            #         else:
-            #             print("NO resulta que StopToNode[Stop] y idx NO SON IGUALES")
-            #     else:
-            #         print("IDX IS ALREADY IN")
-
-            #     print(idx,"WHAAAAAAAAAAAAAAAAAAAAAAAAAAT a crazy thing happend")
-            #     print("StopToNode.keys()",StopToNode.keys())
-            #     print("Stop",Stop,type(Stop))
-            #     b1=input()
-        # print("Xval",Xval)
-        # print("Yval",Yval)
-        # print("NumRouts",NumRouts)
-        # print("Routes",Routes)
-        # print("ContainedStops",ContainedStops)
-        # b=input()
+        if Status=='S':
+            Weigth=4*NumRouts
+        if Status=='N':
+            Weigth=NumRouts
         Node_Properties['Pos'][idx]=(Xval,Yval)
-        Node_Properties['BusStopCount']=NumRouts
+        Node_Properties['BusStopCount']=Weigth
         Node_Properties['BusStopList']=ContainedStops
         Node_Properties['Line']=Routes
-        G.add_node(idx, pos=(Xval,Yval),weight=NumRouts,Routes=Routes,ContainedStops=ContainedStops)
+        G.add_node(idx, pos=(Xval,Yval),weight=Weigth,Routes=Routes,ContainedStops=ContainedStops)
         # G.add_node(Node, time=Dic[Node])
     # for key in StopToNode.keys():
         # print(key,StopToNode[key])
+    # print("Netwrok is on the node side",G)
     # b=input()
-    Edge_Node_List=[]
-    New_Edge_Properties={}
-    # print(Edge_Properties)
-    LineProperties={}
+    print("EdgeList",len(EdgeList))
+    NodeEdgeLisr=[]
+    for Di in EdgeList:
+        print(type(Di),len(Di))
+        LiKyes=list(Di.keys())
+        # for key in LiKyes[:10]:
+        for key in LiKyes:
+            print(key)
+            for bound in Di[key]:
+                print("bound",bound)
+                for trip in Di[key][bound]:
+                    print(trip)
+                    print(trip[0],"->",trip[1])
+                    Start=None
+                    EndTr=None
+                    for idx,Node in enumerate(AgregatedNodes):
+                        if trip[0] in Node[4]:
+                            Start=idx
+                            break
+                    for idx,Node in enumerate(AgregatedNodes):
+                        if trip[1] in Node[4]:
+                            EndTr=idx
+                            break
+                    if Start is not None and EndTr is not None:
+                        if Start != EndTr:
+                            NodeEdgeLisr.append([Start,EndTr])
+    G.add_edges_from(NodeEdgeLisr)
+    # for i in NodeEdgeLisr:
+    #     print(i)
+    print("All good")
+    # for bound in EdgeList:
+    #     print("bound",bound)
+        # for stop in EdgeList[bound]:
+        #     print("\tstops",stop)
+    return G
+    # Edge_Node_List=[]
+    # New_Edge_Properties={}
+    # # print(Edge_Properties)
+    # LineProperties={}
 
-    for key in Edge_Properties['Line'].keys():
-        edge=list(key)
-        print("\t",edge[0],edge[1])
-        if edge[0] in StopToNode and edge[1] in StopToNode:
-            New_Edge=(StopToNode[edge[0]],StopToNode[edge[1]])
-            LineProperties[New_Edge]=Edge_Properties['Line'][key]
-        # print(key,type(key),Edge_Properties['Line'][key])
-        # print("\t",StopToNode[edge[0]],"-",StopToNode[edge[1]])
-        # print("\t\t",LineProperties[New_Edge])
+    # for key in Edge_Properties['Line'].keys():
+    #     edge=list(key)
+    #     print("\t",edge[0],edge[1])
+    #     if edge[0] in StopToNode and edge[1] in StopToNode:
+    #         New_Edge=(StopToNode[edge[0]],StopToNode[edge[1]])
+    #         LineProperties[New_Edge]=Edge_Properties['Line'][key]
+    #     # print(key,type(key),Edge_Properties['Line'][key])
+    #     # print("\t",StopToNode[edge[0]],"-",StopToNode[edge[1]])
+    #     # print("\t\t",LineProperties[New_Edge])
 
-    New_Edge_Properties={'Line':LineProperties}
+    # New_Edge_Properties={'Line':LineProperties}
 
-    for edge in Edge_List:
-        # print(edge,"\t",StopToNode[edge[0]],"-",StopToNode[edge[1]])
-        if edge[0] in StopToNode and edge[1] in StopToNode:
-            New_Edge=(StopToNode[edge[0]],StopToNode[edge[1]])
-            Edge_Node_List.append(New_Edge)
+    # for edge in Edge_List:
+    #     # print(edge,"\t",StopToNode[edge[0]],"-",StopToNode[edge[1]])
+    #     if edge[0] in StopToNode and edge[1] in StopToNode:
+    #         New_Edge=(StopToNode[edge[0]],StopToNode[edge[1]])
+    #         Edge_Node_List.append(New_Edge)
 
-    G.add_edges_from(Edge_Node_List)
-    nx.set_edge_attributes(G,values=New_Edge_Properties['Line'],name="Line")
+    # G.add_edges_from(Edge_Node_List)
+    # nx.set_edge_attributes(G,values=New_Edge_Properties['Line'],name="Line")
     
     # Edge_Color=GetLineColorsEdges(List_edges=Edge_Node_List,Dict_Lines=New_Edge_Properties['Line'])
 
@@ -841,7 +858,113 @@ def AgregatedGTFSStopsToNetwork(AgregatedNodes,Edge_List,Edge_Properties):
     # nx.draw_networkx_edges(G,pos=Node_Properties['Pos'],edge_color=Edge_Color)
     # pylab.show()
     # return {'G':G,'Node_Color':Node_Color,'Edge_Color':Edge_Color,"Edge_Properties":Edge_Properties,"Node_Properties":Node_Properties}
-    return {'G':G,"Edge_Properties":Edge_Properties,"Node_Properties":Node_Properties}
+    # return {'G':G,"Edge_Properties":Edge_Properties,"Node_Properties":Node_Properties}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def AgregatedGTFSStopsToNetwork(AgregatedNodes,Edge_List,Edge_Properties):
+#     G = nx.DiGraph()
+#     StopToNode={}
+#     Node_Properties={'Pos':{}}
+#     for idx,Node in enumerate(AgregatedNodes):
+#         print("#########################################################################################################################################################################\n"*4)
+#         Xval=Node[0]
+#         Yval=Node[1]
+#         NumRouts=Node[2]
+#         Routes=Node[3]
+#         ContainedStops=Node[4]
+#         # print("Node",Node,"\n")
+#         # print("ContainedStops",ContainedStops)
+#         # print("ContainedStops[0]",ContainedStops[0],type(ContainedStops[0]))
+#         # print()
+#         for Stop in ContainedStops:
+#             # print("Stop",Stop,type(Stop))
+#             StopToNode[Stop]=idx
+
+
+#             # if idx not in StopToNode.keys():
+#             #     print("StopToNode.keys(before)",StopToNode.keys())
+#             #     StopToNode[Stop]=idx
+#             #     print(idx,"Todo normal")
+#             #     print("StopToNode.keys(after)",StopToNode.keys())
+#             #     print()
+#             #     # b1=input()
+#             # else:
+
+#             #     if idx in StopToNode.keys():
+#             #         print("IDX IS ALREADY IN",idx,"StopToNode",StopToNode[idx])
+#             #         if StopToNode[Stop]==idx:
+#             #             print("ok resulta que StopToNode[Stop] y idx son iguales")
+#             #         else:
+#             #             print("NO resulta que StopToNode[Stop] y idx NO SON IGUALES")
+#             #     else:
+#             #         print("IDX IS ALREADY IN")
+
+#             #     print(idx,"WHAAAAAAAAAAAAAAAAAAAAAAAAAAT a crazy thing happend")
+#             #     print("StopToNode.keys()",StopToNode.keys())
+#             #     print("Stop",Stop,type(Stop))
+#             #     b1=input()
+#         # print("Xval",Xval)
+#         # print("Yval",Yval)
+#         # print("NumRouts",NumRouts)
+#         # print("Routes",Routes)
+#         # print("ContainedStops",ContainedStops)
+#         # b=input()
+#         Node_Properties['Pos'][idx]=(Xval,Yval)
+#         Node_Properties['BusStopCount']=NumRouts
+#         Node_Properties['BusStopList']=ContainedStops
+#         Node_Properties['Line']=Routes
+#         G.add_node(idx, pos=(Xval,Yval),weight=NumRouts,Routes=Routes,ContainedStops=ContainedStops)
+#         # G.add_node(Node, time=Dic[Node])
+#     # for key in StopToNode.keys():
+#         # print(key,StopToNode[key])
+#     # b=input()
+#     Edge_Node_List=[]
+#     New_Edge_Properties={}
+#     # print(Edge_Properties)
+#     LineProperties={}
+
+#     for key in Edge_Properties['Line'].keys():
+#         edge=list(key)
+#         print("\t",edge[0],edge[1])
+#         if edge[0] in StopToNode and edge[1] in StopToNode:
+#             New_Edge=(StopToNode[edge[0]],StopToNode[edge[1]])
+#             LineProperties[New_Edge]=Edge_Properties['Line'][key]
+#         # print(key,type(key),Edge_Properties['Line'][key])
+#         # print("\t",StopToNode[edge[0]],"-",StopToNode[edge[1]])
+#         # print("\t\t",LineProperties[New_Edge])
+
+#     New_Edge_Properties={'Line':LineProperties}
+
+#     for edge in Edge_List:
+#         # print(edge,"\t",StopToNode[edge[0]],"-",StopToNode[edge[1]])
+#         if edge[0] in StopToNode and edge[1] in StopToNode:
+#             New_Edge=(StopToNode[edge[0]],StopToNode[edge[1]])
+#             Edge_Node_List.append(New_Edge)
+
+#     G.add_edges_from(Edge_Node_List)
+#     nx.set_edge_attributes(G,values=New_Edge_Properties['Line'],name="Line")
+    
+#     # Edge_Color=GetLineColorsEdges(List_edges=Edge_Node_List,Dict_Lines=New_Edge_Properties['Line'])
+
+#     # nx.draw_networkx_nodes(G,pos=Node_Properties['Pos'],node_color= "red",node_size=50)
+#     # nx.draw_networkx_edges(G,pos=Node_Properties['Pos'],edge_color=Edge_Color)
+#     # pylab.show()
+#     # return {'G':G,'Node_Color':Node_Color,'Edge_Color':Edge_Color,"Edge_Properties":Edge_Properties,"Node_Properties":Node_Properties}
+#     return {'G':G,"Edge_Properties":Edge_Properties,"Node_Properties":Node_Properties}
 
     # print(list(G.nodes(data=True)))
     # print(G.edges(data=True))
@@ -878,10 +1001,10 @@ def ExportGeoJsonLines(PathBase,ListOfLines):
 
 
 
-def ExportGeoJsonPoints(ListOfPoints,PChar):
+def ExportGeoJsonPoints(ListOfPoints,PChar,NetworkIndex):
     # print(PChar)
     # b=input()
-
+    # print(NetworkIndex)
     def Container(ListSegments):
         Text='{\n        "features": [\n'
         for Segment in ListSegments:
@@ -919,7 +1042,7 @@ def ExportGeoJsonPoints(ListOfPoints,PChar):
     Iden=999999999999999
     for Point in ListOfPoints:
         # Point=int(Point)
-        print("Point",Point,type(Point))
+        # print("Point",Point,type(Point))
         # b=input()
         if Point==0 and Iden>999999999999999:
             break
@@ -992,8 +1115,9 @@ def ExportGeoJsonPoints(ListOfPoints,PChar):
         # b=input()
     # print(Container(ListSegments=FormatedPoints))
     files = [('GeoJson', '*.geojson'), 
-    ('Text Document', '*.txt')] 
-    Path = asksaveasfile(filetypes = files, defaultextension = files) 
+    ('Text Document', '*.txt')]
+    Titles=["Bus Network","Rail Network","Metro Network","Light Rail Netwrok","Other Network","Node Network"]
+    Path = asksaveasfile(filetypes = files, defaultextension = files,title = Titles[NetworkIndex]) 
 
     fw=open(Path.name,"w",encoding='utf-8')
     # print(Container(ListSegments=FormatedPoints))
@@ -1019,12 +1143,16 @@ def ListToGeoJson(ListBusStops):
 
 
 
-def NetWorkToGeoJson(G):
+def NetWorkToGeoJson(G,NetworkIndex):
     # USES TK to get path
+    # print(G)
+    # b=input()
+
+
     PointCharacteristics={}
     ListOfPoints=[]
     Cont=0
-    print("number_of_nodes",G.number_of_nodes(),"\n\n")
+    # print("number_of_nodes",G.number_of_nodes(),"\n\n")
     for Node in G.nodes(data=True):
         Cont=Cont+1
         ListOfKeys=list(Node[1].keys())
@@ -1065,7 +1193,7 @@ def NetWorkToGeoJson(G):
     degree_centrality = nx.degree_centrality(G)
     # PointCharacteristics['CenDeg']=degree_centrality
     PointCharacteristics['CenDeg']={}
-    print(degree_centrality,"\nCentrality degree")
+    # print(degree_centrality,"\nCentrality degree")
     # b=input()
     
     for key in degree_centrality:
@@ -1080,7 +1208,10 @@ def NetWorkToGeoJson(G):
     try:
         LI=list(PointCharacteristics['CenDeg'].values())
         arr = np.array(LI)
-        Ranges_DegCen=jenkspy.jenks_breaks(arr, nb_class=5)
+        Ranges_DegCen=Calculations.NaturalBreaksNumpyList(Data=LI, Classess=5)
+        # Ranges_DegCen=jenkspy.jenks_breaks(arr, nb_class=5)
+
+
         # print("Ranges_DegCen",Ranges_DegCen,len(Ranges_DegCen))
         # print("Min",min(LI))
         # print("Max",max(LI))
@@ -1124,13 +1255,19 @@ def NetWorkToGeoJson(G):
     try:
         LI=list(PointCharacteristics['Clossnes'].values())
         arr = np.array(LI)
-        Ranges_ClosCen=jenkspy.jenks_breaks(arr, nb_class=5)
+
+        Ranges_ClosCen=Calculations.NaturalBreaksNumpyList(Data=LI, Classess=5)
+
+        # Ranges_ClosCen=jenkspy.jenks_breaks(arr, nb_class=5)
+
+
+
         # print("Ranges_ClosCen",Ranges_ClosCen,len(Ranges_ClosCen))
         # print("Min",min(LI))
         # print("Max",max(LI))
         # b=input()
         PointCharacteristics['CatClossnes']={}
-        print("crea di")
+        # print("crea di")
         for key in PointCharacteristics['Clossnes'].keys():
             if Ranges_ClosCen[0]<=PointCharacteristics['Clossnes'][key] and PointCharacteristics['Clossnes'][key]<=Ranges_ClosCen[1]:
                 PointCharacteristics['CatClossnes'][key]=1
@@ -1174,7 +1311,10 @@ def NetWorkToGeoJson(G):
         # b=input()
         LI=list(PointCharacteristics['Eigen'])
         arr = np.array(LI)
-        Ranges_EgiCen=jenkspy.jenks_breaks(arr, nb_class=5)
+        Ranges_EgiCen=Calculations.NaturalBreaksNumpyList(Data=LI, Classess=5)
+        # Ranges_EgiCen=jenkspy.jenks_breaks(arr, nb_class=5)
+
+
         # print("Ranges_EgiCen",Ranges_EgiCen)
 
         # print("Ranges_EgiCen",Ranges_EgiCen,len(Ranges_EgiCen))
@@ -1183,7 +1323,7 @@ def NetWorkToGeoJson(G):
         # b=input()
         PointCharacteristics['CatEigen']={}
         for key in PointCharacteristics['Eigen'].keys():
-            print(key,PointCharacteristics['Eigen'][key])
+            # print(key,PointCharacteristics['Eigen'][key])
             # b=input()
             if  PointCharacteristics['Eigen'][key]<=Ranges_EgiCen[1]:
             # if Ranges_EgiCen[0]<=PointCharacteristics['Eigen'][key] and PointCharacteristics['Eigen'][key]<=Ranges_EgiCen[1]:
@@ -1209,14 +1349,9 @@ def NetWorkToGeoJson(G):
     # for key in PointCharacteristics.keys():
     #     print("key:",key," is ",type(PointCharacteristics[key])," has ",len(PointCharacteristics[key].keys()))
 
-
-
-    
     # b=input()
 
-
-
-    ExportGeoJsonPoints(ListOfPoints=ListOfPoints,PChar=PointCharacteristics)
+    ExportGeoJsonPoints(ListOfPoints=ListOfPoints,PChar=PointCharacteristics,NetworkIndex=NetworkIndex)
 
 
 def SimpleNetworkToGeoJson(G):
@@ -1239,23 +1374,23 @@ def SimpleNetworkToGeoJson(G):
 
 
 if __name__ == "__main__":
-    Sample=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\SampleLine.csv"
+    # Sample=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\SampleLine.csv"
     # Edges=readSample(Path=Sample)
     # CreateNetwork(List_Edges=Edges)
-    PathFull=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\FullData.csv"
-    Fewlines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\FewLines.csv"
+    # PathFull=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\FullData.csv"
+    # Fewlines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\FewLines.csv"
 
-    Fields={'Line':['Line',1],
-    'StartName':["StartName",8],
-    'StartCode':["StartCode",9],
-    'EndName':["EndName",10],
-    'EndCode':["EndCode",11],
-    }
+    # Fields={'Line':['Line',1],
+    # 'StartName':["StartName",8],
+    # 'StartCode':["StartCode",9],
+    # 'EndName':["EndName",10],
+    # 'EndCode':["EndCode",11],
+    # }
 
-    SPFewLines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\FewLines.shp"
-    SpOtherLines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\OtherFewLines.shp"
-    AllLines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\BusLineVertex.shp"
-    SampleShp=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\SampleLine.shp"
+    # SPFewLines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\FewLines.shp"
+    # SpOtherLines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\OtherFewLines.shp"
+    # AllLines=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\BusLineVertex.shp"
+    # SampleShp=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network\SampleLine.shp"
 
     ############################################################################################################################################
     # EdgeCollection,EdgeProperties,NodeCollection,NodeProperties=readSample(Path=Fewlines)
@@ -1299,23 +1434,23 @@ if __name__ == "__main__":
 
     # SampleNA_Line=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network Cleaner Data\Sample_Lines_10t15.shp"
     # # SampleNA_Line=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network Cleaner Data\Sample_Lines_24.shp"
-    Fields={'Line':['Line',1],
-    'StartName':["StartName",8],
-    'StartCode':["StartCode",9],
-    'EndName':["EndName",10],
-    'EndCode':["EndCode",11],
-    }
+    # Fields={'Line':['Line',1],
+    # 'StartName':["StartName",8],
+    # 'StartCode':["StartCode",9],
+    # 'EndName':["EndName",10],
+    # 'EndCode':["EndCode",11],
+    # }
     # EdgeCollection,EdgeProperties=readShpNetWorkForSimplification(Shapefile=SampleNA_Line,Fileds=Fields)
 
     # # SampleNA_Bus=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network Cleaner Data\Sample_BusStops_24.shp"
     # SampleNA_Bus=r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tools\SampleData\Network Cleaner Data\Sample_BusStops_10t15.shp"
 
     # LBS1=CalculateVecinityBusStops(Shapefile=SampleNA_Bus,FieldId=["StopCode",0] ,Routes= ["Lines",1])
-    print("Len LBS1",len(LBS1))
+    # print("Len LBS1",len(LBS1))
     # print("End of CalculateVecinityBusStops")
-    Nodes= AgregateTransitNetwork(ListBusStops=LBS1,Range=75)
+    # Nodes= AgregateTransitNetwork(ListBusStops=LBS1,Range=75)
 
-    Gr=AgregatedStopsToNetwork(AgregatedNodes=Nodes,Edge_List=EdgeCollection,Edge_Properties=EdgeProperties)
+    # Gr=AgregatedStopsToNetwork(AgregatedNodes=Nodes,Edge_List=EdgeCollection,Edge_Properties=EdgeProperties)
 
     # NetWorkToGeoJson(G=G_Dict_1['G'])
 

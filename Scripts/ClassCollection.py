@@ -29,7 +29,15 @@ class BusStop:
         self.Routes=[]
         self.Cluster=[]
 
-
+class Station:
+    def __init__(self,Id="",CoordX=0,CoordY=0,Epsg="",Routes=[],Cluster=[],System=[]):
+        self.Id=Id
+        self.CoordX=CoordX
+        self.CoordY=CoordY
+        self.Epsg=""
+        self.Routes=[]
+        self.Cluster=[]
+        self.System=[]
 
 class ClassDataCentroid(DataBucket):
     def __init__(self, ShapeFiles, Titles,CityArea,Ratio,):
