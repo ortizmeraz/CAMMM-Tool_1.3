@@ -477,56 +477,89 @@ def GetAngle(PathShapes,PathTrips,PathRoutes):
         reader = csv.reader(file)
         Header=next(reader)
         # print("PathShapes",Header)
+        for idx,head in enumerate(Header):
+            if head =='route_id':
+                IdxRouteId=idx      
         for line in reader:
             # print(line,type(line))
             # b=input("Delete")
-            DataRoutes.append(line[0])
-            TripId[line[0]]={}
+            DataRoutes.append(line[IdxRouteId])
+            TripId[line[IdxRouteId]]={}
     # print(DataRoutes)
     with open(PathShapes, 'r',encoding='utf8') as file:
         reader = csv.reader(file)
         Header=next(reader)
-        # print("PathShapes",Header)
+        print("PathShapes",Header)
+        # b=input("Delete")
+        for idx,head in enumerate(Header):
+            if head =='shape_id':
+                IdxShapeId=idx      
+            if head =='shape_pt_lat':
+                IdxShapeLat=idx  
+            if head =='shape_pt_lon':
+                IdxShapeLon=idx  
+            if head =='shape_pt_sequence':
+                IdxPtSequence=idx 
         for line in reader:
-            if line[0] in DataShapes:
-                DataShapes[line[0]][line[3]]={'shape_pt_lat':line[1],'shape_pt_lon':line[2]}
-                LatCol.append(line[1])
-                LonCol.append(line[2])
+            if line[IdxShapeId] in DataShapes:
+                DataShapes[line[IdxShapeId]][line[IdxPtSequence]]={'shape_pt_lat':line[IdxShapeLat],'shape_pt_lon':line[IdxShapeLon]}
+                LatCol.append(line[IdxShapeLat])
+                LonCol.append(line[IdxShapeLon])
 
             # 'shape_pt_sequence':
             else:
-                DataShapes[line[0]]={}
-                DataShapes[line[0]][line[3]]={'shape_pt_lat':line[1],'shape_pt_lon':line[2]}
-                LatCol.append(line[1])
-                LonCol.append(line[2])
+                DataShapes[line[IdxShapeId]]={}
+                DataShapes[line[IdxShapeId]][line[IdxPtSequence]]={'shape_pt_lat':line[IdxShapeLat],'shape_pt_lon':line[IdxShapeLon]}
+                LatCol.append(line[IdxShapeLat])
+                LonCol.append(line[IdxShapeLon])
         #     print(line)
         # print(DataShapes)
     with open(PathTrips, 'r',encoding='utf8') as file:
         reader = csv.reader(file)
         Header=next(reader)
+        print("PathTrips",Header)
+        for idx, head in enumerate(Header):
+            if head=='route_id':
+                IdxRoute=idx      
+            if head=='direction_id':
+                IdxDirection=idx  
+            if head=='trip_headsign':
+                IdxHeadSign=idx 
+            if head=='shape_id':
+                IdxShape=idx      
         for line in reader:
-            # print(line,type(line))
-            # print(line[0],line[3],line[4],DataShapes[line[5]]['shape_pt_lat'],DataShapes[line[5]]['shape_pt_lon'],DataShapes[line[5]]['shape_pt_sequence'])
-            TripId[line[0]][line[4]]=[line[3],line[5]]
-        # print("PathTrips",Header)
+            print(line,type(line))
+            print("IdxRoute",line[IdxRoute])
+            print("IdxHeadSign",line[IdxHeadSign])
+            print("IdxDirection",line[IdxDirection])
+            print("IdxShape",line[IdxShape])
+            print("\n"*15)
+            # print(DataShapes[line[IdxShape]]['shape_pt_lat'])
+            # print(DataShapes[line[IdxShape]]['shape_pt_lon'])
+            # print(DataShapes[line[IdxShape]]['shape_pt_sequence'])
+            # print(line[IdxRoute],line[IdxHeadSign],line[IdxDirection],DataShapes[line[IdxShape]]['shape_pt_lat'],DataShapes[line[IdxShape]]['shape_pt_lon'],DataShapes[line[IdxShape]]['shape_pt_sequence'])
+            TripId[line[IdxRoute]][line[IdxDirection]]=[line[IdxHeadSign],line[IdxShape]]
 
-    for Ro in DataRoutes:
-        # print(Ro,TripId[Ro],"············································")
-        # print("\n"*10)
-        for Tri in TripId[Ro]:
-            # print("\t",Tri,"-",TripId[Ro][Tri][1],DataShapes[TripId[Ro][Tri][1]])
-            # print("*****************",Tri, len(DataShapes[TripId[Ro][Tri][1]]))
-            # for key in DataShapes[TripId[Ro][Tri][1]].keys():
-            #     print(key,DataShapes[TripId[Ro][Tri][1]][key])
-            ShpIdList=list(DataShapes[TripId[Ro][Tri][1]].keys())
-            MiniData=DataShapes[TripId[Ro][Tri][1]]
-            # print(ShpIdList)
-            for aPoint in range(0,len(DataShapes[TripId[Ro][Tri][1]])-1):
-                bPoint=aPoint+1
-                # print(aPoint,"-",ShpIdList[aPoint],MiniData[ShpIdList[aPoint]],"·······",bPoint,"-",ShpIdList[bPoint],MiniData[ShpIdList[bPoint]])
-                Vect=CalcDistShapes(Data1=MiniData[ShpIdList[aPoint]],Data2=MiniData[ShpIdList[bPoint]])
-                if Vect[0]>10:
-                    VectorList.append(Vect)
+
+    for idx,Ro in enumerate(DataRoutes):
+        print(idx,"Ro",Ro,"-","············································")
+        print("\n"*10)
+        print("DataShapes type is",type(DataShapes))
+        if Ro in TripId.keys() and Ro in DataShapes.keys():
+            for Tri in TripId[Ro]:
+                # print("\t",Tri,"-",TripId[Ro][Tri][1],DataShapes[TripId[Ro][Tri][1]])
+                print("*****************",Tri, len(DataShapes[TripId[Ro][Tri][1]]))
+                for key in DataShapes[TripId[Ro][Tri][1]].keys():
+                    print(key,DataShapes[TripId[Ro][Tri][1]][key])
+                ShpIdList=list(DataShapes[TripId[Ro][Tri][1]].keys())
+                MiniData=DataShapes[TripId[Ro][Tri][1]]
+                # print(ShpIdList)
+                for aPoint in range(0,len(DataShapes[TripId[Ro][Tri][1]])-1):
+                    bPoint=aPoint+1
+                    # print(aPoint,"-",ShpIdList[aPoint],MiniData[ShpIdList[aPoint]],"·······",bPoint,"-",ShpIdList[bPoint],MiniData[ShpIdList[bPoint]])
+                    Vect=CalcDistShapes(Data1=MiniData[ShpIdList[aPoint]],Data2=MiniData[ShpIdList[bPoint]])
+                    if Vect[0]>10:
+                        VectorList.append(Vect)
                     
     print("VectorList",len(VectorList))
     for vect in VectorList:
@@ -541,14 +574,20 @@ def GetAngle(PathShapes,PathTrips,PathRoutes):
         else:
             ShortAngles.append(Alfa)
         # print("Angle",Alfa)
-    AvShort=sum(ShortAngles)/len(ShortAngles)
-    AvLongg=sum(LonggAngles)/len(LonggAngles)
-
-    # print("Short Average Angle is:  ",AvShort)
-    # print("Long  Average Angle is:  ",AvLongg, (AvLongg-90))
+    print(sum(ShortAngles),len(ShortAngles))
+    print(sum(LonggAngles),len(LonggAngles))
+    if len(ShortAngles) !=0:
+        AvShort=sum(ShortAngles)/len(ShortAngles)
+    else:
+        AvShort=0
+    if len(LonggAngles)!=0:
+        AvLongg=sum(LonggAngles)/len(LonggAngles)
+    else:
+        AvLongg=0
+        # print("Short Average Angle is:  ",AvShort)
+        # print("Long  Average Angle is:  ",AvLongg, (AvLongg-90))
     AvAngle=(AvShort+(AvLongg-90))/2
-    # print("Average Angle: ",AvAngle)
-    # Here you have the angle, still need to get the heading
+    print("Average Angle: ",AvAngle)
     return AvAngle,LatCol,LonCol
 
 def GetCoords(LatCol,LonCol):
@@ -789,7 +828,26 @@ def GetStopDensity(PathFileGridUTM,PathStops,PathTrip,PathShape,Pathroute,Agency
     # Break=QuantilesBare(Path)
     # # print("QuantilesBare",Break)
     # print("Enters GridCoords")
-    GridCoords=CalculateRotatedGrid(Angle=AvAngle,Distnace=1000,StartX=(Coords[0]-10000),StartY=(Coords[1]),NumCellX=(NumCellX+10),NumCellY=(NumCellY+25))
+    print("Coords: ",Coords)
+    print("X= ",Coords[0])
+    print("Y= ",Coords[1])
+    South=['F','G','H','J','K','L','M']
+    North=['N','P','Q','R','S','T','U','V','W','X']
+    if Coords[3] in North:
+        print("North")
+        StartYval=Coords[1]+20000
+    elif Coords[3] in North:
+        print("South")
+        
+    if Coords[2] <=30:
+        print("West")
+        StartXval=Coords[0]+10000
+    elif Coords[2] >30:
+        print("East")
+        StartXval=Coords[0]-35000
+
+    b=input("Delete")
+    GridCoords=CalculateRotatedGrid(Angle=AvAngle,Distnace=1000,StartX=(StartXval),StartY=(StartYval),NumCellX=(NumCellX+10),NumCellY=(NumCellY+25))
     # print(type(GridCoords))
     # print("Enters CreateGridObj")
     TextJSON=CreateGridObj(ListCoords=GridCoords,EPSGname=MakeCRS(Letter,Number),Name=Agency)
@@ -815,7 +873,6 @@ def GetStopDensity(PathFileGridUTM,PathStops,PathTrip,PathShape,Pathroute,Agency
     print("Path",Path,type(Path))
     PathStr=str(Path.name)
     print("PathStr",PathStr,type(PathStr))
-    b=input("Delete")
     WriteToJsonFile(Text=GeograpJSON,Path=PathStr)
 
 
