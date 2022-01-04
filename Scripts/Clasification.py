@@ -844,7 +844,7 @@ def GetStopDensity(PathFileGridUTM,PathStops,PathTrip,PathShape,Pathroute,Agency
         StartXval=Coords[0]+10000
     elif Coords[2] >30:
         print("East")
-        StartXval=Coords[0]-35000
+        StartXval=Coords[0]-20000
 
     b=input("Delete")
     GridCoords=CalculateRotatedGrid(Angle=AvAngle,Distnace=1000,StartX=(StartXval),StartY=(StartYval),NumCellX=(NumCellX+10),NumCellY=(NumCellY+25))
