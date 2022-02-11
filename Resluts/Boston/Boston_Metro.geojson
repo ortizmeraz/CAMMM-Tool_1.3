@@ -1,0 +1,956 @@
+{
+        "features": [
+{
+"type": "Feature",
+"properties": {"StopCode":"70061","location": "(323663.6109746137, 4695905.124239083)", "stop_id": "70061", "stop_name": "Alewife", "stop_code": "70061", "stop_desc": "Alewife - Red Line", "stop_lat": "42.395428", "stop_lon": "-71.142483", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-alfcl", "location_type": "0", "parent_station": "place-alfcl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.002503128911, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.142483,42.395428],
+"type": "Point"
+        },
+        "id": "1000000000000000"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70063","location": "(325368.39585358504, 4696008.110772757)", "stop_id": "70063", "stop_name": "Davis", "stop_code": "70063", "stop_desc": "Davis - Red Line - Ashmont/Braintree", "stop_lat": "42.396740", "stop_lon": "-71.121815", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-davis", "location_type": "0", "parent_station": "place-davis", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.009456264775, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.121815,42.39674],
+"type": "Point"
+        },
+        "id": "1000000000000001"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70065","location": "(325564.72055653756, 4695076.52975561)", "stop_id": "70065", "stop_name": "Porter", "stop_code": "70065", "stop_desc": "Porter - Red Line - Ashmont/Braintree", "stop_lat": "42.388400", "stop_lon": "-71.119149", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-portr", "location_type": "0", "parent_station": "place-portr", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-3_southbound_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.015677491601, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.119149,42.3884],
+"type": "Point"
+        },
+        "id": "1000000000000002"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70067","location": "(325538.96144321107, 4693406.264109898)", "stop_id": "70067", "stop_name": "Harvard", "stop_code": "70067", "stop_desc": "Harvard - Red Line - Ashmont/Braintree", "stop_lat": "42.373362", "stop_lon": "-71.118956", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-harsq", "location_type": "0", "parent_station": "place-harsq", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_southbound_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.021276595745, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.118956,42.373362],
+"type": "Point"
+        },
+        "id": "1000000000000003"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70069","location": "(326779.4492527987, 4692480.108011225)", "stop_id": "70069", "stop_name": "Central", "stop_code": "70069", "stop_desc": "Central - Red Line - Ashmont/Braintree", "stop_lat": "42.365304", "stop_lon": "-71.103621", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-cntsq", "location_type": "0", "parent_station": "place-cntsq", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.026342451874, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.103621,42.365304],
+"type": "Point"
+        },
+        "id": "1000000000000004"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70071","location": "(328254.98445382516, 4692116.079031415)", "stop_id": "70071", "stop_name": "Kendall/MIT", "stop_code": "70071", "stop_desc": "Kendall/MIT - Red Line - Ashmont/Braintree", "stop_lat": "42.362355", "stop_lon": "-71.085605", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-knncl", "location_type": "0", "parent_station": "place-knncl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.030947775629, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.085605,42.362355],
+"type": "Point"
+        },
+        "id": "1000000000000005"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70073","location": "(329412.9751608573, 4691957.984894192)", "stop_id": "70073", "stop_name": "Charles/MGH", "stop_code": "70073", "stop_desc": "Charles/MGH - Red Line - Ashmont/Braintree", "stop_lat": "42.361187", "stop_lon": "-71.071505", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-chmnl", "location_type": "0", "parent_station": "place-chmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.035152636448, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.071505,42.361187],
+"type": "Point"
+        },
+        "id": "1000000000000006"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70075","location": "(330147.9085412443, 4691407.682637626)", "stop_id": "70075", "stop_name": "Park Street", "stop_code": "70075", "stop_desc": "Park Street - Red Line - Ashmont/Braintree", "stop_lat": "42.356395", "stop_lon": "-71.062424", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-pktrm", "location_type": "0", "parent_station": "place-pktrm", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_red_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.039007092199, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.062424,42.356395],
+"type": "Point"
+        },
+        "id": "1000000000000007"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70077","location": "(330326.65550059755, 4691305.9065803075)", "stop_id": "70077", "stop_name": "Downtown Crossing", "stop_code": "70077", "stop_desc": "Downtown Crossing - Red Line - Ashmont/Braintree", "stop_lat": "42.355518", "stop_lon": "-71.060225", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-dwnxg", "location_type": "0", "parent_station": "place-dwnxg", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_red_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.042553191489, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.060225,42.355518],
+"type": "Point"
+        },
+        "id": "1000000000000008"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70079","location": "(330728.3384269123, 4690935.4172598645)", "stop_id": "70079", "stop_name": "South Station", "stop_code": "70079", "stop_desc": "South Station - Red Line - Ashmont/Braintree", "stop_lat": "42.352271", "stop_lon": "-71.055242", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-sstat", "location_type": "0", "parent_station": "place-sstat", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-3_red_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.045826513912, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.055242,42.352271],
+"type": "Point"
+        },
+        "id": "1000000000000009"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70081","location": "(330560.3373042459, 4689867.406051473)", "stop_id": "70081", "stop_name": "Broadway", "stop_code": "70081", "stop_desc": "Broadway - Red Line - Ashmont/Braintree", "stop_lat": "42.342622", "stop_lon": "-71.056967", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-brdwy", "location_type": "0", "parent_station": "place-brdwy", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.048857368006, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.056967,42.342622],
+"type": "Point"
+        },
+        "id": "1000000000000010"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70083","location": "(330470.1617185606, 4688484.303735794)", "stop_id": "70083", "stop_name": "Andrew", "stop_code": "70083", "stop_desc": "Andrew - Red Line - Ashmont/Braintree", "stop_lat": "42.330154", "stop_lon": "-71.057655", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-andrw", "location_type": "0", "parent_station": "place-andrw", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_platform", "platform_code": "1", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.051671732523, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.057655,42.330154],
+"type": "Point"
+        },
+        "id": "1000000000000011"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70085","location": "(330868.22972409474, 4687416.726937128)", "stop_id": "70085", "stop_name": "JFK/UMass", "stop_code": "70085", "stop_desc": "JFK/UMass - Red Line - Ashmont", "stop_lat": "42.320632", "stop_lon": "-71.052514", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-jfk", "location_type": "0", "parent_station": "place-jfk", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_red_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.054292002935, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.052514,42.320632],
+"type": "Point"
+        },
+        "id": "1000000000000012"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70087","location": "(330745.42558762035, 4686305.404068949)", "stop_id": "70087", "stop_name": "Savin Hill", "stop_code": "70087", "stop_desc": "Savin Hill - Red Line - Ashmont", "stop_lat": "42.310603", "stop_lon": "-71.053678", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-shmnl", "location_type": "0", "parent_station": "place-shmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.056737588652, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.053678,42.310603],
+"type": "Point"
+        },
+        "id": "1000000000000013"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70089","location": "(330029.2547075851, 4685143.883820291)", "stop_id": "70089", "stop_name": "Fields Corner", "stop_code": "70089", "stop_desc": "Fields Corner - Red Line - Ashmont", "stop_lat": "42.299993", "stop_lon": "-71.062021", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-fldcr", "location_type": "0", "parent_station": "place-fldcr", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.059025394647, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.062021,42.299993],
+"type": "Point"
+        },
+        "id": "1000000000000014"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70091","location": "(329704.34340621834, 4684388.792892996)", "stop_id": "70091", "stop_name": "Shawmut", "stop_code": "70091", "stop_desc": "Shawmut - Red Line - Ashmont", "stop_lat": "42.293126", "stop_lon": "-71.065738", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-smmnl", "location_type": "0", "parent_station": "place-smmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.061170212766, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.065738,42.293126],
+"type": "Point"
+        },
+        "id": "1000000000000015"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70093","location": "(329838.1906693398, 4683428.027951697)", "stop_id": "70093", "stop_name": "Ashmont", "stop_code": "70093", "stop_desc": "Ashmont - Red Line - Exit Only", "stop_lat": "42.284508", "stop_lon": "-71.063833", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-asmnl", "location_type": "0", "parent_station": "place-asmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.010638297872, "CatCenDeg": 1, "Clossnes": 2.063185041908, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.063833,42.284508],
+"type": "Point"
+        },
+        "id": "1000000000000016"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70094","location": "(329847.15480324766, 4683430.254960563)", "stop_id": "70094", "stop_name": "Ashmont", "stop_code": "70094", "stop_desc": "Ashmont - Red Line - Alewife", "stop_lat": "42.284530", "stop_lon": "-71.063725", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-asmnl", "location_type": "0", "parent_station": "place-asmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.010638297872, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [-71.063725,42.28453],
+"type": "Point"
+        },
+        "id": "1000000000000017"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70092","location": "(329704.34340621834, 4684388.792892996)", "stop_id": "70092", "stop_name": "Shawmut", "stop_code": "70092", "stop_desc": "Shawmut - Red Line - Alewife", "stop_lat": "42.293126", "stop_lon": "-71.065738", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-smmnl", "location_type": "0", "parent_station": "place-smmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.063829787234, "CatClossnes": 2},
+"geometry": {
+"coordinates": [-71.065738,42.293126],
+"type": "Point"
+        },
+        "id": "1000000000000018"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70090","location": "(330035.3635302468, 4685137.291603961)", "stop_id": "70090", "stop_name": "Fields Corner", "stop_code": "70090", "stop_desc": "Fields Corner - Red Line - Alewife", "stop_lat": "42.299935", "stop_lon": "-71.061945", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-fldcr", "location_type": "0", "parent_station": "place-fldcr", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.418439716312, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-71.061945,42.299935],
+"type": "Point"
+        },
+        "id": "1000000000000019"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70088","location": "(330750.83305900835, 4686303.940266687)", "stop_id": "70088", "stop_name": "Savin Hill", "stop_code": "70088", "stop_desc": "Savin Hill - Red Line - Alewife", "stop_lat": "42.310591", "stop_lon": "-71.053612", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-shmnl", "location_type": "0", "parent_station": "place-shmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.595744680851, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-71.053612,42.310591],
+"type": "Point"
+        },
+        "id": "1000000000000020"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70086","location": "(330871.62175023404, 4687417.200623136)", "stop_id": "70086", "stop_name": "JFK/UMass", "stop_code": "70086", "stop_desc": "JFK/UMass - Red Line - Alewife (from Ashmont)", "stop_lat": "42.320637", "stop_lon": "-71.052473", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-jfk", "location_type": "0", "parent_station": "place-jfk", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_red_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.702127659574, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-71.052473,42.320637],
+"type": "Point"
+        },
+        "id": "1000000000000021"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70084","location": "(330470.1617185606, 4688484.303735794)", "stop_id": "70084", "stop_name": "Andrew", "stop_code": "70084", "stop_desc": "Andrew - Red Line - Alewife", "stop_lat": "42.330154", "stop_lon": "-71.057655", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-andrw", "location_type": "0", "parent_station": "place-andrw", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_platform", "platform_code": "2", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.773049645390, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.057655,42.330154],
+"type": "Point"
+        },
+        "id": "1000000000000022"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70082","location": "(330560.3373042459, 4689867.406051473)", "stop_id": "70082", "stop_name": "Broadway", "stop_code": "70082", "stop_desc": "Broadway - Red Line - Alewife", "stop_lat": "42.342622", "stop_lon": "-71.056967", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-brdwy", "location_type": "0", "parent_station": "place-brdwy", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.823708206687, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.056967,42.342622],
+"type": "Point"
+        },
+        "id": "1000000000000023"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70080","location": "(330728.3384269123, 4690935.4172598645)", "stop_id": "70080", "stop_name": "South Station", "stop_code": "70080", "stop_desc": "South Station - Red Line - Alewife", "stop_lat": "42.352271", "stop_lon": "-71.055242", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-sstat", "location_type": "0", "parent_station": "place-sstat", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-3_red_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.861702127660, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.055242,42.352271],
+"type": "Point"
+        },
+        "id": "1000000000000024"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70078","location": "(330326.65550059755, 4691305.9065803075)", "stop_id": "70078", "stop_name": "Downtown Crossing", "stop_code": "70078", "stop_desc": "Downtown Crossing - Red Line - Alewife", "stop_lat": "42.355518", "stop_lon": "-71.060225", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-dwnxg", "location_type": "0", "parent_station": "place-dwnxg", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_red_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.891252955083, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.060225,42.355518],
+"type": "Point"
+        },
+        "id": "1000000000000025"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70076","location": "(330147.9085412443, 4691407.682637626)", "stop_id": "70076", "stop_name": "Park Street", "stop_code": "70076", "stop_desc": "Park Street - Red Line - Alewife", "stop_lat": "42.356395", "stop_lon": "-71.062424", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-pktrm", "location_type": "0", "parent_station": "place-pktrm", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_red_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.914893617021, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.062424,42.356395],
+"type": "Point"
+        },
+        "id": "1000000000000026"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70074","location": "(329405.1926397042, 4691966.618828032)", "stop_id": "70074", "stop_name": "Charles/MGH", "stop_code": "70074", "stop_desc": "Charles/MGH - Red Line - Alewife", "stop_lat": "42.361263", "stop_lon": "-71.071602", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-chmnl", "location_type": "0", "parent_station": "place-chmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.934235976789, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.071602,42.361263],
+"type": "Point"
+        },
+        "id": "1000000000000027"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70072","location": "(328256.352628886, 4692124.823120623)", "stop_id": "70072", "stop_name": "Kendall/MIT", "stop_code": "70072", "stop_desc": "Kendall/MIT - Red Line - Alewife", "stop_lat": "42.362434", "stop_lon": "-71.085591", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-knncl", "location_type": "0", "parent_station": "place-knncl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.950354609929, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.085591,42.362434],
+"type": "Point"
+        },
+        "id": "1000000000000028"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70070","location": "(326785.1726644593, 4692488.299671743)", "stop_id": "70070", "stop_name": "Central", "stop_code": "70070", "stop_desc": "Central - Red Line - Alewife", "stop_lat": "42.365379", "stop_lon": "-71.103554", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-cntsq", "location_type": "0", "parent_station": "place-cntsq", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.963993453355, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.103554,42.365379],
+"type": "Point"
+        },
+        "id": "1000000000000029"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70068","location": "(325538.96144321107, 4693406.264109898)", "stop_id": "70068", "stop_name": "Harvard", "stop_code": "70068", "stop_desc": "Harvard - Red Line - Alewife", "stop_lat": "42.373362", "stop_lon": "-71.118956", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-harsq", "location_type": "0", "parent_station": "place-harsq", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_alewife_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.975683890578, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.118956,42.373362],
+"type": "Point"
+        },
+        "id": "1000000000000030"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70066","location": "(325564.72055653756, 4695076.52975561)", "stop_id": "70066", "stop_name": "Porter", "stop_code": "70066", "stop_desc": "Porter - Red Line - Alewife", "stop_lat": "42.388400", "stop_lon": "-71.119149", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-portr", "location_type": "0", "parent_station": "place-portr", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-4_alewife_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.985815602837, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.119149,42.3884],
+"type": "Point"
+        },
+        "id": "1000000000000031"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70064","location": "(325368.39585358504, 4696008.110772757)", "stop_id": "70064", "stop_name": "Davis", "stop_code": "70064", "stop_desc": "Davis - Red Line - Alewife", "stop_lat": "42.396740", "stop_lon": "-71.121815", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-davis", "location_type": "0", "parent_station": "place-davis", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.994680851064, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.121815,42.39674],
+"type": "Point"
+        },
+        "id": "1000000000000032"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70036","location": "(329672.1090033981, 4700456.864051087)", "stop_id": "70036", "stop_name": "Oak Grove", "stop_code": "70036", "stop_desc": "Oak Grove - Orange Line", "stop_lat": "42.437735", "stop_lon": "-71.070875", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-ogmnl", "location_type": "0", "parent_station": "place-ogmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.070875,42.437735],
+"type": "Point"
+        },
+        "id": "1000000000000033"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70034","location": "(329353.7228315021, 4699235.983099165)", "stop_id": "70034", "stop_name": "Malden Center", "stop_code": "70034", "stop_desc": "Malden Center - Orange Line - Forest Hills", "stop_lat": "42.426677", "stop_lon": "-71.074381", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-mlmnl", "location_type": "0", "parent_station": "place-mlmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_1_orange_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.074381,42.426677],
+"type": "Point"
+        },
+        "id": "1000000000000034"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70032","location": "(329049.1524118981, 4696446.569137974)", "stop_id": "70032", "stop_name": "Wellington", "stop_code": "70032", "stop_desc": "Wellington - Orange Line - Forest Hills", "stop_lat": "42.401505", "stop_lon": "-71.077252", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-welln", "location_type": "0", "parent_station": "place-welln", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-0.5_platform", "platform_code": "1", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.077252,42.401505],
+"type": "Point"
+        },
+        "id": "1000000000000035"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70278","location": "(329023.4155890428, 4695427.877941717)", "stop_id": "70278", "stop_name": "Assembly", "stop_code": "70278", "stop_desc": "Assembly - Orange Line - Forest Hills", "stop_lat": "42.392331", "stop_lon": "-71.077262", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-astao", "location_type": "0", "parent_station": "place-astao", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.077262,42.392331],
+"type": "Point"
+        },
+        "id": "1000000000000036"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70030","location": "(329022.78957669076, 4694499.46188327)", "stop_id": "70030", "stop_name": "Sullivan Square", "stop_code": "70030", "stop_desc": "Sullivan Square - Orange Line - Forest Hills", "stop_lat": "42.383975", "stop_lon": "-71.076994", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-sull", "location_type": "0", "parent_station": "place-sull", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "1", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.076994,42.383975],
+"type": "Point"
+        },
+        "id": "1000000000000037"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70028","location": "(329608.9994387111, 4693334.845558024)", "stop_id": "70028", "stop_name": "Community College", "stop_code": "70028", "stop_desc": "Community College - Orange Line - Forest Hills", "stop_lat": "42.373622", "stop_lon": "-71.069533", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-ccmnl", "location_type": "0", "parent_station": "place-ccmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.069533,42.373622],
+"type": "Point"
+        },
+        "id": "1000000000000038"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70026","location": "(330266.0300250429, 4692425.010400179)", "stop_id": "70026", "stop_name": "North Station", "stop_code": "70026", "stop_desc": "North Station - Orange Line - Forest Hills", "stop_lat": "42.365577", "stop_lon": "-71.061290", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-north", "location_type": "0", "parent_station": "place-north", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_low_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.06129,42.365577],
+"type": "Point"
+        },
+        "id": "1000000000000039"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70024","location": "(330506.1971207389, 4692135.198196941)", "stop_id": "70024", "stop_name": "Haymarket", "stop_code": "70024", "stop_desc": "Haymarket - Orange Line - Forest Hills", "stop_lat": "42.363021", "stop_lon": "-71.058290", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-haecl", "location_type": "0", "parent_station": "place-haecl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_orange_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.05829,42.363021],
+"type": "Point"
+        },
+        "id": "1000000000000040"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70022","location": "(330552.31546495634, 4691684.873263617)", "stop_id": "70022", "stop_name": "State", "stop_code": "70022", "stop_desc": "State - Orange Line - Forest Hills", "stop_lat": "42.358978", "stop_lon": "-71.057598", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-state", "location_type": "0", "parent_station": "place-state", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_up_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.057598,42.358978],
+"type": "Point"
+        },
+        "id": "1000000000000041"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70020","location": "(330326.65550059755, 4691305.9065803075)", "stop_id": "70020", "stop_name": "Downtown Crossing", "stop_code": "70020", "stop_desc": "Downtown Crossing - Orange Line - Forest Hills", "stop_lat": "42.355518", "stop_lon": "-71.060225", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-dwnxg", "location_type": "0", "parent_station": "place-dwnxg", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_orange_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.060225,42.355518],
+"type": "Point"
+        },
+        "id": "1000000000000042"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70018","location": "(330110.52636897867, 4690981.046580017)", "stop_id": "70018", "stop_name": "Chinatown", "stop_code": "70018", "stop_desc": "Chinatown - Orange Line - Forest Hills", "stop_lat": "42.352547", "stop_lon": "-71.062752", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-chncl", "location_type": "0", "parent_station": "place-chncl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.062752,42.352547],
+"type": "Point"
+        },
+        "id": "1000000000000043"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70016","location": "(330006.79484902136, 4690663.018062188)", "stop_id": "70016", "stop_name": "Tufts Medical Center", "stop_code": "70016", "stop_desc": "Tufts Medical Center - Orange Line - Forest Hills", "stop_lat": "42.349662", "stop_lon": "-71.063917", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-tumnl", "location_type": "0", "parent_station": "place-tumnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.063917,42.349662],
+"type": "Point"
+        },
+        "id": "1000000000000044"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70014","location": "(329027.76364689425, 4690429.971241378)", "stop_id": "70014", "stop_name": "Back Bay", "stop_code": "70014", "stop_desc": "Back Bay - Orange Line - Forest Hills", "stop_lat": "42.347350", "stop_lon": "-71.075727", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-bbsta", "location_type": "0", "parent_station": "place-bbsta", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_orange_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.075727,42.34735],
+"type": "Point"
+        },
+        "id": "1000000000000045"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70012","location": "(328313.3408603696, 4689733.795953971)", "stop_id": "70012", "stop_name": "Massachusetts Avenue", "stop_code": "70012", "stop_desc": "Massachusetts Avenue - Orange Line - Forest Hills", "stop_lat": "42.340927", "stop_lon": "-71.084188", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-masta", "location_type": "0", "parent_station": "place-masta", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.084188,42.340927],
+"type": "Point"
+        },
+        "id": "1000000000000046"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70010","location": "(327848.4764549786, 4689252.213191335)", "stop_id": "70010", "stop_name": "Ruggles", "stop_code": "70010", "stop_desc": "Ruggles - Orange Line - Forest Hills", "stop_lat": "42.336490", "stop_lon": "-71.089684", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-rugg", "location_type": "0", "parent_station": "place-rugg", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_orange_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.089684,42.33649],
+"type": "Point"
+        },
+        "id": "1000000000000047"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70008","location": "(327302.23694335803, 4688619.109744936)", "stop_id": "70008", "stop_name": "Roxbury Crossing", "stop_code": "70008", "stop_desc": "Roxbury Crossing - Orange Line - Forest Hills", "stop_lat": "42.330671", "stop_lon": "-71.096121", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-rcmnl", "location_type": "0", "parent_station": "place-rcmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.096121,42.330671],
+"type": "Point"
+        },
+        "id": "1000000000000048"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70006","location": "(326995.5858360079, 4687789.01658907)", "stop_id": "70006", "stop_name": "Jackson Square", "stop_code": "70006", "stop_desc": "Jackson Square - Orange Line - Forest Hills", "stop_lat": "42.323132", "stop_lon": "-71.099592", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-jaksn", "location_type": "0", "parent_station": "place-jaksn", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.099592,42.323132],
+"type": "Point"
+        },
+        "id": "1000000000000049"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70004","location": "(326595.2455079104, 4687124.4715847885)", "stop_id": "70004", "stop_name": "Stony Brook", "stop_code": "70004", "stop_desc": "Stony Brook - Orange Line - Forest Hills", "stop_lat": "42.317062", "stop_lon": "-71.104248", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-sbmnl", "location_type": "0", "parent_station": "place-sbmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.104248,42.317062],
+"type": "Point"
+        },
+        "id": "1000000000000050"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70002","location": "(326261.285145357, 4686329.413057902)", "stop_id": "70002", "stop_name": "Green Street", "stop_code": "70002", "stop_desc": "Green Street - Orange Line - Forest Hills", "stop_lat": "42.309832", "stop_lon": "-71.108059", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-grnst", "location_type": "0", "parent_station": "place-grnst", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.108059,42.309832],
+"type": "Point"
+        },
+        "id": "1000000000000051"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70001","location": "(325771.8291218417, 4685307.229742855)", "stop_id": "70001", "stop_name": "Forest Hills", "stop_code": "70001", "stop_desc": "Forest Hills - Orange Line", "stop_lat": "42.300523", "stop_lon": "-71.113686", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-forhl", "location_type": "0", "parent_station": "place-forhl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_orange_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.113686,42.300523],
+"type": "Point"
+        },
+        "id": "1000000000000052"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70003","location": "(326267.0379182368, 4686325.270551624)", "stop_id": "70003", "stop_name": "Green Street", "stop_code": "70003", "stop_desc": "Green Street - Orange Line - Oak Grove", "stop_lat": "42.309796", "stop_lon": "-71.107988", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-grnst", "location_type": "0", "parent_station": "place-grnst", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.107988,42.309796],
+"type": "Point"
+        },
+        "id": "1000000000000053"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70005","location": "(326595.2455079104, 4687124.4715847885)", "stop_id": "70005", "stop_name": "Stony Brook", "stop_code": "70005", "stop_desc": "Stony Brook - Orange Line - Oak Grove", "stop_lat": "42.317062", "stop_lon": "-71.104248", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-sbmnl", "location_type": "0", "parent_station": "place-sbmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.104248,42.317062],
+"type": "Point"
+        },
+        "id": "1000000000000054"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70007","location": "(326995.5858360079, 4687789.01658907)", "stop_id": "70007", "stop_name": "Jackson Square", "stop_code": "70007", "stop_desc": "Jackson Square - Orange Line - Oak Grove", "stop_lat": "42.323132", "stop_lon": "-71.099592", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-jaksn", "location_type": "0", "parent_station": "place-jaksn", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.099592,42.323132],
+"type": "Point"
+        },
+        "id": "1000000000000055"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70009","location": "(327308.82591165055, 4688615.502945789)", "stop_id": "70009", "stop_name": "Roxbury Crossing", "stop_code": "70009", "stop_desc": "Roxbury Crossing - Orange Line - Oak Grove", "stop_lat": "42.330640", "stop_lon": "-71.096040", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-rcmnl", "location_type": "0", "parent_station": "place-rcmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.09604,42.33064],
+"type": "Point"
+        },
+        "id": "1000000000000056"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70011","location": "(327852.4069031488, 4689247.783337391)", "stop_id": "70011", "stop_name": "Ruggles", "stop_code": "70011", "stop_desc": "Ruggles - Orange Line - Oak Grove", "stop_lat": "42.336451", "stop_lon": "-71.089635", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-rugg", "location_type": "0", "parent_station": "place-rugg", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_orange_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.089635,42.336451],
+"type": "Point"
+        },
+        "id": "1000000000000057"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70013","location": "(328318.51787024684, 4689729.78024008)", "stop_id": "70013", "stop_name": "Massachusetts Avenue", "stop_code": "70013", "stop_desc": "Massachusetts Avenue - Orange Line - Oak Grove", "stop_lat": "42.340892", "stop_lon": "-71.084124", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-masta", "location_type": "0", "parent_station": "place-masta", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.084124,42.340892],
+"type": "Point"
+        },
+        "id": "1000000000000058"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70015","location": "(329027.76364689425, 4690429.971241378)", "stop_id": "70015", "stop_name": "Back Bay", "stop_code": "70015", "stop_desc": "Back Bay - Orange Line - Oak Grove", "stop_lat": "42.347350", "stop_lon": "-71.075727", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-bbsta", "location_type": "0", "parent_station": "place-bbsta", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_orange_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.075727,42.34735],
+"type": "Point"
+        },
+        "id": "1000000000000059"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70017","location": "(330006.79484902136, 4690663.018062188)", "stop_id": "70017", "stop_name": "Tufts Medical Center", "stop_code": "70017", "stop_desc": "Tufts Medical Center - Orange Line - Oak Grove", "stop_lat": "42.349662", "stop_lon": "-71.063917", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-tumnl", "location_type": "0", "parent_station": "place-tumnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.063917,42.349662],
+"type": "Point"
+        },
+        "id": "1000000000000060"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70019","location": "(330110.52636897867, 4690981.046580017)", "stop_id": "70019", "stop_name": "Chinatown", "stop_code": "70019", "stop_desc": "Chinatown - Orange Line - Oak Grove", "stop_lat": "42.352547", "stop_lon": "-71.062752", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-chncl", "location_type": "0", "parent_station": "place-chncl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.062752,42.352547],
+"type": "Point"
+        },
+        "id": "1000000000000061"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70021","location": "(330326.65550059755, 4691305.9065803075)", "stop_id": "70021", "stop_name": "Downtown Crossing", "stop_code": "70021", "stop_desc": "Downtown Crossing - Orange Line - Oak Grove", "stop_lat": "42.355518", "stop_lon": "-71.060225", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-dwnxg", "location_type": "0", "parent_station": "place-dwnxg", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_orange_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.060225,42.355518],
+"type": "Point"
+        },
+        "id": "1000000000000062"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70023","location": "(330552.31546495634, 4691684.873263617)", "stop_id": "70023", "stop_name": "State", "stop_code": "70023", "stop_desc": "State - Orange Line - Oak Grove", "stop_lat": "42.358978", "stop_lon": "-71.057598", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-state", "location_type": "0", "parent_station": "place-state", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_oak_grove_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.057598,42.358978],
+"type": "Point"
+        },
+        "id": "1000000000000063"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70025","location": "(330506.1971207389, 4692135.198196941)", "stop_id": "70025", "stop_name": "Haymarket", "stop_code": "70025", "stop_desc": "Haymarket - Orange Line - Oak Grove", "stop_lat": "42.363021", "stop_lon": "-71.058290", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-haecl", "location_type": "0", "parent_station": "place-haecl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_orange_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.05829,42.363021],
+"type": "Point"
+        },
+        "id": "1000000000000064"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70027","location": "(330266.0300250429, 4692425.010400179)", "stop_id": "70027", "stop_name": "North Station", "stop_code": "70027", "stop_desc": "North Station - Orange Line - Oak Grove", "stop_lat": "42.365577", "stop_lon": "-71.061290", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-north", "location_type": "0", "parent_station": "place-north", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_low_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.06129,42.365577],
+"type": "Point"
+        },
+        "id": "1000000000000065"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70029","location": "(329608.9994387111, 4693334.845558024)", "stop_id": "70029", "stop_name": "Community College", "stop_code": "70029", "stop_desc": "Community College - Orange Line - Oak Grove", "stop_lat": "42.373622", "stop_lon": "-71.069533", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-ccmnl", "location_type": "0", "parent_station": "place-ccmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.069533,42.373622],
+"type": "Point"
+        },
+        "id": "1000000000000066"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70031","location": "(329022.78957669076, 4694499.46188327)", "stop_id": "70031", "stop_name": "Sullivan Square", "stop_code": "70031", "stop_desc": "Sullivan Square - Orange Line - Oak Grove", "stop_lat": "42.383975", "stop_lon": "-71.076994", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-sull", "location_type": "0", "parent_station": "place-sull", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "2", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.076994,42.383975],
+"type": "Point"
+        },
+        "id": "1000000000000067"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70279","location": "(329030.17874688684, 4695428.2681064075)", "stop_id": "70279", "stop_name": "Assembly", "stop_code": "70279", "stop_desc": "Assembly - Orange Line - Oak Grove", "stop_lat": "42.392336", "stop_lon": "-71.077180", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-astao", "location_type": "0", "parent_station": "place-astao", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.07718,42.392336],
+"type": "Point"
+        },
+        "id": "1000000000000068"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70033","location": "(329057.5524392729, 4696446.585912741)", "stop_id": "70033", "stop_name": "Wellington", "stop_code": "70033", "stop_desc": "Wellington - Orange Line - Oak Grove", "stop_lat": "42.401507", "stop_lon": "-71.077150", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-welln", "location_type": "0", "parent_station": "place-welln", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-0.5_platform", "platform_code": "2", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.07715,42.401507],
+"type": "Point"
+        },
+        "id": "1000000000000069"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70035","location": "(329359.1940190906, 4699234.182755069)", "stop_id": "70035", "stop_name": "Malden Center", "stop_code": "70035", "stop_desc": "Malden Center - Orange Line - Oak Grove", "stop_lat": "42.426662", "stop_lon": "-71.074314", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-mlmnl", "location_type": "0", "parent_station": "place-mlmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_1_orange_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 2.071668533035, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-71.074314,42.426662],
+"type": "Point"
+        },
+        "id": "1000000000000070"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70059","location": "(336120.1838691626, 4697611.451889458)", "stop_id": "70059", "stop_name": "Wonderland", "stop_code": "70059", "stop_desc": "Wonderland - Blue Line - Bowdoin", "stop_lat": "42.413514", "stop_lon": "-70.991714", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-wondl", "location_type": "0", "parent_station": "place-wondl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "1", "CenDeg": 0.010638297872, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [-70.991714,42.413514],
+"type": "Point"
+        },
+        "id": "1000000000000071"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70057","location": "(336033.4398367057, 4696974.193770893)", "stop_id": "70057", "stop_name": "Revere Beach", "stop_code": "70057", "stop_desc": "Revere Beach - Blue Line - Bowdoin", "stop_lat": "42.407760", "stop_lon": "-70.992586", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-rbmnl", "location_type": "0", "parent_station": "place-rbmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "1", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.063829787234, "CatClossnes": 2},
+"geometry": {
+"coordinates": [-70.992586,42.40776],
+"type": "Point"
+        },
+        "id": "1000000000000072"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70055","location": "(336000.9580866151, 4695803.808676532)", "stop_id": "70055", "stop_name": "Beachmont", "stop_code": "70055", "stop_desc": "Beachmont - Blue Line - Bowdoin", "stop_lat": "42.397219", "stop_lon": "-70.992647", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-bmmnl", "location_type": "0", "parent_station": "place-bmmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_1_platform", "platform_code": "1", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.418439716312, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-70.992647,42.397219],
+"type": "Point"
+        },
+        "id": "1000000000000073"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70053","location": "(335598.35252420825, 4695058.090244565)", "stop_id": "70053", "stop_name": "Suffolk Downs", "stop_code": "70053", "stop_desc": "Suffolk Downs - Blue Line - Bowdoin", "stop_lat": "42.390422", "stop_lon": "-70.997323", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-sdmnl", "location_type": "0", "parent_station": "place-sdmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "1", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.595744680851, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-70.997323,42.390422],
+"type": "Point"
+        },
+        "id": "1000000000000074"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70051","location": "(334972.94343638944, 4694682.512166767)", "stop_id": "70051", "stop_name": "Orient Heights", "stop_code": "70051", "stop_desc": "Orient Heights - Blue Line - Bowdoin", "stop_lat": "42.386909", "stop_lon": "-71.004809", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-orhte", "location_type": "0", "parent_station": "place-orhte", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.702127659574, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-71.004809,42.386909],
+"type": "Point"
+        },
+        "id": "1000000000000075"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70049","location": "(333471.5118003262, 4693921.587578439)", "stop_id": "70049", "stop_name": "Wood Island", "stop_code": "70049", "stop_desc": "Wood Island - Blue Line - Bowdoin", "stop_lat": "42.379740", "stop_lon": "-71.022818", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-wimnl", "location_type": "0", "parent_station": "place-wimnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "1", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.773049645390, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.022818,42.37974],
+"type": "Point"
+        },
+        "id": "1000000000000076"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70047","location": "(332833.17600515153, 4693328.174402887)", "stop_id": "70047", "stop_name": "Airport", "stop_code": "70047", "stop_desc": "Airport - Blue Line - Bowdoin", "stop_lat": "42.374262", "stop_lon": "-71.030395", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-aport", "location_type": "0", "parent_station": "place-aport", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.823708206687, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.030395,42.374262],
+"type": "Point"
+        },
+        "id": "1000000000000077"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70045","location": "(332067.3358812927, 4692775.093764945)", "stop_id": "70045", "stop_name": "Maverick", "stop_code": "70045", "stop_desc": "Maverick - Blue Line - Bowdoin", "stop_lat": "42.369119", "stop_lon": "-71.039530", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-mvbcl", "location_type": "0", "parent_station": "place-mvbcl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.861702127660, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.03953,42.369119],
+"type": "Point"
+        },
+        "id": "1000000000000078"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70043","location": "(331044.16145455383, 4691762.5368802855)", "stop_id": "70043", "stop_name": "Aquarium", "stop_code": "70043", "stop_desc": "Aquarium - Blue Line - Bowdoin", "stop_lat": "42.359784", "stop_lon": "-71.051652", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-aqucl", "location_type": "0", "parent_station": "place-aqucl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_platform", "platform_code": "1", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.891252955083, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.051652,42.359784],
+"type": "Point"
+        },
+        "id": "1000000000000079"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70041","location": "(330552.31546495634, 4691684.873263617)", "stop_id": "70041", "stop_name": "State", "stop_code": "70041", "stop_desc": "State - Blue Line - Bowdoin", "stop_lat": "42.358978", "stop_lon": "-71.057598", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-state", "location_type": "0", "parent_station": "place-state", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_up_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.914893617021, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.057598,42.358978],
+"type": "Point"
+        },
+        "id": "1000000000000080"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70039","location": "(330421.1023427732, 4691768.826079422)", "stop_id": "70039", "stop_name": "Government Center", "stop_code": "70039", "stop_desc": "Government Center - Blue Line - Bowdoin", "stop_lat": "42.359705", "stop_lon": "-71.059215", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-gover", "location_type": "0", "parent_station": "place-gover", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_blue_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.934235976789, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.059215,42.359705],
+"type": "Point"
+        },
+        "id": "1000000000000081"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70838","location": "(330193.16961431305, 4691958.79095432)", "stop_id": "70838", "stop_name": "Bowdoin", "stop_code": "70838", "stop_desc": "Bowdoin - Blue Line - Exit Only", "stop_lat": "42.361365", "stop_lon": "-71.062037", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-bomnl", "location_type": "0", "parent_station": "place-bomnl", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.010638297872, "CatCenDeg": 1, "Clossnes": 1.950354609929, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.062037,42.361365],
+"type": "Point"
+        },
+        "id": "1000000000000082"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70038","location": "(330193.16961431305, 4691958.79095432)", "stop_id": "70038", "stop_name": "Bowdoin", "stop_code": "70038", "stop_desc": "Bowdoin - Blue Line - Wonderland", "stop_lat": "42.361365", "stop_lon": "-71.062037", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-bomnl", "location_type": "0", "parent_station": "place-bomnl", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.010638297872, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [-71.062037,42.361365],
+"type": "Point"
+        },
+        "id": "1000000000000083"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70040","location": "(330421.1023427732, 4691768.826079422)", "stop_id": "70040", "stop_name": "Government Center", "stop_code": "70040", "stop_desc": "Government Center - Blue Line - Wonderland", "stop_lat": "42.359705", "stop_lon": "-71.059215", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-gover", "location_type": "0", "parent_station": "place-gover", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_blue_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.063829787234, "CatClossnes": 2},
+"geometry": {
+"coordinates": [-71.059215,42.359705],
+"type": "Point"
+        },
+        "id": "1000000000000084"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70042","location": "(330552.31546495634, 4691684.873263617)", "stop_id": "70042", "stop_name": "State", "stop_code": "70042", "stop_desc": "State - Blue Line - Wonderland", "stop_lat": "42.358978", "stop_lon": "-71.057598", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-state", "location_type": "0", "parent_station": "place-state", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_up_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.418439716312, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-71.057598,42.358978],
+"type": "Point"
+        },
+        "id": "1000000000000085"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70044","location": "(331044.16145455383, 4691762.5368802855)", "stop_id": "70044", "stop_name": "Aquarium", "stop_code": "70044", "stop_desc": "Aquarium - Blue Line - Wonderland", "stop_lat": "42.359784", "stop_lon": "-71.051652", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-aqucl", "location_type": "0", "parent_station": "place-aqucl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-2_platform", "platform_code": "2", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.595744680851, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-71.051652,42.359784],
+"type": "Point"
+        },
+        "id": "1000000000000086"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70046","location": "(332067.3358812927, 4692775.093764945)", "stop_id": "70046", "stop_name": "Maverick", "stop_code": "70046", "stop_desc": "Maverick - Blue Line - Wonderland", "stop_lat": "42.369119", "stop_lon": "-71.039530", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-mvbcl", "location_type": "0", "parent_station": "place-mvbcl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.702127659574, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-71.03953,42.369119],
+"type": "Point"
+        },
+        "id": "1000000000000087"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70048","location": "(332833.17600515153, 4693328.174402887)", "stop_id": "70048", "stop_name": "Airport", "stop_code": "70048", "stop_desc": "Airport - Blue Line - Wonderland", "stop_lat": "42.374262", "stop_lon": "-71.030395", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-aport", "location_type": "0", "parent_station": "place-aport", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.773049645390, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.030395,42.374262],
+"type": "Point"
+        },
+        "id": "1000000000000088"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70050","location": "(333474.2108829905, 4693913.857035727)", "stop_id": "70050", "stop_name": "Wood Island", "stop_code": "70050", "stop_desc": "Wood Island - Blue Line - Wonderland", "stop_lat": "42.379671", "stop_lon": "-71.022783", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-wimnl", "location_type": "0", "parent_station": "place-wimnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "2", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.823708206687, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.022783,42.379671],
+"type": "Point"
+        },
+        "id": "1000000000000089"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70052","location": "(334976.2252606427, 4694674.990720929)", "stop_id": "70052", "stop_name": "Orient Heights", "stop_code": "70052", "stop_desc": "Orient Heights - Blue Line - Wonderland", "stop_lat": "42.386842", "stop_lon": "-71.004767", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-orhte", "location_type": "0", "parent_station": "place-orhte", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.861702127660, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-71.004767,42.386842],
+"type": "Point"
+        },
+        "id": "1000000000000090"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70054","location": "(335622.9613037526, 4695078.399264344)", "stop_id": "70054", "stop_name": "Suffolk Downs", "stop_code": "70054", "stop_desc": "Suffolk Downs - Blue Line - Wonderland", "stop_lat": "42.390610", "stop_lon": "-70.997030", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-sdmnl", "location_type": "0", "parent_station": "place-sdmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "2", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.891252955083, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-70.99703,42.39061],
+"type": "Point"
+        },
+        "id": "1000000000000091"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70056","location": "(336008.8203100115, 4695801.957680241)", "stop_id": "70056", "stop_name": "Beachmont", "stop_code": "70056", "stop_desc": "Beachmont - Blue Line - Wonderland", "stop_lat": "42.397204", "stop_lon": "-70.992551", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-bmmnl", "location_type": "0", "parent_station": "place-bmmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_1_platform", "platform_code": "2", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.914893617021, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-70.992551,42.397204],
+"type": "Point"
+        },
+        "id": "1000000000000092"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70058","location": "(336041.06077612296, 4696986.680828142)", "stop_id": "70058", "stop_name": "Revere Beach", "stop_code": "70058", "stop_desc": "Revere Beach - Blue Line - Wonderland", "stop_lat": "42.407874", "stop_lon": "-70.992497", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-rbmnl", "location_type": "0", "parent_station": "place-rbmnl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_-1_platform", "platform_code": "2", "CenDeg": 0.021276595745, "CatCenDeg": 4, "Clossnes": 1.934235976789, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-70.992497,42.407874],
+"type": "Point"
+        },
+        "id": "1000000000000093"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"70060","location": "(336122.171605355, 4697594.40633268)", "stop_id": "70060", "stop_name": "Wonderland", "stop_code": "70060", "stop_desc": "Wonderland - Blue Line - Exit Only", "stop_lat": "42.413361", "stop_lon": "-70.991685", "zone_id": "RapidTransit", "stop_url": "https://www.mbta.com/stops/place-wondl", "location_type": "0", "parent_station": "place-wondl", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "level_0_platform", "platform_code": "2", "CenDeg": 0.010638297872, "CatCenDeg": 1, "Clossnes": 1.950354609929, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-70.991685,42.413361],
+"type": "Point"
+        },
+        "id": "1000000000000094"
+
+}
+
+ ],
+"type": "FeatureCollection"
+}

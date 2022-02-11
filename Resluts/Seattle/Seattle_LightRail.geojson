@@ -1,0 +1,766 @@
+{
+        "features": [
+{
+"type": "Feature",
+"properties": {"StopCode":"26680","location": "(549799.5607677073, 5273533.51238149)", "stop_id": "26680", "stop_name": "Westlake Ave & Olive Way", "stop_code": "26680", "stop_desc": "", "stop_lat": "47.613293", "stop_lon": "-122.337341", "zone_id": "21", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013333333333, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1, "Eigen": "7.072554484881811e-13"},
+"geometry": {
+"coordinates": [-122.337341,47.613293],
+"type": "Point"
+        },
+        "id": "1000000000000000"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"26689","location": "(549762.329824684, 5273792.164105015)", "stop_id": "26689", "stop_name": "Westlake Ave & 7th Ave", "stop_code": "26689", "stop_desc": "", "stop_lat": "47.615623", "stop_lon": "-122.337807", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 1.333333333333, "CatClossnes": 2, "Eigen": "9.556684761777328e-13"},
+"geometry": {
+"coordinates": [-122.337807,47.615623],
+"type": "Point"
+        },
+        "id": "1000000000000001"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"26690","location": "(549719.6944137656, 5274085.669809206)", "stop_id": "26690", "stop_name": "Westlake Ave & 9th Ave", "stop_code": "26690", "stop_desc": "", "stop_lat": "47.618267", "stop_lon": "-122.338341", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 1.777777777778, "CatClossnes": 2, "Eigen": "-1.6353784524837953e-12"},
+"geometry": {
+"coordinates": [-122.338341,47.618267],
+"type": "Point"
+        },
+        "id": "1000000000000002"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"26693","location": "(549813.5566802508, 5274446.028259074)", "stop_id": "26693", "stop_name": "Terry Ave N & Thomas St", "stop_code": "26693", "stop_desc": "", "stop_lat": "47.621502", "stop_lon": "-122.337051", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.000000000000, "CatClossnes": 3, "Eigen": "-1.2220825152760073e-11"},
+"geometry": {
+"coordinates": [-122.337051,47.621502],
+"type": "Point"
+        },
+        "id": "1000000000000003"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"26698","location": "(549812.2634057947, 5274658.861701205)", "stop_id": "26698", "stop_name": "Terry Ave N & Republican St", "stop_code": "26698", "stop_desc": "", "stop_lat": "47.623417", "stop_lon": "-122.337044", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.133333333333, "CatClossnes": 3, "Eigen": "-2.1429069636898303e-12"},
+"geometry": {
+"coordinates": [-122.337044,47.623417],
+"type": "Point"
+        },
+        "id": "1000000000000004"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"26701","location": "(549860.4583483569, 5274927.691484229)", "stop_id": "26701", "stop_name": "South Lake Union Streetcar & Terry Ave N", "stop_code": "26701", "stop_desc": "", "stop_lat": "47.625832", "stop_lon": "-122.336372", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.222222222222, "CatClossnes": 3, "Eigen": "-9.35330841407037e-12"},
+"geometry": {
+"coordinates": [-122.336372,47.625832],
+"type": "Point"
+        },
+        "id": "1000000000000005"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"26705","location": "(550171.708049638, 5275125.313514927)", "stop_id": "26705", "stop_name": "Fairview Ave N & Aloha St", "stop_code": "26705", "stop_desc": "", "stop_lat": "47.627586", "stop_lon": "-122.332207", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013333333333, "CatCenDeg": 1, "Clossnes": 2.285714285714, "CatClossnes": 3, "Eigen": "1.0879954141316255e-11"},
+"geometry": {
+"coordinates": [-122.332207,47.627586],
+"type": "Point"
+        },
+        "id": "1000000000000006"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"26700","location": "(550159.6106556439, 5275134.101049317)", "stop_id": "26700", "stop_name": "Fairview Ave N & Ward St", "stop_code": "26700", "stop_desc": "", "stop_lat": "47.627666", "stop_lon": "-122.332367", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013333333333, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1, "Eigen": "-1.7092366162296903e-12"},
+"geometry": {
+"coordinates": [-122.332367,47.627666],
+"type": "Point"
+        },
+        "id": "1000000000000007"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"26702","location": "(549848.2317034915, 5274942.813879038)", "stop_id": "26702", "stop_name": "South Lake Union Streetcar & Terry Ave N", "stop_code": "26702", "stop_desc": "", "stop_lat": "47.625969", "stop_lon": "-122.336533", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 1.333333333333, "CatClossnes": 2, "Eigen": "-2.6119319709180387e-13"},
+"geometry": {
+"coordinates": [-122.336533,47.625969],
+"type": "Point"
+        },
+        "id": "1000000000000008"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"26641","location": "(549698.6359115862, 5274739.694928348)", "stop_id": "26641", "stop_name": "Westlake Ave N & Mercer St", "stop_code": "26641", "stop_desc": "", "stop_lat": "47.624153", "stop_lon": "-122.338547", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 1.777777777778, "CatClossnes": 2, "Eigen": "9.168694689020578e-12"},
+"geometry": {
+"coordinates": [-122.338547,47.624153],
+"type": "Point"
+        },
+        "id": "1000000000000009"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1-26645","location": "(549699.5360963695, 5274431.494959843)", "stop_id": "1-26645", "stop_name": "Westlake Ave N & Harrison St", "stop_code": "26645", "stop_desc": "", "stop_lat": "47.621380", "stop_lon": "-122.338570", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.000000000000, "CatClossnes": 3, "Eigen": "6.3808716552546654e-12"},
+"geometry": {
+"coordinates": [-122.33857,47.62138],
+"type": "Point"
+        },
+        "id": "1000000000000010"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"26665","location": "(549710.9752397651, 5274033.023456377)", "stop_id": "26665", "stop_name": "Westlake Ave & 9th Ave", "stop_code": "26665", "stop_desc": "", "stop_lat": "47.617794", "stop_lon": "-122.338463", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.133333333333, "CatClossnes": 3, "Eigen": "7.216014617520431e-12"},
+"geometry": {
+"coordinates": [-122.338463,47.617794],
+"type": "Point"
+        },
+        "id": "1000000000000011"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1-1619","location": "(549759.0670864887, 5273707.77659469)", "stop_id": "1-1619", "stop_name": "Westlake Ave & Virginia St", "stop_code": "1619", "stop_desc": "", "stop_lat": "47.614864", "stop_lon": "-122.337860", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.222222222222, "CatClossnes": 3, "Eigen": "-7.24422344758027e-12"},
+"geometry": {
+"coordinates": [-122.33786,47.614864],
+"type": "Point"
+        },
+        "id": "1000000000000012"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1-1630","location": "(549784.0910901957, 5273532.046497637)", "stop_id": "1-1630", "stop_name": "Westlake Ave & Olive Way", "stop_code": "1630", "stop_desc": "", "stop_lat": "47.613281", "stop_lon": "-122.337547", "zone_id": "21", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013333333333, "CatCenDeg": 1, "Clossnes": 2.285714285714, "CatClossnes": 3, "Eigen": "-1.2693381857468146e-11"},
+"geometry": {
+"coordinates": [-122.337547,47.613281],
+"type": "Point"
+        },
+        "id": "1000000000000013"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1-1551","location": "(550117.9880256332, 5271978.08946209)", "stop_id": "1-1551", "stop_name": "S Jackson St & Occidental Ave Walk", "stop_code": "1551", "stop_desc": "", "stop_lat": "47.599274", "stop_lon": "-122.333282", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "5.756078427806709e-11"},
+"geometry": {
+"coordinates": [-122.333282,47.599274],
+"type": "Point"
+        },
+        "id": "1000000000000014"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1-1652","location": "(550568.8562432608, 5271965.420611197)", "stop_id": "1-1652", "stop_name": "S Jackson St & 5th Ave S", "stop_code": "1652", "stop_desc": "", "stop_lat": "47.599125", "stop_lon": "-122.327286", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "4.8079280716584925e-11"},
+"geometry": {
+"coordinates": [-122.327286,47.599125],
+"type": "Point"
+        },
+        "id": "1000000000000015"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1-1662","location": "(550861.3469683693, 5271967.963998173)", "stop_id": "1-1662", "stop_name": "S Jackson St & 8th Ave S", "stop_code": "1662", "stop_desc": "", "stop_lat": "47.599125", "stop_lon": "-122.323395", "zone_id": "21", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "6.219949679771026e-11"},
+"geometry": {
+"coordinates": [-122.323395,47.599125],
+"type": "Point"
+        },
+        "id": "1000000000000016"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1-1672","location": "(551452.6280194089, 5271974.817544149)", "stop_id": "1-1672", "stop_name": "S Jackson St & 12th Ave S", "stop_code": "1672", "stop_desc": "", "stop_lat": "47.599140", "stop_lon": "-122.315529", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "5.932896665495654e-11"},
+"geometry": {
+"coordinates": [-122.315529,47.59914],
+"type": "Point"
+        },
+        "id": "1000000000000017"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1-1682","location": "(551563.0538427203, 5272137.3991145305)", "stop_id": "1-1682", "stop_name": "14th Ave S & S Washington St", "stop_code": "1682", "stop_desc": "", "stop_lat": "47.600594", "stop_lon": "-122.314041", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "5.665406952999727e-11"},
+"geometry": {
+"coordinates": [-122.314041,47.600594],
+"type": "Point"
+        },
+        "id": "1000000000000018"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"27420","location": "(551091.664345274, 5272262.513091766)", "stop_id": "27420", "stop_name": "E Yesler Way & Broadway", "stop_code": "27420", "stop_desc": "", "stop_lat": "47.601757", "stop_lon": "-122.320297", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "4.866682095889131e-11"},
+"geometry": {
+"coordinates": [-122.320297,47.601757],
+"type": "Point"
+        },
+        "id": "1000000000000019"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"41904","location": "(551061.6865887534, 5272672.71255276)", "stop_id": "41904", "stop_name": "Broadway & E Terrace St", "stop_code": "41904", "stop_desc": "", "stop_lat": "47.605450", "stop_lon": "-122.320648", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "5.78973631917496e-11"},
+"geometry": {
+"coordinates": [-122.320648,47.60545],
+"type": "Point"
+        },
+        "id": "1000000000000020"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"41908","location": "(551055.9780960781, 5273195.82696813)", "stop_id": "41908", "stop_name": "Broadway & E Marion St", "stop_code": "41908", "stop_desc": "", "stop_lat": "47.610157", "stop_lon": "-122.320663", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "7.496925229102281e-11"},
+"geometry": {
+"coordinates": [-122.320663,47.610157],
+"type": "Point"
+        },
+        "id": "1000000000000021"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"41970","location": "(551048.1719564425, 5273752.4895858085)", "stop_id": "41970", "stop_name": "Broadway & E Pine St", "stop_code": "41970", "stop_desc": "", "stop_lat": "47.615166", "stop_lon": "-122.320702", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "7.291317282422802e-11"},
+"geometry": {
+"coordinates": [-122.320702,47.615166],
+"type": "Point"
+        },
+        "id": "1000000000000022"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11175","location": "(551041.8802352219, 5274084.761653323)", "stop_id": "11175", "stop_name": "Broadway & E Howell St", "stop_code": "11175", "stop_desc": "", "stop_lat": "47.618156", "stop_lon": "-122.320747", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "7.697303099347633e-11"},
+"geometry": {
+"coordinates": [-122.320747,47.618156],
+"type": "Point"
+        },
+        "id": "1000000000000023"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"41980","location": "(551035.4181860022, 5273638.341939141)", "stop_id": "41980", "stop_name": "Broadway & E Pike St", "stop_code": "41980", "stop_desc": "", "stop_lat": "47.614140", "stop_lon": "-122.320885", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "6.446276213767277e-11"},
+"geometry": {
+"coordinates": [-122.320885,47.61414],
+"type": "Point"
+        },
+        "id": "1000000000000024"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"41986","location": "(551040.7374081342, 5273168.129291269)", "stop_id": "41986", "stop_name": "Broadway & Marion St", "stop_code": "41986", "stop_desc": "", "stop_lat": "47.609909", "stop_lon": "-122.320869", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "6.733450102117896e-11"},
+"geometry": {
+"coordinates": [-122.320869,47.609909],
+"type": "Point"
+        },
+        "id": "1000000000000025"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"41988","location": "(551046.9903099518, 5272582.666777621)", "stop_id": "41988", "stop_name": "Broadway & Terrace St", "stop_code": "41988", "stop_desc": "", "stop_lat": "47.604641", "stop_lon": "-122.320854", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "6.26769306687058e-11"},
+"geometry": {
+"coordinates": [-122.320854,47.604641],
+"type": "Point"
+        },
+        "id": "1000000000000026"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"27500","location": "(551126.7467342009, 5272248.038144024)", "stop_id": "27500", "stop_name": "E Yesler Way & Broadway", "stop_code": "27500", "stop_desc": "", "stop_lat": "47.601624", "stop_lon": "-122.319832", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "6.511663054082394e-11"},
+"geometry": {
+"coordinates": [-122.319832,47.601624],
+"type": "Point"
+        },
+        "id": "1000000000000027"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1-1681","location": "(551548.1138813107, 5272135.155267483)", "stop_id": "1-1681", "stop_name": "14th Ave S & S Washington St", "stop_code": "1681", "stop_desc": "", "stop_lat": "47.600575", "stop_lon": "-122.314240", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "6.152943582913873e-11"},
+"geometry": {
+"coordinates": [-122.31424,47.600575],
+"type": "Point"
+        },
+        "id": "1000000000000028"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1671","location": "(551451.9704410881, 5271989.705305639)", "stop_id": "1671", "stop_name": "S Jackson St & 12th Ave S", "stop_code": "1671", "stop_desc": "", "stop_lat": "47.599274", "stop_lon": "-122.315536", "zone_id": "1", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "6.22981611518158e-11"},
+"geometry": {
+"coordinates": [-122.315536,47.599274],
+"type": "Point"
+        },
+        "id": "1000000000000029"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1-1661","location": "(550865.2695397453, 5271983.669766204)", "stop_id": "1-1661", "stop_name": "S Jackson St & 8th Ave S", "stop_code": "1661", "stop_desc": "", "stop_lat": "47.599266", "stop_lon": "-122.323341", "zone_id": "21", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "5.228567273086659e-11"},
+"geometry": {
+"coordinates": [-122.323341,47.599266],
+"type": "Point"
+        },
+        "id": "1000000000000030"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1-1651","location": "(550570.4531577717, 5271980.66142116)", "stop_id": "1-1651", "stop_name": "S Jackson St & 5th Ave S", "stop_code": "1651", "stop_desc": "", "stop_lat": "47.599262", "stop_lon": "-122.327263", "zone_id": "21", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "5.078864436378887e-11"},
+"geometry": {
+"coordinates": [-122.327263,47.599262],
+"type": "Point"
+        },
+        "id": "1000000000000031"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"990006","location": "(550396.4061655964, 5283555.305724479)", "stop_id": "990006", "stop_name": "Northgate Station", "stop_code": "N11-T2", "stop_desc": "Northgate Station - 10200 1st Ave NE", "stop_lat": "47.703414", "stop_lon": "-122.328244", "zone_id": "", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/northgate-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013333333333, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1, "Eigen": "1.6681392517684523e-12"},
+"geometry": {
+"coordinates": [-122.328244,47.703414],
+"type": "Point"
+        },
+        "id": "1000000000000032"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"990004","location": "(551346.2130831138, 5280636.766726806)", "stop_id": "990004", "stop_name": "Roosevelt Station", "stop_code": "N09-T2", "stop_desc": "Roosevelt Station - 6501 12th Ave NE", "stop_lat": "47.677081", "stop_lon": "-122.315928", "zone_id": "", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/roosevelt-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 1.333333333333, "CatClossnes": 2, "Eigen": "-1.3438382743826612e-12"},
+"geometry": {
+"coordinates": [-122.315928,47.677081],
+"type": "Point"
+        },
+        "id": "1000000000000033"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"990002","location": "(551501.9636639167, 5278822.884690566)", "stop_id": "990002", "stop_name": "U District Station", "stop_code": "N07-T2", "stop_desc": "U District Station - 4300 Brooklyn Ave NE", "stop_lat": "47.660749", "stop_lon": "-122.314067", "zone_id": "", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/u-district-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 1.777777777778, "CatClossnes": 2, "Eigen": "-5.3890692272924205e-12"},
+"geometry": {
+"coordinates": [-122.314067,47.660749],
+"type": "Point"
+        },
+        "id": "1000000000000034"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99604","location": "(552284.5927872139, 5277562.783449433)", "stop_id": "99604", "stop_name": "Univ of Washington Station", "stop_code": "N05-T1", "stop_desc": "University of Washington Station - 3720 Montlake Blvd NE Seattle, WA 98195", "stop_lat": "47.649349", "stop_lon": "-122.303795", "zone_id": "81", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/university-washington-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.000000000000, "CatClossnes": 3, "Eigen": "-5.14798963235162e-12"},
+"geometry": {
+"coordinates": [-122.303795,47.649349],
+"type": "Point"
+        },
+        "id": "1000000000000035"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99610","location": "(551067.4144927898, 5274241.034674383)", "stop_id": "99610", "stop_name": "Capitol Hill Station", "stop_code": "N03-T1", "stop_desc": "Capitol Hill Station - 140 Broadway E Seattle, WA 98102", "stop_lat": "47.619560", "stop_lon": "-122.320389", "zone_id": "82", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/capitol-hill-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.133333333333, "CatClossnes": 3, "Eigen": "2.7291773891497294e-15"},
+"geometry": {
+"coordinates": [-122.320389,47.61956],
+"type": "Point"
+        },
+        "id": "1000000000000036"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1108","location": "(549786.9562375568, 5273328.563109562)", "stop_id": "1108", "stop_name": "Westlake Station", "stop_code": "C03-T1", "stop_desc": "Westlake Station - 4th Ave & Pine St Seattle, WA 98101", "stop_lat": "47.611450", "stop_lon": "-122.337532", "zone_id": "21", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/westlake-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.222222222222, "CatClossnes": 3, "Eigen": "5.9644983190809275e-12"},
+"geometry": {
+"coordinates": [-122.337532,47.61145],
+"type": "Point"
+        },
+        "id": "1000000000000037"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"40-455","location": "(549924.5797960103, 5272862.483427749)", "stop_id": "40-455", "stop_name": "University St Station", "stop_code": "C05-T1", "stop_desc": "University Street Station - 3rd Ave & Seneca St Seattle, WA 98101", "stop_lat": "47.607246", "stop_lon": "-122.335754", "zone_id": "21", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/university-street-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.285714285714, "CatClossnes": 3, "Eigen": "6.143597434254338e-12"},
+"geometry": {
+"coordinates": [-122.335754,47.607246],
+"type": "Point"
+        },
+        "id": "1000000000000038"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"40-501","location": "(550282.6482221152, 5272297.939080046)", "stop_id": "40-501", "stop_name": "Pioneer Square Station", "stop_code": "C07-T1", "stop_desc": "Pioneer Square Station - 3rd Ave & James St Seattle, WA 98104", "stop_lat": "47.602139", "stop_lon": "-122.331055", "zone_id": "21", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/pioneer-square-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.333333333333, "CatClossnes": 4, "Eigen": "6.7859893914792835e-12"},
+"geometry": {
+"coordinates": [-122.331055,47.602139],
+"type": "Point"
+        },
+        "id": "1000000000000039"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"40-623","location": "(550500.281685927, 5271801.99801068)", "stop_id": "40-623", "stop_name": "Int'l Dist/Chinatown Station", "stop_code": "C09-T1", "stop_desc": "International District/Chinatown Station - 5th Ave and S Jackson St Seattle, WA 98104", "stop_lat": "47.597660", "stop_lon": "-122.328217", "zone_id": "71", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/international-district-chinatown-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.370370370370, "CatClossnes": 4, "Eigen": "7.841556493965137e-12"},
+"geometry": {
+"coordinates": [-122.328217,47.59766],
+"type": "Point"
+        },
+        "id": "1000000000000040"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99101","location": "(550570.7788788299, 5271153.962916223)", "stop_id": "99101", "stop_name": "Stadium Station", "stop_code": "C13-T1", "stop_desc": "Stadium Station - 501 S Royal Brougham Way Seattle, WA 98134", "stop_lat": "47.591824", "stop_lon": "-122.327354", "zone_id": "72", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/stadium-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.400000000000, "CatClossnes": 4, "Eigen": "1.0165879001133824e-11"},
+"geometry": {
+"coordinates": [-122.327354,47.591824],
+"type": "Point"
+        },
+        "id": "1000000000000041"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99111","location": "(550569.5820302977, 5269834.433678702)", "stop_id": "99111", "stop_name": "SODO Station", "stop_code": "C15-T1", "stop_desc": "SODO Station - 500 S Lander St Seattle, WA 98134", "stop_lat": "47.579952", "stop_lon": "-122.327522", "zone_id": "73", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/sodo-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.424242424242, "CatClossnes": 4, "Eigen": "-2.0304581914363207e-12"},
+"geometry": {
+"coordinates": [-122.327522,47.579952],
+"type": "Point"
+        },
+        "id": "1000000000000042"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99121","location": "(551791.848644059, 5269753.123789013)", "stop_id": "99121", "stop_name": "Beacon Hill Station", "stop_code": "C19-T1", "stop_desc": "Beacon Hill Station - 2702 Beacon Ave S Seattle, WA 98144", "stop_lat": "47.579124", "stop_lon": "-122.311279", "zone_id": "74", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/beacon-hill-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.444444444444, "CatClossnes": 4, "Eigen": "-1.5894268138084543e-12"},
+"geometry": {
+"coordinates": [-122.311279,47.579124],
+"type": "Point"
+        },
+        "id": "1000000000000043"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"55949","location": "(552812.9032012023, 5269463.84700518)", "stop_id": "55949", "stop_name": "Mount Baker Station", "stop_code": "C23-T1", "stop_desc": "Mount Baker Station & Transit Center - Rainier Ave S & S Forest St Seattle, WA 98144", "stop_lat": "47.576439", "stop_lon": "-122.297737", "zone_id": "75", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/mount-baker-station-transit-center", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.461538461538, "CatClossnes": 4, "Eigen": "-3.241596077814589e-12"},
+"geometry": {
+"coordinates": [-122.297737,47.576439],
+"type": "Point"
+        },
+        "id": "1000000000000044"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"56039","location": "(553232.733879853, 5267532.165638155)", "stop_id": "56039", "stop_name": "Columbia City Station", "stop_code": "C25-T1", "stop_desc": "Columbia City Station - 4818 Martin Luther King Jr Way S Seattle, WA 98108", "stop_lat": "47.559025", "stop_lon": "-122.292389", "zone_id": "76", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/columbia-city-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.476190476190, "CatClossnes": 4, "Eigen": "-7.305090438577201e-12"},
+"geometry": {
+"coordinates": [-122.292389,47.559025],
+"type": "Point"
+        },
+        "id": "1000000000000045"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"56159","location": "(554076.1849837988, 5265150.723834237)", "stop_id": "56159", "stop_name": "Othello Station", "stop_code": "C27-T1", "stop_desc": "Othello Station - 7100 Martin Luther King Jr Way S Seattle, WA 98118", "stop_lat": "47.537529", "stop_lon": "-122.281471", "zone_id": "77", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/othello-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.488888888889, "CatClossnes": 4, "Eigen": "-7.66502112029524e-12"},
+"geometry": {
+"coordinates": [-122.281471,47.537529],
+"type": "Point"
+        },
+        "id": "1000000000000046"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"56173","location": "(554233.7064831753, 5263455.7695918055)", "stop_id": "56173", "stop_name": "Rainier Beach Station", "stop_code": "C29-T1", "stop_desc": "Rainier Beach Station - 9132 Martin Luther King Jr Way S Seattle, WA 98118", "stop_lat": "47.522266", "stop_lon": "-122.279587", "zone_id": "78", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/rainier-beach-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.500000000000, "CatClossnes": 4, "Eigen": "-2.7341723920566907e-13"},
+"geometry": {
+"coordinates": [-122.279587,47.522266],
+"type": "Point"
+        },
+        "id": "1000000000000047"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99900","location": "(553629.3437100144, 5257004.477251164)", "stop_id": "99900", "stop_name": "Tukwila Int'l Blvd Station", "stop_code": "C35-T1", "stop_desc": "Tukwila International Boulevard Station - 3651 Southcenter Blvd Tukwila, WA 98188", "stop_lat": "47.464272", "stop_lon": "-122.288399", "zone_id": "79", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/tukwila-international-boulevard-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.509803921569, "CatClossnes": 4, "Eigen": "-5.227025598801314e-12"},
+"geometry": {
+"coordinates": [-122.288399,47.464272],
+"type": "Point"
+        },
+        "id": "1000000000000048"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99904","location": "(552998.4197235624, 5254853.331806296)", "stop_id": "99904", "stop_name": "SeaTac/Airport Station", "stop_code": "C37-T1", "stop_desc": "SeaTac/Airport Station - International Blvd & S 176th St Seattle, WA 98188", "stop_lat": "47.444969", "stop_lon": "-122.297028", "zone_id": "80", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/seatac-airport-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "-1.0634749792764205e-12"},
+"geometry": {
+"coordinates": [-122.297028,47.444969],
+"type": "Point"
+        },
+        "id": "1000000000000049"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99913","location": "(552976.0871365083, 5252424.9845426)", "stop_id": "99913", "stop_name": "Angle Lake Station", "stop_code": "S01-T1", "stop_desc": "Angle Lake Station - 19955 28th Ave S SeaTac, WA 98188", "stop_lat": "47.423122", "stop_lon": "-122.297615", "zone_id": "24", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/angle-lake-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013333333333, "CatCenDeg": 1, "Clossnes": 2.526315789474, "CatClossnes": 4, "Eigen": "-1.7170485464768345e-11"},
+"geometry": {
+"coordinates": [-122.297615,47.423122],
+"type": "Point"
+        },
+        "id": "1000000000000050"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99914","location": "(552951.1877869652, 5252317.1734249545)", "stop_id": "99914", "stop_name": "Angle Lake Station", "stop_code": "S01-T2", "stop_desc": "Angle Lake Station - 19955 28th Ave S SeaTac, WA 98188", "stop_lat": "47.422154", "stop_lon": "-122.297958", "zone_id": "83", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/angle-lake-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013333333333, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1, "Eigen": "6.153403941884667e-13"},
+"geometry": {
+"coordinates": [-122.297958,47.422154],
+"type": "Point"
+        },
+        "id": "1000000000000051"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99903","location": "(553023.6668919513, 5254862.896099687)", "stop_id": "99903", "stop_name": "SeaTac/Airport Station", "stop_code": "C37-T2", "stop_desc": "SeaTac/Airport Station - International Blvd & S 176th St Seattle, WA 98188", "stop_lat": "47.445053", "stop_lon": "-122.296692", "zone_id": "80", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/seatac-airport-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 1.333333333333, "CatClossnes": 2, "Eigen": "-3.610280130211936e-12"},
+"geometry": {
+"coordinates": [-122.296692,47.445053],
+"type": "Point"
+        },
+        "id": "1000000000000052"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99905","location": "(553659.6173763482, 5256966.076280004)", "stop_id": "99905", "stop_name": "Tukwila Int'l Blvd Station", "stop_code": "C35-T2", "stop_desc": "Tukwila International Boulevard Station - 3651 Southcenter Blvd Tukwila, WA 98188", "stop_lat": "47.463924", "stop_lon": "-122.288002", "zone_id": "79", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/tukwila-international-boulevard-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 1.777777777778, "CatClossnes": 2, "Eigen": "2.7131272493285767e-12"},
+"geometry": {
+"coordinates": [-122.288002,47.463924],
+"type": "Point"
+        },
+        "id": "1000000000000053"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"55578","location": "(554270.9395682011, 5263532.471877317)", "stop_id": "55578", "stop_name": "Rainier Beach Station", "stop_code": "C29-T2", "stop_desc": "Rainier Beach Station - 9132 Martin Luther King Jr Way S Seattle, WA 98118", "stop_lat": "47.522953", "stop_lon": "-122.279083", "zone_id": "78", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/rainier-beach-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.000000000000, "CatClossnes": 3, "Eigen": "2.155932770719396e-12"},
+"geometry": {
+"coordinates": [-122.279083,47.522953],
+"type": "Point"
+        },
+        "id": "1000000000000054"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"55656","location": "(554058.4772668787, 5265258.704701131)", "stop_id": "55656", "stop_name": "Othello Station", "stop_code": "C27-T2", "stop_desc": "Othello Station - 7100 Martin Luther King Jr Way S Seattle, WA 98118", "stop_lat": "47.538502", "stop_lon": "-122.281693", "zone_id": "77", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/othello-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.133333333333, "CatClossnes": 3, "Eigen": "1.1472482983143365e-11"},
+"geometry": {
+"coordinates": [-122.281693,47.538502],
+"type": "Point"
+        },
+        "id": "1000000000000055"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"55778","location": "(553193.6235858563, 5267671.297218115)", "stop_id": "55778", "stop_name": "Columbia City Station", "stop_code": "C25-T2", "stop_desc": "Columbia City Station - 4818 Martin Luther King Jr Way S Seattle, WA 98108", "stop_lat": "47.560280", "stop_lon": "-122.292892", "zone_id": "76", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/columbia-city-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.222222222222, "CatClossnes": 3, "Eigen": "8.783234755263724e-12"},
+"geometry": {
+"coordinates": [-122.292892,47.56028],
+"type": "Point"
+        },
+        "id": "1000000000000056"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"55860","location": "(552802.5707526201, 5269525.217244694)", "stop_id": "55860", "stop_name": "Mount Baker Station", "stop_code": "C23-T2", "stop_desc": "Mount Baker Station & Transit Center - Rainier Ave S & S Forest St Seattle, WA 98144", "stop_lat": "47.576992", "stop_lon": "-122.297867", "zone_id": "75", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/mount-baker-station-transit-center", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.285714285714, "CatClossnes": 3, "Eigen": "-4.8029312735140164e-12"},
+"geometry": {
+"coordinates": [-122.297867,47.576992],
+"type": "Point"
+        },
+        "id": "1000000000000057"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99240","location": "(551782.1279988305, 5269814.612253849)", "stop_id": "99240", "stop_name": "Beacon Hill Station", "stop_code": "C19-T2", "stop_desc": "Beacon Hill Station - 2702 Beacon Ave S Seattle, WA 98144", "stop_lat": "47.579678", "stop_lon": "-122.311401", "zone_id": "74", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/beacon-hill-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.333333333333, "CatClossnes": 4, "Eigen": "1.254148886822531e-12"},
+"geometry": {
+"coordinates": [-122.311401,47.579678],
+"type": "Point"
+        },
+        "id": "1000000000000058"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99256","location": "(550588.4447960296, 5269905.396741049)", "stop_id": "99256", "stop_name": "SODO Station", "stop_code": "C15-T2", "stop_desc": "SODO Station - 500 S Lander St Seattle, WA 98134", "stop_lat": "47.580589", "stop_lon": "-122.327263", "zone_id": "73", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/sodo-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.370370370370, "CatClossnes": 4, "Eigen": "3.845082108751314e-12"},
+"geometry": {
+"coordinates": [-122.327263,47.580589],
+"type": "Point"
+        },
+        "id": "1000000000000059"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99260","location": "(550597.8509524561, 5271205.435773146)", "stop_id": "99260", "stop_name": "Stadium Station", "stop_code": "C13-T2", "stop_desc": "Stadium Station - 501 S Royal Brougham Way Seattle, WA 98134", "stop_lat": "47.592285", "stop_lon": "-122.326988", "zone_id": "72", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/stadium-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.400000000000, "CatClossnes": 4, "Eigen": "6.664480081876249e-12"},
+"geometry": {
+"coordinates": [-122.326988,47.592285],
+"type": "Point"
+        },
+        "id": "1000000000000060"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"40-621","location": "(550529.3763559117, 5271888.721337505)", "stop_id": "40-621", "stop_name": "Int'l Dist/Chinatown Station", "stop_code": "C09-T2", "stop_desc": "International District/Chinatown Station - 5th Ave and S Jackson St Seattle, WA 98104", "stop_lat": "47.598438", "stop_lon": "-122.327820", "zone_id": "71", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/international-district-chinatown-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.424242424242, "CatClossnes": 4, "Eigen": "1.7974264934299855e-11"},
+"geometry": {
+"coordinates": [-122.32782,47.598438],
+"type": "Point"
+        },
+        "id": "1000000000000061"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"40-532","location": "(550242.0955197836, 5272415.403991348)", "stop_id": "40-532", "stop_name": "Pioneer Square Station", "stop_code": "C07-T2", "stop_desc": "Pioneer Square Station - 3rd Ave & James St Seattle, WA 98104", "stop_lat": "47.603199", "stop_lon": "-122.331581", "zone_id": "21", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/pioneer-square-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.444444444444, "CatClossnes": 4, "Eigen": "-5.048846250395464e-13"},
+"geometry": {
+"coordinates": [-122.331581,47.603199],
+"type": "Point"
+        },
+        "id": "1000000000000062"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"40-565","location": "(549892.6630611134, 5272973.35591291)", "stop_id": "40-565", "stop_name": "University St Station", "stop_code": "C05-T2", "stop_desc": "University Street Station - 3rd Ave & Seneca St Seattle, WA 98101", "stop_lat": "47.608246", "stop_lon": "-122.336166", "zone_id": "21", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/university-street-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.461538461538, "CatClossnes": 4, "Eigen": "-9.349432438514917e-13"},
+"geometry": {
+"coordinates": [-122.336166,47.608246],
+"type": "Point"
+        },
+        "id": "1000000000000063"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1121","location": "(549917.955260973, 5273364.027374444)", "stop_id": "1121", "stop_name": "Westlake Station", "stop_code": "C03-T2", "stop_desc": "Westlake Station - 4th Ave & Pine St Seattle, WA 98101", "stop_lat": "47.611759", "stop_lon": "-122.335785", "zone_id": "21", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/westlake-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.476190476190, "CatClossnes": 4, "Eigen": "-7.063508796284939e-13"},
+"geometry": {
+"coordinates": [-122.335785,47.611759],
+"type": "Point"
+        },
+        "id": "1000000000000064"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99603","location": "(551093.7298333609, 5274248.045239785)", "stop_id": "99603", "stop_name": "Capitol Hill Station", "stop_code": "N03-T2", "stop_desc": "Capitol Hill Station - 140 Broadway E Seattle, WA 98102", "stop_lat": "47.619621", "stop_lon": "-122.320038", "zone_id": "82", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/capitol-hill-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.488888888889, "CatClossnes": 4, "Eigen": "-1.3189588564790416e-11"},
+"geometry": {
+"coordinates": [-122.320038,47.619621],
+"type": "Point"
+        },
+        "id": "1000000000000065"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"99605","location": "(552288.0623937742, 5277669.849412682)", "stop_id": "99605", "stop_name": "Univ of Washington Station", "stop_code": "N05-T2", "stop_desc": "University of Washington Station - 3720 Montlake Blvd NE Seattle, WA 98195", "stop_lat": "47.650312", "stop_lon": "-122.303736", "zone_id": "81", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/university-washington-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.500000000000, "CatClossnes": 4, "Eigen": "2.4180668777457443e-12"},
+"geometry": {
+"coordinates": [-122.303736,47.650312],
+"type": "Point"
+        },
+        "id": "1000000000000066"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"990001","location": "(551493.287596417, 5278725.665254851)", "stop_id": "990001", "stop_name": "U District Station", "stop_code": "N07-T1", "stop_desc": "U District Station - 4300 Brooklyn Ave NE", "stop_lat": "47.659875", "stop_lon": "-122.314194", "zone_id": "", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/u-district-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.509803921569, "CatClossnes": 4, "Eigen": "-5.050740177496274e-14"},
+"geometry": {
+"coordinates": [-122.314194,47.659875],
+"type": "Point"
+        },
+        "id": "1000000000000067"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"990003","location": "(551338.6868253142, 5280528.442640304)", "stop_id": "990003", "stop_name": "Roosevelt Station", "stop_code": "N09-T1", "stop_desc": "Roosevelt Station - 6501 12th Ave NE", "stop_lat": "47.676107", "stop_lon": "-122.316041", "zone_id": "", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/roosevelt-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.518518518519, "CatClossnes": 4, "Eigen": "-3.617951996152778e-12"},
+"geometry": {
+"coordinates": [-122.316041,47.676107],
+"type": "Point"
+        },
+        "id": "1000000000000068"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"990005","location": "(550391.4292650197, 5283471.679480567)", "stop_id": "990005", "stop_name": "Northgate Station", "stop_code": "N11-T1", "stop_desc": "Northgate Station - 10200 1st Ave NE", "stop_lat": "47.702662", "stop_lon": "-122.328320", "zone_id": "", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/northgate-station", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013333333333, "CatCenDeg": 1, "Clossnes": 2.526315789474, "CatClossnes": 4, "Eigen": "-1.0304138144981168e-12"},
+"geometry": {
+"coordinates": [-122.32832,47.702662],
+"type": "Point"
+        },
+        "id": "1000000000000069"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"TL_TD","location": "(543282.6388017125, 5231978.927169044)", "stop_id": "TL_TD", "stop_name": "Tacoma Dome Station", "stop_code": "", "stop_desc": "Tacoma Dome", "stop_lat": "47.239868", "stop_lon": "-122.428118", "zone_id": "TLZ", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/40_TL_TD", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.222222222222, "CatClossnes": 3, "Eigen": "23192.06139243297"},
+"geometry": {
+"coordinates": [-122.428118,47.239868],
+"type": "Point"
+        },
+        "id": "1000000000000070"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"TL_25","location": "(542822.8092040328, 5231888.110816911)", "stop_id": "TL_25", "stop_name": "South 25th Street Station", "stop_code": "", "stop_desc": "South 25th Street", "stop_lat": "47.239081", "stop_lon": "-122.434202", "zone_id": "TLZ", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/40_TL_25", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.053333333333, "CatCenDeg": 5, "Clossnes": 3.030303030303, "CatClossnes": 5, "Eigen": "41790.65059412752"},
+"geometry": {
+"coordinates": [-122.434202,47.239081],
+"type": "Point"
+        },
+        "id": "1000000000000071"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"TL_US","location": "(542634.9339157062, 5232529.564969883)", "stop_id": "TL_US", "stop_name": "Union Station", "stop_code": "", "stop_desc": "Union Station / South 19th Street", "stop_lat": "47.244865", "stop_lon": "-122.436623", "zone_id": "TLZ", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/40_TL_US", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.053333333333, "CatCenDeg": 5, "Clossnes": 3.703703703704, "CatClossnes": 5, "Eigen": "52112.08891696027"},
+"geometry": {
+"coordinates": [-122.436623,47.244865],
+"type": "Point"
+        },
+        "id": "1000000000000072"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"TL_CC","location": "(542485.2492779368, 5233043.15942418)", "stop_id": "TL_CC", "stop_name": "Convention Center Station", "stop_code": "", "stop_desc": "Convention Center / South 15th Street", "stop_lat": "47.249496", "stop_lon": "-122.438552", "zone_id": "TLZ", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/40_TL_CC", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.053333333333, "CatCenDeg": 5, "Clossnes": 3.703703703704, "CatClossnes": 5, "Eigen": "52112.08891696022"},
+"geometry": {
+"coordinates": [-122.438552,47.249496],
+"type": "Point"
+        },
+        "id": "1000000000000073"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"TL_CS","location": "(542430.8370006839, 5233380.4011096135)", "stop_id": "TL_CS", "stop_name": "Commerce Street Station", "stop_code": "", "stop_desc": "Commerce Street / South 11th Street", "stop_lat": "47.252534", "stop_lon": "-122.439239", "zone_id": "TLZ", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/40_TL_CS", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.053333333333, "CatCenDeg": 5, "Clossnes": 3.030303030303, "CatClossnes": 5, "Eigen": "41790.650594127495"},
+"geometry": {
+"coordinates": [-122.439239,47.252534],
+"type": "Point"
+        },
+        "id": "1000000000000074"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"TL_THD","location": "(542373.1316579332, 5233787.191315467)", "stop_id": "TL_THD", "stop_name": "Theater District Station", "stop_code": "", "stop_desc": "Theater District / South 9th Street", "stop_lat": "47.256198", "stop_lon": "-122.439963", "zone_id": "TLZ", "stop_url": "https://www.soundtransit.org/ride-with-us/stops-stations/40_TL_THD", "location_type": "", "parent_station": "", "stop_timezone": "America/Los_Angeles", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.026666666667, "CatCenDeg": 2, "Clossnes": 2.222222222222, "CatClossnes": 3, "Eigen": "23192.061392432995"},
+"geometry": {
+"coordinates": [-122.439963,47.256198],
+"type": "Point"
+        },
+        "id": "1000000000000075"
+
+}
+
+ ],
+"type": "FeatureCollection"
+}

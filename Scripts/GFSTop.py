@@ -810,7 +810,8 @@ def Runnzip(Path):
                 #     b=input('Press Enter ...')
             # b=input('Press Enter ...')
             except:
-                pass
+                print("Cannot decopress ")
+
         fw.close()
 
 def RunZipUnix(Path):
@@ -843,7 +844,7 @@ def RunZipUnix(Path):
                 #     b=input('Press Enter ...')
             # b=input('Press Enter ...')
             except:
-                pass
+                print("Cannot decopress ")
         fw.close()
 
 
@@ -1237,7 +1238,12 @@ if __name__ == "__main__":
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
+
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Boston_GTFS/MBTA_GTFS.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Seattle/gtfs_puget_sound_consolidated.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/opendata_ttc_schedules.zip")
+
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Oslo_GTFS/Oslo_gtfs.zip")
     # print("RequestedData",RequestedData)
     # b=input()
