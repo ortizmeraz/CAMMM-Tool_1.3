@@ -21,71 +21,92 @@ def CheckHeaders(HeaderData:dict,FileList:list)->boolean:
             NeedToGetHeaders=True
     return NeedToGetHeaders
 
-
-def ReadFile(Path:str,HeaderData:dict,FileList:str)->list:
-    ExitList=[]
-    NeedToGetHeaders=CheckHeaders(HeaderData=HeaderData,FileList=FileList)
-
-    for file in FileList:
+def GetHeaders(Path:str,FILES:list,HeaderData:dict)->dict:
+    for file in FILES:
         PathFile=Path+file+".txt"
         print("PathFile",PathFile)
         f=open(PathFile,"r",encoding="utf-8")
         Headerstr=f.readline()
-        HeaderLocal=Headerstr.split(',')
-        if NeedToGetHeaders:
-            HeaderData[file]=HeaderLocal
-        # print("HeaderData",file,HeaderData[file],type(HeaderData[file]))
-        
-        Lines=f.readlines()
-        for line in Lines:
-            Elements=line.split(',')
-            ReadyToStore={}
-            for idx,key in enumerate(HeaderLocal):
-                print(key)
+        CleanLineH=Headerstr.rstrip()
+        HeaderLocal=CleanLineH.split(',')
+        HeaderData[file]=HeaderLocal
+
+    return HeaderData
+
+def ReadFile(Path:str,HeaderData:dict,File:str)->list:
+    ExitList=[]
+
+    PathFile=Path+File+".txt"
+    print("PathFile",PathFile)
+    f=open(PathFile,"r",encoding="utf-8")
+    Headerstr=f.readline()
+    CleanLineH=Headerstr.rstrip()
+    HeaderLocal=CleanLineH.split(',')
+
+    # print(CleanLineH)
+    # print(HeaderData[File])
+    # # print(LocalKeys)
+    # if LocalKeys==HeaderData[File]:
+    #         print("I am confused")
+    # b=input("Delete")
+    
+    Lines=f.readlines()
+    for line in Lines:
+        CleanLine=line.rstrip('\n')
+        Elements=CleanLine.split(',')
+        ReadyToStore={}
+        for idx,key in enumerate(HeaderLocal):
+            # print("key:",key)
+            # print(HeaderLocal)
+            try:
                 ReadyToStore[key]=Elements[idx]
-            # print("Ready To Store Data:",ReadyToStore)
-            # b=input("Delete")
+            except:
+                ReadyToStore[key]="-"
+                print("No values for: ",key)
+            # if key in HeaderData.keys():
+            #     ReadyToStore[key]=Elements[idx]
+            # else:
+            #     ReadyToStore[key]=Elements[idx]
+        # print("Ready To Store Data:",ReadyToStore)
+        # b=input("Delete")
 
+        TempLis=[]
 
-            TempLis=[]
-            for head in HeaderData[file]:
-                TempLis.append(ReadyToStore[head])
-            ExitList.append(TempLis)
-        for line in ExitList:
-            print(line)
-        # print("Header",Header)
+        # LocalKeys=list(ReadyToStore.keys())
+        for head in HeaderData[File]:
 
-        # JuggleDict={}
-        # # print(Lines)
-        # ExitList=[]
-        # for line in Lines:
-        #     print(line)
-        #     Tempo=[]
-        #     # for head in Header:
+            TempLis.append(ReadyToStore[head])
+        ExitList.append(TempLis)
+    for line in ExitList:
+        print(HeaderData[File])
+        print(line)
+    print("------------------------------------------------------------------------\n"*2)
+    return ExitList
+
 
 
 
 
 def Main_Func(ListFiles:list,WorkPath:str)->None:
-    CleanFiles(DelPath=WorkPath)
 
-    Files=['Agency','Routes','Trips','Stop_times','Stops','Shapes']
+    FILES=['Agency','Routes','Trips','Stop_times','Stops','Shapes']
 
     HeaderData={}
-    HeaderData['Agency']=[]
-    HeaderData['Routes']=[]
-    HeaderData['Trips']=[]
-    HeaderData['Stop_times']=[]
-    HeaderData['Stops']=[]
-    HeaderData['Shapes']=[]
+    for file in FILES:
+        HeaderData[file]=[]
+    for workZip in ListFiles:
+        CleanFiles(DelPath=WorkPath)
+        Decomp(inPath=workZip,OutPath=WorkPath)
 
-    Decomp(inPath=listPath[0],OutPath=OutTemporaryPath)
-
-    ReadFile(Path=OutTemporaryPath,HeaderData=HeaderData,FileList=Files)
-
-
-    b=input("Delete")
-    CleanFiles(DelPath=WorkPath)
+        for file in FILES:
+            NeedToGetHeaders=CheckHeaders(HeaderData=HeaderData,FileList=FILES)
+            if NeedToGetHeaders:
+                HeaderData=GetHeaders(Path=WorkPath,FILES=FILES,HeaderData=HeaderData)
+            ReadFile(Path=WorkPath,HeaderData=HeaderData,File=file)
+            print("file",file)
+            b=input("Delete")
+        CleanFiles(DelPath=WorkPath)
+    print("----------------------------------------------------------------------------------------------------------------"*5)
 
 
 
@@ -96,6 +117,8 @@ if __name__=="__main__":
         print("Run")
         listPath=[]
         listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/opendata_ttc_schedules.zip")
+        listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/burlington.zip")
+        listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/York.zip")
         OutTemporaryPath=r"/mnt/e/GitHub/CAMMM-Tool_1.3/SampleData/GTFZzip/"
         Main_Func(ListFiles=listPath,WorkPath=OutTemporaryPath)
     else:
