@@ -43,57 +43,67 @@ def ReadFile(Path:str,HeaderData:dict,File:str)->list:
     CleanLineH=Headerstr.rstrip()
     HeaderLocal=CleanLineH.split(',')
 
-    # print(CleanLineH)
-    # print(HeaderData[File])
-    # # print(LocalKeys)
-    # if LocalKeys==HeaderData[File]:
-    #         print("I am confused")
-    # b=input("Delete")
-    
+    print("HeaderLocal     ",HeaderLocal)
+    print("HeaderData[File]",HeaderData[File])
+
     Lines=f.readlines()
     for line in Lines:
         CleanLine=line.rstrip('\n')
         Elements=CleanLine.split(',')
         ReadyToStore={}
         for idx,key in enumerate(HeaderLocal):
-            # print("key:",key)
-            # print(HeaderLocal)
-            try:
-                ReadyToStore[key]=Elements[idx]
-            except:
-                ReadyToStore[key]="-"
-                print("No values for: ",key)
-            # if key in HeaderData.keys():
-            #     ReadyToStore[key]=Elements[idx]
-            # else:
-            #     ReadyToStore[key]=Elements[idx]
-        # print("Ready To Store Data:",ReadyToStore)
-        # b=input("Delete")
-
+            ReadyToStore[key]=Elements[idx]
+  
         TempLis=[]
-
         # LocalKeys=list(ReadyToStore.keys())
         for head in HeaderData[File]:
+            try:
+                # print("Key found")
+                TempLis.append(ReadyToStore[head])
+            except:
+                # print("head",head)
+                # print("Key found")
+                TempLis.append("-")
+            # if key in HeaderLocal:
+            #     print("Key found")
+            #     TempLis.append(ReadyToStore[head])
+            # else:
+            #     print("Key found")
 
-            TempLis.append(ReadyToStore[head])
+            #     TempLis.append("-")
         ExitList.append(TempLis)
-    for line in ExitList:
-        print(HeaderData[File])
-        print(line)
-    print("------------------------------------------------------------------------\n"*2)
+    # for line in ExitList:
+        # print(HeaderData[File])
+        # print(line)
+    # print("------------------------------------------------------------------------\n"*2)
     return ExitList
 
 
+def CheckDataQuality(FILES:list,DATA:dict)->None:
+    for file in FILES:
+        Change=False
+        print("file:",file)
+        for idx,i in enumerate(DATA[file]):
+            print(len(i),end=",")
+            if len(i)!=len(DATA[file][idx-1]):
+                Change=True
+                print("-----\n"*3)
+        print("Status of change",Change)
+        b=input("Delete")
+        print("\n"*5)
 
-
+def WriteFiles()->None:
+    pass
 
 def Main_Func(ListFiles:list,WorkPath:str)->None:
 
     FILES=['Agency','Routes','Trips','Stop_times','Stops','Shapes']
 
     HeaderData={}
+    DATA={}
     for file in FILES:
         HeaderData[file]=[]
+        DATA[file]=[]
     for workZip in ListFiles:
         CleanFiles(DelPath=WorkPath)
         Decomp(inPath=workZip,OutPath=WorkPath)
@@ -102,10 +112,15 @@ def Main_Func(ListFiles:list,WorkPath:str)->None:
             NeedToGetHeaders=CheckHeaders(HeaderData=HeaderData,FileList=FILES)
             if NeedToGetHeaders:
                 HeaderData=GetHeaders(Path=WorkPath,FILES=FILES,HeaderData=HeaderData)
-            ReadFile(Path=WorkPath,HeaderData=HeaderData,File=file)
-            print("file",file)
-            b=input("Delete")
+            TempData=ReadFile(Path=WorkPath,HeaderData=HeaderData,File=file)
+            DATA[file]=DATA[file]+TempData
+            # print("file",file)
+            # print("workZip",workZip)
+            # b=input("Delete")
         CleanFiles(DelPath=WorkPath)
+    # CheckDataQuality(FILES=FILES,DATA=DATA)
+    
+
     print("----------------------------------------------------------------------------------------------------------------"*5)
 
 
