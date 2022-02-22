@@ -24,7 +24,7 @@ def CheckHeaders(HeaderData:dict,FileList:list)->boolean:
 def GetHeaders(Path:str,FILES:list,HeaderData:dict)->dict:
     for file in FILES:
         PathFile=Path+file+".txt"
-        print("PathFile",PathFile)
+        # print("PathFile",PathFile)
         f=open(PathFile,"r",encoding="utf-8")
         Headerstr=f.readline()
         CleanLineH=Headerstr.rstrip()
@@ -43,8 +43,8 @@ def ReadFile(Path:str,HeaderData:dict,File:str)->list:
     CleanLineH=Headerstr.rstrip()
     HeaderLocal=CleanLineH.split(',')
 
-    print("HeaderLocal     ",HeaderLocal)
-    print("HeaderData[File]",HeaderData[File])
+    # print("HeaderLocal     ",HeaderLocal)
+    # print("HeaderData[File]",HeaderData[File])
 
     Lines=f.readlines()
     for line in Lines:
@@ -88,14 +88,29 @@ def CheckDataQuality(FILES:list,DATA:dict)->None:
             if len(i)!=len(DATA[file][idx-1]):
                 Change=True
                 print("-----\n"*3)
+        print("CheckDataQuality")
         print("Status of change",Change)
         b=input("Delete")
         print("\n"*5)
 
-def WriteFiles()->None:
-    pass
+def WriteFiles(FILES:list,ExitPath:str,DATA:dict)->None:
+    for File in FILES:
+        print(File)
+        ExitPathFile=ExitPath+File+".txt"
+        print(ExitPathFile,len(DATA[File]),type(DATA[File]))
+        f = open(ExitPathFile, "w")
+        Text=""
+        for line in DATA[File]:
+            TextLine=','.join(line)
+            Text=Text+TextLine+"\n"
+        print(Text)
+        b=input("Delete")
+        f.write("Woops! I have deleted the content!")
+        f.close()
 
-def Main_Func(ListFiles:list,WorkPath:str)->None:
+
+
+def Main_Func(ListFiles:list,WorkPath:str,ExitPath:str)->None:
 
     FILES=['Agency','Routes','Trips','Stop_times','Stops','Shapes']
 
@@ -119,6 +134,7 @@ def Main_Func(ListFiles:list,WorkPath:str)->None:
             # b=input("Delete")
         CleanFiles(DelPath=WorkPath)
     # CheckDataQuality(FILES=FILES,DATA=DATA)
+    WriteFiles(FILES=FILES,ExitPath=ExitPath,DATA=DATA)
     
 
     print("----------------------------------------------------------------------------------------------------------------"*5)
@@ -135,6 +151,7 @@ if __name__=="__main__":
         listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/burlington.zip")
         listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/York.zip")
         OutTemporaryPath=r"/mnt/e/GitHub/CAMMM-Tool_1.3/SampleData/GTFZzip/"
-        Main_Func(ListFiles=listPath,WorkPath=OutTemporaryPath)
+        ExitPath=r"/mnt/e/GitHub/CAMMM-Tool_1.3/Data/"
+        Main_Func(ListFiles=listPath,WorkPath=OutTemporaryPath,ExitPath=ExitPath)
     else:
         print("Please run in LINUX/UNIX")
