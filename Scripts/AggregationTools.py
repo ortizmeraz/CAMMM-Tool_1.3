@@ -386,9 +386,11 @@ def CreateNodes(SuperRange,NodeRange,ListofStops,DataStops):
     # print("Super NODES")
     # for Sn in SuperNodeList:
     #     print(Sn)
+    # b=input("CHECK THE NODES!!!!!!!!")
+
     ListStops=[]
     if LightCond:
-        print(type(LightStops))
+        # print(type(LightStops))
         for key in LightStops.keys():
             # print(key)
             # print(LightStops[key]['0'])
@@ -406,7 +408,7 @@ def CreateNodes(SuperRange,NodeRange,ListofStops,DataStops):
     # for Sn in ListStops:
     #     print(Sn.Id,Sn.Routes,Sn.CoordX,Sn.CoordY)
     if BusesCond:
-        print(type(BusesStops))
+        # print(type(BusesStops))
         for key in BusesStops.keys():
             # print(key)
             # print(BusesStops[key]['0'])
@@ -423,12 +425,19 @@ def CreateNodes(SuperRange,NodeRange,ListofStops,DataStops):
                 ListStops=ListStops+ConvertToStopObj(List=Outbound,Route=key,DataStops=DataStops)
 
     CompleteSuperNodeList,IsolatedStops=AddStopsSuperNode(SuperNodeList=SuperNodeList,ListStops=ListStops,Range=SuperRange)
-
-    
+    # Check point
+    # for i in CompleteSuperNodeList[:10]:
+    #     print(i,dir(i),type(i))
+    #     for j in i:
+    #         print("\t",j,"\n",dir(j),type(j))
+    #     print("\n"*10)
+    # b=input("CHECK THE NODES!!!!!!!!")
+  
     CompleteSuperNodeList+=AgregateStops(ListBusStops=IsolatedStops,Range=NodeRange)
+    # print("Begining of the last check\n"*20)
+    # for i in CompleteSuperNodeList:
+    #     print(i[5])
+    # b=input("CHECK THE NODES!!!!!!!!")
 
-    for i in CompleteSuperNodeList[:10]:
-        print(i)
-    b=input("CHECK THE NODES!!!!!!!!")
     return CompleteSuperNodeList
     # print(len(CompleteSuperNodeList))

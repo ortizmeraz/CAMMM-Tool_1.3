@@ -765,13 +765,14 @@ def AgregatedGTFSStopsToNetwork(AgregatedNodes,EdgeList):
     for idx,Node in enumerate(AgregatedNodes):
 
         print("Node",Node)
-        b=input("CHECK THE NODE HERE")
+        # b=input("CHECK THE NODE HERE")
         Xval=Node[0]
         Yval=Node[1]
         NumRouts=Node[2]
         Routes=Node[3]
         ContainedStops=Node[4]
         Status=Node[5]
+        SuperNode=Node[5]
         # print("Node",Node,"\n")
         # print("ContainedStops",ContainedStops)
         # print("ContainedStops[0]",ContainedStops[0],type(ContainedStops[0]))
@@ -787,7 +788,8 @@ def AgregatedGTFSStopsToNetwork(AgregatedNodes,EdgeList):
         Node_Properties['BusStopCount']=Weigth
         Node_Properties['BusStopList']=ContainedStops
         Node_Properties['Line']=Routes
-        G.add_node(idx, pos=(Xval,Yval),weight=Weigth,Routes=Routes,ContainedStops=ContainedStops)
+        Node_Properties['SuperNode']=SuperNode
+        G.add_node(idx, pos=(Xval,Yval),weight=Weigth,Routes=Routes,ContainedStops=ContainedStops,SuperNode=SuperNode)
         # G.add_node(Node, time=Dic[Node])
     # for key in StopToNode.keys():
         # print(key,StopToNode[key])
@@ -1025,6 +1027,7 @@ def ExportGeoJsonPoints(ListOfPoints,PChar,NetworkIndex):
         return Text
 
     Keys=list(PChar.keys())
+    # b=input("LIST OF VARIABLES!!!!!")
     # print("Keys:",Keys)
     # b=input()
     # print(ListOfPoints)
@@ -1069,7 +1072,7 @@ def ExportGeoJsonPoints(ListOfPoints,PChar,NetworkIndex):
 
 
         for key in Keys:
-            print(key)
+            # print("key",key)
             # b=input("ANOTHER CHECK POINT IN THE LAST PART OF THE PUSH")
             #  Point=int(Point)
             # print("############################################\n"*3)
@@ -1132,14 +1135,17 @@ def ExportGeoJsonPoints(ListOfPoints,PChar,NetworkIndex):
 def ListToGeoJson(ListBusStops):
     
     ListofPoints=[]
-    PropCharac={'Pos':{},'weigth':{},'Line':{}}
+    PropCharac={'Pos':{},'weigth':{},'Line':{},'SuperNode':{}}
     for idx,Point in enumerate(ListBusStops):
         Point=list(Point)
-        # print(Point,type(Point))
+        print(Point,type(Point))
+        # b=input(".......................................check point")
         ListofPoints.append(idx)
         PropCharac['Pos'][idx]=[Point[0],Point[1]]
         PropCharac['weigth'][idx]=Point[2]
         PropCharac['Line'][idx]=Point[3]
+        # PropCharac['Line'][idx]=Point[5]
+
 
         # print(idx,'Pos',PropCharac['Pos'][idx],'weigth',PropCharac['weigth'][idx],'Line',PropCharac['Line'][idx])
 
@@ -1149,8 +1155,8 @@ def ListToGeoJson(ListBusStops):
 
 def NetWorkToGeoJson(G,NetworkIndex):
     # USES TK to get path
-    # print(G)
-    # b=input()
+    print(G,type(G),dir(G))
+    # b=input("STOP HERE")
 
 
     PointCharacteristics={}
