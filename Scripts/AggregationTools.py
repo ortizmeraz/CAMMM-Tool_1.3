@@ -124,7 +124,7 @@ def AgregateHeavyTransit(ListBusStops,Range):
             pass
             # print("next")
         else:
-            print("Id",Bs1.Id,"Len",len(Bs1.Cluster),"X:",Bs1.CoordX,"\tY:",Bs1.CoordY,"          Routes",Bs1.Routes)
+            print("Id",Bs1.Id,"Len",len(Bs1.Cluster),"X:",Bs1.CoordX,"\tY:",Bs1.CoordY,"Routes",Bs1.Routes)
             print("Appends", end= " ")
             print("EPSG:",Bs1.Epsg)
             # b=input()
@@ -179,10 +179,10 @@ def GetEPSG(letter,zone):
     if letter in South:
         return "325"+str(zone)+letter
 
-def ConvertStations(ListDicts,Route,DataStops,Systems):
+def ConvertStations(ListDicts,Route,DataStops,Systems,SuperNode):
 
     class Station:
-        def __init__(self,Id="",CoordX=0,CoordY=0,Epsg="",Routes=[],Cluster=[],System=[]):
+        def __init__(self,Id="",CoordX=0,CoordY=0,Epsg="",Routes=[],Cluster=[],System=[],SuperNode=0):
             self.Id=Id
             self.CoordX=CoordX
             self.CoordY=CoordY
@@ -190,6 +190,7 @@ def ConvertStations(ListDicts,Route,DataStops,Systems):
             self.Routes=[]
             self.Cluster=[]
             self.System=[]
+            self.SuperNode=SuperNode
 
     ListStation=[]
     for idx,Stations in enumerate(ListDicts):
@@ -209,6 +210,7 @@ def ConvertStations(ListDicts,Route,DataStops,Systems):
             Sta.Routes=[Route]
             # Sta.Cluster=[]
             Sta.System=[Systems[idx]]
+            Sta.SuperNode=SuperNode
             ListStation.append(Sta)
             ListStation[idx]=Sta
     #         print(Sta.Id,Sta.CoordX,Sta.CoordY)
@@ -337,10 +339,10 @@ def CreateNodes(SuperRange,NodeRange,ListofStops,DataStops):
             # print("··························",DataStops[Outbound[0]])
             if Innbound == Outbound:
                 # print("They match")
-                LiSta=ConvertStations(ListDicts=[Innbound],Route=MetroRoute,DataStops=DataStops,Systems=["1"])
+                LiSta=ConvertStations(ListDicts=[Innbound],Route=MetroRoute,DataStops=DataStops,Systems=["1"],SuperNode=1)
                 ListSations=ListSations+LiSta
             else:
-                LiSta=ConvertStations(ListDicts=[Innbound,Outbound],Route=MetroRoute,DataStops=DataStops,Systems=["1","1"])
+                LiSta=ConvertStations(ListDicts=[Innbound,Outbound],Route=MetroRoute,DataStops=DataStops,Systems=["1","1"],SuperNode=1)
                 ListSations=ListSations+LiSta
 
         for MetroRoute in MetroStops.keys():
@@ -352,10 +354,10 @@ def CreateNodes(SuperRange,NodeRange,ListofStops,DataStops):
             # print("··························",DataStops[Outbound[0]])
             if Innbound == Outbound:
                 # print("They match")
-                LiSta=ConvertStations(ListDicts=[Innbound],Route=MetroRoute,DataStops=DataStops,Systems=["2"])
+                LiSta=ConvertStations(ListDicts=[Innbound],Route=MetroRoute,DataStops=DataStops,Systems=["2"],SuperNode=1)
                 ListSations=ListSations+LiSta
             else:
-                LiSta=ConvertStations(ListDicts=[Innbound,Outbound],Route=MetroRoute,DataStops=DataStops,Systems=["2","2"])
+                LiSta=ConvertStations(ListDicts=[Innbound,Outbound],Route=MetroRoute,DataStops=DataStops,Systems=["2","2"],SuperNode=1)
                 ListSations=ListSations+LiSta
     elif MetroCond and ManStper:
         # SuNode=SuperNodeMetro(MetroStops=MetroStops,DataStops=DataStops)
@@ -372,18 +374,18 @@ def CreateNodes(SuperRange,NodeRange,ListofStops,DataStops):
             # print("··························",DataStops[Outbound[0]])
             if Innbound == Outbound:
                 # print("They match")
-                LiSta=ConvertStations(ListDicts=[Innbound],Route=MetroRoute,DataStops=DataStops,Systems=["2"])
+                LiSta=ConvertStations(ListDicts=[Innbound],Route=MetroRoute,DataStops=DataStops,Systems=["2"],SuperNode=1)
 
             else:
-                LiSta=ConvertStations(ListDicts=[Innbound,Outbound],Route=MetroRoute,DataStops=DataStops,Systems=["2","2"])
+                LiSta=ConvertStations(ListDicts=[Innbound,Outbound],Route=MetroRoute,DataStops=DataStops,Systems=["2","2"],SuperNode=1)
             ListSations=ListSations+LiSta
     # print("................................",ListSations)
     # for st in ListSations:
     #     print(st.Id,st.CoordX,st.CoordY,st.System)
     SuperNodeList=AgregateHeavyTransit(ListBusStops=ListSations,Range=100)
     # print("Super NODES")
-    for Sn in SuperNodeList:
-        print(Sn)
+    # for Sn in SuperNodeList:
+    #     print(Sn)
     ListStops=[]
     if LightCond:
         print(type(LightStops))
@@ -427,5 +429,6 @@ def CreateNodes(SuperRange,NodeRange,ListofStops,DataStops):
 
     for i in CompleteSuperNodeList[:10]:
         print(i)
+    b=input("CHECK THE NODES!!!!!!!!")
     return CompleteSuperNodeList
     # print(len(CompleteSuperNodeList))

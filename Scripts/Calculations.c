@@ -1085,6 +1085,24 @@ static CYTHON_INLINE int __Pyx_PyList_Append(PyObject* list, PyObject* x) {
         __Pyx__ArgTypeTest(obj, type, name, exact))
 static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
 
+/* StringJoin.proto */
+#if PY_MAJOR_VERSION < 3
+#define __Pyx_PyString_Join __Pyx_PyBytes_Join
+#define __Pyx_PyBaseString_Join(s, v) (PyUnicode_CheckExact(s) ? PyUnicode_Join(s, v) : __Pyx_PyBytes_Join(s, v))
+#else
+#define __Pyx_PyString_Join PyUnicode_Join
+#define __Pyx_PyBaseString_Join PyUnicode_Join
+#endif
+#if CYTHON_COMPILING_IN_CPYTHON
+    #if PY_MAJOR_VERSION < 3
+    #define __Pyx_PyBytes_Join _PyString_Join
+    #else
+    #define __Pyx_PyBytes_Join _PyBytes_Join
+    #endif
+#else
+static CYTHON_INLINE PyObject* __Pyx_PyBytes_Join(PyObject* sep, PyObject* values);
+#endif
+
 /* Import.proto */
 static PyObject *__Pyx_Import(PyObject *name, PyObject *from_list, int level);
 
@@ -1159,20 +1177,25 @@ static float __pyx_f_12Calculations_MultTest(float, float, int __pyx_skip_dispat
 static float __pyx_f_12Calculations_MenFunc(PyObject *); /*proto*/
 static float __pyx_f_12Calculations_AveragCoords(PyObject *, int __pyx_skip_dispatch); /*proto*/
 static PyObject *__pyx_f_12Calculations_NaturalBreaksNumpyList(PyObject *, int, int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_12Calculations_ListToText(PyObject *, int __pyx_skip_dispatch); /*proto*/
 #define __Pyx_MODULE_NAME "Calculations"
 extern int __pyx_module_is_main_Calculations;
 int __pyx_module_is_main_Calculations = 0;
 
 /* Implementation of 'Calculations' */
 static PyObject *__pyx_builtin_sum;
+static const char __pyx_k_[] = "";
 static const char __pyx_k_A[] = "A";
 static const char __pyx_k_B[] = "B";
+static const char __pyx_k__2[] = ",";
+static const char __pyx_k__3[] = "\n";
 static const char __pyx_k_P1x[] = "P1x";
 static const char __pyx_k_P1y[] = "P1y";
 static const char __pyx_k_P2x[] = "P2x";
 static const char __pyx_k_P2y[] = "P2y";
 static const char __pyx_k_sum[] = "sum";
 static const char __pyx_k_Data[] = "Data";
+static const char __pyx_k_join[] = "join";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_math[] = "math";
 static const char __pyx_k_name[] = "__name__";
@@ -1186,6 +1209,7 @@ static const char __pyx_k_Classess[] = "Classess";
 static const char __pyx_k_nb_class[] = "nb_class";
 static const char __pyx_k_jenks_breaks[] = "jenks_breaks";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
+static PyObject *__pyx_kp_s_;
 static PyObject *__pyx_n_s_A;
 static PyObject *__pyx_n_s_B;
 static PyObject *__pyx_n_s_Classess;
@@ -1196,10 +1220,13 @@ static PyObject *__pyx_n_s_P1x;
 static PyObject *__pyx_n_s_P1y;
 static PyObject *__pyx_n_s_P2x;
 static PyObject *__pyx_n_s_P2y;
+static PyObject *__pyx_kp_s__2;
+static PyObject *__pyx_kp_s__3;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_jenks_breaks;
 static PyObject *__pyx_n_s_jenkspy;
+static PyObject *__pyx_n_s_join;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_math;
 static PyObject *__pyx_n_s_name;
@@ -1213,6 +1240,7 @@ static PyObject *__pyx_pf_12Calculations_4SumTest(CYTHON_UNUSED PyObject *__pyx_
 static PyObject *__pyx_pf_12Calculations_6MultTest(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_A, float __pyx_v_B); /* proto */
 static PyObject *__pyx_pf_12Calculations_8AveragCoords(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_inListStops); /* proto */
 static PyObject *__pyx_pf_12Calculations_10NaturalBreaksNumpyList(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_Data, int __pyx_v_Classess); /* proto */
+static PyObject *__pyx_pf_12Calculations_12ListToText(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_DATA); /* proto */
 /* Late includes */
 
 /* "Calculations.pyx":5
@@ -2381,6 +2409,181 @@ static PyObject *__pyx_pf_12Calculations_10NaturalBreaksNumpyList(CYTHON_UNUSED 
   return __pyx_r;
 }
 
+/* "Calculations.pyx":59
+ * 
+ * 
+ * cpdef ListToText(list DATA):             # <<<<<<<<<<<<<<
+ *     cdef str Text
+ *     Text=""
+ */
+
+static PyObject *__pyx_pw_12Calculations_13ListToText(PyObject *__pyx_self, PyObject *__pyx_v_DATA); /*proto*/
+static PyObject *__pyx_f_12Calculations_ListToText(PyObject *__pyx_v_DATA, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  PyObject *__pyx_v_Text = 0;
+  PyObject *__pyx_v_TextLine = 0;
+  PyObject *__pyx_v_line = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  Py_ssize_t __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("ListToText", 0);
+
+  /* "Calculations.pyx":61
+ * cpdef ListToText(list DATA):
+ *     cdef str Text
+ *     Text=""             # <<<<<<<<<<<<<<
+ *     cdef str TextLine
+ *     for line in DATA:
+ */
+  __Pyx_INCREF(__pyx_kp_s_);
+  __pyx_v_Text = __pyx_kp_s_;
+
+  /* "Calculations.pyx":63
+ *     Text=""
+ *     cdef str TextLine
+ *     for line in DATA:             # <<<<<<<<<<<<<<
+ *         TextLine=','.join(line)
+ *         Text=Text+TextLine+"\n"
+ */
+  if (unlikely(__pyx_v_DATA == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
+    __PYX_ERR(0, 63, __pyx_L1_error)
+  }
+  __pyx_t_1 = __pyx_v_DATA; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
+  for (;;) {
+    if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_1)) break;
+    #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    __pyx_t_3 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_3); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 63, __pyx_L1_error)
+    #else
+    __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    #endif
+    __Pyx_XDECREF_SET(__pyx_v_line, __pyx_t_3);
+    __pyx_t_3 = 0;
+
+    /* "Calculations.pyx":64
+ *     cdef str TextLine
+ *     for line in DATA:
+ *         TextLine=','.join(line)             # <<<<<<<<<<<<<<
+ *         Text=Text+TextLine+"\n"
+ *     return Text
+ */
+    __pyx_t_3 = __Pyx_PyString_Join(__pyx_kp_s__2, __pyx_v_line); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    if (!(likely(PyString_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_3)->tp_name), 0))) __PYX_ERR(0, 64, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_TextLine, ((PyObject*)__pyx_t_3));
+    __pyx_t_3 = 0;
+
+    /* "Calculations.pyx":65
+ *     for line in DATA:
+ *         TextLine=','.join(line)
+ *         Text=Text+TextLine+"\n"             # <<<<<<<<<<<<<<
+ *     return Text
+ */
+    __pyx_t_3 = PyNumber_Add(__pyx_v_Text, __pyx_v_TextLine); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_4 = PyNumber_Add(__pyx_t_3, __pyx_kp_s__3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF_SET(__pyx_v_Text, ((PyObject*)__pyx_t_4));
+    __pyx_t_4 = 0;
+
+    /* "Calculations.pyx":63
+ *     Text=""
+ *     cdef str TextLine
+ *     for line in DATA:             # <<<<<<<<<<<<<<
+ *         TextLine=','.join(line)
+ *         Text=Text+TextLine+"\n"
+ */
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "Calculations.pyx":66
+ *         TextLine=','.join(line)
+ *         Text=Text+TextLine+"\n"
+ *     return Text             # <<<<<<<<<<<<<<
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_Text);
+  __pyx_r = __pyx_v_Text;
+  goto __pyx_L0;
+
+  /* "Calculations.pyx":59
+ * 
+ * 
+ * cpdef ListToText(list DATA):             # <<<<<<<<<<<<<<
+ *     cdef str Text
+ *     Text=""
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("Calculations.ListToText", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_Text);
+  __Pyx_XDECREF(__pyx_v_TextLine);
+  __Pyx_XDECREF(__pyx_v_line);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12Calculations_13ListToText(PyObject *__pyx_self, PyObject *__pyx_v_DATA); /*proto*/
+static PyObject *__pyx_pw_12Calculations_13ListToText(PyObject *__pyx_self, PyObject *__pyx_v_DATA) {
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("ListToText (wrapper)", 0);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_DATA), (&PyList_Type), 1, "DATA", 1))) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_r = __pyx_pf_12Calculations_12ListToText(__pyx_self, ((PyObject*)__pyx_v_DATA));
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12Calculations_12ListToText(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_DATA) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("ListToText", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_12Calculations_ListToText(__pyx_v_DATA, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("Calculations.ListToText", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
 static PyMethodDef __pyx_methods[] = {
   {"CalcDistance", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_12Calculations_1CalcDistance, METH_VARARGS|METH_KEYWORDS, 0},
   {"GetMediumPoint", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_12Calculations_3GetMediumPoint, METH_VARARGS|METH_KEYWORDS, 0},
@@ -2388,6 +2591,7 @@ static PyMethodDef __pyx_methods[] = {
   {"MultTest", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_12Calculations_7MultTest, METH_VARARGS|METH_KEYWORDS, 0},
   {"AveragCoords", (PyCFunction)__pyx_pw_12Calculations_9AveragCoords, METH_O, 0},
   {"NaturalBreaksNumpyList", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_12Calculations_11NaturalBreaksNumpyList, METH_VARARGS|METH_KEYWORDS, 0},
+  {"ListToText", (PyCFunction)__pyx_pw_12Calculations_13ListToText, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -2433,6 +2637,7 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
+  {&__pyx_kp_s_, __pyx_k_, sizeof(__pyx_k_), 0, 0, 1, 0},
   {&__pyx_n_s_A, __pyx_k_A, sizeof(__pyx_k_A), 0, 0, 1, 1},
   {&__pyx_n_s_B, __pyx_k_B, sizeof(__pyx_k_B), 0, 0, 1, 1},
   {&__pyx_n_s_Classess, __pyx_k_Classess, sizeof(__pyx_k_Classess), 0, 0, 1, 1},
@@ -2443,10 +2648,13 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_P1y, __pyx_k_P1y, sizeof(__pyx_k_P1y), 0, 0, 1, 1},
   {&__pyx_n_s_P2x, __pyx_k_P2x, sizeof(__pyx_k_P2x), 0, 0, 1, 1},
   {&__pyx_n_s_P2y, __pyx_k_P2y, sizeof(__pyx_k_P2y), 0, 0, 1, 1},
+  {&__pyx_kp_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 0},
+  {&__pyx_kp_s__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 0, 1, 0},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_jenks_breaks, __pyx_k_jenks_breaks, sizeof(__pyx_k_jenks_breaks), 0, 0, 1, 1},
   {&__pyx_n_s_jenkspy, __pyx_k_jenkspy, sizeof(__pyx_k_jenkspy), 0, 0, 1, 1},
+  {&__pyx_n_s_join, __pyx_k_join, sizeof(__pyx_k_join), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_math, __pyx_k_math, sizeof(__pyx_k_math), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
@@ -3384,6 +3592,13 @@ static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *nam
         name, type->tp_name, Py_TYPE(obj)->tp_name);
     return 0;
 }
+
+/* StringJoin */
+#if !CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyBytes_Join(PyObject* sep, PyObject* values) {
+    return PyObject_CallMethodObjArgs(sep, __pyx_n_s_join, values, NULL);
+}
+#endif
 
 /* Import */
 static PyObject *__Pyx_Import(PyObject *name, PyObject *from_list, int level) {

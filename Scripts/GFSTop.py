@@ -968,7 +968,7 @@ def StoreCityData(NameOfCity,TransitChar,NumberLines):
 
 
 def GTFS(Path,RequestedData):
-    print("Enters the function")
+    print("Enters the Main function")
     print("Finish unpacking")
     if os.name=='nt':
         Runnzip(Path=Path)
@@ -1034,6 +1034,7 @@ def GTFS(Path,RequestedData):
     DataSequence,DataTrips,DataRoutes,DataStops=ReadGTFS(PathRoutes=O_PathRoutes,PathTrips=O_PathTrips,PathStopTimes=O_PathStopTimes,PathStops=O_PathStops)
     print("End - Step 1")
     # #############################################################
+    print("Start - Step 2")
     GetTypesofTransport(InputDict=DataRoutes)
     # GetNumberOfStops(InputDict=DataStops)
     # print(type(DataStops))
@@ -1042,7 +1043,6 @@ def GTFS(Path,RequestedData):
     #     print("\n\n")
     #     for key2 in DataTrips[key]:
     #         print(DataTrips[key][key2])
-    print("Start - Step 2")
     ListofStops=GtfsRouteCleaning(DataSequence=DataSequence,DataTrips=DataTrips,DataRoutes=DataRoutes,DataStops=DataStops)
     print("ListofData: ",len(ListofStops))
     print("End - Step 2")
@@ -1126,7 +1126,8 @@ def GTFS(Path,RequestedData):
         # networkx.readwrite.nx_shp.write_shp(net,r"D:\GitHub\CAMMM-Tool_1.3\Output")
     if RequestedData["NodeNetworkAnalysis"]==True:
         Nodes=CreateNodes(SuperRange=400,NodeRange=75,ListofStops=ListofStops,DataStops=DataStops)
-
+        print("Type of ListofStops",type(ListofStops))
+        b=input("Type of ListofStops")
         # EdgeList,EdgeLine=GetEdgeLists(EdgeData)
         # ListObjStops=ListGTFStoObjectBusStop(EdgeData=EdgeData,DataStops=DataStops,Data_Buses=Data_Buses)
     #     Nodes=Agregate(ListStops=ListObjStops,Range=75)
@@ -1146,7 +1147,7 @@ def GTFS(Path,RequestedData):
     # Sequence to obtain the average distance between stops 
     ##########################################################
 
-    if RequestedData["NetworkToShpLines"]==True:
+    if RequestedData["GeometricAnalysis"]==True:
 
         ConnectiorDB=DatabaseConnection()
 
@@ -1166,7 +1167,7 @@ def GTFS(Path,RequestedData):
                 # print(Sys,"The average distance is: ",AvDist)
                 # print(Sys,"The number of stops  is: ",NumStops)
                 TransitChar[idx]={"AvDist":AvDist,"NumStops":NumStops}
-        print("End  NetworkToShpLines")
+        print("End  GeometricAnalysis")
         # The data is stored in 'Resluts\CityMetrics'
         StoreCityData(NameOfCity=NameOfCity,TransitChar=TransitChar,NumberLines=NumberLines)
         for Sys in TransitChar.keys():
@@ -1196,7 +1197,7 @@ def GTFS(Path,RequestedData):
         # print("DataStops")
 
 
-    if RequestedData["AlignedGirdAnalysis"]:
+    if RequestedData["RotatedGridAnalysis"]:
         TransformStopsCsvToGeoJson(PathStopsCSV=O_PathStops,PathStopsGeojson=O_PathStopsGeoJson,Agency=NameOfCity)
         # print("End of first FUnction")
         # input("Delete")
@@ -1216,7 +1217,7 @@ def GTFS(Path,RequestedData):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":False,"NetworkToShpLines":False,"AlignedGirdAnalysis":True}
+    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":True,"GeometricAnalysis":False,"RotatedGridAnalysis":False}
     listPath=[]
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Berlin_GTFS\BVG_VBB_bereichsscharf.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Boston_GTFS\MBTA_GTFS.zip")
@@ -1234,14 +1235,16 @@ if __name__ == "__main__":
 
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Berlin_GTFS/BVG_VBB_bereichsscharf.zip")
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
 
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Boston_GTFS/MBTA_GTFS.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Seattle/gtfs_puget_sound_consolidated.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Seattle/gtfs_puget_sound_consolidated.zip")
+    # listPath.append(r"/mnt/e/GitHub/CAMMM-Tool_1.3/Data/Data.zip")
+
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/opendata_ttc_schedules.zip")
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Oslo_GTFS/Oslo_gtfs.zip")

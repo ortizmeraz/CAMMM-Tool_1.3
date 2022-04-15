@@ -56,3 +56,11 @@ cpdef NaturalBreaksNumpyList(list Data, int Classess):
 
 
 
+cpdef ListToText(list DATA):
+    cdef str Text
+    Text=""
+    cdef str TextLine
+    for line in DATA:
+        TextLine=','.join(line)
+        Text=Text+TextLine+"\n"
+    return Text

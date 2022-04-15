@@ -763,7 +763,9 @@ def AgregatedGTFSStopsToNetwork(AgregatedNodes,EdgeList):
     StopToNode={}
     Node_Properties={'Pos':{}}
     for idx,Node in enumerate(AgregatedNodes):
-        print("#########################################################################################################################################################################\n"*4)
+
+        print("Node",Node)
+        b=input("CHECK THE NODE HERE")
         Xval=Node[0]
         Yval=Node[1]
         NumRouts=Node[2]
@@ -1042,7 +1044,7 @@ def ExportGeoJsonPoints(ListOfPoints,PChar,NetworkIndex):
     Iden=999999999999999
     for Point in ListOfPoints:
         # Point=int(Point)
-        # print("Point",Point,type(Point))
+        print("Point",Point,type(Point))
         # b=input()
         if Point==0 and Iden>999999999999999:
             break
@@ -1067,7 +1069,9 @@ def ExportGeoJsonPoints(ListOfPoints,PChar,NetworkIndex):
 
 
         for key in Keys:
-            # Point=int(Point)
+            print(key)
+            # b=input("ANOTHER CHECK POINT IN THE LAST PART OF THE PUSH")
+            #  Point=int(Point)
             # print("############################################\n"*3)
             # print("key:",key,type(key),end="\t")
             # print("Point",Point,type(Point))

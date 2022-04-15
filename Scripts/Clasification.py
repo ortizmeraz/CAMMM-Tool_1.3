@@ -841,7 +841,7 @@ def GetStopDensity(PathFileGridUTM,PathStops,PathTrip,PathShape,Pathroute,Agency
         
     if Coords[2] <=30:
         print("West")
-        StartXval=Coords[0]+15000
+        StartXval=Coords[0]
     elif Coords[2] >30:
         print("East")
         StartXval=Coords[0]+25000
