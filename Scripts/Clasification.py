@@ -212,58 +212,7 @@ def CalculateRotatedGrid(Angle,Distnace,StartX,StartY,NumCellX,NumCellY):
     return GridList
     
 
-# def CalculateRotatedGrid(Angle,Distnace,StartX,StartY,NumCellX,NumCellY):
-#     RAngle=math.radians(Angle)
-#     GridList=[]
-#     # NumCellY+=1
-#     for iY in range(NumCellY):
-#         # print("\n\n\nY:",iY)
-#         DiY=iY+1
-#         for iX in range(0,NumCellX):
-#             DiX=iX+1
-#             # print("||X:",iX)
-#             # Q1 coords
-#             X1Distnace=StartX+(iX*Distnace)
-#             Y1Distnace=StartY+(iY*Distnace)
-#             # print(end="\t"*1)
-#             # print("Q1xD",X1Distnace,"Q1yD",Y1Distnace,end="\t")
-#             # Q2 coords
-#             X2Distnace=StartX+(DiX*Distnace)
-#             Y2Distnace=StartY+(iY*Distnace)
-#             # print("X:",iX,end="\t")
-#             # print(end="\t"*1)
-#             # print("Q2xD",X2Distnace,"Q2yD",Y2Distnace,end="\t")
-#             # Q3 coords
-#             X3Distnace=StartX+(DiX*Distnace)
-#             Y3Distnace=StartY+(DiY*Distnace)
-#             # print("X:",iX,end="\t")
-#             # print(end="\t"*1)
-#             # print("Q3xD",X3Distnace,"Q3yD",Y3Distnace,end="\t")
-#             # Q4 coords
-#             X4Distnace=StartX+(iX*Distnace)
-#             Y4Distnace=StartY+(DiY*Distnace)
-#             # print("X:",iX,end="\t")
-#             # print(end="\t"*1)
-#             # print("Q4xD",X4Distnace,"Q4yD",Y4Distnace,end="\t")
-            
-#             X1Distnace=X1Distnace+StartX
-#             Y1Distnace=Y1Distnace+StartY
-#             X2Distnace=X2Distnace+StartX
-#             Y2Distnace=Y2Distnace+StartY
-#             X3Distnace=X3Distnace+StartX
-#             Y3Distnace=Y3Distnace+StartY
-#             X4Distnace=X4Distnace+StartX
-#             Y4Distnace=Y4Distnace+StartY
 
-
-#             x1R,y1R=RotatedCoords(XDistnace=X1Distnace,YDistnace=Y1Distnace,RAngle=RAngle)
-#             x2R,y2R=RotatedCoords(XDistnace=X2Distnace,YDistnace=Y2Distnace,RAngle=RAngle)
-#             x3R,y3R=RotatedCoords(XDistnace=X3Distnace,YDistnace=Y3Distnace,RAngle=RAngle)
-#             x4R,y4R=RotatedCoords(XDistnace=X4Distnace,YDistnace=Y4Distnace,RAngle=RAngle)
-
-#             # print(x1R,y1R,x2R,y2R,x3R,y3R,x4R,y4R)
-#             GridList.append([[x1R,y1R],[x2R,y2R],[x3R,y3R],[x4R,y4R]])
-#     return GridList
     
 def MakeCRS(Letter,Number):
     North=["N","P","Q","R","S","T","U","V","W","X"]

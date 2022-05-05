@@ -1,3 +1,4 @@
+import readline
 import Calculations
 
 import utm
@@ -111,27 +112,7 @@ def ConstructSpatialNetworkSHP(DictStops,DataSequence,DataTrips,DataRoutes,DataS
 
         print("ListOutbound:",ListOutbound)
         print("ListInbound: ",ListInbound)
-        # SameStartEnd=False
-        # if ListInbound[0]==ListOutbound[0] and ListInbound[-1]==ListOutbound[-1]:
-        #     SameStartEnd=True
-            # CollectionLines[key].append(ListOutbound[0])
-        # else: 
-        #     # Comparing the ends of the Lines by distance
-        #     LatAstart=float(DataStops[ListOutbound[0]]['stop_lat'])
-        #     LonAstart=float(DataStops[ListOutbound[0]]['stop_lon'])
-        #     XA1,YA1,Val_EPSG1A=ConvertToUTM(lat=LatAstart,lon=LonAstart)
-
-        #     LatBstart=float(DataStops[ListInbound[0]]['stop_lat'])
-        #     LonBstart=float(DataStops[ListInbound[0]]['stop_lon'])
-        #     XB1,YB1,Val_EPSG1B=ConvertToUTM(lat=LatBstart,lon=LonBstart)
-
-            # distStart=Distance(P1=(XA1,YA1),P2=(XB1,YB1))
-            # if distStart <30:
-            #     SameStartEnd=True
-            #     CollectionLines[key].append((ListOutbound[0],ListInbound[0]))
-
-        # print("Status of the lines: Same start and end=",SameStartEnd)
-        # The longest trip direction is obtained
+  
         if len(ListOutbound)>len(ListInbound):
             # print("List Outbound (",len(ListOutbound),") is larger than List Inbound (",len(ListInbound))
             GuideListStops=ListOutbound
@@ -801,7 +782,7 @@ def Runnzip(Path):
         ZipList=zip.namelist()
     archive = zipfile.ZipFile(Path, 'r')
     for zipfile in ZipList:
-        print("zipfil  e",zipfile)
+        # print("zipfil  e",zipfile)
         fw=open(r"Operational\\"+zipfile,"w", encoding="utf-8")
         FilePointer=archive.open(zipfile)
         for line in FilePointer.readlines():
@@ -968,25 +949,42 @@ def StoreCityData(NameOfCity,TransitChar,NumberLines):
     fw.close()
 
 
-# def StoreCityDataTest(NameOfCity):
-#     #Overwrites the file for the city
-#     print("NameOfCity",NameOfCity)
-#     NameOfCity=NameOfCity.replace("/",".")
-#     Path=r"Resluts/CityMetrics/"+NameOfCity+".txt"
-#     fw=open(Path,"w")
-#     Text=""
-#     Text+="###### Numer of Stops\n"
-#     Text+="###### Avg Dist of stops\n"
-#     Text+="###### Numer of lines\n"
-#     fw.write(Text)
-#     fw.close()
-#     b=input("done")
+
+def GetFareDate(path):
+    with open(path,encoding="utf-8-sig") as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        headers = next(csv_reader, None)
+        Dict={}
+        for head in headers:
+            Dict[head]=[]
+        for id,row in enumerate(csv_reader):
+            print(id,row,type(row),len(row))
+            for idx,Element in enumerate(row):
+                Dict[headers[idx]].append(Element)
+
+        print(Dict)
+    return Dict
+
+
+
+
+def GetInfoData(List):
+    Files=[]
+    CompleteList=["agency.txt", "stops.txt", "routes.txt", "trips.txt", "stop_times.txt", "calendar.txt", "calendar_dates.txt", "fare_attributes.txt", "fare_rules.txt", "shapes.txt", "frequencies.txt", "transfers.txt", "pathways.txt", "levels.txt","feed_info.txt", "translations.txt", "attributions.txt"]
+    for Path in List:
+        FullSplitPath=Path.split("/")
+        File=FullSplitPath[-1]
+        print(File)
+        if File == "fare_attributes.txt":
+            print("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY","fare_attributes.txt")
+            FareData=GetFareDate(path=Path)
+            b=input("Delete")
 
 
 
 def GTFS(Path,RequestedData):
+    CleanFiles() 
     print("Enters the Main function")
-    print("Finish unpacking")
     if os.name=='nt':
         Runnzip(Path=Path)
         O_PathAgencyData=r"Operational\agency.txt"
@@ -1007,6 +1005,7 @@ def GTFS(Path,RequestedData):
         O_PathShapes="Operational/shapes.txt"
         O_PathStopsGeoJson="Operational/Geostops.geojson"
         O_GridStopDensity="Operational/Grid.geojson"
+    print("Finish unpacking")
 
     print("Start - Step 1")
     Agency=GetSystemData(Path=O_PathAgencyData)
@@ -1032,16 +1031,7 @@ def GTFS(Path,RequestedData):
         NameOfCity=str(DataCity[IndxTi])+"_"+str(DataCity[IndxAG])+"_"+str(DataCity[IndxNa])
     if IndxAG==999999 and IndxNa !=999999 and IndxTi!=999999:
         NameOfCity=str(DataCity[IndxTi])+"_"+str(DataCity[IndxNa])
-    # for Agline in AgencyFile.readlines():
-    #     print(Agline,type(Agline))
-    #     Elements=Agline.split(",")
-    #     # print(Elements[3])
-    #     if Elements[3]!='agency_timezone':
-    #         CityName.append(Elements[3])
-    # # for cityname in CityName:
-    # #     print(cityname)
-    # ListNames=set(CityName)
-    # NameOfCity = ' '.join([str(elem) for elem in ListNames])
+
     NameOfCity = NameOfCity.replace('\"',"")
 
     print(NameOfCity)
@@ -1053,13 +1043,7 @@ def GTFS(Path,RequestedData):
     # #############################################################
     print("Start - Step 2")
     GetTypesofTransport(InputDict=DataRoutes)
-    # GetNumberOfStops(InputDict=DataStops)
-    # print(type(DataStops))
-    # for key in DataStops.keys():
-    #     print(key,DataStops[key])
-    #     print("\n\n")
-    #     for key2 in DataTrips[key]:
-    #         print(DataTrips[key][key2])
+
     ListofStops=GtfsRouteCleaning(DataSequence=DataSequence,DataTrips=DataTrips,DataRoutes=DataRoutes,DataStops=DataStops)
     print("ListofData: ",len(ListofStops))
     print("End - Step 2")
@@ -1071,34 +1055,19 @@ def GTFS(Path,RequestedData):
         else:
             EdgeList.append({})
     print("End - Step 3")
-    # print("Data_Buses")
-    # print("Data_Train")
-    # print("Data_Metro")
-    # print("Data_Tram")
-    # print("Data_Other")
-    # print("Len of ListofStops",len(ListofStops))
-    # print("Len of EdgeList",len(EdgeList))
-    # print("ListofStops is ",type(ListofStops))
-    # for DS in ListofStops:
-    #     print(DS)
-    #     print("########################")
-    #     # print(type(DS),len(DS.keys()))
-   
 
+    print("Step 4 Start")
+    FileList = os.listdir('Operational')
+    PathList = []
+    for File in FileList:
+        PathFile= os.path.abspath('Operational/'+File)
+        PathList.append(PathFile)
+        # print(File,PathFile)
+    GetInfoData(List=PathList)
+    print("Step 4 End")
 
-    # NetworkNames=["Data_Buses","Data_Train","Data_Metro","Data_Tram","Data_Other"]
-    # print("RequestedData",RequestedData)
-    # print("Checking the list of stops",len(ListofStops))
-    # for Stops in ListofStops:
-    #     print(type(Stops),len(Stops))
-    #     if len(Stops)>0:
-    #         for stop in list(Stops.keys())[:10]:
-    #             print(stop,type(stop))
-    # print("Checking the list of Edges",len(EdgeList))
-    # for Edges in EdgeList:
-    #     print(type(Edges),len(Edges))
-    # b=input()
     ListOfNeworks=[]
+    CleanFiles() 
 
     ##########################################################
     # Sequence to obtain the average distance between stops 
@@ -1144,21 +1113,11 @@ def GTFS(Path,RequestedData):
     if RequestedData["NodeNetworkAnalysis"]==True:
         Nodes=CreateNodes(SuperRange=400,NodeRange=75,ListofStops=ListofStops,DataStops=DataStops)
         print("Type of ListofStops",type(ListofStops))
-        # b=input("Type of ListofStops")
-        # EdgeList,EdgeLine=GetEdgeLists(EdgeData)
-        # ListObjStops=ListGTFStoObjectBusStop(EdgeData=EdgeData,DataStops=DataStops,Data_Buses=Data_Buses)
-    #     Nodes=Agregate(ListStops=ListObjStops,Range=75)
-        # print("EdgeList",type(EdgeList))
-        # for edge in EdgeList[:10]:
-        #     print("edge",edge)
-        #     print("\n"*5)
         Graph=AgregatedGTFSStopsToNetwork(AgregatedNodes=Nodes,EdgeList=EdgeList)
         print(type(Graph))
 
         NetWorkToGeoJson(G=Graph,NetworkIndex=5)
-    # print("City Stattistics:")
-    # print(CityStat_NumberOfStops)
-        # b=input()
+
 
     ##########################################################
     # Sequence to obtain the average distance between stops 
@@ -1193,29 +1152,6 @@ def GTFS(Path,RequestedData):
             print("For ",Titles[Sys],"The average distance is: ",TransitChar[Sys]["AvDist"])
             print("For ",Titles[Sys],"The number of stops  is: ",TransitChar[Sys]["NumStops"])
 
-        # Insert=TextSqLite(idx=0)
-        # Variables=TextSqLite(idx=1)
-        # Values=TextSqLite(idx=2)
-
-
-
-        # ConnectiorDB.execute()
-
-        # print("DataSequence")
-        # KeysDS=list(DataSequence.keys())
-        # print(KeysDS[:10])
-        # print(type(DataSequence))
-        # b=input()
-        # print(type(DataTrips))
-        # print("DataTrips")
-        # b=input()
-        # print(type(DataRoutes))
-        # print("DataRoutes")
-        # b=input()
-        # print(type(DataStops))
-        # print("DataStops")
-
-
     if RequestedData["RotatedGridAnalysis"]:
         TransformStopsCsvToGeoJson(PathStopsCSV=O_PathStops,PathStopsGeojson=O_PathStopsGeoJson,Agency=NameOfCity)
         # print("End of first FUnction")
@@ -1227,7 +1163,6 @@ def GTFS(Path,RequestedData):
     ###################################################################
     ##################### END OF MAIN #################################
     ###################################################################
-    CleanFiles() 
 
 ##############
 ## Main cycle
@@ -1236,38 +1171,28 @@ def GTFS(Path,RequestedData):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":False,"GeometricAnalysis":False,"RotatedGridAnalysis":True}
+    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":False,"GeometricAnalysis":False,"RotatedGridAnalysis":False}
     listPath=[]
-    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Berlin_GTFS\BVG_VBB_bereichsscharf.zip")
-    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Boston_GTFS\MBTA_GTFS.zip")
-    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Melbourne_5GTFS\gtfs (1).zip")
-    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Oslo_GTFS\gtfs (3).zip")
-    # if os.name=='nt':
-    #     print('WIN10')
-    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Quebec_GTFS\gtfs.zip")
-    # if os.name=='posix':
-    #     print('UNIX')
-    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Montreal GTFS\gtfs.zip")
-    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Torino_GTFS\gtfs (2).zip")
-    # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Toulouse_GTFS\tisseo_gtfs.zip")
+  
+
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/Software/CAMMM-Soft-Tool_V1.1/SampleData/Quebec_GTFS/gtfs.zip")
 
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Berlin_GTFS/BVG_VBB_bereichsscharf.zip")
 
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
 
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Boston_GTFS/MBTA_GTFS.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Boston_GTFS/MBTA_GTFS.zip")
     listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Seattle/gtfs_puget_sound_consolidated.zip")  # Seattle
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto_GTFS/Data.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto_GTFS/Data.zip")
 
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vancouver/VancouverGTFS.zip")
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Longueuil_GTFS/20220404.zip")
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Laval_GTFS/GTF_STL_v2.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vancouver/VancouverGTFS.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Longueuil_GTFS/20220404.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Laval_GTFS/GTF_STL_v2.zip")
 
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Oslo_GTFS/Oslo_gtfs.zip")
