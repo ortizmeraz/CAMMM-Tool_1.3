@@ -1,0 +1,1006 @@
+{
+        "features": [
+{
+"type": "Feature",
+"properties": {"StopCode":"11301","location": "(487012.8074412935, 5449054.394277455)", "stop_id": "11301", "stop_name": "YVR-Airport Station @ Platform 1", "stop_code": "61392", "stop_desc": "", "stop_lat": "49.194152", "stop_lon": "-123.178254", "zone_id": "CL_AD", "stop_url": "", "location_type": "0", "parent_station": "99901", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.010101010101, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [-123.178254,49.194152],
+"type": "Point"
+        },
+        "id": "1000000000000000"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11277","location": "(491595.24850131746, 5457094.766309149)", "stop_id": "11277", "stop_name": "Olympic Village Station @ Platform 1", "stop_code": "61368", "stop_desc": "", "stop_lat": "49.266557", "stop_lon": "-123.115527", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99913", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.010101010101, "CatClossnes": 2},
+"geometry": {
+"coordinates": [-123.115527,49.266557],
+"type": "Point"
+        },
+        "id": "1000000000000001"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11275","location": "(491124.66394089075, 5457979.424008172)", "stop_id": "11275", "stop_name": "Yaletown-Roundhouse Station @ Platform 1", "stop_code": "61366", "stop_desc": "", "stop_lat": "49.274508", "stop_lon": "-123.122015", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99914", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.346801346801, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-123.122015,49.274508],
+"type": "Point"
+        },
+        "id": "1000000000000002"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11273","location": "(491407.674807997, 5458850.998923459)", "stop_id": "11273", "stop_name": "Vancouver City Centre Station @ Platform 1", "stop_code": "61364", "stop_desc": "", "stop_lat": "49.282352", "stop_lon": "-123.118143", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99915", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.515151515152, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-123.118143,49.282352],
+"type": "Point"
+        },
+        "id": "1000000000000003"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11303","location": "(491699.33847596106, 5459155.270451659)", "stop_id": "11303", "stop_name": "Waterfront Station @ Canada Line", "stop_code": "61394", "stop_desc": "", "stop_lat": "49.285093", "stop_lon": "-123.114139", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "12034", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.616161616162, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.114139,49.285093],
+"type": "Point"
+        },
+        "id": "1000000000000004"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11299","location": "(488496.6367027821, 5448915.250586991)", "stop_id": "11299", "stop_name": "Sea Island Centre Station @ Platform 1", "stop_code": "61390", "stop_desc": "", "stop_lat": "49.19293", "stop_lon": "-123.157884", "zone_id": "CL_AD", "stop_url": "", "location_type": "0", "parent_station": "99902", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.683501683502, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.157884,49.19293],
+"type": "Point"
+        },
+        "id": "1000000000000005"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11297","location": "(489340.9322947159, 5449327.660187239)", "stop_id": "11297", "stop_name": "Templeton Station @ Platform 1", "stop_code": "61388", "stop_desc": "", "stop_lat": "49.196655", "stop_lon": "-123.146307", "zone_id": "CL_AD", "stop_url": "", "location_type": "0", "parent_station": "99903", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.731601731602, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.146307,49.196655],
+"type": "Point"
+        },
+        "id": "1000000000000006"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11289","location": "(490819.7322505044, 5449198.155870801)", "stop_id": "11289", "stop_name": "Bridgeport Station @ Platform 1", "stop_code": "61380", "stop_desc": "", "stop_lat": "49.195514", "stop_lon": "-123.126006", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99907", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.767676767677, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.126006,49.195514],
+"type": "Point"
+        },
+        "id": "1000000000000007"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11287","location": "(491484.05695361854, 5450770.0259367)", "stop_id": "11287", "stop_name": "Marine Drive Station @ Platform 1", "stop_code": "61378", "stop_desc": "", "stop_lat": "49.209663", "stop_lon": "-123.116921", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99908", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.795735129068, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.116921,49.209663],
+"type": "Point"
+        },
+        "id": "1000000000000008"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11285","location": "(491532.8301074751, 5452553.779756792)", "stop_id": "11285", "stop_name": "Langara-49th Avenue Station @ Platform 1", "stop_code": "61376", "stop_desc": "", "stop_lat": "49.225709", "stop_lon": "-123.116289", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99909", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.818181818182, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.116289,49.225709],
+"type": "Point"
+        },
+        "id": "1000000000000009"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11283","location": "(491542.42726326553, 5453445.570188119)", "stop_id": "11283", "stop_name": "Oakridge-41st Avenue Station @ Platform 1", "stop_code": "61374", "stop_desc": "", "stop_lat": "49.233731", "stop_lon": "-123.116176", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99910", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.836547291093, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.116176,49.233731],
+"type": "Point"
+        },
+        "id": "1000000000000010"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11281","location": "(491614.0562682377, 5455162.038979629)", "stop_id": "11281", "stop_name": "King Edward Station @ Platform 1", "stop_code": "61372", "stop_desc": "", "stop_lat": "49.249172", "stop_lon": "-123.115228", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99911", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.851851851852, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.115228,49.249172],
+"type": "Point"
+        },
+        "id": "1000000000000011"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11279","location": "(491650.91157214926, 5456668.675807209)", "stop_id": "11279", "stop_name": "Broadway-City Hall Station @ Platform 1", "stop_code": "61370", "stop_desc": "", "stop_lat": "49.262725", "stop_lon": "-123.114753", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99912", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.010101010101, "CatCenDeg": 1, "Clossnes": 1.864801864802, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.114753,49.262725],
+"type": "Point"
+        },
+        "id": "1000000000000012"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11302","location": "(491694.4736851729, 5459160.391665067)", "stop_id": "11302", "stop_name": "Waterfront Station Canada Line @ Platform 2", "stop_code": "61393", "stop_desc": "", "stop_lat": "49.285139", "stop_lon": "-123.114206", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "12034", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.010101010101, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [-123.114206,49.285139],
+"type": "Point"
+        },
+        "id": "1000000000000013"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11288","location": "(490814.64049304195, 5449203.055798927)", "stop_id": "11288", "stop_name": "Bridgeport Station @ Platform 2", "stop_code": "61379", "stop_desc": "", "stop_lat": "49.195558", "stop_lon": "-123.126076", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99907", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.010101010101, "CatClossnes": 2},
+"geometry": {
+"coordinates": [-123.126076,49.195558],
+"type": "Point"
+        },
+        "id": "1000000000000014"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11296","location": "(489338.9052753467, 5449334.334271157)", "stop_id": "11296", "stop_name": "Templeton Station @ Platform 2", "stop_code": "61387", "stop_desc": "", "stop_lat": "49.196715", "stop_lon": "-123.146335", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99903", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.346801346801, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-123.146335,49.196715],
+"type": "Point"
+        },
+        "id": "1000000000000015"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11298","location": "(488499.06958255044, 5448928.91935087)", "stop_id": "11298", "stop_name": "Sea Island Centre Station @ Platform 2", "stop_code": "61389", "stop_desc": "", "stop_lat": "49.193053", "stop_lon": "-123.157851", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99902", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.515151515152, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-123.157851,49.193053],
+"type": "Point"
+        },
+        "id": "1000000000000016"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11300","location": "(487013.03570070316, 5449058.507013337)", "stop_id": "11300", "stop_name": "YVR-Airport Station @ Canada Line", "stop_code": "61391", "stop_desc": "", "stop_lat": "49.194189", "stop_lon": "-123.178251", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99901", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.616161616162, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.178251,49.194189],
+"type": "Point"
+        },
+        "id": "1000000000000017"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11272","location": "(491397.5119995374, 5458863.243621057)", "stop_id": "11272", "stop_name": "Vancouver City Centre Station @ Platform 2", "stop_code": "61363", "stop_desc": "", "stop_lat": "49.282462", "stop_lon": "-123.118283", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99915", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.683501683502, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.118283,49.282462],
+"type": "Point"
+        },
+        "id": "1000000000000018"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11274","location": "(491116.72795134434, 5457974.878818033)", "stop_id": "11274", "stop_name": "Yaletown-Roundhouse Station @ Platform 2", "stop_code": "61365", "stop_desc": "", "stop_lat": "49.274467", "stop_lon": "-123.122124", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99914", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.731601731602, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.122124,49.274467],
+"type": "Point"
+        },
+        "id": "1000000000000019"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11276","location": "(491617.73867546854, 5457101.291060512)", "stop_id": "11276", "stop_name": "Olympic Village Station @ Platform 2", "stop_code": "61367", "stop_desc": "", "stop_lat": "49.266616", "stop_lon": "-123.115218", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99913", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.767676767677, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.115218,49.266616],
+"type": "Point"
+        },
+        "id": "1000000000000020"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11278","location": "(491643.41067546286, 5456664.1292023035)", "stop_id": "11278", "stop_name": "Broadway-City Hall Station @ Platform 2", "stop_code": "61369", "stop_desc": "", "stop_lat": "49.262684", "stop_lon": "-123.114856", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99912", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.795735129068, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.114856,49.262684],
+"type": "Point"
+        },
+        "id": "1000000000000021"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11280","location": "(491578.54349926906, 5455163.649583148)", "stop_id": "11280", "stop_name": "King Edward Station @ Platform 2", "stop_code": "61371", "stop_desc": "", "stop_lat": "49.249186", "stop_lon": "-123.115716", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99911", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.818181818182, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.115716,49.249186],
+"type": "Point"
+        },
+        "id": "1000000000000022"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11282","location": "(491524.521289062, 5453447.3764356645)", "stop_id": "11282", "stop_name": "Oakridge-41st Avenue Station @ Platform 2", "stop_code": "61373", "stop_desc": "", "stop_lat": "49.233747", "stop_lon": "-123.116422", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99910", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.836547291093, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.116422,49.233747],
+"type": "Point"
+        },
+        "id": "1000000000000023"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11284","location": "(491499.12424884795, 5452557.61144133)", "stop_id": "11284", "stop_name": "Langara-49th Avenue Station @ Platform 2", "stop_code": "61375", "stop_desc": "", "stop_lat": "49.225743", "stop_lon": "-123.116752", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99909", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.851851851852, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.116752,49.225743],
+"type": "Point"
+        },
+        "id": "1000000000000024"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"11286","location": "(491472.6215142551, 5450769.821277155)", "stop_id": "11286", "stop_name": "Marine Drive Station @ Platform 2", "stop_code": "61377", "stop_desc": "", "stop_lat": "49.209661", "stop_lon": "-123.117078", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99908", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.010101010101, "CatCenDeg": 1, "Clossnes": 1.864801864802, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.117078,49.209661],
+"type": "Point"
+        },
+        "id": "1000000000000025"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"10374","location": "(494248.6220679405, 5457007.084952539)", "stop_id": "10374", "stop_name": "VCC-Clark Station @ Platform 2", "stop_code": "60825", "stop_desc": "", "stop_lat": "49.265799", "stop_lon": "-123.079054", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99916", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.010101010101, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [-123.079054,49.265799],
+"type": "Point"
+        },
+        "id": "1000000000000026"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8756","location": "(505951.3418327018, 5455624.893828278)", "stop_id": "8756", "stop_name": "Production Way-University Station @ Platform 2", "stop_code": "60807", "stop_desc": "", "stop_lat": "49.253364", "stop_lon": "-122.918218", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99925", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.010101010101, "CatClossnes": 2},
+"geometry": {
+"coordinates": [-122.918218,49.253364],
+"type": "Point"
+        },
+        "id": "1000000000000027"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8755","location": "(507499.6246969258, 5455084.274874637)", "stop_id": "8755", "stop_name": "Lougheed Town Centre Station @ Platform 1", "stop_code": "60805", "stop_desc": "", "stop_lat": "49.248484", "stop_lon": "-122.896952", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99926", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.346801346801, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-122.896952,49.248484],
+"type": "Point"
+        },
+        "id": "1000000000000028"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12229","location": "(508019.20855349634, 5456518.104867357)", "stop_id": "12229", "stop_name": "Burquitlam Station @ Platform 2", "stop_code": "60086", "stop_desc": "", "stop_lat": "49.261375", "stop_lon": "-122.889784", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99927", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.515151515152, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-122.889784,49.261375],
+"type": "Point"
+        },
+        "id": "1000000000000029"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12231","location": "(511229.64959323715, 5458365.377593799)", "stop_id": "12231", "stop_name": "Moody Centre Station @ Platform 2", "stop_code": "60088", "stop_desc": "", "stop_lat": "49.277941", "stop_lon": "-122.845608", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99928", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.616161616162, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-122.845608,49.277941],
+"type": "Point"
+        },
+        "id": "1000000000000030"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12233","location": "(512497.25844587584, 5458276.618621894)", "stop_id": "12233", "stop_name": "Inlet Centre Station @ Platform 2", "stop_code": "60090", "stop_desc": "", "stop_lat": "49.277118", "stop_lon": "-122.828183", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99929", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.683501683502, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-122.828183,49.277118],
+"type": "Point"
+        },
+        "id": "1000000000000031"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12235","location": "(514501.1008066034, 5458016.9502449315)", "stop_id": "12235", "stop_name": "Coquitlam Central Station @ Platform 2", "stop_code": "60092", "stop_desc": "", "stop_lat": "49.274738", "stop_lon": "-122.800643", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99930", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.731601731602, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-122.800643,49.274738],
+"type": "Point"
+        },
+        "id": "1000000000000032"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12237","location": "(514996.77242574294, 5458648.843495211)", "stop_id": "12237", "stop_name": "Lincoln Station @ Platform 2", "stop_code": "60094", "stop_desc": "", "stop_lat": "49.28041", "stop_lon": "-122.793805", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99931", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.767676767677, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-122.793805,49.28041],
+"type": "Point"
+        },
+        "id": "1000000000000033"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12239","location": "(515167.5244107657, 5459236.630758575)", "stop_id": "12239", "stop_name": "Lafarge Lake-Douglas Station @ Platform 2", "stop_code": "60096", "stop_desc": "", "stop_lat": "49.285693", "stop_lon": "-122.791435", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99932", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.795735129068, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.791435,49.285693],
+"type": "Point"
+        },
+        "id": "1000000000000034"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8763","location": "(495016.81619719375, 5456685.386352035)", "stop_id": "8763", "stop_name": "Commercial-Broadway Station @ Platform 2", "stop_code": "60823", "stop_desc": "", "stop_lat": "49.262912", "stop_lon": "-123.068491", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99917", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.818181818182, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.068491,49.262912],
+"type": "Point"
+        },
+        "id": "1000000000000035"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8762","location": "(496700.3570119356, 5456235.546732628)", "stop_id": "8762", "stop_name": "Renfrew Station @ Platform 2", "stop_code": "60821", "stop_desc": "", "stop_lat": "49.258877", "stop_lon": "-123.045348", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99918", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.836547291093, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.045348,49.258877],
+"type": "Point"
+        },
+        "id": "1000000000000036"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8761","location": "(497611.9449092429, 5456441.407669363)", "stop_id": "8761", "stop_name": "Rupert Station @ Platform 2", "stop_code": "60819", "stop_desc": "", "stop_lat": "49.260733", "stop_lon": "-123.032821", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99919", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.851851851852, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.032821,49.260733],
+"type": "Point"
+        },
+        "id": "1000000000000037"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8760","location": "(499017.9691779964, 5456907.670170054)", "stop_id": "8760", "stop_name": "Gilmore Station @ Platform 2", "stop_code": "60817", "stop_desc": "", "stop_lat": "49.264931", "stop_lon": "-123.013498", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99920", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.864801864802, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.013498,49.264931],
+"type": "Point"
+        },
+        "id": "1000000000000038"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8759","location": "(499868.1011441902, 5457065.557231904)", "stop_id": "8759", "stop_name": "Brentwood Town Centre Station @ Platform 2", "stop_code": "60815", "stop_desc": "", "stop_lat": "49.266352", "stop_lon": "-123.001813", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99921", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.875901875902, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.001813,49.266352],
+"type": "Point"
+        },
+        "id": "1000000000000039"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8758","location": "(501298.0792657803, 5456882.611159613)", "stop_id": "8758", "stop_name": "Holdom Station @ Platform 2", "stop_code": "60813", "stop_desc": "", "stop_lat": "49.264705", "stop_lon": "-122.982158", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99922", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.885521885522, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.982158,49.264705],
+"type": "Point"
+        },
+        "id": "1000000000000040"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8757","location": "(502620.09747007955, 5456265.975360418)", "stop_id": "8757", "stop_name": "Sperling-Burnaby Lake Station @ Platform 2", "stop_code": "60811", "stop_desc": "", "stop_lat": "49.259154", "stop_lon": "-122.963991", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99923", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.893939393939, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.963991,49.259154],
+"type": "Point"
+        },
+        "id": "1000000000000041"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"9511","location": "(504425.5907379868, 5455761.862350543)", "stop_id": "9511", "stop_name": "Lake City Way Station @ Platform 2", "stop_code": "60809", "stop_desc": "", "stop_lat": "49.254609", "stop_lon": "-122.939183", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99924", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.010101010101, "CatCenDeg": 1, "Clossnes": 1.901366607249, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.939183,49.254609],
+"type": "Point"
+        },
+        "id": "1000000000000042"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12238","location": "(515153.83712593646, 5459242.151586489)", "stop_id": "12238", "stop_name": "Lafarge Lake-Douglas Station @ Platform 1", "stop_code": "60095", "stop_desc": "", "stop_lat": "49.285743", "stop_lon": "-122.791623", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99932", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.010101010101, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [-122.791623,49.285743],
+"type": "Point"
+        },
+        "id": "1000000000000043"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8748","location": "(502620.7492066712, 5456272.534718061)", "stop_id": "8748", "stop_name": "Sperling-Burnaby Lake Station @ Platform 1", "stop_code": "60810", "stop_desc": "", "stop_lat": "49.259213", "stop_lon": "-122.963982", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99923", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.010101010101, "CatClossnes": 2},
+"geometry": {
+"coordinates": [-122.963982,49.259213],
+"type": "Point"
+        },
+        "id": "1000000000000044"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8749","location": "(501298.7327932299, 5456887.947492255)", "stop_id": "8749", "stop_name": "Holdom Station @ Platform 1", "stop_code": "60812", "stop_desc": "", "stop_lat": "49.264753", "stop_lon": "-122.982149", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99922", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.346801346801, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-122.982149,49.264753],
+"type": "Point"
+        },
+        "id": "1000000000000045"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8750","location": "(499868.1013547708, 5457074.339694297)", "stop_id": "8750", "stop_name": "Brentwood Town Centre Station @ Platform 1", "stop_code": "60814", "stop_desc": "", "stop_lat": "49.266431", "stop_lon": "-123.001813", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99921", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.515151515152, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-123.001813,49.266431],
+"type": "Point"
+        },
+        "id": "1000000000000046"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8751","location": "(499012.6595670732, 5456915.564217816)", "stop_id": "8751", "stop_name": "Gilmore Station @ Platform 1", "stop_code": "60816", "stop_desc": "", "stop_lat": "49.265002", "stop_lon": "-123.013571", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99920", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.616161616162, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.013571,49.265002],
+"type": "Point"
+        },
+        "id": "1000000000000047"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8752","location": "(497608.45639295556, 5456450.525150802)", "stop_id": "8752", "stop_name": "Rupert Station @ Platform 1", "stop_code": "60818", "stop_desc": "", "stop_lat": "49.260815", "stop_lon": "-123.032869", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99919", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.683501683502, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.032869,49.260815],
+"type": "Point"
+        },
+        "id": "1000000000000048"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8753","location": "(496698.4695175078, 5456242.773934343)", "stop_id": "8753", "stop_name": "Renfrew Station @ Platform 1", "stop_code": "60820", "stop_desc": "", "stop_lat": "49.258942", "stop_lon": "-123.045374", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99918", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.731601731602, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.045374,49.258942],
+"type": "Point"
+        },
+        "id": "1000000000000049"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8754","location": "(495021.55222749343, 5456692.941653094)", "stop_id": "8754", "stop_name": "Commercial-Broadway Station @ Platform 1", "stop_code": "60822", "stop_desc": "", "stop_lat": "49.26298", "stop_lon": "-123.068426", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99917", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.767676767677, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.068426,49.26298],
+"type": "Point"
+        },
+        "id": "1000000000000050"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"10375","location": "(494248.99443090963, 5457015.311180633)", "stop_id": "10375", "stop_name": "VCC-Clark Station @ Platform 1", "stop_code": "60824", "stop_desc": "", "stop_lat": "49.265873", "stop_lon": "-123.079049", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99916", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.795735129068, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.079049,49.265873],
+"type": "Point"
+        },
+        "id": "1000000000000051"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12236","location": "(514975.5328621838, 5458649.563803654)", "stop_id": "12236", "stop_name": "Lincoln Station @ Platform 1", "stop_code": "60093", "stop_desc": "", "stop_lat": "49.280417", "stop_lon": "-122.794097", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99931", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.818181818182, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.794097,49.280417],
+"type": "Point"
+        },
+        "id": "1000000000000052"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12234","location": "(514507.7397401587, 5458037.089750894)", "stop_id": "12234", "stop_name": "Coquitlam Central Station @ Platform 1", "stop_code": "60091", "stop_desc": "", "stop_lat": "49.274919", "stop_lon": "-122.800551", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99930", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.836547291093, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.800551,49.274919],
+"type": "Point"
+        },
+        "id": "1000000000000053"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12232","location": "(512498.5959541145, 5458296.187778892)", "stop_id": "12232", "stop_name": "Inlet Centre Station @ Platform 1", "stop_code": "60089", "stop_desc": "", "stop_lat": "49.277294", "stop_lon": "-122.828164", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99929", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.851851851852, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.828164,49.277294],
+"type": "Point"
+        },
+        "id": "1000000000000054"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12230","location": "(511229.568004241, 5458369.713097654)", "stop_id": "12230", "stop_name": "Moody Centre Station @ Platform 1", "stop_code": "60087", "stop_desc": "", "stop_lat": "49.27798", "stop_lon": "-122.845609", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99928", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.864801864802, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.845609,49.27798],
+"type": "Point"
+        },
+        "id": "1000000000000055"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12228","location": "(508014.1807328845, 5456523.211385348)", "stop_id": "12228", "stop_name": "Burquitlam Station @ Platform 1", "stop_code": "60085", "stop_desc": "", "stop_lat": "49.261421", "stop_lon": "-122.889853", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99927", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.875901875902, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.889853,49.261421],
+"type": "Point"
+        },
+        "id": "1000000000000056"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"12227","location": "(507509.3576827252, 5455098.406765318)", "stop_id": "12227", "stop_name": "Lougheed Town Centre Station @ Platform 3", "stop_code": "60084", "stop_desc": "", "stop_lat": "49.248611", "stop_lon": "-122.896818", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99926", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.885521885522, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.896818,49.248611],
+"type": "Point"
+        },
+        "id": "1000000000000057"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8747","location": "(505953.2944982728, 5455636.124137715)", "stop_id": "8747", "stop_name": "Production Way-University Station @ Platform 1", "stop_code": "60806", "stop_desc": "", "stop_lat": "49.253465", "stop_lon": "-122.918191", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99925", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.893939393939, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.918191,49.253465],
+"type": "Point"
+        },
+        "id": "1000000000000058"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"9510","location": "(504425.58671495505, 5455766.865008345)", "stop_id": "9510", "stop_name": "Lake City Way Station @ Platform 1", "stop_code": "60808", "stop_desc": "", "stop_lat": "49.254654", "stop_lon": "-122.939183", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99924", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.010101010101, "CatCenDeg": 1, "Clossnes": 1.901366607249, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.939183,49.254654],
+"type": "Point"
+        },
+        "id": "1000000000000059"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8039","location": "(491885.71855802805, 5459245.4853740055)", "stop_id": "8039", "stop_name": "Waterfront Station @ Platform 2", "stop_code": "57964", "stop_desc": "", "stop_lat": "49.285907", "stop_lon": "-123.111578", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "12034", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.010101010101, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [-123.111578,49.285907],
+"type": "Point"
+        },
+        "id": "1000000000000060"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8048","location": "(499076.97100638517, 5452992.362178497)", "stop_id": "8048", "stop_name": "Patterson Station @ Platform 2", "stop_code": "57973", "stop_desc": "", "stop_lat": "49.229712", "stop_lon": "-123.012678", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99940", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.010101010101, "CatClossnes": 2},
+"geometry": {
+"coordinates": [-123.012678,49.229712],
+"type": "Point"
+        },
+        "id": "1000000000000061"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8049","location": "(499713.1233028162, 5452555.284365532)", "stop_id": "8049", "stop_name": "Metrotown Station @ Platform 2", "stop_code": "57974", "stop_desc": "", "stop_lat": "49.225781", "stop_lon": "-123.00394", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99941", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.346801346801, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-123.00394,49.225781],
+"type": "Point"
+        },
+        "id": "1000000000000062"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8050","location": "(500839.2484166993, 5451914.114738827)", "stop_id": "8050", "stop_name": "Royal Oak Station @ Platform 2", "stop_code": "57975", "stop_desc": "", "stop_lat": "49.220013", "stop_lon": "-122.988475", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99942", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.515151515152, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-122.988475,49.220013],
+"type": "Point"
+        },
+        "id": "1000000000000063"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8051","location": "(502974.73894488177, 5451013.936504875)", "stop_id": "8051", "stop_name": "Edmonds Station @ Platform 2", "stop_code": "57976", "stop_desc": "", "stop_lat": "49.211909", "stop_lon": "-122.959156", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99943", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.616161616162, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-122.959156,49.211909],
+"type": "Point"
+        },
+        "id": "1000000000000064"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8052","location": "(503719.67944212374, 5449692.80845147)", "stop_id": "8052", "stop_name": "22nd Street Station @ Platform 2", "stop_code": "57977", "stop_desc": "", "stop_lat": "49.200021", "stop_lon": "-122.94894", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99944", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.683501683502, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-122.94894,49.200021],
+"type": "Point"
+        },
+        "id": "1000000000000065"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8053","location": "(506368.80770658306, 5449849.2014007615)", "stop_id": "8053", "stop_name": "New Westminster Station @ Platform 2", "stop_code": "57978", "stop_desc": "", "stop_lat": "49.201406", "stop_lon": "-122.912573", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99945", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.731601731602, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-122.912573,49.201406],
+"type": "Point"
+        },
+        "id": "1000000000000066"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8054","location": "(506838.5710035323, 5450224.6270413175)", "stop_id": "8054", "stop_name": "Columbia Station @ Platform 2", "stop_code": "57979", "stop_desc": "", "stop_lat": "49.204778", "stop_lon": "-122.906118", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99946", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.767676767677, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-122.906118,49.204778],
+"type": "Point"
+        },
+        "id": "1000000000000067"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8055","location": "(509165.7331582011, 5450184.093041199)", "stop_id": "8055", "stop_name": "Scott Road Station @ Platform 2", "stop_code": "57980", "stop_desc": "", "stop_lat": "49.204383", "stop_lon": "-122.874171", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99949", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.795735129068, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.874171,49.204383],
+"type": "Point"
+        },
+        "id": "1000000000000068"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8056","location": "(510878.5846125158, 5449582.778101168)", "stop_id": "8056", "stop_name": "Gateway Station @ Platform 2", "stop_code": "57981", "stop_desc": "", "stop_lat": "49.198946", "stop_lon": "-122.850673", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99950", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.818181818182, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.850673,49.198946],
+"type": "Point"
+        },
+        "id": "1000000000000069"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8057","location": "(511081.67869589216, 5448538.5236102315)", "stop_id": "8057", "stop_name": "Surrey Central Station @ Platform 2", "stop_code": "57982", "stop_desc": "", "stop_lat": "49.189549", "stop_lon": "-122.847914", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99951", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.836547291093, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.847914,49.189549],
+"type": "Point"
+        },
+        "id": "1000000000000070"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8040","location": "(491308.46862933785, 5459216.0180605585)", "stop_id": "8040", "stop_name": "Burrard Station @ Platform 2", "stop_code": "60826", "stop_desc": "", "stop_lat": "49.285634", "stop_lon": "-123.119515", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99933", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.851851851852, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.119515,49.285634],
+"type": "Point"
+        },
+        "id": "1000000000000071"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8058","location": "(511314.20820512966, 5447783.711680636)", "stop_id": "8058", "stop_name": "King George Station @ Platform 2", "stop_code": "57983", "stop_desc": "", "stop_lat": "49.182755", "stop_lon": "-122.844744", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99952", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.864801864802, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.844744,49.182755],
+"type": "Point"
+        },
+        "id": "1000000000000072"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8041","location": "(491582.2831221342, 5458937.886837225)", "stop_id": "8041", "stop_name": "Granville Station @ Platform 2", "stop_code": "57966", "stop_desc": "", "stop_lat": "49.283136", "stop_lon": "-123.115744", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99934", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.875901875902, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.115744,49.283136],
+"type": "Point"
+        },
+        "id": "1000000000000073"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8042","location": "(492056.62755599094, 5458497.166602986)", "stop_id": "8042", "stop_name": "Stadium-Chinatown Station @ Platform 2", "stop_code": "57967", "stop_desc": "", "stop_lat": "49.279178", "stop_lon": "-123.109213", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99935", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.885521885522, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.109213,49.279178],
+"type": "Point"
+        },
+        "id": "1000000000000074"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8043","location": "(492696.79730079265, 5457820.471940821)", "stop_id": "8043", "stop_name": "Main Street-Science World Station @ Platform 2", "stop_code": "57968", "stop_desc": "", "stop_lat": "49.273099", "stop_lon": "-123.100399", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99936", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.893939393939, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.100399,49.273099],
+"type": "Point"
+        },
+        "id": "1000000000000075"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8044","location": "(494966.6990297377, 5456619.285575881)", "stop_id": "8044", "stop_name": "Commercial-Broadway Station @ Platform 4", "stop_code": "57969", "stop_desc": "", "stop_lat": "49.262317", "stop_lon": "-123.069179", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99917", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.901366607249, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.069179,49.262317],
+"type": "Point"
+        },
+        "id": "1000000000000076"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8045","location": "(495931.4033809016, 5455058.324322278)", "stop_id": "8045", "stop_name": "Nanaimo Station @ Platform 2", "stop_code": "57970", "stop_desc": "", "stop_lat": "49.248283", "stop_lon": "-123.055904", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99937", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.907968574635, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.055904,49.248283],
+"type": "Point"
+        },
+        "id": "1000000000000077"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8046","location": "(496642.02710322785, 5454607.939720083)", "stop_id": "8046", "stop_name": "29th Avenue Station @ Platform 2", "stop_code": "57971", "stop_desc": "", "stop_lat": "49.244236", "stop_lon": "-123.046136", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99938", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.913875598086, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.046136,49.244236],
+"type": "Point"
+        },
+        "id": "1000000000000078"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8047","location": "(497683.22134266706, 5453953.39032761)", "stop_id": "8047", "stop_name": "Joyce-Collingwood Station @ Platform 2", "stop_code": "57972", "stop_desc": "", "stop_lat": "49.238353", "stop_lon": "-123.031827", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99939", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.010101010101, "CatCenDeg": 1, "Clossnes": 1.919191919192, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.031827,49.238353],
+"type": "Point"
+        },
+        "id": "1000000000000079"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8059","location": "(511318.05755482597, 5447790.056220412)", "stop_id": "8059", "stop_name": "King George Station @ Platform 1", "stop_code": "57984", "stop_desc": "", "stop_lat": "49.182812", "stop_lon": "-122.844691", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99952", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.010101010101, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [-122.844691,49.182812],
+"type": "Point"
+        },
+        "id": "1000000000000080"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8068","location": "(499717.78363322, 5452563.177168217)", "stop_id": "8068", "stop_name": "Metrotown Station @ Platform 1", "stop_code": "57993", "stop_desc": "", "stop_lat": "49.225852", "stop_lon": "-123.003876", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99941", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.010101010101, "CatClossnes": 2},
+"geometry": {
+"coordinates": [-123.003876,49.225852],
+"type": "Point"
+        },
+        "id": "1000000000000081"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8069","location": "(499081.7049622317, 5453001.921981775)", "stop_id": "8069", "stop_name": "Patterson Station @ Platform 1", "stop_code": "57994", "stop_desc": "", "stop_lat": "49.229798", "stop_lon": "-123.012613", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99940", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.346801346801, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-123.012613,49.229798],
+"type": "Point"
+        },
+        "id": "1000000000000082"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8070","location": "(497688.1748516203, 5453961.948326869)", "stop_id": "8070", "stop_name": "Joyce-Collingwood Station @ Platform 1", "stop_code": "57995", "stop_desc": "", "stop_lat": "49.23843", "stop_lon": "-123.031759", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99939", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.515151515152, "CatClossnes": 3},
+"geometry": {
+"coordinates": [-123.031759,49.23843],
+"type": "Point"
+        },
+        "id": "1000000000000083"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8071","location": "(496646.10803134553, 5454616.163813748)", "stop_id": "8071", "stop_name": "29th Avenue Station @ Platform 1", "stop_code": "57996", "stop_desc": "", "stop_lat": "49.24431", "stop_lon": "-123.04608", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99938", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.616161616162, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.04608,49.24431],
+"type": "Point"
+        },
+        "id": "1000000000000084"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8072","location": "(495934.02758664393, 5455063.992059008)", "stop_id": "8072", "stop_name": "Nanaimo Station @ Platform 1", "stop_code": "57997", "stop_desc": "", "stop_lat": "49.248334", "stop_lon": "-123.055868", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99937", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.683501683502, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.055868,49.248334],
+"type": "Point"
+        },
+        "id": "1000000000000085"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8073","location": "(494974.11969944596, 5456618.6117695775)", "stop_id": "8073", "stop_name": "Commercial-Broadway Station @ Platform 3", "stop_code": "57998", "stop_desc": "", "stop_lat": "49.262311", "stop_lon": "-123.069077", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99917", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.731601731602, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.069077,49.262311],
+"type": "Point"
+        },
+        "id": "1000000000000086"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8074","location": "(492700.3724193904, 5457828.582656364)", "stop_id": "8074", "stop_name": "Main Street-Science World Station @ Platform 1", "stop_code": "57999", "stop_desc": "", "stop_lat": "49.273172", "stop_lon": "-123.10035", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99936", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.767676767677, "CatClossnes": 4},
+"geometry": {
+"coordinates": [-123.10035,49.273172],
+"type": "Point"
+        },
+        "id": "1000000000000087"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8075","location": "(492064.2066925826, 5458507.494548997)", "stop_id": "8075", "stop_name": "Stadium-Chinatown Station @ Platform 1", "stop_code": "58000", "stop_desc": "", "stop_lat": "49.279271", "stop_lon": "-123.109109", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99935", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.795735129068, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.109109,49.279271],
+"type": "Point"
+        },
+        "id": "1000000000000088"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8076","location": "(491587.38370942825, 5458944.215774712)", "stop_id": "8076", "stop_name": "Granville Station @ Platform 1", "stop_code": "58001", "stop_desc": "", "stop_lat": "49.283193", "stop_lon": "-123.115674", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99934", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.818181818182, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.115674,49.283193],
+"type": "Point"
+        },
+        "id": "1000000000000089"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8077","location": "(491302.4230943111, 5459210.024387031)", "stop_id": "8077", "stop_name": "Burrard Station @ Platform 1", "stop_code": "58002", "stop_desc": "", "stop_lat": "49.28558", "stop_lon": "-123.119598", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "99933", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.836547291093, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.119598,49.28558],
+"type": "Point"
+        },
+        "id": "1000000000000090"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8060","location": "(511090.2740282343, 5448539.874917237)", "stop_id": "8060", "stop_name": "Surrey Central Station @ Platform 1", "stop_code": "57985", "stop_desc": "", "stop_lat": "49.189561", "stop_lon": "-122.847796", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99951", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.851851851852, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.847796,49.189561],
+"type": "Point"
+        },
+        "id": "1000000000000091"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8078","location": "(491890.23640049546, 5459251.593112087)", "stop_id": "8078", "stop_name": "Waterfront Station @ Platform 1", "stop_code": "58003", "stop_desc": "", "stop_lat": "49.285962", "stop_lon": "-123.111516", "zone_id": "ZN 1", "stop_url": "", "location_type": "0", "parent_station": "12034", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.864801864802, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-123.111516,49.285962],
+"type": "Point"
+        },
+        "id": "1000000000000092"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8061","location": "(510888.126082568, 5449583.797459047)", "stop_id": "8061", "stop_name": "Gateway Station @ Platform 1", "stop_code": "57986", "stop_desc": "", "stop_lat": "49.198955", "stop_lon": "-122.850542", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99950", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.875901875902, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.850542,49.198955],
+"type": "Point"
+        },
+        "id": "1000000000000093"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8062","location": "(509164.7013472204, 5450191.317342)", "stop_id": "8062", "stop_name": "Scott Road Station @ Platform 1", "stop_code": "57987", "stop_desc": "", "stop_lat": "49.204448", "stop_lon": "-122.874185", "zone_id": "ZN 3", "stop_url": "", "location_type": "0", "parent_station": "99949", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.885521885522, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.874185,49.204448],
+"type": "Point"
+        },
+        "id": "1000000000000094"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8063","location": "(506833.53373087535, 5450233.625513876)", "stop_id": "8063", "stop_name": "Columbia Station @ Platform 1", "stop_code": "57988", "stop_desc": "", "stop_lat": "49.204859", "stop_lon": "-122.906187", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99946", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.893939393939, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.906187,49.204859],
+"type": "Point"
+        },
+        "id": "1000000000000095"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8064","location": "(506364.7214651468, 5449855.088654184)", "stop_id": "8064", "stop_name": "New Westminster Station @ Platform 1", "stop_code": "57989", "stop_desc": "", "stop_lat": "49.201459", "stop_lon": "-122.912629", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99945", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.901366607249, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.912629,49.201459],
+"type": "Point"
+        },
+        "id": "1000000000000096"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8065","location": "(503717.41647053487, 5449699.699413907)", "stop_id": "8065", "stop_name": "22nd Street Station @ Platform 1", "stop_code": "57990", "stop_desc": "", "stop_lat": "49.200083", "stop_lon": "-122.948971", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99944", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.907968574635, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.948971,49.200083],
+"type": "Point"
+        },
+        "id": "1000000000000097"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8066","location": "(502983.1852584975, 5451017.943167932)", "stop_id": "8066", "stop_name": "Edmonds Station @ Platform 1", "stop_code": "57991", "stop_desc": "", "stop_lat": "49.211945", "stop_lon": "-122.95904", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99943", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.020202020202, "CatCenDeg": 3, "Clossnes": 1.913875598086, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.95904,49.211945],
+"type": "Point"
+        },
+        "id": "1000000000000098"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"8067","location": "(500841.79546289885, 5451924.898570426)", "stop_id": "8067", "stop_name": "Royal Oak Station @ Platform 1", "stop_code": "57992", "stop_desc": "", "stop_lat": "49.22011", "stop_lon": "-122.98844", "zone_id": "ZN 2", "stop_url": "", "location_type": "0", "parent_station": "99942", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.010101010101, "CatCenDeg": 1, "Clossnes": 1.919191919192, "CatClossnes": 5},
+"geometry": {
+"coordinates": [-122.98844,49.22011],
+"type": "Point"
+        },
+        "id": "1000000000000099"
+
+}
+
+ ],
+"type": "FeatureCollection"
+}

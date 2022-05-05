@@ -593,16 +593,17 @@ def GtfsRouteCleaning(DataSequence,DataTrips,DataRoutes,DataStops):
     CountType={'0':0,'1':0,'2':0,'3':0,'4':0,'5':0,'6':0,'7':0,'11':0,'12':0,
     '100':0,'109':0,'116':0,
     '400':0,'401':0,'402':0,'403':0,'404':0,'405':0,
-    '700':0,'701':0,'702':0,'704':0,'705':0,'707':0,'800':0,
+    '700':0,'701':0,'702':0,'704':0,'705':0,'707':0,'800':0,'715':0,
     '900':0,'901':0,'902':0,'903':0,'906':0,
     '1000':0,
-    '1400':0}
+    '1400':0,
+    '1501':0}
 
-    BusType=['3','700','701','702','704','705','707','800']
+    BusType=['3','700','701','702','704','705','707','800','715']
     TrainType=['2','100','109','116']
     Metrotype=['1','400','401','402','403','404','405']
     TramType= ['0','900','901','902','903','906']
-    OtherType=['4','5','1000','1400']
+    OtherType=['4','5','1000','1400','1501']
 
     for key in DataRoutes.keys():
         # print(DataRoutes[key]['route_type'],type(DataRoutes[key]['route_type']))
@@ -652,14 +653,21 @@ def GtfsRouteCleaning(DataSequence,DataTrips,DataRoutes,DataStops):
             ListOfStops_One=[]
             for Tripkey in DataTrips[VarRouteId]:
                 ListOfStops=[]
-                VarDirectionId=DataTrips[VarRouteId][Tripkey]['direction_id']
+                print("#########################################################################")
+                print("DataTrips[VarRouteId][Tripkey]")
+                print(DataTrips[VarRouteId][Tripkey])
                 if Tripkey in DataSequence.keys():
                     for SeqKey in DataSequence[Tripkey].keys():
                         ListOfStops.append(DataSequence[Tripkey][SeqKey]['stop_id'])
-                if VarDirectionId=='0':
-                    ListOfStopsCero.append(ListOfStops)
-                if VarDirectionId=='1':
-                    ListOfStops_One.append(ListOfStops)
+                if 'direction_id' in DataTrips[VarRouteId][Tripkey]:
+                    VarDirectionId=DataTrips[VarRouteId][Tripkey]['direction_id']
+                    if VarDirectionId=='0':
+                        ListOfStopsCero.append(ListOfStops)
+                    if VarDirectionId=='1':
+                        ListOfStops_One.append(ListOfStops)
+                else:
+                    print(DataTrips[VarRouteId][Tripkey])
+                    b=input("It works")
             Data[RouteKey]['0']=DataCleanerTrips(ListToClean=ListOfStopsCero)
             Data[RouteKey]['1']=DataCleanerTrips(ListToClean=ListOfStops_One)
         return Data
@@ -900,9 +908,10 @@ def GetLineNums(Path):
         CountType=[0,1,2,3,4,5,6,7,11,12,
         100,109,116,
         400,401,402,403,404,405,
-        700,701,702,704,705,707,800,
+        700,701,702,704,705,707,800,715,
         900,901,902,903,906,
         1000,
+        1501,
         1400]
         
         cont=0
@@ -934,19 +943,27 @@ def GetLineNums(Path):
 
 def StoreCityData(NameOfCity,TransitChar,NumberLines):
     #Overwrites the file for the city
+    Titles=["Bus Network","Rail Network","Metro Network","Light Rail Netwrok","Other Network","Node Network"]
     NameOfCity=NameOfCity.replace("/",".")
     Path=r"Resluts/CityMetrics/"+NameOfCity+".txt"
+    print("NameOfCity:",NameOfCity)
+    print("TransitChar")
+    print(TransitChar)
+    print("NumberLines")
+    print(NumberLines)
     fw=open(Path,"w")
     Text=""
     Text+="###### Numer of Stops\n"
     for Sys in TransitChar.keys():
-        Text+=str(Sys)+","+str(TransitChar[Sys]["NumStops"])+"\n"
+        Text+=str(Titles[int(Sys)])+str(Sys)+","+str(TransitChar[Sys]["NumStops"])+"\n"
     Text+="###### Avg Dist of stops\n"
     for Sys in TransitChar.keys():
-        Text+=str(Sys)+","+str(TransitChar[Sys]["AvDist"])+"\n"
+        Text+=str(Titles[int(Sys)])+str(Sys)+","+str(TransitChar[Sys]["AvDist"])+"\n"
     Text+="###### Numer of lines\n"
     for Sys in NumberLines.keys():
-        Text+=str(Sys)+","+str(NumberLines[Sys])+"\n"
+        if Sys in TransitChar.keys():
+            Text+=str(Titles[int(Sys)])+str(Sys)+","+str(NumberLines[Sys])+"\n"
+    
     fw.write(Text)
     fw.close()
 
@@ -1148,7 +1165,7 @@ def GTFS(Path,RequestedData):
     ##########################################################
 
     if RequestedData["GeometricAnalysis"]==True:
-
+        Titles=["Bus Network","Rail Network","Metro Network","Light Rail Netwrok","Other Network","Node Network"]
         ConnectiorDB=DatabaseConnection()
 
         TransitChar={}
@@ -1170,9 +1187,11 @@ def GTFS(Path,RequestedData):
         print("End  GeometricAnalysis")
         # The data is stored in 'Resluts\CityMetrics'
         StoreCityData(NameOfCity=NameOfCity,TransitChar=TransitChar,NumberLines=NumberLines)
+        print("\n"*5)
+        print("Results for",NameOfCity)
         for Sys in TransitChar.keys():
-            print("For ",Sys,"The average distance is: ",TransitChar[Sys]["AvDist"])
-            print("For ",Sys,"The number of stops  is: ",TransitChar[Sys]["NumStops"])
+            print("For ",Titles[Sys],"The average distance is: ",TransitChar[Sys]["AvDist"])
+            print("For ",Titles[Sys],"The number of stops  is: ",TransitChar[Sys]["NumStops"])
 
         # Insert=TextSqLite(idx=0)
         # Variables=TextSqLite(idx=1)
@@ -1217,7 +1236,7 @@ def GTFS(Path,RequestedData):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":True,"GeometricAnalysis":False,"RotatedGridAnalysis":False}
+    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":False,"GeometricAnalysis":False,"RotatedGridAnalysis":True}
     listPath=[]
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Berlin_GTFS\BVG_VBB_bereichsscharf.zip")
     # listPath.append(r"E:\OneDrive - Concordia University - Canada\RA-CAMM\Software\CAMMM-Soft-Tool_V1.1\SampleData\Boston_GTFS\MBTA_GTFS.zip")
@@ -1235,17 +1254,21 @@ if __name__ == "__main__":
 
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Berlin_GTFS/BVG_VBB_bereichsscharf.zip")
+
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
 
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Boston_GTFS/MBTA_GTFS.zip")
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Seattle/gtfs_puget_sound_consolidated.zip")
-    # listPath.append(r"/mnt/e/GitHub/CAMMM-Tool_1.3/Data/Data.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Seattle/gtfs_puget_sound_consolidated.zip")  # Seattle
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto_GTFS/Data.zip")
 
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/opendata_ttc_schedules.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vancouver/VancouverGTFS.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Longueuil_GTFS/20220404.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Laval_GTFS/GTF_STL_v2.zip")
+
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Oslo_GTFS/Oslo_gtfs.zip")
     # print("RequestedData",RequestedData)

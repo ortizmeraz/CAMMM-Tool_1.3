@@ -677,8 +677,12 @@ def GeoOperation(RetPath,StopPath):
     print(polygons.iterrows().__sizeof__)
     # b=input("Delete")
     Count={}
+    Counter=0
+    TotalPoly=polygons.iterrows()
+    for x in TotalPoly:
+        Counter=Counter+1
     for i, poly in polygons.iterrows():
-        print(i)
+        print(i," of ",Counter)
         Count[i]=0
         # print(i,poly.geometry,"\n")
         # print("poly",type(poly))
@@ -789,9 +793,12 @@ def TransformStopsCsvToGeoJson(PathStopsCSV,PathStopsGeojson,Agency):
         for line in reader:
             # print(line[3],type(line))
             Id=line[0]
+            print("Id1: ",Id,"\tLat: ",line[lat_id],"\tLon: ",line[lon_id])
+            if line[lat_id] =="" or line[lon_id]=="":
+                continue
             Lat=float(line[lat_id])
             Lon=float(line[lon_id])
-            print("Id: ",Id,"\tLat: ",Lat,"\tLon: ",Lon)
+            print("Id2: ",Id,"\tLat: ",Lat,"\tLon: ",Lon)
             Coords=utm.from_latlon(Lat,Lon)
             ListStops.append([Coords[0],Coords[1]])
         # print(Coords)
@@ -835,16 +842,16 @@ def GetStopDensity(PathFileGridUTM,PathStops,PathTrip,PathShape,Pathroute,Agency
     North=['N','P','Q','R','S','T','U','V','W','X']
     if Coords[3] in North:
         print("North")
-        StartYval=Coords[1]-25000
+        StartYval=Coords[1]+40000
     elif Coords[3] in North:
         print("South")
         
     if Coords[2] <=30:
         print("West")
-        StartXval=Coords[0]
+        StartXval=Coords[0]-25000
     elif Coords[2] >30:
         print("East")
-        StartXval=Coords[0]+25000
+        StartXval=Coords[0]-20000
 
     # b=input("Delete")
     GridCoords=CalculateRotatedGrid(Angle=AvAngle,Distnace=1000,StartX=(StartXval),StartY=(StartYval),NumCellX=(NumCellX+25),NumCellY=(NumCellY+25))

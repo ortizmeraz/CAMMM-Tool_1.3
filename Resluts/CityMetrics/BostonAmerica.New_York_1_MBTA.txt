@@ -1,0 +1,18 @@
+###### Numer of Stops
+Bus Network0,7460
+Rail Network1,129
+Metro Network2,46
+Light Rail Netwrok3,98
+Other Network4,2
+###### Avg Dist of stops
+Bus Network0,267.1384600819715
+Rail Network1,3533.364632791327
+Metro Network2,675.3013865118442
+Light Rail Netwrok3,643.7950212906818
+Other Network4,7486.60319519043
+###### Numer of lines
+Rail Network1,3
+Bus Network0,5
+Light Rail Netwrok3,211
+Metro Network2,13
+Other Network4,2

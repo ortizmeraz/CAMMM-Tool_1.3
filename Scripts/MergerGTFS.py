@@ -95,7 +95,7 @@ def CheckDataQuality(FILES:list,DATA:dict)->None:
                 print("-----\n"*3)
         print("CheckDataQuality")
         print("Status of change",Change)
-        b=input("Delete")
+        # b=input("Delete")
         print("\n"*5)
 
 def WriteFiles(FILES:list,ExitPath:str,DATA:dict,HeaderData:dict)->None:
