@@ -949,6 +949,50 @@ def StoreCityData(NameOfCity,TransitChar,NumberLines):
     fw.close()
 
 
+def AnalyzeFareData(Data):
+    ExitDict={"Av.Fare":0,"Farrelist":[],"Currency":"","Multimodality":""}
+    keys=Data.keys()
+    # print("KEys ###############################")
+    # for key in keys:
+    #     print("\t",key)
+    print("Data ###############################")
+    for key in keys:
+        print(key)
+        print("\t",Data[key],type(Data[key]))
+    "fare_id"
+    "price"
+    "currency_type"
+    "payment_method"
+    "transfers"
+    "transfer_duration"
+    ListOfPrices=[]
+    for x in Data["price"]:
+        ListOfPrices.append(float(x))
+    ExitDict["Av.Fare"]=(sum(ListOfPrices)/len(ListOfPrices))
+    for x in range(0,len(Data["price"])):
+        # print("--------",x,Data["fare_id"][x],Data["price"][x])
+        ExitDict["Farrelist"].append([Data["fare_id"][x],Data["price"][x]])
+    # print(Data["currency_type"],type(Data["currency_type"]))
+    ExitDict["Currency"]=set(Data["currency_type"])
+    ExitDict["Multimodality"]=[]
+    for x in Data["transfers"]:
+        if x=='':
+            ExitDict["Multimodality"].append(True)
+        else:
+            ExitDict["Multimodality"].append(False)
+
+    # print("ExitDict[Currency]",ExitDict["Currency"],type(ExitDict["Currency"]))
+    print(ExitDict)
+
+
+def WriteFareData(Data):
+        ExitPath="Results\_FareInfo"
+
+
+    print(ExitDict)
+
+    return ExitDict
+
 
 def GetFareDate(path):
     with open(path,encoding="utf-8-sig") as csv_file:
@@ -962,7 +1006,7 @@ def GetFareDate(path):
             for idx,Element in enumerate(row):
                 Dict[headers[idx]].append(Element)
 
-        print(Dict)
+        # print(Dict)
     return Dict
 
 
@@ -978,6 +1022,7 @@ def GetInfoData(List):
         if File == "fare_attributes.txt":
             print("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY","fare_attributes.txt")
             FareData=GetFareDate(path=Path)
+            AnalyzeFareData(Data=FareData)
             b=input("Delete")
 
 
@@ -1181,18 +1226,18 @@ if __name__ == "__main__":
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Berlin_GTFS/BVG_VBB_bereichsscharf.zip")
 
     listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
 
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Boston_GTFS/MBTA_GTFS.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Seattle/gtfs_puget_sound_consolidated.zip")  # Seattle
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto_GTFS/Data.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Boston_GTFS/MBTA_GTFS.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Seattle/gtfs_puget_sound_consolidated.zip")  # Seattle
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto_GTFS/Data.zip")
 
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vancouver/VancouverGTFS.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Longueuil_GTFS/20220404.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Laval_GTFS/GTF_STL_v2.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vancouver/VancouverGTFS.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Longueuil_GTFS/20220404.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Laval_GTFS/GTF_STL_v2.zip")
 
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Oslo_GTFS/Oslo_gtfs.zip")
