@@ -26,7 +26,9 @@ from Clasification import GetStopDensity
 
 from ClassCollection import BusStop
 
-import networkx
+from GFTSsideProc import GetInfoData
+
+import networkx as nx
 
 
 def DataCleanerTrips(ListToClean):
@@ -634,9 +636,9 @@ def GtfsRouteCleaning(DataSequence,DataTrips,DataRoutes,DataStops):
             ListOfStops_One=[]
             for Tripkey in DataTrips[VarRouteId]:
                 ListOfStops=[]
-                print("#########################################################################")
-                print("DataTrips[VarRouteId][Tripkey]")
-                print(DataTrips[VarRouteId][Tripkey])
+                # print("#########################################################################")
+                # print("DataTrips[VarRouteId][Tripkey]")
+                # print(DataTrips[VarRouteId][Tripkey])
                 if Tripkey in DataSequence.keys():
                     for SeqKey in DataSequence[Tripkey].keys():
                         ListOfStops.append(DataSequence[Tripkey][SeqKey]['stop_id'])
@@ -944,86 +946,10 @@ def StoreCityData(NameOfCity,TransitChar,NumberLines):
     for Sys in NumberLines.keys():
         if Sys in TransitChar.keys():
             Text+=str(Titles[int(Sys)])+str(Sys)+","+str(NumberLines[Sys])+"\n"
-    
     fw.write(Text)
     fw.close()
 
 
-def AnalyzeFareData(Data):
-    ExitDict={"Av.Fare":0,"Farrelist":[],"Currency":"","Multimodality":""}
-    keys=Data.keys()
-    # print("KEys ###############################")
-    # for key in keys:
-    #     print("\t",key)
-    print("Data ###############################")
-    for key in keys:
-        print(key)
-        print("\t",Data[key],type(Data[key]))
-    "fare_id"
-    "price"
-    "currency_type"
-    "payment_method"
-    "transfers"
-    "transfer_duration"
-    ListOfPrices=[]
-    for x in Data["price"]:
-        ListOfPrices.append(float(x))
-    ExitDict["Av.Fare"]=(sum(ListOfPrices)/len(ListOfPrices))
-    for x in range(0,len(Data["price"])):
-        # print("--------",x,Data["fare_id"][x],Data["price"][x])
-        ExitDict["Farrelist"].append([Data["fare_id"][x],Data["price"][x]])
-    # print(Data["currency_type"],type(Data["currency_type"]))
-    ExitDict["Currency"]=set(Data["currency_type"])
-    ExitDict["Multimodality"]=[]
-    for x in Data["transfers"]:
-        if x=='':
-            ExitDict["Multimodality"].append(True)
-        else:
-            ExitDict["Multimodality"].append(False)
-
-    # print("ExitDict[Currency]",ExitDict["Currency"],type(ExitDict["Currency"]))
-    print(ExitDict)
-
-
-def WriteFareData(Data):
-        ExitPath="Results\_FareInfo"
-
-
-    print(ExitDict)
-
-    return ExitDict
-
-
-def GetFareDate(path):
-    with open(path,encoding="utf-8-sig") as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=',')
-        headers = next(csv_reader, None)
-        Dict={}
-        for head in headers:
-            Dict[head]=[]
-        for id,row in enumerate(csv_reader):
-            print(id,row,type(row),len(row))
-            for idx,Element in enumerate(row):
-                Dict[headers[idx]].append(Element)
-
-        # print(Dict)
-    return Dict
-
-
-
-
-def GetInfoData(List):
-    Files=[]
-    CompleteList=["agency.txt", "stops.txt", "routes.txt", "trips.txt", "stop_times.txt", "calendar.txt", "calendar_dates.txt", "fare_attributes.txt", "fare_rules.txt", "shapes.txt", "frequencies.txt", "transfers.txt", "pathways.txt", "levels.txt","feed_info.txt", "translations.txt", "attributions.txt"]
-    for Path in List:
-        FullSplitPath=Path.split("/")
-        File=FullSplitPath[-1]
-        print(File)
-        if File == "fare_attributes.txt":
-            print("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY","fare_attributes.txt")
-            FareData=GetFareDate(path=Path)
-            AnalyzeFareData(Data=FareData)
-            b=input("Delete")
 
 
 
@@ -1078,8 +1004,9 @@ def GTFS(Path,RequestedData):
         NameOfCity=str(DataCity[IndxTi])+"_"+str(DataCity[IndxNa])
 
     NameOfCity = NameOfCity.replace('\"',"")
+    NameOfCity = NameOfCity.replace("/",".")
 
-    print(NameOfCity)
+    print("NameOfCity1",NameOfCity)
     # b=input(".................................")
     NumberLines=GetLineNums(Path=O_PathRoutes)
     # print(NameOfCity)
@@ -1108,7 +1035,7 @@ def GTFS(Path,RequestedData):
         PathFile= os.path.abspath('Operational/'+File)
         PathList.append(PathFile)
         # print(File,PathFile)
-    GetInfoData(List=PathList)
+    GetInfoData(List=PathList,NameOfCity=NameOfCity)
     print("Step 4 End")
 
     ListOfNeworks=[]
@@ -1124,8 +1051,8 @@ def GTFS(Path,RequestedData):
         print("Enters into the agregation mode")
     #     print(len(ListofStops))
     #     print(type(ListofStops))
-        for i in EdgeList:
-            print(type(i),len(i))
+        # for i in EdgeList:
+        #     print(type(i),len(i))
         # b=input("####################################")
         # b=input()
         # print(EdgeList)
@@ -1146,12 +1073,23 @@ def GTFS(Path,RequestedData):
                 # ListOfNeworks.append(AnalyzedNetwork)
                 # CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops)
                 print("Network:",Titles[idx])
-                NetWorkToGeoJson(G=AnalyzedNetwork,NetworkIndex=idx)
+                # NetWorkToGeoJson(G=AnalyzedNetwork,NetworkIndex=idx)
                 print("FIN DE LA RED.......................................")
                 # b=input("Press enter")
             elif len(a.keys())==0:
                 print("No",idx)
             print("End of",Titles[idx],"network")
+            print("Type of AnalyzedNetwork",type(AnalyzedNetwork))
+            b=input("..DELETE...............................")
+            for node in AnalyzedNetwork:
+                # print(node,node["wheelchair_boarding"],dir(node),"\n\n\n")
+                # print(nx.get_node_attributes(AnalyzedNetwork, node))
+                color = nx.get_node_attributes(AnalyzedNetwork, "wheelchair_boarding")
+                print(color)
+
+
+            b=input("..DELETE...............................")
+
     # for net in ListOfNeworks:
     #     print(type(net))
         # networkx.readwrite.nx_shp.write_shp(net,r"D:\GitHub\CAMMM-Tool_1.3\Output")
@@ -1216,7 +1154,7 @@ def GTFS(Path,RequestedData):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":False,"GeometricAnalysis":False,"RotatedGridAnalysis":False}
+    RequestedData={"NetworkAnalysis":True,"NodeNetworkAnalysis":False,"GeometricAnalysis":False,"RotatedGridAnalysis":False}
     listPath=[]
   
 
