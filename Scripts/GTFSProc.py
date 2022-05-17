@@ -1070,25 +1070,24 @@ def GTFS(Path,RequestedData):
                 print("Tpye EdgeList",type(EdgeList[idx]))
                 print("NetworkIndex=idx",idx)
                 AnalyzedNetwork=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx)
-                # ListOfNeworks.append(AnalyzedNetwork)
-                # CityStat_NumberOfStops=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops)
+                ListOfNeworks.append(AnalyzedNetwork)
                 print("Network:",Titles[idx])
-                # NetWorkToGeoJson(G=AnalyzedNetwork,NetworkIndex=idx)
-                print("FIN DE LA RED.......................................")
+                NetWorkToGeoJson(G=AnalyzedNetwork,NetworkIndex=idx)
+                # print("FIN DE LA RED.......................................")
                 # b=input("Press enter")
             elif len(a.keys())==0:
                 print("No",idx)
             print("End of",Titles[idx],"network")
-            print("Type of AnalyzedNetwork",type(AnalyzedNetwork))
-            b=input("..DELETE...............................")
-            for node in AnalyzedNetwork:
+            # print("Type of AnalyzedNetwork",type(AnalyzedNetwork))
+            # b=input("..DELETE...............................")
+            # for node in AnalyzedNetwork:
                 # print(node,node["wheelchair_boarding"],dir(node),"\n\n\n")
                 # print(nx.get_node_attributes(AnalyzedNetwork, node))
-                color = nx.get_node_attributes(AnalyzedNetwork, "wheelchair_boarding")
-                print(color)
+                # color = nx.get_node_attributes(AnalyzedNetwork, "wheelchair_boarding")
+                # print(color)
 
 
-            b=input("..DELETE...............................")
+            # b=input("..DELETE...............................")
 
     # for net in ListOfNeworks:
     #     print(type(net))
@@ -1096,6 +1095,16 @@ def GTFS(Path,RequestedData):
     if RequestedData["NodeNetworkAnalysis"]==True:
         Nodes=CreateNodes(SuperRange=400,NodeRange=75,ListofStops=ListofStops,DataStops=DataStops)
         print("Type of ListofStops",type(ListofStops))
+
+        # for node in Nodes:
+            # print(node)
+            # print(node,node["wheelchair_boarding"],dir(node),"\n\n\n")
+            # print(nx.get_node_attributes(AnalyzedNetwork, node))
+            # color = nx.get_node_attributes(AnalyzedNetwork, "wheelchair_boarding")
+            # print(color)
+            # b=input("..DELETE...............................")
+
+
         Graph=AgregatedGTFSStopsToNetwork(AgregatedNodes=Nodes,EdgeList=EdgeList)
         print(type(Graph))
 
@@ -1154,7 +1163,7 @@ def GTFS(Path,RequestedData):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"NetworkAnalysis":True,"NodeNetworkAnalysis":False,"GeometricAnalysis":False,"RotatedGridAnalysis":False}
+    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":True,"GeometricAnalysis":False,"RotatedGridAnalysis":False}
     listPath=[]
   
 

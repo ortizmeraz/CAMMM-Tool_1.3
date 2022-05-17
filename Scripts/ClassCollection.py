@@ -21,7 +21,7 @@ class DataBucket:
 
 
 class BusStop:
-    def __init__(self,Id="",CoordX=0,CoordY=0,Epsg="",Routes=[],Cluster=[],SuperNode=0):
+    def __init__(self,Id="",CoordX=0,CoordY=0,Epsg="",Routes=[],Cluster=[],SuperNode=0,Wheelchair=""):
         self.Id=Id
         self.CoordX=CoordX
         self.CoordY=CoordY
@@ -29,6 +29,7 @@ class BusStop:
         self.Routes=[]
         self.Cluster=[]
         self.SuperNode=SuperNode
+        self.Wheelchair=Wheelchair
 
 class Station:
     def __init__(self,Id="",CoordX=0,CoordY=0,Epsg="",Routes=[],Cluster=[],System=[]):

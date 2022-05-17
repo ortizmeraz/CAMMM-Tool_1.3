@@ -1,10 +1,29 @@
-import collections 
+import collections
+from curses.ascii import BS 
 import utm
 import Calculations
 
 from ClassCollection import Station
 from ClassCollection import BusStop
+from Tools import ProgressBarColor
 
+def WheelchariEval(ListAccesibility):
+    sumA=0
+    if len(ListAccesibility)==1:
+        if ListAccesibility[0]=='1':
+            Wheelchair="Yes"
+        else:
+            Wheelchair="No"
+    else:  
+        for x in ListAccesibility:
+            sumA+=int(x)
+        if sumA/len(ListAccesibility)==2:
+            Wheelchair="No"
+        elif sumA > len(ListAccesibility):
+            Wheelchair="Mixed"
+        else:
+            Wheelchair="Yes"
+    return Wheelchair
 
 def AgregateStops(ListBusStops,Range):
     # datetime object containing current date and time
@@ -49,8 +68,8 @@ def AgregateStops(ListBusStops,Range):
             pass
             # print("next")
         else:
-            print("Id",Bs1.Id,"Len",len(Bs1.Cluster),"X:",Bs1.CoordX,"\tY:",Bs1.CoordY,"          Routes",Bs1.Routes)
-            print("Appends", end= " ")
+            # print("Id",Bs1.Id,"Len",len(Bs1.Cluster),"X:",Bs1.CoordX,"\tY:",Bs1.CoordY,"          Routes",Bs1.Routes)
+            # print("Appends", end= " ")
             SumCX=0
             SumCY=0
             SumRoutes=0
@@ -58,6 +77,9 @@ def AgregateStops(ListBusStops,Range):
             RouteCol=Bs1.Routes
             ListX=[]
             ListY=[]
+            print("checking the methods . . . . .")
+            print("Bs1:",dir(Bs1))
+            ListAccesibility=[Bs1.Wheelchair]
             print(Bs1.Cluster)
             for BsC in Bs1.Cluster:
                 Listb.append(BsC)
@@ -68,6 +90,7 @@ def AgregateStops(ListBusStops,Range):
                 SumCY=SumCY+BsC.CoordY
                 SumRoutes=SumRoutes+len(BsC.Routes)
                 RouteCol=RouteCol+BsC.Routes
+                ListAccesibility.append(BsC.Wheelchair)
                 print("..",BsC.Id,"..", end="\t")
             ACoordXutm=(Bs1.CoordX+SumCX)/(len(Bs1.Cluster)+1)
             ACoordYutm=(Bs1.CoordY+SumCY)/(len(Bs1.Cluster)+1)
@@ -84,10 +107,9 @@ def AgregateStops(ListBusStops,Range):
             # print("Bs1.Epsg[-3]",Bs1.Epsg[-3],type(Bs1.Epsg[-3]))
             # print("Num",Num,type(Num))
             Coords=utm.to_latlon(ACoordXutm, ACoordYutm, Num, Letter )
+            Wheelchair=WheelchariEval(ListAccesibility=ListAccesibility)
 
-            # b=input('Press Enter ...')
-            # Var=str(ACoordX)+","+str(ACoordY)+","+str(Aroutes)+","+str(RouteCol)+"\n"
-            ExitValues.append([Coords[0],Coords[1],Aroutes,RouteCol,StopCode,"N"])  
+            ExitValues.append([Coords[0],Coords[1],Aroutes,RouteCol,StopCode,"N",Wheelchair])  
 
             # RouteCol=[]
             print()
@@ -102,7 +124,8 @@ def AgregateStops(ListBusStops,Range):
 
 def AgregateHeavyTransit(ListBusStops,Range):
     # b=input("AgregateHeavyTransit")
-    for Bs1 in ListBusStops:
+    for i,Bs1 in enumerate(ListBusStops):
+        ProgressBarColor(current=i+1,total=len(ListBusStops))
         ListDist=[]
         KeyListDist={}
         for Bs2 in ListBusStops:
@@ -119,15 +142,16 @@ def AgregateHeavyTransit(ListBusStops,Range):
     Listb=[]
     ExitValues=[]
 
-    for Bs1 in ListBusStops:
+    for i,Bs1 in enumerate(ListBusStops):
+        ProgressBarColor(current=i+1,total=len(ListBusStops))
         if Bs1 in Listb:
             pass
             # print("next")
         else:
-            print("Id",Bs1.Id,"Len",len(Bs1.Cluster),"X:",Bs1.CoordX,"\tY:",Bs1.CoordY,"Routes",Bs1.Routes)
-            print("Appends", end= " ")
-            print("EPSG:",Bs1.Epsg)
-            # b=input()
+            # print("Id",Bs1.Id,"Len",len(Bs1.Cluster),"X:",Bs1.CoordX,"\tY:",Bs1.CoordY,"Routes",Bs1.Routes)
+            # print("Appends", end= " ")
+            # print("EPSG:",Bs1.Epsg)
+            # b=input("Press enter")
             SumCX=0
             SumCY=0
             SumRoutes=0
@@ -135,6 +159,7 @@ def AgregateHeavyTransit(ListBusStops,Range):
             RouteCol=Bs1.Routes
             ListX=[]
             ListY=[]
+            ListAccesibility=[Bs1.WheelChair]
             # print(Bs1.Cluster)
             for BsC in Bs1.Cluster:
                 Listb.append(BsC)
@@ -145,8 +170,9 @@ def AgregateHeavyTransit(ListBusStops,Range):
                 SumCY=SumCY+BsC.CoordY
                 SumRoutes=SumRoutes+len(BsC.Routes)
                 RouteCol=RouteCol+BsC.Routes
-                # print("..",BsC.Id,"..", end="\t")
-            
+                ListAccesibility.append(BsC.WheelChair)
+                # print("Wheelchair in ",BsC.Id, "  -   WC:",BsC.WheelChair)
+
             ACoordXutm=(Bs1.CoordX+SumCX)/(len(Bs1.Cluster)+1)
             ACoordYutm=(Bs1.CoordY+SumCY)/(len(Bs1.Cluster)+1)
             # print("ListX",ListX)
@@ -162,10 +188,17 @@ def AgregateHeavyTransit(ListBusStops,Range):
             # print("Bs1.Epsg[-3]",Bs1.Epsg[-3],type(Bs1.Epsg[-3]))
             # print("Num",Num,type(Num))
             Coords=utm.to_latlon(ACoordXutm, ACoordYutm, Num, Letter )
+            # Wheelchair procesing
+            # print("ListAccesibility:",ListAccesibility)
+
+            Wheelchair=WheelchariEval(ListAccesibility=ListAccesibility)
+            # print("len:",len(ListAccesibility),"SumA",sumA)
+            # print("WheelChair",WheelChair)
+            # b=input("Press enter--------------------------------")
             # print(Coords)
             # b=input('Press Enter ...')
             # Var=str(ACoordX)+","+str(ACoordY)+","+str(Aroutes)+","+str(RouteCol)+"\n"
-            ExitValues.append([Coords[0],Coords[1],Aroutes,RouteCol,StopCode,"S"])
+            ExitValues.append([Coords[0],Coords[1],Aroutes,RouteCol,StopCode,"S",Wheelchair])
 
     return ExitValues
 
@@ -182,7 +215,7 @@ def GetEPSG(letter,zone):
 def ConvertStations(ListDicts,Route,DataStops,Systems,SuperNode):
 
     class Station:
-        def __init__(self,Id="",CoordX=0,CoordY=0,Epsg="",Routes=[],Cluster=[],System=[],SuperNode=0):
+        def __init__(self,Id="",CoordX=0,CoordY=0,Epsg="",Routes=[],Cluster=[],System=[],SuperNode=0,WheelChair=0):
             self.Id=Id
             self.CoordX=CoordX
             self.CoordY=CoordY
@@ -191,11 +224,15 @@ def ConvertStations(ListDicts,Route,DataStops,Systems,SuperNode):
             self.Cluster=[]
             self.System=[]
             self.SuperNode=SuperNode
+            self.WheelChair=WheelChair
 
     ListStation=[]
     for idx,Stations in enumerate(ListDicts):
+        ProgressBarColor(current=idx+1,total=len(ListDicts))
         for Estacion in Stations:
-            # print(Estacion)
+            # print("Estacion",Estacion)
+            # print("DataStops[Estacion]",DataStops[Estacion])
+
             Lat=DataStops[Estacion]['stop_lat']
             Lon=DataStops[Estacion]['stop_lon']
             # print(Lat,Lon)
@@ -211,10 +248,13 @@ def ConvertStations(ListDicts,Route,DataStops,Systems,SuperNode):
             # Sta.Cluster=[]
             Sta.System=[Systems[idx]]
             Sta.SuperNode=SuperNode
+            Sta.WheelChair=DataStops[Estacion]['wheelchair_boarding']
             ListStation.append(Sta)
             ListStation[idx]=Sta
     #         print(Sta.Id,Sta.CoordX,Sta.CoordY)
-    #         print("Sta",Sta)
+            # print("Sta",Sta)
+            # print("wheelchair_boarding",Sta.WheelChair)
+            # b=input("Press enter")
     #         for st in ListStation:
     #             print("+",st.Id,st.CoordX)
     #         print(".")
@@ -234,9 +274,12 @@ def ConvertToStopObj(List,Route,DataStops):
         BStop.CoordY=float(UTM[1])
         BStop.Routes=[Route]
         BStop.Epsg=GetEPSG(letter=UTM[3],zone=UTM[2])
+        BStop.LocationType=DataStops[stop]['location_type']
+        BStop.ParentStation=DataStops[stop]['parent_station']
+        BStop.Wheelchair=DataStops[stop]['wheelchair_boarding']
 
-        print(stop,Route,DataStops[stop]['stop_lat'],DataStops[stop]['stop_lon'])
-        print(BStop.Id,BStop.Routes,BStop.CoordX,BStop.CoordY)
+        # print(stop,Route,DataStops[stop]['stop_lat'],DataStops[stop]['stop_lon'])
+        # print(BStop.Id,BStop.Routes,BStop.CoordX,BStop.CoordY)
         OutList.append(BStop)
     return OutList
 

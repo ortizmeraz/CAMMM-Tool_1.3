@@ -26,6 +26,7 @@ def Update():
     os.system("pip3 install matplotlib")
     os.system("pip3 install Cython")
     os.system("pip3 install utm")
+    os.system("pip3 install colorama")
 
 
 if __name__ == "__main__":
