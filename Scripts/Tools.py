@@ -78,7 +78,7 @@ def ExportTOCSV(gjPath,exitPath):
 if __name__=="__main__":
     # ExportTOCSV(gjPath=r"/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Barcelona/Barcelona_Bus.geojson",exitPath=r"/mnt/e/GitHub/CAMMM-Tool_1.3/Results/TABLES/Test.csv")
 
-    Path=r"/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Dara.txt"
+    Path=r"/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Data.txt"
     FileList=[]
     File = open(Path)
     Lines=File.readlines()

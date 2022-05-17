@@ -1,4 +1,0 @@
-/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Barcelona/Barcelona_Bus.geojson
-/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Barcelona/Barcelona_Metro.geojson
-/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Barcelona/Barcelona_Bus.geojson
-/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Barcelona/Barcelona_Metro.geojson
