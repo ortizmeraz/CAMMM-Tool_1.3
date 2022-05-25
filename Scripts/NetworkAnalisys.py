@@ -1,3 +1,4 @@
+import os
 import networkx as nx
 import numpy as np
 import pandas
@@ -13,6 +14,9 @@ import zipfile
 from FeatureOperations import AgregateTransitNetwork
 from FeatureOperations import CalculateVecinityBusStops
 
+from GuiSecondary import select_file
+from GuiSecondary import select_folder
+
 import tkinter
 from tkinter import ttk 
 from tkinter.filedialog import asksaveasfile 
@@ -23,6 +27,7 @@ from datetime import datetime
 from Databases import UpdatePath
 from Databases import RearPaths
 from Tools import ProgressBarColor
+from Tools import ReadGeoJson
 
 import matplotlib.pyplot as plt
 
@@ -40,6 +45,100 @@ def ConvertToUTM(lat,lon):
     x, y = pyproj.transform(proj_wgs84, proj_utm, lon, lat)
     return x,y
 
+def NetworkLineAgregator(DataStops,DataTrips,DataRoutes,DataSequence,CityId):
+    # print("DataStops:",type(DataStops),len(DataStops))
+    # print("EdgeData:",type(EdgeData),len(EdgeData))
+    # b=input()
+    Error=0
+    G = nx.DiGraph()
+    List_Nodes_Key=list(DataStops.keys())
+
+    SationsByRoutes={}
+    LKdataRoutes=list(DataRoutes.keys())
+
+    # print("DataSequence",type(DataSequence))
+    for i,route in enumerate(DataRoutes.keys()):
+        ProgressBarColor(current=i+1,total=len(DataRoutes.keys()),title=" Route Analysis")
+        # print("#######################################")
+        # print(route)
+        SationsByRoutes[route]=[]
+        RouteTrips=list(DataTrips[route].keys())
+        for trips in RouteTrips:
+            if trips in DataSequence:
+                TempStops=[]
+                for Sequence in DataSequence[trips].keys():
+                    # print(Sequence, DataSequence[trips][Sequence])
+                    TempStops.append(DataSequence[trips][Sequence]['stop_id'])
+            # print("*****************************************************************",route)
+            if len(TempStops)>len(SationsByRoutes[route]):
+                SationsByRoutes[route]=TempStops
+                # print("CHANGE!!!!!")
+            # for i,x in enumerate(SationsByRoutes[route]):
+            #     print(i,x)
+            # b=input('.................................')
+    
+    PathToFolder=select_folder(Title=CityId)
+    # print("·······························")
+    # print(PathToFolder)
+    # print("·······························")
+
+    ListFiles = os.listdir(PathToFolder)
+    TransitSystems={}
+    ExitHeaderse=[]
+    NotUsedStops=[]
+    HeaderPrint=['stop','route']
+    for file in ListFiles:
+        # print(PathToFolder,file)
+        Path=PathToFolder+'/'+file
+        Type=list(list(file.split("_"))[1].split("."))[0]
+        print(Type)
+        # b=input('.................................')
+        N=ReadGeoJson(gjPath=Path)
+        for nn in N:
+            N[nn]['Type']=Type
+            for k in N[nn].keys():
+                if k not in ExitHeaderse: ExitHeaderse.append(k) 
+        TransitSystems.update(N)
+    HeaderPrint+=ExitHeaderse
+    for route in SationsByRoutes.keys():
+        for stop in SationsByRoutes[route]:
+            StoreList=[stop,route] 
+            for key in ExitHeaderse:
+                if stop in TransitSystems.keys():
+                    if key in TransitSystems[stop]: 
+                        if key not in ['stop','route']:   
+                            StoreList.append(TransitSystems[stop][key])
+                    else:
+                        StoreList.append("NA")
+                else:
+                    Error+=1
+                    NotUsedStops.append(str(stop)+"-"+str(route))
+                    # b=input('...............ERRRORRRR..................')
+
+    #         print(StoreList)
+    # print(HeaderPrint)
+    print(NotUsedStops)
+    NotUsedStops2=list(set(NotUsedStops))
+    print(NotUsedStops2,len(NotUsedStops2))
+    print("Error",Error)
+    b=input('.................................')
+
+
+
+
+
+
+
+    # for i,x in enumerate(SationsByRoutes.keys()):
+    #     print(i,x)
+    #     for y in SationsByRoutes[x]:
+    #         print("\t",y)
+
+
+
+
+
+
 
 
 def GtfsToNetwork(EdgeData,DataStops,NetworkIndex):
@@ -48,35 +147,36 @@ def GtfsToNetwork(EdgeData,DataStops,NetworkIndex):
     # b=input()
     G = nx.DiGraph()
     List_Nodes_Key=list(DataStops.keys())
-    
-    # print(List_Nodes)
-    # now = datetime.now()
-    # timestamp = datetime.timestamp(now)
-    # print("timestamp 1 =", timestamp)
-    # G.add_nodes_from(List_Nodes)
-    # # G.add_edges_from(List_Edges)
-    # now = datetime.now()
-    # timestamp = datetime.timestamp(now)
-    # print("timestamp 2 =", timestamp)
 
-    # now = datetime.now()
-    # timestamp = datetime.timestamp(now)
-    # print("timestamp 1 =", timestamp)
+    SationsByRoutes={}
+    LKdataRoutes=list(DataRoutes.keys())
+
+    print("DataSequence",type(DataSequence))
+    for route in DataRoutes.keys():
+        print("#######################################")
+        print(route)
+        SationsByRoutes[route]=[]
+        RouteTrips=list(DataTrips[route].keys())
+        for trips in RouteTrips:
+            if trips in DataSequence:
+                TempStops=[]
+                for Sequence in DataSequence[trips].keys():
+                    print(Sequence, DataSequence[trips][Sequence])
+                    # Stops.append(DataSequence[trips][Sequence]['stop_id'])
+                    TempStops.append(DataSequence[trips][Sequence]['stop_id'])
+            print("*****************************************************************",route)
+            if len(TempStops)>len(SationsByRoutes[route]):
+                SationsByRoutes[route]=TempStops
+                print("CHANGE!!!!!")
+            for i,x in enumerate(SationsByRoutes[route]):
+                print(i,x)
+            # b=input('.................................')
+    # for i,x in enumerate(SationsByRoutes.keys()):
+    #     print(i,x)
+    #     for y in SationsByRoutes[x]:
+    #         print("\t",y)
 
 
-    # for node in List_Nodes:
-    #     # print(node,DataStops[node])
-    #     x,y=ConvertToUTM(lat=float(DataStops[node]['stop_lat']),lon=float(DataStops[node]['stop_lon']))
-    #     G.add_node(node,pos=(x,y),stop_id =DataStops[node]['stop_id'],stop_name =DataStops[node]['stop_name'],stop_code =DataStops[node]['stop_code'],location_type =DataStops[node]['location_type'],parent_station =DataStops[node]['parent_station'],wheelchair_boarding =DataStops[node]['wheelchair_boarding'],stop_direction =DataStops[node]['stop_direction'])
-    #     # G.add_node(node, time='5pm')
-        
-    # now = datetime.now()
-    # timestamp = datetime.timestamp(now)
-    # print("timestamp 2 =", timestamp)
-    # for node in list(G.nodes):
-    #     print("node",G.nodes[node])
-    # print(EdgeData)
-    # print("EdgeData")
     List_Nodes=[]
     EdgeList=[]
     NodePrintProp={'Pos':{}}

@@ -1,5 +1,7 @@
 import readline
 import Calculations
+import datetime
+
 
 import utm
 import os
@@ -10,6 +12,7 @@ import math
 import sqlite3
 import decimal
 decimal.getcontext().prec = 10
+from datetime import time
 
 
 from FeatureOperations import ConvertToUTM
@@ -19,6 +22,7 @@ from NetworkAnalisys import GtfsToNetwork
 from Databases import TransportNames
 from NetworkAnalisys import AgregatedGTFSStopsToNetwork
 from NetworkAnalisys import NetWorkToGeoJson
+from NetworkAnalisys import NetworkLineAgregator
 from AggregationTools import CreateNodes
 
 from Clasification import TransformStopsCsvToGeoJson
@@ -29,6 +33,9 @@ from ClassCollection import BusStop
 from GFTSsideProc import GetInfoData
 
 import networkx as nx
+
+from Tools import ProgressBarColor
+from Tools import TimeDelta
 
 
 def DataCleanerTrips(ListToClean):
@@ -96,7 +103,8 @@ def ConstructSpatialNetworkSHP(DictStops,DataSequence,DataTrips,DataRoutes,DataS
     # A dictionary to contain the lines 
     CollectionLines={}
     # A cicle where all the 
-    for key in KeysDS:
+    for i,key in enumerate(KeysDS):
+        ProgressBarColor(current=1+i,total=len(KeysDS))
         # print("Line:",key)
         CollectionLines[key]=[[]]
         StoredStops=[]
@@ -112,15 +120,15 @@ def ConstructSpatialNetworkSHP(DictStops,DataSequence,DataTrips,DataRoutes,DataS
             CollectionLines[key]=[ListInbound]
             continue 
 
-        print("ListOutbound:",ListOutbound)
-        print("ListInbound: ",ListInbound)
+        # print("ListOutbound:",ListOutbound)
+        # print("ListInbound: ",ListInbound)
   
         if len(ListOutbound)>len(ListInbound):
             # print("List Outbound (",len(ListOutbound),") is larger than List Inbound (",len(ListInbound))
             GuideListStops=ListOutbound
             ComplementListStop=ListInbound
         else:
-            print("List Outbound (",len(ListOutbound),") is shorter than List Inbound",len(ListInbound))
+            # print("List Outbound (",len(ListOutbound),") is shorter than List Inbound",len(ListInbound))
             GuideListStops=ListInbound
             ComplementListStop=ListOutbound
 
@@ -515,7 +523,7 @@ def GetSystemData(Path):
 
 
 
-def GtfsRouteCleaning(DataSequence,DataTrips,DataRoutes,DataStops):
+def GtfsRouteCleaning(DataSequence,DataTrips,DataRoutes,DataStops,CatalogTypes,CountType):
     print("Starts #################### GtfsRouteCleaning ####################")
     # b=input()
     GeneralData_Frequencys={}
@@ -525,14 +533,6 @@ def GtfsRouteCleaning(DataSequence,DataTrips,DataRoutes,DataStops):
     MetroRoutes={}
     OtherRoutes={}
 
-
-    # for DS in DataSequence.keys():
-    #     print(DS)
-    #     if '4143-1111' in DS:
-    #         print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGGGGGGGGGGGGGGGGGGGGGGGGGGGG")
-    #         # b=input()
-    #     if '4143-1111-1' in DS:
-    #         b=input()
 
     #'0':Tram, Streetcar, Light rail. Any light rail or street level system within a metropolitan area.
     #'1':Subway, Metro. Any underground rail system within a metropolitan area.
@@ -573,20 +573,12 @@ def GtfsRouteCleaning(DataSequence,DataTrips,DataRoutes,DataStops):
     #'1000':Water Transport Service
     #'1400':Funicular Service
     #---------------------------------
-    CountType={'0':0,'1':0,'2':0,'3':0,'4':0,'5':0,'6':0,'7':0,'11':0,'12':0,
-    '100':0,'109':0,'116':0,
-    '400':0,'401':0,'402':0,'403':0,'404':0,'405':0,
-    '700':0,'701':0,'702':0,'704':0,'705':0,'707':0,'800':0,'715':0,
-    '900':0,'901':0,'902':0,'903':0,'906':0,
-    '1000':0,
-    '1400':0,
-    '1501':0}
 
-    BusType=['3','700','701','702','704','705','707','800','715']
-    TrainType=['2','100','109','116']
-    Metrotype=['1','400','401','402','403','404','405']
-    TramType= ['0','900','901','902','903','906']
-    OtherType=['4','5','1000','1400','1501']
+    BusType=CatalogTypes['BusType']
+    TrainType=CatalogTypes['TrainType']
+    Metrotype=CatalogTypes['Metrotype']
+    TramType=CatalogTypes['TramType']
+    OtherType=CatalogTypes['OtherType']
 
     for key in DataRoutes.keys():
         # print(DataRoutes[key]['route_type'],type(DataRoutes[key]['route_type']))
@@ -671,7 +663,6 @@ def GtfsRouteCleaning(DataSequence,DataTrips,DataRoutes,DataStops):
     print("Data_Metro",len(Data_Metro.keys()))
     print("Data_Tram",len(Data_Tram.keys()))
     print("Data_Other",len(Data_Other.keys()))
-    # b=input()
 
 
     return [Data_Buses,Data_Train,Data_Metro,Data_Tram,Data_Other]
@@ -855,6 +846,9 @@ def DatabaseConnection():
 
 
 def CleanFiles():
+    print("······································")
+    print("···· CLEANING      ···················")
+    print("······································")
     entries = os.listdir("Operational")	
     for entry in entries:
         # print(entry,type(entry))
@@ -883,52 +877,61 @@ def GetTypesofTransport(InputDict):
 # def GetNumberOfStops(InputDict):
     # for key in InputDict.keys():
     #     print(InputDict[key])
-def GetLineNums(Path):
+def GetLineNums(Path,CatalogTypes):
         print("#############################################")
         print("################GetLineNums##################")
         
-        Nums={}
-        CountType=[0,1,2,3,4,5,6,7,11,12,
-        100,109,116,
-        400,401,402,403,404,405,
-        700,701,702,704,705,707,800,715,
-        900,901,902,903,906,
-        1000,
-        1501,
-        1400]
-        
+        ExitNums={0:0,1:0,2:0,3:0,4:0}
+
+        for key in CatalogTypes.keys():
+            print(key, "          ",CatalogTypes[key],"\n")
         cont=0
         with open(Path, newline='', encoding='utf-8') as f:
             reader = csv.reader(f)
-            print(dir(reader))
+            header=[]
+            # print(dir(reader))
             for row in reader:
                 cont+=1
                 if cont==1:
                     print(row,type(row))
                     for idx, head in enumerate(row):
                         print(str(idx),str(head),end="\t")
+                        header.append(head)
                         if str(head) =="route_type":
                             IndexType=idx
-                    print("IndexType",IndexType,str(row[IndexType]))     
-                    # b=input(".................")
+                    print("\nheader")
+                    print(header)
+                    # b=input('.................................')
+                    # print("IndexType",IndexType,str(row[IndexType]))     
+        #             # b=input(".................")
 
                 else:
-                    if int(row[IndexType].replace("\"","")) in CountType:
-                        if row[IndexType] not in Nums.keys():
-                            Nums[row[IndexType]]=1
-                        else:
-                            Nums[row[IndexType]]+=1
-                    # else:
-                    #     b=input(".................")
+                    print("\t\t",row[IndexType],type(row[IndexType]))
+                    for i,key in enumerate(CatalogTypes.keys()):
+                        if row[IndexType] in CatalogTypes[key]:
+                            ExitNums[i]+=1
+                    # b=input('.................................')
+        #             if int(row[IndexType].replace("\"","")) in CountType:
+        #                 if row[IndexType] not in Nums.keys():
+        #                     Nums[row[IndexType]]=1
+        #                 else:
+        #                     Nums[row[IndexType]]+=1
+        #             # else:
+        #             #     b=input(".................")
 
-        # print(Nums)
-        return Nums
+        # for k in ExitNums.keys():
+        #     print(k,"  -  ",ExitNums[k])
+        # b=input('.................................')
+        return ExitNums
 
-def StoreCityData(NameOfCity,TransitChar,NumberLines):
+def StoreCityData(NameOfCity,TransitChar,NumberLines,City):
+    ###################################################
+    ####### Individual file  ##########################
+    ###################################################
     #Overwrites the file for the city
     Titles=["Bus Network","Rail Network","Metro Network","Light Rail Netwrok","Other Network","Node Network"]
     NameOfCity=NameOfCity.replace("/",".")
-    Path=r"Resluts/CityMetrics/"+NameOfCity+".txt"
+    Path=r"/mnt/e/GitHub/CAMMM-Tool_1.3/Results/CityMetrics/"+NameOfCity+".txt"
     print("NameOfCity:",NameOfCity)
     print("TransitChar")
     print(TransitChar)
@@ -938,22 +941,59 @@ def StoreCityData(NameOfCity,TransitChar,NumberLines):
     Text=""
     Text+="###### Numer of Stops\n"
     for Sys in TransitChar.keys():
-        Text+=str(Titles[int(Sys)])+str(Sys)+","+str(TransitChar[Sys]["NumStops"])+"\n"
+        Text+=str(Titles[int(Sys)])+","+str(Sys)+","+str(TransitChar[Sys]["NumStops"])+"\n"
     Text+="###### Avg Dist of stops\n"
     for Sys in TransitChar.keys():
-        Text+=str(Titles[int(Sys)])+str(Sys)+","+str(TransitChar[Sys]["AvDist"])+"\n"
+        Text+=str(Titles[int(Sys)])+","+str(Sys)+","+str(TransitChar[Sys]["AvDist"])+"\n"
     Text+="###### Numer of lines\n"
     for Sys in NumberLines.keys():
         if Sys in TransitChar.keys():
-            Text+=str(Titles[int(Sys)])+str(Sys)+","+str(NumberLines[Sys])+"\n"
+            Text+=str(Titles[int(Sys)])+","+str(Sys)+","+str(NumberLines[Sys])+"\n"
     fw.write(Text)
     fw.close()
 
+    ###################################################
+    ####### General Table #############################
+    ###################################################
+
+    GeneralPath="/mnt/e/GitHub/CAMMM-Tool_1.3/Results/CityMetrics/GeneralData.csv"
+    import csv
+    headers=["City","Bus_NumStops","Bus_AvDist","Bus_NumLines","Rail_NumStops","Rail_AvDist","Rail_NumLines","Metro_NumStops","Metro_AvDist","Metro_NumLines","LightRail_NumStops","LightRail_AvDist","LightRail_NumLines","Other_NumStops","Other_AvDist","Other_NumLines"]
+    Data=[]
+    with open(GeneralPath,encoding="utf-8") as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        headersZ = next(csv_reader, None)
+        print(csv_reader)
+        for idx,row in enumerate(csv_reader):
+            print(idx,row,type(row))
+            # print("····················································")
+            if row[0]!=City:
+                Data.append(row)
+    csv_file.close()
+    # hay un problema aqui
+    data_file = open(GeneralPath, 'w')
+    # create the csv writer object
+    csv_writer = csv.writer(data_file)
+    csv_writer.writerow(headers)
+
+    for city in Data:
+        csv_writer.writerow(city)
+    DataToStore=[City]
+    for Sys in range(0,5):
+        if Sys in TransitChar.keys():
+            DataToStore.append(str(TransitChar[Sys]["NumStops"]))
+            DataToStore.append(str(TransitChar[Sys]["AvDist"]))
+        else:
+            DataToStore.append(0)
+            DataToStore.append(0)
+        DataToStore.append(str(NumberLines[Sys]))
+    print("DataToStore",DataToStore)
+    # b=input('.................................')
+    csv_writer.writerow(DataToStore)
+    data_file.close()
 
 
-
-
-def GTFS(Path,RequestedData):
+def GTFS(Path,RequestedData,DictType,CountType):
     CleanFiles() 
     print("Enters the Main function")
     if os.name=='nt':
@@ -1007,8 +1047,7 @@ def GTFS(Path,RequestedData):
     NameOfCity = NameOfCity.replace("/",".")
 
     print("NameOfCity1",NameOfCity)
-    # b=input(".................................")
-    NumberLines=GetLineNums(Path=O_PathRoutes)
+    # NumberLines=GetLineNums(Path=O_PathRoutes)
     # print(NameOfCity)
     DataSequence,DataTrips,DataRoutes,DataStops=ReadGTFS(PathRoutes=O_PathRoutes,PathTrips=O_PathTrips,PathStopTimes=O_PathStopTimes,PathStops=O_PathStops)
     print("End - Step 1")
@@ -1016,7 +1055,7 @@ def GTFS(Path,RequestedData):
     print("Start - Step 2")
     GetTypesofTransport(InputDict=DataRoutes)
 
-    ListofStops=GtfsRouteCleaning(DataSequence=DataSequence,DataTrips=DataTrips,DataRoutes=DataRoutes,DataStops=DataStops)
+    ListofStops=GtfsRouteCleaning(DataSequence=DataSequence,DataTrips=DataTrips,DataRoutes=DataRoutes,DataStops=DataStops,CatalogTypes=DictType,CountType=CountType)
     print("ListofData: ",len(ListofStops))
     print("End - Step 2")
     print("Start - Step 3")
@@ -1038,14 +1077,57 @@ def GTFS(Path,RequestedData):
     GetInfoData(List=PathList,NameOfCity=NameOfCity)
     print("Step 4 End")
 
-    ListOfNeworks=[]
-    CleanFiles() 
 
+
+
+
+    
+    # for i,tripid in enumerate(DataSequence.keys()):
+    #     print("tripid",tripid)
+    #     LegList=list(DataSequence[tripid].keys())
+
+    #     for j,leg in enumerate(DataSequence[tripid].keys()):
+    #         if leg ==LegList[-1]:
+    #             break
+    #         StartTime=DataSequence[tripid][leg]['arrival_time'].split(":")
+    #         StartTime = [int(i) for i in StartTime]
+    #         EnddTime=DataSequence[tripid][LegList[j+1]]['arrival_time'].split(":")
+    #         EnddTime = [int(i) for i in EnddTime]
+    #         DeltaTime=TimeDelta(T1=StartTime,T2=EnddTime)
+            print(j,"   -    ",leg,">",LegList[j+1],DeltaTime,"\t",DataSequence[tripid][leg] )
+            # print(time1.total_seconds())
+            # print("\t",leg,DataSequence[tripid][leg])
+        # print(type(DataSequence[tripid]))
+        # print(DataSequence[tripid])
+        b=input('.................................')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ####### STOPER BEFORE WE GO INTO THE OPERATIONS ##########
     ##########################################################
+    b=input(".................................")
+    ##########################################################
+
+    ListOfNeworks=[]
+    # CleanFiles() 
+
     # Sequence to obtain the average distance between stops 
     ##########################################################
 
-    if RequestedData["NetworkAnalysis"]==True:
+    if RequestedData["NetworkAnalysis"]:
         print("ListofStops len ",len(ListofStops))
         print("EdgeList len",len(EdgeList))
         print("Enters into the agregation mode")
@@ -1060,8 +1142,8 @@ def GTFS(Path,RequestedData):
     #     print("Start Bus network")
     #     print("LEN ListofStops:",len(ListofStops))
         Titles=["Bus Network","Rail Network","Metro Network","Light Rail Netwrok","Other Network","Node Network"]
-        for idx,a in enumerate(ListofStops):
-            print(idx,"Type:",type(a),len(a.keys()))
+        # for idx,a in enumerate(ListofStops):
+        #     print(idx,"Type:",type(a),len(a.keys()))
         for idx,a in enumerate(ListofStops):
             print("Start of",Titles[idx],"network")
             if len(a.keys())>0:
@@ -1085,14 +1167,10 @@ def GTFS(Path,RequestedData):
                 # print(nx.get_node_attributes(AnalyzedNetwork, node))
                 # color = nx.get_node_attributes(AnalyzedNetwork, "wheelchair_boarding")
                 # print(color)
-
-
             # b=input("..DELETE...............................")
+            print("")
 
-    # for net in ListOfNeworks:
-    #     print(type(net))
-        # networkx.readwrite.nx_shp.write_shp(net,r"D:\GitHub\CAMMM-Tool_1.3\Output")
-    if RequestedData["NodeNetworkAnalysis"]==True:
+    if RequestedData["NodeNetworkAnalysis"]:
         Nodes=CreateNodes(SuperRange=400,NodeRange=75,ListofStops=ListofStops,DataStops=DataStops)
         print("Type of ListofStops",type(ListofStops))
 
@@ -1110,14 +1188,14 @@ def GTFS(Path,RequestedData):
 
         NetWorkToGeoJson(G=Graph,NetworkIndex=5)
 
-
     ##########################################################
     # Sequence to obtain the average distance between stops 
     ##########################################################
 
-    if RequestedData["GeometricAnalysis"]==True:
+    if RequestedData["CityMetrics"]:
         Titles=["Bus Network","Rail Network","Metro Network","Light Rail Netwrok","Other Network","Node Network"]
         ConnectiorDB=DatabaseConnection()
+        NumberLines=GetLineNums(Path=O_PathRoutes,CatalogTypes=DictType)
 
         TransitChar={}
         for idx,Sys in enumerate(ListofStops):
@@ -1135,14 +1213,15 @@ def GTFS(Path,RequestedData):
                 # print(Sys,"The average distance is: ",AvDist)
                 # print(Sys,"The number of stops  is: ",NumStops)
                 TransitChar[idx]={"AvDist":AvDist,"NumStops":NumStops}
-        print("End  GeometricAnalysis")
+        print("End  CityMetrics")
         # The data is stored in 'Resluts\CityMetrics'
-        StoreCityData(NameOfCity=NameOfCity,TransitChar=TransitChar,NumberLines=NumberLines)
         print("\n"*5)
         print("Results for",NameOfCity)
         for Sys in TransitChar.keys():
-            print("For ",Titles[Sys],"The average distance is: ",TransitChar[Sys]["AvDist"])
-            print("For ",Titles[Sys],"The number of stops  is: ",TransitChar[Sys]["NumStops"])
+            print("For ",Sys,Titles[Sys],"The average distance is: ",TransitChar[Sys]["AvDist"])
+            print("For ",Sys,Titles[Sys],"The number of stops  is: ",TransitChar[Sys]["NumStops"])
+        # b=input('.................................')
+        StoreCityData(NameOfCity=NameOfCity,TransitChar=TransitChar,NumberLines=NumberLines,City=NameOfCity)
 
     if RequestedData["RotatedGridAnalysis"]:
         TransformStopsCsvToGeoJson(PathStopsCSV=O_PathStops,PathStopsGeojson=O_PathStopsGeoJson,Agency=NameOfCity)
@@ -1152,6 +1231,13 @@ def GTFS(Path,RequestedData):
         # TransformStopsCsvToGeoJson(PathStopsCSV,PathStopsGeojson,Agency="STM")
         # GetStopDensity(PathFileGridUTM=PathFileGridUTM,PathStops=PathStopsGeojson,PathFileGridExit=PathFileGridExit,PathTrip=PathTrip,PathShape=PathShape,Pathroute=Pathroute,Agency="STM")
     
+    if RequestedData["NetworkLineAgregator"]:
+        # for idx,Sys in enumerate(ListofStops):
+        #     if len(ListofStops[idx])>0:
+        NetworkLineAgregator(DataStops=DataStops,DataTrips=DataTrips,DataRoutes=DataRoutes,DataSequence=DataSequence,CityId=NameOfCity)
+
+
+    CleanFiles() 
     ###################################################################
     ##################### END OF MAIN #################################
     ###################################################################
@@ -1163,7 +1249,7 @@ def GTFS(Path,RequestedData):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":True,"GeometricAnalysis":False,"RotatedGridAnalysis":False}
+    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":False,"CityMetrics":True,"RotatedGridAnalysis":False,"NetworkLineAgregator":False}
     listPath=[]
   
 
@@ -1190,9 +1276,30 @@ if __name__ == "__main__":
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Oslo_GTFS/Oslo_gtfs.zip")
     # print("RequestedData",RequestedData)
     # b=input()
+
+    ###################################################
+    ####### Data for types in code GTFS  ##############
+    ###################################################
+
+    DictType={}
+    DictType['BusType']=['3','700','701','702','704','705','707','800','715']
+    DictType['TrainType']=['2','100','109','116']
+    DictType['Metrotype']=['1','400','401','402','403','404','405']
+    DictType['TramType']= ['0','900','901','902','903','906']
+    DictType['OtherType']=['4','5','1000','1400','1501']
+
+    CountType={'0':0,'1':0,'2':0,'3':0,'4':0,'5':0,'6':0,'7':0,'11':0,'12':0,
+    '100':0,'109':0,'116':0,
+    '400':0,'401':0,'402':0,'403':0,'404':0,'405':0,
+    '700':0,'701':0,'702':0,'704':0,'705':0,'707':0,'800':0,'715':0,
+    '900':0,'901':0,'902':0,'903':0,'906':0,
+    '1000':0,
+    '1400':0,
+    '1501':0}
+
     for Path in listPath:
         print(Path)
-        GTFS(Path,RequestedData)
+        GTFS(Path,RequestedData,DictType,CountType)
 
 
 
