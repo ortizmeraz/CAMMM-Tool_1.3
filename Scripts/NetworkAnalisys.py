@@ -141,6 +141,143 @@ def NetworkLineAgregator(DataStops,DataTrips,DataRoutes,DataSequence,CityId):
 
 
 
+def GtfsToWeightedNetwork(DataStops=dict,DataSequence=dict):
+       
+    # print("DataStops:",type(DataStops),len(DataStops))
+    # print("EdgeData:",type(EdgeData),len(EdgeData))
+    # b=input()
+    G = nx.DiGraph()
+    List_Nodes_Key=list(DataStops.keys())
+
+    SationsByRoutes={}
+    LKdataRoutes=list(DataRoutes.keys())
+
+    print("DataSequence",type(DataSequence))
+    for route in DataRoutes.keys():
+        print("#######################################")
+        print(route)
+        SationsByRoutes[route]=[]
+        RouteTrips=list(DataTrips[route].keys())
+        for trips in RouteTrips:
+            if trips in DataSequence:
+                TempStops=[]
+                for Sequence in DataSequence[trips].keys():
+                    print(Sequence, DataSequence[trips][Sequence])
+                    # Stops.append(DataSequence[trips][Sequence]['stop_id'])
+                    TempStops.append(DataSequence[trips][Sequence]['stop_id'])
+            print("*****************************************************************",route)
+            if len(TempStops)>len(SationsByRoutes[route]):
+                SationsByRoutes[route]=TempStops
+                print("CHANGE!!!!!")
+            for i,x in enumerate(SationsByRoutes[route]):
+                print(i,x)
+            # b=input('.................................')
+
+    List_Nodes=[]
+    EdgeList=[]
+    NodePrintProp={'Pos':{}}
+    for LineKey in EdgeData.keys():
+        # print("LineKey",LineKey)
+        for edge in EdgeData[LineKey]['0']:
+            if edge[0] not in List_Nodes: List_Nodes.append(edge[0])
+            if edge[1] not in List_Nodes: List_Nodes.append(edge[1])
+            EdgeList.append(edge)
+        for edge in EdgeData[LineKey]['1']:
+            if edge[0] not in List_Nodes: List_Nodes.append(edge[0])
+            if edge[1] not in List_Nodes: List_Nodes.append(edge[1])
+            EdgeList.append(edge)
+            # print("Edge",edge,)
+        # print("\n")
+    G.add_edges_from(EdgeList)
+
+    # print("List_Nodes",len(List_Nodes),List_Nodes)
+    # print(type(DataStops),DataStops.keys(),"DataStops")
+    # if '53051' in List_Nodes:
+    #     print("Hello-----------------------")
+    for node in List_Nodes:
+        # print(node,DataStops[node].keys())
+        # b=input('Press Enter ...')
+        x,y=ConvertToUTM(lat=float(DataStops[node]['stop_lat']),lon=float(DataStops[node]['stop_lon']))
+        if "stop_id" in DataStops[node].keys():
+            stop_id=DataStops[node]['stop_id']
+        else: 
+            stop_id=""
+        if "stop_code" in DataStops[node].keys():
+            stop_code=DataStops[node]['stop_code']
+        else: 
+            stop_code=""
+        if "stop_name" in DataStops[node].keys():
+            stop_name=DataStops[node]['stop_name']
+        else: 
+            stop_name=""
+        if "stop_desc" in DataStops[node].keys():
+            stop_desc=DataStops[node]['stop_desc']
+        else: 
+            stop_desc=""
+        if "stop_lat" in DataStops[node].keys():
+            stop_lat=DataStops[node]['stop_lat']
+        else: 
+            stop_lat=""
+        if "stop_lon" in DataStops[node].keys():
+            stop_lon=DataStops[node]['stop_lon']
+        else: 
+            stop_id=""
+        if "zone_id" in DataStops[node].keys():
+            zone_id=DataStops[node]['zone_id']
+        else: 
+            zone_id=""
+        if "stop_url" in DataStops[node].keys():
+            stop_url=DataStops[node]['stop_url']
+        else: 
+            stop_url=""
+        if "location_type" in DataStops[node].keys():
+            location_type=DataStops[node]['location_type']
+        else: 
+            location_type=""
+        if "parent_station" in DataStops[node].keys():
+            parent_station=DataStops[node]['parent_station']
+        else: 
+            parent_station=""
+        if "stop_timezone" in DataStops[node].keys():
+            stop_timezone=DataStops[node]['stop_timezone']
+        else: 
+            stop_timezone=""
+        if "wheelchair_boarding" in DataStops[node].keys():
+            wheelchair_boarding=DataStops[node]['wheelchair_boarding']
+        else: 
+            wheelchair_boarding=""
+        if "level_id" in DataStops[node].keys():
+            level_id=DataStops[node]['level_id']
+        else: 
+            level_id=""
+        if "platform_code" in DataStops[node].keys():
+            platform_code=DataStops[node]['platform_code']
+        else: 
+            platform_code=""
+        # G.add_node(node,location=(x,y),pos=(float(DataStops[node]['stop_lat']),float(DataStops[node]['stop_lon'])),stop_id =DataStops[node]['stop_id'],stop_name =DataStops[node]['stop_name'],stop_code =DataStops[node]['stop_code'],location_type =DataStops[node]['location_type'],parent_station =DataStops[node]['parent_station'],wheelchair_boarding =DataStops[node]['wheelchair_boarding'],stop_direction =DataStops[node]['stop_direction'])
+        G.add_node(node,location=(x,y),pos=(float(DataStops[node]['stop_lat']),float(DataStops[node]['stop_lon'])),stop_id =stop_id,stop_name =stop_name,stop_code =stop_code,stop_desc=stop_desc,stop_lat=stop_lat,stop_lon=stop_lon,zone_id=zone_id,stop_url=stop_url,location_type=location_type,parent_station=parent_station,stop_timezone=stop_timezone,wheelchair_boarding=wheelchair_boarding,level_id=level_id,platform_code=platform_code)
+        NodePrintProp['Pos'][node]=(x,y)
+    # print("List_Nodes_Key",len(List_Nodes_Key))
+    # print("List_Nodes",len(List_Nodes))
+    # NetWorkToGeoJson(G=G,NetworkIndex=NetworkIndex)
+    # b=input()
+    # nx.draw_networkx_nodes(G,pos=NodePrintProp['Pos'],node_size=50)
+    # nx.draw_networkx_edges(G,pos=NodePrintProp['Pos'])
+    # nx.draw(G)
+    # plt.show()
+    NodeList=[]
+    # for i in list(G.nodes):
+    #     print(i)
+    #     if i not in NodeList:
+    #         NodeList.append(i)
+    #     else:
+    #         print("#################################################################################################\n"*10)
+    # print("Number of Stops in the network ",len(list(G.nodes)))
+    # return len(list(G.nodes))
+    return G
+
+
+
 def GtfsToNetwork(EdgeData,DataStops,NetworkIndex):
     # print("DataStops:",type(DataStops),len(DataStops))
     # print("EdgeData:",type(EdgeData),len(EdgeData))
@@ -171,11 +308,6 @@ def GtfsToNetwork(EdgeData,DataStops,NetworkIndex):
             for i,x in enumerate(SationsByRoutes[route]):
                 print(i,x)
             # b=input('.................................')
-    # for i,x in enumerate(SationsByRoutes.keys()):
-    #     print(i,x)
-    #     for y in SationsByRoutes[x]:
-    #         print("\t",y)
-
 
     List_Nodes=[]
     EdgeList=[]

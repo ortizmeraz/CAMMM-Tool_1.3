@@ -1078,7 +1078,15 @@ def GTFS(Path,RequestedData,DictType,CountType):
     print("Step 4 End")
 
 
+    print("ListofStops",type(ListofStops))
+    for i,x in enumerate(ListofStops[:10]):
+        print(i,x)
 
+    # for i,x in enumerate(EdgeList[:10]):
+    #     # print(i,x)
+    #     for j,y in enumerate(x):
+    #         print(y,x[y])
+    #         b=input('.................................')
 
 
     
@@ -1094,12 +1102,12 @@ def GTFS(Path,RequestedData,DictType,CountType):
     #         EnddTime=DataSequence[tripid][LegList[j+1]]['arrival_time'].split(":")
     #         EnddTime = [int(i) for i in EnddTime]
     #         DeltaTime=TimeDelta(T1=StartTime,T2=EnddTime)
-            print(j,"   -    ",leg,">",LegList[j+1],DeltaTime,"\t",DataSequence[tripid][leg] )
+    #         print(j,"   -    ",leg,">",LegList[j+1],DeltaTime,"\t",DataSequence[tripid][leg] )
             # print(time1.total_seconds())
             # print("\t",leg,DataSequence[tripid][leg])
         # print(type(DataSequence[tripid]))
         # print(DataSequence[tripid])
-        b=input('.................................')
+    b=input('.................................')
 
 
 

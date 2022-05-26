@@ -28,6 +28,11 @@ Quebec list of cities:
     - Quebec  
     - Laval
     - Longueuil
-    
+GTFS only:    
     - Gatineau
     - Levis
+
+# Network algorithms
+https://networkx.org/documentation/stable/reference/algorithms/index.html
+
+
