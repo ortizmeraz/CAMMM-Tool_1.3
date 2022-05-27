@@ -16,23 +16,44 @@ GreenLine=['43', '42', '41', '40', '39', '38', '37', '36', '35', '34', '33', '32
 # GreenLine Angrignon > Honoré-Beaugrand
 OragnLine=['65', '54', '53', '52', '51', '50', '98', '48', '47', '46', '36', '17', '16', '15', '14', '13', '12', '99', '10', '9', '8', '7', '6', '97', '4', '3', '2', '1', '66', '67', '68']
 # OragnLine Cote Vertu > Montmomercy
-YelloLine=['44', '45', '99']
+YelloLine=['44', '45', '99',]
 # YelloLine Longueuil–Université-de-Sherbrooke > Berri UQAM
 BlueLine=['98', '55', '56', '57', '58', '59', '60', '61', '97', '62', '63', '64']
 
-for s in GreenLine:
-    print("NodeData[",s,"]={'Line':['Green']}")
+# for s in GreenLine:
+#     print("NodeData[",s,"]={'Line':['Green']}")
 
-for s in OragnLine:
-    print("NodeData[",s,"]={'Line':['Orange']}")
+# for s in OragnLine:
+#     print("NodeData[",s,"]={'Line':['Orange']}")
 
-for s in YelloLine:
-    print("NodeData[",s,"]={'Line':['Yellow']}")
+# for s in YelloLine:
+#     print("NodeData[",s,"]={'Line':['Yellow']}")
 
-for s in BlueLine:
-    print("NodeData[",s,"]={'Line':['Blue']}")
-print("NodeData[99]={'Line':['Green','Orange','Yellow']}")
-print("NodeData[98]={'Line':['Orange','Blue']}")
-print("NodeData[97]={'Line':['Orange','Blue']}")
-print("NodeData[36]={'Line':['Green','Orange']}")
+# for s in BlueLine:
+#     print("NodeData[",s,"]={'Line':['Blue']}")
+# print("NodeData[99]={'Line':['Green','Orange','Yellow']}")
+# print("NodeData[98]={'Line':['Orange','Blue']}")
+# print("NodeData[97]={'Line':['Orange','Blue']}")
+# print("NodeData[36]={'Line':['Green','Orange']}")
+
+# def M(ListW):
+#     for i,x in enumerate(ListW):
+#         if x==ListW[-1]:
+#             break
+#         print([int(ListW[i]),int(ListW[i+1])],",")
+
+# print("[")
+# M(ListW=GreenLine)
+# M(ListW=OragnLine)
+# M(ListW=YelloLine)
+# M(ListW=BlueLine)
+
+print(len(GreenLine))
+print(len(OragnLine))
+print(len(YelloLine))
+print(len(BlueLine))
+
+# print("]")
+
+
 

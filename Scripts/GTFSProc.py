@@ -1076,37 +1076,85 @@ def GTFS(Path,RequestedData,DictType,CountType):
         # print(File,PathFile)
     GetInfoData(List=PathList,NameOfCity=NameOfCity)
     print("Step 4 End")
+    # #############################################################
+    ###################################################
+    ###################################################
+    ####### TESTING AREA    ###############################
+    ###################################################
+    ###################################################
 
-
-    print("ListofStops",type(ListofStops))
-    for i,x in enumerate(ListofStops[:10]):
-        print(i,x)
+    # print("ListofStops",type(ListofStops))
+    # for i,x in enumerate(ListofStops[:10]):
+    #     print(i,x)
 
     # for i,x in enumerate(EdgeList[:10]):
     #     # print(i,x)
     #     for j,y in enumerate(x):
     #         print(y,x[y])
     #         b=input('.................................')
+    ListOfTrips=[]
+    BackLink={}
+    for i,route in enumerate(DataTrips.keys()):
+        if route in ('1','2','3','4','5'):
+            # print(route,type(route), type(DataTrips[route]))
+            for j,y in enumerate(DataTrips[route].keys()):
+                # print(j,"-",y,"-",DataTrips[route][y])
+                if DataTrips[route][y]['direction_id']=='0':
+                    ListOfTrips.append(y)
+                    BackLink[y]=route
+    # print("ListOfTrips")
+    # print(ListOfTrips)
+    # b=input('.................................')
+    print("##################################################")
+    for i in ('1','2','3','4','5'):
+        print("EdgeData[",i,"]={}")
 
 
-    
-    # for i,tripid in enumerate(DataSequence.keys()):
-    #     print("tripid",tripid)
-    #     LegList=list(DataSequence[tripid].keys())
+    # for i in ('1','2','3','4','5'):
+    for j in ListOfTrips:
+        print("EdgeData[",BackLink[j],"]['",j,"']={}")
 
-    #     for j,leg in enumerate(DataSequence[tripid].keys()):
-    #         if leg ==LegList[-1]:
-    #             break
-    #         StartTime=DataSequence[tripid][leg]['arrival_time'].split(":")
-    #         StartTime = [int(i) for i in StartTime]
-    #         EnddTime=DataSequence[tripid][LegList[j+1]]['arrival_time'].split(":")
-    #         EnddTime = [int(i) for i in EnddTime]
-    #         DeltaTime=TimeDelta(T1=StartTime,T2=EnddTime)
-    #         print(j,"   -    ",leg,">",LegList[j+1],DeltaTime,"\t",DataSequence[tripid][leg] )
-            # print(time1.total_seconds())
-            # print("\t",leg,DataSequence[tripid][leg])
-        # print(type(DataSequence[tripid]))
-        # print(DataSequence[tripid])
+# Station Berri-UQAM        99      9999111-9999112-9999114
+# Station Snowdon           98      9999495-9999492
+# Station Jean-Talon        97      9999055-9999052
+
+
+
+    for i,tripid in enumerate(DataSequence.keys()):
+        if tripid in ListOfTrips:
+            LegList=list(DataSequence[tripid].keys())
+
+            for j,leg in enumerate(DataSequence[tripid].keys()):
+                if leg ==LegList[-1]:
+                    break
+                StartTime=DataSequence[tripid][leg]['arrival_time'].split(":")
+                StartTime = [int(i) for i in StartTime]
+                EnddTime=DataSequence[tripid][LegList[j+1]]['arrival_time'].split(":")
+                EnddTime = [int(i) for i in EnddTime]
+                DeltaTime=TimeDelta(T1=StartTime,T2=EnddTime)
+                Sta=DataSequence[tripid][leg]['stop_id']
+                if Sta in ('9999111','9999112','9999114'):
+                    Sta='99'
+                if Sta in ('9999495','9999492'):
+                    Sta='98'
+                if Sta in ('9999055','9999052'):
+                    Sta='97'
+                End=DataSequence[tripid][LegList[j+1]]['stop_id']
+                if End in ('9999111','9999112','9999114'):
+                    End='99'
+                if End in ('9999495','9999492'):
+                    End='98'
+                if End in ('9999055','9999052'):
+                    End='97'
+
+                print("EdgeData[",Sta,",",End,"]",end="")
+                print("['",tripid,"']",end="")
+                print("=",DeltaTime)
+                # print(j,"   -    ",leg,">",LegList[j+1],DeltaTime,"\t",DataSequence[tripid][leg]['stop_id'] )
+                # print("\t",leg,DataSequence[tripid][leg])
+            # print(type(DataSequence[tripid]))
+            # print(DataSequence[tripid])
+    print("PAY Attention here")
     b=input('.................................')
 
 
