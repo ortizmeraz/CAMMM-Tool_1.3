@@ -86,6 +86,9 @@ def GetMetroSTM():
     CoordData=ReadCoords()
 
     for node in Nodes:
+        NodeData[node]={}
+        print("node:",node)
+        print(int(CoordData[str(node)]['X']),int(CoordData[str(node)]['Y']))
         NodeData[node]['Pos']=[int(CoordData[str(node)]['X']),int(CoordData[str(node)]['Y'])]
 
 
@@ -201,9 +204,9 @@ if __name__=="__main__":
     print("EdgeData",len(EdgeData))
 
 
-    ReadCoords()
+    # ReadCoords()
 
-    CoordData=ReadCoords()
+    # CoordData=ReadCoords()
 
     # print(Nodes)
 
@@ -213,8 +216,8 @@ if __name__=="__main__":
     # for key in CoordData.keys():
     #     print(key,type(key))
 
-    for node in Nodes:
-        print(node,NodeData[node])
+    # for node in Nodes:
+    #     print(node,NodeData[node])
 
     # for i,x in enumerate(Nodes):
     #     print(i,x,NodeData[x])

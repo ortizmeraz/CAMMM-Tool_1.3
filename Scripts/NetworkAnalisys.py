@@ -278,7 +278,7 @@ def GtfsToWeightedNetwork(DataStops=dict,DataSequence=dict):
 
 
 
-def GtfsToNetwork(EdgeData,DataStops,NetworkIndex):
+def GtfsToNetwork(EdgeData,DataStops,DataRoutes,DataSequence,DataTrips,NetworkIndex):
     # print("DataStops:",type(DataStops),len(DataStops))
     # print("EdgeData:",type(EdgeData),len(EdgeData))
     # b=input()
@@ -286,7 +286,7 @@ def GtfsToNetwork(EdgeData,DataStops,NetworkIndex):
     List_Nodes_Key=list(DataStops.keys())
 
     SationsByRoutes={}
-    LKdataRoutes=list(DataRoutes.keys())
+    # LKdataRoutes=list(DataRoutes.keys())   #### 
 
     print("DataSequence",type(DataSequence))
     for route in DataRoutes.keys():

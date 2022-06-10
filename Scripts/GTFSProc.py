@@ -13,6 +13,7 @@ import sqlite3
 import decimal
 decimal.getcontext().prec = 10
 from datetime import time
+from tqdm import tqdm
 
 
 from FeatureOperations import ConvertToUTM
@@ -1154,8 +1155,8 @@ def GTFS(Path,RequestedData,DictType,CountType):
                 # print("\t",leg,DataSequence[tripid][leg])
             # print(type(DataSequence[tripid]))
             # print(DataSequence[tripid])
-    print("PAY Attention here")
-    b=input('.................................')
+    # print("PAY Attention here")
+    # b=input('.................................')
 
 
 
@@ -1207,7 +1208,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
                 print("Tpye EdgeList",len(EdgeList[idx]))
                 print("Tpye EdgeList",type(EdgeList[idx]))
                 print("NetworkIndex=idx",idx)
-                AnalyzedNetwork=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx)
+                AnalyzedNetwork=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx,DataRoutes=DataRoutes,DataSequence=DataSequence,DataTrips=DataTrips)
                 ListOfNeworks.append(AnalyzedNetwork)
                 print("Network:",Titles[idx])
                 NetWorkToGeoJson(G=AnalyzedNetwork,NetworkIndex=idx)
@@ -1305,7 +1306,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":False,"CityMetrics":True,"RotatedGridAnalysis":False,"NetworkLineAgregator":False}
+    RequestedData={"NetworkAnalysis":True,"NodeNetworkAnalysis":False,"CityMetrics":False,"RotatedGridAnalysis":False,"NetworkLineAgregator":False}
     listPath=[]
   
 
@@ -1314,7 +1315,7 @@ if __name__ == "__main__":
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Berlin_GTFS/BVG_VBB_bereichsscharf.zip")
 
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
@@ -1330,6 +1331,18 @@ if __name__ == "__main__":
 
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Oslo_GTFS/Oslo_gtfs.zip")
+    # listPath.append(r"/mnt/e/GitHub/CAMMM-Tool_1.3/Data/new_gtfs1.zip")
+
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/opendata_ttc_schedules.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/hamilton.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/burlington.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/York.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/Mississauga.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/GTFS_Durham_TXT.zip")
+
+
+
+
     # print("RequestedData",RequestedData)
     # b=input()
 
@@ -1353,7 +1366,7 @@ if __name__ == "__main__":
     '1400':0,
     '1501':0}
 
-    for Path in listPath:
+    for Path in tqdm(listPath):
         print(Path)
         GTFS(Path,RequestedData,DictType,CountType)
 
