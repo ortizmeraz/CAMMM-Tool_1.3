@@ -1254,7 +1254,7 @@ def ListToGeoJson(ListBusStops):
 
     ExportGeoJsonPoints(ListOfPoints=ListofPoints,PChar=PropCharac)
 
-
+#######################################################################
 
 def NetWorkToGeoJson(G,NetworkIndex):
     # USES TK to get path
@@ -1467,6 +1467,226 @@ def NetWorkToGeoJson(G,NetworkIndex):
     # b=input()
 
     ExportGeoJsonPoints(ListOfPoints=ListOfPoints,PChar=PointCharacteristics,NetworkIndex=NetworkIndex)
+
+#######################################################################
+
+
+def NewNetWorkToGeoJson(G,NetworkIndex):
+    # USES TK to get path
+    print(G,type(G),dir(G))
+    # b=input("STOP HERE")
+
+
+    PointCharacteristics={}
+    ListOfPoints=[]
+    Cont=0
+    # print("number_of_nodes",G.number_of_nodes(),"\n\n")
+    for Node in G.nodes(data=True):
+        Cont=Cont+1
+        ListOfKeys=list(Node[1].keys())
+        if Cont==1:
+            break
+        # print("ListOfKeys",ListOfKeys)
+        # b=input()
+
+
+    for key in ListOfKeys:
+        PointCharacteristics[key]={}
+    for Node in G.nodes(data=True):
+        NodeIndex=Node[0]
+        ListOfPoints.append(Node[0])
+        Keys=Node[1].keys()
+        if len(Keys)==0:
+            break
+        Dict=Node[1]
+        # print(Dict)
+        # print(type(Dict))
+        # print(Dict.keys())
+        for key in ListOfKeys:
+            # print("key",key)
+            # print("Dict",Dict[key])
+            # b=input("Press enter")
+
+            # PointCharacteristics[key][NodeIndex]=1
+            PointCharacteristics[key][NodeIndex]=Dict[key]
+        # print("######################################################\n"*3)
+        # PointCharacteristics['Line'][int(Node[0])]=Node[1]['Line']
+        # PointCharacteristics['Pos'][int(Node[0])]=Node[1]['Pos']
+        # PointCharacteristics['weight'][int(Node[0])]=Node[1]['weight']
+        # PointCharacteristics['ContainedStops'][int(Node[0])]=Node[1]['ContainedStops']
+        # print(PointCharacteristics)
+        print(PointCharacteristics[key])
+
+
+    print("Calculating Harmonic degree\n")
+
+    degree_centrality = nx.harmonic_centrality(G, nbunch=None, distance=None, sources=None)
+    # PointCharacteristics['CenDeg']=degree_centrality
+    PointCharacteristics['HarmCen']={}
+    # print(degree_centrality,"\nCentrality degree")
+    # b=input()
+    
+    for key in degree_centrality:
+        # print(key,type(key))
+        # b=input()
+        # if type(key)== type(int()):
+        PointCharacteristics['HarmCen'][key] = degree_centrality[key]
+        # if type(key)==type(float()):
+        #     PointCharacteristics['CenDeg'][int(key)] = degree_centrality[key]
+    # print(PointCharacteristics['CenDeg'],"\nCentrality")
+    # b=input()
+    try:
+        LI=list(PointCharacteristics['HarmCen'].values())
+        arr = np.array(LI)
+        Ranges_DegCen=Calculations.NaturalBreaksNumpyList(Data=LI, Classess=5)
+        # Ranges_DegCen=jenkspy.jenks_breaks(arr, nb_class=5)
+
+
+        # print("Ranges_DegCen",Ranges_DegCen,len(Ranges_DegCen))
+        # print("Min",min(LI))
+        # print("Max",max(LI))
+        # b=input()
+        PointCharacteristics['CatHarmCen']={}
+        for key in PointCharacteristics['HarmCen'].keys():
+            # print(key,PointCharacteristics['CenDeg'])
+            # b=input()
+            if Ranges_DegCen[0]<=PointCharacteristics['HarmCen'][key] and PointCharacteristics['HarmCen'][key]<=Ranges_DegCen[1]:
+                PointCharacteristics['CatHarmCen'][key]=1
+            elif Ranges_DegCen[1]<=PointCharacteristics['HarmCen'][key] and PointCharacteristics['HarmCen'][key]<=Ranges_DegCen[2]:
+                PointCharacteristics['CatHarmCen'][key]=2
+            elif Ranges_DegCen[2]<=PointCharacteristics['HarmCen'][key] and PointCharacteristics['HarmCen'][key]<=Ranges_DegCen[3]:
+                PointCharacteristics['CatHarmCen'][key]=3
+            elif Ranges_DegCen[3]<=PointCharacteristics['HarmCen'][key] and PointCharacteristics['HarmCen'][key]<=Ranges_DegCen[4]:
+                PointCharacteristics['CatHarmCen'][key]=4
+            elif Ranges_DegCen[4]<=PointCharacteristics['HarmCen'][key] and PointCharacteristics['HarmCen'][key]<=Ranges_DegCen[5]:
+                PointCharacteristics['CatHarmCen'][key]=5
+            else:
+                print("Not working")
+                b1=input()
+    except :
+        print("NO HARMONIC CENTRALITY")
+
+    # for key in PointCharacteristics['CatCenDeg'].keys():
+    #     print(key,type(key),PointCharacteristics['CatCenDeg'][key])
+
+
+
+    # b=input()
+    print("Calculating Centrality Closennes\n")
+    # try:
+    closeness_centrality = nx.closeness_centrality(G)
+    PointCharacteristics['Clossnes']={}
+    for key in closeness_centrality:    
+        # if type(key)==type(int()):
+        PointCharacteristics['Clossnes'][key] =  closeness_centrality[key]*100
+        # if type(key)==type(float()):
+        #     PointCharacteristics['Clossnes'][int(key)] =  closeness_centrality[key]*100
+
+    try:
+        LI=list(PointCharacteristics['Clossnes'].values())
+        arr = np.array(LI)
+
+        Ranges_ClosCen=Calculations.NaturalBreaksNumpyList(Data=LI, Classess=5)
+
+        # Ranges_ClosCen=jenkspy.jenks_breaks(arr, nb_class=5)
+
+
+
+        # print("Ranges_ClosCen",Ranges_ClosCen,len(Ranges_ClosCen))
+        # print("Min",min(LI))
+        # print("Max",max(LI))
+        # b=input()
+        PointCharacteristics['CatClossnes']={}
+        # print("crea di")
+        for key in PointCharacteristics['Clossnes'].keys():
+            if Ranges_ClosCen[0]<=PointCharacteristics['Clossnes'][key] and PointCharacteristics['Clossnes'][key]<=Ranges_ClosCen[1]:
+                PointCharacteristics['CatClossnes'][key]=1
+            elif Ranges_ClosCen[1]<=PointCharacteristics['Clossnes'][key] and PointCharacteristics['Clossnes'][key]<=Ranges_ClosCen[2]:
+                PointCharacteristics['CatClossnes'][key]=2
+            elif Ranges_ClosCen[2]<=PointCharacteristics['Clossnes'][key] and PointCharacteristics['Clossnes'][key]<=Ranges_ClosCen[3]:
+                PointCharacteristics['CatClossnes'][key]=3
+            elif Ranges_ClosCen[3]<=PointCharacteristics['Clossnes'][key] and PointCharacteristics['Clossnes'][key]<=Ranges_ClosCen[4]:
+                PointCharacteristics['CatClossnes'][key]=4
+            elif Ranges_ClosCen[4]<=PointCharacteristics['Clossnes'][key] and PointCharacteristics['Clossnes'][key]<=Ranges_ClosCen[5]:
+                PointCharacteristics['CatClossnes'][key]=5
+            else:
+                print(key,"Not working")
+                b1=input()
+            # print(key,PointCharacteristics['Clossnes'][key],PointCharacteristics['CatClossnes'][key])
+            # b=input()
+    except:
+        print("Can't Classify")
+
+    # except:
+    #      print("No closeness_centrality")
+    # print(PointCharacteristics['CatClossnes'],"CatClossnes")
+    # b=input()
+    # print(PointCharacteristics['Clossnes'],'Clossnes')
+    # b=input()
+    # for key in PointCharacteristics['CatCenDeg'].keys():
+        # print(key,type(key),PointCharacteristics['CatCenDeg'][key])
+
+
+    print("Calculating Betweennes Centrality\n")
+    try:
+        eigenvector_centrality = nx.betweenness_centrality(G, k=None, normalized=True, weight=None, endpoints=False, seed=None)
+        PointCharacteristics['BetCen']={}
+        for key in eigenvector_centrality:
+            # if type(key)==type(int()):
+            PointCharacteristics['BetCen'][key] = eigenvector_centrality[key]*100000
+                # if type(key)==type(float()):
+                #     PointCharacteristics['Eigen'][int(key)] = eigenvector_centrality[key]*100000
+
+        # print(PointCharacteristics['Eigen'])
+        # b=input()
+        LI=list(PointCharacteristics['BetCen'])
+        arr = np.array(LI)
+        Ranges_EgiCen=Calculations.NaturalBreaksNumpyList(Data=LI, Classess=5)
+        # Ranges_EgiCen=jenkspy.jenks_breaks(arr, nb_class=5)
+
+
+        # print("Ranges_EgiCen",Ranges_EgiCen)
+
+        # print("Ranges_EgiCen",Ranges_EgiCen,len(Ranges_EgiCen))
+        # print("Min",min(LI))
+        # print("Max",max(LI))
+        # b=input()
+        PointCharacteristics['CatBetCen']={}
+        for key in PointCharacteristics['BetCen'].keys():
+            # print(key,PointCharacteristics['BetCen'][key])
+            # b=input()
+            if  PointCharacteristics['BetCen'][key]<=Ranges_EgiCen[1]:
+            # if Ranges_EgiCen[0]<=PointCharacteristics['BetCen'][key] and PointCharacteristics['BetCen'][key]<=Ranges_EgiCen[1]:
+                PointCharacteristics['CatBetCen'][key]=1
+            elif Ranges_EgiCen[1]<=PointCharacteristics['BetCen'][key] and PointCharacteristics['BetCen'][key]<=Ranges_EgiCen[2]:
+                PointCharacteristics['CatBetCen'][key]=2
+            elif Ranges_EgiCen[2]<=PointCharacteristics['BetCen'][key] and PointCharacteristics['BetCen'][key]<=Ranges_EgiCen[3]:
+                PointCharacteristics['CatBetCen'][key]=3
+            elif Ranges_EgiCen[3]<=PointCharacteristics['BetCen'][key] and PointCharacteristics['BetCen'][key]<=Ranges_EgiCen[4]:
+                PointCharacteristics['CatBetCen'][key]=4
+            elif Ranges_EgiCen[4]<=PointCharacteristics['BetCen'][key]:
+            # elif Ranges_EgiCen[4]<=PointCharacteristics['BetCen'][key] and PointCharacteristics['BetCen'][key]<=Ranges_EgiCen[5]:
+                PointCharacteristics['CatBetCen'][key]=5
+            else:
+                print(key,"Not working")
+                b1=input()
+    except:
+         print("NO BETWEENNESS CENTRALITY")
+
+    # print("PointCharacteristics",PointCharacteristics.keys())
+    # print("start printing")
+
+    # for key in PointCharacteristics.keys():
+    #     print("key:",key," is ",type(PointCharacteristics[key])," has ",len(PointCharacteristics[key].keys()))
+
+    # b=input()
+
+    ExportGeoJsonPoints(ListOfPoints=ListOfPoints,PChar=PointCharacteristics,NetworkIndex=NetworkIndex)
+
+
+#######################################################################
+
+
 
 
 def SimpleNetworkToGeoJson(G):

@@ -23,6 +23,7 @@ from NetworkAnalisys import GtfsToNetwork
 from Databases import TransportNames
 from NetworkAnalisys import AgregatedGTFSStopsToNetwork
 from NetworkAnalisys import NetWorkToGeoJson
+from NetworkAnalisys import NewNetWorkToGeoJson
 from NetworkAnalisys import NetworkLineAgregator
 from AggregationTools import CreateNodes
 
@@ -1175,7 +1176,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
 
     ####### STOPER BEFORE WE GO INTO THE OPERATIONS ##########
     ##########################################################
-    b=input(".................................")
+    # b=input(".................................")
     ##########################################################
 
     ListOfNeworks=[]
@@ -1183,6 +1184,31 @@ def GTFS(Path,RequestedData,DictType,CountType):
 
     # Sequence to obtain the average distance between stops 
     ##########################################################
+
+
+
+
+    if RequestedData["NewNetworkAnalysis"]:
+        Titles=["Bus Network","Rail Network","Metro Network","Light Rail Netwrok","Other Network","Node Network"]
+        for idx,a in enumerate(ListofStops):
+            print("Start of",Titles[idx],"network")
+            if idx ==0:
+                # b=input('.................................')
+                if len(a.keys())>0:
+                    print(idx,"---------------------------------------------------------------------------------------------------------------------------------------------------------------")
+                    print("Tpye EdgeList",len(EdgeList[idx]))
+                    print("Tpye EdgeList",type(EdgeList[idx]))
+                    print("NetworkIndex=idx",idx)
+                    AnalyzedNetwork=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx,DataRoutes=DataRoutes,DataSequence=DataSequence,DataTrips=DataTrips)
+                    ListOfNeworks.append(AnalyzedNetwork)
+                    print("Network:",Titles[idx])
+                    print("NameOfCity",NameOfCity)
+                    NewNetWorkToGeoJson(G=AnalyzedNetwork,NetworkIndex=idx)
+                    # print("FIN DE LA RED.......................................")
+                    # b=input("Press enter")
+                elif len(a.keys())==0:
+                    print("No",idx)
+                print("End of",Titles[idx],"network")
 
     if RequestedData["NetworkAnalysis"]:
         print("ListofStops len ",len(ListofStops))
@@ -1211,7 +1237,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
                 AnalyzedNetwork=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx,DataRoutes=DataRoutes,DataSequence=DataSequence,DataTrips=DataTrips)
                 ListOfNeworks.append(AnalyzedNetwork)
                 print("Network:",Titles[idx])
-                NetWorkToGeoJson(G=AnalyzedNetwork,NetworkIndex=idx)
+                NewNetWorkToGeoJson(G=AnalyzedNetwork,NetworkIndex=idx)
                 # print("FIN DE LA RED.......................................")
                 # b=input("Press enter")
             elif len(a.keys())==0:
@@ -1306,7 +1332,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"NetworkAnalysis":True,"NodeNetworkAnalysis":False,"CityMetrics":False,"RotatedGridAnalysis":False,"NetworkLineAgregator":False}
+    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":False,"CityMetrics":False,"RotatedGridAnalysis":False,"NetworkLineAgregator":False,"NewNetworkAnalysis":True}
     listPath=[]
   
 
@@ -1315,7 +1341,7 @@ if __name__ == "__main__":
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Berlin_GTFS/BVG_VBB_bereichsscharf.zip")
 
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
@@ -1333,12 +1359,12 @@ if __name__ == "__main__":
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Oslo_GTFS/Oslo_gtfs.zip")
     # listPath.append(r"/mnt/e/GitHub/CAMMM-Tool_1.3/Data/new_gtfs1.zip")
 
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/opendata_ttc_schedules.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/hamilton.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/burlington.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/York.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/Mississauga.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/GTFS_Durham_TXT.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/opendata_ttc_schedules.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/hamilton.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/burlington.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/York.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/Mississauga.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Toronto/GTFS_Durham_TXT.zip")
 
 
 

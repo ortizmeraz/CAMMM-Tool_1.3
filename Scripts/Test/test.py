@@ -213,10 +213,6 @@ def networktest(NodeList:list,EdgeList:list,NodeData:dict,EdgeData:dict):
     Regu=nx.is_regular(G)
 
 
-    
-
-
-
 
 
     Assort=nx.degree_assortativity_coefficient(G)  # nope
@@ -226,7 +222,16 @@ def networktest(NodeList:list,EdgeList:list,NodeData:dict,EdgeData:dict):
     # ComBeCe=nx.eccentricity(G)
     # Diameter=nx.diameter(G)
     Eccen=nx.node_connectivity(G,s=36,t=97)
+
+    
+    AvShortPath=nx.average_shortest_path_length(G)  # Global
+    FloydMarshal=nx.floyd_warshall(G, weight='weight')
+
+    # Constrain=nx.constraint(G, nodes=None, weight=None)
+
+    # esize = nx.effective_size(G)
     Wiener=nx.wiener_index(G, weight='weight')
+
 
     print('###############################################')
     print('######## End of calculations     ##############')
@@ -262,40 +267,53 @@ def networktest(NodeList:list,EdgeList:list,NodeData:dict,EdgeData:dict):
     # print("Hirarque",Hirarque,end="\n"*3)
     # print("Eccen",Eccen,end="\n"*3)
     # print("Wiener",Wiener,end="\n"*3)
-    
-    ExitPath="/mnt/e/GitHub/CAMMM-Tool_1.3/Scripts/Test/Exit/data.txt"
-    f=open(ExitPath,"w")
-    header=['Node','degree_centrality','in_degree_centrality','out_degree_centrality','eigenvector_centrality','katz_centrality','closeness_centrality','betweenness_centrality','betweenness_centrality_source','load_centrality','harmonic_centrality','dispersion','trophic_levels','core_number','pagerank','Hits']
-    Text=",".join(header) +"\n"
-    f.write(Text)
-    for i,x in enumerate(NodeList):
-        # print(x)
-        # print(DegCen[x])
-        # print(IDegCen[x])
-        # print(ODegCen[x])
-        # print(EigenVect[x])
-        # print(Kats[x])
-        # print(ClossN[x])
-        # print(BeCen[x])
-        # print(BeCenSou[x])
-        # print(LoadCen[x])
-        # print(HarmCent[x])
-        # print(Disp[x])
-        # print(TrophicLev[x])
-        # print(Cores[x])
-        # print(Page[x])
-        # print(Hits[0][x])
+    # print("FloydMarshal",FloydMarshal,end="\n"*3) 
+    # for m in FloydMarshal:
+    #     print(m,FloydMarshal[m],type(FloydMarshal[m]),end="\n"*2)
+    #     for n in FloydMarshal[m]:
+    #         print("\t",n,type(n))
 
-        row=[x,DegCen[x],IDegCen[x],ODegCen[x],EigenVect[x],Kats[x],ClossN[x],BeCen[x],BeCenSou[x],LoadCen[x],HarmCent[x],Disp[x],TrophicLev[x],Cores[x],Page[x],Hits[0][x]]
-        print(row,type(row))
-        Text=""
-        for i in row:
-            Text+=str(i)+","
-        Text+="\n"
+
+    # print("Wiener",Wiener,end="\n"*3)
+
+
+
+
+    exitvar=False
+    if exitvar:
+        ExitPath="/mnt/e/GitHub/CAMMM-Tool_1.3/Scripts/Test/Exit/data.txt"
+        f=open(ExitPath,"w")
+        header=['Node','degree_centrality','in_degree_centrality','out_degree_centrality','eigenvector_centrality','katz_centrality','closeness_centrality','betweenness_centrality','betweenness_centrality_source','load_centrality','harmonic_centrality','dispersion','trophic_levels','core_number','pagerank','Hits']
+        Text=",".join(header) +"\n"
         f.write(Text)
+        for i,x in enumerate(NodeList):
+            # print(x)
+            # print(DegCen[x])
+            # print(IDegCen[x])
+            # print(ODegCen[x])
+            # print(EigenVect[x])
+            # print(Kats[x])
+            # print(ClossN[x])
+            # print(BeCen[x])
+            # print(BeCenSou[x])
+            # print(LoadCen[x])
+            # print(HarmCent[x])
+            # print(Disp[x])
+            # print(TrophicLev[x])
+            # print(Cores[x])
+            # print(Page[x])
+            # print(Hits[0][x])
 
-    #     print(row)
-    f.close()
+            row=[x,DegCen[x],IDegCen[x],ODegCen[x],EigenVect[x],Kats[x],ClossN[x],BeCen[x],BeCenSou[x],LoadCen[x],HarmCent[x],Disp[x],TrophicLev[x],Cores[x],Page[x],Hits[0][x]]
+            print(row,type(row))
+            Text=""
+            for i in row:
+                Text+=str(i)+","
+            Text+="\n"
+            f.write(Text)
+
+        #     print(row)
+        f.close()
     # print("Kcomponenets",Kcomponenets)
 
 
