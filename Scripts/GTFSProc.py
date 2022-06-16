@@ -1192,7 +1192,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
         Titles=["Bus Network","Rail Network","Metro Network","Light Rail Netwrok","Other Network","Node Network"]
         for idx,a in enumerate(ListofStops):
             print("Start of",Titles[idx],"network")
-            if idx ==0:
+            if idx ==2:
                 # b=input('.................................')
                 if len(a.keys())>0:
                     print(idx,"---------------------------------------------------------------------------------------------------------------------------------------------------------------")
@@ -1237,7 +1237,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
                 AnalyzedNetwork=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx,DataRoutes=DataRoutes,DataSequence=DataSequence,DataTrips=DataTrips)
                 ListOfNeworks.append(AnalyzedNetwork)
                 print("Network:",Titles[idx])
-                NewNetWorkToGeoJson(G=AnalyzedNetwork,NetworkIndex=idx)
+                NetWorkToGeoJson(G=AnalyzedNetwork,NetworkIndex=idx)
                 # print("FIN DE LA RED.......................................")
                 # b=input("Press enter")
             elif len(a.keys())==0:

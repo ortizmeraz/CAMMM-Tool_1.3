@@ -122,7 +122,8 @@ def networktest(NodeList:list,EdgeList:list,NodeData:dict,EdgeData:dict):
     EigenVect=nx.eigenvector_centrality(G, weight='weight') 
     Kats=nx.katz_centrality(G, alpha=0.1, beta=1.0, max_iter=1000, tol=1e-06, nstart=None, normalized=True, weight='weight')
     ####### Closeness    ###############################
-    ClossN=nx.closeness_centrality(G,distance='weight')
+    ClossN=nx.closeness_centrality(G)
+    ClossNImp=nx.closeness_centrality(G, distance='weight', wf_improved=True)
     # IncClossN=nx.incremental_closeness_centrality(G, EdgeList, prev_cc=None, insertion=True, wf_improved=True) #NA
     # InfoCent=nx.information_centrality(G)
 
@@ -279,11 +280,11 @@ def networktest(NodeList:list,EdgeList:list,NodeData:dict,EdgeData:dict):
 
 
 
-    exitvar=False
+    exitvar=True
     if exitvar:
-        ExitPath="/mnt/e/GitHub/CAMMM-Tool_1.3/Scripts/Test/Exit/data.txt"
+        ExitPath="/mnt/e/GitHub/CAMMM-Tool_1.3/Scripts/Test/Exit/data.csv"
         f=open(ExitPath,"w")
-        header=['Node','degree_centrality','in_degree_centrality','out_degree_centrality','eigenvector_centrality','katz_centrality','closeness_centrality','betweenness_centrality','betweenness_centrality_source','load_centrality','harmonic_centrality','dispersion','trophic_levels','core_number','pagerank','Hits']
+        header=['Node','degree_centrality','in_degree_centrality','out_degree_centrality','eigenvector_centrality','katz_centrality','closeness_centrality','closeness_centrality_improved','betweenness_centrality','betweenness_centrality_source','load_centrality','harmonic_centrality','dispersion','trophic_levels','core_number','pagerank','Hits']
         Text=",".join(header) +"\n"
         f.write(Text)
         for i,x in enumerate(NodeList):
@@ -304,7 +305,7 @@ def networktest(NodeList:list,EdgeList:list,NodeData:dict,EdgeData:dict):
             # print(Page[x])
             # print(Hits[0][x])
 
-            row=[x,DegCen[x],IDegCen[x],ODegCen[x],EigenVect[x],Kats[x],ClossN[x],BeCen[x],BeCenSou[x],LoadCen[x],HarmCent[x],Disp[x],TrophicLev[x],Cores[x],Page[x],Hits[0][x]]
+            row=[x,DegCen[x],IDegCen[x],ODegCen[x],EigenVect[x],Kats[x],ClossN[x],ClossNImp[x],BeCen[x],BeCenSou[x],LoadCen[x],HarmCent[x],Disp[x],TrophicLev[x],Cores[x],Page[x],Hits[0][x]]
             print(row,type(row))
             Text=""
             for i in row:

@@ -1574,6 +1574,9 @@ def NewNetWorkToGeoJson(G,NetworkIndex):
     # b=input()
     print("Calculating Centrality Closennes\n")
     # try:
+    for node in G:
+        print('node i hope:',node,node['weight'])
+        b=input('.................................')
     closeness_centrality = nx.closeness_centrality(G)
     PointCharacteristics['Clossnes']={}
     for key in closeness_centrality:    
