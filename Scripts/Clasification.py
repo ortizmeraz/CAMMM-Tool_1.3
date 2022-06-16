@@ -17,6 +17,9 @@ import tkinter
 from tkinter import ttk 
 from tkinter.filedialog import asksaveasfile 
 
+
+from Tools import ExportClusters
+
 def NaturalBreaksBare(Path):
     count=0
     Data=[]
@@ -831,6 +834,16 @@ def GetStopDensity(PathFileGridUTM,PathStops,PathTrip,PathShape,Pathroute,Agency
     print("PathStr",PathStr,type(PathStr))
     WriteToJsonFile(Text=GeograpJSON,Path=PathStr)
 
+
+
+def GenerateBufferZones(PathCenters,PathOut)->None:
+    
+    with open('readme.txt') as f:
+        Lines = f.readlines()
+        for line in Lines:
+            print(line)
+    f.close()
+    pass
 
 if __name__ == "__main__":
 
