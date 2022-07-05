@@ -837,13 +837,17 @@ def GetStopDensity(PathFileGridUTM,PathStops,PathTrip,PathShape,Pathroute,Agency
 
 
 def GenerateBufferZones(PathCenters,PathOut)->None:
+
+    import csv
+    with open(PathCenters,encoding="utf-8") as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        head = next(csv_reader, None)
+        header=list(head)
+        print(header)
+        for idx,row in enumerate(csv_reader):
+            print(idx,row)
+
     
-    with open('readme.txt') as f:
-        Lines = f.readlines()
-        for line in Lines:
-            print(line)
-    f.close()
-    pass
 
 if __name__ == "__main__":
 
@@ -856,8 +860,13 @@ if __name__ == "__main__":
     Pathroute="/mnt/e/GitHub/CAMMM-Tool_1.3/SampleData/MTL_gtfs_RAW/routes.txt"
     PathStopsCSV="/mnt/e/GitHub/CAMMM-Tool_1.3/SampleData/MTL_gtfs_RAW/stops.txt"
 
-    TransformStopsCsvToGeoJson(PathStopsCSV,PathStopsGeojson,Agency="STM")
+    # TransformStopsCsvToGeoJson(PathStopsCSV,PathStopsGeojson,Agency="STM")
     
-    GetStopDensity(PathFileGridUTM=PathFileGridUTM,PathStops=PathStopsGeojson,PathTrip=PathTrip,PathShape=PathShape,Pathroute=Pathroute,Agency="STM")
+    # GetStopDensity(PathFileGridUTM=PathFileGridUTM,PathStops=PathStopsGeojson,PathTrip=PathTrip,PathShape=PathShape,Pathroute=Pathroute,Agency="STM")
+    Cluster=r"/mnt/e/GitHub/CAMMM-Tool_1.3/Results/SuperNode/Montreal_SuperNode4.geojson"
+    ExitMid=r"/mnt/e/GitHub/CAMMM-Tool_1.3/SampleData/Exit/Montreal_ClusterPoints.csv"
+    BufferZones=r"/mnt/e/GitHub/CAMMM-Tool_1.3/SampleData/Exit/Montreal_ClusterBuffer.csv" 
+    # ExportClusters(gjPath=Cluster,exitPath=ExitMid)
+    GenerateBufferZones(PathCenters=ExitMid,PathOut=BufferZones)
     print("..........fin.............")
 
