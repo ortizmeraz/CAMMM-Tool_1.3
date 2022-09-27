@@ -1,6 +1,7 @@
 import colorama
 import sys
 import tqdm
+import time
 
 def ProgressBarColor(current,total,title="",ColorProc=colorama.Fore.YELLOW,ColorComplete=colorama.Fore.GREEN):
     Percent= int(100*(float(current)/float(total)))
@@ -11,6 +12,8 @@ def ProgressBarColor(current,total,title="",ColorProc=colorama.Fore.YELLOW,Color
         print(colorama.Fore.RESET)
     else:
         print(title,ColorProc+f"\r|{bar}|{Percent}%",end="\r")
+
+# def StringToTime()->:
 
 
 
@@ -256,7 +259,16 @@ def ReadGeoJson(gjPath):
     return Dict
 
 
+def StrTimeDelts(str1,str2)->float:
+    ListStr1=str1.split(":")
+    ListStr2=str2.split(":")
+    IntList1= [int(x) for x in ListStr1]
+    IntList2= [int(x) for x in ListStr2]
+    TimeDelta(T1=IntList1,T2=IntList2)
+
 def TimeDelta(T1=list,T2=list)->float:
+    #Time format
+    # HH,MM,SS
     def Exit(Text=str):
         print("error inthe lenghts of the input lists")
         print(Text)
@@ -309,7 +321,9 @@ if __name__=="__main__":
     # FullExportTOCSV(gjPath="/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Metro/Montreal_Bus.geojson",exitPath="/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Metro/Montreal_Bus.csv")
     # FullExportTOCSV(gjPath="/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Metro/Montreal_Metro.geojson",exitPath="/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Metro/Montreal_Metro.csv")
     # FullExportTOCSV(gjPath="/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Metro/Vienna_Metro.geojson",exitPath="/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Metro/Vienna_Metro.csv")
-
-    Cluster=r"/mnt/e/GitHub/CAMMM-Tool_1.3/Results/SuperNode/Montreal_SuperNode4.geojson"
-    Exit=r"/mnt/e/GitHub/CAMMM-Tool_1.3/SampleData/Exit/Montreal_ClusterBuffer.csv"
-    ExportClusters(gjPath=Cluster,exitPath=Exit)
+    seconds=time.time()
+    print(seconds)
+    print(dir(seconds))
+    # Cluster=r"/mnt/e/GitHub/CAMMM-Tool_1.3/Results/SuperNode/Montreal_SuperNode4.geojson"
+    # Exit=r"/mnt/e/GitHub/CAMMM-Tool_1.3/SampleData/Exit/Montreal_ClusterBuffer.csv"
+    # ExportClusters(gjPath=Cluster,exitPath=Exit)

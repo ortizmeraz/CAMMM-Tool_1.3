@@ -1,3 +1,4 @@
+from logging.config import stopListening
 import readline
 import Calculations
 import datetime
@@ -374,11 +375,37 @@ def ConvertToLatLon(x,y,Val_EPSG):
     
 
 
-def ReadGTFS(PathRoutes,PathTrips,PathStopTimes,PathStops):
+def ReadGTFS(PathRoutes,PathTrips,PathStopTimes,PathStops,PathCalendar):
     #############################################################################
     ######    READ THE STOP TIME FILE
     #############################################################################
     #############################################################################
+
+
+
+    # A container to store the sequence of stops
+    DataCalendar={}
+    # The file is opened using the python-csv tool
+    with open(PathCalendar,encoding="utf-8-sig") as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        headers = next(csv_reader, None)
+        # print(headers)
+        # b=input()
+        for row in csv_reader:
+            Dict={}
+            # print(row,type(row),len(row))
+            for idx,Element in enumerate(row):
+                Dict[headers[idx]]=Element
+            # print(Dict)
+            # When there is a new trip, from the trips the routs are obtained.
+            # if Dict['service_id'] not in DataCalendar.keys():
+            #     DataCalendar[Dict['service_id']]={}
+            DataCalendar[Dict['service_id']]=Dict
+    # print(len(DataCalendar.keys()))
+    # print("CHECK HERE")
+    # b=input('.................................')
+
+
 
     # A container to store the sequence of stops
     DataSequence={}
@@ -1006,6 +1033,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
         O_PathStopTimes=r"Operational\stop_times.txt"
         O_PathStops=r"Operational\stops.txt"
         O_PathShapes=r"Operational\shapes.txt"
+        O_PathCalendar=r"Operational\calendar.txt"
         O_PathStopsGeoJson=r"Operational\Geostops.geojson"
         O_GridStopDensity=r"Operational\Grid.geojson"
     if os.name=='posix':
@@ -1017,6 +1045,9 @@ def GTFS(Path,RequestedData,DictType,CountType):
         O_PathStops="Operational/stops.txt"
         O_PathShapes="Operational/shapes.txt"
         O_PathStopsGeoJson="Operational/Geostops.geojson"
+        O_PathCalendar="Operational/calendar.txt"
+
+        O_GridStopDensity="Operational/Grid.geojson"
         O_GridStopDensity="Operational/Grid.geojson"
     print("Finish unpacking")
 
@@ -1051,7 +1082,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
     print("NameOfCity1",NameOfCity)
     # NumberLines=GetLineNums(Path=O_PathRoutes)
     # print(NameOfCity)
-    DataSequence,DataTrips,DataRoutes,DataStops=ReadGTFS(PathRoutes=O_PathRoutes,PathTrips=O_PathTrips,PathStopTimes=O_PathStopTimes,PathStops=O_PathStops)
+    DataSequence,DataTrips,DataRoutes,DataStops=ReadGTFS(PathRoutes=O_PathRoutes,PathTrips=O_PathTrips,PathStopTimes=O_PathStopTimes,PathStops=O_PathStops,PathCalendar=O_PathCalendar)
     print("End - Step 1")
     # #############################################################
     print("Start - Step 2")
@@ -1108,75 +1139,18 @@ def GTFS(Path,RequestedData,DictType,CountType):
     # print(ListOfTrips)
     # b=input('.................................')
     print("##################################################")
-    for i in ('1','2','3','4','5'):
-        print("EdgeData[",i,"]={}")
-
-
     # for i in ('1','2','3','4','5'):
-    for j in ListOfTrips:
-        print("EdgeData[",BackLink[j],"]['",j,"']={}")
-
-# Station Berri-UQAM        99      9999111-9999112-9999114
-# Station Snowdon           98      9999495-9999492
-# Station Jean-Talon        97      9999055-9999052
-
-
-
-    for i,tripid in enumerate(DataSequence.keys()):
-        if tripid in ListOfTrips:
-            LegList=list(DataSequence[tripid].keys())
-
-            for j,leg in enumerate(DataSequence[tripid].keys()):
-                if leg ==LegList[-1]:
-                    break
-                StartTime=DataSequence[tripid][leg]['arrival_time'].split(":")
-                StartTime = [int(i) for i in StartTime]
-                EnddTime=DataSequence[tripid][LegList[j+1]]['arrival_time'].split(":")
-                EnddTime = [int(i) for i in EnddTime]
-                DeltaTime=TimeDelta(T1=StartTime,T2=EnddTime)
-                Sta=DataSequence[tripid][leg]['stop_id']
-                if Sta in ('9999111','9999112','9999114'):
-                    Sta='99'
-                if Sta in ('9999495','9999492'):
-                    Sta='98'
-                if Sta in ('9999055','9999052'):
-                    Sta='97'
-                End=DataSequence[tripid][LegList[j+1]]['stop_id']
-                if End in ('9999111','9999112','9999114'):
-                    End='99'
-                if End in ('9999495','9999492'):
-                    End='98'
-                if End in ('9999055','9999052'):
-                    End='97'
-
-                print("EdgeData[",Sta,",",End,"]",end="")
-                print("['",tripid,"']",end="")
-                print("=",DeltaTime)
-                # print(j,"   -    ",leg,">",LegList[j+1],DeltaTime,"\t",DataSequence[tripid][leg]['stop_id'] )
-                # print("\t",leg,DataSequence[tripid][leg])
-            # print(type(DataSequence[tripid]))
-            # print(DataSequence[tripid])
-    # print("PAY Attention here")
-    # b=input('.................................')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    #     print("EdgeData[",i,"]={}")
+    # for i in ('1','2','3','4','5'):
+    # for j in ListOfTrips:
+    #     print("EdgeData[",BackLink[j],"]['",j,"']={}")
+        # Station Berri-UQAM        99      9999111-9999112-9999114
+        # Station Snowdon           98      9999495-9999492
+        # Station Jean-Talon        97      9999055-9999052
     ####### STOPER BEFORE WE GO INTO THE OPERATIONS ##########
     ##########################################################
-    b=input(".................................")
+    # print(RequestedData)
+    # b=input("....STOPER BEFORE WE GO INTO THE OPERATIONS.............................")
     ##########################################################
 
     ListOfNeworks=[]
@@ -1184,31 +1158,313 @@ def GTFS(Path,RequestedData,DictType,CountType):
 
     # Sequence to obtain the average distance between stops 
     ##########################################################
+    ListOfWorkStops=[]
+    if RequestedData["WorkFrequency"]:
+
+
+        # def Hour2Hour(HourSTR):
+        #     Hour=HourSTR[]
+
+        TripsToWorkWith=[]
+
+
+        DictExit={}
+
+        count=0
+        for stop in DataStops.keys():
+            count+=1
+            Skip=False
+            for let in stop:
+                if let not in ["1","2","3","4","5","6","7","8","9","0"]:
+                    Skip=True
+            if Skip:
+                next
+            # print(stop,DataStops[stop])
+            ListOfWorkStops.append(stop)
+            # if count==500
+            #     break
+        b=input("Delete")
+
+        count=0
+        for trip in DataTrips.keys():
+            if trip not in ['1','2','3','4','5']:
+                count+=1
+                if count==5:
+                    break
+                print(trip,type(trip))
+                # print(trip,DataTrips[trip])
+                # print("type(DataTrips[trip])",type(DataTrips[trip]))
+                for seq in DataTrips[trip]:
+                    # print("\t",seq)
+                    for time in DataSequence[seq]:
+                        # print("\t\t",time, DataSequence[seq][time]['stop_id'],DataSequence[seq][time]['arrival_time'])
+                        ArrTime=DataSequence[seq][time]['arrival_time']
+                        Stop=DataSequence[seq][time]['stop_id']
+                        if Stop not in DictExit.keys():
+                            DictExit[Stop]=[]
+                        if [Stop,ArrTime] not in DictExit[Stop]:
+                            DictExit[Stop].append([Stop,ArrTime])
+
+        b=input("Delete")
+        for stop in DictExit.keys():
+            print(stop,DictExit[stop])
+            b=input('.................................')
+        # for 
 
 
 
+
+
+
+        # import statistics
+        # for trip in DataTrips.keys():
+        #     print(trip)
+        # # if True:
+        #     # print(DataTrips['10'])
+        #     Route=DataTrips[trip]
+        #     # print('direction_id',Route[trip]['direction_id'])
+        #     # print(Route[trip])
+        #     if trip not in ['0','1','2','3','4','5','121E']:
+        #         ListCount=[[],[]]
+        #         for trip in Route.keys():
+        #             # print("trip",trip,len(DataSequence[trip]))
+        #             # print(trip,Route[trip])
+        #             # for i in DataSequence[trip]:
+        #                 # print("\t",i,DataSequence[trip][i])
+        #             # print(trip,len(DataSequence[trip]))
+        #             ListCount[int(Route[trip]['direction_id'])].append(len(DataSequence[trip]))
+        #         M0=statistics.mode(ListCount[0])
+        #         M1=statistics.mode(ListCount[1])
+        #         Sample0=0
+        #         Sample1=0
+        #         for trip in Route.keys():
+        #             if Route[trip]['direction_id']=='0' and len(DataSequence[trip])==M0 and Sample0==0:
+        #                 Sample0=trip
+        #             if Route[trip]['direction_id']=='1' and len(DataSequence[trip])==M1 and Sample1==0:
+        #                 Sample1=trip
+        #         # print("ready:")
+        #         # print("Sample0:",Sample0)
+        #         # print("Sample1:",Sample1)
+        #         TripsToWorkWith.append(Sample0)
+        #         TripsToWorkWith.append(Sample1)
+        #     # print("\n","trip:",trip)
+        #     # if DataTrips[trip]['route_id']=='10':
+        #     #     print(trip)
+
+        # # b=input("Delete")
+        # # print(type())
+        # # b=input("Delete")
+        # StopTimeCatalog={}
+        # # ['stop_id']
+        # for trip in TripsToWorkWith:
+        #     print(trip)
+        #     for stop in DataSequence[trip]:
+        #         print("\t",stop,DataSequence[trip][stop])
+        #         if DataSequence[trip][stop]['stop_id'] in StopTimeCatalog.keys():
+        #             key=DataSequence[trip][stop]['stop_id']
+        #             ArrivTime=DataSequence[trip][stop]['arrival_time']
+        #             DeparTime=DataSequence[trip][stop]['departure_time']
+        #             StopTimeCatalog[key].append(ArrivTime)
+        #             print("key:",key)
+        #             print("ArrivTime:",ArrivTime)
+        #             print("DeparTime:",DeparTime)
+        #         else:
+        #             key=DataSequence[trip][stop]['stop_id']
+        #             ArrivTime=DataSequence[trip][stop]['arrival_time']
+        #             DeparTime=DataSequence[trip][stop]['departure_time']
+        #             print("key:",key)
+        #             print("ArrivTime:",ArrivTime)
+        #             print("DeparTime:",DeparTime)
+        #             # b=input("Delete")
+        #             StopTimeCatalog[key]=[]
+        #             StopTimeCatalog[key].append(ArrivTime)
+        
+        # for key in StopTimeCatalog.keys():
+        #     print(key)
+        #     print("\t",StopTimeCatalog[key],"\n")
+        # print("len",len(StopTimeCatalog))
+        # print("DataStops",len(DataStops))
 
     if RequestedData["NewNetworkAnalysis"]:
-        Titles=["Bus Network","Rail Network","Metro Network","Light Rail Netwrok","Other Network","Node Network"]
-        for idx,a in enumerate(ListofStops):
-            print("Start of",Titles[idx],"network")
-            if idx ==2:
+        TimeData={}
+        BackConnection={}
+        BusesPerStop={}
+        # CheckList=[]
+        # ConnectionTripId2Route={}
+        ########################################################
+        # for key in DataTrips.keys():
+        #     # print("Key DataTrips",key,type(DataTrips[key]))
+        #     for kk in DataTrips[key].keys():
+        #         # print(kk,DataTrips[key][kk])
+        #         ConnectionTripId2Route[DataTrips[key][kk]['trip_id']]=DataTrips[key][kk]['route_id']
+        #         CheckList.append(DataTrips[key][kk]['trip_id'])
+        # for ii in CheckList[:10]:
+        #     print(ii,ConnectionTripId2Route[ii])
+        # b=input('.................................')
+
+        # print("DataStops",type(DataStops))
+        for Sta in DataStops.keys():
+            # print("Key DataStops",key,type(key))
+            if Sta in ('9999111','9999112','9999114'):
+                Sta='99'
+            if Sta in ('9999495','9999492'):
+                Sta='98'
+            if Sta in ('9999055','9999052'):
+                Sta='97'
+            BusesPerStop[Sta]=[]
+        # b=input('.................................')
+        for trip in DataTrips.keys():
+            # print(trip,type(DataTrips[trip]),len(DataTrips[trip]),DataTrips[trip].keys())
+            # print()
+            TimeData[trip]={}
+            for ixy in DataTrips[trip].keys():
+                BackConnection[ixy]=trip
+                TimeData[trip][ixy]={}
+            # print(trip,len(TimeData[trip]))
+            # print(TimeData[trip])
+
+
+        print("DataTrips",len(DataTrips))
+        print("ListOfTrips",len(ListOfTrips))
+        print("~~~~~~~~~~~~~~~~~~~~")
+        # b=input('.................................')
+        for i,tripid in enumerate(DataSequence.keys()):
+            # if tripid in ListOfTrips:
+                LegList=list(DataSequence[tripid].keys())
+                # print("LegList",LegList)
                 # b=input('.................................')
-                if len(a.keys())>0:
-                    print(idx,"---------------------------------------------------------------------------------------------------------------------------------------------------------------")
-                    print("Tpye EdgeList",len(EdgeList[idx]))
-                    print("Tpye EdgeList",type(EdgeList[idx]))
-                    print("NetworkIndex=idx",idx)
-                    AnalyzedNetwork=GtfsToNetwork(EdgeData=EdgeList[idx],DataStops=DataStops,NetworkIndex=idx,DataRoutes=DataRoutes,DataSequence=DataSequence,DataTrips=DataTrips)
-                    ListOfNeworks.append(AnalyzedNetwork)
-                    print("Network:",Titles[idx])
-                    print("NameOfCity",NameOfCity)
-                    NewNetWorkToGeoJson(G=AnalyzedNetwork,NetworkIndex=idx)
-                    # print("FIN DE LA RED.......................................")
-                    # b=input("Press enter")
-                elif len(a.keys())==0:
-                    print("No",idx)
-                print("End of",Titles[idx],"network")
+                for j,leg in enumerate(DataSequence[tripid].keys()):
+                    if leg ==LegList[-1]:
+                        break
+                    # print("#########################################")
+                    # print(DataSequence[tripid][leg])
+                    # print("#########################################")
+                    StartTime=DataSequence[tripid][leg]['arrival_time'].split(":")
+                    if len(StartTime) ==1: 
+                        print(DataSequence[tripid][leg])
+                        # print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"*10)
+                        continue                    
+                    StartTime = [int(i) for i in StartTime]
+                    EnddTime=DataSequence[tripid][LegList[j+1]]['arrival_time'].split(":")
+                    # print("EnddTime",EnddTime,type(EnddTime),len(EnddTime))
+                    if len(EnddTime) ==1: 
+                        print(DataSequence[tripid][leg])
+                        # print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"*10)
+                        continue
+                    EnddTime = [int(i) for i in EnddTime]
+                    Sta=DataSequence[tripid][leg]['stop_id']
+                    if Sta in ('9999111','9999112','9999114'):
+                        Sta='99'
+                    if Sta in ('9999495','9999492'):
+                        Sta='98'
+                    if Sta in ('9999055','9999052'):
+                        Sta='97'
+                    BusesPerStop[Sta].append(DataSequence[tripid][leg]['departure_time'])
+
+        ExitDict={}
+        for stop in BusesPerStop.keys():
+            if stop in ('9999111','9999112','9999114'):
+                stop='99'
+            if stop in ('9999495','9999492'):
+                stop='98'
+            if stop in ('9999055','9999052'):
+                stop='97'
+            BusCountPerHour= {hr:0 for hr in range(0,24)}
+            # print("stop",stop,BusesPerStop[stop],len(BusesPerStop[stop]))
+            # print("stop",stop)
+            for hr in BusesPerStop[stop]:
+                Hour=int(hr[0]+hr[1])
+                if Hour >= 24:
+                    Hour=Hour-24
+
+                BusCountPerHour[Hour]+=1
+            ExitDict[stop]=BusCountPerHour
+            # print(BusCountPerHour)
+            # b=input('.................................')
+        print(len(BusesPerStop))          
+        Path=r"/mnt/e/GitHub/CAMMM-Tool_1.3/Results/Montreal/BusPerHour.csv"
+        f = open(Path, "w")
+        Header="Stop,"
+        for h in range(0,24):
+            Header+=str(h)+","
+        Header+="\n"
+        f.write(Header)
+        text=""
+        for key in ExitDict.keys():
+            Summ=0
+            for h in range(0,24):
+                Summ+=ExitDict[key][h]
+            print(key,"SUM:",Summ,ExitDict[key])
+            # b=input('.................................')
+            if Summ !=0:
+                text=key+","
+                # print("type(ExitDict",type(ExitDict[key]))
+                for k in range(0,24):
+                    text+=str(ExitDict[key][k])+","
+                #     text+=str(ExitDict[text][k])+","
+                # text+=",".join(k+","+BusesPerStop[text][k] for k in BusesPerStop[text])
+                text+="\n"
+                print(text)
+                f.write(text)
+        # print(text)
+        # b=input('.................................')
+        f.close()
+        b=input('.................................')
+        # for i,tripid in enumerate(DataSequence.keys()):
+        #     # if tripid in ListOfTrips:
+        #         LegList=list(DataSequence[tripid].keys())
+        #         # print("LegList",LegList)
+        #         # b=input('.................................')
+        #         for j,leg in enumerate(DataSequence[tripid].keys()):
+        #             if leg ==LegList[-1]:
+        #                 break
+        #             print("#########################################")
+        #             print(DataSequence[tripid][leg])
+        #             print("#########################################")
+        #             StartTime=DataSequence[tripid][leg]['arrival_time'].split(":")
+        #             if len(StartTime) ==1: 
+        #                 print(DataSequence[tripid][leg])
+        #                 print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"*10)
+        #                 continue                    
+        #             StartTime = [int(i) for i in StartTime]
+        #             EnddTime=DataSequence[tripid][LegList[j+1]]['arrival_time'].split(":")
+        #             # print("EnddTime",EnddTime,type(EnddTime),len(EnddTime))
+        #             if len(EnddTime) ==1: 
+        #                 print(DataSequence[tripid][leg])
+        #                 print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"*10)
+        #                 continue
+        #             EnddTime = [int(i) for i in EnddTime]
+        #             DeltaTime=TimeDelta(T1=StartTime,T2=EnddTime)
+        #             Sta=DataSequence[tripid][leg]['stop_id']
+        #             if Sta in ('9999111','9999112','9999114'):
+        #                 Sta='99'
+        #             if Sta in ('9999495','9999492'):
+        #                 Sta='98'
+        #             if Sta in ('9999055','9999052'):
+        #                 Sta='97'
+        #             End=DataSequence[tripid][LegList[j+1]]['stop_id']
+        #             if End in ('9999111','9999112','9999114'):
+        #                 End='99'
+        #             if End in ('9999495','9999492'):
+        #                 End='98'
+        #             if End in ('9999055','9999052'):
+        #                 End='97'
+        #             # print("BackConnection[trçipid]",BackConnection[tripid])
+        #             # print(TimeData[BackConnection[tripid]])
+        #             # if tripid in TimeData[BackConnection[tripid]]:
+        #             #     print("tripid",tripid," is in TimeData",BackConnection[tripid])
+        #             #     b=input('.................................')
+        #             TimeData[BackConnection[tripid]][tripid][leg]=DeltaTime
+
+        #             print("EdgeData[",Sta,",",End,"]",end="")
+        #             print("['",tripid,"']",end="")
+        #             print("=",DeltaTime)
+        #             print("PAY Attention here")
+        #             # print(j,"   -    ",leg,">",LegList[j+1],DeltaTime,"\t",DataSequence[tripid][leg]['stop_id'] )
+        #             # print("\t",leg,DataSequence[tripid][leg])
+        #             b=input('.................................')
+
+
 
     if RequestedData["NetworkAnalysis"]:
         print("ListofStops len ",len(ListofStops))
@@ -1332,7 +1588,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":False,"CityMetrics":False,"RotatedGridAnalysis":False,"NetworkLineAgregator":False,"NewNetworkAnalysis":True}
+    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":False,"CityMetrics":False,"RotatedGridAnalysis":False,"NetworkLineAgregator":False,"NewNetworkAnalysis":False,"WorkFrequency":True}
     listPath=[]
   
 
@@ -1341,11 +1597,11 @@ if __name__ == "__main__":
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Berlin_GTFS/BVG_VBB_bereichsscharf.zip")
 
-    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
+    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Vienna_GTFS/gtfs.zip")
 
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Boston_GTFS/MBTA_GTFS.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Seattle/gtfs_puget_sound_consolidated.zip")  # Seattle

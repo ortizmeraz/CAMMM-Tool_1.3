@@ -152,20 +152,20 @@ def GtfsToWeightedNetwork(DataStops=dict,DataSequence=dict):
     SationsByRoutes={}
     LKdataRoutes=list(DataRoutes.keys())
 
-    print("DataSequence",type(DataSequence))
+    # print("DataSequence",type(DataSequence))
     for route in DataRoutes.keys():
-        print("#######################################")
-        print(route)
+        # print("#######################################")
+        # print(route)
         SationsByRoutes[route]=[]
         RouteTrips=list(DataTrips[route].keys())
         for trips in RouteTrips:
             if trips in DataSequence:
                 TempStops=[]
                 for Sequence in DataSequence[trips].keys():
-                    print(Sequence, DataSequence[trips][Sequence])
+                    # print(Sequence, DataSequence[trips][Sequence])
                     # Stops.append(DataSequence[trips][Sequence]['stop_id'])
                     TempStops.append(DataSequence[trips][Sequence]['stop_id'])
-            print("*****************************************************************",route)
+            # print("*****************************************************************",route)
             if len(TempStops)>len(SationsByRoutes[route]):
                 SationsByRoutes[route]=TempStops
                 print("CHANGE!!!!!")
@@ -301,13 +301,17 @@ def GtfsToNetwork(EdgeData,DataStops,DataRoutes,DataSequence,DataTrips,NetworkIn
                     print(Sequence, DataSequence[trips][Sequence])
                     # Stops.append(DataSequence[trips][Sequence]['stop_id'])
                     TempStops.append(DataSequence[trips][Sequence]['stop_id'])
+                    print("'arrival_time'",DataSequence[trips][Sequence]['arrival_time'],type(DataSequence[trips][Sequence]['arrival_time']))
+                    print("'departure_time'",DataSequence[trips][Sequence]['departure_time'])
+                    # StrTimeDelts(str1=DataSequence[trips][Sequence]['arrival_time']),str2)
+                    print()
             print("*****************************************************************",route)
             if len(TempStops)>len(SationsByRoutes[route]):
                 SationsByRoutes[route]=TempStops
                 print("CHANGE!!!!!")
             for i,x in enumerate(SationsByRoutes[route]):
                 print(i,x)
-            # b=input('.................................')
+            b=input('............DataSequence.....................')
 
     List_Nodes=[]
     EdgeList=[]
@@ -1033,7 +1037,7 @@ def AgregatedGTFSStopsToNetwork(AgregatedNodes,EdgeList):
         # print(key,StopToNode[key])
     # print("Netwrok is on the node side",G)
     # b=input()
-    print("EdgeList",len(EdgeList))
+    # print("EdgeList",len(EdgeList))
     NodeEdgeLisr=[]
     for Di in EdgeList:
         print(type(Di),len(Di))
@@ -1474,7 +1478,7 @@ def NetWorkToGeoJson(G,NetworkIndex):
 def NewNetWorkToGeoJson(G,NetworkIndex):
     # USES TK to get path
     print(G,type(G),dir(G))
-    # b=input("STOP HERE")
+    b=input("STOP HERE")
 
 
     PointCharacteristics={}
@@ -1574,8 +1578,9 @@ def NewNetWorkToGeoJson(G,NetworkIndex):
     # b=input()
     print("Calculating Centrality Closennes\n")
     # try:
-    for node in G:
-        print('node i hope:',node,node['weight'])
+    for node in G.nodes(data=True):
+        print('node i hope:',node,type(node))
+        # print(node[])
         b=input('.................................')
     closeness_centrality = nx.closeness_centrality(G)
     PointCharacteristics['Clossnes']={}
