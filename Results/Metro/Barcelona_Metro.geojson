@@ -1,0 +1,1596 @@
+{
+        "features": [
+{
+"type": "Feature",
+"properties": {"StopCode":"1.111","location": "(425309.7919977078, 4577405.036266687)", "stop_id": "1.111", "stop_name": "Hospital de Bellvitge", "stop_code": "111", "stop_desc": "", "stop_lat": "41.344677", "stop_lon": "2.107242", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660111", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.961653797587, "CatHarmCen": 2, "Clossnes": 1.223628691983, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.107242,41.344677],
+"type": "Point"
+        },
+        "id": "1000000000000000"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.112","location": "(425624.4223956904, 4578101.068806397)", "stop_id": "1.112", "stop_name": "Bellvitge", "stop_code": "112", "stop_desc": "", "stop_lat": "41.350975", "stop_lon": "2.110917", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660112", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.927171038966, "CatHarmCen": 3, "Clossnes": 1.307809535658, "CatClossnes": 1, "BetCen": 225.751834233653},
+"geometry": {
+"coordinates": [2.110917,41.350975],
+"type": "Point"
+        },
+        "id": "1000000000000001"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.113","location": "(424940.0462070365, 4578949.503093621)", "stop_id": "1.113", "stop_name": "Av. Carrilet", "stop_code": "113", "stop_desc": "", "stop_lat": "41.358553", "stop_lon": "2.102632", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660113", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.391456753252, "CatHarmCen": 4, "Clossnes": 1.397056380611, "CatClossnes": 1, "BetCen": 435.378537450617},
+"geometry": {
+"coordinates": [2.102632,41.358553],
+"type": "Point"
+        },
+        "id": "1000000000000002"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.114","location": "(424705.2792997916, 4579566.710950628)", "stop_id": "1.114", "stop_name": "Rambla Just Oliveras", "stop_code": "114", "stop_desc": "", "stop_lat": "41.36409", "stop_lon": "2.099749", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660114", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.687753049548, "CatHarmCen": 4, "Clossnes": 1.490976137290, "CatClossnes": 2, "BetCen": 628.880109650891},
+"geometry": {
+"coordinates": [2.099749,41.36409],
+"type": "Point"
+        },
+        "id": "1000000000000003"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.115","location": "(424961.08820674696, 4579964.211942227)", "stop_id": "1.115", "stop_name": "Can Serra", "stop_code": "115", "stop_desc": "", "stop_lat": "41.367694", "stop_lon": "2.102758", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660115", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.899291511087, "CatHarmCen": 4, "Clossnes": 1.588890988097, "CatClossnes": 2, "BetCen": 806.256550834476},
+"geometry": {
+"coordinates": [2.102758,41.367694],
+"type": "Point"
+        },
+        "id": "1000000000000004"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.116","location": "(425569.7306865116, 4580026.998564851)", "stop_id": "1.116", "stop_name": "Florida", "stop_code": "116", "stop_desc": "", "stop_lat": "41.368316", "stop_lon": "2.110027", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660116", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.059291511087, "CatHarmCen": 5, "Clossnes": 1.689772955596, "CatClossnes": 2, "BetCen": 967.507861001371},
+"geometry": {
+"coordinates": [2.110027,41.368316],
+"type": "Point"
+        },
+        "id": "1000000000000005"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.117","location": "(426119.03850226186, 4580030.262287229)", "stop_id": "1.117", "stop_name": "Torrassa", "stop_code": "117", "stop_desc": "", "stop_lat": "41.368396", "stop_lon": "2.116594", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660117", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.184291511087, "CatHarmCen": 5, "Clossnes": 1.792183437753, "CatClossnes": 3, "BetCen": 1112.634040151576},
+"geometry": {
+"coordinates": [2.116594,41.368396],
+"type": "Point"
+        },
+        "id": "1000000000000006"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.118","location": "(427125.02410639037, 4580066.71271275)", "stop_id": "1.118", "stop_name": "Santa Eulàlia", "stop_code": "118", "stop_desc": "", "stop_lat": "41.368816", "stop_lon": "2.128617", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660118", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.283670393074, "CatHarmCen": 5, "Clossnes": 1.894229469796, "CatClossnes": 3, "BetCen": 1241.635088285092},
+"geometry": {
+"coordinates": [2.128617,41.368816],
+"type": "Point"
+        },
+        "id": "1000000000000007"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.119","location": "(427541.0573600251, 4580527.422651076)", "stop_id": "1.119", "stop_name": "Mercat Nou", "stop_code": "119", "stop_desc": "", "stop_lat": "41.373003", "stop_lon": "2.133536", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660119", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.363215847620, "CatHarmCen": 5, "Clossnes": 1.993552363343, "CatClossnes": 3, "BetCen": 1354.511005401919},
+"geometry": {
+"coordinates": [2.133536,41.373003],
+"type": "Point"
+        },
+        "id": "1000000000000008"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.120","location": "(427929.84020548355, 4580784.465602831)", "stop_id": "1.120", "stop_name": "Plaça de Sants", "stop_code": "120", "stop_desc": "", "stop_lat": "41.375353", "stop_lon": "2.138154", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660120", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 6.426707911112, "CatHarmCen": 5, "Clossnes": 2.087366592207, "CatClossnes": 4, "BetCen": 1451.261791502056},
+"geometry": {
+"coordinates": [2.138154,41.375353],
+"type": "Point"
+        },
+        "id": "1000000000000009"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.121","location": "(428359.3071105789, 4580769.216083669)", "stop_id": "1.121", "stop_name": "Hostafrancs", "stop_code": "121", "stop_desc": "", "stop_lat": "41.375254", "stop_lon": "2.143291", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660121", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.476707911112, "CatHarmCen": 5, "Clossnes": 2.172565228623, "CatClossnes": 4, "BetCen": 1531.887446585504},
+"geometry": {
+"coordinates": [2.143291,41.375254],
+"type": "Point"
+        },
+        "id": "1000000000000010"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.122","location": "(428868.93936255306, 4580792.620177407)", "stop_id": "1.122", "stop_name": "Espanya", "stop_code": "122", "stop_desc": "", "stop_lat": "41.37551", "stop_lon": "2.149382", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660122", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 6.514985423074, "CatHarmCen": 5, "Clossnes": 2.245900763766, "CatClossnes": 4, "BetCen": 1596.387970652261},
+"geometry": {
+"coordinates": [2.149382,41.37551],
+"type": "Point"
+        },
+        "id": "1000000000000011"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.123","location": "(429306.1401580053, 4581201.592292961)", "stop_id": "1.123", "stop_name": "Rocafort", "stop_code": "123", "stop_desc": "", "stop_lat": "41.379232", "stop_lon": "2.154562", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660123", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.542763200851, "CatHarmCen": 5, "Clossnes": 2.304235848540, "CatClossnes": 4, "BetCen": 1644.763363702330},
+"geometry": {
+"coordinates": [2.154562,41.379232],
+"type": "Point"
+        },
+        "id": "1000000000000012"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.124","location": "(429671.6330531317, 4581559.43507545)", "stop_id": "1.124", "stop_name": "Urgell", "stop_code": "124", "stop_desc": "", "stop_lat": "41.382487", "stop_lon": "2.158891", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660124", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.560862748363, "CatHarmCen": 5, "Clossnes": 2.344839123404, "CatClossnes": 4, "BetCen": 1677.013625735709},
+"geometry": {
+"coordinates": [2.158891,41.382487],
+"type": "Point"
+        },
+        "id": "1000000000000013"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.125","location": "(430126.1296836884, 4581924.541909243)", "stop_id": "1.125", "stop_name": "Universitat", "stop_code": "125", "stop_desc": "", "stop_lat": "41.385815", "stop_lon": "2.164284", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660125", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.569791319791, "CatHarmCen": 5, "Clossnes": 2.365682137834, "CatClossnes": 4, "BetCen": 1693.138756752398},
+"geometry": {
+"coordinates": [2.164284,41.385815],
+"type": "Point"
+        },
+        "id": "1000000000000014"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.126","location": "(430521.80018386466, 4582106.5989071475)", "stop_id": "1.126", "stop_name": "Catalunya", "stop_code": "126", "stop_desc": "", "stop_lat": "41.387489", "stop_lon": "2.168995", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660126", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.569791319791, "CatHarmCen": 5, "Clossnes": 2.365682137834, "CatClossnes": 4, "BetCen": 1693.138756752398},
+"geometry": {
+"coordinates": [2.168995,41.387489],
+"type": "Point"
+        },
+        "id": "1000000000000015"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.127","location": "(430989.9354847098, 4582340.502991833)", "stop_id": "1.127", "stop_name": "Urquinaona", "stop_code": "127", "stop_desc": "", "stop_lat": "41.389636", "stop_lon": "2.174567", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660127", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 6.560862748363, "CatHarmCen": 5, "Clossnes": 2.344839123404, "CatClossnes": 4, "BetCen": 1677.013625735709},
+"geometry": {
+"coordinates": [2.174567,41.389636],
+"type": "Point"
+        },
+        "id": "1000000000000016"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.128","location": "(431544.3976921107, 4582635.130189767)", "stop_id": "1.128", "stop_name": "Arc de Triomf", "stop_code": "128", "stop_desc": "", "stop_lat": "41.392337", "stop_lon": "2.181165", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660128", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.542763200851, "CatHarmCen": 5, "Clossnes": 2.304235848540, "CatClossnes": 4, "BetCen": 1644.763363702330},
+"geometry": {
+"coordinates": [2.181165,41.392337],
+"type": "Point"
+        },
+        "id": "1000000000000017"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.129","location": "(431934.4675263261, 4582896.590085531)", "stop_id": "1.129", "stop_name": "Marina", "stop_code": "129", "stop_desc": "", "stop_lat": "41.394725", "stop_lon": "2.185801", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660129", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.514985423074, "CatHarmCen": 5, "Clossnes": 2.245900763766, "CatClossnes": 4, "BetCen": 1596.387970652261},
+"geometry": {
+"coordinates": [2.185801,41.394725],
+"type": "Point"
+        },
+        "id": "1000000000000018"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.130","location": "(432087.457676981, 4583733.640338846)", "stop_id": "1.130", "stop_name": "Glòries", "stop_code": "130", "stop_desc": "", "stop_lat": "41.402277", "stop_lon": "2.187537", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660130", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.476707911112, "CatHarmCen": 5, "Clossnes": 2.172565228623, "CatClossnes": 4, "BetCen": 1531.887446585504},
+"geometry": {
+"coordinates": [2.187537,41.402277],
+"type": "Point"
+        },
+        "id": "1000000000000019"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.131","location": "(432051.0379618093, 4584609.553083371)", "stop_id": "1.131", "stop_name": "Clot", "stop_code": "131", "stop_desc": "", "stop_lat": "41.410163", "stop_lon": "2.187003", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660131", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 6.426707911112, "CatHarmCen": 5, "Clossnes": 2.087366592207, "CatClossnes": 4, "BetCen": 1451.261791502056},
+"geometry": {
+"coordinates": [2.187003,41.410163],
+"type": "Point"
+        },
+        "id": "1000000000000020"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.132","location": "(432061.82846482494, 4585278.288555624)", "stop_id": "1.132", "stop_name": "Navas", "stop_code": "132", "stop_desc": "", "stop_lat": "41.416187", "stop_lon": "2.187057", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660132", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.363215847620, "CatHarmCen": 5, "Clossnes": 1.993552363343, "CatClossnes": 3, "BetCen": 1354.511005401919},
+"geometry": {
+"coordinates": [2.187057,41.416187],
+"type": "Point"
+        },
+        "id": "1000000000000021"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.133","location": "(432061.418922701, 4585964.672420949)", "stop_id": "1.133", "stop_name": "La Sagrera", "stop_code": "133", "stop_desc": "", "stop_lat": "41.422369", "stop_lon": "2.186975", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660133", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.283670393074, "CatHarmCen": 5, "Clossnes": 1.894229469796, "CatClossnes": 3, "BetCen": 1241.635088285092},
+"geometry": {
+"coordinates": [2.186975,41.422369],
+"type": "Point"
+        },
+        "id": "1000000000000022"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.134","location": "(431792.09262780583, 4586773.720867028)", "stop_id": "1.134", "stop_name": "Fabra i Puig", "stop_code": "134", "stop_desc": "", "stop_lat": "41.429633", "stop_lon": "2.183661", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660134", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.184291511087, "CatHarmCen": 5, "Clossnes": 1.792183437753, "CatClossnes": 3, "BetCen": 1112.634040151576},
+"geometry": {
+"coordinates": [2.183661,41.429633],
+"type": "Point"
+        },
+        "id": "1000000000000023"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.135","location": "(432428.1467567715, 4587541.2905390635)", "stop_id": "1.135", "stop_name": "Sant Andreu", "stop_code": "135", "stop_desc": "", "stop_lat": "41.4366", "stop_lon": "2.191187", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660135", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.059291511087, "CatHarmCen": 5, "Clossnes": 1.689772955596, "CatClossnes": 2, "BetCen": 967.507861001371},
+"geometry": {
+"coordinates": [2.191187,41.4366],
+"type": "Point"
+        },
+        "id": "1000000000000024"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.136","location": "(432391.91391789174, 4588277.196895956)", "stop_id": "1.136", "stop_name": "Torras i Bages", "stop_code": "136", "stop_desc": "", "stop_lat": "41.443225", "stop_lon": "2.190671", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660136", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.899291511087, "CatHarmCen": 4, "Clossnes": 1.588890988097, "CatClossnes": 2, "BetCen": 806.256550834476},
+"geometry": {
+"coordinates": [2.190671,41.443225],
+"type": "Point"
+        },
+        "id": "1000000000000025"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.137","location": "(432662.3170037443, 4588910.981628243)", "stop_id": "1.137", "stop_name": "Trinitat Vella", "stop_code": "137", "stop_desc": "", "stop_lat": "41.448956", "stop_lon": "2.193837", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660137", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.687753049548, "CatHarmCen": 4, "Clossnes": 1.490976137290, "CatClossnes": 2, "BetCen": 628.880109650891},
+"geometry": {
+"coordinates": [2.193837,41.448956],
+"type": "Point"
+        },
+        "id": "1000000000000026"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.138","location": "(433141.6120202854, 4589015.341618854)", "stop_id": "1.138", "stop_name": "Baró de Viver", "stop_code": "138", "stop_desc": "", "stop_lat": "41.449936", "stop_lon": "2.199563", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660138", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.391456753252, "CatHarmCen": 4, "Clossnes": 1.397056380611, "CatClossnes": 1, "BetCen": 435.378537450617},
+"geometry": {
+"coordinates": [2.199563,41.449936],
+"type": "Point"
+        },
+        "id": "1000000000000027"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.139","location": "(433844.89772155636, 4589134.445148573)", "stop_id": "1.139", "stop_name": "Santa Coloma", "stop_code": "139", "stop_desc": "", "stop_lat": "41.451067", "stop_lon": "2.207969", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660139", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.927171038966, "CatHarmCen": 3, "Clossnes": 1.307809535658, "CatClossnes": 1, "BetCen": 225.751834233653},
+"geometry": {
+"coordinates": [2.207969,41.451067],
+"type": "Point"
+        },
+        "id": "1000000000000028"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.140","location": "(434719.60397896584, 4589183.783940541)", "stop_id": "1.140", "stop_name": "Fondo", "stop_code": "140", "stop_desc": "", "stop_lat": "41.451583", "stop_lon": "2.218435", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660140", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.961653797587, "CatHarmCen": 2, "Clossnes": 1.223628691983, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.218435,41.451583],
+"type": "Point"
+        },
+        "id": "1000000000000029"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.210","location": "(430518.7118743003, 4580720.436937438)", "stop_id": "1.210", "stop_name": "Paral·lel", "stop_code": "210", "stop_desc": "", "stop_lat": "41.375004", "stop_lon": "2.169117", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660210", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.439552522641, "CatHarmCen": 2, "Clossnes": 1.195499296765, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.169117,41.375004],
+"type": "Point"
+        },
+        "id": "1000000000000030"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.211","location": "(430032.51186499745, 4581261.2713299375)", "stop_id": "1.211", "stop_name": "Sant Antoni", "stop_code": "211", "stop_desc": "", "stop_lat": "41.379833", "stop_lon": "2.163241", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660211", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.380728993229, "CatHarmCen": 3, "Clossnes": 1.335119652592, "CatClossnes": 1, "BetCen": 129.001048133516},
+"geometry": {
+"coordinates": [2.163241,41.379833],
+"type": "Point"
+        },
+        "id": "1000000000000031"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.212","location": "(430093.98879088456, 4581808.604805817)", "stop_id": "1.212", "stop_name": "Universitat", "stop_code": "212", "stop_desc": "", "stop_lat": "41.384768", "stop_lon": "2.163913", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660125", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.818228993229, "CatHarmCen": 3, "Clossnes": 1.487084491098, "CatClossnes": 2, "BetCen": 241.876965250343},
+"geometry": {
+"coordinates": [2.163913,41.384768],
+"type": "Point"
+        },
+        "id": "1000000000000032"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.213","location": "(430460.9802964957, 4582321.134762881)", "stop_id": "1.213", "stop_name": "Passeig de Gràcia", "stop_code": "213", "stop_desc": "", "stop_lat": "41.389416", "stop_lon": "2.168243", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660213", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.084895659896, "CatHarmCen": 3, "Clossnes": 1.647850382028, "CatClossnes": 2, "BetCen": 338.627751350480},
+"geometry": {
+"coordinates": [2.168243,41.389416],
+"type": "Point"
+        },
+        "id": "1000000000000033"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.214","location": "(431078.4188867383, 4582922.671776076)", "stop_id": "1.214", "stop_name": "Tetuan", "stop_code": "214", "stop_desc": "", "stop_lat": "41.394887", "stop_lon": "2.175559", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660214", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.263467088467, "CatHarmCen": 4, "Clossnes": 1.811003885199, "CatClossnes": 3, "BetCen": 419.253406433927},
+"geometry": {
+"coordinates": [2.175559,41.394887],
+"type": "Point"
+        },
+        "id": "1000000000000034"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.215","location": "(431410.63157604606, 4583545.386386868)", "stop_id": "1.215", "stop_name": "Monumental", "stop_code": "215", "stop_desc": "", "stop_lat": "41.400524", "stop_lon": "2.179462", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660215", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.386544011544, "CatHarmCen": 4, "Clossnes": 1.966789165646, "CatClossnes": 3, "BetCen": 483.753930500685},
+"geometry": {
+"coordinates": [2.179462,41.400524],
+"type": "Point"
+        },
+        "id": "1000000000000035"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.216","location": "(431050.16589105525, 4583933.080160863)", "stop_id": "1.216", "stop_name": "Sagrada Família", "stop_code": "216", "stop_desc": "", "stop_lat": "41.403985", "stop_lon": "2.175106", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660216", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.469877344877, "CatHarmCen": 4, "Clossnes": 2.102429797759, "CatClossnes": 4, "BetCen": 532.129323550754},
+"geometry": {
+"coordinates": [2.175106,41.403985],
+"type": "Point"
+        },
+        "id": "1000000000000036"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.217","location": "(431688.3310365884, 4584287.985568115)", "stop_id": "1.217", "stop_name": "Encants", "stop_code": "217", "stop_desc": "", "stop_lat": "41.407236", "stop_lon": "2.1827", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660217", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.521825396825, "CatHarmCen": 4, "Clossnes": 2.203751715724, "CatClossnes": 4, "BetCen": 564.379585584133},
+"geometry": {
+"coordinates": [2.1827,41.407236],
+"type": "Point"
+        },
+        "id": "1000000000000037"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.218","location": "(432037.19991724705, 4584631.333565368)", "stop_id": "1.218", "stop_name": "Clot", "stop_code": "218", "stop_desc": "", "stop_lat": "41.410358", "stop_lon": "2.186835", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660131", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.546825396825, "CatHarmCen": 4, "Clossnes": 2.258165338334, "CatClossnes": 4, "BetCen": 580.504716600822},
+"geometry": {
+"coordinates": [2.186835,41.410358],
+"type": "Point"
+        },
+        "id": "1000000000000038"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.219","location": "(432766.615012084, 4585157.90305891)", "stop_id": "1.219", "stop_name": "Bac de Roda", "stop_code": "219", "stop_desc": "", "stop_lat": "41.415162", "stop_lon": "2.195503", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660219", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.546825396825, "CatHarmCen": 4, "Clossnes": 2.258165338334, "CatClossnes": 4, "BetCen": 580.504716600822},
+"geometry": {
+"coordinates": [2.195503,41.415162],
+"type": "Point"
+        },
+        "id": "1000000000000039"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.220","location": "(433206.9457545555, 4585587.058976018)", "stop_id": "1.220", "stop_name": "Sant Martí", "stop_code": "220", "stop_desc": "", "stop_lat": "41.419064", "stop_lon": "2.200724", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660220", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.521825396825, "CatHarmCen": 4, "Clossnes": 2.203751715724, "CatClossnes": 4, "BetCen": 564.379585584133},
+"geometry": {
+"coordinates": [2.200724,41.419064],
+"type": "Point"
+        },
+        "id": "1000000000000040"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.221","location": "(433620.1505968992, 4586134.956936081)", "stop_id": "1.221", "stop_name": "La Pau", "stop_code": "221", "stop_desc": "", "stop_lat": "41.424033", "stop_lon": "2.205608", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660221", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.469877344877, "CatHarmCen": 4, "Clossnes": 2.102429797759, "CatClossnes": 4, "BetCen": 532.129323550754},
+"geometry": {
+"coordinates": [2.205608,41.424033],
+"type": "Point"
+        },
+        "id": "1000000000000041"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.222","location": "(433983.4238591104, 4586794.583554775)", "stop_id": "1.222", "stop_name": "Verneda", "stop_code": "222", "stop_desc": "", "stop_lat": "41.430004", "stop_lon": "2.209883", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660222", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.386544011544, "CatHarmCen": 4, "Clossnes": 1.966789165646, "CatClossnes": 3, "BetCen": 483.753930500685},
+"geometry": {
+"coordinates": [2.209883,41.430004],
+"type": "Point"
+        },
+        "id": "1000000000000042"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.223","location": "(434646.4336524905, 4587215.356026439)", "stop_id": "1.223", "stop_name": "Artigues | Sant Adrià", "stop_code": "223", "stop_desc": "", "stop_lat": "41.433848", "stop_lon": "2.217772", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660223", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.263467088467, "CatHarmCen": 4, "Clossnes": 1.811003885199, "CatClossnes": 3, "BetCen": 419.253406433927},
+"geometry": {
+"coordinates": [2.217772,41.433848],
+"type": "Point"
+        },
+        "id": "1000000000000043"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.224","location": "(435553.5609611446, 4587427.38537564)", "stop_id": "1.224", "stop_name": "Sant Roc", "stop_code": "224", "stop_desc": "", "stop_lat": "41.435831", "stop_lon": "2.228606", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660224", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.084895659896, "CatHarmCen": 3, "Clossnes": 1.647850382028, "CatClossnes": 2, "BetCen": 338.627751350480},
+"geometry": {
+"coordinates": [2.228606,41.435831],
+"type": "Point"
+        },
+        "id": "1000000000000044"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.225","location": "(435961.83750305243, 4587912.948017222)", "stop_id": "1.225", "stop_name": "Gorg", "stop_code": "225", "stop_desc": "", "stop_lat": "41.440237", "stop_lon": "2.233441", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660225", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.818228993229, "CatHarmCen": 3, "Clossnes": 1.487084491098, "CatClossnes": 2, "BetCen": 241.876965250343},
+"geometry": {
+"coordinates": [2.233441,41.440237],
+"type": "Point"
+        },
+        "id": "1000000000000045"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.226","location": "(436342.85789569095, 4588316.834278327)", "stop_id": "1.226", "stop_name": "Pep Ventura", "stop_code": "226", "stop_desc": "", "stop_lat": "41.443905", "stop_lon": "2.237959", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660226", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.380728993229, "CatHarmCen": 3, "Clossnes": 1.335119652592, "CatClossnes": 1, "BetCen": 129.001048133516},
+"geometry": {
+"coordinates": [2.237959,41.443905],
+"type": "Point"
+        },
+        "id": "1000000000000046"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.227","location": "(436860.5921113206, 4588883.977008783)", "stop_id": "1.227", "stop_name": "Badalona Pompeu Fabra", "stop_code": "227", "stop_desc": "", "stop_lat": "41.449054", "stop_lon": "2.244097", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660227", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.439552522641, "CatHarmCen": 2, "Clossnes": 1.195499296765, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.244097,41.449054],
+"type": "Point"
+        },
+        "id": "1000000000000047"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.314","location": "(425684.0625818567, 4581779.990968477)", "stop_id": "1.314", "stop_name": "Zona Universitària", "stop_code": "314", "stop_desc": "", "stop_lat": "41.384115", "stop_lon": "2.111179", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660314", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.815958177754, "CatHarmCen": 2, "Clossnes": 1.217137293087, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.111179,41.384115],
+"type": "Point"
+        },
+        "id": "1000000000000048"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.315","location": "(426301.4742147416, 4581980.755971321)", "stop_id": "1.315", "stop_name": "Palau Reial", "stop_code": "315", "stop_desc": "", "stop_lat": "41.38598", "stop_lon": "2.118538", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660315", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.775958177754, "CatHarmCen": 3, "Clossnes": 1.314184784894, "CatClossnes": 1, "BetCen": 193.501572200274},
+"geometry": {
+"coordinates": [2.118538,41.38598],
+"type": "Point"
+        },
+        "id": "1000000000000049"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.316","location": "(426909.9556853911, 4582178.443059256)", "stop_id": "1.316", "stop_name": "Maria Cristina", "stop_code": "316", "stop_desc": "", "stop_lat": "41.387816", "stop_lon": "2.125791", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660316", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.234291511087, "CatHarmCen": 4, "Clossnes": 1.417812258972, "CatClossnes": 2, "BetCen": 370.878013383859},
+"geometry": {
+"coordinates": [2.125791,41.387816],
+"type": "Point"
+        },
+        "id": "1000000000000050"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.317","location": "(427330.5683609288, 4581763.845937846)", "stop_id": "1.317", "stop_name": "Les Corts", "stop_code": "317", "stop_desc": "", "stop_lat": "41.38412", "stop_lon": "2.130871", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660317", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.524146583551, "CatHarmCen": 4, "Clossnes": 1.527295831093, "CatClossnes": 2, "BetCen": 532.129323550754},
+"geometry": {
+"coordinates": [2.130871,41.38412],
+"type": "Point"
+        },
+        "id": "1000000000000051"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.318","location": "(427747.28521010233, 4581515.6356520625)", "stop_id": "1.318", "stop_name": "Plaça del Centre", "stop_code": "318", "stop_desc": "", "stop_lat": "41.381922", "stop_lon": "2.135884", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660318", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.728692038096, "CatHarmCen": 4, "Clossnes": 1.641367718893, "CatClossnes": 2, "BetCen": 677.255502700959},
+"geometry": {
+"coordinates": [2.135884,41.381922],
+"type": "Point"
+        },
+        "id": "1000000000000052"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.319","location": "(428174.03617198975, 4581475.419620874)", "stop_id": "1.319", "stop_name": "Sants Estació", "stop_code": "319", "stop_desc": "", "stop_lat": "41.381598", "stop_lon": "2.140992", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660319", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.881072990477, "CatHarmCen": 4, "Clossnes": 1.758087201125, "CatClossnes": 3, "BetCen": 806.256550834476},
+"geometry": {
+"coordinates": [2.140992,41.381598],
+"type": "Point"
+        },
+        "id": "1000000000000053"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.320","location": "(428533.8638853281, 4581127.116277564)", "stop_id": "1.320", "stop_name": "Tarragona", "stop_code": "320", "stop_desc": "", "stop_lat": "41.378493", "stop_lon": "2.145336", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660320", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.997739657144, "CatHarmCen": 5, "Clossnes": 1.874737536745, "CatClossnes": 3, "BetCen": 919.132467951302},
+"geometry": {
+"coordinates": [2.145336,41.378493],
+"type": "Point"
+        },
+        "id": "1000000000000054"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.321","location": "(429050.11874658975, 4580736.2181336675)", "stop_id": "1.321", "stop_name": "Espanya", "stop_code": "321", "stop_desc": "", "stop_lat": "41.375018", "stop_lon": "2.151555", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660122", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 6.087965221053, "CatHarmCen": 5, "Clossnes": 1.987787036448, "CatClossnes": 3, "BetCen": 1015.883254051439},
+"geometry": {
+"coordinates": [2.151555,41.375018],
+"type": "Point"
+        },
+        "id": "1000000000000055"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.322","location": "(429776.7894014637, 4580726.698782363)", "stop_id": "1.322", "stop_name": "Poble Sec", "stop_code": "322", "stop_desc": "", "stop_lat": "41.374996", "stop_lon": "2.160245", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660322", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.157409665498, "CatHarmCen": 5, "Clossnes": 2.092960953720, "CatClossnes": 4, "BetCen": 1096.508909134887},
+"geometry": {
+"coordinates": [2.160245,41.374996],
+"type": "Point"
+        },
+        "id": "1000000000000056"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.323","location": "(430518.6763055443, 4580708.002093455)", "stop_id": "1.323", "stop_name": "Paral·lel", "stop_code": "323", "stop_desc": "", "stop_lat": "41.374892", "stop_lon": "2.169118", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660210", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.209697247197, "CatHarmCen": 5, "Clossnes": 2.185467515211, "CatClossnes": 4, "BetCen": 1161.009433201645},
+"geometry": {
+"coordinates": [2.169118,41.374892],
+"type": "Point"
+        },
+        "id": "1000000000000057"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.324","location": "(431067.8190297792, 4580885.511341856)", "stop_id": "1.324", "stop_name": "Drassanes", "stop_code": "324", "stop_desc": "", "stop_lat": "41.376538", "stop_lon": "2.175664", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660324", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.247197247197, "CatHarmCen": 5, "Clossnes": 2.260397830018, "CatClossnes": 4, "BetCen": 1209.384826251713},
+"geometry": {
+"coordinates": [2.175664,41.376538],
+"type": "Point"
+        },
+        "id": "1000000000000058"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.325","location": "(430852.75611192174, 4581432.376330834)", "stop_id": "1.325", "stop_name": "Liceu", "stop_code": "325", "stop_desc": "", "stop_lat": "41.381445", "stop_lon": "2.17303", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660325", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.271439671440, "CatHarmCen": 5, "Clossnes": 2.313272633059, "CatClossnes": 4, "BetCen": 1241.635088285092},
+"geometry": {
+"coordinates": [2.17303,41.381445],
+"type": "Point"
+        },
+        "id": "1000000000000059"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.326","location": "(430612.27757680917, 4581976.16138603)", "stop_id": "1.326", "stop_name": "Catalunya", "stop_code": "326", "stop_desc": "", "stop_lat": "41.386322", "stop_lon": "2.170092", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660126", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.283344433344, "CatHarmCen": 5, "Clossnes": 2.340648640551, "CatClossnes": 4, "BetCen": 1257.760219301782},
+"geometry": {
+"coordinates": [2.170092,41.386322],
+"type": "Point"
+        },
+        "id": "1000000000000060"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.327","location": "(430221.1968635111, 4582566.260462742)", "stop_id": "1.327", "stop_name": "Passeig de Gràcia", "stop_code": "327", "stop_desc": "", "stop_lat": "41.391603", "stop_lon": "2.165347", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660213", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.283344433344, "CatHarmCen": 5, "Clossnes": 2.340648640551, "CatClossnes": 4, "BetCen": 1257.760219301782},
+"geometry": {
+"coordinates": [2.165347,41.391603],
+"type": "Point"
+        },
+        "id": "1000000000000061"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.328","location": "(429782.71303390106, 4583046.257030997)", "stop_id": "1.328", "stop_name": "Diagonal", "stop_code": "328", "stop_desc": "", "stop_lat": "41.395888", "stop_lon": "2.160047", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660328", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.271439671440, "CatHarmCen": 5, "Clossnes": 2.313272633059, "CatClossnes": 4, "BetCen": 1241.635088285092},
+"geometry": {
+"coordinates": [2.160047,41.395888],
+"type": "Point"
+        },
+        "id": "1000000000000062"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.329","location": "(429202.0843887986, 4583731.52003286)", "stop_id": "1.329", "stop_name": "Fontana", "stop_code": "329", "stop_desc": "", "stop_lat": "41.402009", "stop_lon": "2.153022", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660329", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.247197247197, "CatHarmCen": 5, "Clossnes": 2.260397830018, "CatClossnes": 4, "BetCen": 1209.384826251713},
+"geometry": {
+"coordinates": [2.153022,41.402009],
+"type": "Point"
+        },
+        "id": "1000000000000063"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.330","location": "(428987.5577286988, 4584147.649749229)", "stop_id": "1.330", "stop_name": "Lesseps", "stop_code": "330", "stop_desc": "", "stop_lat": "41.405738", "stop_lon": "2.150407", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660330", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.209697247197, "CatHarmCen": 5, "Clossnes": 2.185467515211, "CatClossnes": 4, "BetCen": 1161.009433201645},
+"geometry": {
+"coordinates": [2.150407,41.405738],
+"type": "Point"
+        },
+        "id": "1000000000000064"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.331","location": "(428487.0378194522, 4584845.068966985)", "stop_id": "1.331", "stop_name": "Vallcarca", "stop_code": "331", "stop_desc": "", "stop_lat": "41.411975", "stop_lon": "2.144337", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660331", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 6.157409665498, "CatHarmCen": 5, "Clossnes": 2.092960953720, "CatClossnes": 4, "BetCen": 1096.508909134887},
+"geometry": {
+"coordinates": [2.144337,41.411975],
+"type": "Point"
+        },
+        "id": "1000000000000065"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.332","location": "(428212.7433577172, 4585547.71721974)", "stop_id": "1.332", "stop_name": "Penitents", "stop_code": "332", "stop_desc": "", "stop_lat": "41.418279", "stop_lon": "2.140972", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660332", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.087965221053, "CatHarmCen": 5, "Clossnes": 1.987787036448, "CatClossnes": 3, "BetCen": 1015.883254051439},
+"geometry": {
+"coordinates": [2.140972,41.418279],
+"type": "Point"
+        },
+        "id": "1000000000000066"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.333","location": "(428353.5677120852, 4586323.976547063)", "stop_id": "1.333", "stop_name": "Vall d'Hebron", "stop_code": "333", "stop_desc": "", "stop_lat": "41.425283", "stop_lon": "2.142565", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660333", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.997739657144, "CatHarmCen": 5, "Clossnes": 1.874737536745, "CatClossnes": 3, "BetCen": 919.132467951302},
+"geometry": {
+"coordinates": [2.142565,41.425283],
+"type": "Point"
+        },
+        "id": "1000000000000067"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.334","location": "(428566.1452564293, 4586914.442581291)", "stop_id": "1.334", "stop_name": "Montbau", "stop_code": "334", "stop_desc": "", "stop_lat": "41.43062", "stop_lon": "2.145039", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660334", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.881072990477, "CatHarmCen": 4, "Clossnes": 1.758087201125, "CatClossnes": 3, "BetCen": 806.256550834476},
+"geometry": {
+"coordinates": [2.145039,41.43062],
+"type": "Point"
+        },
+        "id": "1000000000000068"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.335","location": "(428858.4695553892, 4587469.48837292)", "stop_id": "1.335", "stop_name": "Mundet", "stop_code": "335", "stop_desc": "", "stop_lat": "41.435645", "stop_lon": "2.148472", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660335", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.728692038096, "CatHarmCen": 4, "Clossnes": 1.641367718893, "CatClossnes": 2, "BetCen": 677.255502700959},
+"geometry": {
+"coordinates": [2.148472,41.435645],
+"type": "Point"
+        },
+        "id": "1000000000000069"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.336","location": "(429563.3033989763, 4587723.6214216165)", "stop_id": "1.336", "stop_name": "Valldaura", "stop_code": "336", "stop_desc": "", "stop_lat": "41.437996", "stop_lon": "2.156878", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660336", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.524146583551, "CatHarmCen": 4, "Clossnes": 1.527295831093, "CatClossnes": 2, "BetCen": 532.129323550754},
+"geometry": {
+"coordinates": [2.156878,41.437996],
+"type": "Point"
+        },
+        "id": "1000000000000070"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.337","location": "(430361.8193737792, 4588133.138322791)", "stop_id": "1.337", "stop_name": "Canyelles", "stop_code": "337", "stop_desc": "", "stop_lat": "41.441754", "stop_lon": "2.166388", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660337", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.234291511087, "CatHarmCen": 4, "Clossnes": 1.417812258972, "CatClossnes": 2, "BetCen": 370.878013383859},
+"geometry": {
+"coordinates": [2.166388,41.441754],
+"type": "Point"
+        },
+        "id": "1000000000000071"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.338","location": "(431179.2310307033, 4588782.163716648)", "stop_id": "1.338", "stop_name": "Roquetes", "stop_code": "338", "stop_desc": "", "stop_lat": "41.44767", "stop_lon": "2.176098", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660338", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.775958177754, "CatHarmCen": 3, "Clossnes": 1.314184784894, "CatClossnes": 1, "BetCen": 193.501572200274},
+"geometry": {
+"coordinates": [2.176098,41.44767],
+"type": "Point"
+        },
+        "id": "1000000000000072"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.339","location": "(431849.31071363745, 4588979.0000573825)", "stop_id": "1.339", "stop_name": "Trinitat Nova", "stop_code": "339", "stop_desc": "", "stop_lat": "41.4495", "stop_lon": "2.184097", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660339", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.815958177754, "CatHarmCen": 2, "Clossnes": 1.217137293087, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.184097,41.4495],
+"type": "Point"
+        },
+        "id": "1000000000000073"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.413","location": "(433585.19449359796, 4586095.862625211)", "stop_id": "1.413", "stop_name": "La Pau", "stop_code": "413", "stop_desc": "", "stop_lat": "41.423678", "stop_lon": "2.205194", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660221", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.645358704763, "CatHarmCen": 2, "Clossnes": 1.208285385501, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.205194,41.423678],
+"type": "Point"
+        },
+        "id": "1000000000000074"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.414","location": "(434002.27055055386, 4585672.692904373)", "stop_id": "1.414", "stop_name": "Besòs", "stop_code": "414", "stop_desc": "", "stop_lat": "41.419901", "stop_lon": "2.210231", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660414", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.597739657144, "CatHarmCen": 3, "Clossnes": 1.322814805927, "CatClossnes": 1, "BetCen": 161.251310166895},
+"geometry": {
+"coordinates": [2.210231,41.419901],
+"type": "Point"
+        },
+        "id": "1000000000000075"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.415","location": "(434486.3927095293, 4585135.137688695)", "stop_id": "1.415", "stop_name": "Besòs Mar", "stop_code": "415", "stop_desc": "", "stop_lat": "41.415099", "stop_lon": "2.216082", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660415", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.047739657144, "CatHarmCen": 3, "Clossnes": 1.446186134977, "CatClossnes": 2, "BetCen": 306.377489317101},
+"geometry": {
+"coordinates": [2.216082,41.415099],
+"type": "Point"
+        },
+        "id": "1000000000000076"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.416","location": "(434534.03959881037, 4584766.205040951)", "stop_id": "1.416", "stop_name": "El Maresme | Fòrum", "stop_code": "416", "stop_desc": "", "stop_lat": "41.41178", "stop_lon": "2.216692", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660416", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.328441411530, "CatHarmCen": 4, "Clossnes": 1.576914825145, "CatClossnes": 2, "BetCen": 435.378537450617},
+"geometry": {
+"coordinates": [2.216692,41.41178],
+"type": "Point"
+        },
+        "id": "1000000000000077"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.417","location": "(433897.531451334, 4584352.414531008)", "stop_id": "1.417", "stop_name": "Selva de Mar", "stop_code": "417", "stop_desc": "", "stop_lat": "41.408001", "stop_lon": "2.209122", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660417", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.522885855974, "CatHarmCen": 4, "Clossnes": 1.712355362274, "CatClossnes": 2, "BetCen": 548.254454567443},
+"geometry": {
+"coordinates": [2.209122,41.408001],
+"type": "Point"
+        },
+        "id": "1000000000000078"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.418","location": "(433412.4776385263, 4583881.104144853)", "stop_id": "1.418", "stop_name": "Poblenou", "stop_code": "418", "stop_desc": "", "stop_lat": "41.403716", "stop_lon": "2.203371", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660418", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.664062326562, "CatHarmCen": 4, "Clossnes": 1.848436583117, "CatClossnes": 3, "BetCen": 645.005240667580},
+"geometry": {
+"coordinates": [2.203371,41.403716],
+"type": "Point"
+        },
+        "id": "1000000000000079"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.419","location": "(432935.0453115001, 4583409.0885220915)", "stop_id": "1.419", "stop_name": "Llacuna", "stop_code": "419", "stop_desc": "", "stop_lat": "41.399425", "stop_lon": "2.197712", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660419", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.768228993229, "CatHarmCen": 4, "Clossnes": 1.979531376246, "CatClossnes": 3, "BetCen": 725.630895751028},
+"geometry": {
+"coordinates": [2.197712,41.399425],
+"type": "Point"
+        },
+        "id": "1000000000000080"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.420","location": "(432454.0955499172, 4582934.13844801)", "stop_id": "1.420", "stop_name": "Bogatell", "stop_code": "420", "stop_desc": "", "stop_lat": "41.395107", "stop_lon": "2.192012", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660420", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.844419469419, "CatHarmCen": 4, "Clossnes": 2.098600932712, "CatClossnes": 4, "BetCen": 790.131419817786},
+"geometry": {
+"coordinates": [2.192012,41.395107],
+"type": "Point"
+        },
+        "id": "1000000000000081"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.421","location": "(432527.23232212104, 4581998.600303481)", "stop_id": "1.421", "stop_name": "Ciutadella | Vila Olímpica", "stop_code": "421", "stop_desc": "", "stop_lat": "41.386687", "stop_lon": "2.192991", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660421", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 5.897990897991, "CatHarmCen": 4, "Clossnes": 2.197747433470, "CatClossnes": 4, "BetCen": 838.506812867855},
+"geometry": {
+"coordinates": [2.192991,41.386687],
+"type": "Point"
+        },
+        "id": "1000000000000082"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.422","location": "(431836.21052767907, 4581463.695143138)", "stop_id": "1.422", "stop_name": "Barceloneta", "stop_code": "422", "stop_desc": "", "stop_lat": "41.381811", "stop_lon": "2.184787", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660422", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.932178932179, "CatHarmCen": 5, "Clossnes": 2.269218894721, "CatClossnes": 4, "BetCen": 870.757074901234},
+"geometry": {
+"coordinates": [2.184787,41.381811],
+"type": "Point"
+        },
+        "id": "1000000000000083"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.423","location": "(431315.54855043907, 4581725.642034838)", "stop_id": "1.423", "stop_name": "Jaume I", "stop_code": "423", "stop_desc": "", "stop_lat": "41.384126", "stop_lon": "2.178531", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660423", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.948845598846, "CatHarmCen": 5, "Clossnes": 2.306726645047, "CatClossnes": 4, "BetCen": 886.882205917923},
+"geometry": {
+"coordinates": [2.178531,41.384126],
+"type": "Point"
+        },
+        "id": "1000000000000084"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.424","location": "(430894.3564201156, 4582155.441222288)", "stop_id": "1.424", "stop_name": "Urquinaona", "stop_code": "424", "stop_desc": "", "stop_lat": "41.387961", "stop_lon": "2.173445", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660127", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 5.948845598846, "CatHarmCen": 5, "Clossnes": 2.306726645047, "CatClossnes": 4, "BetCen": 886.882205917923},
+"geometry": {
+"coordinates": [2.173445,41.387961],
+"type": "Point"
+        },
+        "id": "1000000000000085"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.425","location": "(430428.4722380941, 4582392.6163108)", "stop_id": "1.425", "stop_name": "Passeig de Gràcia", "stop_code": "425", "stop_desc": "", "stop_lat": "41.390057", "stop_lon": "2.167846", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660213", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.932178932179, "CatHarmCen": 5, "Clossnes": 2.269218894721, "CatClossnes": 4, "BetCen": 870.757074901234},
+"geometry": {
+"coordinates": [2.167846,41.390057],
+"type": "Point"
+        },
+        "id": "1000000000000086"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.426","location": "(430682.697716886, 4582930.112003187)", "stop_id": "1.426", "stop_name": "Girona", "stop_code": "426", "stop_desc": "", "stop_lat": "41.39492", "stop_lon": "2.170825", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660426", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.897990897991, "CatHarmCen": 4, "Clossnes": 2.197747433470, "CatClossnes": 4, "BetCen": 838.506812867855},
+"geometry": {
+"coordinates": [2.170825,41.39492],
+"type": "Point"
+        },
+        "id": "1000000000000087"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.427","location": "(430457.3521125219, 4583536.824479062)", "stop_id": "1.427", "stop_name": "Verdaguer", "stop_code": "427", "stop_desc": "", "stop_lat": "41.400365", "stop_lon": "2.16806", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660427", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 5.844419469419, "CatHarmCen": 4, "Clossnes": 2.098600932712, "CatClossnes": 4, "BetCen": 790.131419817786},
+"geometry": {
+"coordinates": [2.16806,41.400365],
+"type": "Point"
+        },
+        "id": "1000000000000088"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.428","location": "(430059.68703456037, 4584213.7129265005)", "stop_id": "1.428", "stop_name": "Joanic", "stop_code": "428", "stop_desc": "", "stop_lat": "41.406427", "stop_lon": "2.163225", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660428", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.768228993229, "CatHarmCen": 4, "Clossnes": 1.979531376246, "CatClossnes": 3, "BetCen": 725.630895751028},
+"geometry": {
+"coordinates": [2.163225,41.406427],
+"type": "Point"
+        },
+        "id": "1000000000000089"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.429","location": "(430329.91884978523, 4584871.731143243)", "stop_id": "1.429", "stop_name": "Alfons X", "stop_code": "429", "stop_desc": "", "stop_lat": "41.412377", "stop_lon": "2.166382", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660429", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.664062326562, "CatHarmCen": 4, "Clossnes": 1.848436583117, "CatClossnes": 3, "BetCen": 645.005240667580},
+"geometry": {
+"coordinates": [2.166382,41.412377],
+"type": "Point"
+        },
+        "id": "1000000000000090"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.430","location": "(430969.47950190486, 4585263.642986185)", "stop_id": "1.430", "stop_name": "Guinardó | Hospital de Sant Pau ", "stop_code": "430", "stop_desc": "", "stop_lat": "41.415962", "stop_lon": "2.173989", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660430", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.522885855974, "CatHarmCen": 4, "Clossnes": 1.712355362274, "CatClossnes": 2, "BetCen": 548.254454567443},
+"geometry": {
+"coordinates": [2.173989,41.415962],
+"type": "Point"
+        },
+        "id": "1000000000000091"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.431","location": "(431261.8234073131, 4586053.830241382)", "stop_id": "1.431", "stop_name": "Maragall", "stop_code": "431", "stop_desc": "", "stop_lat": "41.423104", "stop_lon": "2.177397", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660431", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 5.328441411530, "CatHarmCen": 4, "Clossnes": 1.576914825145, "CatClossnes": 2, "BetCen": 435.378537450617},
+"geometry": {
+"coordinates": [2.177397,41.423104],
+"type": "Point"
+        },
+        "id": "1000000000000092"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.432","location": "(430937.7744762439, 4587598.114673385)", "stop_id": "1.432", "stop_name": "Llucmajor", "stop_code": "432", "stop_desc": "", "stop_lat": "41.436985", "stop_lon": "2.173343", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660432", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.047739657144, "CatHarmCen": 3, "Clossnes": 1.446186134977, "CatClossnes": 2, "BetCen": 306.377489317101},
+"geometry": {
+"coordinates": [2.173343,41.436985],
+"type": "Point"
+        },
+        "id": "1000000000000093"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.433","location": "(431379.89776768343, 4588342.799920856)", "stop_id": "1.433", "stop_name": "Via Júlia", "stop_code": "433", "stop_desc": "", "stop_lat": "41.44373", "stop_lon": "2.17855", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660433", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.597739657144, "CatHarmCen": 3, "Clossnes": 1.322814805927, "CatClossnes": 1, "BetCen": 161.251310166895},
+"geometry": {
+"coordinates": [2.17855,41.44373],
+"type": "Point"
+        },
+        "id": "1000000000000094"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.434","location": "(431710.0418213426, 4588942.120147581)", "stop_id": "1.434", "stop_name": "Trinitat Nova", "stop_code": "434", "stop_desc": "", "stop_lat": "41.449156", "stop_lon": "2.182434", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660339", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.645358704763, "CatHarmCen": 2, "Clossnes": 1.208285385501, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.182434,41.449156],
+"type": "Point"
+        },
+        "id": "1000000000000095"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.509","location": "(422244.8235086432, 4578837.666885896)", "stop_id": "1.509", "stop_name": "Cornellà Centre", "stop_code": "509", "stop_desc": "", "stop_lat": "41.35729", "stop_lon": "2.070428", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660509", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.815958177754, "CatHarmCen": 2, "Clossnes": 1.217137293087, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.070428,41.35729],
+"type": "Point"
+        },
+        "id": "1000000000000096"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.510","location": "(422985.17669175006, 4578907.82194268)", "stop_id": "1.510", "stop_name": "Gavarra", "stop_code": "510", "stop_desc": "", "stop_lat": "41.357993", "stop_lon": "2.079269", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660510", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.775958177754, "CatHarmCen": 3, "Clossnes": 1.314184784894, "CatClossnes": 1, "BetCen": 193.501572200274},
+"geometry": {
+"coordinates": [2.079269,41.357993],
+"type": "Point"
+        },
+        "id": "1000000000000097"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.511","location": "(423420.09698132036, 4579501.449708378)", "stop_id": "1.511", "stop_name": "Sant Ildefons", "stop_code": "511", "stop_desc": "", "stop_lat": "41.363381", "stop_lon": "2.084393", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660511", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.234291511087, "CatHarmCen": 4, "Clossnes": 1.417812258972, "CatClossnes": 2, "BetCen": 370.878013383859},
+"geometry": {
+"coordinates": [2.084393,41.363381],
+"type": "Point"
+        },
+        "id": "1000000000000098"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.512","location": "(424018.73465292994, 4579849.339461681)", "stop_id": "1.512", "stop_name": "Can Boixeres", "stop_code": "512", "stop_desc": "", "stop_lat": "41.366571", "stop_lon": "2.091506", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660512", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.524146583551, "CatHarmCen": 4, "Clossnes": 1.527295831093, "CatClossnes": 2, "BetCen": 532.129323550754},
+"geometry": {
+"coordinates": [2.091506,41.366571],
+"type": "Point"
+        },
+        "id": "1000000000000099"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.513","location": "(424688.1443964377, 4580365.0860138135)", "stop_id": "1.513", "stop_name": "Can Vidalet", "stop_code": "513", "stop_desc": "", "stop_lat": "41.371279", "stop_lon": "2.099445", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660513", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.728692038096, "CatHarmCen": 4, "Clossnes": 1.641367718893, "CatClossnes": 2, "BetCen": 677.255502700959},
+"geometry": {
+"coordinates": [2.099445,41.371279],
+"type": "Point"
+        },
+        "id": "1000000000000100"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.514","location": "(425340.3672125774, 4580642.4655534)", "stop_id": "1.514", "stop_name": "Pubilla Cases", "stop_code": "514", "stop_desc": "", "stop_lat": "41.373838", "stop_lon": "2.107209", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660514", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.881072990477, "CatHarmCen": 4, "Clossnes": 1.758087201125, "CatClossnes": 3, "BetCen": 806.256550834476},
+"geometry": {
+"coordinates": [2.107209,41.373838],
+"type": "Point"
+        },
+        "id": "1000000000000101"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.515","location": "(426344.8556384777, 4580843.700702071)", "stop_id": "1.515", "stop_name": "Collblanc", "stop_code": "515", "stop_desc": "", "stop_lat": "41.375743", "stop_lon": "2.119195", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660515", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.997739657144, "CatHarmCen": 5, "Clossnes": 1.874737536745, "CatClossnes": 3, "BetCen": 919.132467951302},
+"geometry": {
+"coordinates": [2.119195,41.375743],
+"type": "Point"
+        },
+        "id": "1000000000000102"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.516","location": "(427030.97153189144, 4580818.773906724)", "stop_id": "1.516", "stop_name": "Badal", "stop_code": "516", "stop_desc": "", "stop_lat": "41.375581", "stop_lon": "2.127402", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660516", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.087965221053, "CatHarmCen": 5, "Clossnes": 1.987787036448, "CatClossnes": 3, "BetCen": 1015.883254051439},
+"geometry": {
+"coordinates": [2.127402,41.375581],
+"type": "Point"
+        },
+        "id": "1000000000000103"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.517","location": "(427679.801138822, 4580828.481156089)", "stop_id": "1.517", "stop_name": "Plaça de Sants", "stop_code": "517", "stop_desc": "", "stop_lat": "41.375727", "stop_lon": "2.135159", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660120", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 6.157409665498, "CatHarmCen": 5, "Clossnes": 2.092960953720, "CatClossnes": 4, "BetCen": 1096.508909134887},
+"geometry": {
+"coordinates": [2.135159,41.375727],
+"type": "Point"
+        },
+        "id": "1000000000000104"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.518","location": "(428122.55920018227, 4581293.508776696)", "stop_id": "1.518", "stop_name": "Sants Estació", "stop_code": "518", "stop_desc": "", "stop_lat": "41.379955", "stop_lon": "2.140398", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660319", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.209697247197, "CatHarmCen": 5, "Clossnes": 2.185467515211, "CatClossnes": 4, "BetCen": 1161.009433201645},
+"geometry": {
+"coordinates": [2.140398,41.379955],
+"type": "Point"
+        },
+        "id": "1000000000000105"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.519","location": "(428564.06664152886, 4581790.107148269)", "stop_id": "1.519", "stop_name": "Entença", "stop_code": "519", "stop_desc": "", "stop_lat": "41.384467", "stop_lon": "2.145619", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660519", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.247197247197, "CatHarmCen": 5, "Clossnes": 2.260397830018, "CatClossnes": 4, "BetCen": 1209.384826251713},
+"geometry": {
+"coordinates": [2.145619,41.384467],
+"type": "Point"
+        },
+        "id": "1000000000000106"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.520","location": "(429025.25969848817, 4582245.346722728)", "stop_id": "1.520", "stop_name": "Hospital Clínic", "stop_code": "520", "stop_desc": "", "stop_lat": "41.388608", "stop_lon": "2.151081", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660520", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.271439671440, "CatHarmCen": 5, "Clossnes": 2.313272633059, "CatClossnes": 4, "BetCen": 1241.635088285092},
+"geometry": {
+"coordinates": [2.151081,41.388608],
+"type": "Point"
+        },
+        "id": "1000000000000107"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.521","location": "(429679.4088380796, 4582885.933960016)", "stop_id": "1.521", "stop_name": "Diagonal", "stop_code": "521", "stop_desc": "", "stop_lat": "41.394435", "stop_lon": "2.15883", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660328", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.283344433344, "CatHarmCen": 5, "Clossnes": 2.340648640551, "CatClossnes": 4, "BetCen": 1257.760219301782},
+"geometry": {
+"coordinates": [2.15883,41.394435],
+"type": "Point"
+        },
+        "id": "1000000000000108"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.522","location": "(430374.6764166586, 4583380.734951902)", "stop_id": "1.522", "stop_name": "Verdaguer", "stop_code": "522", "stop_desc": "", "stop_lat": "41.398952", "stop_lon": "2.167089", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660427", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 6.283344433344, "CatHarmCen": 5, "Clossnes": 2.340648640551, "CatClossnes": 4, "BetCen": 1257.760219301782},
+"geometry": {
+"coordinates": [2.167089,41.398952],
+"type": "Point"
+        },
+        "id": "1000000000000109"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.523","location": "(430925.62952526833, 4583917.612785992)", "stop_id": "1.523", "stop_name": "Sagrada Família", "stop_code": "523", "stop_desc": "", "stop_lat": "41.403835", "stop_lon": "2.173618", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660216", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.271439671440, "CatHarmCen": 5, "Clossnes": 2.313272633059, "CatClossnes": 4, "BetCen": 1241.635088285092},
+"geometry": {
+"coordinates": [2.173618,41.403835],
+"type": "Point"
+        },
+        "id": "1000000000000110"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.524","location": "(431133.3775677729, 4584683.731656686)", "stop_id": "1.524", "stop_name": "Sant Pau | Dos de Maig", "stop_code": "524", "stop_desc": "", "stop_lat": "41.410753", "stop_lon": "2.176016", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660524", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.247197247197, "CatHarmCen": 5, "Clossnes": 2.260397830018, "CatClossnes": 4, "BetCen": 1209.384826251713},
+"geometry": {
+"coordinates": [2.176016,41.410753],
+"type": "Point"
+        },
+        "id": "1000000000000111"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.525","location": "(431595.98921103, 4585157.546688941)", "stop_id": "1.525", "stop_name": "Camp de l'Arpa", "stop_code": "525", "stop_desc": "", "stop_lat": "41.41506", "stop_lon": "2.181497", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660525", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.209697247197, "CatHarmCen": 5, "Clossnes": 2.185467515211, "CatClossnes": 4, "BetCen": 1161.009433201645},
+"geometry": {
+"coordinates": [2.181497,41.41506],
+"type": "Point"
+        },
+        "id": "1000000000000112"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.526","location": "(432027.4595413676, 4585845.857372938)", "stop_id": "1.526", "stop_name": "La Sagrera", "stop_code": "526", "stop_desc": "", "stop_lat": "41.421296", "stop_lon": "2.186582", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660133", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.157409665498, "CatHarmCen": 5, "Clossnes": 2.092960953720, "CatClossnes": 4, "BetCen": 1096.508909134887},
+"geometry": {
+"coordinates": [2.186582,41.421296],
+"type": "Point"
+        },
+        "id": "1000000000000113"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.527","location": "(431578.7944777379, 4586088.131861263)", "stop_id": "1.527", "stop_name": "Congrés", "stop_code": "527", "stop_desc": "", "stop_lat": "41.42344", "stop_lon": "2.181186", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660527", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.087965221053, "CatHarmCen": 5, "Clossnes": 1.987787036448, "CatClossnes": 3, "BetCen": 1015.883254051439},
+"geometry": {
+"coordinates": [2.181186,41.42344],
+"type": "Point"
+        },
+        "id": "1000000000000114"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.528","location": "(431187.66374102794, 4586270.042744899)", "stop_id": "1.528", "stop_name": "Maragall", "stop_code": "528", "stop_desc": "", "stop_lat": "41.425045", "stop_lon": "2.176485", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660431", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "HarmCen": 5.997739657144, "CatHarmCen": 5, "Clossnes": 1.874737536745, "CatClossnes": 3, "BetCen": 919.132467951302},
+"geometry": {
+"coordinates": [2.176485,41.425045],
+"type": "Point"
+        },
+        "id": "1000000000000115"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.529","location": "(431061.23510017595, 4586788.420667455)", "stop_id": "1.529", "stop_name": "Virrei Amat", "stop_code": "529", "stop_desc": "", "stop_lat": "41.429703", "stop_lon": "2.174913", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660529", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.881072990477, "CatHarmCen": 4, "Clossnes": 1.758087201125, "CatClossnes": 3, "BetCen": 806.256550834476},
+"geometry": {
+"coordinates": [2.174913,41.429703],
+"type": "Point"
+        },
+        "id": "1000000000000116"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.530","location": "(430452.60502535885, 4586878.850711696)", "stop_id": "1.530", "stop_name": "Vilapicina", "stop_code": "530", "stop_desc": "", "stop_lat": "41.430465", "stop_lon": "2.167619", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660530", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.728692038096, "CatHarmCen": 4, "Clossnes": 1.641367718893, "CatClossnes": 2, "BetCen": 677.255502700959},
+"geometry": {
+"coordinates": [2.167619,41.430465],
+"type": "Point"
+        },
+        "id": "1000000000000117"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.531","location": "(429813.0088801115, 4586799.201979198)", "stop_id": "1.531", "stop_name": "Horta", "stop_code": "531", "stop_desc": "", "stop_lat": "41.429692", "stop_lon": "2.159974", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660531", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.524146583551, "CatHarmCen": 4, "Clossnes": 1.527295831093, "CatClossnes": 2, "BetCen": 532.129323550754},
+"geometry": {
+"coordinates": [2.159974,41.429692],
+"type": "Point"
+        },
+        "id": "1000000000000118"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.532","location": "(429400.0038470702, 4586221.202310813)", "stop_id": "1.532", "stop_name": "El Carmel", "stop_code": "532", "stop_desc": "", "stop_lat": "41.42445", "stop_lon": "2.155099", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660532", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.234291511087, "CatHarmCen": 4, "Clossnes": 1.417812258972, "CatClossnes": 2, "BetCen": 370.878013383859},
+"geometry": {
+"coordinates": [2.155099,41.42445],
+"type": "Point"
+        },
+        "id": "1000000000000119"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.533","location": "(428833.2061146752, 4585954.3984478265)", "stop_id": "1.533", "stop_name": "El Coll | La Teixonera", "stop_code": "533", "stop_desc": "", "stop_lat": "41.421997", "stop_lon": "2.148348", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660533", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.775958177754, "CatHarmCen": 3, "Clossnes": 1.314184784894, "CatClossnes": 1, "BetCen": 193.501572200274},
+"geometry": {
+"coordinates": [2.148348,41.421997],
+"type": "Point"
+        },
+        "id": "1000000000000120"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.534","location": "(428335.78482464526, 4586291.953909245)", "stop_id": "1.534", "stop_name": "Vall d'Hebron", "stop_code": "534", "stop_desc": "", "stop_lat": "41.424993", "stop_lon": "2.142356", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660333", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.815958177754, "CatHarmCen": 2, "Clossnes": 1.217137293087, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.142356,41.424993],
+"type": "Point"
+        },
+        "id": "1000000000000121"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.930","location": "(432038.4059931195, 4585756.709433307)", "stop_id": "1.930", "stop_name": "La Sagrera", "stop_code": "930", "stop_desc": "", "stop_lat": "41.420494", "stop_lon": "2.186723", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660133", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.501190476190, "CatHarmCen": 2, "Clossnes": 1.595464135021, "CatClossnes": 2, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.186723,41.420494],
+"type": "Point"
+        },
+        "id": "1000000000000122"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.932","location": "(432619.45247883734, 4586757.751363955)", "stop_id": "1.932", "stop_name": "Onze de Setembre", "stop_code": "932", "stop_desc": "", "stop_lat": "41.429559", "stop_lon": "2.193564", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660932", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.676190476190, "CatHarmCen": 3, "Clossnes": 2.015323117921, "CatClossnes": 3, "BetCen": 80.625655083448},
+"geometry": {
+"coordinates": [2.193564,41.429559],
+"type": "Point"
+        },
+        "id": "1000000000000123"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.933","location": "(433606.31361587107, 4587486.300812088)", "stop_id": "1.933", "stop_name": "Bon Pastor", "stop_code": "933", "stop_desc": "", "stop_lat": "41.436203", "stop_lon": "2.205294", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660933", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.783333333333, "CatHarmCen": 4, "Clossnes": 2.552742616034, "CatClossnes": 5, "BetCen": 290.252358300411},
+"geometry": {
+"coordinates": [2.205294,41.436203],
+"type": "Point"
+        },
+        "id": "1000000000000124"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.940","location": "(434009.62033268576, 4588346.74520264)", "stop_id": "1.940", "stop_name": "Can Peixauet", "stop_code": "940", "stop_desc": "", "stop_lat": "41.443986", "stop_lon": "2.210027", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660940", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.200000000000, "CatHarmCen": 4, "Clossnes": 2.552742616034, "CatClossnes": 5, "BetCen": 241.876965250343},
+"geometry": {
+"coordinates": [2.210027,41.443986],
+"type": "Point"
+        },
+        "id": "1000000000000125"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.941","location": "(434495.50408385193, 4588660.312829317)", "stop_id": "1.941", "stop_name": "Santa Rosa", "stop_code": "941", "stop_desc": "", "stop_lat": "41.44685", "stop_lon": "2.215809", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660941", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.950000000000, "CatHarmCen": 3, "Clossnes": 2.393196202532, "CatClossnes": 4, "BetCen": 225.751834233653},
+"geometry": {
+"coordinates": [2.215809,41.44685],
+"type": "Point"
+        },
+        "id": "1000000000000126"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.942","location": "(434724.07401050307, 4589216.274946978)", "stop_id": "1.942", "stop_name": "Fondo", "stop_code": "942", "stop_desc": "", "stop_lat": "41.451876", "stop_lon": "2.218485", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660140", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.733333333333, "CatHarmCen": 3, "Clossnes": 2.127285513361, "CatClossnes": 4, "BetCen": 193.501572200274},
+"geometry": {
+"coordinates": [2.218485,41.451876],
+"type": "Point"
+        },
+        "id": "1000000000000127"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.943","location": "(434200.1471664428, 4589545.340106381)", "stop_id": "1.943", "stop_name": "Església Major", "stop_code": "943", "stop_desc": "", "stop_lat": "41.454797", "stop_lon": "2.212177", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660943", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.459523809524, "CatHarmCen": 3, "Clossnes": 1.823387582881, "CatClossnes": 3, "BetCen": 145.126179150206},
+"geometry": {
+"coordinates": [2.212177,41.454797],
+"type": "Point"
+        },
+        "id": "1000000000000128"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.944","location": "(433641.2476328581, 4590062.959671763)", "stop_id": "1.944", "stop_name": "Singuerlín", "stop_code": "944", "stop_desc": "", "stop_lat": "41.459413", "stop_lon": "2.205429", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660944", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.027380952381, "CatHarmCen": 2, "Clossnes": 1.531645569620, "CatClossnes": 2, "BetCen": 80.625655083448},
+"geometry": {
+"coordinates": [2.205429,41.459413],
+"type": "Point"
+        },
+        "id": "1000000000000129"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.945","location": "(433065.50426766986, 4589763.271997185)", "stop_id": "1.945", "stop_name": "Can Zam", "stop_code": "945", "stop_desc": "", "stop_lat": "41.456666", "stop_lon": "2.198569", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660945", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.096825396825, "CatHarmCen": 1, "Clossnes": 1.276371308017, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.198569,41.456666],
+"type": "Point"
+        },
+        "id": "1000000000000130"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.901","location": "(422223.38450388855, 4571177.3567523165)", "stop_id": "1.901", "stop_name": "Aeroport T1", "stop_code": "901", "stop_desc": "", "stop_lat": "41.288295", "stop_lon": "2.071152", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660901", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.612413974914, "CatHarmCen": 2, "Clossnes": 1.305605786618, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.071152,41.288295],
+"type": "Point"
+        },
+        "id": "1000000000000131"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.903","location": "(422405.99569801113, 4572899.47568246)", "stop_id": "1.903", "stop_name": "Aeroport T2", "stop_code": "903", "stop_desc": "", "stop_lat": "41.303823", "stop_lon": "2.073113", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660903", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.569394494394, "CatHarmCen": 3, "Clossnes": 1.455293074256, "CatClossnes": 2, "BetCen": 145.126179150206},
+"geometry": {
+"coordinates": [2.073113,41.303823],
+"type": "Point"
+        },
+        "id": "1000000000000132"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.904","location": "(422444.7383962503, 4573720.905968458)", "stop_id": "1.904", "stop_name": "Mas Blau", "stop_code": "904", "stop_desc": "", "stop_lat": "41.311225", "stop_lon": "2.073471", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660904", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.025804750805, "CatHarmCen": 3, "Clossnes": 1.620432713888, "CatClossnes": 2, "BetCen": 274.127227283722},
+"geometry": {
+"coordinates": [2.073471,41.311225],
+"type": "Point"
+        },
+        "id": "1000000000000133"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.905","location": "(423661.265356444, 4574307.9131892845)", "stop_id": "1.905", "stop_name": "Parc Nou", "stop_code": "905", "stop_desc": "", "stop_lat": "41.316628", "stop_lon": "2.087929", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660905", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.315487290487, "CatHarmCen": 4, "Clossnes": 1.799063091797, "CatClossnes": 3, "BetCen": 387.003144400548},
+"geometry": {
+"coordinates": [2.087929,41.316628],
+"type": "Point"
+        },
+        "id": "1000000000000134"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.906","location": "(424130.97715145577, 4574927.199733555)", "stop_id": "1.906", "stop_name": "Cèntric", "stop_code": "906", "stop_desc": "", "stop_lat": "41.32225", "stop_lon": "2.093463", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660906", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.522655122655, "CatHarmCen": 4, "Clossnes": 1.986791414419, "CatClossnes": 3, "BetCen": 483.753930500685},
+"geometry": {
+"coordinates": [2.093463,41.32225],
+"type": "Point"
+        },
+        "id": "1000000000000135"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.907","location": "(423846.3886999238, 4576011.942500472)", "stop_id": "1.907", "stop_name": "El Prat Estació", "stop_code": "907", "stop_desc": "", "stop_lat": "41.331993", "stop_lon": "2.089927", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660907", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.682178932179, "CatHarmCen": 4, "Clossnes": 2.176009644364, "CatClossnes": 4, "BetCen": 564.379585584133},
+"geometry": {
+"coordinates": [2.089927,41.331993],
+"type": "Point"
+        },
+        "id": "1000000000000136"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.909","location": "(424943.14017424674, 4575681.4206767585)", "stop_id": "1.909", "stop_name": "Les Moreres", "stop_code": "909", "stop_desc": "", "stop_lat": "41.329119", "stop_lon": "2.103073", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660909", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.813492063492, "CatHarmCen": 4, "Clossnes": 2.355474357301, "CatClossnes": 4, "BetCen": 628.880109650891},
+"geometry": {
+"coordinates": [2.103073,41.329119],
+"type": "Point"
+        },
+        "id": "1000000000000137"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.910","location": "(425632.71743973217, 4576159.077919558)", "stop_id": "1.910", "stop_name": "Mercabarna", "stop_code": "910", "stop_desc": "", "stop_lat": "41.333485", "stop_lon": "2.111254", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660910", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.931349206349, "CatHarmCen": 5, "Clossnes": 2.510780358882, "CatClossnes": 5, "BetCen": 677.255502700959},
+"geometry": {
+"coordinates": [2.111254,41.333485],
+"type": "Point"
+        },
+        "id": "1000000000000138"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.911","location": "(426992.99243641976, 4577053.374504034)", "stop_id": "1.911", "stop_name": "Parc Logístic", "stop_code": "911", "stop_desc": "", "stop_lat": "41.341664", "stop_lon": "2.127401", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660911", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.052380952381, "CatHarmCen": 5, "Clossnes": 2.626218536301, "CatClossnes": 5, "BetCen": 709.505764734339},
+"geometry": {
+"coordinates": [2.127401,41.341664],
+"type": "Point"
+        },
+        "id": "1000000000000139"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.912","location": "(427259.7523887404, 4578196.95905128)", "stop_id": "1.912", "stop_name": "Fira", "stop_code": "912", "stop_desc": "", "stop_lat": "41.351988", "stop_lon": "2.130452", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660912", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.205158730159, "CatHarmCen": 5, "Clossnes": 2.688011913626, "CatClossnes": 5, "BetCen": 725.630895751028},
+"geometry": {
+"coordinates": [2.130452,41.351988],
+"type": "Point"
+        },
+        "id": "1000000000000140"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.913","location": "(426887.2037453345, 4578819.35961724)", "stop_id": "1.913", "stop_name": "Europa | Fira", "stop_code": "913", "stop_desc": "", "stop_lat": "41.35756", "stop_lon": "2.125924", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660913", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.462301587302, "CatHarmCen": 5, "Clossnes": 2.688011913626, "CatClossnes": 5, "BetCen": 725.630895751028},
+"geometry": {
+"coordinates": [2.125924,41.35756],
+"type": "Point"
+        },
+        "id": "1000000000000141"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.914","location": "(426227.5673862474, 4579196.212123457)", "stop_id": "1.914", "stop_name": "Can Tries | Gornal", "stop_code": "914", "stop_desc": "", "stop_lat": "41.360894", "stop_lon": "2.117993", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660914", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 7.136544011544, "CatHarmCen": 5, "Clossnes": 2.626218536301, "CatClossnes": 5, "BetCen": 830.444247359510},
+"geometry": {
+"coordinates": [2.117993,41.360894],
+"type": "Point"
+        },
+        "id": "1000000000000142"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.915","location": "(426048.7583072818, 4580011.770671169)", "stop_id": "1.915", "stop_name": "Torrassa", "stop_code": "915", "stop_desc": "", "stop_lat": "41.368223", "stop_lon": "2.115756", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660117", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.053210678211, "CatHarmCen": 5, "Clossnes": 2.262188244141, "CatClossnes": 4, "BetCen": 274.127227283722},
+"geometry": {
+"coordinates": [2.115756,41.368223],
+"type": "Point"
+        },
+        "id": "1000000000000143"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.916","location": "(426278.47762908164, 4580879.127922312)", "stop_id": "1.916", "stop_name": "Collblanc", "stop_code": "916", "stop_desc": "", "stop_lat": "41.376056", "stop_lon": "2.118397", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660515", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.272990897991, "CatHarmCen": 4, "Clossnes": 1.952829168019, "CatClossnes": 3, "BetCen": 145.126179150206},
+"geometry": {
+"coordinates": [2.118397,41.376056],
+"type": "Point"
+        },
+        "id": "1000000000000144"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.918","location": "(425720.5948777128, 4581738.20207267)", "stop_id": "1.918", "stop_name": "Zona Universitària", "stop_code": "918", "stop_desc": "", "stop_lat": "41.383742", "stop_lon": "2.111621", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660314", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.136086136086, "CatHarmCen": 2, "Clossnes": 1.692451945617, "CatClossnes": 2, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.111621,41.383742],
+"type": "Point"
+        },
+        "id": "1000000000000145"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.934","location": "(434581.62453858164, 4588049.9867795715)", "stop_id": "1.934", "stop_name": "Llefià", "stop_code": "934", "stop_desc": "", "stop_lat": "41.44136", "stop_lon": "2.216906", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660934", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.926190476190, "CatHarmCen": 3, "Clossnes": 2.127285513361, "CatClossnes": 4, "BetCen": 145.126179150206},
+"geometry": {
+"coordinates": [2.216906,41.44136],
+"type": "Point"
+        },
+        "id": "1000000000000146"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.935","location": "(435237.26706266584, 4588205.853362053)", "stop_id": "1.935", "stop_name": "La Salut", "stop_code": "935", "stop_desc": "", "stop_lat": "41.442817", "stop_lon": "2.224737", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660935", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.301190476190, "CatHarmCen": 3, "Clossnes": 1.740506329114, "CatClossnes": 3, "BetCen": 80.625655083448},
+"geometry": {
+"coordinates": [2.224737,41.442817],
+"type": "Point"
+        },
+        "id": "1000000000000147"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.936","location": "(435999.71662295127, 4587935.484444871)", "stop_id": "1.936", "stop_name": "Gorg", "stop_code": "936", "stop_desc": "", "stop_lat": "41.440443", "stop_lon": "2.233892", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660225", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.278968253968, "CatHarmCen": 2, "Clossnes": 1.418190342241, "CatClossnes": 2, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.233892,41.440443],
+"type": "Point"
+        },
+        "id": "1000000000000148"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.954","location": "(428463.87138835195, 4577184.394843596)", "stop_id": "1.954", "stop_name": "Zona Franca", "stop_code": "954", "stop_desc": "", "stop_lat": "41.342976", "stop_lon": "2.144964", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660954", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.815252802753, "CatHarmCen": 2, "Clossnes": 1.455293074256, "CatClossnes": 2, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.144964,41.342976],
+"type": "Point"
+        },
+        "id": "1000000000000149"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.956","location": "(428213.97490740253, 4578650.776486402)", "stop_id": "1.956", "stop_name": "Foc", "stop_code": "956", "stop_desc": "", "stop_lat": "41.356161", "stop_lon": "2.141804", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660956", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 4.827752802753, "CatHarmCen": 3, "Clossnes": 1.643748292505, "CatClossnes": 2, "BetCen": 145.126179150206},
+"geometry": {
+"coordinates": [2.141804,41.356161],
+"type": "Point"
+        },
+        "id": "1000000000000150"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.957","location": "(427920.38063456904, 4579201.9495128915)", "stop_id": "1.957", "stop_name": "Foneria", "stop_code": "957", "stop_desc": "", "stop_lat": "41.361099", "stop_lon": "2.138229", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660957", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.368228993229, "CatHarmCen": 4, "Clossnes": 1.857569208603, "CatClossnes": 3, "BetCen": 274.127227283722},
+"geometry": {
+"coordinates": [2.138229,41.361099],
+"type": "Point"
+        },
+        "id": "1000000000000151"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.958","location": "(427427.98571259005, 4579433.138103208)", "stop_id": "1.958", "stop_name": "Ciutat de la Justícia", "stop_code": "958", "stop_desc": "", "stop_lat": "41.363137", "stop_lon": "2.132315", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660958", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 5.796800421800, "CatHarmCen": 4, "Clossnes": 2.096156079433, "CatClossnes": 4, "BetCen": 387.003144400548},
+"geometry": {
+"coordinates": [2.132315,41.363137],
+"type": "Point"
+        },
+        "id": "1000000000000152"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.959","location": "(426738.8874023492, 4579242.101994327)", "stop_id": "1.959", "stop_name": "Provençana", "stop_code": "959", "stop_desc": "", "stop_lat": "41.361354", "stop_lon": "2.1241", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660959", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 6.269877344877, "CatHarmCen": 5, "Clossnes": 2.355474357301, "CatClossnes": 4, "BetCen": 483.753930500685},
+"geometry": {
+"coordinates": [2.1241,41.361354],
+"type": "Point"
+        },
+        "id": "1000000000000153"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.1136","location": "(431704.4079908648, 4588947.058666405)", "stop_id": "1.1136", "stop_name": "Trinitat Nova", "stop_code": "1136", "stop_desc": "", "stop_lat": "41.4492", "stop_lon": "2.182366", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6660339", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 2.083333333333, "CatHarmCen": 1, "Clossnes": 1.012658227848, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.182366,41.4492],
+"type": "Point"
+        },
+        "id": "1000000000000154"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.1137","location": "(431913.23166801163, 4589175.808130059)", "stop_id": "1.1137", "stop_name": "Casa de l'Aigua", "stop_code": "1137", "stop_desc": "", "stop_lat": "41.451278", "stop_lon": "2.18484", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6661137", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 2.833333333333, "CatHarmCen": 1, "Clossnes": 1.446654611212, "CatClossnes": 2, "BetCen": 24.187696525034},
+"geometry": {
+"coordinates": [2.18484,41.451278],
+"type": "Point"
+        },
+        "id": "1000000000000155"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.1138","location": "(431507.60565894295, 4590058.77310724)", "stop_id": "1.1138", "stop_name": "Torre Baró | Vallbona", "stop_code": "1138", "stop_desc": "", "stop_lat": "41.459196", "stop_lon": "2.179884", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6661138", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 3.000000000000, "CatHarmCen": 1, "Clossnes": 1.687763713080, "CatClossnes": 2, "BetCen": 32.250262033379},
+"geometry": {
+"coordinates": [2.179884,41.459196],
+"type": "Point"
+        },
+        "id": "1000000000000156"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.1139","location": "(431072.1887739056, 4590241.893166578)", "stop_id": "1.1139", "stop_name": "Ciutat Meridiana", "stop_code": "1139", "stop_desc": "", "stop_lat": "41.460808", "stop_lon": "2.17465", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6661139", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 2.833333333333, "CatHarmCen": 1, "Clossnes": 1.446654611212, "CatClossnes": 2, "BetCen": 24.187696525034},
+"geometry": {
+"coordinates": [2.17465,41.460808],
+"type": "Point"
+        },
+        "id": "1000000000000157"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"1.1140","location": "(430941.020665253, 4590421.348643938)", "stop_id": "1.1140", "stop_name": "Can Cuiàs", "stop_code": "1140", "stop_desc": "", "stop_lat": "41.462413", "stop_lon": "2.173059", "zone_id": "", "stop_url": "", "location_type": "0", "parent_station": "P.6661140", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "HarmCen": 2.083333333333, "CatHarmCen": 1, "Clossnes": 1.012658227848, "CatClossnes": 1, "BetCen": 0.000000000000},
+"geometry": {
+"coordinates": [2.173059,41.462413],
+"type": "Point"
+        },
+        "id": "1000000000000158"
+
+}
+
+ ],
+"type": "FeatureCollection"
+}

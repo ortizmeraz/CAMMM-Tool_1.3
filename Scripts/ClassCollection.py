@@ -21,15 +21,25 @@ class DataBucket:
 
 
 class BusStop:
-    def __init__(self,Id="",CoordX=0,CoordY=0,Epsg="",Routes=[],Cluster=[]):
+    def __init__(self,Id="",CoordX=0,CoordY=0,Epsg="",Routes=[],Cluster=[],SuperNode=0,Wheelchair=""):
         self.Id=Id
         self.CoordX=CoordX
         self.CoordY=CoordY
         self.Epsg=Epsg
         self.Routes=[]
         self.Cluster=[]
+        self.SuperNode=SuperNode
+        self.Wheelchair=Wheelchair
 
-
+class Station:
+    def __init__(self,Id="",CoordX=0,CoordY=0,Epsg="",Routes=[],Cluster=[],System=[]):
+        self.Id=Id
+        self.CoordX=CoordX
+        self.CoordY=CoordY
+        self.Epsg=""
+        self.Routes=[]
+        self.Cluster=[]
+        self.System=[]
 
 class ClassDataCentroid(DataBucket):
     def __init__(self, ShapeFiles, Titles,CityArea,Ratio,):

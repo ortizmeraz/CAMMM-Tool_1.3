@@ -1,0 +1,2186 @@
+{
+        "features": [
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:949:0:1","location": "(604162.8328971787, 5333055.747275224)", "stop_id": "at:49:949:0:1", "stop_name": "Oberlaa", "stop_code": "", "stop_desc": "", "stop_lat": "48.1422207670867", "stop_lon": "16.4002367172564", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [16.4002367172564,48.1422207670867],
+"type": "Point"
+        },
+        "id": "1000000000000000"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1481:0:1","location": "(603104.3830629115, 5333442.432106135)", "stop_id": "at:49:1481:0:1", "stop_name": "Neulaa", "stop_code": "", "stop_desc": "", "stop_lat": "48.1458711740453", "stop_lon": "16.3861062178353", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.460829493088, "CatClossnes": 2},
+"geometry": {
+"coordinates": [16.3861062178353,48.1458711740453],
+"type": "Point"
+        },
+        "id": "1000000000000001"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:14:0:8","location": "(602810.7177061595, 5334310.739993592)", "stop_id": "at:49:14:0:8", "stop_name": "Alaudagasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1537285583183", "stop_lon": "16.3823692262528", "zone_id": "0270", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.614439324117, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.3823692262528,48.1537285583183],
+"type": "Point"
+        },
+        "id": "1000000000000002"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:33:0:9","location": "(602889.3347812287, 5335215.593913884)", "stop_id": "at:49:33:0:9", "stop_name": "Altes Landgut", "stop_code": "", "stop_desc": "", "stop_lat": "48.1618543811867", "stop_lon": "16.3836448339564", "zone_id": "0270", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.691244239631, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.3836448339564,48.1618543811867],
+"type": "Point"
+        },
+        "id": "1000000000000003"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1573:0:1","location": "(602647.6591646093, 5335948.020698072)", "stop_id": "at:49:1573:0:1", "stop_name": "Troststraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1684811274236", "stop_lon": "16.3805725956843", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.737327188940, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3805725956843,48.1684811274236],
+"type": "Point"
+        },
+        "id": "1000000000000004"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1095:0:6","location": "(602442.5699767752, 5336655.041919229)", "stop_id": "at:49:1095:0:6", "stop_name": "Reumannplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.1748733885639", "stop_lon": "16.3779854476657", "zone_id": "0280", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.768049155146, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3779854476657,48.1748733885639],
+"type": "Point"
+        },
+        "id": "1000000000000005"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:666:0:4","location": "(602306.2204730378, 5337144.109928851)", "stop_id": "at:49:666:0:4", "stop_name": "Keplerplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.1792941864331", "stop_lon": "16.3762696654728", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.789993416722, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3762696654728,48.1792941864331],
+"type": "Point"
+        },
+        "id": "1000000000000006"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1349:0:3","location": "(602090.8577918066, 5338019.276791669)", "stop_id": "at:49:1349:0:3", "stop_name": "Südtiroler Pl. - Hbf.", "stop_code": "", "stop_desc": "", "stop_lat": "48.1872003539411", "stop_lon": "16.3735837027729", "zone_id": "0280", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.806451612903, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3735837027729,48.1872003539411],
+"type": "Point"
+        },
+        "id": "1000000000000007"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1366:0:4","location": "(601841.429002484, 5338748.56812308)", "stop_id": "at:49:1366:0:4", "stop_name": "Taubstummengasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.193799871925", "stop_lon": "16.3704036666667", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.819252432156, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3704036666667,48.193799871925],
+"type": "Point"
+        },
+        "id": "1000000000000008"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:657:0:15","location": "(601715.1970076169, 5339574.49678966)", "stop_id": "at:49:657:0:15", "stop_name": "Karlsplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2012487603007", "stop_lon": "16.368903480142", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.829493087558, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.368903480142,48.2012487603007],
+"type": "Point"
+        },
+        "id": "1000000000000009"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1320:0:6","location": "(601906.5924685701, 5340335.415990198)", "stop_id": "at:49:1320:0:6", "stop_name": "Stephansplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2080619878123", "stop_lon": "16.3716613080646", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.837871805614, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3716613080646,48.2080619878123],
+"type": "Point"
+        },
+        "id": "1000000000000010"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1198:0:23","location": "(602376.8243017887, 5340768.4704150455)", "stop_id": "at:49:1198:0:23", "stop_name": "Schwedenplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2118813094012", "stop_lon": "16.3780932454998", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.844854070661, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3780932454998,48.2118813094012],
+"type": "Point"
+        },
+        "id": "1000000000000011"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:916:0:5","location": "(602921.2620313445, 5341154.289970888)", "stop_id": "at:49:916:0:5", "stop_name": "Nestroyplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2152633861515", "stop_lon": "16.3855133297477", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.850762141085, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3855133297477,48.2152633861515],
+"type": "Point"
+        },
+        "id": "1000000000000012"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1040:0:1","location": "(603368.7002062611, 5341584.964099107)", "stop_id": "at:49:1040:0:1", "stop_name": "Praterstern", "stop_code": "", "stop_desc": "", "stop_lat": "48.2190642146426", "stop_lon": "16.3916398399862", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.855826201448, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3916398399862,48.2190642146426],
+"type": "Point"
+        },
+        "id": "1000000000000013"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1433:0:6","location": "(604068.619936278, 5342110.740801184)", "stop_id": "at:49:1433:0:6", "stop_name": "Vorgartenstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2236786995563", "stop_lon": "16.4011889314577", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.860215053763, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4011889314577,48.2236786995563],
+"type": "Point"
+        },
+        "id": "1000000000000014"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:234:0:3","location": "(604814.6356341913, 5342735.880084187)", "stop_id": "at:49:234:0:3", "stop_name": "Donauinsel", "stop_code": "", "stop_desc": "", "stop_lat": "48.2291784306493", "stop_lon": "16.4113848099339", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.864055299539, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4113848099339,48.2291784306493],
+"type": "Point"
+        },
+        "id": "1000000000000015"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:641:0:7","location": "(605173.5676321723, 5343139.018200894)", "stop_id": "at:49:641:0:7", "stop_name": "Kaisermühlen-VIC", "stop_code": "", "stop_desc": "", "stop_lat": "48.2327448609057", "stop_lon": "16.4163165608444", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.867443751694, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4163165608444,48.2327448609057],
+"type": "Point"
+        },
+        "id": "1000000000000016"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:31:0:6","location": "(605780.0763393829, 5343753.630635172)", "stop_id": "at:49:31:0:6", "stop_name": "Alte Donau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2381718206084", "stop_lon": "16.4246349603765", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.870455709165, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4246349603765,48.2381718206084],
+"type": "Point"
+        },
+        "id": "1000000000000017"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:627:0:18","location": "(606405.860251569, 5344329.363482144)", "stop_id": "at:49:627:0:18", "stop_name": "Kagran", "stop_code": "", "stop_desc": "", "stop_lat": "48.2432452380004", "stop_lon": "16.4332048881882", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.873150618482, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4332048881882,48.2432452380004],
+"type": "Point"
+        },
+        "id": "1000000000000018"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:633:0:7","location": "(607151.8708832075, 5345138.824457595)", "stop_id": "at:49:633:0:7", "stop_name": "Kagraner Platz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2503998157629", "stop_lon": "16.4434546655814", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.875576036866, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4434546655814,48.2503998157629],
+"type": "Point"
+        },
+        "id": "1000000000000019"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1860:0:3","location": "(607595.6249275773, 5345943.229646312)", "stop_id": "at:49:1860:0:3", "stop_name": "Rennbahnweg", "stop_code": "", "stop_desc": "", "stop_lat": "48.2575593735153", "stop_lon": "16.449635074737", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.877770463024, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.449635074737,48.2575593735153],
+"type": "Point"
+        },
+        "id": "1000000000000020"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1858:0:1","location": "(607735.3352745147, 5346596.856016143)", "stop_id": "at:49:1858:0:1", "stop_name": "Aderklaaer Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2634142732416", "stop_lon": "16.4516832335851", "zone_id": "0200", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.879765395894, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4516832335851,48.2634142732416],
+"type": "Point"
+        },
+        "id": "1000000000000021"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1859:0:3","location": "(607440.6994536989, 5347438.326873097)", "stop_id": "at:49:1859:0:3", "stop_name": "Großfeldsiedlung", "stop_code": "", "stop_desc": "", "stop_lat": "48.2710324134144", "stop_lon": "16.447928275697", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013824884793, "CatCenDeg": 5, "Clossnes": 0.881586856341, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.447928275697,48.2710324134144],
+"type": "Point"
+        },
+        "id": "1000000000000022"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:769:0:6","location": "(607712.9406616039, 5348168.735814374)", "stop_id": "at:49:769:0:6", "stop_name": "Leopoldau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2775553655484", "stop_lon": "16.4517820482664", "zone_id": "0210", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.883256528418, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4517820482664,48.2775553655484],
+"type": "Point"
+        },
+        "id": "1000000000000023"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:769:0:5","location": "(607714.3867419853, 5348162.780590435)", "stop_id": "at:49:769:0:5", "stop_name": "Leopoldau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2775015590838", "stop_lon": "16.4518000145721", "zone_id": "0210", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.883256528418, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4518000145721,48.2775015590838],
+"type": "Point"
+        },
+        "id": "1000000000000024"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1859:0:4","location": "(607432.7508596692, 5347435.517682425)", "stop_id": "at:49:1859:0:4", "stop_name": "Großfeldsiedlung", "stop_code": "", "stop_desc": "", "stop_lat": "48.271008496384", "stop_lon": "16.4478204778629", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013824884793, "CatCenDeg": 5, "Clossnes": 0.956871871029, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4478204778629,48.271008496384],
+"type": "Point"
+        },
+        "id": "1000000000000025"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1858:0:2","location": "(607725.335369003, 5346596.666920626)", "stop_id": "at:49:1858:0:2", "stop_name": "Aderklaaer Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2634142732416", "stop_lon": "16.4515484862925", "zone_id": "0200", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.952662805282, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4515484862925,48.2634142732416],
+"type": "Point"
+        },
+        "id": "1000000000000026"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1860:0:5","location": "(607589.5615418348, 5345946.440097138)", "stop_id": "at:49:1860:0:5", "stop_name": "Rennbahnweg", "stop_code": "", "stop_desc": "", "stop_lat": "48.2575892776691", "stop_lon": "16.4495542263615", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.948996328985, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4495542263615,48.2575892776691],
+"type": "Point"
+        },
+        "id": "1000000000000027"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:633:0:9","location": "(607144.4857620987, 5345141.345937471)", "stop_id": "at:49:633:0:9", "stop_name": "Kagraner Platz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2504237424373", "stop_lon": "16.4433558509002", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.945786184766, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4433558509002,48.2504237424373],
+"type": "Point"
+        },
+        "id": "1000000000000028"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:627:0:9","location": "(606401.7842523628, 5344333.278412569)", "stop_id": "at:49:627:0:9", "stop_name": "Kagran", "stop_code": "", "stop_desc": "", "stop_lat": "48.2432811330289", "stop_lon": "16.4331509892712", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.942962539384, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4331509892712,48.2432811330289],
+"type": "Point"
+        },
+        "id": "1000000000000029"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:31:0:2","location": "(605776.6673757129, 5343757.558777677)", "stop_id": "at:49:31:0:2", "stop_name": "Alte Donau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2382077191971", "stop_lon": "16.4245900446123", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.940468353240, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4245900446123,48.2382077191971],
+"type": "Point"
+        },
+        "id": "1000000000000030"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:641:0:5","location": "(605169.4548929516, 5343144.930037343)", "stop_id": "at:49:641:0:5", "stop_name": "Kaisermühlen-VIC", "stop_code": "", "stop_desc": "", "stop_lat": "48.2327987144911", "stop_lon": "16.4162626619274", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.938256658596, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4162626619274,48.2327987144911],
+"type": "Point"
+        },
+        "id": "1000000000000031"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:234:0:2","location": "(604807.1385828268, 5342744.391770454)", "stop_id": "at:49:234:0:2", "stop_name": "Donauinsel", "stop_code": "", "stop_desc": "", "stop_lat": "48.2292562245649", "stop_lon": "16.4112859952526", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.936288493892, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4112859952526,48.2292562245649],
+"type": "Point"
+        },
+        "id": "1000000000000032"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1433:0:3","location": "(604065.223374571, 5342114.005895346)", "stop_id": "at:49:1433:0:3", "stop_name": "Vorgartenstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2237086235224", "stop_lon": "16.4011440156935", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.934531318384, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4011440156935,48.2237086235224],
+"type": "Point"
+        },
+        "id": "1000000000000033"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1040:0:11","location": "(603363.9451764333, 5341589.536228537)", "stop_id": "at:49:1040:0:11", "stop_name": "Praterstern", "stop_code": "", "stop_desc": "", "stop_lat": "48.219106111967", "stop_lon": "16.3915769579163", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.932957782853, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3915769579163,48.219106111967],
+"type": "Point"
+        },
+        "id": "1000000000000034"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:916:0:3","location": "(602919.1521808708, 5341160.241546469)", "stop_id": "at:49:916:0:3", "stop_name": "Nestroyplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2153172581329", "stop_lon": "16.3854863802891", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.931544767380, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3854863802891,48.2153172581329],
+"type": "Point"
+        },
+        "id": "1000000000000035"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1198:0:13","location": "(602375.394162301, 5340773.769206601)", "stop_id": "at:49:1198:0:13", "stop_name": "Schwedenplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2119291987728", "stop_lon": "16.3780752791941", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.930272621560, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3780752791941,48.2119291987728],
+"type": "Point"
+        },
+        "id": "1000000000000036"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1320:0:2","location": "(601898.4888520633, 5340340.596150236)", "stop_id": "at:49:1320:0:2", "stop_name": "Stephansplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2081098807556", "stop_lon": "16.3715535102305", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.929124559701, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3715535102305,48.2081098807556],
+"type": "Point"
+        },
+        "id": "1000000000000037"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:657:0:8","location": "(601721.907289973, 5339572.619263365)", "stop_id": "at:49:657:0:8", "stop_name": "Karlsplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2012307980463", "stop_lon": "16.3689933116704", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.928086175758, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3689933116704,48.2012307980463],
+"type": "Point"
+        },
+        "id": "1000000000000038"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1366:0:1","location": "(601833.441919253, 5338747.094129617)", "stop_id": "at:49:1366:0:1", "stop_name": "Taubstummengasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1937878953483", "stop_lon": "16.3702958688326", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.927145051569, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3702958688326,48.1937878953483],
+"type": "Point"
+        },
+        "id": "1000000000000039"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1349:0:11","location": "(602084.8726983514, 5338017.838086803)", "stop_id": "at:49:1349:0:11", "stop_name": "Südtiroler Pl. - Hbf.", "stop_code": "", "stop_desc": "", "stop_lat": "48.1871883758219", "stop_lon": "16.3735028543973", "zone_id": "0280", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.926290438367, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3735028543973,48.1871883758219],
+"type": "Point"
+        },
+        "id": "1000000000000040"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:666:0:2","location": "(602294.9401243103, 5337139.912122043)", "stop_id": "at:49:666:0:2", "stop_name": "Keplerplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.1792582465239", "stop_lon": "16.3761169518745", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.925512996273, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3761169518745,48.1792582465239],
+"type": "Point"
+        },
+        "id": "1000000000000041"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1095:0:13","location": "(602435.9276405999, 5336652.924759108)", "stop_id": "at:49:1095:0:13", "stop_name": "Reumannplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.174855417063", "stop_lon": "16.3778956161373", "zone_id": "0280", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.924804579985, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3778956161373,48.174855417063],
+"type": "Point"
+        },
+        "id": "1000000000000042"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1573:0:2","location": "(602642.3399039289, 5335946.592950182)", "stop_id": "at:49:1573:0:2", "stop_name": "Troststraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1684691449301", "stop_lon": "16.3805007304616", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.924158061517, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3805007304616,48.1684691449301],
+"type": "Point"
+        },
+        "id": "1000000000000043"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:33:0:8","location": "(602880.0309555295, 5335212.761688753)", "stop_id": "at:49:33:0:8", "stop_name": "Altes Landgut", "stop_code": "", "stop_desc": "", "stop_lat": "48.1618304131003", "stop_lon": "16.3835190698166", "zone_id": "0270", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.923567182834, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3835190698166,48.1618304131003],
+"type": "Point"
+        },
+        "id": "1000000000000044"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:14:0:9","location": "(602806.0530604786, 5334309.989835591)", "stop_id": "at:49:14:0:9", "stop_name": "Alaudagasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1537225653486", "stop_lon": "16.3823063441829", "zone_id": "0270", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.923026432742, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3823063441829,48.1537225653486],
+"type": "Point"
+        },
+        "id": "1000000000000045"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1481:0:2","location": "(603102.4985566875, 5333435.734059358)", "stop_id": "at:49:1481:0:2", "stop_name": "Neulaa", "stop_code": "", "stop_desc": "", "stop_lat": "48.1458112351407", "stop_lon": "16.3860792683767", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.922530943589, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3860792683767,48.1458112351407],
+"type": "Point"
+        },
+        "id": "1000000000000046"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:949:0:2","location": "(604160.9252179067, 5333050.380871546)", "stop_id": "at:49:949:0:2", "stop_name": "Oberlaa", "stop_code": "", "stop_desc": "", "stop_lat": "48.1421728125584", "stop_lon": "16.4002097677979", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.922076404194, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4002097677979,48.1421728125584],
+"type": "Point"
+        },
+        "id": "1000000000000047"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:942:0:4","location": "(612033.4529200431, 5342529.758678591)", "stop_id": "at:49:942:0:4", "stop_name": "Seestadt", "stop_code": "", "stop_desc": "", "stop_lat": "48.2260905151095", "stop_lon": "16.5085016753136", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [16.5085016753136,48.2260905151095],
+"type": "Point"
+        },
+        "id": "1000000000000048"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:910:0:6","location": "(611734.7100040718, 5343470.699345589)", "stop_id": "at:49:910:0:6", "stop_name": "Aspern Nord", "stop_code": "", "stop_desc": "", "stop_lat": "48.2346057686081", "stop_lon": "16.5047287511198", "zone_id": "0290", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.460829493088, "CatClossnes": 2},
+"geometry": {
+"coordinates": [16.5047287511198,48.2346057686081],
+"type": "Point"
+        },
+        "id": "1000000000000049"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:487:0:3","location": "(610322.2859659592, 5343321.45037547)", "stop_id": "at:49:487:0:3", "stop_name": "Hausfeldstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2335107732357", "stop_lon": "16.4856754839409", "zone_id": "0290", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.614439324117, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.4856754839409,48.2335107732357],
+"type": "Point"
+        },
+        "id": "1000000000000050"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:299:0:10","location": "(609537.054216665, 5342095.996739881)", "stop_id": "at:49:299:0:10", "stop_name": "Aspernstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.222625364802", "stop_lon": "16.4747879026959", "zone_id": "0290", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.691244239631, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.4747879026959,48.222625364802],
+"type": "Point"
+        },
+        "id": "1000000000000051"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1278:0:11","location": "(608863.596915164, 5341747.048062466)", "stop_id": "at:49:1278:0:11", "stop_name": "Donauspital", "stop_code": "", "stop_desc": "", "stop_lat": "48.2196028919135", "stop_lon": "16.4656340699494", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.737327188940, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4656340699494,48.2196028919135],
+"type": "Point"
+        },
+        "id": "1000000000000052"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:473:0:11","location": "(608233.9637171363, 5341898.775328623)", "stop_id": "at:49:473:0:11", "stop_name": "Hardeggasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.2210752475339", "stop_lon": "16.4571988894304", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.768049155146, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4571988894304,48.2210752475339],
+"type": "Point"
+        },
+        "id": "1000000000000053"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1299:0:2","location": "(607627.7739847546, 5341729.592495111)", "stop_id": "at:49:1299:0:2", "stop_name": "Stadlau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2196567593289", "stop_lon": "16.4489972708852", "zone_id": "0290", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.789993416722, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4489972708852,48.2196567593289],
+"type": "Point"
+        },
+        "id": "1000000000000054"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:290:0:8","location": "(606968.4423412862, 5340832.7116025565)", "stop_id": "at:49:290:0:8", "stop_name": "Donaustadtbrücke", "stop_code": "", "stop_desc": "", "stop_lat": "48.2117017238592", "stop_lon": "16.4398973370558", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.806451612903, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4398973370558,48.2117017238592],
+"type": "Point"
+        },
+        "id": "1000000000000055"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:282:0:4","location": "(606334.2736773834, 5340222.479762822)", "stop_id": "at:49:282:0:4", "stop_name": "Donaumarina", "stop_code": "", "stop_desc": "", "stop_lat": "48.2063198515553", "stop_lon": "16.4312106282572", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.819252432156, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4312106282572,48.2063198515553],
+"type": "Point"
+        },
+        "id": "1000000000000056"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1894:0:5","location": "(605513.325810541, 5340715.107274554)", "stop_id": "at:49:1894:0:5", "stop_name": "Stadion", "stop_code": "", "stop_desc": "", "stop_lat": "48.2108875948357", "stop_lon": "16.4202871144008", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.829493087558, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4202871144008,48.2108875948357],
+"type": "Point"
+        },
+        "id": "1000000000000057"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1893:0:4","location": "(605027.5483767814, 5341138.757614502)", "stop_id": "at:49:1893:0:4", "stop_name": "Krieau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2147785357682", "stop_lon": "16.4138551769656", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.837871805614, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4138551769656,48.2147785357682],
+"type": "Point"
+        },
+        "id": "1000000000000058"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1892:0:7","location": "(604364.1311763468, 5341462.002232191)", "stop_id": "at:49:1892:0:7", "stop_name": "Messe-Prater", "stop_code": "", "stop_desc": "", "stop_lat": "48.2177953080034", "stop_lon": "16.4050067714158", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.844854070661, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4050067714158,48.2177953080034],
+"type": "Point"
+        },
+        "id": "1000000000000059"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1040:0:17","location": "(603498.3582025174, 5341538.735066079)", "stop_id": "at:49:1040:0:17", "stop_name": "Praterstern", "stop_code": "", "stop_desc": "", "stop_lat": "48.2186272833596", "stop_lon": "16.3933735884848", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.850762141085, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3933735884848,48.2186272833596],
+"type": "Point"
+        },
+        "id": "1000000000000060"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1891:0:5","location": "(602603.7329530662, 5341588.459596833)", "stop_id": "at:49:1891:0:5", "stop_name": "Taborstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2192198331031", "stop_lon": "16.3813451468288", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.855826201448, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3813451468288,48.2192198331031],
+"type": "Point"
+        },
+        "id": "1000000000000061"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1182:0:11","location": "(601920.8051896314, 5341371.255138627)", "stop_id": "at:49:1182:0:11", "stop_name": "Schottenring", "stop_code": "", "stop_desc": "", "stop_lat": "48.2173763224892", "stop_lon": "16.3721014825539", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.860215053763, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3721014825539,48.2173763224892],
+"type": "Point"
+        },
+        "id": "1000000000000062"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1184:0:19","location": "(601237.3666122537, 5341104.870102672)", "stop_id": "at:49:1184:0:19", "stop_name": "Schottentor", "stop_code": "", "stop_desc": "", "stop_lat": "48.2150897982703", "stop_lon": "16.3628398519733", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.864055299539, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3628398519733,48.2150897982703],
+"type": "Point"
+        },
+        "id": "1000000000000063"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1072:0:3","location": "(600702.046115935, 5340612.219621516)", "stop_id": "at:49:1072:0:3", "stop_name": "Rathaus", "stop_code": "", "stop_desc": "", "stop_lat": "48.2107439236644", "stop_lon": "16.3555185824067", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.867443751694, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3555185824067,48.2107439236644],
+"type": "Point"
+        },
+        "id": "1000000000000064"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1430:0:10","location": "(600866.0939107665, 5340017.407989193)", "stop_id": "at:49:1430:0:10", "stop_name": "Volkstheater", "stop_code": "", "stop_desc": "", "stop_lat": "48.2053679376369", "stop_lon": "16.3575847075605", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.870455709165, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3575847075605,48.2053679376369],
+"type": "Point"
+        },
+        "id": "1000000000000065"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:835:0:4","location": "(601123.3165117489, 5339743.050666559)", "stop_id": "at:49:835:0:4", "stop_name": "Museumsquartier", "stop_code": "", "stop_desc": "", "stop_lat": "48.2028593501803", "stop_lon": "16.3609803393349", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.873150618482, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3609803393349,48.2028593501803],
+"type": "Point"
+        },
+        "id": "1000000000000066"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:657:0:13","location": "(601737.7927390875, 5339542.946145059)", "stop_id": "at:49:657:0:13", "stop_name": "Karlsplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2009613634738", "stop_lon": "16.3691999241858", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.875576036866, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3691999241858,48.2009613634738],
+"type": "Point"
+        },
+        "id": "1000000000000067"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:657:0:10","location": "(601739.6528681676, 5339550.967612153)", "stop_id": "at:49:657:0:10", "stop_name": "Karlsplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2010332128317", "stop_lon": "16.3692268736443", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [16.3692268736443,48.2010332128317],
+"type": "Point"
+        },
+        "id": "1000000000000068"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:835:0:3","location": "(601129.2174835643, 5339749.146189268)", "stop_id": "at:49:835:0:3", "stop_name": "Museumsquartier", "stop_code": "", "stop_desc": "", "stop_lat": "48.2029132352116", "stop_lon": "16.3610611877105", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.460829493088, "CatClossnes": 2},
+"geometry": {
+"coordinates": [16.3610611877105,48.2029132352116],
+"type": "Point"
+        },
+        "id": "1000000000000069"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1430:0:3","location": "(600903.96330852, 5339990.12050199)", "stop_id": "at:49:1430:0:3", "stop_name": "Volkstheater", "stop_code": "", "stop_desc": "", "stop_lat": "48.2051164857235", "stop_lon": "16.3580877641197", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.614439324117, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.3580877641197,48.2051164857235],
+"type": "Point"
+        },
+        "id": "1000000000000070"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1072:0:5","location": "(600696.4307708774, 5340514.281785561)", "stop_id": "at:49:1072:0:5", "stop_name": "Rathaus", "stop_code": "", "stop_desc": "", "stop_lat": "48.209863928945", "stop_lon": "16.3554197677255", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.691244239631, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.3554197677255,48.209863928945],
+"type": "Point"
+        },
+        "id": "1000000000000071"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1184:0:8","location": "(601241.5001904713, 5341097.622814084)", "stop_id": "at:49:1184:0:8", "stop_name": "Schottentor", "stop_code": "", "stop_desc": "", "stop_lat": "48.2150239544373", "stop_lon": "16.3628937508904", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.737327188940, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3628937508904,48.2150239544373],
+"type": "Point"
+        },
+        "id": "1000000000000072"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1182:0:17","location": "(601933.0654558116, 5341357.498960142)", "stop_id": "at:49:1182:0:17", "stop_name": "Schottenring", "stop_code": "", "stop_desc": "", "stop_lat": "48.2172506261664", "stop_lon": "16.3722631793051", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.768049155146, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3722631793051,48.2172506261664],
+"type": "Point"
+        },
+        "id": "1000000000000073"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1891:0:9","location": "(602605.842327252, 5341582.508364153)", "stop_id": "at:49:1891:0:9", "stop_name": "Taborstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.219165965228", "stop_lon": "16.3813720962873", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.789993416722, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3813720962873,48.219165965228],
+"type": "Point"
+        },
+        "id": "1000000000000074"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1040:0:9","location": "(603496.5133287003, 5341530.050445699)", "stop_id": "at:49:1040:0:9", "stop_name": "Praterstern", "stop_code": "", "stop_desc": "", "stop_lat": "48.2185494732879", "stop_lon": "16.3933466390263", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.806451612903, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3933466390263,48.2185494732879],
+"type": "Point"
+        },
+        "id": "1000000000000075"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1892:0:2","location": "(604362.9061696499, 5341455.990439539)", "stop_id": "at:49:1892:0:2", "stop_name": "Messe-Prater", "stop_code": "", "stop_desc": "", "stop_lat": "48.2177414386293", "stop_lon": "16.4049888051101", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.819252432156, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4049888051101,48.2177414386293],
+"type": "Point"
+        },
+        "id": "1000000000000076"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1893:0:3","location": "(605017.7838217095, 5341125.267331783)", "stop_id": "at:49:1893:0:3", "stop_name": "Krieau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2146588189174", "stop_lon": "16.4137204296729", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.829493087558, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4137204296729,48.2146588189174],
+"type": "Point"
+        },
+        "id": "1000000000000077"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1894:0:2","location": "(605504.7979186174, 5340706.962659224)", "stop_id": "at:49:1894:0:2", "stop_name": "Stadion", "stop_code": "", "stop_desc": "", "stop_lat": "48.2108157593004", "stop_lon": "16.4201703334138", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.837871805614, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4201703334138,48.2108157593004],
+"type": "Point"
+        },
+        "id": "1000000000000078"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:282:0:2","location": "(606342.4932471261, 5340211.316940535)", "stop_id": "at:49:282:0:2", "stop_name": "Donaumarina", "stop_code": "", "stop_desc": "", "stop_lat": "48.2062180754401", "stop_lon": "16.4313184260913", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.844854070661, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4313184260913,48.2062180754401],
+"type": "Point"
+        },
+        "id": "1000000000000079"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:290:0:4","location": "(606974.5605754142, 5340826.836087508)", "stop_id": "at:49:290:0:4", "stop_name": "Donaustadtbrücke", "stop_code": "", "stop_desc": "", "stop_lat": "48.2116478480737", "stop_lon": "16.4399781854314", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.850762141085, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4399781854314,48.2116478480737],
+"type": "Point"
+        },
+        "id": "1000000000000080"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1299:0:6","location": "(607633.9547362027, 5341720.392412397)", "stop_id": "at:49:1299:0:6", "stop_name": "Stadlau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2195729655472", "stop_lon": "16.4490781192608", "zone_id": "0290", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.855826201448, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4490781192608,48.2195729655472],
+"type": "Point"
+        },
+        "id": "1000000000000081"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:473:0:4","location": "(608232.2523212337, 5341883.437260075)", "stop_id": "at:49:473:0:4", "stop_name": "Hardeggasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.2209375900631", "stop_lon": "16.4571719399719", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.860215053763, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4571719399719,48.2209375900631],
+"type": "Point"
+        },
+        "id": "1000000000000082"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1278:0:4","location": "(608861.7856079169, 5341737.031271239)", "stop_id": "at:49:1278:0:4", "stop_name": "Donauspital", "stop_code": "", "stop_desc": "", "stop_lat": "48.219513112762", "stop_lon": "16.4656071204909", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.864055299539, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4656071204909,48.219513112762],
+"type": "Point"
+        },
+        "id": "1000000000000083"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:299:0:6","location": "(609548.4986317593, 5342090.892912405)", "stop_id": "at:49:299:0:6", "stop_name": "Aspernstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2225774854345", "stop_lon": "16.4749406162942", "zone_id": "0290", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.867443751694, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4749406162942,48.2225774854345],
+"type": "Point"
+        },
+        "id": "1000000000000084"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:487:0:11","location": "(610323.17172581, 5343310.1572557585)", "stop_id": "at:49:487:0:11", "stop_name": "Hausfeldstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2334090511646", "stop_lon": "16.4856844670938", "zone_id": "0290", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.870455709165, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4856844670938,48.2334090511646],
+"type": "Point"
+        },
+        "id": "1000000000000085"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:910:0:2","location": "(611736.2916496596, 5343458.089619284)", "stop_id": "at:49:910:0:2", "stop_name": "Aspern Nord", "stop_code": "", "stop_desc": "", "stop_lat": "48.2344920816541", "stop_lon": "16.5047467174254", "zone_id": "0290", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.873150618482, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.5047467174254,48.2344920816541],
+"type": "Point"
+        },
+        "id": "1000000000000086"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:942:0:2","location": "(612020.6988134335, 5342533.500670477)", "stop_id": "at:49:942:0:2", "stop_name": "Seestadt", "stop_code": "", "stop_desc": "", "stop_lat": "48.2261264221747", "stop_lon": "16.5083309954096", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.875576036866, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.5083309954096,48.2261264221747],
+"type": "Point"
+        },
+        "id": "1000000000000087"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:981:0:6","location": "(597425.7968699769, 5340647.203107097)", "stop_id": "at:49:981:0:6", "stop_name": "Ottakring", "stop_code": "", "stop_desc": "", "stop_lat": "48.2115700273947", "stop_lon": "16.3114382514089", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [16.3114382514089,48.2115700273947],
+"type": "Point"
+        },
+        "id": "1000000000000088"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1317:0:5","location": "(597263.5165654005, 5339867.69653844)", "stop_id": "at:49:1317:0:5", "stop_name": "Kendlerstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2045836430654", "stop_lon": "16.3090756822113", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.460829493088, "CatClossnes": 2},
+"geometry": {
+"coordinates": [16.3090756822113,48.2045836430654],
+"type": "Point"
+        },
+        "id": "1000000000000089"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1035:0:14","location": "(597442.8192840539, 5339336.8927134145)", "stop_id": "at:49:1035:0:14", "stop_name": "Hütteldorfer Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1997818221082", "stop_lon": "16.3113663861861", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.614439324117, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.3113663861861,48.1997818221082],
+"type": "Point"
+        },
+        "id": "1000000000000090"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:606:0:10","location": "(598092.4340181989, 5339106.362800907)", "stop_id": "at:49:606:0:10", "stop_name": "Johnstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1976082813548", "stop_lon": "16.3200530949848", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.691244239631, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.3200530949848,48.1976082813548],
+"type": "Point"
+        },
+        "id": "1000000000000091"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1200:0:8","location": "(598728.5116355848, 5339121.3189043095)", "stop_id": "at:49:1200:0:8", "stop_name": "Schweglerstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1976442083978", "stop_lon": "16.3286140396436", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.737327188940, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3286140396436,48.1976442083978],
+"type": "Point"
+        },
+        "id": "1000000000000092"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1468:0:26","location": "(599462.9691807929, 5338931.679301455)", "stop_id": "at:49:1468:0:26", "stop_name": "Westbahnhof", "stop_code": "", "stop_desc": "", "stop_lat": "48.195823873188", "stop_lon": "16.3384505920061", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.768049155146, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3384505920061,48.195823873188],
+"type": "Point"
+        },
+        "id": "1000000000000093"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1530:0:4","location": "(600043.9297037576, 5339082.965323043)", "stop_id": "at:49:1530:0:4", "stop_name": "Zieglergasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1970933243038", "stop_lon": "16.3463018675904", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.789993416722, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3463018675904,48.1970933243038],
+"type": "Point"
+        },
+        "id": "1000000000000094"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:56:0:7","location": "(600502.4606692989, 5339322.0236850325)", "stop_id": "at:49:56:0:7", "stop_name": "Neubaugasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1991710844351", "stop_lon": "16.3525271925102", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.806451612903, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3525271925102,48.1991710844351],
+"type": "Point"
+        },
+        "id": "1000000000000095"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1430:0:12","location": "(600983.1357729668, 5340043.43991617)", "stop_id": "at:49:1430:0:12", "stop_name": "Volkstheater", "stop_code": "", "stop_desc": "", "stop_lat": "48.2055834668659", "stop_lon": "16.3591657424608", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.819252432156, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3591657424608,48.2055834668659],
+"type": "Point"
+        },
+        "id": "1000000000000096"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:506:0:3","location": "(601418.3023646085, 5340463.831999243)", "stop_id": "at:49:506:0:3", "stop_name": "Herrengasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.2092952168304", "stop_lon": "16.3651215727953", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.829493087558, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3651215727953,48.2092952168304],
+"type": "Point"
+        },
+        "id": "1000000000000097"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1320:0:5","location": "(601894.6983523748, 5340328.54762885)", "stop_id": "at:49:1320:0:5", "stop_name": "Stephansplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2080021215702", "stop_lon": "16.3714996113135", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.837871805614, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3714996113135,48.2080021215702],
+"type": "Point"
+        },
+        "id": "1000000000000098"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:245:0:10","location": "(602472.9078023483, 5340213.097173901)", "stop_id": "at:49:245:0:10", "stop_name": "Stubentor", "stop_code": "", "stop_desc": "", "stop_lat": "48.2068706364343", "stop_lon": "16.3792520722165", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.844854070661, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3792520722165,48.2068706364343],
+"type": "Point"
+        },
+        "id": "1000000000000099"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:743:0:12","location": "(602944.9518512961, 5340099.780097782)", "stop_id": "at:49:743:0:12", "stop_name": "Landstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2057750476414", "stop_lon": "16.3855762118176", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.850762141085, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3855762118176,48.2057750476414],
+"type": "Point"
+        },
+        "id": "1000000000000100"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1104:0:7","location": "(603398.2355233653, 5339733.205549643)", "stop_id": "at:49:1104:0:7", "stop_name": "Rochusgasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.2024043187669", "stop_lon": "16.3915859410692", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.855826201448, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3915859410692,48.2024043187669],
+"type": "Point"
+        },
+        "id": "1000000000000101"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:653:0:3","location": "(604071.012837437, 5339160.263109784)", "stop_id": "at:49:653:0:3", "stop_name": "Kardinal-Nagl-Platz", "stop_code": "", "stop_desc": "", "stop_lat": "48.1971412275036", "stop_lon": "16.4004972286889", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.860215053763, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4004972286889,48.1971412275036],
+"type": "Point"
+        },
+        "id": "1000000000000102"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1199:0:11","location": "(604535.7635795414, 5338868.48919271)", "stop_id": "at:49:1199:0:11", "stop_name": "Schlachthausgasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1944406147016", "stop_lon": "16.4066776378445", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.864055299539, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4066776378445,48.1944406147016],
+"type": "Point"
+        },
+        "id": "1000000000000103"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:289:0:4","location": "(605097.4431306185, 5338537.903098791)", "stop_id": "at:49:289:0:4", "stop_name": "Erdberg", "stop_code": "", "stop_desc": "", "stop_lat": "48.1913745580146", "stop_lon": "16.4141516210094", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.867443751694, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4141516210094,48.1913745580146],
+"type": "Point"
+        },
+        "id": "1000000000000104"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1749:0:3","location": "(605335.7288296556, 5337820.486561855)", "stop_id": "at:49:1749:0:3", "stop_name": "Gasometer", "stop_code": "", "stop_desc": "", "stop_lat": "48.1848825357277", "stop_lon": "16.4171789435173", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.870455709165, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4171789435173,48.1848825357277],
+"type": "Point"
+        },
+        "id": "1000000000000105"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:399:0:7","location": "(604949.8519420932, 5337301.940658418)", "stop_id": "at:49:399:0:7", "stop_name": "Zippererstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1802825240608", "stop_lon": "16.4118609170346", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.873150618482, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4118609170346,48.1802825240608],
+"type": "Point"
+        },
+        "id": "1000000000000106"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:425:0:10","location": "(605173.0075077092, 5336681.993202538)", "stop_id": "at:49:425:0:10", "stop_name": "Enkplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.1746697111841", "stop_lon": "16.4147085764856", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.875576036866, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4147085764856,48.1746697111841],
+"type": "Point"
+        },
+        "id": "1000000000000107"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1260:0:10","location": "(605533.5645451639, 5336221.722275255)", "stop_id": "at:49:1260:0:10", "stop_name": "Simmering", "stop_code": "", "stop_desc": "", "stop_lat": "48.1704701825458", "stop_lon": "16.4194426980336", "zone_id": "0290", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.877770463024, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4194426980336,48.1704701825458],
+"type": "Point"
+        },
+        "id": "1000000000000108"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1260:0:5","location": "(605543.4350448059, 5336229.897734029)", "stop_id": "at:49:1260:0:5", "stop_name": "Simmering", "stop_code": "", "stop_desc": "", "stop_lat": "48.1705420746598", "stop_lon": "16.4195774453262", "zone_id": "0290", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [16.4195774453262,48.1705420746598],
+"type": "Point"
+        },
+        "id": "1000000000000109"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:425:0:4","location": "(605178.8585449104, 5336690.7594675515)", "stop_id": "at:49:425:0:4", "stop_name": "Enkplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.1747475879248", "stop_lon": "16.4147894248612", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.460829493088, "CatClossnes": 2},
+"geometry": {
+"coordinates": [16.4147894248612,48.1747475879248],
+"type": "Point"
+        },
+        "id": "1000000000000110"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:399:0:3","location": "(604957.2582562887, 5337298.746838386)", "stop_id": "at:49:399:0:3", "stop_name": "Zippererstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1802525747157", "stop_lon": "16.4119597317158", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.614439324117, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.4119597317158,48.1802525747157],
+"type": "Point"
+        },
+        "id": "1000000000000111"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1749:0:1","location": "(605343.8392222363, 5337815.308790276)", "stop_id": "at:49:1749:0:1", "stop_name": "Gasometer", "stop_code": "", "stop_desc": "", "stop_lat": "48.184834621067", "stop_lon": "16.4172867413514", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.691244239631, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.4172867413514,48.184834621067],
+"type": "Point"
+        },
+        "id": "1000000000000112"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:289:0:2","location": "(605102.6736828351, 5338543.991816025)", "stop_id": "at:49:289:0:2", "stop_name": "Erdberg", "stop_code": "", "stop_desc": "", "stop_lat": "48.1914284551264", "stop_lon": "16.4142234862321", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.737327188940, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4142234862321,48.1914284551264],
+"type": "Point"
+        },
+        "id": "1000000000000113"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1199:0:3","location": "(604538.9917247669, 5338874.540376614)", "stop_id": "at:49:1199:0:3", "stop_name": "Schlachthausgasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1944945085885", "stop_lon": "16.4067225536087", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.768049155146, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4067225536087,48.1944945085885],
+"type": "Point"
+        },
+        "id": "1000000000000114"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:653:0:1","location": "(604077.5425171771, 5339168.371133659)", "stop_id": "at:49:653:0:1", "stop_name": "Kardinal-Nagl-Platz", "stop_code": "", "stop_desc": "", "stop_lat": "48.1972130822194", "stop_lon": "16.4005870602173", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.789993416722, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.4005870602173,48.1972130822194],
+"type": "Point"
+        },
+        "id": "1000000000000115"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1104:0:2","location": "(603402.1438405388, 5339738.601782442)", "stop_id": "at:49:1104:0:2", "stop_name": "Rochusgasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.2024522170008", "stop_lon": "16.3916398399862", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.806451612903, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3916398399862,48.2024522170008],
+"type": "Point"
+        },
+        "id": "1000000000000116"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:743:0:4","location": "(602947.5135017416, 5340105.81701844)", "stop_id": "at:49:743:0:4", "stop_name": "Landstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2058289296054", "stop_lon": "16.3856121444289", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.819252432156, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3856121444289,48.2058289296054],
+"type": "Point"
+        },
+        "id": "1000000000000117"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:245:0:6","location": "(602474.6710994464, 5340226.441225277)", "stop_id": "at:49:245:0:6", "stop_name": "Stubentor", "stop_code": "", "stop_desc": "", "stop_lat": "48.2069903714938", "stop_lon": "16.379279021675", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.829493087558, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.379279021675,48.2069903714938],
+"type": "Point"
+        },
+        "id": "1000000000000118"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1320:0:3","location": "(601897.9521256532, 5340333.26493624)", "stop_id": "at:49:1320:0:3", "stop_name": "Stephansplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.208044027947", "stop_lon": "16.3715445270777", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.837871805614, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3715445270777,48.208044027947],
+"type": "Point"
+        },
+        "id": "1000000000000119"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:506:0:2","location": "(601417.4931333956, 5340471.804641847)", "stop_id": "at:49:506:0:2", "stop_name": "Herrengasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.2093670544986", "stop_lon": "16.3651125896425", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.844854070661, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3651125896425,48.2093670544986],
+"type": "Point"
+        },
+        "id": "1000000000000120"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1430:0:4","location": "(600977.0348746642, 5340048.657051462)", "stop_id": "at:49:1430:0:4", "stop_name": "Volkstheater", "stop_code": "", "stop_desc": "", "stop_lat": "48.205631362127", "stop_lon": "16.3590848940852", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.850762141085, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3590848940852,48.205631362127],
+"type": "Point"
+        },
+        "id": "1000000000000121"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:56:0:5","location": "(600497.6476219367, 5339329.92751701)", "stop_id": "at:49:56:0:5", "stop_name": "Neubaugasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1992429363039", "stop_lon": "16.3524643104403", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.855826201448, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3524643104403,48.1992429363039],
+"type": "Point"
+        },
+        "id": "1000000000000122"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1530:0:2","location": "(600038.3912920379, 5339094.185823)", "stop_id": "at:49:1530:0:2", "stop_name": "Zieglergasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1971951185499", "stop_lon": "16.3462300023677", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.860215053763, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3462300023677,48.1971951185499],
+"type": "Point"
+        },
+        "id": "1000000000000123"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1468:0:9","location": "(599461.5065887184, 5338938.977092088)", "stop_id": "at:49:1468:0:9", "stop_name": "Westbahnhof", "stop_code": "", "stop_desc": "", "stop_lat": "48.1958897417082", "stop_lon": "16.3384326257004", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.864055299539, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3384326257004,48.1958897417082],
+"type": "Point"
+        },
+        "id": "1000000000000124"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1200:0:4","location": "(598728.9835458866, 5339132.644387076)", "stop_id": "at:49:1200:0:4", "stop_name": "Schweglerstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1977460015493", "stop_lon": "16.3286230227965", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.867443751694, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3286230227965,48.1977460015493],
+"type": "Point"
+        },
+        "id": "1000000000000125"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:606:0:4","location": "(598093.6204382197, 5339115.037583169)", "stop_id": "at:49:606:0:4", "stop_name": "Johnstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1976861232494", "stop_lon": "16.3200710612904", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.870455709165, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3200710612904,48.1976861232494],
+"type": "Point"
+        },
+        "id": "1000000000000126"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1035:0:5","location": "(597449.426060675, 5339340.9996221345)", "stop_id": "at:49:1035:0:5", "stop_name": "Hütteldorfer Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1998177476269", "stop_lon": "16.3114562177145", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.873150618482, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3114562177145,48.1998177476269],
+"type": "Point"
+        },
+        "id": "1000000000000127"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1317:0:2","location": "(597274.2294577511, 5339865.882166257)", "stop_id": "at:49:1317:0:2", "stop_name": "Kendlerstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2045656819803", "stop_lon": "16.3092194126568", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.875576036866, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3092194126568,48.2045656819803],
+"type": "Point"
+        },
+        "id": "1000000000000128"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:981:0:11","location": "(597437.1757079487, 5340645.400720864)", "stop_id": "at:49:981:0:11", "stop_name": "Ottakring", "stop_code": "", "stop_desc": "", "stop_lat": "48.2115520687596", "stop_lon": "16.3115909650072", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.877770463024, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3115909650072,48.2115520687596],
+"type": "Point"
+        },
+        "id": "1000000000000129"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:560:0:11","location": "(593684.6691217712, 5338958.455465573)", "stop_id": "at:49:560:0:11", "stop_name": "Hütteldorf", "stop_code": "", "stop_desc": "", "stop_lat": "48.1969436265156", "stop_lon": "16.2607193704604", "zone_id": "0250", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [16.2607193704604,48.1969436265156],
+"type": "Point"
+        },
+        "id": "1000000000000130"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:956:0:4","location": "(594834.2090475787, 5338451.48609696)", "stop_id": "at:49:956:0:4", "stop_name": "Ober St. Veit", "stop_code": "", "stop_desc": "", "stop_lat": "48.1922129511139", "stop_lon": "16.2760715786681", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.460829493088, "CatClossnes": 2},
+"geometry": {
+"coordinates": [16.2760715786681,48.1922129511139],
+"type": "Point"
+        },
+        "id": "1000000000000131"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1404:0:2","location": "(595591.404921452, 5338335.6107726395)", "stop_id": "at:49:1404:0:2", "stop_name": "Unter St. Veit", "stop_code": "", "stop_desc": "", "stop_lat": "48.1910571627619", "stop_lon": "16.286231524533", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.614439324117, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.286231524533,48.1910571627619],
+"type": "Point"
+        },
+        "id": "1000000000000132"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:161:0:3","location": "(596306.9391739913, 5338157.873936012)", "stop_id": "at:49:161:0:3", "stop_name": "Braunschweiggasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1893503809965", "stop_lon": "16.2958165486158", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.691244239631, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.2958165486158,48.1893503809965],
+"type": "Point"
+        },
+        "id": "1000000000000133"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:520:0:4","location": "(596978.69288169, 5337965.492821236)", "stop_id": "at:49:520:0:4", "stop_name": "Hietzing", "stop_code": "", "stop_desc": "", "stop_lat": "48.1875177730813", "stop_lon": "16.3048086846111", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.737327188940, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3048086846111,48.1875177730813],
+"type": "Point"
+        },
+        "id": "1000000000000134"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1211:0:3","location": "(598027.0794774063, 5337817.587134865)", "stop_id": "at:49:1211:0:3", "stop_name": "Schönbrunn", "stop_code": "", "stop_desc": "", "stop_lat": "48.1860264849486", "stop_lon": "16.3188763019624", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.768049155146, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3188763019624,48.1860264849486],
+"type": "Point"
+        },
+        "id": "1000000000000135"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:863:0:7","location": "(598698.7170596543, 5337560.797523042)", "stop_id": "at:49:863:0:7", "stop_name": "Meidling Hauptstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1836127820882", "stop_lon": "16.327850471652", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.789993416722, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.327850471652,48.1836127820882],
+"type": "Point"
+        },
+        "id": "1000000000000136"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:820:0:8","location": "(599229.8635812628, 5337705.1757044615)", "stop_id": "at:49:820:0:8", "stop_name": "Längenfeldgasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1848286317313", "stop_lon": "16.3350280107731", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.806451612903, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3350280107731,48.1848286317313],
+"type": "Point"
+        },
+        "id": "1000000000000137"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:827:0:7","location": "(599819.7140273928, 5338119.635104774)", "stop_id": "at:49:827:0:7", "stop_name": "Margaretengürtel", "stop_code": "", "stop_desc": "", "stop_lat": "48.1884640297954", "stop_lon": "16.3430589494143", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.819252432156, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3430589494143,48.1884640297954],
+"type": "Point"
+        },
+        "id": "1000000000000138"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1018:0:6","location": "(600651.0539394729, 5338543.706630121)", "stop_id": "at:49:1018:0:6", "stop_name": "Pilgramgasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1921470778669", "stop_lon": "16.3543417893844", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.829493087558, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3543417893844,48.1921470778669],
+"type": "Point"
+        },
+        "id": "1000000000000139"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:670:0:4","location": "(600921.3439895492, 5339044.479092634)", "stop_id": "at:49:670:0:4", "stop_name": "Kettenbrückengasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1966083018829", "stop_lon": "16.3580967472725", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.837871805614, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3580967472725,48.1966083018829],
+"type": "Point"
+        },
+        "id": "1000000000000140"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:657:0:14","location": "(601771.0532863991, 5339474.971987828)", "stop_id": "at:49:657:0:14", "stop_name": "Karlsplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2003446523406", "stop_lon": "16.3696311155222", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.844854070661, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3696311155222,48.2003446523406],
+"type": "Point"
+        },
+        "id": "1000000000000141"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1305:0:3","location": "(602517.728059859, 5339761.92758875)", "stop_id": "at:49:1305:0:3", "stop_name": "Stadtpark", "stop_code": "", "stop_desc": "", "stop_lat": "48.2028054650923", "stop_lon": "16.3797461456228", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.850762141085, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3797461456228,48.2028054650923],
+"type": "Point"
+        },
+        "id": "1000000000000142"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:743:0:13","location": "(602892.6651353625, 5340222.6444882555)", "stop_id": "at:49:743:0:13", "stop_name": "Landstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2068885967111", "stop_lon": "16.3849024753544", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.855826201448, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3849024753544,48.2068885967111],
+"type": "Point"
+        },
+        "id": "1000000000000143"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1198:0:20","location": "(602380.1729012455, 5340767.864924609)", "stop_id": "at:49:1198:0:20", "stop_name": "Schwedenplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2118753232267", "stop_lon": "16.378138161264", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.860215053763, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.378138161264,48.2118753232267],
+"type": "Point"
+        },
+        "id": "1000000000000144"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1182:0:18","location": "(601916.2731430302, 5341288.653667779)", "stop_id": "at:49:1182:0:18", "stop_name": "Schottenring", "stop_code": "", "stop_desc": "", "stop_lat": "48.2166341111616", "stop_lon": "16.3720206341783", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.864055299539, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3720206341783,48.2166341111616],
+"type": "Point"
+        },
+        "id": "1000000000000145"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1124:0:2","location": "(601577.987976497, 5341918.796903301)", "stop_id": "at:49:1124:0:2", "stop_name": "Roßauer Lände", "stop_code": "", "stop_desc": "", "stop_lat": "48.2223560427773", "stop_lon": "16.3676188892855", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.867443751694, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3676188892855,48.2223560427773],
+"type": "Point"
+        },
+        "id": "1000000000000146"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:357:0:3","location": "(601325.5047357348, 5342493.856348776)", "stop_id": "at:49:357:0:3", "stop_name": "Friedensbrücke", "stop_code": "", "stop_desc": "", "stop_lat": "48.2275686684693", "stop_lon": "16.3643580048037", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.870455709165, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3643580048037,48.2275686684693],
+"type": "Point"
+        },
+        "id": "1000000000000147"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1062:0:11","location": "(600883.5336430934, 5343297.025155864)", "stop_id": "at:49:1062:0:11", "stop_name": "Spittelau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2348630592026", "stop_lon": "16.3585998038317", "zone_id": "0230", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.873150618482, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3585998038317,48.2348630592026],
+"type": "Point"
+        },
+        "id": "1000000000000148"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:491:0:5","location": "(601413.5297339781, 5344860.918800518)", "stop_id": "at:49:491:0:5", "stop_name": "Heiligenstadt", "stop_code": "", "stop_desc": "", "stop_lat": "48.2488445579099", "stop_lon": "16.366109719608", "zone_id": "0230", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.875576036866, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.366109719608,48.2488445579099],
+"type": "Point"
+        },
+        "id": "1000000000000149"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:491:0:8","location": "(601404.1228299267, 5344864.741902034)", "stop_id": "at:49:491:0:8", "stop_name": "Heiligenstadt", "stop_code": "", "stop_desc": "", "stop_lat": "48.2488804490089", "stop_lon": "16.3659839554682", "zone_id": "0230", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [16.3659839554682,48.2488804490089],
+"type": "Point"
+        },
+        "id": "1000000000000150"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1062:0:4","location": "(600876.8750594336, 5343296.242117076)", "stop_id": "at:49:1062:0:4", "stop_name": "Spittelau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2348570757151", "stop_lon": "16.3585099723033", "zone_id": "0230", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.460829493088, "CatClossnes": 2},
+"geometry": {
+"coordinates": [16.3585099723033,48.2348570757151],
+"type": "Point"
+        },
+        "id": "1000000000000151"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:357:0:1","location": "(601320.2503987955, 5342489.105569014)", "stop_id": "at:49:357:0:1", "stop_name": "Friedensbrücke", "stop_code": "", "stop_desc": "", "stop_lat": "48.2275267780711", "stop_lon": "16.364286139581", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.614439324117, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.364286139581,48.2275267780711],
+"type": "Point"
+        },
+        "id": "1000000000000152"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1124:0:1","location": "(601571.3396903682, 5341917.347707015)", "stop_id": "at:49:1124:0:1", "stop_name": "Roßauer Lände", "stop_code": "", "stop_desc": "", "stop_lat": "48.2223440728766", "stop_lon": "16.3675290577571", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.691244239631, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.3675290577571,48.2223440728766],
+"type": "Point"
+        },
+        "id": "1000000000000153"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1182:0:6","location": "(601909.6954756718, 5341283.212252671)", "stop_id": "at:49:1182:0:6", "stop_name": "Schottenring", "stop_code": "", "stop_desc": "", "stop_lat": "48.2165862261903", "stop_lon": "16.3719308026499", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.737327188940, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3719308026499,48.2165862261903],
+"type": "Point"
+        },
+        "id": "1000000000000154"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1198:0:9","location": "(602378.2663782968, 5340762.506276489)", "stop_id": "at:49:1198:0:9", "stop_name": "Schwedenplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2118274338048", "stop_lon": "16.3781112118055", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.768049155146, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3781112118055,48.2118274338048],
+"type": "Point"
+        },
+        "id": "1000000000000155"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:743:0:3","location": "(602885.2757905216, 5340225.173791632)", "stop_id": "at:49:743:0:3", "stop_name": "Landstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2069125437369", "stop_lon": "16.3848036606731", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.789993416722, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3848036606731,48.2069125437369],
+"type": "Point"
+        },
+        "id": "1000000000000156"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1305:0:1","location": "(602509.5752716437, 5339769.769274024)", "stop_id": "at:49:1305:0:1", "stop_name": "Stadtpark", "stop_code": "", "stop_desc": "", "stop_lat": "48.2028773118637", "stop_lon": "16.3796383477887", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.806451612903, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3796383477887,48.2028773118637],
+"type": "Point"
+        },
+        "id": "1000000000000157"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:657:0:9","location": "(601772.960841515, 5339480.331601975)", "stop_id": "at:49:657:0:9", "stop_name": "Karlsplatz", "stop_code": "", "stop_desc": "", "stop_lat": "48.2003925525003", "stop_lon": "16.3696580649807", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.819252432156, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3696580649807,48.2003925525003],
+"type": "Point"
+        },
+        "id": "1000000000000158"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:670:0:1","location": "(600919.9030705449, 5339050.445347591)", "stop_id": "at:49:670:0:1", "stop_name": "Kettenbrückengasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1966621934897", "stop_lon": "16.3580787809668", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.829493087558, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3580787809668,48.1966621934897],
+"type": "Point"
+        },
+        "id": "1000000000000159"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1018:0:3","location": "(600645.0221703578, 5338544.93194508)", "stop_id": "at:49:1018:0:3", "stop_name": "Pilgramgasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1921590548272", "stop_lon": "16.3542609410088", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.837871805614, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3542609410088,48.1921590548272],
+"type": "Point"
+        },
+        "id": "1000000000000160"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:827:0:2","location": "(599819.6326042035, 5338124.294614076)", "stop_id": "at:49:827:0:2", "stop_name": "Margaretengürtel", "stop_code": "", "stop_desc": "", "stop_lat": "48.1885059521571", "stop_lon": "16.3430589494143", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.844854070661, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3430589494143,48.1885059521571],
+"type": "Point"
+        },
+        "id": "1000000000000161"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:820:0:4","location": "(599222.4149823431, 5337711.039361525)", "stop_id": "at:49:820:0:4", "stop_name": "Längenfeldgasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1848825357277", "stop_lon": "16.3349291960919", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.850762141085, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3349291960919,48.1848825357277],
+"type": "Point"
+        },
+        "id": "1000000000000162"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:863:0:2","location": "(598698.5560549638, 5337570.117418817)", "stop_id": "at:49:863:0:2", "stop_name": "Meidling Hauptstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1836966347136", "stop_lon": "16.327850471652", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.855826201448, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.327850471652,48.1836966347136],
+"type": "Point"
+        },
+        "id": "1000000000000163"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1211:0:1","location": "(598029.6016641362, 5337826.2867511045)", "stop_id": "at:49:1211:0:1", "stop_name": "Schönbrunn", "stop_code": "", "stop_desc": "", "stop_lat": "48.1861043444387", "stop_lon": "16.3189122345738", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.860215053763, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3189122345738,48.1861043444387],
+"type": "Point"
+        },
+        "id": "1000000000000164"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:520:0:10","location": "(596979.2588278424, 5337971.495072482)", "stop_id": "at:49:520:0:10", "stop_name": "Hietzing", "stop_code": "", "stop_desc": "", "stop_lat": "48.1875716742494", "stop_lon": "16.304817667764", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.864055299539, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.304817667764,48.1875716742494],
+"type": "Point"
+        },
+        "id": "1000000000000165"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:161:0:1","location": "(596309.4525666276, 5338167.237835863)", "stop_id": "at:49:161:0:1", "stop_name": "Braunschweiggasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1894342242354", "stop_lon": "16.2958524812272", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.867443751694, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.2958524812272,48.1894342242354],
+"type": "Point"
+        },
+        "id": "1000000000000166"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1404:0:1","location": "(595591.9834114435, 5338340.946844849)", "stop_id": "at:49:1404:0:1", "stop_name": "Unter St. Veit", "stop_code": "", "stop_desc": "", "stop_lat": "48.1911050716052", "stop_lon": "16.2862405076858", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.870455709165, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.2862405076858,48.1911050716052],
+"type": "Point"
+        },
+        "id": "1000000000000167"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:956:0:1","location": "(594834.7550729127, 5338458.8187562935)", "stop_id": "at:49:956:0:1", "stop_name": "Ober St. Veit", "stop_code": "", "stop_desc": "", "stop_lat": "48.1922788242762", "stop_lon": "16.276080561821", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.873150618482, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.276080561821,48.1922788242762],
+"type": "Point"
+        },
+        "id": "1000000000000168"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:560:0:17","location": "(593689.1234606461, 5338971.84286123)", "stop_id": "at:49:560:0:17", "stop_name": "Hütteldorf", "stop_code": "", "stop_desc": "", "stop_lat": "48.1970633847811", "stop_lon": "16.2607822525303", "zone_id": "0250", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.875576036866, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.2607822525303,48.1970633847811],
+"type": "Point"
+        },
+        "id": "1000000000000169"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1235:0:6","location": "(597459.2496792568, 5331591.945135295)", "stop_id": "at:49:1235:0:6", "stop_name": "Siebenhirten", "stop_code": "", "stop_desc": "", "stop_lat": "48.1301168219423", "stop_lon": "16.3098123007444", "zone_id": "0270", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [16.3098123007444,48.1301168219423],
+"type": "Point"
+        },
+        "id": "1000000000000170"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1007:0:4","location": "(597707.5014005237, 5332324.048278981)", "stop_id": "at:49:1007:0:4", "stop_name": "Perfektastraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1366637379535", "stop_lon": "16.3133157303529", "zone_id": "0270", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013824884793, "CatCenDeg": 5, "Clossnes": 0.460829493088, "CatClossnes": 2},
+"geometry": {
+"coordinates": [16.3133157303529,48.1366637379535],
+"type": "Point"
+        },
+        "id": "1000000000000171"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:285:0:2","location": "(597940.7377067023, 5332953.185098511)", "stop_id": "at:49:285:0:2", "stop_name": "Erlaaer Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.14228670449", "stop_lon": "16.3165945811404", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.614439324117, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.3165945811404,48.14228670449],
+"type": "Point"
+        },
+        "id": "1000000000000172"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1499:0:6","location": "(597950.092056396, 5333890.276586983)", "stop_id": "at:49:1499:0:6", "stop_name": "Alterlaa", "stop_code": "", "stop_desc": "", "stop_lat": "48.1507140062115", "stop_lon": "16.3169359409484", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013824884793, "CatCenDeg": 5, "Clossnes": 1.036866359447, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3169359409484,48.1507140062115],
+"type": "Point"
+        },
+        "id": "1000000000000173"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:48:0:5","location": "(598493.5694154028, 5335046.912659691)", "stop_id": "at:49:48:0:5", "stop_name": "Am Schöpfwerk", "stop_code": "", "stop_desc": "", "stop_lat": "48.1610334678531", "stop_lon": "16.3245087387946", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.921658986175, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3245087387946,48.1610334678531],
+"type": "Point"
+        },
+        "id": "1000000000000174"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1394:0:1","location": "(598715.619924502, 5335460.438309262)", "stop_id": "at:49:1394:0:1", "stop_name": "Tscherttegasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1647184868733", "stop_lon": "16.3275899602196", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.886210563630, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3275899602196,48.1647184868733],
+"type": "Point"
+        },
+        "id": "1000000000000175"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1015:0:11","location": "(598984.5493082108, 5336444.245703541)", "stop_id": "at:49:1015:0:11", "stop_name": "Meidling", "stop_code": "", "stop_desc": "", "stop_lat": "48.173525508511", "stop_lon": "16.3314347496361", "zone_id": "0270", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.873150618482, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3314347496361,48.173525508511],
+"type": "Point"
+        },
+        "id": "1000000000000176"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:937:0:4","location": "(598951.8186036978, 5337254.18859155)", "stop_id": "at:49:937:0:4", "stop_name": "Niederhofstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1808156194766", "stop_lon": "16.3311832213566", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.868486352357, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3311832213566,48.1808156194766],
+"type": "Point"
+        },
+        "id": "1000000000000177"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:820:0:7","location": "(599236.6213825342, 5337700.63183699)", "stop_id": "at:49:820:0:7", "stop_name": "Längenfeldgasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1847867063617", "stop_lon": "16.3351178423015", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.867443751694, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3351178423015,48.1847867063617],
+"type": "Point"
+        },
+        "id": "1000000000000178"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:436:0:8","location": "(599409.213960824, 5338375.479769036)", "stop_id": "at:49:436:0:8", "stop_name": "Gumpendorfer Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1908295951442", "stop_lon": "16.3375971924861", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.868074161397, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3375971924861,48.1908295951442],
+"type": "Point"
+        },
+        "id": "1000000000000179"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1468:0:23","location": "(599516.2063976505, 5339057.101018512)", "stop_id": "at:49:1468:0:23", "stop_name": "Westbahnhof", "stop_code": "", "stop_desc": "", "stop_lat": "48.1969436265156", "stop_lon": "16.339196193692", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.869489609599, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.339196193692,48.1969436265156],
+"type": "Point"
+        },
+        "id": "1000000000000180"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:188:0:1","location": "(599361.0791999218, 5339760.037604116)", "stop_id": "at:49:188:0:1", "stop_name": "Burggasse-Stadthalle", "stop_code": "", "stop_desc": "", "stop_lat": "48.2032904288433", "stop_lon": "16.3372737989837", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.871255760369, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3372737989837,48.2032904288433],
+"type": "Point"
+        },
+        "id": "1000000000000181"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1372:0:9","location": "(599402.6792277738, 5340246.669619912)", "stop_id": "at:49:1372:0:9", "stop_name": "Thaliastraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2076608826539", "stop_lon": "16.3379475354469", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.873150618482, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3379475354469,48.2076608826539],
+"type": "Point"
+        },
+        "id": "1000000000000182"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:615:0:7","location": "(599491.6452042501, 5340696.150472807)", "stop_id": "at:49:615:0:7", "stop_name": "Josefstädter Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2116897514673", "stop_lon": "16.3392500926091", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.875058250919, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3392500926091,48.2116897514673],
+"type": "Point"
+        },
+        "id": "1000000000000183"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:27:0:5","location": "(599678.5853998758, 5341267.76226586)", "stop_id": "at:49:27:0:5", "stop_name": "Alser Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2168017082083", "stop_lon": "16.3419001226976", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.876918258691, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3419001226976,48.2168017082083],
+"type": "Point"
+        },
+        "id": "1000000000000184"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:874:0:6","location": "(599851.3632371556, 5341769.208046625)", "stop_id": "at:49:874:0:6", "stop_name": "Michelbeuern-AKH", "stop_code": "", "stop_desc": "", "stop_lat": "48.2212847255835", "stop_lon": "16.3443435402707", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.878700304616, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3443435402707,48.2212847255835],
+"type": "Point"
+        },
+        "id": "1000000000000185"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1510:0:10","location": "(600230.4585463771, 5342262.926664957)", "stop_id": "at:49:1510:0:10", "stop_name": "Währinger Str.-Volksoper", "stop_code": "", "stop_desc": "", "stop_lat": "48.2256656129244", "stop_lon": "16.3495627520722", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.880390673361, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3495627520722,48.2256656129244],
+"type": "Point"
+        },
+        "id": "1000000000000186"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:950:0:13","location": "(600428.2931696493, 5342890.490113537)", "stop_id": "at:49:950:0:13", "stop_name": "Nußdorfer Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2312788248639", "stop_lon": "16.3523744789119", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.881984923856, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3523744789119,48.2312788248639],
+"type": "Point"
+        },
+        "id": "1000000000000187"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1062:0:10","location": "(600844.7920064769, 5343374.839416097)", "stop_id": "at:49:1062:0:10", "stop_name": "Spittelau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2355691058155", "stop_lon": "16.3580967472725", "zone_id": "0230", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.883483761896, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3580967472725,48.2355691058155],
+"type": "Point"
+        },
+        "id": "1000000000000188"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1667:0:7","location": "(601632.6405046746, 5343346.249621334)", "stop_id": "at:49:1667:0:7", "stop_name": "Jägerstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2351861664889", "stop_lon": "16.3686968676266", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.884890675556, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3686968676266,48.2351861664889],
+"type": "Point"
+        },
+        "id": "1000000000000189"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:500:0:5","location": "(602474.3833670066, 5343586.830120897)", "stop_id": "at:49:500:0:5", "stop_name": "Dresdner Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2372145156188", "stop_lon": "16.3800875054308", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.886210563630, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3800875054308,48.2372145156188],
+"type": "Point"
+        },
+        "id": "1000000000000190"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1705:0:7","location": "(602882.0092495328, 5344107.040442872)", "stop_id": "at:49:1705:0:7", "stop_name": "Handelskai", "stop_code": "", "stop_desc": "", "stop_lat": "48.2418273642258", "stop_lon": "16.3857019759574", "zone_id": "0230", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.887448936470, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3857019759574,48.2418273642258],
+"type": "Point"
+        },
+        "id": "1000000000000191"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1668:0:3","location": "(603549.7291425891, 5344627.299301626)", "stop_id": "at:49:1668:0:3", "stop_name": "Neue Donau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2463979219467", "stop_lon": "16.3948198760924", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.888611452806, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3948198760924,48.2463979219467],
+"type": "Point"
+        },
+        "id": "1000000000000192"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:334:0:15","location": "(603952.6817289941, 5345723.326911192)", "stop_id": "at:49:334:0:15", "stop_name": "Floridsdorf", "stop_code": "", "stop_desc": "", "stop_lat": "48.256189744527", "stop_lon": "16.4005151949946", "zone_id": "0220", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.889703656362, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.4005151949946,48.256189744527],
+"type": "Point"
+        },
+        "id": "1000000000000193"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:334:0:2","location": "(603944.6200285414, 5345726.504812357)", "stop_id": "at:49:334:0:2", "stop_name": "Floridsdorf", "stop_code": "", "stop_desc": "", "stop_lat": "48.2562196494819", "stop_lon": "16.4004073971604", "zone_id": "0220", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [16.4004073971604,48.2562196494819],
+"type": "Point"
+        },
+        "id": "1000000000000194"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1668:0:1","location": "(603547.6922595128, 5344629.257649518)", "stop_id": "at:49:1668:0:1", "stop_name": "Neue Donau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2464158683579", "stop_lon": "16.3947929266339", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.460829493088, "CatClossnes": 2},
+"geometry": {
+"coordinates": [16.3947929266339,48.2464158683579],
+"type": "Point"
+        },
+        "id": "1000000000000195"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1705:0:1","location": "(602877.8876052045, 5344113.617787832)", "stop_id": "at:49:1705:0:1", "stop_name": "Handelskai", "stop_code": "", "stop_desc": "", "stop_lat": "48.2418871909176", "stop_lon": "16.3856480770403", "zone_id": "0230", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.614439324117, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.3856480770403,48.2418871909176],
+"type": "Point"
+        },
+        "id": "1000000000000196"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:500:0:1","location": "(602470.9766489874, 5343590.760280831)", "stop_id": "at:49:500:0:1", "stop_name": "Dresdner Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2372504148791", "stop_lon": "16.3800425896666", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.691244239631, "CatClossnes": 3},
+"geometry": {
+"coordinates": [16.3800425896666,48.2372504148791],
+"type": "Point"
+        },
+        "id": "1000000000000197"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1667:0:2","location": "(601632.5101336422, 5343353.565075757)", "stop_id": "at:49:1667:0:2", "stop_name": "Jägerstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2352519843896", "stop_lon": "16.3686968676266", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.737327188940, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3686968676266,48.2352519843896],
+"type": "Point"
+        },
+        "id": "1000000000000198"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1062:0:2","location": "(600842.6027722923, 5343385.444614899)", "stop_id": "at:49:1062:0:2", "stop_name": "Spittelau", "stop_code": "", "stop_desc": "", "stop_lat": "48.2356648401993", "stop_lon": "16.358069797814", "zone_id": "0230", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.768049155146, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.358069797814,48.2356648401993],
+"type": "Point"
+        },
+        "id": "1000000000000199"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:950:0:2","location": "(600426.1865308323, 5342896.440706954)", "stop_id": "at:49:950:0:2", "stop_name": "Nußdorfer Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2313326799922", "stop_lon": "16.3523475294534", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.789993416722, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3523475294534,48.2313326799922],
+"type": "Point"
+        },
+        "id": "1000000000000200"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1510:0:3","location": "(600225.0979375497, 5342264.163224921)", "stop_id": "at:49:1510:0:3", "stop_name": "Währinger Str.-Volksoper", "stop_code": "", "stop_desc": "", "stop_lat": "48.2256775820483", "stop_lon": "16.3494908868495", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.806451612903, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3494908868495,48.2256775820483],
+"type": "Point"
+        },
+        "id": "1000000000000201"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:874:0:2","location": "(599847.3017612272, 5341772.464096758)", "stop_id": "at:49:874:0:2", "stop_name": "Michelbeuern-AKH", "stop_code": "", "stop_desc": "", "stop_lat": "48.2213146509491", "stop_lon": "16.3442896413537", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.819252432156, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3442896413537,48.2213146509491],
+"type": "Point"
+        },
+        "id": "1000000000000202"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:27:0:2","location": "(599667.8393622694, 5341271.567465178)", "stop_id": "at:49:27:0:2", "stop_name": "Alser Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2168376217898", "stop_lon": "16.3417563922521", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.829493087558, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.3417563922521,48.2168376217898],
+"type": "Point"
+        },
+        "id": "1000000000000203"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:615:0:1","location": "(599483.6371647613, 5340696.010887384)", "stop_id": "at:49:615:0:1", "stop_name": "Josefstädter Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2116897514673", "stop_lon": "16.339142294775", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.837871805614, "CatClossnes": 4},
+"geometry": {
+"coordinates": [16.339142294775,48.2116897514673],
+"type": "Point"
+        },
+        "id": "1000000000000204"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1372:0:2","location": "(599397.3053570613, 5340248.572842504)", "stop_id": "at:49:1372:0:2", "stop_name": "Thaliastraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.2076788426536", "stop_lon": "16.3378756702242", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.844854070661, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3378756702242,48.2076788426536],
+"type": "Point"
+        },
+        "id": "1000000000000205"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:188:0:4","location": "(599351.7465378623, 5339759.209536944)", "stop_id": "at:49:188:0:4", "stop_name": "Burggasse-Stadthalle", "stop_code": "", "stop_desc": "", "stop_lat": "48.2032844416645", "stop_lon": "16.3371480348439", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.850762141085, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3371480348439,48.2032844416645],
+"type": "Point"
+        },
+        "id": "1000000000000206"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1468:0:5","location": "(599509.5659065193, 5339054.988088149)", "stop_id": "at:49:1468:0:5", "stop_name": "Westbahnhof", "stop_code": "", "stop_desc": "", "stop_lat": "48.1969256627516", "stop_lon": "16.3391063621636", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.855826201448, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3391063621636,48.1969256627516],
+"type": "Point"
+        },
+        "id": "1000000000000207"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:436:0:1","location": "(599404.5407062208, 5338375.398436807)", "stop_id": "at:49:436:0:1", "stop_name": "Gumpendorfer Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1908295951442", "stop_lon": "16.3375343104162", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.860215053763, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3375343104162,48.1908295951442],
+"type": "Point"
+        },
+        "id": "1000000000000208"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:820:0:1","location": "(599217.671819846, 5337714.952333257)", "stop_id": "at:49:820:0:1", "stop_name": "Längenfeldgasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1849184716937", "stop_lon": "16.334866314022", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.864055299539, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.334866314022,48.1849184716937],
+"type": "Point"
+        },
+        "id": "1000000000000209"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:937:0:1","location": "(598947.8121750044, 5337254.119209697)", "stop_id": "at:49:937:0:1", "stop_name": "Niederhofstraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1808156194766", "stop_lon": "16.3311293224395", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.867443751694, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3311293224395,48.1808156194766],
+"type": "Point"
+        },
+        "id": "1000000000000210"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1015:0:4","location": "(598978.561875047, 5336442.809934749)", "stop_id": "at:49:1015:0:4", "stop_name": "Meidling", "stop_code": "", "stop_desc": "", "stop_lat": "48.1735135271961", "stop_lon": "16.3313539012606", "zone_id": "0270", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.870455709165, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3313539012606,48.1735135271961],
+"type": "Point"
+        },
+        "id": "1000000000000211"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1394:0:2","location": "(598707.512572712, 5335465.627517333)", "stop_id": "at:49:1394:0:2", "stop_name": "Tscherttegasse", "stop_code": "", "stop_desc": "", "stop_lat": "48.1647664203358", "stop_lon": "16.3274821623855", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.873150618482, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3274821623855,48.1647664203358],
+"type": "Point"
+        },
+        "id": "1000000000000212"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:48:0:2","location": "(598487.5115710769, 5335049.473094228)", "stop_id": "at:49:48:0:2", "stop_name": "Am Schöpfwerk", "stop_code": "", "stop_desc": "", "stop_lat": "48.1610574363117", "stop_lon": "16.324427890419", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.875576036866, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.324427890419,48.1610574363117],
+"type": "Point"
+        },
+        "id": "1000000000000213"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1499:0:1","location": "(597940.7268365496, 5333890.782546355)", "stop_id": "at:49:1499:0:1", "stop_name": "Alterlaa", "stop_code": "", "stop_desc": "", "stop_lat": "48.1507199995326", "stop_lon": "16.3168101768086", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013824884793, "CatCenDeg": 5, "Clossnes": 0.877770463024, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3168101768086,48.1507199995326],
+"type": "Point"
+        },
+        "id": "1000000000000214"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:285:0:1","location": "(597933.3642702765, 5332954.391755779)", "stop_id": "at:49:285:0:1", "stop_name": "Erlaaer Straße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1422986930997", "stop_lon": "16.3164957664592", "zone_id": "0100", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.009216589862, "CatCenDeg": 2, "Clossnes": 0.879765395894, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3164957664592,48.1422986930997],
+"type": "Point"
+        },
+        "id": "1000000000000215"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1007:0:1","location": "(597702.7890882342, 5332325.967343233)", "stop_id": "at:49:1007:0:1", "stop_name": "Perfektastraße", "stop_code": "", "stop_desc": "", "stop_lat": "48.1366817228368", "stop_lon": "16.313252848283", "zone_id": "0270", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.013824884793, "CatCenDeg": 5, "Clossnes": 0.961385666614, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.313252848283,48.1366817228368],
+"type": "Point"
+        },
+        "id": "1000000000000216"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"at:49:1235:0:1","location": "(597450.5264796512, 5331593.796386172)", "stop_id": "at:49:1235:0:1", "stop_name": "Siebenhirten", "stop_code": "", "stop_desc": "", "stop_lat": "48.1301348091188", "stop_lon": "16.3096955197574", "zone_id": "0270", "stop_url": "", "location_type": "", "parent_station": "", "stop_timezone": "", "wheelchair_boarding": "", "level_id": "", "platform_code": "", "CenDeg": 0.004608294931, "CatCenDeg": 1, "Clossnes": 0.955995301346, "CatClossnes": 5},
+"geometry": {
+"coordinates": [16.3096955197574,48.1301348091188],
+"type": "Point"
+        },
+        "id": "1000000000000217"
+
+}
+
+ ],
+"type": "FeatureCollection"
+}

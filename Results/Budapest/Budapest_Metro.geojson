@@ -1,0 +1,876 @@
+{
+        "features": [
+{
+"type": "Feature",
+"properties": {"StopCode":"F00965","location": "(353176.8072366083, 5262208.8573159585)", "stop_id": "F00965", "stop_name": "Vörösmarty tér", "stop_code": "F00965", "stop_desc": "", "stop_lat": "47.496737", "stop_lon": "19.050593", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM1VTV", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [19.050593,47.496737],
+"type": "Point"
+        },
+        "id": "1000000000000000"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00963","location": "(353446.85640028585, 5262312.286620627)", "stop_id": "F00963", "stop_name": "Deák Ferenc tér", "stop_code": "F00963", "stop_desc": "", "stop_lat": "47.497728", "stop_lon": "19.054142", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00960", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.162790697674, "CatClossnes": 2},
+"geometry": {
+"coordinates": [19.054142,47.497728],
+"type": "Point"
+        },
+        "id": "1000000000000001"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00997","location": "(353566.94915950316, 5262554.921032925)", "stop_id": "F00997", "stop_name": "Bajcsy-Zsilinszky út", "stop_code": "F00997", "stop_desc": "", "stop_lat": "47.499937", "stop_lon": "19.055655", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00997", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.550387596899, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.055655,47.499937],
+"type": "Point"
+        },
+        "id": "1000000000000002"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01080","location": "(353837.5601825968, 5262811.475734179)", "stop_id": "F01080", "stop_name": "Opera", "stop_code": "F01080", "stop_desc": "", "stop_lat": "47.502305", "stop_lon": "19.059161", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM1OPV", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.744186046512, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.059161,47.502305],
+"type": "Point"
+        },
+        "id": "1000000000000003"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01086","location": "(354151.7390647279, 5263105.875447133)", "stop_id": "F01086", "stop_name": "Oktogon", "stop_code": "F01086", "stop_desc": "", "stop_lat": "47.505023", "stop_lon": "19.063233", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM1OKV", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.860465116279, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.063233,47.505023],
+"type": "Point"
+        },
+        "id": "1000000000000004"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01093","location": "(354406.0634469858, 5263345.846915142)", "stop_id": "F01093", "stop_name": "Vörösmarty utca", "stop_code": "F01093", "stop_desc": "", "stop_lat": "47.507238", "stop_lon": "19.066529", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01093", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.937984496124, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.066529,47.507238],
+"type": "Point"
+        },
+        "id": "1000000000000005"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01096","location": "(354638.6786329892, 5263565.01779759)", "stop_id": "F01096", "stop_name": "Kodály körönd", "stop_code": "F01096", "stop_desc": "", "stop_lat": "47.509261", "stop_lon": "19.069544", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01096", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.993355481728, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.069544,47.509261],
+"type": "Point"
+        },
+        "id": "1000000000000006"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01101","location": "(354879.1917583768, 5263790.45078105)", "stop_id": "F01101", "stop_name": "Bajza utca", "stop_code": "F01101", "stop_desc": "", "stop_lat": "47.511342", "stop_lon": "19.072662", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01101", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.034883720930, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.072662,47.511342],
+"type": "Point"
+        },
+        "id": "1000000000000007"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01103","location": "(355204.6224714953, 5264090.183425602)", "stop_id": "F01103", "stop_name": "Hősök tere", "stop_code": "F01103", "stop_desc": "", "stop_lat": "47.514110", "stop_lon": "19.076883", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM1HTV", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.067183462532, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.076883,47.51411],
+"type": "Point"
+        },
+        "id": "1000000000000008"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02697","location": "(355559.8550888511, 5264448.020730062)", "stop_id": "F02697", "stop_name": "Széchenyi fürdő", "stop_code": "F02697", "stop_desc": "", "stop_lat": "47.517407", "stop_lon": "19.081481", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM1SFV", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.093023255814, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.081481,47.517407],
+"type": "Point"
+        },
+        "id": "1000000000000009"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02888","location": "(356285.0304669647, 5264664.334938233)", "stop_id": "F02888", "stop_name": "Mexikói út", "stop_code": "F02888", "stop_desc": "", "stop_lat": "47.519513", "stop_lon": "19.091037", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM1MUV", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 2.114164904863, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.091037,47.519513],
+"type": "Point"
+        },
+        "id": "1000000000000010"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02887","location": "(356250.31552715995, 5264673.973043263)", "stop_id": "F02887", "stop_name": "Mexikói út", "stop_code": "F02887", "stop_desc": "", "stop_lat": "47.519592", "stop_lon": "19.090573", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM1MUV", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [19.090573,47.519592],
+"type": "Point"
+        },
+        "id": "1000000000000011"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02696","location": "(355522.4147172422, 5264460.176847593)", "stop_id": "F02696", "stop_name": "Széchenyi fürdő", "stop_code": "F02696", "stop_desc": "", "stop_lat": "47.517508", "stop_lon": "19.080980", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM1SFV", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.162790697674, "CatClossnes": 2},
+"geometry": {
+"coordinates": [19.08098,47.517508],
+"type": "Point"
+        },
+        "id": "1000000000000012"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01102","location": "(355171.04251715966, 5264084.899057171)", "stop_id": "F01102", "stop_name": "Hősök tere", "stop_code": "F01102", "stop_desc": "", "stop_lat": "47.514055", "stop_lon": "19.076439", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM1HTV", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.550387596899, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.076439,47.514055],
+"type": "Point"
+        },
+        "id": "1000000000000013"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01100","location": "(354849.46237493365, 5263779.512650546)", "stop_id": "F01100", "stop_name": "Bajza utca", "stop_code": "F01100", "stop_desc": "", "stop_lat": "47.511237", "stop_lon": "19.072271", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01101", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.744186046512, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.072271,47.511237],
+"type": "Point"
+        },
+        "id": "1000000000000014"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01095","location": "(354606.2141450881, 5263556.261603421)", "stop_id": "F01095", "stop_name": "Kodály körönd", "stop_code": "F01095", "stop_desc": "", "stop_lat": "47.509175", "stop_lon": "19.069116", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01096", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.860465116279, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.069116,47.509175],
+"type": "Point"
+        },
+        "id": "1000000000000015"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01092","location": "(354374.86915184144, 5263336.726718713)", "stop_id": "F01092", "stop_name": "Vörösmarty utca", "stop_code": "F01092", "stop_desc": "", "stop_lat": "47.507149", "stop_lon": "19.066118", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01093", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.937984496124, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.066118,47.507149],
+"type": "Point"
+        },
+        "id": "1000000000000016"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01085","location": "(354120.5878766518, 5263095.532258996)", "stop_id": "F01085", "stop_name": "Oktogon", "stop_code": "F01085", "stop_desc": "", "stop_lat": "47.504923", "stop_lon": "19.062823", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM1OKV", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.993355481728, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.062823,47.504923],
+"type": "Point"
+        },
+        "id": "1000000000000017"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01079","location": "(353807.13768293837, 5262800.226314331)", "stop_id": "F01079", "stop_name": "Opera", "stop_code": "F01079", "stop_desc": "", "stop_lat": "47.502197", "stop_lon": "19.058761", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM1OPV", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.034883720930, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.058761,47.502197],
+"type": "Point"
+        },
+        "id": "1000000000000018"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00996","location": "(353536.85940346005, 5262544.999011394)", "stop_id": "F00996", "stop_name": "Bajcsy-Zsilinszky út", "stop_code": "F00996", "stop_desc": "", "stop_lat": "47.499841", "stop_lon": "19.055259", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00997", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.067183462532, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.055259,47.499841],
+"type": "Point"
+        },
+        "id": "1000000000000019"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00962","location": "(353411.28641675453, 5262312.288079727)", "stop_id": "F00962", "stop_name": "Deák Ferenc tér", "stop_code": "F00962", "stop_desc": "", "stop_lat": "47.497720", "stop_lon": "19.053670", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00960", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.093023255814, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.05367,47.49772],
+"type": "Point"
+        },
+        "id": "1000000000000020"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00964","location": "(353146.49741029635, 5262202.2787310295)", "stop_id": "F00964", "stop_name": "Vörösmarty tér", "stop_code": "F00964", "stop_desc": "", "stop_lat": "47.496671", "stop_lon": "19.050193", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM1VTV", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 2.114164904863, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.050193,47.496671],
+"type": "Point"
+        },
+        "id": "1000000000000021"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00094","location": "(351229.9565213319, 5262670.928229752)", "stop_id": "F00094", "stop_name": "Déli pályaudvar", "stop_code": "F00094", "stop_desc": "", "stop_lat": "47.500450", "stop_lon": "19.024604", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00094", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [19.024604,47.50045],
+"type": "Point"
+        },
+        "id": "1000000000000022"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02481","location": "(351362.39529240236, 5263455.2075043535)", "stop_id": "F02481", "stop_name": "Széll Kálmán tér", "stop_code": "F02481", "stop_desc": "", "stop_lat": "47.507533", "stop_lon": "19.026097", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF02481", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.162790697674, "CatClossnes": 2},
+"geometry": {
+"coordinates": [19.026097,47.507533],
+"type": "Point"
+        },
+        "id": "1000000000000023"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00063","location": "(352264.4484189502, 5263353.7336024605)", "stop_id": "F00063", "stop_name": "Batthyány tér", "stop_code": "F00063", "stop_desc": "", "stop_lat": "47.506826", "stop_lon": "19.038103", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00062", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.550387596899, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.038103,47.506826],
+"type": "Point"
+        },
+        "id": "1000000000000024"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00959","location": "(352838.02056334045, 5263193.045028337)", "stop_id": "F00959", "stop_name": "Kossuth Lajos tér", "stop_code": "F00959", "stop_desc": "", "stop_lat": "47.505511", "stop_lon": "19.045769", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00958", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.744186046512, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.045769,47.505511],
+"type": "Point"
+        },
+        "id": "1000000000000025"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00961","location": "(353425.0163722757, 5262297.821667428)", "stop_id": "F00961", "stop_name": "Deák Ferenc tér", "stop_code": "F00961", "stop_desc": "", "stop_lat": "47.497593", "stop_lon": "19.053857", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00960", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.860465116279, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.053857,47.497593],
+"type": "Point"
+        },
+        "id": "1000000000000026"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01019","location": "(354065.0376560219, 5261974.022396394)", "stop_id": "F01019", "stop_name": "Astoria", "stop_code": "F01019", "stop_desc": "", "stop_lat": "47.494825", "stop_lon": "19.062457", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01019", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.937984496124, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.062457,47.494825],
+"type": "Point"
+        },
+        "id": "1000000000000027"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01292","location": "(354660.1998690012, 5262202.179785549)", "stop_id": "F01292", "stop_name": "Blaha Lujza tér", "stop_code": "F01292", "stop_desc": "", "stop_lat": "47.497010", "stop_lon": "19.070279", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM2BLA", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.993355481728, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.070279,47.49701],
+"type": "Point"
+        },
+        "id": "1000000000000028"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01336","location": "(355616.6382698632, 5262475.733692314)", "stop_id": "F01336", "stop_name": "Keleti pályaudvar", "stop_code": "F01336", "stop_desc": "", "stop_lat": "47.499683", "stop_lon": "19.082881", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLMXKPB", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.034883720930, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.082881,47.499683],
+"type": "Point"
+        },
+        "id": "1000000000000029"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01325","location": "(357387.760402462, 5262486.891117877)", "stop_id": "F01325", "stop_name": "Puskás Ferenc Stadion", "stop_code": "F01325", "stop_desc": "", "stop_lat": "47.500174", "stop_lon": "19.106381", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM2PF1", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.067183462532, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.106381,47.500174],
+"type": "Point"
+        },
+        "id": "1000000000000030"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01743","location": "(358447.57641645527, 5262575.685120372)", "stop_id": "F01743", "stop_name": "Pillangó utca", "stop_code": "F01743", "stop_desc": "", "stop_lat": "47.501204", "stop_lon": "19.120417", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM2PU2", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.093023255814, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.120417,47.501204],
+"type": "Point"
+        },
+        "id": "1000000000000031"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01749","location": "(359622.8997619367, 5262738.398876485)", "stop_id": "F01749", "stop_name": "Örs vezér tere", "stop_code": "F01749", "stop_desc": "", "stop_lat": "47.502922", "stop_lon": "19.135963", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM2OVE", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.114164904863, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.135963,47.502922],
+"type": "Point"
+        },
+        "id": "1000000000000032"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01742","location": "(358328.3283079561, 5262561.558593254)", "stop_id": "F01742", "stop_name": "Pillangó utca", "stop_code": "F01742", "stop_desc": "", "stop_lat": "47.501051", "stop_lon": "19.118839", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM2PU2", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.131782945736, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.118839,47.501051],
+"type": "Point"
+        },
+        "id": "1000000000000033"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01324","location": "(357266.316383376, 5262494.1893724855)", "stop_id": "F01324", "stop_name": "Puskás Ferenc Stadion", "stop_code": "F01324", "stop_desc": "", "stop_lat": "47.500213", "stop_lon": "19.104767", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM2PF1", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.146690518784, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.104767,47.500213],
+"type": "Point"
+        },
+        "id": "1000000000000034"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01335","location": "(355496.4779338995, 5262489.264160063)", "stop_id": "F01335", "stop_name": "Keleti pályaudvar", "stop_code": "F01335", "stop_desc": "", "stop_lat": "47.499778", "stop_lon": "19.081282", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLMXKPB", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.159468438538, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.081282,47.499778],
+"type": "Point"
+        },
+        "id": "1000000000000035"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01291","location": "(354551.3363393045, 5262164.074797024)", "stop_id": "F01291", "stop_name": "Blaha Lujza tér", "stop_code": "F01291", "stop_desc": "", "stop_lat": "47.496643", "stop_lon": "19.068847", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM2BLA", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.170542635659, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.068847,47.496643],
+"type": "Point"
+        },
+        "id": "1000000000000036"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01018","location": "(353949.61361941195, 5261951.215019161)", "stop_id": "F01018", "stop_name": "Astoria", "stop_code": "F01018", "stop_desc": "", "stop_lat": "47.494594", "stop_lon": "19.060933", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01019", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.180232558140, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.060933,47.494594],
+"type": "Point"
+        },
+        "id": "1000000000000037"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00960","location": "(353409.5179344758, 5262437.210357863)", "stop_id": "F00960", "stop_name": "Deák Ferenc tér", "stop_code": "F00960", "stop_desc": "", "stop_lat": "47.498843", "stop_lon": "19.053605", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00960", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.188782489740, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.053605,47.498843],
+"type": "Point"
+        },
+        "id": "1000000000000038"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00958","location": "(352723.86580551777, 5263228.944875959)", "stop_id": "F00958", "stop_name": "Kossuth Lajos tér", "stop_code": "F00958", "stop_desc": "", "stop_lat": "47.505808", "stop_lon": "19.044242", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00958", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.196382428941, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.044242,47.505808],
+"type": "Point"
+        },
+        "id": "1000000000000039"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00062","location": "(352163.3854468994, 5263421.451294957)", "stop_id": "F00062", "stop_name": "Batthyány tér", "stop_code": "F00062", "stop_desc": "", "stop_lat": "47.507412", "stop_lon": "19.036739", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00062", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.203182374541, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.036739,47.507412],
+"type": "Point"
+        },
+        "id": "1000000000000040"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02480","location": "(351269.86563117837, 5263378.049982407)", "stop_id": "F02480", "stop_name": "Széll Kálmán tér", "stop_code": "F02480", "stop_desc": "", "stop_lat": "47.506818", "stop_lon": "19.024895", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF02481", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.209302325581, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.024895,47.506818],
+"type": "Point"
+        },
+        "id": "1000000000000041"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00093","location": "(351239.33917932416, 5262550.924781872)", "stop_id": "F00093", "stop_name": "Déli pályaudvar", "stop_code": "F00093", "stop_desc": "", "stop_lat": "47.499373", "stop_lon": "19.024769", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00094", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 2.214839424142, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.024769,47.499373],
+"type": "Point"
+        },
+        "id": "1000000000000042"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00913","location": "(356300.80074802897, 5269214.644103995)", "stop_id": "F00913", "stop_name": "Újpest-központ", "stop_code": "F00913", "stop_desc": "", "stop_lat": "47.560437", "stop_lon": "19.089760", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00913", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [19.08976,47.560437],
+"type": "Point"
+        },
+        "id": "1000000000000043"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00898","location": "(355530.4999631216, 5269090.095947241)", "stop_id": "F00898", "stop_name": "Újpest-városkapu", "stop_code": "F00898", "stop_desc": "", "stop_lat": "47.559146", "stop_lon": "19.079567", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00897", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.162790697674, "CatClossnes": 2},
+"geometry": {
+"coordinates": [19.079567,47.559146],
+"type": "Point"
+        },
+        "id": "1000000000000044"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02685","location": "(355008.20563096815, 5267905.195310626)", "stop_id": "F02685", "stop_name": "Gyöngyösi utca", "stop_code": "F02685", "stop_desc": "", "stop_lat": "47.548374", "stop_lon": "19.073019", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF02684", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.550387596899, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.073019,47.548374],
+"type": "Point"
+        },
+        "id": "1000000000000045"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02683","location": "(354681.7263940252, 5266777.843950779)", "stop_id": "F02683", "stop_name": "Forgách utca", "stop_code": "F02683", "stop_desc": "", "stop_lat": "47.538163", "stop_lon": "19.069055", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSL008159", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.744186046512, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.069055,47.538163],
+"type": "Point"
+        },
+        "id": "1000000000000046"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02638","location": "(354470.68370198517, 5266116.785131407)", "stop_id": "F02638", "stop_name": "Göncz Árpád városközpont", "stop_code": "F02638", "stop_desc": "", "stop_lat": "47.532171", "stop_lon": "19.066471", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM3AHG", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.860465116279, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.066471,47.532171],
+"type": "Point"
+        },
+        "id": "1000000000000047"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02681","location": "(354194.40792671125, 5265254.863760194)", "stop_id": "F02681", "stop_name": "Dózsa György út", "stop_code": "F02681", "stop_desc": "", "stop_lat": "47.524358", "stop_lon": "19.063088", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF02680", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.937984496124, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.063088,47.524358],
+"type": "Point"
+        },
+        "id": "1000000000000048"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02613","location": "(354010.80535720295, 5264625.715715252)", "stop_id": "F02613", "stop_name": "Lehel tér", "stop_code": "F02613", "stop_desc": "", "stop_lat": "47.518659", "stop_lon": "19.060859", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM3LED", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.993355481728, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.060859,47.518659],
+"type": "Point"
+        },
+        "id": "1000000000000049"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02680","location": "(354246.2318896996, 5265372.77792464)", "stop_id": "F02680", "stop_name": "Dózsa György út", "stop_code": "F02680", "stop_desc": "", "stop_lat": "47.525430", "stop_lon": "19.063737", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF02680", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.034883720930, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.063737,47.52543],
+"type": "Point"
+        },
+        "id": "1000000000000050"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02637","location": "(354520.0905326669, 5266231.870290741)", "stop_id": "F02637", "stop_name": "Göncz Árpád városközpont", "stop_code": "F02637", "stop_desc": "", "stop_lat": "47.533217", "stop_lon": "19.067089", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM3AHG", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.067183462532, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.067089,47.533217],
+"type": "Point"
+        },
+        "id": "1000000000000051"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02682","location": "(354729.10759614856, 5266887.532145624)", "stop_id": "F02682", "stop_name": "Forgách utca", "stop_code": "F02682", "stop_desc": "", "stop_lat": "47.539160", "stop_lon": "19.069648", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSL008159", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.093023255814, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.069648,47.53916],
+"type": "Point"
+        },
+        "id": "1000000000000052"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F02684","location": "(355052.85255008476, 5268017.511133668)", "stop_id": "F02684", "stop_name": "Gyöngyösi utca", "stop_code": "F02684", "stop_desc": "", "stop_lat": "47.549394", "stop_lon": "19.073575", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF02684", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.114164904863, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.073575,47.549394],
+"type": "Point"
+        },
+        "id": "1000000000000053"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00897","location": "(355646.7037504155, 5269126.030384628)", "stop_id": "F00897", "stop_name": "Újpest-városkapu", "stop_code": "F00897", "stop_desc": "", "stop_lat": "47.559495", "stop_lon": "19.081099", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00897", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.131782945736, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.081099,47.559495],
+"type": "Point"
+        },
+        "id": "1000000000000054"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F00912","location": "(356417.27302701515, 5269179.197123127)", "stop_id": "F00912", "stop_name": "Újpest-központ", "stop_code": "F00912", "stop_desc": "", "stop_lat": "47.560144", "stop_lon": "19.091319", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF00913", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 2.146690518784, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.091319,47.560144],
+"type": "Point"
+        },
+        "id": "1000000000000055"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01253","location": "(356175.2239798576, 5260091.46224356)", "stop_id": "F01253", "stop_name": "Nagyvárad tér", "stop_code": "F01253", "stop_desc": "", "stop_lat": "47.478365", "stop_lon": "19.091071", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM3NTF", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.937984496124, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.091071,47.478365],
+"type": "Point"
+        },
+        "id": "1000000000000056"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01283","location": "(356889.1953261449, 5259690.115911577)", "stop_id": "F01283", "stop_name": "Népliget", "stop_code": "F01283", "stop_desc": "", "stop_lat": "47.474913", "stop_lon": "19.100672", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01282", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.993355481728, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.100672,47.474913],
+"type": "Point"
+        },
+        "id": "1000000000000057"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01494","location": "(357704.20246672654, 5259182.770705982)", "stop_id": "F01494", "stop_name": "Ecseri út", "stop_code": "F01494", "stop_desc": "", "stop_lat": "47.470529", "stop_lon": "19.111646", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01493", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.034883720930, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.111646,47.470529],
+"type": "Point"
+        },
+        "id": "1000000000000058"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01879","location": "(358239.1683430006, 5258881.800898066)", "stop_id": "F01879", "stop_name": "Pöttyös utca", "stop_code": "F01879", "stop_desc": "", "stop_lat": "47.467939", "stop_lon": "19.118838", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01878", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.067183462532, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.118838,47.467939],
+"type": "Point"
+        },
+        "id": "1000000000000059"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01542","location": "(358790.18079566536, 5258624.973625067)", "stop_id": "F01542", "stop_name": "Határ út", "stop_code": "F01542", "stop_desc": "", "stop_lat": "47.465749", "stop_lon": "19.126228", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01541", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.093023255814, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.126228,47.465749],
+"type": "Point"
+        },
+        "id": "1000000000000060"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01544","location": "(360482.3683271284, 5258328.012411843)", "stop_id": "F01544", "stop_name": "Kőbánya-Kispest", "stop_code": "F01544", "stop_desc": "", "stop_lat": "47.463443", "stop_lon": "19.148764", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01543", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 2.114164904863, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.148764,47.463443],
+"type": "Point"
+        },
+        "id": "1000000000000061"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01543","location": "(360381.7682982505, 5258384.560449004)", "stop_id": "F01543", "stop_name": "Kőbánya-Kispest", "stop_code": "F01543", "stop_desc": "", "stop_lat": "47.463930", "stop_lon": "19.147412", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01543", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [19.147412,47.46393],
+"type": "Point"
+        },
+        "id": "1000000000000062"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01541","location": "(358685.58775343135, 5258687.096545336)", "stop_id": "F01541", "stop_name": "Határ út", "stop_code": "F01541", "stop_desc": "", "stop_lat": "47.466285", "stop_lon": "19.124821", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01541", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.162790697674, "CatClossnes": 2},
+"geometry": {
+"coordinates": [19.124821,47.466285],
+"type": "Point"
+        },
+        "id": "1000000000000063"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01878","location": "(358142.41703440977, 5258952.862241514)", "stop_id": "F01878", "stop_name": "Pöttyös utca", "stop_code": "F01878", "stop_desc": "", "stop_lat": "47.468557", "stop_lon": "19.117532", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01878", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.550387596899, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.117532,47.468557],
+"type": "Point"
+        },
+        "id": "1000000000000064"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01493","location": "(357606.7302605851, 5259251.635027172)", "stop_id": "F01493", "stop_name": "Ecseri út", "stop_code": "F01493", "stop_desc": "", "stop_lat": "47.471127", "stop_lon": "19.110331", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01493", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.744186046512, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.110331,47.471127],
+"type": "Point"
+        },
+        "id": "1000000000000065"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"F01282","location": "(356786.68118722923, 5259755.55965656)", "stop_id": "F01282", "stop_name": "Népliget", "stop_code": "F01282", "stop_desc": "", "stop_lat": "47.475479", "stop_lon": "19.099291", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSF01282", "stop_timezone": "", "wheelchair_boarding": "2", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.860465116279, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.099291,47.475479],
+"type": "Point"
+        },
+        "id": "1000000000000066"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056233","location": "(355455.23229615064, 5262527.868156848)", "stop_id": "056233", "stop_name": "Keleti pályaudvar", "stop_code": "056233", "stop_desc": "", "stop_lat": "47.500116", "stop_lon": "19.080722", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLMXKPB", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [19.080722,47.500116],
+"type": "Point"
+        },
+        "id": "1000000000000067"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056231","location": "(355179.7350753794, 5262031.729133031)", "stop_id": "056231", "stop_name": "II. János Pál pápa tér", "stop_code": "056231", "stop_desc": "", "stop_lat": "47.495593", "stop_lon": "19.077229", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CS056232", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.162790697674, "CatClossnes": 2},
+"geometry": {
+"coordinates": [19.077229,47.495593],
+"type": "Point"
+        },
+        "id": "1000000000000068"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056229","location": "(354729.86814962304, 5261723.961505308)", "stop_id": "056229", "stop_name": "Rákóczi tér", "stop_code": "056229", "stop_desc": "", "stop_lat": "47.492725", "stop_lon": "19.071361", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CS056230", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.550387596899, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.071361,47.492725],
+"type": "Point"
+        },
+        "id": "1000000000000069"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056227","location": "(353940.53305036016, 5261318.604052615)", "stop_id": "056227", "stop_name": "Kálvin tér", "stop_code": "056227", "stop_desc": "", "stop_lat": "47.488903", "stop_lon": "19.061022", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4KVA", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.744186046512, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.061022,47.488903],
+"type": "Point"
+        },
+        "id": "1000000000000070"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056225","location": "(353671.9413971943, 5260979.370360713)", "stop_id": "056225", "stop_name": "Fővám tér", "stop_code": "056225", "stop_desc": "", "stop_lat": "47.485792", "stop_lon": "19.057571", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4FT1", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.860465116279, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.057571,47.485792],
+"type": "Point"
+        },
+        "id": "1000000000000071"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056223","location": "(353395.2060157854, 5260635.236495389)", "stop_id": "056223", "stop_name": "Szent Gellért tér - Műegyetem", "stop_code": "056223", "stop_desc": "", "stop_lat": "47.482635", "stop_lon": "19.054014", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4SG1", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.937984496124, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.054014,47.482635],
+"type": "Point"
+        },
+        "id": "1000000000000072"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056221","location": "(352867.1377613281, 5259980.61542491)", "stop_id": "056221", "stop_name": "Móricz Zsigmond körtér", "stop_code": "056221", "stop_desc": "", "stop_lat": "47.476629", "stop_lon": "19.047227", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4MKF", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.993355481728, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.047227,47.476629],
+"type": "Point"
+        },
+        "id": "1000000000000073"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056219","location": "(352760.69437211764, 5259564.176909791)", "stop_id": "056219", "stop_name": "Újbuda-központ", "stop_code": "056219", "stop_desc": "", "stop_lat": "47.472860", "stop_lon": "19.045954", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4UK1", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.034883720930, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.045954,47.47286],
+"type": "Point"
+        },
+        "id": "1000000000000074"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056217","location": "(351712.8281954358, 5258703.34341527)", "stop_id": "056217", "stop_name": "Bikás park", "stop_code": "056217", "stop_desc": "", "stop_lat": "47.464881", "stop_lon": "19.032345", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4BP1", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.067183462532, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.032345,47.464881],
+"type": "Point"
+        },
+        "id": "1000000000000075"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056215","location": "(350752.68713076424, 5258687.028606105)", "stop_id": "056215", "stop_name": "Kelenföld vasútállomás", "stop_code": "056215", "stop_desc": "", "stop_lat": "47.464515", "stop_lon": "19.019618", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4KFD", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 2.093023255814, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.019618,47.464515],
+"type": "Point"
+        },
+        "id": "1000000000000076"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056216","location": "(350824.9754801284, 5258656.274723058)", "stop_id": "056216", "stop_name": "Kelenföld vasútállomás", "stop_code": "056216", "stop_desc": "", "stop_lat": "47.464255", "stop_lon": "19.020587", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4KFD", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 0.000000000000, "CatClossnes": 1},
+"geometry": {
+"coordinates": [19.020587,47.464255],
+"type": "Point"
+        },
+        "id": "1000000000000077"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056218","location": "(351791.6742860323, 5258717.027271182)", "stop_id": "056218", "stop_name": "Bikás park", "stop_code": "056218", "stop_desc": "", "stop_lat": "47.465022", "stop_lon": "19.033386", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4BP1", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.162790697674, "CatClossnes": 2},
+"geometry": {
+"coordinates": [19.033386,47.465022],
+"type": "Point"
+        },
+        "id": "1000000000000078"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056220","location": "(352786.15594025236, 5259641.265804393)", "stop_id": "056220", "stop_name": "Újbuda-központ", "stop_code": "056220", "stop_desc": "", "stop_lat": "47.473559", "stop_lon": "19.046266", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4UK1", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.550387596899, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.046266,47.473559],
+"type": "Point"
+        },
+        "id": "1000000000000079"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056222","location": "(352900.5325028721, 5260055.503771238)", "stop_id": "056222", "stop_name": "Móricz Zsigmond körtér", "stop_code": "056222", "stop_desc": "", "stop_lat": "47.477310", "stop_lon": "19.047645", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4MKF", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.744186046512, "CatClossnes": 3},
+"geometry": {
+"coordinates": [19.047645,47.47731],
+"type": "Point"
+        },
+        "id": "1000000000000080"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056224","location": "(353473.32170657546, 5260678.205500416)", "stop_id": "056224", "stop_name": "Szent Gellért tér - Műegyetem", "stop_code": "056224", "stop_desc": "", "stop_lat": "47.483039", "stop_lon": "19.055036", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4SG1", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.860465116279, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.055036,47.483039],
+"type": "Point"
+        },
+        "id": "1000000000000081"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056226","location": "(353705.9830828804, 5261020.441778071)", "stop_id": "056226", "stop_name": "Fővám tér", "stop_code": "056226", "stop_desc": "", "stop_lat": "47.486169", "stop_lon": "19.058009", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4FT1", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.937984496124, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.058009,47.486169],
+"type": "Point"
+        },
+        "id": "1000000000000082"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056228","location": "(354010.4793419128, 5261354.889172885)", "stop_id": "056228", "stop_name": "Kálvin tér", "stop_code": "056228", "stop_desc": "", "stop_lat": "47.489245", "stop_lon": "19.061938", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLM4KVA", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 1.993355481728, "CatClossnes": 4},
+"geometry": {
+"coordinates": [19.061938,47.489245],
+"type": "Point"
+        },
+        "id": "1000000000000083"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056230","location": "(354814.92580456, 5261725.742609007)", "stop_id": "056230", "stop_name": "Rákóczi tér", "stop_code": "056230", "stop_desc": "", "stop_lat": "47.492760", "stop_lon": "19.072489", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CS056230", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.034883720930, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.072489,47.49276],
+"type": "Point"
+        },
+        "id": "1000000000000084"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056232","location": "(355217.06980523287, 5262084.736600868)", "stop_id": "056232", "stop_name": "II. János Pál pápa tér", "stop_code": "056232", "stop_desc": "", "stop_lat": "47.496078", "stop_lon": "19.077707", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CS056232", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.023255813953, "CatCenDeg": 3, "Clossnes": 2.067183462532, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.077707,47.496078],
+"type": "Point"
+        },
+        "id": "1000000000000085"
+
+},
+{
+"type": "Feature",
+"properties": {"StopCode":"056234","location": "(355530.1989798904, 5262567.0487345755)", "stop_id": "056234", "stop_name": "Keleti pályaudvar", "stop_code": "056234", "stop_desc": "", "stop_lat": "47.500485", "stop_lon": "19.081704", "zone_id": "", "stop_url": "", "location_type": "", "parent_station": "CSLMXKPB", "stop_timezone": "", "wheelchair_boarding": "1", "level_id": "", "platform_code": "", "CenDeg": 0.011627906977, "CatCenDeg": 1, "Clossnes": 2.093023255814, "CatClossnes": 5},
+"geometry": {
+"coordinates": [19.081704,47.500485],
+"type": "Point"
+        },
+        "id": "1000000000000086"
+
+}
+
+ ],
+"type": "FeatureCollection"
+}
