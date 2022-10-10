@@ -1,7 +1,9 @@
 import json
 import os
 import numpy as np
+from jenkspy import JenksNaturalBreaks
 
+import matplotlib.pyplot as plt
 
 
 
@@ -24,22 +26,43 @@ def Csv2Array(FileName,BasePath,showOutput):
     
     for i in DataDict["features"][:10]:
         if showOutput : print(i["properties"],"\n"*2)
-        for key in i["properties"].keys():
-            print(key)
+        # for key in i["properties"].keys():
+        #     print(key)
         # b=input('.................................')
 
 
     dtype=[("StopCode", np.int32), ("weight", np.int32), ("Routes", (np.str_, 100)), ("ContainedStops", (np.str_, 100)), ("SuperNode", (np.str_, 100)), ("CenDeg", np.float64), ("CatCenDeg", np.float64), ("Clossnes", np.float64), ("CatClossnes", np.float64), ("Eigen", np.float64), ("CatEigen", np.float64)]
 
-    Array=np.array(i["properties"],dtype=dtype)
-    print(dir(Array))
+    # print(dir(Array))
+    # if showOutput: print(Array)
+    ArrayFeeder=[]
+    for idx,i in enumerate(DataDict["features"]):
+        if showOutput: print(type(i))
+        if showOutput:print(i["properties"]['weight'])
+        ArrayFeeder.append(i["properties"]['weight'])
+    Array=np.array(ArrayFeeder)
     if showOutput: print(Array)
-    for i in DataDict["features"][:10]:
-        Array.insert(i["properties"])
+
+    return Array
 
 
 if __name__=="__main__":
     PathFolder="/mnt/e/GitHub/CAMMM-Tool_1.3/Results/SuperNode"
     Files=readFiles(PathFolder=PathFolder,showOutput=False)
 
-    Csv2Array(FileName=Files[0],BasePath=PathFolder,showOutput=True)
+    Xstops=list(range(0,45,5))
+    jnb = JenksNaturalBreaks(4)
+
+    for File in Files:
+        ExitName=File+".jpg"
+        f1 = plt.figure()
+        Array = Csv2Array(FileName=File,BasePath=PathFolder,showOutput=False)
+        SortedArray=np.sort(Array)
+        classes = jnb.fit(Array) 
+        print(classes)
+        plt.plot(SortedArray[::-1])
+        plt.title(File)
+        plt.yticks(Xstops)
+        # plt.show()
+        plt.savefig(ExitName)
+        plt.clf()
