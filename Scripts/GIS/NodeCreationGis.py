@@ -3,27 +3,31 @@ import os
 
 def Main(PathBusStop:str,PathMetroStation:str):
     ListOfUsedBusStops=[]
+    PathBase='F:/OneDrive - Concordia University - Canada/RA-CAMMM/HubProccesing'
 
     BaseMetro=r'E:\\GitHub\\CAMMM-Tool_1.3\\SampleData\\GIS_Data\\Montreal_Metro_Sample.gpkg|layername=Montreal_Metro_Sample'
 
-
-    # BusStops_layer=QgsVectorLayer(PathBusStop,"ogr")
-    # print(BusStops_layer)
-    # for i in BusStops_layer.getFeatures():
-    #     # print(dir(i))
-    #     # print(type(i.attributes()))
-    #     print(i.attributes()[0])
+    UsedStops=[]
+    NodeCollection={}
+    
+    BusStops_layer=QgsVectorLayer(PathBusStop,"ogr")
+    print(BusStops_layer)
+    for i in BusStops_layer.getFeatures():
+        # print(dir(i))
+        # print(type(i.attributes()))
+        print(i.attributes()[2])
 
     # print(PathMetroStation)
     # b=input('.................................')
 
     MetroStation_layer=QgsVectorLayer(PathMetroStation,"ogr")
     for i in MetroStation_layer.getFeatures():
-        PathTempMetro='F:/OneDrive - Concordia University - Canada/RA-CAMMM/HubProccesing/Operational/Metro_'+str(i.attributes()[2])+'.gpkg'
-        PathTempBuffermetro='F:/OneDrive - Concordia University - Canada/RA-CAMMM/HubProccesing/Operational/Buffer_Metro_'+str(i.attributes()[2])+'.gpkg'
-        PathTempClip='F:/OneDrive - Concordia University - Canada/RA-CAMMM/HubProccesing/Operational/SelectionBusStops_Metro_'+str(i.attributes()[2])+'.gpkg'
-        PathTempDist='F:/OneDrive - Concordia University - Canada/RA-CAMMM/HubProccesing/Operational/DistanceBusStops_Metro_'+str(i.attributes()[2])+'.gpkg'
+        PathTempMetro=PathBase+'/Operational/Metro_'+str(i.attributes()[2])+'.gpkg'
+        PathTempBuffermetro=PathBase+'/Operational/Buffer_Metro_'+str(i.attributes()[2])+'.gpkg'
+        PathTempClip=PathBase+'/Operational/SelectionBusStops_Metro_'+str(i.attributes()[2])+'.gpkg'
+        PathTempDist=PathBase+'/Operational/DistanceBusStops_Metro_'+str(i.attributes()[2])+'.gpkg'
 
+        #################################################################
         #################################################################
         print("StopCode:",i.attributes()[2])
         print("Extract by attribute")
@@ -36,7 +40,7 @@ def Main(PathBusStop:str,PathMetroStation:str):
 
         print("buffer")
         paramsBuf= {'INPUT':PathTempMetro,
-        'DISTANCE':Buffersize['Metro'],
+        'DISTANCE':DistanceCat['BufferMetro'],
         'SEGMENTS':5,
         'END_CAP_STYLE':0,
         'JOIN_STYLE':0,
@@ -51,17 +55,28 @@ def Main(PathBusStop:str,PathMetroStation:str):
         'OUTPUT':PathTempClip}
         processing.run("native:clip", paramsClip)
 
-
-        paramsDist={'INPUT':PathTempDist,
+        print("Distances")
+        paramsDist={'INPUT':PathTempClip,
         'HUBS':PathTempMetro,
         'FIELD':'StopCode',
         'UNIT':0,
         'OUTPUT':PathTempDist}
-        processing.run("qgis:distancetonearesthubpoints",)
+        processing.run("qgis:distancetonearesthubpoints",paramsDist)
+
+        Distances=QgsVectorLayer(PathTempDist,"ogr")
+
+        if str(i.attributes()[2]) not in NodeCollection:
+            NodeCollection[str(i.attributes()[2])]=[]
 
 
-
-
+        for j in Distances.getFeatures():
+            print(j.attributes()[23])
+            if int(j.attributes()[23]) < DistanceCat['DistanceMetro']:
+                print("Eureka!!!!!!!!!!")
+                UsedStops.append(str(j.attributes()[2]))
+                NodeCollection[str(i.attributes()[2])].append({'StopCode':str(j.attributes()[2]),'Distance':int(j.attributes()[23])})
+    print(NodeCollection)
+    print(".........fin..........")
 
 
 
@@ -75,7 +90,7 @@ LocalPathBusStop=r"E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\Montreal_Bus_Sam
 LocalPathMetroStation="E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\Montreal_Metro_Sample.gpkg"
 
 
-Buffersize={'Metro':160}
+DistanceCat={'BufferMetro':160,'DistanceMetro':150}
 Main(PathBusStop=LocalPathBusStop,PathMetroStation=LocalPathMetroStation)
 
 
