@@ -1,5 +1,5 @@
 import os
-
+import time
 
 def Main(PathBusStop:str,PathMetroStation:str):
     ListOfUsedBusStops=[]
@@ -7,15 +7,20 @@ def Main(PathBusStop:str,PathMetroStation:str):
 
     BaseMetro=r'E:\\GitHub\\CAMMM-Tool_1.3\\SampleData\\GIS_Data\\Montreal_Metro_Sample.gpkg|layername=Montreal_Metro_Sample'
 
+    BaseBuses=r'E:\\GitHub\\CAMMM-Tool_1.3\\SampleData\\GIS_Data\\Montreal_Bus_Sample.gpkg|layername=Montreal_Bus_Sample'
+
+
     UsedStops=[]
     NodeCollection={}
-    
+    BusesToUSe=[]
+
     BusStops_layer=QgsVectorLayer(PathBusStop,"ogr")
     print(BusStops_layer)
     for i in BusStops_layer.getFeatures():
         # print(dir(i))
         # print(type(i.attributes()))
-        print(i.attributes()[2])
+        # print(i.attributes()[2])
+        BusesToUSe.append(i.attributes()[2])
 
     # print(PathMetroStation)
     # b=input('.................................')
@@ -75,7 +80,80 @@ def Main(PathBusStop:str,PathMetroStation:str):
                 print("Eureka!!!!!!!!!!")
                 UsedStops.append(str(j.attributes()[2]))
                 NodeCollection[str(i.attributes()[2])].append({'StopCode':str(j.attributes()[2]),'Distance':int(j.attributes()[23])})
+        
+    
+        # time.sleep(2)
+        # print("Remove")
+        # os.remove(PathTempMetro)
+        # os.remove(PathTempBuffermetro)
+        # os.remove(PathTempClip)
+        # os.remove(PathTempDist)
+
+
+    # print(NodeCollection)
+    for BS in BusesToUSe:
+        if BS not in UsedStops:
+            PathTempBuses=PathBase+'/Operational/BusStop_'+BS+'.gpkg'
+            PathTempBufferBuses=PathBase+'/Operational/BusStop_Buffer_'+BS+'.gpkg'
+            PathTempClipBuses=PathBase+'/Operational/BusStop_Clip_'+BS+'.gpkg'
+            PathTempDistBuses=PathBase+'/Operational/BusStop_Dist_'+BS+'.gpkg'
+            ###########################################################
+            ###########################################################
+            print(BS)
+            print("StopCode:",BS)
+            print("Extract by attribute")
+            paramsExtract={'INPUT':BaseBuses,
+            'FIELD':'StopCode',
+            'OPERATOR':0,
+            'VALUE':BS,
+            'OUTPUT':PathTempBuses}
+            processing.run("native:extractbyattribute", paramsExtract)
+
+            print("buffer")
+            paramsBuf= {'INPUT':PathTempBuses,
+            'DISTANCE':DistanceCat['BufferBus'],
+            'SEGMENTS':5,
+            'END_CAP_STYLE':0,
+            'JOIN_STYLE':0,
+            'MITER_LIMIT':2,
+            'DISSOLVE':False,
+            'OUTPUT':PathTempBufferBuses}
+            processing.run("native:buffer", paramsBuf)
+
+            print("clip")
+            paramsClip={'INPUT':PathBusStop,
+            'OVERLAY':PathTempBufferBuses,
+            'OUTPUT':PathTempClipBuses}
+            processing.run("native:clip", paramsClip)
+
+            print("Distances")
+            paramsDist={'INPUT':PathTempClipBuses,
+            'HUBS':PathTempBuses,
+            'FIELD':'StopCode',
+            'UNIT':0,
+            'OUTPUT':PathTempDistBuses}
+            processing.run("qgis:distancetonearesthubpoints",paramsDist)
+
+
+            Distances=QgsVectorLayer(PathTempDistBuses,"ogr")
+
+            if BS not in NodeCollection:
+                NodeCollection[BS]=[]
+
+            for j in Distances.getFeatures():
+                print(j.attributes()[23])
+                if int(j.attributes()[23]) < DistanceCat['DistanceBusStop']:
+                    print("Eureka!!!!!!!!!!")
+                    if int(j.attributes()[23])!=0:
+                    # UsedStops.append(str(j.attributes()[2]))
+                        NodeCollection[BS].append({'StopCode':str(j.attributes()[2]),'Distance':int(j.attributes()[23])})
+        
+
+
+        else:
+            print(BS,"Used Bus Stop")
     print(NodeCollection)
+
     print(".........fin..........")
 
 
@@ -90,7 +168,7 @@ LocalPathBusStop=r"E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\Montreal_Bus_Sam
 LocalPathMetroStation="E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\Montreal_Metro_Sample.gpkg"
 
 
-DistanceCat={'BufferMetro':160,'DistanceMetro':150}
+DistanceCat={'BufferMetro':160,'DistanceMetro':150,'BufferBus':80,'DistanceBusStop':75}
 Main(PathBusStop=LocalPathBusStop,PathMetroStation=LocalPathMetroStation)
 
 
