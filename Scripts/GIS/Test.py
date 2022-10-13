@@ -18,7 +18,16 @@ for num in range(31,-1,-1):
 for stop in NewOrder:
     if stop in ['51','9999492','50','48','55']:
         # print (stop)
+        LocalPrint=False
+        if LocalPrint: print("METRO:\t",stop,data[stop],len(data[stop]))
+        for substop in data[stop]:
+            if LocalPrint: print(substop)
+            # UsedStops.append(substop['StopCode'])
+        # b=input('.................................')
+        if LocalPrint: print("UsedStops ",UsedStops)
         continue
+
+    
 
     ###############################################################################
     ##### Variable declaration
@@ -57,6 +66,7 @@ for stop in NewOrder:
     LocalPrint=False
     #######################
     if LocalPrint: print("OldOrder",OldOrder)
+    # if substop in NewOrder:
     for rank in range(len(data[substop['StopCode']])+1,0,-1):
         if LocalPrint: print("\t","+",rank)
         for substop in OldOrder:
@@ -84,7 +94,7 @@ for stop in NewOrder:
         for subcheck in data[substop]:
             if LocalPrint: print(subcheck,end="")
 
-            if subcheck['StopCode'] in LocalOrder or subcheck['StopCode']==stop or subcheck['StopCode'] not in data.keys():
+            if subcheck['StopCode'] in LocalOrder or subcheck['StopCode']==stop:
                 if LocalPrint: print("\t"*2+"Mirrored")
             else:
                 if LocalPrint: print("\t"*2+"Expand")
@@ -100,9 +110,13 @@ for stop in NewOrder:
     for stp in CompleteLocalOrder:
         UsedStops.append(stp)
     NewDict[stop]=CompleteLocalOrder
+    print(stop)
+    print(NewDict[stop])
     if LocalPrint: print("Local Order       ",LocalOrder,len(LocalOrder))
     if LocalPrint: print("CompleteLocalOrder",CompleteLocalOrder,len(CompleteLocalOrder))
-    if stop =='54160': print("HEEEEEEEEEEEEEEEEEEEEEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n"*10)
+    # if stop =='54160': print("HEEEEEEEEEEEEEEEEEEEEEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n"*10)
+    for stop in NewDict.keys():
+        print(stop,NewDict[stop])
     b=input('...Stop..............................')
 
     # for stop in List:
@@ -110,3 +124,5 @@ for stop in NewOrder:
     #     print(StCd,type(StCd))
     #     if StCd in KeyList:
     #         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+for stop in NewDict.keys():
+    print(stop,NewDict[stop])
