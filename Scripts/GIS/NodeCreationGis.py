@@ -142,8 +142,11 @@ def Main(PathBusStop:str,PathMetroStation:str):
 
             for j in Distances.getFeatures():
                 print(j.attributes()[23])
-                if int(j.attributes()[23]) < DistanceCat['DistanceBusStop']:
-                    print("Eureka!!!!!!!!!!")
+                if int(j.attributes()[23]) < DistanceCat['DistanceBusStop'] and str(j.attributes()[2]) not in UsedStops:
+                    # print("Dist:",int(j.attributes()[23]),"Name",str(j.attributes()[2]))
+                    # print("UsedStops",UsedStops)
+                    # print("Eureka!!!!!!!!!!")
+                    # b=input('.................................')
                     if int(j.attributes()[23])!=0:
                     # UsedStops.append(str(j.attributes()[2]))
                         NodeCollection[BS].append({'StopCode':str(j.attributes()[2]),'Distance':int(j.attributes()[23])})
@@ -153,6 +156,10 @@ def Main(PathBusStop:str,PathMetroStation:str):
         else:
             print(BS,"Used Bus Stop")
     print(NodeCollection)
+    Path=r'E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\ExitDict.txt'
+    f = open(Path, 'w')
+    f.write(str(NodeCollection))
+    f.close()
 
     print(".........fin..........")
 
@@ -164,8 +171,10 @@ def Main(PathBusStop:str,PathMetroStation:str):
 #     Main(PathBusStop=LocalPathBusStop,PathMetroStation=LocalPathMetroStation)
 
 
-LocalPathBusStop=r"E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\Montreal_Bus_Sample.gpkg"
-LocalPathMetroStation="E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\Montreal_Metro_Sample.gpkg"
+# LocalPathBusStop=r"E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\Montreal_Bus_Sample.gpkg"
+# LocalPathMetroStation="E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\Montreal_Metro_Sample.gpkg"
+LocalPathBusStop=r"E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\Montreal_Bus.gpkg"
+LocalPathMetroStation="E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\Montreal_Metro.gpkg"
 
 
 DistanceCat={'BufferMetro':160,'DistanceMetro':150,'BufferBus':80,'DistanceBusStop':75}
