@@ -5,9 +5,9 @@ def Main(PathBusStop:str,PathMetroStation:str):
     ListOfUsedBusStops=[]
     PathBase='F:/OneDrive - Concordia University - Canada/RA-CAMMM/HubProccesing'
 
-    BaseMetro=r'E:\\GitHub\\CAMMM-Tool_1.3\\SampleData\\GIS_Data\\Montreal_Metro_Sample.gpkg|layername=Montreal_Metro_Sample'
+    BaseMetro=r'E:\\GitHub\\CAMMM-Tool_1.3\\SampleData\\GIS_Data\\Montreal_Metro.gpkg|layername=Montreal_Metro'
 
-    BaseBuses=r'E:\\GitHub\\CAMMM-Tool_1.3\\SampleData\\GIS_Data\\Montreal_Bus_Sample.gpkg|layername=Montreal_Bus_Sample'
+    BaseBuses=r'E:\\GitHub\\CAMMM-Tool_1.3\\SampleData\\GIS_Data\\Montreal_Bus.gpkg|layername=Montreal_Bus'
 
 
     UsedStops=[]
