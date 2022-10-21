@@ -22,7 +22,7 @@ def Main(PathNodes,ProcPath):
         R+=1
 
     Count=0
-    Stopper=True
+    Stopper=False
     for i in NodeLayers.getFeatures():
         Count+=1
         if Stopper:
