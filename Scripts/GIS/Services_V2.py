@@ -11,6 +11,9 @@ def FullNum(x:int,TotalX:int)->str:
         Exit='0'+Exit
     return (Exit)
 
+
+Count=0
+Stopper=True
 def Main(PathNodes,ProcPath):
     BufferSize={"Cluster":400,"Hub":800}
     NodeLayers=QgsVectorLayer(PathNodes,"ogr")
@@ -21,6 +24,11 @@ def Main(PathNodes,ProcPath):
 
 
     for i in NodeLayers.getFeatures():
+        Count+=1
+        if Stopper:
+            if Count>10:
+                break
+
         record=i.attributes()
         print(record)
         print(record[9])
@@ -53,6 +61,12 @@ def Main(PathNodes,ProcPath):
         'OVERLAY':'C:/Users/Omar/Desktop/CAMMMM/Processing/Buffer/Buffer_'+FullNum(x=int(FiD),TotalX=R)+'.gpkg',
         'OUTPUT':'C:/Users/Omar/Desktop/CAMMMM/Processing/Clip/Clip_'+FullNum(x=int(FiD),TotalX=R)+'.gpkg'}
         processing.run("native:clip",paramExtract )
+
+        geom = i.geometry()
+        PX=geom.asPoint().x()
+        PY=geom.asPoint().y()
+        Coords=str(PX)+','+str(PY)+' [EPSG:32618]'
+        print(PX,PY)
 
 
 
