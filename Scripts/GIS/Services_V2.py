@@ -12,8 +12,7 @@ def FullNum(x:int,TotalX:int)->str:
     return (Exit)
 
 
-Count=0
-Stopper=True
+
 def Main(PathNodes,ProcPath):
     BufferSize={"Cluster":400,"Hub":800}
     NodeLayers=QgsVectorLayer(PathNodes,"ogr")
@@ -22,7 +21,8 @@ def Main(PathNodes,ProcPath):
     for i in NodeLayers.getFeatures():
         R+=1
 
-
+    Count=0
+    Stopper=True
     for i in NodeLayers.getFeatures():
         Count+=1
         if Stopper:
