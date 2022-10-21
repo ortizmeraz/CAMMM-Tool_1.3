@@ -20,7 +20,7 @@ def Main(PathNodes):
         R+=1
 
     Count=0
-    Stopper=True
+    Stopper=False
     for i in NodeLayers.getFeatures():
         Count+=1
         if Stopper:
@@ -76,5 +76,4 @@ def Main(PathNodes):
 
 
 BasePath=r"/home/omar/CAMMM/Nodes/Nodes_Full_UTM.gpkg"
-ProcFolderPath=r"C:/Users/Omar/Desktop/CAMMMM/Processing"
 Main(PathNodes=BasePath)
