@@ -13,7 +13,7 @@ def FullNum(x:int,TotalX:int)->str:
 
 
 
-def Main(PathNodes,ProcPath):
+def Main(PathNodes):
     BufferSize={"Cluster":400,"Hub":800}
     NodeLayers=QgsVectorLayer(PathNodes,"ogr")
 
@@ -22,7 +22,7 @@ def Main(PathNodes,ProcPath):
         R+=1
 
     Count=0
-    Stopper=False
+    Stopper=True
     for i in NodeLayers.getFeatures():
         Count+=1
         if Stopper:
@@ -38,7 +38,7 @@ def Main(PathNodes,ProcPath):
         paramsExtract={'INPUT':'C:\\Users\\Omar\\Desktop\\CAMMMM\\NewNodes\\Montreal_Nodes.gpkg|layername=Montreal_Nodes',
         'FIELD':'fid',
         'OPERATOR':0,
-        'VALUE':'1',
+        'VALUE':str(FiD),
         'OUTPUT':'C:/Users/Omar/Desktop/CAMMMM/Processing/TempNode/Node'+FullNum(x=int(FiD),TotalX=R)+'.gpkg'}
 
         processing.run("native:extractbyattribute", paramsExtract)
@@ -46,7 +46,7 @@ def Main(PathNodes,ProcPath):
 
         print("Creation of the buffer")
         paramsExtract={'INPUT':'C:/Users/Omar/Desktop/CAMMMM/Processing/TempNode/Node'+FullNum(x=int(FiD),TotalX=R)+'.gpkg',
-        'DISTANCE':100,
+        'DISTANCE':BufferSize[record[9]],
         'SEGMENTS':5,
         'END_CAP_STYLE':0,
         'JOIN_STYLE':0,
@@ -84,5 +84,4 @@ def Main(PathNodes,ProcPath):
 
 
 BasePath=r"C:\Users\Omar\Desktop\CAMMMM\NewNodes\Montreal_Nodes.gpkg"
-ProcFolderPath=r"C:/Users/Omar/Desktop/CAMMMM/Processing"
-Main(PathNodes=BasePath,ProcPath=ProcFolderPath)
+Main(PathNodes=BasePath)
