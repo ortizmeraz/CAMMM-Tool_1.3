@@ -68,7 +68,19 @@ def Main(PathNodes,ProcPath):
         Coords=str(PX)+','+str(PY)+' [EPSG:32618]'
         print(PX,PY)
 
-        processing.run("native:shortestpathpointtolayer", {'INPUT':'C:/Users/Omar/Desktop/CAMMMM/Streets/MontrealStreeets.gpkg','STRATEGY':0,'DIRECTION_FIELD':'','VALUE_FORWARD':'','VALUE_BACKWARD':'','VALUE_BOTH':'','DEFAULT_DIRECTION':2,'SPEED_FIELD':'','DEFAULT_SPEED':50,'TOLERANCE':0,'START_POINT':'602837.312780,5040905.704420 [EPSG:32618]','END_POINTS':'C:/Users/Omar/Desktop/CAMMMM/Processing/Clip/Clip_00001.gpkg','OUTPUT':'C:/Users/Omar/Desktop/CAMMMM/Processing/DIstances/Services_Node_000.gpkg'})
+        paramsExtract= {'INPUT':'C:/Users/Omar/Desktop/CAMMMM/Streets/MontrealStreeets.gpkg',
+        'STRATEGY':0,
+        'DIRECTION_FIELD':'',
+        'VALUE_FORWARD':'',
+        'VALUE_BACKWARD':'','VALUE_BOTH':'',
+        'DEFAULT_DIRECTION':2,'SPEED_FIELD':'',
+        'DEFAULT_SPEED':50,
+        'TOLERANCE':0,
+        'START_POINT':str(PX)+','+str(PY)+' [EPSG:32618]',
+        'END_POINTS':'C:/Users/Omar/Desktop/CAMMMM/Processing/Clip/Clip_'+FullNum(x=int(FiD),TotalX=R)+'.gpkg',
+        'OUTPUT':'C:/Users/Omar/Desktop/CAMMMM/Processing/DIstances/Services_Node_'+FullNum(x=int(FiD),TotalX=R)+'.gpkg'}
+
+        processing.run("native:shortestpathpointtolayer",paramsExtract)
 
 
 BasePath=r"C:\Users\Omar\Desktop\CAMMMM\NewNodes\Montreal_Nodes.gpkg"
