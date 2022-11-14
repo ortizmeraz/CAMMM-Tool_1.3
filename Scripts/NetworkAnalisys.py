@@ -311,7 +311,7 @@ def GtfsToNetwork(EdgeData,DataStops,DataRoutes,DataSequence,DataTrips,NetworkIn
                 print("CHANGE!!!!!")
             for i,x in enumerate(SationsByRoutes[route]):
                 print(i,x)
-            b=input('............DataSequence.....................')
+            # b=input('............DataSequence.....................')
 
     List_Nodes=[]
     EdgeList=[]
