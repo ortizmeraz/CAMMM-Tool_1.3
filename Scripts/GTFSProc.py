@@ -1183,7 +1183,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
             ListOfWorkStops.append(stop)
             # if count==500
             #     break
-        b=input("Delete")
+        # b=input("Delete")
 
         count=0
         for trip in DataTrips.keys():
@@ -1205,10 +1205,10 @@ def GTFS(Path,RequestedData,DictType,CountType):
                         if [Stop,ArrTime] not in DictExit[Stop]:
                             DictExit[Stop].append([Stop,ArrTime])
 
-        b=input("Delete")
+        # b=input("Delete")
         for stop in DictExit.keys():
             print(stop,DictExit[stop])
-            b=input('.................................')
+            # b=input('.................................')
         # for 
 
 
@@ -1409,7 +1409,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
         # print(text)
         # b=input('.................................')
         f.close()
-        b=input('.................................')
+        # b=input('.................................')
         # for i,tripid in enumerate(DataSequence.keys()):
         #     # if tripid in ListOfTrips:
         #         LegList=list(DataSequence[tripid].keys())
@@ -1588,7 +1588,7 @@ def GTFS(Path,RequestedData,DictType,CountType):
 if __name__ == "__main__":
     # DatabaseOperations()
     # b=input()
-    RequestedData={"NetworkAnalysis":False,"NodeNetworkAnalysis":False,"CityMetrics":False,"RotatedGridAnalysis":False,"NetworkLineAgregator":False,"NewNetworkAnalysis":False,"WorkFrequency":True}
+    RequestedData={"NetworkAnalysis":True,"NodeNetworkAnalysis":False,"CityMetrics":True,"RotatedGridAnalysis":False,"NetworkLineAgregator":False,"NewNetworkAnalysis":False,"WorkFrequency":False}
     listPath=[]
   
 
@@ -1597,7 +1597,8 @@ if __name__ == "__main__":
 
     # listPath.append(r"/mnt/e/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Berlin_GTFS/BVG_VBB_bereichsscharf.zip")
 
-    listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
+    listPath.append(r"/mnt/e/GitHub/CAMMM-Tool_1.3/DATA/Montreal/gtfs_stm.zip")
+    # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Montreal_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Quebec_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Barcelona_GTFS/gtfs.zip")
     # listPath.append(r"/mnt/f/OneDrive - Concordia University - Canada/RA-CAMM/GTFS/Budapest_GFST/gtfs.zip")

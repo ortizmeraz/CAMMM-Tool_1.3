@@ -28,6 +28,7 @@ def Update():
     os.system("pip3 install utm")
     os.system("pip3 install colorama")
     os.system("pip3 install tqdm")
+    os.system("pip3 install Calculations")
 
 
 if __name__ == "__main__":

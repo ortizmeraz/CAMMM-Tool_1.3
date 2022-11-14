@@ -25,7 +25,9 @@ def ToInt(text):
 dir_list = os.listdir(BasePath)
 
 f = open(ExitPath, 'w')
-text="FiD,LenP,MaxP,MinP,AveP,LenS,MaxS,MinS,AveS,LenT,MaxT,MinT,AveT\n"
+text="FiD,Primary_NumberServices,Primary_MaxDist,Primary_MinDist,Primary_AvDist,"
+text+="Secondary_NumberServices,Secondary_MaxDist,Secondary_MinDist,Secondary_AvDist,"
+text+="Tertiary_NumberServices,Tertiary_MaxDist,Tertiary_MinDist,Tertiary_AvDist\n"
 f.write(text)
 for fileName in dir_list:
     
