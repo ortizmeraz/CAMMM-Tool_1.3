@@ -18,13 +18,6 @@ ListOfStops=[]
 TypeNode={}
 Capactiy={}
 
-
-
-
-
-
-
-
 BasePath= r"F:\OneDrive - Concordia University - Canada\RA-CAMM\Density Calculations\SuperNodes\Transit_Nodes_Montreal.csv"
 with open(BasePath,encoding="utf-8") as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
@@ -36,14 +29,11 @@ with open(BasePath,encoding="utf-8") as csv_file:
         TypeNode[int(row[0])]=row[6]
         Capactiy[int(row[0])]=0
 
-
 # for i in ListOfStops:
 #     print(i,type(i))
 
-
 # for key in TypeNode.keys():
 #     print(key,TypeNode[key])
-
 
 for NumNode in range(1,3935):
     Num=FullNum(x=NumNode,TotalX=4000)
@@ -67,18 +57,11 @@ for NumNode in range(1,3935):
             # b=input('.................................')
     # print("Capactiy",Capactiy[int(NumNode)])
 
-
-
-
-
-
-
 # field names 
 fields = "fid, reach\n"
     
 # data rows of csv file 
-
-    
+   
 # name of csv file 
 filename = "university_records.csv"
     
