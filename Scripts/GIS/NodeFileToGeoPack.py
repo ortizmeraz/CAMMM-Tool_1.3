@@ -1,3 +1,12 @@
+def TypeOfStop(City:str="MTL",stop:str="NA"):
+    if City=="MTL":
+        if int(stop)<200:
+            ExitVal="Metro"
+        else:
+            ExitVal="Bus"
+    return ExitVal
+
+
 
 def OpenDictionaryFile(Path):
     Dict=""
@@ -34,23 +43,27 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
     # print(len(Buses.keys()))
     for key in Buses.keys():
         # print(key,Buses[key],"----")
-        BusesData[int(Buses[key]['StopCode'])]=Buses[key]
+        BusesData[str(Buses[key]['StopCode'])]=Buses[key]
 
     Metro=OpenCSV(Path=PathMetro)
     MetroData={}
     for key in Metro.keys():
-        # print(key,Buses[key],"----")
-        MetroData[int(Metro[key]['StopCode'])]=Metro[key]
+        stop= str(Metro[key]['StopCode'])
+        MetroData[stop]=Metro[key]
+    
+    RailRData={}
+    TramsData={}
 
+    if ShowProcess: print(list(MetroData.keys()))
+    if ShowProcess: print(list(BusesData.keys()))
 
     NodeDict=OpenDictionaryFile(Path=PathNodeList)
 
     # print(Buses.keys())
     # for key in Buses.keys():
     #     print(key,type(key))
-
-                # Lat
-                # Lon
+                # Lat :
+                # Lon :
                 # "fid": "1644",
                 # "Id": "54735",
                 # "Type": "Cluster",
@@ -65,36 +78,57 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
 
 
     for id,key in enumerate(NodeDict.keys()):
+        Mainstop=str(key)
+        print("\n\n\n#########################")
+        print("MainStop",Mainstop,type)
         if ShowProcess: print(id,key)
         if ShowProcess: print(NodeDict[key])
-        if ShowProcess: b=input('.................................')
         FiD=id+1
-        Coord={'Lat':[],'lon':[]}
-        MetroData={}
-        BusData={}
-        TramData={}
-        RailData={}
+        Coord={'Lat':[],'Lon':[]}
+        MetroStations={}
+        RailRStations={}
+        TramsStations={}
+        BusesStations={}
+
         if NodeDict[key]['Type']=='Hub':
-            Coord[]
-        if int(key) in MetroData.keys():
-            Coord
-        # if NodeDict[key]['Type']=="Hub":
-            # print("Hub")
-            # print(NodeDict[key])
-            # print("Type of NodeDict[key]['Data']",type(NodeDict[key]['Data']))
-            # for stop in NodeDict[key]['Data']:
-            #     if int(stop) in MetroData.keys():
-            #         print("stop",stop,type(stop))
-            #         # print(stop,MetroData[int(stop)]['location'])
-            #         print(stop,MetroData[int(stop)]['stop_lat'],MetroData[int(stop)]['stop_lon'])
-            #     if int(stop) in BusesData.keys():
-            #         print("stop",stop,type(stop))
-            #         print(stop,BusesData[int(stop)]['stop_lat'],BusesData[int(stop)]['stop_lon'])
+            ListStopsForCoords=[]
+            for stop in NodeDict[key]['Data']:
 
-        # else:
-        #     print("Cluster")
-        #     print(NodeDict[key])
+                print("Stop:",stop)
+                if ShowProcess: print("Is  HUB")
+                if stop in MetroData.keys(): 
+                    if ShowProcess: print("stop",stop)
+                    if ShowProcess: print(MetroData[stop])
+                    MetroStations[stop]=[]
+                    Coord['Lat']=MetroData[stop]['stop_lat']
+                    Coord['Lon']=MetroData[stop]['stop_lon']
 
+                if stop in RailRData.keys(): 
+                    if ShowProcess: print("stop",stop)
+                    if ShowProcess: print(RailRData[stop])
+                    RailRStations[stop]=[]
+                    Coord['Lat']=RailRData[stop]['stop_lat']
+                    Coord['Lon']=RailRData[stop]['stop_lon']
+                if stop in TramsData.keys(): 
+                    if ShowProcess: print("stop",stop)
+                    if ShowProcess: print(TramsData[stop])
+                    TramsStations[stop]=[]
+
+                if stop in BusesData.keys(): 
+                    if ShowProcess: print("stop",stop)
+                    # if ShowProcess: print(BusesData[stop])
+                    BusesStations[stop]=[]
+
+            
+
+
+        if ShowProcess: print("Coord",Coord)
+        if ShowProcess: print("MetroStations",MetroStations)
+        if ShowProcess: print("RailRStations",RailRStations)
+        if ShowProcess: print("TramsStations",TramsStations)
+        if ShowProcess: print("BusesStations",BusesStations)
+        if ShowProcess: b=input('.................................')
+ 
 
 
 if __name__=="__main__":
