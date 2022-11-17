@@ -1575,8 +1575,8 @@ def GTFS(Path,RequestedData,DictType,CountType):
         #     if len(ListofStops[idx])>0:
         NetworkLineAgregator(DataStops=DataStops,DataTrips=DataTrips,DataRoutes=DataRoutes,DataSequence=DataSequence,CityId=NameOfCity)
 
-
-    CleanFiles() 
+    # b=input('.................................')
+    # CleanFiles() 
     ###################################################################
     ##################### END OF MAIN #################################
     ###################################################################

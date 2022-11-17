@@ -35,6 +35,59 @@ def OpenCSV(Path,ShowProcess:bool =False):
 
     return Data
 
+
+def GetTripData(ShowProcess:bool=False):
+    ExtDict={}
+    SourcePath=r"E:\GitHub\CAMMM-Tool_1.3\Operational\trips.txt"
+    import csv
+    with open(SourcePath,encoding="utf-8") as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        headers = next(csv_reader, None)
+
+        if ShowProcess: print(headers)
+        # b=input('.................................')
+        for idx,row in enumerate(csv_reader):
+            if ShowProcess: print(idx,row)
+            # b=input('.................................')
+            ExtDict[row[2]]=row[0]
+    if ShowProcess:
+        for key in ExtDict.keys():
+            print(key,ExtDict[key])
+    return ExtDict
+            
+
+def GetStopiTrip(ShowProcess:bool=False):
+    ExitDict={}
+    SourcePath=r"E:\GitHub\CAMMM-Tool_1.3\Operational\stop_times.txt"
+    import csv
+    with open(SourcePath,encoding="utf-8") as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        headers = next(csv_reader, None)
+        if ShowProcess: print(headers)
+        for idx,row in enumerate(csv_reader):
+            Stop=str(row[3])
+            Trip=str(row[0])
+            if ShowProcess: print(idx,row)
+            if Stop not in ExitDict.keys():
+                ExitDict[Stop]=[]
+            ExitDict[Stop].append(Trip)
+            # b=input('.................................')
+    if ShowProcess:
+        for key in ExitDict.keys():
+            print(key,ExitDict[key])
+    return ExitDict
+
+def GetLine(dataStop:dict,dataTrip:dict,stop:str,ShowProcess:bool=False):
+    if stop in dataStop.keys():
+        ExitValue=dataStop[stop]
+        if ShowProcess: print("ExitValue:",ExitValue)
+        b=input('.................................')
+    else:
+        ExitValue=""
+    return ExitValue
+
+
+
 def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
     ExitData={}
 
@@ -59,6 +112,18 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
 
     NodeDict=OpenDictionaryFile(Path=PathNodeList)
 
+
+    TripData=GetTripData()
+    StopTripData=GetStopiTrip()
+    d=0
+    # for key in StopTripData.keys():
+    #     d+=1
+    #     print(key,"-",type(key))
+    #     if d==10: break
+    # if ShowProcess: print("------------------------------------")
+    # if ShowProcess: print(StopTripData.keys())
+
+    # b=input('.................................')
     # print(Buses.keys())
     # for key in Buses.keys():
     #     print(key,type(key))
@@ -77,6 +142,7 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
 
 
 
+
     for id,key in enumerate(NodeDict.keys()):
         Mainstop=str(key)
         print("\n\n\n#########################")
@@ -91,11 +157,11 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
         BusesStations={}
 
         if NodeDict[key]['Type']=='Hub':
+            if ShowProcess: print("Is  HUB")
             ListStopsForCoords=[]
             for stop in NodeDict[key]['Data']:
 
                 print("Stop:",stop)
-                if ShowProcess: print("Is  HUB")
                 if stop in MetroData.keys(): 
                     if ShowProcess: print("stop",stop)
                     if ShowProcess: print(MetroData[stop])
@@ -117,9 +183,9 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
                 if stop in BusesData.keys(): 
                     if ShowProcess: print("stop",stop)
                     # if ShowProcess: print(BusesData[stop])
-                    BusesStations[stop]=[]
+                    BusesStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop)
 
-            
+
 
 
         if ShowProcess: print("Coord",Coord)
@@ -136,3 +202,8 @@ if __name__=="__main__":
     PathToBuses=r"F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\BusesData.csv"
     PathToMetro=r"F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\MetroData.csv"
     Main(PathNodeList=PathTxtFile,PathBuses=PathToBuses,PathMetro=PathToMetro,ShowProcess=True)
+
+
+    {'Data': ['65', '60290', '61654', '60292', '60807', '55639', '55650', '55641', '55640', '55890', '60293', '55901', '55945', '60289', '60288', '60295', '61798', '60383', '61323', '55829', '61819', '60296'], 'Type': 'Hub'}
+
+    61819
