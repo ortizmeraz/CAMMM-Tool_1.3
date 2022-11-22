@@ -77,19 +77,61 @@ def GetStopiTrip(ShowProcess:bool=False):
             print(key,ExitDict[key])
     return ExitDict
 
+def GetAvCoords(ListCoords:list,ShowProcess:bool=False):
+    Lat=[]
+    Lon=[]
+    for pairs in ListCoords:
+        if ShowProcess: print(pairs)
+        Lat.append(float(pairs[0]))
+        Lon.append(float(pairs[1]))
+    ExitLat=(sum(Lat)/len(Lat))
+    ExitLon=(sum(Lon)/len(Lon))
+    ExitVal={'Lat':str(round(ExitLat,6)),'Lon':str(round(ExitLon,6))}
+    return ExitVal
+    
+def GetName(ListName:list,ShowProcess:bool=False):
+    UniqueNames=[]
+    for names in ListName:
+        singlenames=names.split(" / ")
+        for na in singlenames:
+            if ShowProcess: print(na)
+            if na not in UniqueNames:
+                UniqueNames.append(na)
+
+    Exit = "-".join([str(item) for item in UniqueNames])            
+    return Exit
+
+
+
 def GetLine(dataStop:dict,dataTrip:dict,stop:str,ShowProcess:bool=False):
+    ExitValue=[]
     if stop in dataStop.keys():
-        ExitValue=dataStop[stop]
+        ListTrips=dataStop[stop]
+        for trip in ListTrips:
+            if ShowProcess: print("stop",stop,"trip",trip,dataTrip[trip])
+            if ShowProcess: print("ExitValue",ExitValue)
+            if trip in dataTrip.keys():
+                if ShowProcess: b=input('.................................')
+
+                if dataTrip[trip] in ExitValue:
+                    if ShowProcess: print("The line is not on list")
+                else:
+                    if ShowProcess: print("Adding line to list")
+                    ExitValue.append(str(dataTrip[trip]))
         if ShowProcess: print("ExitValue:",ExitValue)
-        b=input('.................................')
-    else:
-        ExitValue=""
+        if ShowProcess: b=input('.................................')
+
+    if len(ExitValue)==0:
+        ExitValue=['NA']
     return ExitValue
 
 
 
 def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
-    ExitData={}
+    ExitData="Id,Name,Type,Lat,Lon"
+    ExitData+="MetroStations,RailRStations,TramsStations,BusesStations,URL\n"
+
+
 
     Buses=OpenCSV(Path=PathBuses)
     BusesData={}
@@ -97,7 +139,8 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
     for key in Buses.keys():
         # print(key,Buses[key],"----")
         BusesData[str(Buses[key]['StopCode'])]=Buses[key]
-
+    #     print(BusesData[str(Buses[key]['StopCode'])])
+    # b=input('.................................')
     Metro=OpenCSV(Path=PathMetro)
     MetroData={}
     for key in Metro.keys():
@@ -114,12 +157,16 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
 
 
     TripData=GetTripData()
-    StopTripData=GetStopiTrip()
-    d=0
-    # for key in StopTripData.keys():
+    print("TripData",type(TripData))
+    # d=0
+    # for key in TripData.keys():
     #     d+=1
-    #     print(key,"-",type(key))
+    #     print(key,TripData[key])
     #     if d==10: break
+    # b=input('.................................')
+    StopTripData=GetStopiTrip()
+    # for key in StopTripData.keys():
+    #     print(key,"-",type(key))
     # if ShowProcess: print("------------------------------------")
     # if ShowProcess: print(StopTripData.keys())
 
@@ -129,6 +176,7 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
     #     print(key,type(key))
                 # Lat :
                 # Lon :
+
                 # "fid": "1644",
                 # "Id": "54735",
                 # "Type": "Cluster",
@@ -145,12 +193,14 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
 
     for id,key in enumerate(NodeDict.keys()):
         Mainstop=str(key)
-        print("\n\n\n#########################")
+        if ShowProcess: print("\n\n\n#########################\n#########################\n#########################\n#########################")
         print("MainStop",Mainstop,type)
         if ShowProcess: print(id,key)
         if ShowProcess: print(NodeDict[key])
         FiD=id+1
-        Coord={'Lat':[],'Lon':[]}
+        Name=""
+        ListName=[]
+        Coord={'Lat':0,'Lon':0}
         MetroStations={}
         RailRStations={}
         TramsStations={}
@@ -158,52 +208,82 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
 
         if NodeDict[key]['Type']=='Hub':
             if ShowProcess: print("Is  HUB")
-            ListStopsForCoords=[]
-            for stop in NodeDict[key]['Data']:
+        ListStopsForCoords=[]
+        for stop in NodeDict[key]['Data']:
 
-                print("Stop:",stop)
-                if stop in MetroData.keys(): 
-                    if ShowProcess: print("stop",stop)
-                    if ShowProcess: print(MetroData[stop])
-                    MetroStations[stop]=[]
-                    Coord['Lat']=MetroData[stop]['stop_lat']
-                    Coord['Lon']=MetroData[stop]['stop_lon']
+            print("Stop:",stop)
 
-                if stop in RailRData.keys(): 
-                    if ShowProcess: print("stop",stop)
-                    if ShowProcess: print(RailRData[stop])
-                    RailRStations[stop]=[]
-                    Coord['Lat']=RailRData[stop]['stop_lat']
-                    Coord['Lon']=RailRData[stop]['stop_lon']
-                if stop in TramsData.keys(): 
-                    if ShowProcess: print("stop",stop)
-                    if ShowProcess: print(TramsData[stop])
-                    TramsStations[stop]=[]
+            if stop in TramsData.keys(): 
+                ListName.append(TramsData[stop]['stop_name'])
+                if ShowProcess: print("stop",stop)
+                if ShowProcess: print(TramsData[stop])
+                TramsStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop,ShowProcess=False)
+                ListStopsForCoords.append([TramsData[stop]['stop_lat'],TramsData[stop]['stop_lon']])
+                ListName.append(TramsData[stop]['stop_name'])
 
-                if stop in BusesData.keys(): 
-                    if ShowProcess: print("stop",stop)
-                    # if ShowProcess: print(BusesData[stop])
-                    BusesStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop)
+            if stop in BusesData.keys(): 
+                ListName.append(BusesData[stop]['stop_name'])
+                if ShowProcess: print("BUS - stop",stop)
+                if ShowProcess: print(BusesData[stop])
+                BusesStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop,ShowProcess=False)
+                ListStopsForCoords.append([BusesData[stop]['stop_lat'],BusesData[stop]['stop_lon']])
+                ListName.append(BusesData[stop]['stop_name'])
+                if ShowProcess: print()
+
+            if stop in MetroData.keys(): 
+                if ShowProcess: print("stop",stop)
+                if ShowProcess: print(MetroData[stop])
+                MetroStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop,ShowProcess=False)
+                Name=MetroData[stop]['stop_name']
+                Coord['Lat']=MetroData[stop]['stop_lat']
+                Coord['Lon']=MetroData[stop]['stop_lon']
+                print("Name:",MetroData[stop]['stop_name'],Name)
+
+            if stop in RailRData.keys(): 
+                if ShowProcess: print("stop",stop)
+                if ShowProcess: print(RailRData[stop])
+                RailRStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop,ShowProcess=False)
+                Name=RailRData[stop]['stop_name']+" - "+Name
+                Coord['Lat']=RailRData[stop]['stop_lat']
+                Coord['Lon']=RailRData[stop]['stop_lon']
+
+        if Coord=={'Lat':0,'Lon':0}:
+            Coord=GetAvCoords(ListCoords=ListStopsForCoords,ShowProcess=False)
+        if Name=="":
+            if ShowProcess: print(ListName)
+            Name=GetName(ListName=ListName,ShowProcess=False)
+        URL="http://maps.google.com/maps?q=&layer=c&cbll="+str(Coord['Lat'])+","+str(Coord['Lon'])
 
 
-
-
+        if ShowProcess: print("Name",Name)
         if ShowProcess: print("Coord",Coord)
         if ShowProcess: print("MetroStations",MetroStations)
         if ShowProcess: print("RailRStations",RailRStations)
         if ShowProcess: print("TramsStations",TramsStations)
-        if ShowProcess: print("BusesStations",BusesStations)
+        if ShowProcess: print("BusesStations",str(BusesStations))
+        ExitLine=str(key)+",\""+Name+"\",\""+NodeDict[key]['Type']+"\","+str(Coord['Lat'])+","+str(Coord['Lon'])+",\""
+        ExitLine+=str(MetroStations)+"\",\""
+        ExitLine+=str(RailRStations)+"\",\""
+        ExitLine+=str(TramsStations)+"\",\""
+        ExitLine+=str(BusesStations)+"\",\""+URL+"\"\n"
+        ExitData+=ExitLine
+        if ShowProcess: print(ExitLine)
         if ShowProcess: b=input('.................................')
- 
+    return ExitData
 
+
+
+def WriteToFile(Path,Data):
+    f = open(Path, 'w')
+    f.write(Data)
+    f.close()
 
 if __name__=="__main__":
     PathTxtFile=r"E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\NodeList.txt"
     PathToBuses=r"F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\BusesData.csv"
     PathToMetro=r"F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\MetroData.csv"
-    Main(PathNodeList=PathTxtFile,PathBuses=PathToBuses,PathMetro=PathToMetro,ShowProcess=True)
+    Data=Main(PathNodeList=PathTxtFile,PathBuses=PathToBuses,PathMetro=PathToMetro,ShowProcess=False)
+    WriteToFile(Path="Salida.csv",Data=Data)
+    # print(Data)
 
 
-    {'Data': ['65', '60290', '61654', '60292', '60807', '55639', '55650', '55641', '55640', '55890', '60293', '55901', '55945', '60289', '60288', '60295', '61798', '60383', '61323', '55829', '61819', '60296'], 'Type': 'Hub'}
-
-    61819
