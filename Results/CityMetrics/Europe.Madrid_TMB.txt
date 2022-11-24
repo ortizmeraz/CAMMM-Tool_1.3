@@ -1,9 +1,0 @@
-###### Numer of Stops
-Bus Network,0,4067
-Metro Network,2,155
-###### Avg Dist of stops
-Bus Network,0,277.3142451960387
-Metro Network,2,669.9702708971116
-###### Numer of lines
-Bus Network,0,100
-Metro Network,2,10

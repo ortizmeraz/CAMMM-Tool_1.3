@@ -1,13 +1,31 @@
+###### RUNN NOVEMBER 2022
+
+#### Script 11
+
+
+
+
 import ast
 
 
-
-def main(data):
+def main(data,ShowProcess:bool=False):
     NewDict={}
     NewOrder=[]
     UsedStops=[]
     KeyList=list(data.keys())
 
+    if ShowProcess: print("Keys")
+    if ShowProcess: print(KeyList)
+    if ShowProcess: b=input('.................................')
+
+    for key in data.keys():
+        if int(key)>9999000:
+            if ShowProcess: print("KEEEEEEEEEEEEEEEEEEy")
+            if ShowProcess: print(key)
+
+
+    if ShowProcess: print("End of checking")
+    if ShowProcess: b=input('.................................')
     for num in range(31,-1,-1):
         # print("Num",num)
         for key in data.keys():
@@ -29,40 +47,40 @@ def main(data):
         ##### Presentation of the data
         LocalPrint=True
         #######################
-        if LocalPrint: print("\n"*3)
-        if LocalPrint: print("········································\n"*3)
-        if LocalPrint: print(idx,"/",len(NewOrder))
-        if LocalPrint: print("Stop:",stop,"---",len(data[stop]))
-        if LocalPrint: print("\t",data[stop],len(data[stop]))
+        if ShowProcess: print("\n"*3)
+        if ShowProcess: print("········································\n"*3)
+        if ShowProcess: print(idx,"/",len(NewOrder))
+        if ShowProcess: print("Stop:",stop,"---",len(data[stop]))
+        if ShowProcess: print("\t",data[stop],len(data[stop]))
         
         if stop in UsedStops:
-            if LocalPrint: print("\nSkip because it has been used")
+            if ShowProcess: print("\nSkip because it has been used")
             continue
         ###############################################################################
         ##### Variable declaration
-        LocalPrint=True
+        ShowProcess=True
         #######################
 
         ###############################################################################
         ########    METRO STATION
         ###############################################################################
         ##### Variable declaration
-        LocalPrint=True
+        ShowProcess=True
         #######################
 
         if int(stop) <100:
             # print (stop)
-            LocalPrint=True
+            ShowProcess=True
             LocalOrder.append(stop)
-            if LocalPrint: print("METRO:\t",stop,data[stop],len(data[stop]))
+            if ShowProcess: print("METRO:\t",stop,data[stop],len(data[stop]))
             for substop in data[stop]:
                 LocalOrder.append(substop['StopCode'])
-                if LocalPrint: print(substop)
+                if ShowProcess: print(substop)
                 # UsedStops.append(substop['StopCode'])
             print("Local Order:",LocalOrder)
             NewDict[stop]={"Data":LocalOrder,"Type":"Hub"}
             # b=input('.................................')
-            # if LocalPrint: print("UsedStops ",UsedStops)
+            # if ShowProcess: print("UsedStops ",UsedStops)
             continue
 
 
@@ -78,72 +96,71 @@ def main(data):
         ########    BUS STOPS
         ###############################################################################
         ##### Listing stage
-        LocalPrint=False
+        ShowProcess=False
         #######################
         print("Start Order")
 
         OldOrder=[]
         for substop in data[stop]:
             OldOrder.append(substop['StopCode'])
-            if LocalPrint: print()
-            if LocalPrint: print(substop)
-            if LocalPrint: print("\t",substop['StopCode'])
-            if LocalPrint: print(len(data[substop['StopCode']]),"-",data[substop['StopCode']])
-            if LocalPrint: print()
-            if LocalPrint: print("\tEnter ranking")
+            if ShowProcess: print()
+            if ShowProcess: print(substop)
+            if ShowProcess: print("\t",substop['StopCode'])
+            if ShowProcess: print(len(data[substop['StopCode']]),"-",data[substop['StopCode']])
+            if ShowProcess: print()
+            if ShowProcess: print("\tEnter ranking")
         ###############################################################################
         ##### Sorting stage
-        LocalPrint=False
         #######################
-        if LocalPrint: print("OldOrder",OldOrder)
+        if ShowProcess: print("OldOrder",OldOrder)
 
         # if substop in NewOrder:
 
-        print(OldOrder,len(OldOrder))
+        if ShowProcess: print(OldOrder,len(OldOrder))
         # b=input('.................................')
         if len(OldOrder)==0:
             StartRange=0
         else:
             StartRange=len(OldOrder)
         for rank in range(StartRange+1,0,-1):
-            if LocalPrint: print("\t","+",rank)
+            if ShowProcess: print("\t","+",rank)
             for substop in OldOrder:
                 if rank == len(data[substop]):
-                    if LocalPrint: print("\t"*2+"Sub Stop",substop,len(data[substop]))
+                    if ShowProcess: print("\t"*2+"Sub Stop",substop,len(data[substop]))
                     LocalOrder.append(substop)
                 else:
-                    if LocalPrint: print()
-        if LocalPrint: print(LocalOrder)
-        if LocalPrint: 
+                    if ShowProcess: print()
+        if ShowProcess: print(LocalOrder)
+        if ShowProcess: 
             for substop in LocalOrder:
-                print(substop,len(data[substop]))
+                if ShowProcess: print(substop,len(data[substop]))
         ###############################################################################
         ##### Expansion stage
-        LocalPrint=True
+        ShowProcess=True
         #######################
         CompleteLocalOrder=[]
         for stp in LocalOrder:
             CompleteLocalOrder.append(stp)
-        if LocalPrint: print("Local Order       ",LocalOrder)
-        if LocalPrint: print("CompleteLocalOrder",CompleteLocalOrder)
-        if LocalPrint: print("Local Order",LocalOrder)
+        if ShowProcess: print("Local Order       ",LocalOrder)
+        if ShowProcess: print("CompleteLocalOrder",CompleteLocalOrder)
+        if ShowProcess: print("Local Order",LocalOrder)
         for substop in LocalOrder:
-            if LocalPrint: print("\t",substop)
+            if ShowProcess: print("\t",substop)
             for subcheck in data[substop]:
-                if LocalPrint: print(subcheck,end="")
+                if ShowProcess: print(subcheck,end="")
 
                 if subcheck['StopCode'] in LocalOrder or subcheck['StopCode']==stop:
-                    if LocalPrint: print("\t"*2+"Mirrored")
+                    if ShowProcess: print("\t"*2+"Mirrored")
                 else:
-                    if LocalPrint: print("\t"*2+"Expand")
-                    if LocalPrint: print("\tNested:",subcheck['StopCode'],data[subcheck['StopCode']])
+                    if ShowProcess: print("\t"*2+"Expand")
+                    if ShowProcess: print("\tNested:",subcheck['StopCode'],data[subcheck['StopCode']])
                     for NestedStop in data[subcheck['StopCode']]:
-                        print("Nested Stop",NestedStop['StopCode'])
+                        if ShowProcess:print("Nested Stop",NestedStop['StopCode'])
                         if NestedStop['StopCode'] not in CompleteLocalOrder:
-                            if LocalPrint: print("CompleteLocalOrder+",CompleteLocalOrder,NestedStop['StopCode'])
+                            if ShowProcess: print("CompleteLocalOrder+",CompleteLocalOrder,NestedStop['StopCode'])
                             CompleteLocalOrder.append(NestedStop['StopCode'])
-                            if LocalPrint: print("\t"*2,"NEW ADDITON·····························································································")
-                            if LocalPrint: print("CompleteLocalOrder+",CompleteLocalOrder,NestedStop['StopCode'])
+                            if ShowProcess: print("\t"*2,"NEW ADDITON·····························································································")
+                            if ShowProcess: print("CompleteLocalOrder+",CompleteLocalOrder,NestedStop['StopCode'])
         CompleteLocalOrder.append(stop)
         for stp in CompleteLocalOrder:
             UsedStops.append(stp)
@@ -151,12 +168,12 @@ def main(data):
         NewDict[stop]={"Data":CompleteLocalOrder,"Type":"Cluster"}
 
         print(stop)
-        print(NewDict[stop])
-        if LocalPrint: print("Local Order       ",LocalOrder,len(LocalOrder))
-        if LocalPrint: print("CompleteLocalOrder",CompleteLocalOrder,len(CompleteLocalOrder))
+        if ShowProcess: print(NewDict[stop])
+        if ShowProcess: print("Local Order       ",LocalOrder,len(LocalOrder))
+        if ShowProcess: print("CompleteLocalOrder",CompleteLocalOrder,len(CompleteLocalOrder))
         # if stop =='54160': print("HEEEEEEEEEEEEEEEEEEEEEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n"*10)
         for stop in NewDict.keys():
-            print(stop,NewDict[stop])
+            if ShowProcess: print(stop,NewDict[stop])
         # b=input('...Stop..............................')
 
         # for stop in List:
@@ -168,7 +185,7 @@ def main(data):
     for stop in NewDict.keys():
         print(stop,NewDict[stop])
 
-    Path=r'E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\NodeList.txt'
+    Path=r'F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\NodeList.txt'
     f = open(Path, 'w')
     f.write(str(NewDict))
     f.close()
@@ -185,8 +202,8 @@ def ReadDict(Path,ShowData=False):
     return ExitData
 
 
-DataPath=r"E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\ExitDict2.txt"
+DataPath=r'F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\DataToCreateNode.txt'
 
 NodeData=ReadDict(Path=DataPath)
-main(data=NodeData)
+main(data=NodeData,ShowProcess=False)
 # print(data)

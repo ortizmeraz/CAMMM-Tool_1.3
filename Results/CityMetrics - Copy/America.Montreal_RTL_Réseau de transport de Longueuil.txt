@@ -1,9 +1,0 @@
-###### Numer of Stops
-Bus Network0,6171
-Other Network4,215
-###### Avg Dist of stops
-Bus Network0,302.98207780515725
-Other Network4,293.5488018634707
-###### Numer of lines
-
-{'700': 153, '1501': 9}

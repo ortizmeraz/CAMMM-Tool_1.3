@@ -1,3 +1,8 @@
+###### RUNN NOVEMBER 2022
+
+#### Script 10
+
+
 import os
 import time
 
@@ -156,7 +161,8 @@ def Main(PathBusStop:str,PathMetroStation:str):
         else:
             print(BS,"Used Bus Stop")
     print(NodeCollection)
-    Path=r'E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\ExitDict.txt'
+    Path=r'F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\DataToCreateNode.txt'
+    # ExitDict.txt
     f = open(Path, 'w')
     f.write(str(NodeCollection))
     f.close()

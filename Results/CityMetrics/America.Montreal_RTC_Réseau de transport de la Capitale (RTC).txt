@@ -1,6 +1,0 @@
-###### Numer of Stops
-Bus Network,0,17368
-###### Avg Dist of stops
-Bus Network,0,338.319659606923
-###### Numer of lines
-Bus Network,0,318

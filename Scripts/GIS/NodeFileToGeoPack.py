@@ -1,10 +1,16 @@
-def TypeOfStop(City:str="MTL",stop:str="NA"):
-    if City=="MTL":
-        if int(stop)<200:
-            ExitVal="Metro"
-        else:
-            ExitVal="Bus"
-    return ExitVal
+###### RUNN NOVEMBER 2022
+
+#### Script 20
+
+
+
+# def TypeOfStop(City:str="MTL",stop:str="NA"):
+#     if City=="MTL":
+#         if int(stop)<200 and :
+#             ExitVal="Metro"
+#         else:
+#             ExitVal="Bus"
+#     return ExitVal
 
 
 
@@ -101,7 +107,20 @@ def GetName(ListName:list,ShowProcess:bool=False):
     Exit = "-".join([str(item) for item in UniqueNames])            
     return Exit
 
-
+def DictToString(Dict:dict,ShowProcess:bool=False):
+    if ShowProcess: print("Dictionary to string tool")
+    if ShowProcess: print(Dict)
+    DictString=str(Dict)
+    ExitString=""
+    for char in DictString:
+        if char !="'":
+            ExitString+=char
+        else:
+            ExitString+='"'
+    ExitString='\''+ExitString+"'"
+    if ShowProcess: print(ExitString)
+    if ShowProcess: b=input('.................................')
+    return ExitString
 
 def GetLine(dataStop:dict,dataTrip:dict,stop:str,ShowProcess:bool=False):
     ExitValue=[]
@@ -128,10 +147,10 @@ def GetLine(dataStop:dict,dataTrip:dict,stop:str,ShowProcess:bool=False):
 
 
 def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
-    ExitData="Id,Name,Type,Lat,Lon"
+    ExitData="Id,Name,Type,Lat,Lon,"
     ExitData+="MetroStations,RailRStations,TramsStations,BusesStations,URL\n"
 
-
+    ExitJSONtext="{\n  \"features\": [\n"
 
     Buses=OpenCSV(Path=PathBuses)
     BusesData={}
@@ -144,12 +163,41 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
     Metro=OpenCSV(Path=PathMetro)
     MetroData={}
     for key in Metro.keys():
+# 9999111,9999112,9999114
+# Key 14 Station Berri-UQAM 1
+# Key 14 9999111
+# Key 43 Station Berri-UQAM 2
+# Key 43 9999112
+# Key 59 Station Berri-UQAM 4
+# Key 59 9999114
+
+
+# Key 49 Station Jean-Talon 2
+# Key 49 9999052
+# Key 68 Station Jean-Talon 5
+# Key 68 9999055
+
+
+# Key 33 Station Snowdon 2
+# Key 33 9999492
+# Key 60 Station Snowdon 5
+# Key 60 9999495
+
+
+
+#         if int(Metro[key]['StopCode'])>100:
+#             if ShowProcess: print("Key",key,Metro[key]['stop_name'])
+#             if ShowProcess: print("Key",key,Metro[key]['StopCode'])
+#             b=input('.................................')
+#             stop= "99"
+#         else:
         stop= str(Metro[key]['StopCode'])
         MetroData[stop]=Metro[key]
     
     RailRData={}
     TramsData={}
 
+    if ShowProcess: print("\n"*5,"#########################\nMetro Keys")
     if ShowProcess: print(list(MetroData.keys()))
     if ShowProcess: print(list(BusesData.keys()))
 
@@ -188,13 +236,30 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
                 # "Name": "De La V�rendrye - Rondeau",
                 # "URL": "http://maps.google.com/maps?q=&layer=c&cbll=45.613755500424006,-73.54609349974568",
 
-
-
+    # ListOfNodeKeys=list(NodeDict.keys())
+    # if ShowProcess: print("ListOfNodeKeys")
+    # if ShowProcess: print(NodeDict["9999111"])
+    # if ShowProcess: print(NodeDict["9999492"])
+    # if ShowProcess: print(NodeDict["9999112"])
+    # if ShowProcess: print(NodeDict["9999052"])
+    # if ShowProcess: print(NodeDict["9999114"])
+    # if ShowProcess: print(NodeDict["9999495"])
+    # if ShowProcess: print(NodeDict["9999055"])
+    # # if ShowProcess: print(NodeDict[""])
+    # if ShowProcess: print("\n"*10)
+    # if ShowProcess: print(ListOfNodeKeys)
+    # if ShowProcess: b=input('.................................')
+    for key in NodeDict.keys():
+        if int(key)>9999000:
+            if ShowProcess: print("HEY HEY")
+            if ShowProcess: b=input('.................................')
 
     for id,key in enumerate(NodeDict.keys()):
         Mainstop=str(key)
         if ShowProcess: print("\n\n\n#########################\n#########################\n#########################\n#########################")
         print("MainStop",Mainstop,type)
+        if key=="99":
+            if ShowProcess: b=input('.................................')
         if ShowProcess: print(id,key)
         if ShowProcess: print(NodeDict[key])
         FiD=id+1
@@ -254,22 +319,56 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
             Name=GetName(ListName=ListName,ShowProcess=False)
         URL="http://maps.google.com/maps?q=&layer=c&cbll="+str(Coord['Lat'])+","+str(Coord['Lon'])
 
-
+        if ShowProcess: print("\n"*3)
         if ShowProcess: print("Name",Name)
         if ShowProcess: print("Coord",Coord)
         if ShowProcess: print("MetroStations",MetroStations)
         if ShowProcess: print("RailRStations",RailRStations)
         if ShowProcess: print("TramsStations",TramsStations)
         if ShowProcess: print("BusesStations",str(BusesStations))
-        ExitLine=str(key)+",\""+Name+"\",\""+NodeDict[key]['Type']+"\","+str(Coord['Lat'])+","+str(Coord['Lon'])+",\""
-        ExitLine+=str(MetroStations)+"\",\""
-        ExitLine+=str(RailRStations)+"\",\""
-        ExitLine+=str(TramsStations)+"\",\""
-        ExitLine+=str(BusesStations)+"\",\""+URL+"\"\n"
+        ExitLine=str(key)+",\'"+Name+"\',\'"+NodeDict[key]['Type']+"\',"+str(Coord['Lat'])+","+str(Coord['Lon'])+","
+        ExitLine+=DictToString(Dict=MetroStations,ShowProcess=False)+","
+        ExitLine+=DictToString(Dict=RailRStations,ShowProcess=False)+","
+        ExitLine+=DictToString(Dict=TramsStations,ShowProcess=False)+","
+        ExitLine+=DictToString(Dict=BusesStations,ShowProcess=False)+","
+        ExitLine+="\'"+URL+"\'\n"
+        # if "'" in ExitLine:
+        #     print("ERRROR")
+        #     print(ExitLine)
+        #     b=input('.................................')
         ExitData+=ExitLine
         if ShowProcess: print(ExitLine)
+
+
+        Jason="{"
+        Jason+="\"type\": \"Feature\","
+        Jason+="\"properties\": {"
+        Jason+="\"Id\": \""+str(key)+"\","
+        Jason+="\"Name\": \""+Name+"\","
+        Jason+="\"Type\": \""+NodeDict[key]['Type']+"\","
+        Jason+="\"MetroData\": \""+DictToString(Dict=MetroStations,ShowProcess=False)+"\","
+        Jason+="\"RailData\": \""+DictToString(Dict=RailRStations,ShowProcess=False)+"\","
+        Jason+="\"TramData\": \""+DictToString(Dict=TramsStations,ShowProcess=False)+"\","
+        Jason+="\"BusData\": \""+DictToString(Dict=BusesStations,ShowProcess=False)+"\","
+
+        Jason+="\"URL\": \""+URL+"\""
+        Jason+="},"
+        Jason+="\"geometry\": {"
+        Jason+="\"coordinates\": ["
+        if ShowProcess: print("Coord['Lon']",Coord['Lon'],type(Coord['Lon']))
+        Jason+=Coord['Lon']+","
+        Jason+=str(Coord['Lat'])
+        Jason+="],"
+        Jason+="\"type\": \"Point\""
+        Jason+="},"
+        Jason+="\"id\": \""+str(id)+"\""
+        Jason+="},"
+        ExitJSONtext+=Jason
+        if ShowProcess: print(Jason)
+
         if ShowProcess: b=input('.................................')
-    return ExitData
+    ExitJSONtext+="]}"
+    return ExitJSONtext
 
 
 
@@ -279,11 +378,11 @@ def WriteToFile(Path,Data):
     f.close()
 
 if __name__=="__main__":
-    PathTxtFile=r"E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\NodeList.txt"
+    PathTxtFile=r'F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\NodeList.txt'
     PathToBuses=r"F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\BusesData.csv"
     PathToMetro=r"F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\MetroData.csv"
     Data=Main(PathNodeList=PathTxtFile,PathBuses=PathToBuses,PathMetro=PathToMetro,ShowProcess=False)
-    WriteToFile(Path="Salida.csv",Data=Data)
+    WriteToFile(Path="Salida2.json",Data=Data)
     # print(Data)
 
 
