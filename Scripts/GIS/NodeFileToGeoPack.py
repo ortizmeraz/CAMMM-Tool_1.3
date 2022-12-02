@@ -117,7 +117,7 @@ def DictToString(Dict:dict,ShowProcess:bool=False):
             ExitString+=char
         else:
             ExitString+='"'
-    ExitString='\''+ExitString+"'"
+    # ExitString='\''+ExitString+"'"
     if ShowProcess: print(ExitString)
     if ShowProcess: b=input('.................................')
     return ExitString
@@ -346,10 +346,10 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
         Jason+="\"Id\": \""+str(key)+"\","
         Jason+="\"Name\": \""+Name+"\","
         Jason+="\"Type\": \""+NodeDict[key]['Type']+"\","
-        Jason+="\"MetroData\": \""+DictToString(Dict=MetroStations,ShowProcess=False)+"\","
-        Jason+="\"RailData\": \""+DictToString(Dict=RailRStations,ShowProcess=False)+"\","
-        Jason+="\"TramData\": \""+DictToString(Dict=TramsStations,ShowProcess=False)+"\","
-        Jason+="\"BusData\": \""+DictToString(Dict=BusesStations,ShowProcess=False)+"\","
+        Jason+="\"MetroData\": "+DictToString(Dict=MetroStations,ShowProcess=False)+","
+        Jason+="\"RailData\": "+DictToString(Dict=RailRStations,ShowProcess=False)+","
+        Jason+="\"TramData\": "+DictToString(Dict=TramsStations,ShowProcess=False)+","
+        Jason+="\"BusData\": "+DictToString(Dict=BusesStations,ShowProcess=False)+","
 
         Jason+="\"URL\": \""+URL+"\""
         Jason+="},"
