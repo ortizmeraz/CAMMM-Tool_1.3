@@ -1,6 +1,5 @@
-dict={1:"w",2:"e",3:"r"}
+a=[1,2,3,4,5,6]
+b=[11,11,22,33]
 
-Path=r'E:\GitHub\CAMMM-Tool_1.3\SampleData\GIS_Data\ExitDict.txt'
-f = open(Path, 'w')
-f.write(str(dict))
-f.close()
+for i,j in zip(a,b,strict=True):
+    print(i,j)

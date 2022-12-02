@@ -4,13 +4,7 @@
 
 
 
-# def TypeOfStop(City:str="MTL",stop:str="NA"):
-#     if City=="MTL":
-#         if int(stop)<200 and :
-#             ExitVal="Metro"
-#         else:
-#             ExitVal="Bus"
-#     return ExitVal
+
 
 
 
@@ -122,31 +116,61 @@ def DictToString(Dict:dict,ShowProcess:bool=False):
     if ShowProcess: b=input('.................................')
     return ExitString
 
-def GetLine(dataStop:dict,dataTrip:dict,stop:str,ShowProcess:bool=False):
+def GetLine(dataStop:dict,dataTrip:dict,stop:str,Patch:dict,ShowProcess:bool=False):
+    if ShowProcess: print("Getting the Line")
+    if ShowProcess: b=input('.................................')
+    def SubMainFunc(stop):
+        if stop in dataStop.keys():
+            if ShowProcess: print("Key in dataStop")
+            ListTrips=dataStop[stop]
+            for trip in ListTrips:
+                if ShowProcess: print("stop",stop,"trip",trip,dataTrip[trip])
+                if ShowProcess: print("ExitValue",ExitValue)
+                if trip in dataTrip.keys():
+                    if ShowProcess: print(".")
+                    # if ShowProcess: b=input('.................................')
+
+                    if dataTrip[trip] in ExitValue:
+                        # if ShowProcess: print("The line is not on list")
+                        pass
+                    else:
+                        if ShowProcess: print("Adding line to list")
+                        ExitValue.append(str(dataTrip[trip]))
+            if ShowProcess: print("ExitValue:",ExitValue)
+            # if ShowProcess: b=input('.................................')    
     ExitValue=[]
-    if stop in dataStop.keys():
-        ListTrips=dataStop[stop]
-        for trip in ListTrips:
-            if ShowProcess: print("stop",stop,"trip",trip,dataTrip[trip])
-            if ShowProcess: print("ExitValue",ExitValue)
-            if trip in dataTrip.keys():
-                if ShowProcess: b=input('.................................')
+    CheckInPatch=False
+    for st in Patch:
+        if int(stop) in Patch.keys():
+            CheckInPatch=True
+            TempVar=st
 
-                if dataTrip[trip] in ExitValue:
-                    if ShowProcess: print("The line is not on list")
-                else:
-                    if ShowProcess: print("Adding line to list")
-                    ExitValue.append(str(dataTrip[trip]))
-        if ShowProcess: print("ExitValue:",ExitValue)
+    if ShowProcess: print("CheckInPatch",CheckInPatch)
+    if ShowProcess: b=input('.................................')
+    if CheckInPatch is False:
+        SubMainFunc(stop=stop)
+    if CheckInPatch:
+        if ShowProcess: print("stop:",stop)
+        if ShowProcess: print("Patch:",Patch)
+        if ShowProcess: print("TempVar:",TempVar)
+        if ShowProcess: print("Patch[(stop)]:",Patch[int(stop)])
         if ShowProcess: b=input('.................................')
-
+        for st in Patch[int(stop)]:
+            if ShowProcess: print("                                     CHECK here:",st,stop)
+            SubMainFunc(stop=str(st))
+    if ShowProcess: print("ExitValue",ExitValue)
+    if ShowProcess: b=input('.................................')
     if len(ExitValue)==0:
         ExitValue=['NA']
     return ExitValue
+def ckeckStop(listOfChecker,stop):
+    if stop in listOfChecker:
+        return True
+    else:
+        return False
 
 
-
-def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
+def Main(PathNodeList,PathBuses,PathMetro,Patch,ShowProcess:bool=False):
     ExitData="Id,Name,Type,Lat,Lon,"
     ExitData+="MetroStations,RailRStations,TramsStations,BusesStations,URL\n"
 
@@ -163,44 +187,30 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
     Metro=OpenCSV(Path=PathMetro)
     MetroData={}
     for key in Metro.keys():
-# 9999111,9999112,9999114
-# Key 14 Station Berri-UQAM 1
-# Key 14 9999111
-# Key 43 Station Berri-UQAM 2
-# Key 43 9999112
-# Key 59 Station Berri-UQAM 4
-# Key 59 9999114
-
-
-# Key 49 Station Jean-Talon 2
-# Key 49 9999052
-# Key 68 Station Jean-Talon 5
-# Key 68 9999055
-
-
-# Key 33 Station Snowdon 2
-# Key 33 9999492
-# Key 60 Station Snowdon 5
-# Key 60 9999495
-
-
-
-#         if int(Metro[key]['StopCode'])>100:
-#             if ShowProcess: print("Key",key,Metro[key]['stop_name'])
-#             if ShowProcess: print("Key",key,Metro[key]['StopCode'])
-#             b=input('.................................')
-#             stop= "99"
-#         else:
+        # if ShowProcess: print("key",key,type(key))
         stop= str(Metro[key]['StopCode'])
-        MetroData[stop]=Metro[key]
+        
+        # if ShowProcess: print(Patch)
+        for st in Patch:
+            if ShowProcess: print(st)
+            if int(stop) in Patch[st]:
+                stop=str(st)
+                MetroData[stop]=Metro[key]
+                MetroData[stop]['StopCode']=stop
+                MetroData[stop]['stop_id']=stop
+                # if ShowProcess: print("stop",stop,type(stop))
+                # if ShowProcess: print("MetroData",MetroData[stop])
+                # if ShowProcess: b=input('.................................')
+        if stop not in MetroData.keys():
+            MetroData[stop]=Metro[key]
     
     RailRData={}
     TramsData={}
 
     if ShowProcess: print("\n"*5,"#########################\nMetro Keys")
     if ShowProcess: print(list(MetroData.keys()))
-    if ShowProcess: print(list(BusesData.keys()))
-
+    # if ShowProcess: print(list(BusesData.keys()))
+    if ShowProcess: b=input('.................................')
     NodeDict=OpenDictionaryFile(Path=PathNodeList)
 
 
@@ -220,46 +230,19 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
 
     # b=input('.................................')
     # print(Buses.keys())
-    # for key in Buses.keys():
-    #     print(key,type(key))
-                # Lat :
-                # Lon :
 
-                # "fid": "1644",
-                # "Id": "54735",
-                # "Type": "Cluster",
-                # "Category": "Small",
-                # "MetroData": "{}",
-                # "BusData": "{'54737':['24','101'],'54735':['102']}",
-                # "TramData": "{}",
-                # "RailData": "{}",
-                # "Name": "De La V�rendrye - Rondeau",
-                # "URL": "http://maps.google.com/maps?q=&layer=c&cbll=45.613755500424006,-73.54609349974568",
+    ListOfNodeKeys=list(NodeDict.keys())
 
-    # ListOfNodeKeys=list(NodeDict.keys())
-    # if ShowProcess: print("ListOfNodeKeys")
-    # if ShowProcess: print(NodeDict["9999111"])
-    # if ShowProcess: print(NodeDict["9999492"])
-    # if ShowProcess: print(NodeDict["9999112"])
-    # if ShowProcess: print(NodeDict["9999052"])
-    # if ShowProcess: print(NodeDict["9999114"])
-    # if ShowProcess: print(NodeDict["9999495"])
-    # if ShowProcess: print(NodeDict["9999055"])
-    # # if ShowProcess: print(NodeDict[""])
-    # if ShowProcess: print("\n"*10)
-    # if ShowProcess: print(ListOfNodeKeys)
-    # if ShowProcess: b=input('.................................')
-    for key in NodeDict.keys():
-        if int(key)>9999000:
-            if ShowProcess: print("HEY HEY")
-            if ShowProcess: b=input('.................................')
+    if ShowProcess: print("\n"*10)
+    if ShowProcess: print("List Of Node Keys")
+    if ShowProcess: print(ListOfNodeKeys)
+    if ShowProcess: b=input('.................................')
 
     for id,key in enumerate(NodeDict.keys()):
         Mainstop=str(key)
         if ShowProcess: print("\n\n\n#########################\n#########################\n#########################\n#########################")
         print("MainStop",Mainstop,type)
-        if key=="99":
-            if ShowProcess: b=input('.................................')
+
         if ShowProcess: print(id,key)
         if ShowProcess: print(NodeDict[key])
         FiD=id+1
@@ -270,6 +253,7 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
         RailRStations={}
         TramsStations={}
         BusesStations={}
+        AccesibilityIndex={"Buses":[],"Tram":[],"Metro":[],"Train":[]}
 
         if NodeDict[key]['Type']=='Hub':
             if ShowProcess: print("Is  HUB")
@@ -277,12 +261,14 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
         for stop in NodeDict[key]['Data']:
 
             print("Stop:",stop)
+            
 
             if stop in TramsData.keys(): 
                 ListName.append(TramsData[stop]['stop_name'])
                 if ShowProcess: print("stop",stop)
                 if ShowProcess: print(TramsData[stop])
-                TramsStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop,ShowProcess=False)
+
+                TramsStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop,ShowProcess=False,Patch=Patch)
                 ListStopsForCoords.append([TramsData[stop]['stop_lat'],TramsData[stop]['stop_lon']])
                 ListName.append(TramsData[stop]['stop_name'])
 
@@ -290,24 +276,28 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
                 ListName.append(BusesData[stop]['stop_name'])
                 if ShowProcess: print("BUS - stop",stop)
                 if ShowProcess: print(BusesData[stop])
-                BusesStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop,ShowProcess=False)
+                BusesStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop,ShowProcess=False,Patch=Patch)
                 ListStopsForCoords.append([BusesData[stop]['stop_lat'],BusesData[stop]['stop_lon']])
                 ListName.append(BusesData[stop]['stop_name'])
+                AccesibilityIndex["Buses"].append(BusesData[stop]['wheelchair_boarding'])
                 if ShowProcess: print()
-
+            
             if stop in MetroData.keys(): 
-                if ShowProcess: print("stop",stop)
+                if ShowProcess: print("Metro Station",stop)
                 if ShowProcess: print(MetroData[stop])
-                MetroStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop,ShowProcess=False)
+                # ckeckStop(listOfChecker=["91","92","93"],stop=stop)
+                MetroStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop,ShowProcess=False,Patch=Patch)
                 Name=MetroData[stop]['stop_name']
                 Coord['Lat']=MetroData[stop]['stop_lat']
                 Coord['Lon']=MetroData[stop]['stop_lon']
                 print("Name:",MetroData[stop]['stop_name'],Name)
+                AccesibilityIndex["Metro"].append(MetroData[stop]['wheelchair_boarding'])
+                # if ShowProcess: b=input('End of Metro calculations.................................')
 
             if stop in RailRData.keys(): 
-                if ShowProcess: print("stop",stop)
+                if ShowProcess: print("Train Station",stop)
                 if ShowProcess: print(RailRData[stop])
-                RailRStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop,ShowProcess=False)
+                RailRStations[stop]=GetLine(dataStop=StopTripData,dataTrip=TripData,stop=stop,ShowProcess=False,Patch=Patch)
                 Name=RailRData[stop]['stop_name']+" - "+Name
                 Coord['Lat']=RailRData[stop]['stop_lat']
                 Coord['Lon']=RailRData[stop]['stop_lon']
@@ -320,23 +310,27 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
         URL="http://maps.google.com/maps?q=&layer=c&cbll="+str(Coord['Lat'])+","+str(Coord['Lon'])
 
         if ShowProcess: print("\n"*3)
+        if ShowProcess: print("Key",key)
         if ShowProcess: print("Name",Name)
         if ShowProcess: print("Coord",Coord)
         if ShowProcess: print("MetroStations",MetroStations)
         if ShowProcess: print("RailRStations",RailRStations)
         if ShowProcess: print("TramsStations",TramsStations)
         if ShowProcess: print("BusesStations",str(BusesStations))
+        if ShowProcess: print("AccesibilityIndex",AccesibilityIndex)
         ExitLine=str(key)+",\'"+Name+"\',\'"+NodeDict[key]['Type']+"\',"+str(Coord['Lat'])+","+str(Coord['Lon'])+","
         ExitLine+=DictToString(Dict=MetroStations,ShowProcess=False)+","
         ExitLine+=DictToString(Dict=RailRStations,ShowProcess=False)+","
         ExitLine+=DictToString(Dict=TramsStations,ShowProcess=False)+","
         ExitLine+=DictToString(Dict=BusesStations,ShowProcess=False)+","
+        ExitLine+=DictToString(Dict=AccesibilityIndex,ShowProcess=False)+","
         ExitLine+="\'"+URL+"\'\n"
         # if "'" in ExitLine:
         #     print("ERRROR")
         #     print(ExitLine)
         #     b=input('.................................')
         ExitData+=ExitLine
+        if ShowProcess: print("\n"*5)
         if ShowProcess: print(ExitLine)
 
 
@@ -350,6 +344,7 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
         Jason+="\"RailData\": "+DictToString(Dict=RailRStations,ShowProcess=False)+","
         Jason+="\"TramData\": "+DictToString(Dict=TramsStations,ShowProcess=False)+","
         Jason+="\"BusData\": "+DictToString(Dict=BusesStations,ShowProcess=False)+","
+        Jason+="\"AccesibilityIndex\": "+DictToString(Dict=AccesibilityIndex,ShowProcess=False)+","
 
         Jason+="\"URL\": \""+URL+"\""
         Jason+="},"
@@ -373,7 +368,7 @@ def Main(PathNodeList,PathBuses,PathMetro,ShowProcess:bool=False):
 
 
 def WriteToFile(Path,Data):
-    f = open(Path, 'w')
+    f = open(Path, 'w',encoding='utf8')
     f.write(Data)
     f.close()
 
@@ -381,7 +376,26 @@ if __name__=="__main__":
     PathTxtFile=r'F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\NodeList.txt'
     PathToBuses=r"F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\BusesData.csv"
     PathToMetro=r"F:\OneDrive - Concordia University - Canada\RA-CAMMM\Gis_Data\MetroData.csv"
-    Data=Main(PathNodeList=PathTxtFile,PathBuses=PathToBuses,PathMetro=PathToMetro,ShowProcess=False)
+    PatchMTL={91:[9999111,9999112,9999114],92:[9999052,9999055],93:[9999492,9999495]}
+    # Key 14 Station Berri-UQAM 1
+    # Key 14 9999111
+    # Key 43 Station Berri-UQAM 2
+    # Key 43 9999112
+    # Key 59 Station Berri-UQAM 4
+    # Key 59 9999114
+
+
+    # Key 49 Station Jean-Talon 2
+    # Key 49 9999052
+    # Key 68 Station Jean-Talon 5
+    # Key 68 9999055
+
+
+    # Key 33 Station Snowdon 2
+    # Key 33 9999492
+    # Key 60 Station Snowdon 5
+    # Key 60 9999495
+    Data=Main(PathNodeList=PathTxtFile,PathBuses=PathToBuses,PathMetro=PathToMetro,ShowProcess=False,Patch=PatchMTL)
     WriteToFile(Path="Salida2.json",Data=Data)
     # print(Data)
 
