@@ -1,7 +1,7 @@
-Id,FirstAgency,name,AreaSqKm,"PopulationMillion
-","DensityPersonSqKm
-","NumBoroughs
-","NumTransitSystems
-",Type0,NumStops0,NumLines0,AvgDisStops0,Type1,NumStops1,NumLines1,AvgDisStops1,Type2,NumStops2,NumLines2,AvgDisStops2,Type3,NumStops3,NumLines3,AvgDisStops3,Type4,NumStops4,NumLines4,AvgDisStops4
-2,test,test,test,1,11,11,11,Bus,1,1,1.0,Train,1,1,1,Tram,1,1,1.0,"Metro			
-",1,1,1.0,Others,1,1,1
+Id,FirstAgency,name,AreaSqKm,'PopulationMillion
+','DensityPersonSqKm
+','NumBoroughs
+','NumTransitSystems
+',Type0,NumStops0,NumLines0,AvgDisStops0,Type1,NumStops1,NumLines1,AvgDisStops1,Type2,NumStops2,NumLines2,AvgDisStops2,Type3,NumStops3,NumLines3,AvgDisStops3,Type4,NumStops4,NumLines4,AvgDisStops4
+2,test,test,test,1,11,11,11,Bus,1,1,1.0,Train,1,1,1,Tram,1,1,1.0,'Metro			
+',1,1,1.0,Others,1,1,1
