@@ -127,6 +127,26 @@ def GetRoute2TripData(Path:str,ShowProcess:bool=False)->dict:
                 b=input('.................................')
     return RoutesWithTrips
 
+
+def CleanTrips(RouteData:dict,TripSeq:dict,TripRouteData:dict,ShowProcess:bool=False)->dict:
+    ### Description
+    ### 
+    # Variables 
+    # - RouteData dictionary from GetRouteData
+    # - TripSeq dictionary from GetStopSequence
+    # - TripRouteData dictionary from GetRoute2TripData
+    for route in RouteData:
+        if ShowProcess: print(route)
+        # if ShowProcess: print("\t",TripRouteData[route].TripList)
+        if ShowProcess: print("\t")
+        for tripCol in TripRouteData[route].TripList:
+            if ShowProcess: print("\ttripCol:",tripCol,"\t",TripSeq[tripCol])
+            for trip in  TripSeq[tripCol]:
+                if ShowProcess: print("trip",trip)
+            if ShowProcess: b=input('.................................')
+    return None
+
+
 if __name__=="__main__":
     class RouteClass:
         def __init__(self, Id="", TripList=[],Heading={}):
@@ -141,5 +161,6 @@ if __name__=="__main__":
 
     NodeData=GetNodeData(Path=csvPath)
     TripSeq=GetStopSequence(Path=stopTimesPath,ShowProcess=False)
-    RouteSata=GetRouteData(Path=routePath,ShowProcess=False)
-    TripRputeData=GetRoute2TripData(Path=tripDataPath,ShowProcess=False)
+    RouteData=GetRouteData(Path=routePath,ShowProcess=False)
+    TripRouteData=GetRoute2TripData(Path=tripDataPath,ShowProcess=False)
+    CleanTrips(RouteData=RouteData,TripSeq=TripSeq,TripRouteData=TripRouteData,ShowProcess=True)
