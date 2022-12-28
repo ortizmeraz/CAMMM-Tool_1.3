@@ -113,6 +113,16 @@ def GetRoute2TripData(Path:str,ShowProcess:bool=False)->dict:
 
     return RoutesWithTrips
 
+def ReturnLongest(List,ShowProcess:bool=False)->dict:
+    ### Description
+    ### 
+    # Variables 
+    # - 
+    ExitList=[]
+    for element in List:
+        if len(element[0])>len(ExitList):ExitList=element[0]
+    return ExitList
+
 
 def CleanTrips(RouteData:dict,TripSeq:dict,TripRouteData:dict,ShowProcess:bool=False)->dict:
     ### Description
@@ -147,12 +157,31 @@ def SelectionOfTrips(CleanTrips,Criteria,ShowProcess:bool=False)->dict:
     if Criteria=="Longest":
         print("Longest")
         for route in CleanTrips:
+            if ShowProcess: print("\n\nRoute",route)
             ExportRoutes[route]={"0":[],"1":[]}
             for dir in ["0","1"]:
+                if ShowProcess: print("\tDireccion:",dir)
+                if ShowProcess: print("\t\t",len(CleanTripData[route][dir]))
+                if len(CleanTripData[route][dir])>1:
+                    ExportRoutes[route][dir]=ReturnLongest(List=CleanTripData[route][dir])
+                else:
+                    if ShowProcess: print("#######################")
+                    if ShowProcess: print(CleanTripData[route][dir])
+                    if ShowProcess: print(len(CleanTripData[route][dir]))
+                    if len(CleanTripData[route][dir])!=0:
+                        ExportRoutes[route][dir]=CleanTripData[route][dir][0][0]
+                    else:
+                        ExportRoutes[route][dir]=[]
+                # ReturnLongest(List=CleanTripData[route][dir])
                 for trip in CleanTripData[route][dir]:
-                    print("Trip",trip)
+                    # if ShowProcess: print("\t-\tTrip",trip)
+                    if ShowProcess: print("Trip Lenght",len(trip[0]))
+                if ShowProcess: print(ExportRoutes[route][dir])
+                if ShowProcess: print("ExportRoutes",len(ExportRoutes[route][dir]))
+            # if ShowProcess: b=input('.................................')
 
-    return None
+    return ExportRoutes
+
 
 if __name__=="__main__":
 
@@ -165,27 +194,15 @@ if __name__=="__main__":
     TripSeq=GetStopSequence(Path=stopTimesPath,ShowProcess=False)
     RouteData=GetRouteData(Path=routePath,ShowProcess=False)
     TripRouteData=GetRoute2TripData(Path=tripDataPath,ShowProcess=False)
-
-    # for route in TripRouteData.keys():
-    #     print("route",route)
-    #     print("0",len(TripRouteData[route]["TripList"]["0"]))
-    #     print("1",len(TripRouteData[route]["TripList"]["1"]))
-
-    # b=input('.................................')
-
-
+    
     CleanTripData=CleanTrips(RouteData=RouteData,TripSeq=TripSeq,TripRouteData=TripRouteData,ShowProcess=False)
-    SelectionOfTrips(CleanTrips=CleanTripData,Criteria="Longest")
-    # for route in CleanTripData.keys():
-    #     print("································································")
-    #     print("route: ",route)
-    #     for dir in ["0","1"]:
-    #         print("\tDireccion",dir," lenght: ",len(CleanTripData[route][dir]))
-    #         # print("\t\t\t",CleanTripData[route][dir])
-    #         for trip in CleanTripData[route][dir]:
-    #             print("\t\t\t",trip[0])
-    #             print("\t\t\t",len(trip[0]))
-    #         print("----")
-    #     print("································································")
-            
+    SelectedRoutes=SelectionOfTrips(CleanTrips=CleanTripData,Criteria="Longest",ShowProcess=True)
+
+    for route in SelectedRoutes.keys():
+        print("Route:",route)
+        for dir in SelectedRoutes[route]:
+            print("\t:",dir,"\t",SelectedRoutes[route][dir])
+        print()
+             
+
 
