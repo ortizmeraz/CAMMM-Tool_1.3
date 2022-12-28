@@ -4,6 +4,8 @@
 import json
 import csv
 from itertools import pairwise
+from itertools import islice
+
 
 
 def GetNodeData(Path:str,ShowProcess:bool=False)->dict:
@@ -27,7 +29,7 @@ def GetNodeData(Path:str,ShowProcess:bool=False)->dict:
         # for elem in node:
         #     if ShowProcess: print(elem,node[elem])
         if ShowProcess: print(node['properties']['Id'],NodeData[node['properties']['Id']])
-        if ShowProcess: b=input('.................................')
+        if ShowProcess: b=input('GetNodeData .................................')
     return NodeData
 
 
@@ -41,7 +43,7 @@ def GetStopSequence(Path:str,ShowProcess:bool=False):
         csv_reader = csv.reader(csv_file, delimiter=',')
         headers = next(csv_reader, None)
         if ShowProcess: print(headers)
-        if ShowProcess: b=input('.................................')
+        if ShowProcess: b=input('GetStopSequence .................................')
         for idx,row in enumerate(csv_reader):
             if row[0] not in TripDataSeq.keys():
                 TripDataSeq[row[0]]=[]
@@ -72,7 +74,7 @@ def GetRouteData(Path:str,ShowProcess:bool=False)->dict:
         csv_reader = csv.reader(csv_file, delimiter=',')
         headers = next(csv_reader, None)
         print(headers)
-        if ShowProcess: b=input('.................................')
+        if ShowProcess: b=input('GetRouteData .................................')
         for idx,row in enumerate(csv_reader):
             if ShowProcess: print(idx,row)
             #if ShowProcess: b=input('.................................')
@@ -88,43 +90,27 @@ def GetRoute2TripData(Path:str,ShowProcess:bool=False)->dict:
     ### Extract the Route data from GTFS 
     # Variables 
     # - Path for the trips.txt
-
-
-
-
-
-    print("GetRoute2TripData")
+    if ShowProcess: print("####################################################")
+    print("\tGetRoute2TripData")
+    if ShowProcess: print("####################################################")
     # TripsByRoute={}
     RoutesWithTrips={}
     with open(Path,encoding="utf-8") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         headers = next(csv_reader, None)
         print(headers)
-        if ShowProcess: b=input('.................................')
+        if ShowProcess: b=input('GetRoute2TripData -1-.................................')
         for idx,row in enumerate(csv_reader):
             # if ShowProcess: print(idx,row)
-            # if row[0] not in TripsByRoute.keys():
-                # TripsByRoute[row[0]]=[]
-            if row[0] not in RoutesWithTrips.keys():
-                RouteTemp=RouteClass(Id=row[0])
-                RoutesWithTrips[row[0]]=RouteTemp
-            
-            # TripsByRoute[row[0]].append({'trip_id':row[2],'trip_headsign':row[3],'direction_id':row[4]})
-            RoutesWithTrips[row[0]].TripList.append(row[2])
-            RoutesWithTrips[row[0]].Heading[row[2]]={'trip_headsign':row[3],'direction_id':row[4]}
-            # if int(row[0])>6:
-            #     if ShowProcess: print(headers)
-            #     if ShowProcess: print(row)
-            #     if ShowProcess: print(TripsByRoute[row[0]])
-            #     if ShowProcess: print(row[0])
-                # if ShowProcess: b=input('.................................')
-            #if ShowProcess: b=input('.................................')
-        if ShowProcess:
-            for route in RoutesWithTrips:
-                # print(route,RoutesWithTrips[route].TripList)
-                print(route,RoutesWithTrips[route].Heading[RoutesWithTrips[route].TripList[-1]])
-                print(route,RoutesWithTrips[route].Heading[RoutesWithTrips[route].TripList[-2]])
-                b=input('.................................')
+            # if ShowProcess: b=input('.................................')
+            route=row[0]
+            tripp=row[2]
+            Namee=row[3]
+            Direc=row[4]
+            if route not in RoutesWithTrips.keys():
+                RoutesWithTrips[route]={"Id":route,"TripList":{"0":[],"1":[]},"Heading":Direc}
+            RoutesWithTrips[route]["TripList"][Direc].append(tripp)
+
     return RoutesWithTrips
 
 
@@ -135,24 +121,40 @@ def CleanTrips(RouteData:dict,TripSeq:dict,TripRouteData:dict,ShowProcess:bool=F
     # - RouteData dictionary from GetRouteData
     # - TripSeq dictionary from GetStopSequence
     # - TripRouteData dictionary from GetRoute2TripData
+
+    CleanTripData={}
     for route in RouteData:
-        if ShowProcess: print(route)
+        CleanTripData[route]={"0":[],"1":[]}
+        if ShowProcess: print("Route:",route)
         # if ShowProcess: print("\t",TripRouteData[route].TripList)
-        if ShowProcess: print("\t")
-        for tripCol in TripRouteData[route].TripList:
-            if ShowProcess: print("\ttripCol:",tripCol,"\t",TripSeq[tripCol])
-            for trip in  TripSeq[tripCol]:
-                if ShowProcess: print("trip",trip)
-            if ShowProcess: b=input('.................................')
+        # if ShowProcess: print("\t")
+        for dir in ["0","1"]:
+            for trip in TripRouteData[route]["TripList"][dir]:
+                if ShowProcess: print("Direccion",dir)
+                if ShowProcess: print("Trip",trip)
+                if ShowProcess: print(TripSeq[trip])
+                # if ShowProcess: b=input('.................................')
+                if TripSeq[trip] not in CleanTripData[route][dir]:
+                    CleanTripData[route][dir].append(TripSeq[trip])
+    return CleanTripData
+
+def SelectionOfTrips(CleanTrips,Criteria,ShowProcess:bool=False)->dict:
+    ### Description
+    ### 
+    # Variables 
+    # - 
+    ExportRoutes={}
+    if Criteria=="Longest":
+        print("Longest")
+        for route in CleanTrips:
+            ExportRoutes[route]={"0":[],"1":[]}
+            for dir in ["0","1"]:
+                for trip in CleanTripData[route][dir]:
+                    print("Trip",trip)
+
     return None
 
-
 if __name__=="__main__":
-    class RouteClass:
-        def __init__(self, Id="", TripList=[],Heading={}):
-            self.Id = Id
-            self.TripList = TripList
-            self.Heading=Heading
 
     csvPath=r"E:\Github\CAMMM-Web-Tool\Data\general.geojson"
     stopTimesPath=r"E:\Github\CAMMM-Tool_1.3\SampleData\GTFS DATA\gtfs_stm-220822-231022\stop_times.txt"
@@ -163,4 +165,27 @@ if __name__=="__main__":
     TripSeq=GetStopSequence(Path=stopTimesPath,ShowProcess=False)
     RouteData=GetRouteData(Path=routePath,ShowProcess=False)
     TripRouteData=GetRoute2TripData(Path=tripDataPath,ShowProcess=False)
-    CleanTrips(RouteData=RouteData,TripSeq=TripSeq,TripRouteData=TripRouteData,ShowProcess=True)
+
+    # for route in TripRouteData.keys():
+    #     print("route",route)
+    #     print("0",len(TripRouteData[route]["TripList"]["0"]))
+    #     print("1",len(TripRouteData[route]["TripList"]["1"]))
+
+    # b=input('.................................')
+
+
+    CleanTripData=CleanTrips(RouteData=RouteData,TripSeq=TripSeq,TripRouteData=TripRouteData,ShowProcess=False)
+    SelectionOfTrips(CleanTrips=CleanTripData,Criteria="Longest")
+    # for route in CleanTripData.keys():
+    #     print("································································")
+    #     print("route: ",route)
+    #     for dir in ["0","1"]:
+    #         print("\tDireccion",dir," lenght: ",len(CleanTripData[route][dir]))
+    #         # print("\t\t\t",CleanTripData[route][dir])
+    #         for trip in CleanTripData[route][dir]:
+    #             print("\t\t\t",trip[0])
+    #             print("\t\t\t",len(trip[0]))
+    #         print("----")
+    #     print("································································")
+            
+
