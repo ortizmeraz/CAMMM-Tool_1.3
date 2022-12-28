@@ -126,7 +126,7 @@ def ReturnLongest(List,ShowProcess:bool=False)->dict:
 
 def CleanTrips(RouteData:dict,TripSeq:dict,TripRouteData:dict,ShowProcess:bool=False)->dict:
     ### Description
-    ### 
+    ### This function checks the total of trip sequences and then retuerns the unique ones per direction per route 
     # Variables 
     # - RouteData dictionary from GetRouteData
     # - TripSeq dictionary from GetStopSequence
@@ -150,7 +150,8 @@ def CleanTrips(RouteData:dict,TripSeq:dict,TripRouteData:dict,ShowProcess:bool=F
 
 def SelectionOfTrips(CleanTrips,Criteria,ShowProcess:bool=False)->dict:
     ### Description
-    ### 
+    ### In case of multiple trip sequences per direction, this function returns the sequence that fits the desired condiotions
+    ### so far only the longest sequence has coding
     # Variables 
     # - 
     ExportRoutes={}
@@ -179,7 +180,6 @@ def SelectionOfTrips(CleanTrips,Criteria,ShowProcess:bool=False)->dict:
                 if ShowProcess: print(ExportRoutes[route][dir])
                 if ShowProcess: print("ExportRoutes",len(ExportRoutes[route][dir]))
             # if ShowProcess: b=input('.................................')
-
     return ExportRoutes
 
 
@@ -190,19 +190,14 @@ if __name__=="__main__":
     routePath=r"E:\Github\CAMMM-Tool_1.3\SampleData\GTFS DATA\gtfs_stm-220822-231022\routes.txt"
     tripDataPath=r"E:\Github\CAMMM-Tool_1.3\SampleData\GTFS DATA\gtfs_stm-220822-231022\trips.txt"
 
+
     NodeData=GetNodeData(Path=csvPath)
     TripSeq=GetStopSequence(Path=stopTimesPath,ShowProcess=False)
     RouteData=GetRouteData(Path=routePath,ShowProcess=False)
     TripRouteData=GetRoute2TripData(Path=tripDataPath,ShowProcess=False)
-    
     CleanTripData=CleanTrips(RouteData=RouteData,TripSeq=TripSeq,TripRouteData=TripRouteData,ShowProcess=False)
-    SelectedRoutes=SelectionOfTrips(CleanTrips=CleanTripData,Criteria="Longest",ShowProcess=True)
+    SelectedRoutes=SelectionOfTrips(CleanTrips=CleanTripData,Criteria="Longest",ShowProcess=False)
 
-    for route in SelectedRoutes.keys():
-        print("Route:",route)
-        for dir in SelectedRoutes[route]:
-            print("\t:",dir,"\t",SelectedRoutes[route][dir])
-        print()
              
 
 
