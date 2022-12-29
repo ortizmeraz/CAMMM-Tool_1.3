@@ -8,6 +8,110 @@ from itertools import islice
 
 
 
+
+def BuildFeature(Route:str,Dir:str,Coordinates:list,ShowProcess:bool=False)->str:
+    ### Description
+    ### This function return a section of json file with the coordinates for each route-direction
+    ### return a string
+    feature='''
+    {
+    "type": "Feature",
+    "properties": {
+    "Route": "'''+Route+'''",
+    "Direction": "'''+Dir+'''"
+    },
+    "geometry": {
+    "coordinates": 
+    [
+    '''
+    for coord in Coordinates:
+        feature+='''   ['''+coord['lon']+''','''+coord['lat']+''']'''
+        if coord !=Coordinates[-1]:
+            feature+=''','''
+    feature+='''],
+        "type": "LineString"
+      }
+    }'''
+    return feature
+
+def WriteJSON(Routes,Coords,WritePath:str,ShowProcess:bool=False)->None:
+    ### Description
+    ### 
+    # Variables 
+    # - 
+    ListRoutes=list(Routes.keys())
+    Text='''
+    {
+    "features": ['''
+    for route in ListRoutes:
+        if ShowProcess: print("Route:",route)
+        for dir in Routes[route].keys():
+            Seq=Routes[route][dir]
+            if ShowProcess: print("Dir",dir,"|",end="")
+            if len(Seq)>0:
+                ListStops=[]
+                for stop in Seq:
+                    if ShowProcess: print("-",stop[0],"-",end="\t")
+                    if ShowProcess: print(Coords[stop[0]],end="\t")
+                    ListStops.append(Coords[stop[0]])
+            else:
+                print("NA",end="\t")
+            Feature=BuildFeature(Route=route,Dir=dir,Coordinates=ListStops)
+            Text+=Feature
+            if dir=="0":
+                Text+=''','''
+            if ShowProcess: print(Feature)
+            if ShowProcess: print()
+        if route !=ListRoutes[-1]:
+            Text+=''','''
+        if ShowProcess: print("\n-------------------\n")
+    Text+='''
+    ],
+    "type": "FeatureCollection"
+    }'''
+    print(Text)
+    f = open(WritePath, 'w')
+    f.write(Text)
+    f.close()
+    return None
+
+def GetCoordinates(Path:str,Routes:dict,ShowProcess:bool=False)->dict:
+    ### Description
+    ### Get the coordinates of the stops
+    # Variables 
+    # - 
+    Coords={}
+    if ShowProcess: print(GetCoordinates)
+    with open(Path,encoding="utf-8") as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        headers = next(csv_reader, None)
+        if ShowProcess: print(headers)
+        # if ShowProcess: b=input('.................................')
+        for idx,row in enumerate(csv_reader):
+            # print(idx,row)
+            if row[0]==row[1]:
+                if ShowProcess: print("Same")
+                Stop=row[1]
+                Latt=row[3]
+                Lonn=row[4]
+                Coords[Stop]={"lat":Latt,"lon":Lonn}
+                if ShowProcess: print(Stop,Coords[Stop])
+                # if ShowProcess: print(headers[1],row[1],end="\t")
+                # if ShowProcess: print(headers[3],row[3],end="\t")
+                # if ShowProcess: print(headers[4],row[4],end="\n")
+            else:
+                if ShowProcess: print("Different",row[0],row[1])
+                if ShowProcess: print(row[0].isdigit())
+                if row[0].isdigit():
+                    Stop=row[0]
+                    Latt=row[3]
+                    Lonn=row[4]
+                    Coords[Stop]={"lat":Latt,"lon":Lonn}
+                    if ShowProcess: print(Stop,Coords[Stop])
+                    # if ShowProcess: b=input('.................................')
+
+    return Coords
+
 def GetNodeData(Path:str,ShowProcess:bool=False)->dict:
     ### Description
     ### This function simplifies the JSON file to only contain the Id, Name, Metro, RAil, Tram, Bus data
@@ -31,7 +135,6 @@ def GetNodeData(Path:str,ShowProcess:bool=False)->dict:
         if ShowProcess: print(node['properties']['Id'],NodeData[node['properties']['Id']])
         if ShowProcess: b=input('GetNodeData .................................')
     return NodeData
-
 
 def GetStopSequence(Path:str,ShowProcess:bool=False):
     ### Description
@@ -61,8 +164,6 @@ def GetStopSequence(Path:str,ShowProcess:bool=False):
         #     print(idx,row)
     return TripDataSeq
 
-
-
 def GetRouteData(Path:str,ShowProcess:bool=False)->dict:
     ### Description
     ### Extract the Route data from GTFS 
@@ -83,7 +184,6 @@ def GetRouteData(Path:str,ShowProcess:bool=False)->dict:
             for route in RouteData:
                 print(route,RouteData[route])
     return RouteData
-
 
 def GetRoute2TripData(Path:str,ShowProcess:bool=False)->dict:
     ### Description
@@ -122,7 +222,6 @@ def ReturnLongest(List,ShowProcess:bool=False)->dict:
     for element in List:
         if len(element[0])>len(ExitList):ExitList=element[0]
     return ExitList
-
 
 def CleanTrips(RouteData:dict,TripSeq:dict,TripRouteData:dict,ShowProcess:bool=False)->dict:
     ### Description
@@ -189,7 +288,9 @@ if __name__=="__main__":
     stopTimesPath=r"E:\Github\CAMMM-Tool_1.3\SampleData\GTFS DATA\gtfs_stm-220822-231022\stop_times.txt"
     routePath=r"E:\Github\CAMMM-Tool_1.3\SampleData\GTFS DATA\gtfs_stm-220822-231022\routes.txt"
     tripDataPath=r"E:\Github\CAMMM-Tool_1.3\SampleData\GTFS DATA\gtfs_stm-220822-231022\trips.txt"
+    stopDataPath=r"E:\Github\CAMMM-Tool_1.3\SampleData\GTFS DATA\gtfs_stm-220822-231022\stops.txt"
 
+    ExitPathSImple=r"E:\Github\CAMMM-Tool_1.3\Output\Lines.geojson"
 
     NodeData=GetNodeData(Path=csvPath)
     TripSeq=GetStopSequence(Path=stopTimesPath,ShowProcess=False)
@@ -197,6 +298,16 @@ if __name__=="__main__":
     TripRouteData=GetRoute2TripData(Path=tripDataPath,ShowProcess=False)
     CleanTripData=CleanTrips(RouteData=RouteData,TripSeq=TripSeq,TripRouteData=TripRouteData,ShowProcess=False)
     SelectedRoutes=SelectionOfTrips(CleanTrips=CleanTripData,Criteria="Longest",ShowProcess=False)
+    Coordinates=GetCoordinates(Path=stopDataPath,Routes=SelectedRoutes,ShowProcess=False)
+    print("\n\n----------------------------------------------------------")
+    print("Coordinates",type(Coordinates))
+    # print(Coordinates.keys())
+    # k=0
+    # for c in Coordinates.keys():
+    #     print(c,type(c))
+
+    WriteJSON(Routes=SelectedRoutes,Coords=Coordinates,WritePath=ExitPathSImple,ShowProcess=True)
+
 
              
 
