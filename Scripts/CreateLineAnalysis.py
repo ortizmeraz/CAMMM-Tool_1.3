@@ -1,11 +1,83 @@
 # This program is used to create the analysis of the concetions between the nodes in all of their connections
-
+# TODO
+# - figure what the heck to do
 
 import json
 import csv
+import ast
 from itertools import pairwise
 from itertools import islice
 
+def ChckStp(stop:str,City:str="MTL")->str:
+
+    if stop in ('9999111','9999112','9999114'):
+        New='99'
+    elif stop in ('9999495','9999492'):
+        New='98'
+    elif stop in ('9999055','9999052'):
+        New='97'
+    else: 
+        New=stop
+    return New
+
+def CreateClusterLinks(Clusters:dict,TripData:dict,ShowProcess:bool=False)->dict:
+    ### Description
+    ### 
+    # Variables 
+    # - 
+    SimpleLinks=[]
+    ReverseDictionary={}
+    ClusterLinks=[]
+    for clust in Clusters.keys():
+        L1=ast.literal_eval(Clusters[clust]["List of Stations"])
+        L2=ast.literal_eval(Clusters[clust]["List of Stops"]) 
+        L3=L1+L2
+        for stop in L3:
+            ReverseDictionary[stop]=clust
+        # print(clust,Clusters[clust]["List of Stations"],Clusters[clust]["List of Stops"])
+        # b=input('.................................')
+    for trip in TripData.keys():
+        if ShowProcess: print(trip,)
+        # if ShowProcess: print("\t",type(TripData[trip]["0"]))
+        # if ShowProcess: print("\t",TripData[trip]["1"])
+        for a,b in pairwise(TripData[trip]["0"]):
+            SimpleLinks.append([ChckStp(a[0]),ChckStp(b[0])])
+        #     if ShowProcess: print(a,b)
+        #     if ShowProcess: print("A",Clusters[ChckStp(a[0])]["List of Stops"])
+        #     if ShowProcess: print("B",Clusters[ChckStp(b[0])]["List of Stops"])
+        # if ShowProcess: b=input('.................................')
+    print("SimpleLinks len:",len(SimpleLinks))
+    # for link in SimpleLinks[:100]:
+    #     print(link)
+    #     print("->",Clusters[link[0]]["List of Stops"])
+    #     print("<-",Clusters[link[1]]["List of Stops"])
+    # for clust in Clusters.keys():
+    #     print(clust) 
+    #     L1=ast.literal_eval(Clusters[clust]["List of Stations"])
+    #     L2=ast.literal_eval(Clusters[clust]["List of Stops"])
+    #     Temporary=L1+L2
+    #     print(Temporary,len(Temporary))
+    #     for stop in Temporary:
+    #         for link in SimpleLinks: 
+    #             if stop in link:
+    #                 print(link)
+    #                 CLusterLink=[link[0]]
+    #                 b=input('.................................')
+    Check=[]
+    for link in SimpleLinks:
+        if link[0] in ReverseDictionary.keys() and link[1] in ReverseDictionary.keys():
+            NewLink=[ReverseDictionary[link[0]],ReverseDictionary[link[1]]]
+            if NewLink not in ClusterLinks:
+                ClusterLinks.append(NewLink)
+                print(NewLink)
+        else:
+            if link[0] not in ReverseDictionary.keys():
+                if link[0] not in Check: Check.append(link[0])
+            if link[1] not in ReverseDictionary.keys():
+                if link[1] not in Check: Check.append(link[1])
+    print("Check",Check,len(Check))
+    print("Lenght of ClusterLinks:",len(ClusterLinks))
+    return None
 
 
 
@@ -135,6 +207,25 @@ def GetNodeData(Path:str,ShowProcess:bool=False)->dict:
         if ShowProcess: print(node['properties']['Id'],NodeData[node['properties']['Id']])
         if ShowProcess: b=input('GetNodeData .................................')
     return NodeData
+
+def GetClusterData(Path,ShowProcess:bool=False)->dict:
+    ### Description
+    ### This reads the file containing the clusters and the hubs 
+    # Variables 
+    # - var contains the exit data for the cluster data 
+    Exitdata={}
+    with open(Path,encoding="utf-8") as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        headers = next(csv_reader, None)
+        if ShowProcess: print(headers)
+        if ShowProcess: b=input('.................................')
+        for idx,row in enumerate(csv_reader):
+            if ShowProcess: print(idx,row)
+            Exitdata[row[0]]={}
+            for idx,element in enumerate(row):
+                Exitdata[row[0]][headers[idx]]=element
+                if ShowProcess: print(idx,headers[idx],element)
+    return Exitdata
 
 def GetStopSequence(Path:str,ShowProcess:bool=False):
     ### Description
@@ -289,6 +380,7 @@ if __name__=="__main__":
     routePath=r"E:\Github\CAMMM-Tool_1.3\SampleData\GTFS DATA\gtfs_stm-220822-231022\routes.txt"
     tripDataPath=r"E:\Github\CAMMM-Tool_1.3\SampleData\GTFS DATA\gtfs_stm-220822-231022\trips.txt"
     stopDataPath=r"E:\Github\CAMMM-Tool_1.3\SampleData\GTFS DATA\gtfs_stm-220822-231022\stops.txt"
+    clusterPath=r"E:\Github\CAMMM-Tool_1.3\NodesV2.csv"
 
     ExitPathSImple=r"E:\Github\CAMMM-Tool_1.3\Output\Lines.geojson"
 
@@ -299,14 +391,14 @@ if __name__=="__main__":
     CleanTripData=CleanTrips(RouteData=RouteData,TripSeq=TripSeq,TripRouteData=TripRouteData,ShowProcess=False)
     SelectedRoutes=SelectionOfTrips(CleanTrips=CleanTripData,Criteria="Longest",ShowProcess=False)
     Coordinates=GetCoordinates(Path=stopDataPath,Routes=SelectedRoutes,ShowProcess=False)
-    print("\n\n----------------------------------------------------------")
-    print("Coordinates",type(Coordinates))
-    # print(Coordinates.keys())
-    # k=0
-    # for c in Coordinates.keys():
-    #     print(c,type(c))
 
-    WriteJSON(Routes=SelectedRoutes,Coords=Coordinates,WritePath=ExitPathSImple,ShowProcess=True)
+
+    ClusterData=GetClusterData(Path=clusterPath)
+
+    CreateClusterLinks(Clusters=ClusterData,TripData=SelectedRoutes,ShowProcess=True)
+
+
+    # WriteJSON(Routes=SelectedRoutes,Coords=Coordinates,WritePath=ExitPathSImple,ShowProcess=True)
 
 
              
