@@ -1,6 +1,8 @@
 # This program is used to create the analysis of the concetions between the nodes in all of their connections
+# January 2023, 01
+# 30
 # TODO
-# - figure what the heck to do
+# 
 
 import json
 import csv
@@ -20,7 +22,7 @@ def ChckStp(stop:str,City:str="MTL")->str:
         New=stop
     return New
 
-def CreateClusterLinks(Clusters:dict,TripData:dict,ShowProcess:bool=False)->dict:
+def CreateClusterLinks(Clusters:dict,TripData:dict,ShowProcess:bool=False)->list:
     ### Description
     ### 
     # Variables 
@@ -69,16 +71,30 @@ def CreateClusterLinks(Clusters:dict,TripData:dict,ShowProcess:bool=False)->dict
             NewLink=[ReverseDictionary[link[0]],ReverseDictionary[link[1]]]
             if NewLink not in ClusterLinks:
                 ClusterLinks.append(NewLink)
-                print(NewLink)
+                if ShowProcess: print(NewLink)
         else:
             if link[0] not in ReverseDictionary.keys():
                 if link[0] not in Check: Check.append(link[0])
             if link[1] not in ReverseDictionary.keys():
                 if link[1] not in Check: Check.append(link[1])
-    print("Check",Check,len(Check))
-    print("Lenght of ClusterLinks:",len(ClusterLinks))
-    return None
+    if ShowProcess: print("Check",Check,len(Check))
+    if ShowProcess: print("Lenght of ClusterLinks:",len(ClusterLinks))
+    return ClusterLinks
 
+def WritelinkstoFile(Path:str,Data:list,ShowProcess:bool=False)->dict:
+    ### Description
+    ### 
+    # Variables 
+    # - 
+    f = open(Path, 'w')
+    for t in Data:
+        text=str(t)+"\n"
+        if ShowProcess: print("t",t)
+        if ShowProcess: print(text)
+        if ShowProcess: b=input('.................................')
+        f.write(text)
+    f.close()
+    return None
 
 
 def BuildFeature(Route:str,Dir:str,Coordinates:list,ShowProcess:bool=False)->str:
@@ -383,6 +399,7 @@ if __name__=="__main__":
     clusterPath=r"E:\Github\CAMMM-Tool_1.3\NodesV2.csv"
 
     ExitPathSImple=r"E:\Github\CAMMM-Tool_1.3\Output\Lines.geojson"
+    ExitLinkPath=r"E:\Github\CAMMM-Tool_1.3\Output\Links.txt"
 
     NodeData=GetNodeData(Path=csvPath)
     TripSeq=GetStopSequence(Path=stopTimesPath,ShowProcess=False)
@@ -395,8 +412,10 @@ if __name__=="__main__":
 
     ClusterData=GetClusterData(Path=clusterPath)
 
-    CreateClusterLinks(Clusters=ClusterData,TripData=SelectedRoutes,ShowProcess=True)
-
+    ClusterLinks=CreateClusterLinks(Clusters=ClusterData,TripData=SelectedRoutes,ShowProcess=True)
+    for i in ClusterLinks[:10]:
+        print(i,type(i))
+    WritelinkstoFile(Path=ExitLinkPath,Data=ClusterLinks)
 
     # WriteJSON(Routes=SelectedRoutes,Coords=Coordinates,WritePath=ExitPathSImple,ShowProcess=True)
 
