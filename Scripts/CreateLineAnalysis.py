@@ -2,7 +2,7 @@
 # January 2023, 01
 # 30
 # TODO
-# 
+# #CAMMMM2023
 
 import json
 import csv
@@ -122,7 +122,7 @@ def BuildFeature(Route:str,Dir:str,Coordinates:list,ShowProcess:bool=False)->str
     }'''
     return feature
 
-def WriteJSON(Routes,Coords,WritePath:str,ShowProcess:bool=False)->None:
+# def WriteJSON(Routes,Coords,WritePath:str,ShowProcess:bool=False)->None:
     ### Description
     ### 
     # Variables 
@@ -417,7 +417,7 @@ if __name__=="__main__":
         print(i,type(i))
     WritelinkstoFile(Path=ExitLinkPath,Data=ClusterLinks)
 
-    # WriteJSON(Routes=SelectedRoutes,Coords=Coordinates,WritePath=ExitPathSImple,ShowProcess=True)
+    WriteJSON(Routes=SelectedRoutes,Coords=Coordinates,WritePath=ExitPathSImple,ShowProcess=True)
 
 
              

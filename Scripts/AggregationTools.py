@@ -121,7 +121,6 @@ def AgregateStops(ListBusStops,Range):
     #     print(Node)
     return ExitValues
 
-
 def AgregateHeavyTransit(ListBusStops,Range):
     # b=input("AgregateHeavyTransit")
     for i,Bs1 in enumerate(ListBusStops):
@@ -202,8 +201,6 @@ def AgregateHeavyTransit(ListBusStops,Range):
 
     return ExitValues
 
-
-
 def GetEPSG(letter,zone):
     North=["N","O","P","Q","R","S","T","U","V"]
     South=["M","L","K","J","H","G","F","E"]
@@ -261,6 +258,7 @@ def ConvertStations(ListDicts,Route,DataStops,Systems,SuperNode):
     # for st in ListStation:
     #     print("-",st.Id,st.CoordX)
     return ListStation
+
 def ConvertToStopObj(List,Route,DataStops):
     OutList=[]
     for stop in List:
@@ -282,7 +280,6 @@ def ConvertToStopObj(List,Route,DataStops):
         # print(BStop.Id,BStop.Routes,BStop.CoordX,BStop.CoordY)
         OutList.append(BStop)
     return OutList
-
 
 def AddStopsSuperNode(SuperNodeList,ListStops,Range):
     AssocStops={}
